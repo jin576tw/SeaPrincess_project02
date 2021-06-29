@@ -89,9 +89,6 @@ ul {
 
 }
 
-
-
-
 .homepage_video_wrap{
     position: relative;
     width: 100%;
@@ -104,7 +101,7 @@ ul {
      top: 0;
      left: 0;
      width: 100%;
-     transform: scale(1);
+     /* transform: scale(1); */
    
     
 
