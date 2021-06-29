@@ -97,6 +97,7 @@ ul {
     /* background-color: red; */
 }
  .home_video {
+    object-fit:cover;
      position: absolute;
      top: 0;
      left: 0;
