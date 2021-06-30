@@ -1,5 +1,5 @@
 *{
-    outline: solid var(--light_blue) 1px;
+    /* outline: solid var(--light_blue) 1px; */
 }
 
 /* body{
@@ -58,6 +58,7 @@ ul {
     width: 100%;
     max-height: 70px;
     background-color: #ffff;
+    
 }
 
 
@@ -66,7 +67,9 @@ ul {
     margin: 0 auto 0 auto;
     justify-content: center;
     align-items: center ;
-    width: 80%
+    width: 80%;
+   
+    
 }
 
 .navbar_items img{
@@ -93,15 +96,19 @@ ul {
 }
 
 .home_video {
-     object-fit:cover;
      position: absolute;
+     object-fit:cover;
+     height: 100vh;
+     width: 100%;
+    
      top: 0;
      left: 0;
-     width: 100%;
+   
 
 } 
 
 .videos_space{
+    max-width: 375px;
     height: 100vh;
     background-color: transparent;
 }
@@ -109,7 +116,6 @@ ul {
 
 /* ////內容開始/////*/
 .content_warp{
-    height: 5000px;
     width: 100%;
     z-index: 998;
     position: relative;
@@ -580,7 +586,7 @@ ul {
 /* //////預約頁面//////  */
 
 .Apppointment_page{
-    
+    /* height: 10000px; */
     background-color: var(--sea_blue);
 }
 
@@ -599,12 +605,55 @@ ul {
     position: absolute;
     right: 2%;
     width: 50%;
-    height: 85%;
+    height: 90%;
+    
+}
+.title_bg_up{
+    width: 100%;
+    height: 100%;
     opacity: 0.8;
     background-color:#ffff;
     transform: skew(-35deg);
 
 }
+
+.title_up_text{
+    transform: skew(35deg) translateY(-8px);
+     padding: 10px;
+}
+
+.title_up_text h1{
+    font-family: PingFangTC;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    margin-left: 150px;
+    color: black;
+    
+    
+}
+.title_up_text h1 span{
+    opacity: 1;
+    color:#0077ff;
+}
+
+.title_up_text .zero-text{
+    font-size: 30px;
+    font-family: Menlo-Regular;
+
+}
+
+.title_up_text h1:nth-of-type(2){
+    margin-left: 130px;
+}
+.title_up_text h1:nth-of-type(3){
+    margin-left: 100px;
+}
+
+
 .title_down{
     position: absolute;
     bottom: 0;
@@ -616,6 +665,26 @@ ul {
 
 }
 
+.title_down_text{
+    transform: skew(35deg);
+    margin-left: 120px;
+    margin-top: 20px;
+}
+
+.title_down_text h1{
+  font-family: PingFangTC;
+  font-size: 28px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  
+}
+.title_down_text h1:nth-of-type(2){
+    margin-left: 20px;
+
+}
 
 .title-icon01{
     position: absolute;
@@ -625,6 +694,8 @@ ul {
 
     transform: translateY(-10px);
 }
+
+
 .title-icon02{
     position: absolute;
     width: 80px;
@@ -634,3 +705,213 @@ ul {
     transform: translateY(-10px);
 }
 
+.Apppointment_intro{
+    padding: 20px;
+    margin-top: 60px;
+    height:720px;
+    background-color: #fff;
+    box-shadow: 2px 8px 15px 0 rgba(173, 173, 173, 0.5);
+    margin-bottom: 60px;
+
+}
+
+.intro_pic{
+    z-index: 97;
+    width: 55%;
+    height: 100%;
+}
+
+
+
+.intro_pic_left{
+    
+    position: relative;
+    
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+
+}
+
+.tag{
+    z-index: 98 ;
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    bottom: 0;
+    left: 20px;
+    background-color: white;
+    transform: skew(-35deg);
+
+
+}
+
+.tag_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: skew(35deg);
+
+}
+
+.tag_icon{
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+    
+}
+.tag_icon01{
+    background-size: cover;
+   background-image: url('../img/tra-icon-01.svg');
+   background-repeat: no-repeat;
+    
+}
+.tag_icon02{
+    background-size: cover;
+   background-image: url('../img/tra-icon-02.svg');
+   background-repeat: no-repeat;
+    
+}
+.tag_icon03{
+    background-size: contain;
+   background-image: url('../img/tra-icon-03.svg');
+   background-repeat: no-repeat;
+    
+}
+.tag_icon04{
+    background-size: cover;
+   background-image: url('../img/tra-icon-04.svg');
+   background-repeat: no-repeat;
+    
+}
+
+
+.tag_content p{
+    margin-top: 15px;
+    font-family: PingFangTC;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+
+}
+
+
+
+
+.intro_pic_left img{
+    width: 160%;
+    height: 100%;
+    transform: translateX(-120px);
+
+}
+.intro_pic_right{
+    position: relative;
+    width: 50%;
+    height: 100%;
+
+}
+
+.pic_right{
+    overflow: hidden;
+    width: 100%;
+    height: 33.3%;
+
+}
+
+.right01{
+    position: relative;
+}
+
+.right01 img{
+    transform: translateY(-100px);
+ 
+ }
+
+.right02{
+    position: relative;
+}
+
+.right02 img{
+    width: 120%;
+    transform: translate(0px,-30px)
+ 
+ }
+ 
+.right03{
+    position: relative;
+}
+
+.right03 img{
+    width: 120%;
+   transform: translate(0px,-80px)
+
+}
+
+
+.intro_text{
+    width: 45%;
+    height: 100%;
+    text-align: center;
+
+}
+
+.intro_text_content{
+    margin: 80px auto 0 auto ;
+    width: 80%
+}
+
+.intro_text_content h1{
+    font-family: PingFangTC;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 6px;
+ 
+}
+
+.intro_text_content p{
+ font-family: PingFangTC;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  
+
+}
+
+.intro_text_content p:nth-of-type(1){
+    margin-top: 40px;
+
+}
+
+.more03 img{
+    position: absolute;
+    top: 26%;
+    right: 15%;
+    width: 20px;
+    height: 20px;
+   
+}
+
+.more03{
+    margin: 40px auto 100px auto;  
+}
+
+.Apppointment_map{
+    
+    height: 732px;
+    background-size: contain;
+    background-image: url('../img/map01.jpg');
+    background-repeat: no-repeat;
+}
