@@ -1,10 +1,10 @@
 *{
-    /* outline: solid var(--light_blue) 1px; */
+    outline: solid var(--light_blue) 1px;
 }
 
-body{
+/* body{
     height: 5000px;
-}
+} */
 
 p {
     margin: 0;
@@ -54,6 +54,7 @@ ul {
 
 /* ///////導覽列////////// */
 .navbar{
+    z-index: 999;
     width: 100%;
     max-height: 70px;
     background-color: #ffff;
@@ -83,6 +84,39 @@ ul {
     color: var(--light_blue);
 }
 
+.homepage_video_wrap{
+    z-index: 997;
+    width: 100%;
+    height:100vh;
+    overflow: hidden;
+    
+}
+
+.home_video {
+     object-fit:cover;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+
+} 
+
+.videos_space{
+    height: 100vh;
+    background-color: transparent;
+}
+
+
+/* ////內容開始/////*/
+.content_warp{
+    height: 5000px;
+    width: 100%;
+    z-index: 998;
+    position: relative;
+    background-color: white;
+    
+}
+
 
 /* /////首頁////// */
 
@@ -90,25 +124,6 @@ ul {
     box-shadow: 0px 10px 30px var(--grey);
 
 }
-
-.homepage_video_wrap{
-    position: relative;
-    width: 100%;
-    height:100vh;
-    overflow: hidden 
-    /* background-color: red; */
-}
- .home_video {
-    object-fit:cover;
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     /* transform: scale(1); */
-   
-    
-
-} 
 
 .home_intro{
    
@@ -149,7 +164,7 @@ ul {
 
 
 .home_intro_title{
-
+  
     margin-top: 40px;
     position: relative;
     display: flex;
@@ -160,7 +175,7 @@ ul {
 .home_intro_title h1{
     position: absolute;
     margin: 0 auto;
-    width: 450px;
+    width: 100%;
     background-color: #fff;
     font-family: PingFangTC;
     font-size: 36px;
@@ -565,13 +580,13 @@ ul {
 /* //////預約頁面//////  */
 
 .Apppointment_page{
-    height: 10000px;
+    
     background-color: var(--sea_blue);
 }
 
 .Apppointment_title{
     position: relative;
-    width: 1200px;
+    width: 80%;
     height: 140px;
     margin: 80px auto 0 auto;
  
