@@ -55,12 +55,14 @@ ul {
 /* ///////導覽列////////// */
 .navbar{
     width: 100%;
+    max-height: 70px;
     background-color: #ffff;
 }
 
 
 .navbar_items{
-    margin: 0 auto;
+    
+    margin: 0 auto 0 auto;
     justify-content: center;
     align-items: center ;
     width: 80%
@@ -92,7 +94,7 @@ ul {
 .homepage_video_wrap{
     position: relative;
     width: 100%;
-    height: 800px;
+    height:100vh;
     overflow: hidden 
     /* background-color: red; */
 }
@@ -109,6 +111,7 @@ ul {
 } 
 
 .home_intro{
+   
     margin-top: 50px;
     text-align: center;
 }
@@ -221,10 +224,13 @@ ul {
     align-items: center;
 }
 
-.more01 .fa-arrow-right{
+.more01 img{
     position: absolute;
-    top: 10px;
-    right: -15px;
+    top: 26%;
+    right: -8%;
+    width: 20px;
+    height: 20px;
+   
 }
 
 .more01{
@@ -253,10 +259,6 @@ ul {
 
 }
 
-
-.items_warp{
-    
-}
 
 .item_intro{
    
@@ -306,7 +308,7 @@ ul {
   
   }
 
-  .add_btn{
+.add_btn{
     position: absolute;
     width: 65px;
     height: 65px;
@@ -316,7 +318,7 @@ ul {
     right: 2%;
 }
 
-.fa-shopping-cart{
+.add_btn .fa-cart-plus{
     position: absolute;
     color: white;
     font-size: 25px;
@@ -411,20 +413,26 @@ ul {
 .more02{
     margin-top: 40px;
 }
-.more02 .fa-arrow-right{
+.more02 img{
     position: absolute;
-    top: 5px;
-    right: 50px;
+    top: 20%;
+    right: 18%;
+    width: 20px;
+    height: 20px;
 }
 
 /* ///注意事項//// */
+
+.Caution_page{
+    /* height: 100vh; */
+}
 
 .Caution_warp{
     text-align: center;
 }
 
 .Caution_warp h1{
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .Caution_content{
@@ -450,6 +458,8 @@ ul {
     display: flex;
     justify-content: center;
     margin-top: 60px;
+    margin-bottom: 60px;
+
 }
 
 .contact_btn{
@@ -464,7 +474,6 @@ ul {
 }
 
 .contact_intro p{
-    margin-top: 20px;
     font-family: PingFangTC;
     font-size: 20px;
     font-weight: normal;
@@ -485,17 +494,19 @@ ul {
     position: relative;
     width: 100px;
     height: 100px;
-    border: #00d5a5 solid 2px;
+    background-color: #00d5a5;
     border-radius: 100%;
+    
 }
 
-.line_pic .fa-line{
+
+.line_pic img{
     position: absolute;
+    width: 45px;
+    height: 45px;
     top:50%;
     left: 50%;
     font-size: 50px;
-    color: #00d5a5;
-    
     transform: translate(-50%,-50%) ;
 }
 
@@ -522,19 +533,19 @@ ul {
     position: relative;
     width: 100px;
     height: 100px;
-    border: #d084e4 solid 2px;
+    background-color: #d084e4;
     border-radius: 100%;
 }
 
-.phone_pic .fa-phone{
+.phone_pic .fa-phone-alt{
     position: absolute;
+    color: white;
     top:50%;
     left: 50%;
     font-size: 35px;
-    color: #d084e4;
     transform: translate(-50%,-50%) ;
-
 }
+
 
 
 .phone_intro h3{
@@ -550,4 +561,61 @@ ul {
 }
 
 
+
+/* //////預約頁面//////  */
+
+.Apppointment_page{
+    height: 10000px;
+    background-color: var(--sea_blue);
+}
+
+.Apppointment_title{
+    position: relative;
+    width: 1200px;
+    height: 140px;
+    margin: 80px auto 0 auto;
+ 
+    padding: 0;
+
+}
+
+
+.title_up{
+    position: absolute;
+    right: 2%;
+    width: 50%;
+    height: 85%;
+    opacity: 0.8;
+    background-color:#ffff;
+    transform: skew(-35deg);
+
+}
+.title_down{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 90%;
+    background-color: #fff773;
+    transform: skew(-35deg);
+
+}
+
+
+.title-icon01{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 0;
+
+    transform: translateY(-10px);
+}
+.title-icon02{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-10px);
+}
 
