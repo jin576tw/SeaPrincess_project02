@@ -236,10 +236,12 @@ ul {
 
 /* ////內容開始/////*/
 .content_warp{
+    margin: 0;
+    padding: 0;
     width: 100%;
     z-index: 998;
     position: relative;
-    background-color: white;
+    background-color: white
     
 }
 
@@ -708,11 +710,11 @@ ul {
 /* //////預約頁面//////  */
 
 .Apppointment_page{
-    /* height: 10000px; */
     background-color: var(--sea_blue);
 }
 
 .Apppointment_title{
+    overflow: hidden;
     position: relative;
     width: 80%;
     height: 140px;
@@ -1098,6 +1100,7 @@ ul {
 
 
 .map_videos{
+    overflow: hidden;
     z-index: 99;
     width: 55%;
     
