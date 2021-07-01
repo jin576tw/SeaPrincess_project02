@@ -929,7 +929,7 @@ ul {
     height: 100vh;
     z-index: 98;
     background-color: white;
-    background-size: cover;
+    background-size:cover;
     background-image: url('../img/map1960.png');
     background-repeat: no-repeat;
 
