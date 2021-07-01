@@ -87,7 +87,7 @@ ul {
     color: var(--light_blue);
 }
 
-/* ////首Landingpage//// */
+/* ////Landingpage//// */
 .homepage_video_wrap{
     position: relative;
     z-index: 997;
@@ -1128,11 +1128,12 @@ ul {
 
 
 .m_video01{
-    transform: translate(60%,0%);
+    transform: translate(60%,0%);   
 }
 .m_video02{
-    transform: translate(20%,25%);
+    transform: translate(18%,25%);
 }
 .m_video03{
-    transform: translate(140%,10%);
+    transform: translate(110%,18%);
+    margin-bottom: 30px;
 }
