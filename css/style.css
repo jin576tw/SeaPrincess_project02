@@ -66,14 +66,13 @@ ul {
 
 .navbar_items{
     
-    margin: 0 auto 0 auto;
+    margin: 0 85px 0 auto;
     justify-content: center;
     align-items: center ;
     width: 100%;
    
     
 }
-
 
 .navbar_items img{
      width: 100px;
