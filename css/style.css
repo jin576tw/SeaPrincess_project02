@@ -69,13 +69,36 @@ ul {
     margin: 0 auto 0 auto;
     justify-content: center;
     align-items: center ;
-    width: 80%;
+    width: 100%;
    
     
 }
 
+
 .navbar_items img{
      width: 100px;
+}
+
+.navbar_items .fa-user-circle {
+    cursor: pointer;
+    margin-right: 15px;
+   font-size: 28px;
+
+}
+.navbar_items .fa-user-circle:hover{
+    transition: 0.5s;
+    color: var(--light_blue);
+
+}
+.navbar_items .fa-shopping-basket{
+    cursor: pointer;
+   font-size: 28px;
+
+}
+.navbar_items .fa-shopping-basket:hover{
+    transition: 0.5s;
+    color: var(--light_blue);
+
 }
 
 .navbar_items li{
@@ -89,7 +112,8 @@ ul {
     color: var(--light_blue);
 }
 
-/* ////Landingpage//// */
+/* /////////////////////Landingpage//////////////// */
+
 .homepage_video_wrap{
     position: relative;
     z-index: 997;
@@ -122,7 +146,7 @@ ul {
 
 .Logo_pic{
     width: 250px;
-    height: 150px;
+   
     margin: 0 auto;
 }
 
@@ -145,20 +169,22 @@ ul {
 }
 
 .Landing_page_content .sub_title{
+    margin-top: 20px;
     overflow: hidden;
     height: 40px;
 }
 
 .Landing_page_content .big_title{
+    margin-top: 10px;
     overflow: hidden;
-    height: 50px;
+    height: 60px;
 }
 
 
-.Landing_page_content h3{
+.sub_title h3{
     font-family: PingFangTC;
-    font-size: 27px;
-    font-weight: 500;
+    font-size: 32px;
+    font-weight: 350;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -167,9 +193,9 @@ ul {
 
 
 }
-.Landing_page_content h1{
+.big_title h1{
     font-family: PingFangTC;
-    font-size: 40px;
+    font-size: 48px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -1143,7 +1169,7 @@ ul {
     margin-bottom: 30px;
 }
 
-/* /////部落格頁///// */
+/* ///////////海上日誌///////////// */
 
 .Blog_Page{
     /* height: 10000px; */
@@ -1419,4 +1445,285 @@ ul {
     text-align: center;
     margin: 80px auto 80px auto;
    
+}
+
+/* ////////////觀光/包船資訊//////////// */
+
+.Tourist_page{
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    background-image: url('../img/seabg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--dark_blue);
+    background-position: center center;
+    
+
+}
+
+.Tourist_page_title{
+    margin-top: 80px;
+}
+.Tourist_page_title h1{
+  font-family: PingFangTC;
+  font-size: 36px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #ffffff;
+
+}
+
+.texture{
+    position: absolute;
+    width: 25%;
+    height: 250px;
+   
+}
+
+.texture_L{
+    margin-top: 350px;
+    top: 0;
+    left: -10%;
+}
+
+.texture_R{
+    margin-top: 750px;
+    top: 0;
+    right: -10%;
+
+}
+
+.texture_L_bg{
+    position: relative;
+    width: 100%;
+    height:100%;
+    transform: skew(-35deg);
+    border: solid 2px #fff773;
+    
+}
+
+.texture_L_icon{
+    position: absolute;
+    top:-25%;  
+    right: 10%;
+    width:40%;
+    transform: skew(35deg);
+}
+
+.texture_R_bg{
+    position: relative;
+    width: 100%;
+    height:100%;
+    transform: skew(-35deg);
+    border: solid 2px #fff773;
+      
+}
+
+
+.texture_R_icon{
+    position: absolute;
+    bottom: -5%;
+    left: -30%;
+    width:80%;
+    transform: skew(35deg);
+}
+
+
+
+.Tourist_intro{
+    position: relative;
+    margin: 50px auto 0 auto;
+    width: 75%;
+    height: 250px;
+
+}
+
+
+.Intro_pic_up{
+    overflow: hidden;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 85%;
+   
+    transform: skew(-35deg);
+    box-shadow: 4px 8px 20px 0 rgba(23, 34, 61, 0.2);
+
+}
+
+.Intro_pic_up img{
+    transform: skew(35deg) scale(1.5);
+
+}
+
+.pic_up02 img{
+    transform: skew(35deg) scale(1.5) translateY(20px);
+
+}
+
+.Intro_text_down{
+    position: absolute; 
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 88%;
+    background-image: linear-gradient(241deg,
+     rgba(255, 253, 226, 0.9) 10%, rgba(255, 246, 126, 0.9) 60%);
+    transform: skew(-35deg);
+
+}
+
+.text_down_content{
+    position: relative;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transform: skew(35deg);
+    width: 40%;
+    margin-right: 0;
+}
+
+.down_content02{
+    top: 20%;
+    left: 50%;
+
+}
+.down_content03{
+    top: 20%;
+    left: 50%;
+
+}
+
+.text_down_content h3{
+  font-family: PingFangTC;
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color:#805933 ;
+   
+}
+.text_down_content h4{
+  font-family: PingFangTC;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color:#384982;
+   
+}
+
+.Tourist_intro01{
+    margin-top: 80px;
+}
+
+.Tourist_intro02{
+    transform: translateX(200px);
+}
+.Tourist_intro03{
+    transform: translateX(-250px);
+    
+}
+
+.Tourist{
+    
+    margin-top: 150px;
+    height: 500px;
+}
+
+.Tourist_outframe{
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 98%;
+    height: 100%;
+    background-color: white;
+}
+
+.Tourist_pic{
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    background-color: white;
+    width: 90%;
+    height: 80%;
+    box-shadow:rgba(0,0,0,0.4) 3px 3px 30px 0px inset;  
+
+}
+
+.tour_pic01 img{
+    width: 120%;
+}
+.tour_pic02 img{
+    width: 180%;
+}
+.tour_pic03 img{
+    width: 190%;
+    transform: translateX(-160px);
+}
+
+.Tourist_icon{
+    cursor: pointer;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: var(--dark_blue);
+    border-radius: 100%;
+    border:25px solid white;
+    bottom: -2%;
+}
+
+.tour_icon01 img{
+    width: 75%;
+    transform: translate(25% ,20%);
+}
+.tour_icon02 img{
+    width: 75%;
+    transform: translate(20% ,30%);
+}
+.tour_icon03 img{
+    width: 75%;
+    transform: translate(20% ,32%);
+}
+
+.Tourist_link{
+    cursor: pointer;
+    position: absolute;
+    right: 20%;
+    bottom: 3%;
+    font-family: PingFangTC;
+    font-size: 24px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #384982;
+}
+
+.Tourist_link p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: -30px;
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/right-arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
 }
