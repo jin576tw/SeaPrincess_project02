@@ -1224,7 +1224,10 @@ ul {
 
 
 .main_artical_content_text{
-    margin: 50px 0 0 170px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);  
     width: 70%;
     
 }
@@ -1314,6 +1317,7 @@ ul {
 }
 
 .artical_content_outline{
+    overflow: hidden;
     padding: 15px;
     position: absolute;
     bottom: 0px;
