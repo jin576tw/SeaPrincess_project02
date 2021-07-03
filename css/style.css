@@ -52,6 +52,8 @@ ul {
 
 }
 
+
+
 /* ///////導覽列////////// */
 .navbar{
     z-index: 999;
@@ -236,6 +238,7 @@ ul {
 
 /* ////內容開始/////*/
 .content_warp{
+    overflow: hidden;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -516,6 +519,7 @@ ul {
 /* ////海鮮管家////  */
 
 .seafood_warp{
+    margin: 0 auto;
     cursor: pointer;
     margin-top: 90px;
     width: 100%;
@@ -714,7 +718,7 @@ ul {
 }
 
 .Apppointment_title{
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     width: 80%;
     height: 140px;
@@ -1057,9 +1061,10 @@ ul {
     height: 100vh;
     z-index: 98;
     background-color: white;
-    background-size:cover;
+    background-size: 100% 100vh;
     background-image: url('../img/map1960.png');
     background-repeat: no-repeat;
+    background-position: center;
 
      
 }
@@ -1100,7 +1105,7 @@ ul {
 
 
 .map_videos{
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 99;
     width: 55%;
     
@@ -1134,6 +1139,280 @@ ul {
     transform: translate(18%,25%);
 }
 .m_video03{
-    transform: translate(110%,18%);
+    transform: translate(115%,10%);
     margin-bottom: 30px;
+}
+
+/* /////部落格頁///// */
+
+.Blog_Page{
+    /* height: 10000px; */
+    margin-top: 32vh;
+}
+
+.Blog_Page_title{
+    text-align: center;
+    margin-top: 60px;
+
+}
+.main_artical{
+    position: relative;
+    padding: 0;
+    height: 480px;
+    align-items: center;
+    margin-top: 60px;
+  
+}
+.main_artical_pic{
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    padding: 0;
+    width: 50%;
+    box-shadow: 4px 8px 20px 0 rgba(23, 34, 61, 0.2);
+}
+
+.main_artical_pic img{
+    transform: translate(-80px,-60px);
+    width: 140%; 
+}
+
+
+.main_artical_content{
+    position: absolute;
+    right: 0;
+    height: 90%;
+    width: 60%;
+}
+
+.main_artical_content_outline{
+   
+    position: relative;
+    padding: 0;
+    height: 100%;
+    border-top: solid 4px  var(--sea_blue);
+    border-bottom: solid 4px  var(--sea_blue);
+    border-right: solid 4px  var(--sea_blue);
+
+}
+
+.read_more{
+    cursor: pointer;
+    position: absolute;
+    bottom: -30px;
+    left: 38%;
+    margin: 0 auto;
+    font-family: PingFangTC;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.33px;
+    text-align: center;
+    width: 300px;
+    height: 60px;
+    background-color: var(--sea_blue);
+}
+
+.read_more p{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.main_artical_content_text{
+    margin: 50px 0 0 170px;
+    width: 70%;
+    
+}
+.main_artical_content_text h2{
+    margin-top: 20px;
+}
+
+.content_tag{
+    position: relative;
+    padding: 15px;
+    height: 40px;
+    margin-right: 32px;
+}
+
+.content_tag p{
+    font-family: PingFangTC;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+.content_tag01{
+    background-color: #ff8e00;
+}
+
+.content_tag01::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-orange.svg');
+    background-repeat: no-repeat;
+
+}
+
+.content_tag02{
+    background-color: #5aa700
+}
+
+.content_tag02::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-olive.svg');
+    background-repeat: no-repeat;
+
+}
+
+.artical_warp{
+    margin-top: 100px;
+
+}
+
+.artical{
+    position: relative;
+    height: 600px;
+}
+
+.artical_pic{
+    position: absolute;
+    top: 0;
+    left: 15px; 
+    width: 92%;
+    height: 45%;
+    overflow: hidden;
+    box-shadow: 4px 8px 20px 0 rgba(23, 34, 61, 0.2);
+}
+
+.artical_pic img{ 
+   transform: scale(1.3) translateY(20px);
+
+}
+
+.artical_content_outline{
+    padding: 15px;
+    position: absolute;
+    bottom: 0px;
+    left: 35px; 
+    margin: 0 auto;
+    width: 82%;
+    height: 55%;
+    border-left: solid 4px  var(--sea_blue);
+    border-bottom: solid 4px  var(--sea_blue);
+    border-right: solid 4px  var(--sea_blue);
+    font-family: PingFangTC;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+
+}
+
+.content_tag03{
+    background-color: #d559f5;
+}
+
+.content_tag03::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-purple.svg');
+    background-repeat: no-repeat;
+
+}
+
+.content_tag04{
+    background-color: #0077ff
+}
+
+.content_tag04::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-blue.svg');
+    background-repeat: no-repeat;
+
+}
+
+.content_tag05{
+    background-color:#ff2d2d
+}
+
+.content_tag05::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-red.svg');
+    background-repeat: no-repeat;
+
+}
+
+.content_tag06{
+    background-color: #00d5a5
+}
+
+.content_tag06::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-green.svg');
+    background-repeat: no-repeat;
+
+}
+
+
+.more05 img{
+    position: absolute;
+    top: 26%;
+    right: 15%;
+    width: 20px;
+    height: 20px;
+   
+}
+.more05{
+    text-align: center;
+    margin: 80px auto 80px auto;
+   
 }
