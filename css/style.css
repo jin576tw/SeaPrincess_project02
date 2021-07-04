@@ -637,13 +637,28 @@ ul {
 }
 
 .contact_btn{
-    margin: 0 30px;
+    cursor: pointer;
+    width: 200px;
+    margin: 0 12px;
     color: rgba(0, 0, 0, 0.7);
 }
 
 .contact_intro{
     margin: 15px auto;
     text-align: center;
+
+}
+
+.contact_intro h3{
+  font-family: PingFangTC;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: center;
+
 
 }
 
@@ -659,9 +674,7 @@ ul {
     color: rgba(0, 0, 0, 0.7);
 }
 
-.line_btn{
-    width: 200px;
-}
+
 
 .line_pic{
     margin: 0 auto;
@@ -686,22 +699,6 @@ ul {
 
 
 
-.line_intro h3{
- font-family: PingFangTC;
-  font-size: 24px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: center;
-
-}
-
-
-.phone_btn{
-    width: 200px;
-}
 .phone_pic{
     margin: 0 auto;
     position: relative;
@@ -722,17 +719,7 @@ ul {
 
 
 
-.phone_intro h3{
-    font-family: PingFangTC;
-     font-size: 24px;
-     font-weight: 500;
-     font-stretch: normal;
-     font-style: normal;
-     line-height: 1.5;
-     letter-spacing: normal;
-     text-align: center;
-   
-}
+
 
 
 
@@ -1062,7 +1049,7 @@ ul {
 }
 
 .more03{
-    margin: 0px auto 0px auto;  
+    margin: 30px auto 0px auto;  
 }
 
 
@@ -1451,12 +1438,13 @@ ul {
 .Tourist_page{
     position: relative;
     width: 100%;
-    height: 200vh;
+    /* height: 200vh; */
     background-image: url('../img/seabg.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: var(--dark_blue);
     background-position: center center;
+
     
 
 }
@@ -1639,12 +1627,13 @@ ul {
     
     margin-top: 150px;
     height: 500px;
+    margin-bottom: 100px;
 }
 
 .Tourist_outframe{
     overflow: hidden;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto ;
     width: 98%;
     height: 100%;
     background-color: white;
@@ -1724,5 +1713,385 @@ ul {
     background-image: url("../img/right-arrow.svg");
     background-size: contain;
     background-repeat: no-repeat;
+
+}
+
+
+/* ////////聯絡我們//////// */
+
+.Contact_title{
+  font-family: PingFangTC;
+  font-size: 36px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 80px;
+
+}
+
+.Contact_intro{
+    font-family: PingFangTC;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+
+
+.social_btn_warp{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+}
+
+
+.fb_pic{
+    margin: 0 auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #2ac3ea;
+    border-radius: 100%;
+    
+}
+
+
+.fb_pic .fa-facebook-f{
+    color: white;
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top:50%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%,-50%) ;
+}
+
+.yt_pic{
+    margin: 0 auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #ff7e7e;
+    border-radius: 100%;
+    
+}
+
+
+.yt_pic .fa-youtube{
+    color: white;
+    position: absolute;
+    width: 55px;
+    height: 45px;
+    top:50%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%,-50%) ;
+}
+
+.shoppee_pic{
+    margin: 0 auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #f9ac41;
+    border-radius: 100%;
+    
+}
+
+
+.shoppee_pic img{
+    color: white;
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    top:50%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%,-50%) ;
+}
+
+
+
+.contact_maps_warp{
+    display: flex;
+    justify-content: space-around;
+    /* height: 1000px; */
+   
+}
+
+
+.contact_map{
+    height: 500px;
+    margin-bottom: 100px;
+
+}
+.contact_map_pic{
+    margin: 0 auto;
+    width: 90%;
+    height: 75%;
+   
+    
+}
+
+.contact_map_pic iframe{
+    width: 100%;
+    height: 100%;
+}
+.contact_map_pic .map{
+    background-color:red;
+    width: 100%;
+    height: 100%;
+}
+
+.contact_map_content{
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    height: 25%;
+    
+
+}
+
+.map_content_title{
+    
+    height: 100%;
+    width: 60%;
+}
+
+.map_content_title h3{
+    margin-top: 40px;
+    font-family: PingFangTC;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.7);
+
+}
+.map_content_title h4{
+    font-family: PingFangTC;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.7);
+
+}
+
+.map_content_time{
+   
+    height: 100%;
+    width: 40%;
+}
+.map_content_time p{
+    margin-top: 40px;
+    font-family: PingFangTC;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.7);
+    padding-left: 15px;
+    border-left: 3px solid var(--sea_blue);
+
+   
+}
+
+/* //////Q&A/////// */
+.QA_page{
+    background-color: var(--sea_blue);
+  
+}
+
+.QA_title{
+    margin-top: 100px;
+    font-family: PingFangTC;
+    font-size: 36px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+  
+
+}
+
+
+.question{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: 100px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.31);
+
+    
+   
+}
+
+.question_wrap{
+    margin-bottom: 150px;
+}
+
+.question_title{
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+   
+}
+
+.question_title h3{
+    font-family: PingFangTC;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.7);
+
+}
+
+.question .fa-plus{
+    cursor: pointer;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+   
+}
+.question .fa-minus{
+    cursor: pointer;
+    font-size: 32px;
+    width: 30px;
+    height: 30px;
+}
+
+.answer{
+    margin-top: 25px;
+    padding: 0 22px;
+}
+.answer p{
+  font-family: PingFangTC;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  color: rgba(23, 34, 61, 0.75);
+  
+}
+
+.answer span{
+    color: #417505;
+}
+
+.q2{
+   height: 320px; 
+}
+
+
+/* /////footer///// */
+.footer{
+    background-color: var(--dark_blue);
+}
+
+
+
+.footer_parts{
+    margin-top: 100px;
+    height: 400px;
+}
+
+
+.footer_parts .logo_w{
+    width: 200px;
+}
+
+.footer_social_btn_warp{
+    margin-top: 40px;
+    width: 65%;
+    justify-content: space-evenly;
+}
+.footer_social_btn{
+    cursor: pointer;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+.footer_fb_btn .fa-facebook-f{
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.footer_line_btn img{
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.footer_yt_btn .fa-youtube{
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.footer_parts h5{
+
+ font-family: PingFangTC;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  color: #ffffff;
+
+}
+
+.footer_parts p{
+    font-family: PingFangTC;
+    font-size: 16px;
+    font-weight: 350;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    color: #ffffff;
+  
 
 }
