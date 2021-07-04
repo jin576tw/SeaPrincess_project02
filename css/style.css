@@ -2004,7 +2004,13 @@ ul {
 }
 
 .answer span{
+    cursor: pointer;
     color: #417505;
+}
+
+.answer span:hover{
+    transition: 0.5s;
+    color:red;
 }
 
 .q2{
