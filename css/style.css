@@ -2,11 +2,27 @@
     /* outline: solid var(--light_blue) 1px; */
 }
 
-/* body{
-    height: 5000px;
-} */
+body{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    line-height: 2; 
+}
+
+:root {
+    font-size: 10px;
+    --light_blue: rgba(0, 165, 255, 0.85);
+    --dark_blue: #384982;
+    --sea_blue: #abd5e3;
+    --grey:  #c0c0c0;
+    
+ 
+ }
+ 
 
 p {
+    font-size: 1.8rem;
     margin: 0;
 }
 
@@ -44,13 +60,6 @@ ul {
 }
 
 
-:root {
-   --light_blue: rgba(0, 165, 255, 0.85);
-   --dark_blue: #384982;
-   --sea_blue: #abd5e3;
-   --grey:  #c0c0c0;
-
-}
 
 
 
@@ -58,7 +67,7 @@ ul {
 .navbar{
     z-index: 999;
     width: 100%;
-    max-height: 70px;
+    /* max-height: 70px; */
     background-color: #ffff;
     
 }
@@ -66,22 +75,34 @@ ul {
 
 .navbar_items{
     
-    margin: 0 85px 0 auto;
-    justify-content: center;
+    margin: 0 0px 0 auto;
+    justify-content: space-evenly;
     align-items: center ;
     width: 100%;
+    font-size: 1.8rem;
+
    
     
 }
+.navbar_items li{
+    cursor: pointer;
+    list-style: none;
+}
+
+.navbar_items li:hover{
+    transition: 0.5s;
+    color: var(--light_blue);
+}
+
 
 .navbar_items img{
-     width: 100px;
+     width: 120px;
 }
 
 .navbar_items .fa-user-circle {
     cursor: pointer;
-    margin-right: 20px;
-   font-size: 28px;
+    margin-right: 25px;
+    font-size: 3.2rem;
 
 }
 .navbar_items .fa-user-circle:hover{
@@ -91,7 +112,7 @@ ul {
 }
 .navbar_items .fa-shopping-basket{
     cursor: pointer;
-   font-size: 28px;
+    font-size: 3.2rem;
 
 }
 .navbar_items .fa-shopping-basket:hover{
@@ -100,16 +121,6 @@ ul {
 
 }
 
-.navbar_items li{
-    cursor: pointer;
-    list-style: none;
-    margin: 0 30px;
-}
-
-.navbar_items li:hover{
-    transition: 0.5s;
-    color: var(--light_blue);
-}
 
 /* /////////////////////Landingpage//////////////// */
 
@@ -181,9 +192,9 @@ ul {
 
 
 .sub_title h3{
-    font-family: PingFangTC;
-    font-size: 32px;
-    font-weight: 350;
+    
+    font-size: 3.2rem;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -193,8 +204,8 @@ ul {
 
 }
 .big_title h1{
-    font-family: PingFangTC;
-    font-size: 48px;
+ 
+    font-size: 4.8rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -207,26 +218,29 @@ ul {
 .Landing_page_content .md-text{
     margin-top: 40px;
    justify-content: space-between;
-   width: 15%;
+   width: 13%;
    align-items: center;
+   font-size: 1.6rem;
 }
 .Landing_page_content .md-line{
-    margin-top: -20px;
+    margin-top: -10px;
     width: 50px;
 
-    border-top: 0.5px solid white;
+    border-bottom: 0.5px solid white;
 
 }
 .Landing_page_content .bt-text{
     margin-top: 5px;
     justify-content: space-around;
-    width: 15%;
+    width: 20%;
+    font-size: 1.6rem;
 }
 .Landing_page_content .bt-text p{
     cursor: pointer;
    padding: 0 12px;
     border: 0.5px solid white;
-    border-radius: 10px;
+    border-radius: 12.5px;
+
 }
 .Landing_page_content .bt-text p:hover{
     transition: 0.5s;
@@ -293,9 +307,9 @@ ul {
     width: 200px;
     position: relative;
 }
-.home_intro h2{
-  font-family: PingFangTC;
-  font-size: 24px;
+.home_intro_subtitle h2{
+  
+  font-size: 2.4rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -337,8 +351,8 @@ ul {
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: white;
-    font-family: PingFangTC;
-    font-size: 36px;
+  
+    font-size: 3.6rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -355,16 +369,15 @@ ul {
 }
 
 .home_intro p{
-    font-family: PingFangTC;
+   font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.8;
     letter-spacing: normal;
-
     color: rgba(0, 0, 0, 0.7);
     margin: 50px auto 0 auto;
-    width: 63%;
+    width: 70%;
 
 
 }
@@ -376,7 +389,7 @@ ul {
     background-color: var(--dark_blue);
     border-radius: 30px;
     cursor: pointer;
-
+    
 }
 
 .more_btn:hover{
@@ -385,45 +398,52 @@ ul {
 }
 
 .more_btn p{
-    display: flex;
     position: relative;
-    font-family: PingFangTC;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 2.4rem;
+    font-weight: 400;
     text-align: center;
     color: white;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto ;
+    
 }
 
-.more01 img{
-    position: absolute;
-    top: 26%;
-    right: -8%;
-    width: 20px;
-    height: 20px;
-   
-}
 
 .more01{
+    padding-right: 35px;
     margin: 40px auto 100px auto;  
 }
+
+.more01 p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/right-arrow-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 11px;
+    right: -20px;
+
+}
+
+
 
 
 /* /////最新漁貨////// */
 
 
 .item_tittle{
+  
    text-align: center;
-    margin: 80px auto 0 auto;
+   margin: 80px auto 0 auto;
   
  
 }
 
 .item_tittle h1{
-    font-family: PingFangTC;
-    font-size: 36px;
+  
+    font-size: 3.6rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -459,7 +479,7 @@ ul {
 .item_title{
     position: absolute;
     background-color:white;
-    border:solid 0.1px var(--grey);
+    border:solid 0.1px rgba(173, 173, 173, 0.5);
     height: 20%;
     width: 100%;
 
@@ -469,8 +489,7 @@ ul {
 
 .item_title h3{
     padding: 25px;
-    font-family: PingFangTC;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -483,18 +502,18 @@ ul {
 
 .add_btn{
     position: absolute;
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     background-color: var(--light_blue);
     border-radius: 100%;
-    top: 58%;
-    right: 2%;
+    top: 61%;
+    right: 3%;
 }
 
 .add_btn .fa-cart-plus{
     position: absolute;
     color: white;
-    font-size: 25px;
+    font-size: 2.3rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) 
@@ -511,8 +530,8 @@ ul {
 }
 
 .item_detail p{
-    font-family: PingFangTC;
-    font-size: 16px;
+   
+    font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -534,10 +553,14 @@ ul {
 }
 .view_more_btn p{
     transform: translateY(10px);
-    font-size: 18px;
+    font-size: 1.8rem;
     border-bottom: solid 0.5px rgba(29, 30, 30, 0.55);
     padding-bottom: 5px;
     
+}
+
+.view_more_btn  .fa-caret-down{
+  font-size: 30px;
 }
 
 
@@ -546,7 +569,7 @@ ul {
 .seafood_warp{
     margin: 0 auto;
     cursor: pointer;
-    margin-top: 90px;
+    margin-top: 80px;
     width: 100%;
     height: 400px;
     background-image: url('../img/seafood.svg');
@@ -560,8 +583,8 @@ ul {
 }
 
 .seafood_text h1{
-    font-family: PingFangTC;
-    font-size: 36px;
+   
+    font-size: 3.6rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -572,8 +595,8 @@ ul {
 }
 
 .seafood_text p{
-    font-family: PingFangTC;
-    font-size: 20px;
+   
+    font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -585,38 +608,43 @@ ul {
     margin-top: 15px;
 }
 .more02{
+    padding-right: 35px;
     margin-top: 40px;
 }
-.more02 img{
+
+.more02 p::after{
+    content: '';
+    display: block;
     position: absolute;
-    top: 20%;
-    right: 18%;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/right-arrow-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 9px;
+    right: 36px;
+
 }
 
 /* ///注意事項//// */
-
-.Caution_page{
-    /* height: 100vh; */
-}
 
 .Caution_warp{
     text-align: center;
 }
 
-.Caution_warp h1{
+.Caution_title h1{
     margin-top: 120px;
+    font-weight: 500;
+    font-size: 3.6rem;
 }
 
 .Caution_content{
   
     word-break: break-all;
     color: rgba(0, 0, 0, 0.7);
-    margin: 30px auto 0 auto;
+    margin: 40px auto 0 auto;
     width: 75%;
-    font-family: PingFangTC;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -626,7 +654,17 @@ ul {
   
 }
 
+.Caution_content p{
 
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+}
 
 .social_btn{
     display: flex;
@@ -650,8 +688,8 @@ ul {
 }
 
 .contact_intro h3{
-  font-family: PingFangTC;
-  font-size: 24px;
+
+  font-size: 2.4rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -663,8 +701,8 @@ ul {
 }
 
 .contact_intro p{
-    font-family: PingFangTC;
-    font-size: 20px;
+   
+    font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -758,17 +796,18 @@ ul {
 }
 
 .title_up_text{
-    transform: skew(35deg) translateY(-8px);
+    transform: skew(35deg) translateY(-3px);
      padding: 10px;
+   
 }
 
 .title_up_text h1{
-    font-family: PingFangTC;
-    font-size: 18px;
+  
+    font-size: 2.4rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: normal;
+    line-height: 3rem;
     letter-spacing: 2px;
     margin-left: 150px;
     color: black;
@@ -776,12 +815,13 @@ ul {
     
 }
 .title_up_text h1 span{
+    font-size: 2.4rem;
     opacity: 1;
     color:#0077ff;
 }
 
 .title_up_text .zero-text{
-    font-size: 30px;
+    font-size: 4rem;
     font-family: Menlo-Regular;
 
 }
@@ -812,8 +852,8 @@ ul {
 }
 
 .title_down_text h1{
-  font-family: PingFangTC;
-  font-size: 28px;
+ 
+  font-size: 2.8rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -899,9 +939,9 @@ ul {
 }
 
 .tag_icon{
-    width: 35px;
-    height: 35px;
-    margin: 0 10px;
+    width: 22px;
+    height: 22px;
+    margin: 0px 10px 0 0;
     
 }
 .tag_icon01{
@@ -917,6 +957,7 @@ ul {
     
 }
 .tag_icon03{
+    height: 20px;
     background-size: contain;
    background-image: url('../img/tra-icon-03.svg');
    background-repeat: no-repeat;
@@ -931,9 +972,9 @@ ul {
 
 
 .tag_content p{
-    margin-top: 15px;
-    font-family: PingFangTC;
-    font-size: 24px;
+    margin-top: 10px;
+
+    font-size: 2.4rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -1006,13 +1047,13 @@ ul {
 
 .intro_text_content{
     margin: 60px auto 0 auto ;
-    width: 80%
+    width: 70%
     
 }
 
 .intro_text_content h1{
-    font-family: PingFangTC;
-    font-size: 30px;
+
+    font-size: 3rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -1022,8 +1063,8 @@ ul {
 }
 
 .intro_text_content p{
- font-family: PingFangTC;
-  font-size: 20px;
+ 
+  font-size: 1.8rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -1039,19 +1080,26 @@ ul {
 
 }
 
-.more03 img{
-    position: absolute;
-    top: 26%;
-    right: 18%;
-    width: 20px;
-    height: 20px;
-   
-}
+
 
 .more03{
-    margin: 30px auto 0px auto;  
+    padding-right: 35px;
+    margin: 40px auto 0px auto;  
 }
 
+.more03 p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/right-arrow-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 8px;
+    right: 36px;
+
+}
 
 /* //////預約地圖介紹/////// */
 
@@ -1068,32 +1116,32 @@ ul {
     display: block;
     position: absolute;
     left: 0;
-    bottom: -32vh;
+    bottom: -100px;
     width: 100%;
-    height: 100vh;
+    height: 550px;
     z-index: 98;
     background-color: white;
-    background-size: 100% 100vh;
-    background-image: url('../img/map1960.png');
+    background-size: contain;
+    background-image: url('../img/new_map.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 
      
 }
-
 
 .map_content{
     z-index: 99;
     padding: 15px;
     /* background-color: red; */
     width: 45%;
+    height: 100%;
     text-align: center;
 
 }
 
 .map_content_text p{
-  font-family: PingFangTC;
-  font-size: 20px;
+ 
+  font-size: 1.8rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -1103,23 +1151,34 @@ ul {
 
 }
 
-.more04 img{
-    position: absolute;
-    top: 26%;
-    right: 18%;
-    width: 20px;
-    height: 20px;
-   
-}
+
+
 .more04{
+    padding-right: 35px;
     margin-top: 30px;
 }
 
 
+.more04 p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/right-arrow-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 9px;
+    right: 36px;
+
+}
+
 .map_videos{
     /* overflow: hidden; */
+   position: relative;
     z-index: 99;
     width: 55%;
+    height: 100%;
     
 }
 
@@ -1145,24 +1204,27 @@ ul {
 
 
 .m_video01{
-    transform: translate(60%,0%);   
+   margin-left: 100px;
 }
+
 .m_video02{
-    transform: translate(18%,25%);
+    margin-top: 15px;
 }
+
 .m_video03{
-    transform: translate(115%,10%);
-    margin-bottom: 30px;
+    margin-left: 320px;
 }
 
 /* ///////////海上日誌///////////// */
 
 .Blog_Page{
-    /* height: 10000px; */
-    margin-top: 32vh;
+    margin-top: 100px;
 }
 
-.Blog_Page_title{
+.Blog_Page_title h1{
+
+    font-size: 3.6rem;
+    font-weight: 500;
     text-align: center;
     margin-top: 60px;
 
@@ -1214,14 +1276,6 @@ ul {
     bottom: -30px;
     left: 38%;
     margin: 0 auto;
-    font-family: PingFangTC;
-    font-size: 24px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 1.33px;
-    text-align: center;
     width: 300px;
     height: 60px;
     background-color: var(--sea_blue);
@@ -1232,19 +1286,32 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.33px;
+    text-align: center;
 }
 
 
 .main_artical_content_text{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 60%;
     transform: translate(-50%,-50%);  
     width: 70%;
     
 }
 .main_artical_content_text h2{
+    font-size: 2.4rem;
+    font-weight: 500;
     margin-top: 20px;
+}
+.main_artical_content_text p{
+    font-size: 1.6rem;
+   
 }
 
 .content_tag{
@@ -1255,8 +1322,8 @@ ul {
 }
 
 .content_tag p{
-    font-family: PingFangTC;
-    font-size: 20px;
+  
+    font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -1310,21 +1377,24 @@ ul {
 
 .artical{
     position: relative;
-    height: 600px;
+    height: 500px;
 }
 
+.content_tags_warp{
+    margin-top: 42px;
+}
 .artical_pic{
     position: absolute;
     top: 0;
-    left: 15px; 
+    left: 18px; 
     width: 92%;
-    height: 45%;
+    height: 52%;
     overflow: hidden;
     box-shadow: 4px 8px 20px 0 rgba(23, 34, 61, 0.2);
 }
 
 .artical_pic img{ 
-   transform: scale(1.3) translateY(20px);
+   transform: scale(1.2) translateY(20px);
 
 }
 
@@ -1340,15 +1410,24 @@ ul {
     border-left: solid 4px  var(--sea_blue);
     border-bottom: solid 4px  var(--sea_blue);
     border-right: solid 4px  var(--sea_blue);
-    font-family: PingFangTC;
-    font-size: 20px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
+
+    
 
 }
+
+.artical_content_outline h3{
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 10px
+   
+
+}
+.artical_content_outline p{
+    font-size: 1.6rem;
+
+}
+
+
 
 .content_tag03{
     background-color: #d559f5;
@@ -1419,18 +1498,25 @@ ul {
 }
 
 
-.more05 img{
-    position: absolute;
-    top: 26%;
-    right: 15%;
-    width: 20px;
-    height: 20px;
-   
-}
 .more05{
     text-align: center;
+    padding-right: 35px;
     margin: 80px auto 80px auto;
    
+}
+
+.more05 p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/right-arrow-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 9px;
+    right: 36px;
+
 }
 
 /* ////////////觀光/包船資訊//////////// */
@@ -1453,9 +1539,9 @@ ul {
     margin-top: 80px;
 }
 .Tourist_page_title h1{
-  font-family: PingFangTC;
-  font-size: 36px;
-  font-weight: normal;
+ 
+  font-size: 3.6rem;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -1475,13 +1561,13 @@ ul {
 .texture_L{
     margin-top: 350px;
     top: 0;
-    left: -10%;
+    left: -15%;
 }
 
 .texture_R{
     margin-top: 750px;
     top: 0;
-    right: -10%;
+    right: -15%;
 
 }
 
@@ -1589,8 +1675,8 @@ ul {
 }
 
 .text_down_content h3{
-  font-family: PingFangTC;
-  font-size: 30px;
+
+  font-size: 3rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -1600,8 +1686,8 @@ ul {
    
 }
 .text_down_content h4{
-  font-family: PingFangTC;
-  font-size: 24px;
+
+  font-size: 2.4rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -1619,7 +1705,7 @@ ul {
     transform: translateX(200px);
 }
 .Tourist_intro03{
-    transform: translateX(-250px);
+    transform: translateX(-200px);
     
 }
 
@@ -1653,6 +1739,7 @@ ul {
 
 .tour_pic01 img{
     width: 120%;
+    
 }
 .tour_pic02 img{
     width: 180%;
@@ -1689,10 +1776,10 @@ ul {
 .Tourist_link{
     cursor: pointer;
     position: absolute;
-    right: 20%;
+    right: 30%;
     bottom: 3%;
-    font-family: PingFangTC;
-    font-size: 24px;
+   
+    font-size: 2.4rem;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -1706,10 +1793,10 @@ ul {
     content: '';
     display: block;
     position: absolute;
-    top: 3px;
+    top: 2px;
     right: -30px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background-image: url("../img/right-arrow.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -1717,11 +1804,12 @@ ul {
 }
 
 
+
 /* ////////聯絡我們//////// */
 
-.Contact_title{
-  font-family: PingFangTC;
-  font-size: 36px;
+.Contact_title h1{
+  
+  font-size: 3.6rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -1733,8 +1821,8 @@ ul {
 }
 
 .Contact_intro{
-    font-family: PingFangTC;
-    font-size: 20px;
+ 
+    font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -1872,8 +1960,8 @@ ul {
 
 .map_content_title h3{
     margin-top: 40px;
-    font-family: PingFangTC;
-    font-size: 24px;
+   
+    font-size: 2.4rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -1883,8 +1971,8 @@ ul {
 
 }
 .map_content_title h4{
-    font-family: PingFangTC;
-    font-size: 20px;
+ 
+    font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -1901,8 +1989,8 @@ ul {
 }
 .map_content_time p{
     margin-top: 40px;
-    font-family: PingFangTC;
-    font-size: 18px;
+    
+    font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -1921,10 +2009,10 @@ ul {
   
 }
 
-.QA_title{
+.QA_title h1{
     margin-top: 100px;
-    font-family: PingFangTC;
-    font-size: 36px;
+   
+    font-size: 3.6rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -1962,8 +2050,8 @@ ul {
 }
 
 .question_title h3{
-    font-family: PingFangTC;
-    font-size: 24px;
+    
+    font-size: 2.4rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -1975,16 +2063,16 @@ ul {
 
 .question .fa-plus{
     cursor: pointer;
-    font-size: 30px;
-    width: 30px;
-    height: 30px;
+    font-size: 2.5rem;
+    width: 25px;
+    height: 25px;
    
 }
 .question .fa-minus{
     cursor: pointer;
-    font-size: 32px;
-    width: 30px;
-    height: 30px;
+    font-size: 2.5rem;
+    width: 25px;
+    height: 25px;
 }
 
 .answer{
@@ -1992,8 +2080,8 @@ ul {
     padding: 0 22px;
 }
 .answer p{
-  font-family: PingFangTC;
-  font-size: 20px;
+  
+  font-size: 2rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -2078,8 +2166,8 @@ ul {
 
 .footer_parts h5{
 
- font-family: PingFangTC;
-  font-size: 20px;
+
+  font-size: 2rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -2090,8 +2178,8 @@ ul {
 }
 
 .footer_parts p{
-    font-family: PingFangTC;
-    font-size: 16px;
+
+    font-size: 1.6rem;
     font-weight: 350;
     font-stretch: normal;
     font-style: normal;
