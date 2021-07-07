@@ -374,7 +374,7 @@ a:hover {
     border-radius: 100%;
     top: 61%;
     right: 3%;
-    transform:  translateY(60px);
+    /* transform:  translateY(60px); */
 }
 
 .add_btn .fa-cart-plus{
@@ -510,7 +510,8 @@ a:hover {
     word-break: break-all;
     color: rgba(0, 0, 0, 0.7);
     margin: 40px auto 0 auto;
-    width: 75%;
+    padding: 0 150px;
+   
     font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
