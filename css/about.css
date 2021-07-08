@@ -123,12 +123,13 @@
    display: block;
    position: absolute;
    background-image: url('../img/teambg.svg');
+   /* background-color: red; */
    background-size: cover;
    bottom: 0px;
    background-repeat: no-repeat;
-   background-position: bottom;
+   background-position:top;
    width: 100%;
-   height: 800px;
+   height: 850px;
 }
 
 

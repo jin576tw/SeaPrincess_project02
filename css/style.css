@@ -443,8 +443,9 @@ a:hover {
     background-size: cover;
     border: solid 3px rgba(23, 34, 61, 0.75);
     text-align: center;
-    min-height: 394px;
+    padding-top: 80px;
 }
+
 .seafood_warp:hover{
     transition: 0.5s;
     box-shadow: 2px 8px 15px 0 rgba(173, 173, 173, 0.5);
@@ -459,7 +460,7 @@ a:hover {
     line-height: normal;
     letter-spacing: 2px;
     text-align: center;
-    margin-top: 80px;
+    /* margin-top: 50px; */
 }
 
 .seafood_text p{
