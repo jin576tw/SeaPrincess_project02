@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+/* ///////導覽列////////// */
+
+    //手機版navbar
+    $('.navbar_RWD_icon').click(function(){
+        
+        $('.navbar_RWD_items').toggleClass('RWD_open');
+
+    });
+
 
     $(window).scroll(function () {
 
@@ -9,12 +18,12 @@ $(document).ready(function () {
     // 網頁版 
     if ($(window).width() >= 992) {
 
-/* ///////導覽列////////// */
-        if (scrollNow >= 225){
 
-            $('.navbar_items img').css('width','80px').css('transition','0.3s')
+        if (scrollNow >= 1000){
+
+            $('.navbar_Logo').css('width','80px').css('transition','0.3s')
         }else{
-            $('.navbar_items img').css('width','140px').css('transition','0.3s')
+            $('.navbar_Logo').css('width','140px').css('transition','0.1s')
 
         }
     }

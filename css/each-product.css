@@ -86,7 +86,7 @@
 .other_product_pic_warp{
     width: 100%;
     height: 20%;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     align-items: center;
     justify-content: space-between;
     
