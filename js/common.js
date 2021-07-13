@@ -18,12 +18,24 @@ $(document).ready(function () {
     // 網頁版 
     if ($(window).width() >= 992) {
 
+   
+        if (scrollNow >= 706){
 
+            $('.navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0.5)').css('transition','0.3s')
+        }else{
+            $('.navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0.5)').css('transition','0.1s')
+
+            
+
+        }
+   
         if (scrollNow >= 1000){
 
             $('.navbar_Logo').css('width','80px').css('transition','0.3s')
         }else{
             $('.navbar_Logo').css('width','140px').css('transition','0.1s')
+
+            
 
         }
     }
