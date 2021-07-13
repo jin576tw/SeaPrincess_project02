@@ -328,7 +328,7 @@ select {
 }
 
 .footer_social_btn_warp{
-    margin: 40px auto 0 auto;
+    margin: 40px 0 0 0;
     width: 65%;
     justify-content: space-evenly;
 }
