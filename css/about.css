@@ -217,7 +217,7 @@
        
        .About_story_content{
            margin: 0 auto;
-           padding: 15px 0 0 0 ;
+           padding: 10px 0 0 0 ;
            display: flex;
            justify-content: center;
            align-items: center;
@@ -226,7 +226,7 @@
        }
        
        .About_story_content p{
-           font-size: 1.6rem;
+           font-size: 1.5rem;
            font-weight: 350;
            font-stretch: normal;
            font-style: normal;
@@ -645,7 +645,7 @@
 
 .About_Intro_content {
     padding: 0 50px;
-    /* margin-bottom: 60px; */
+    /* margin-bottom: 60px; */ 
 }
 
 .About_Intro_content p{
@@ -794,7 +794,7 @@
 
     .About_Intro_content {
         padding: 0 50px;
-        /* margin-bottom: 60px; */
+        
     }
     
     .About_Intro_content p{
