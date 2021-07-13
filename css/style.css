@@ -1233,6 +1233,10 @@
 
 /* ///注意事項//// */
 
+.Caution_page{
+    opacity: 0;
+}
+
 .Caution_warp{
     text-align: center;
 }
