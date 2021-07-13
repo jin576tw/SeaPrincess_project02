@@ -1050,7 +1050,12 @@
 
 /* ////海鮮管家////  */
 
+.Seafood_page{
+    opacity: 0;
+}
+
 .seafood_warp{
+    
     margin: 0 auto;
     cursor: pointer;
     margin-top: 80px;

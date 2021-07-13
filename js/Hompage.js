@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
 
-        let scrollNow = $(window).scrollTop();
+            let scrollNow = $(window).scrollTop();
         console.log('scrollTop', scrollNow);
 
 
@@ -145,7 +145,59 @@ $(document).ready(function () {
     
         }
     
-        })
+    })
+ 
+    $('.view_more_btn').on({
+
+        mouseenter: function () {
+
+            $(this).css('color','var(--light_blue)')  
+        
+            $(this).find("p").css('border-bottom','solid 0.5px var(--light_blue)').css('transition','0.5s')
+
+            $(this).find(".fa-caret-down").css('transform','scale(1.2) translateY(5px)').css('transition','0.5s')
+
+        },
+        mouseleave: function () {
+
+        
+            $(this).css('color','rgba(29, 30, 30, 0.55)')
+
+           $(this).find("p").css('border-bottom','solid 0.5px rgba(29, 30, 30, 0.55)').css('transition','0.5s')
+
+           $(this).find(".fa-caret-down").css('transform','scale(1) translateY(0px)').css('transition','0.5s')
+        
+
+        }
+
+
+
+    })
+
+ /* //////////海鮮管家////////// */
+
+ $(window).scroll(function () {
+
+    let scrollNow = $(window).scrollTop();
+    
+
+    if ($(window).width() >= 992) {
+
+        if (scrollNow >= 2216){
+                
+            $('.Seafood_page').css('opacity','1').css('transition','0.5s')
+
+        }else{
+
+            $('.Seafood_page').css('opacity','0').css('transition','0.5s')
+        }
+    }
+
+
+
+ })
+
+
 
 
 
