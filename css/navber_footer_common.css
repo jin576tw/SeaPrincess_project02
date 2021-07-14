@@ -428,6 +428,7 @@ select {
     font-size: 1.8rem;
     justify-content: space-evenly;
     align-items: center;
+    transform: translateX(-20px);
 }
 
 .navbar_items li {
