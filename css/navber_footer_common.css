@@ -424,6 +424,7 @@ select {
 
 
 .navbar_items{
+    padding: 0px;
     width: 100%;
     font-size: 1.8rem;
     justify-content: space-evenly;
@@ -525,6 +526,7 @@ select {
     
 
     .navbar_items{
+        padding: 0 5px;
         margin-top: 10px;
         width: 100%;
         font-size: 1.8rem;
