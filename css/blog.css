@@ -1,0 +1,197 @@
+*{
+    /* outline: solid var(--light_blue) 1px; */
+}
+
+/* ///////部落格首頁////// */
+.Blog_title{
+    position: relative;
+    width: 100%;
+    height: 360px;
+    background-image: url('../img/blog_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Blog_title_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #384982 ;
+    
+}
+
+.Blog_title_text{
+    position: absolute;
+    overflow: hidden;
+    margin-top: 60px;
+    width: 200px;
+    height: 50px;
+     
+}
+.Blog_title_text h1{
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+}
+
+/* //////主要文章/////// */
+
+.Main_artical_page{
+    width: 100%;
+    overflow: hidden;
+}
+
+.main_artical{
+    display: flex;
+    position: relative;
+    padding: 0;
+    height: 480px;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  
+}
+.main_artical_pic{
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    padding: 0;
+    width: 50%;
+    box-shadow: 4px 8px 20px 0 rgba(23, 34, 61, 0.2);
+}
+
+.main_artical_pic img{
+    transform: translate(-80px,-60px);
+    width: 140%; 
+}
+
+
+.main_artical_content{
+    position: absolute;
+    right: 0;
+    height: 90%;
+    width: 60%;
+}
+
+.main_artical_content_outline{
+   
+    position: relative;
+    padding: 0;
+    height: 100%;
+    border-top: solid 4px  var(--sea_blue);
+    border-bottom: solid 4px  var(--sea_blue);
+    border-right: solid 4px  var(--sea_blue);
+
+}
+
+.read_more{
+    cursor: pointer;
+    position: absolute;
+    bottom: -30px;
+    left: 38%;
+    margin: 0 auto;
+    width: 300px;
+    height: 60px;
+    background-color: var(--sea_blue);
+}
+
+.read_more p{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.33px;
+    text-align: center;
+}
+
+
+.main_artical_content_text{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);  
+    width: 70%;
+    
+}
+.main_artical_content_text h2{
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.main_artical_content_text p{
+    font-size: 1.6rem;
+   
+}
+
+.content_tag{
+    position: relative;
+    padding: 15px;
+    height: 40px;
+    margin-right: 32px;
+}
+
+.content_tag p{
+  
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6rem;
+    letter-spacing: normal;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+.content_tag01{
+    background-color: #ff8e00;
+}
+
+.content_tag01::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-orange.svg');
+    background-repeat: no-repeat;
+
+}
+
+.content_tag02{
+    background-color: #5aa700
+}
+
+.content_tag02::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background-image: url('../img/tag-olive.svg');
+    background-repeat: no-repeat;
+
+}
