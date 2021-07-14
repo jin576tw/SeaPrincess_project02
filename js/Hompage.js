@@ -183,7 +183,7 @@ $(document).ready(function () {
 
  /* //////////海鮮管家////////// */
 
-   let bounce = 'animate__animated animate__bounceIn';
+   let flip = 'animate__animated animate__flipInX';
 
     //手機版
     if ($(window).width() < 480) {
@@ -221,11 +221,11 @@ $(document).ready(function () {
         // }else{
 
         //     $('.Seafood_page').css('opacity','0').css('transition','0.5s')
-        $('.Seafood_page').addClass(bounce);
+        $('.Seafood_page').addClass(flip);
 
         }
         else{
-            $('.Seafood_page').removeClass(bounce)
+            $('.Seafood_page').removeClass(flip)
         }
     }
 
