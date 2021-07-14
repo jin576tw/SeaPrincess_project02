@@ -1,30 +1,40 @@
 *{
-    outline: solid var(--light_blue) 1px;
+    /* outline: solid var(--light_blue) 1px; */
 }
 
 
 /* ////////////////////////// */
 
-.testearea{
-   
-    position: relative;
-    width: 100%;
-    height: 800px;
-    background-image: url('../img/princess_boat.jpg');
-    margin-top: 80px;
+
+body{
     
-   
+    height: 10000px;
+    background-color: #afa;
 }
 
+.Cart_list{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    
+}
 
-.testearea::before{
-   content: '';
-   display: block;
-   position: absolute;
-   width: 100%;
-   height: 80px;
-   background-color: blue;
-   top: -80px;
-   left: 0;
+.Cart_bg{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    
+}
+
+.Cart_list_bar{
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: white;
 
 }

@@ -11,21 +11,21 @@
 
 @media (max-width: 991px) {
     .Landing_page{
-        margin-top: 90px;
+        margin-top: 80px;
     }
 
 }
 
 @media (max-width: 480px) {
     .Landing_page{
-        margin-top: 90px;
+        margin-top: 80px;
     }
 
 
 }
 .homepage_video_wrap{
     position: relative;
-    z-index: 997;
+    z-index: 996;
     width: 100%;
     height:100vh;
     overflow: hidden;
@@ -37,14 +37,14 @@
     padding: 0;
     position: absolute;
     left: 0;
-    z-index: 996;
+    z-index: 997;
     width: 100%;
     height: 100vh;
    
 }
 
 .video_outside_bg{
-    z-index: 994;
+    z-index: 993;
     position: absolute;
     left: 0;
     top: 0;
@@ -69,7 +69,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 995;
+    z-index: 994;
     width: 100%;
     height: 100Vh;
     text-align: center;
@@ -167,7 +167,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        z-index: 995;
+        z-index: 994;
         width: 100%;
         height: 100Vh;
         text-align: center;
@@ -264,7 +264,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        z-index: 995;
+        z-index: 994;
         width: 100%;
         height: 100Vh;
         text-align: center;
@@ -358,7 +358,7 @@
 
 .home_video {
 
-     z-index: 993;
+     z-index: 992;
      position: absolute;
      object-fit:cover;
      height: 102vh;
@@ -372,7 +372,7 @@
 
     .homepage_video_wrap{
         position: relative;
-        z-index: 997;
+        z-index: 996;
         width: 100%;
         height:100vh;
         overflow: hidden;
@@ -382,7 +382,7 @@
 
     .home_video {
 
-        z-index: 993;
+        z-index: 992;
         position: absolute;
         object-fit:cover;
         height: 100vh;
@@ -400,7 +400,7 @@
 
     .homepage_video_wrap{
         position: relative;
-        z-index: 997;
+        z-index: 996;
         width: 100%;
         height:100vh;
         overflow: hidden;
@@ -410,7 +410,7 @@
 
     .home_video {
 
-        z-index: 993;
+        z-index: 992;
         position: absolute;
         object-fit:cover;
         height: 100vh;
@@ -439,7 +439,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    z-index: 998;
+    z-index: 997;
     position: relative;
     background-color: white
     
