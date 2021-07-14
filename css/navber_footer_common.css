@@ -428,7 +428,7 @@ select {
     font-size: 1.8rem;
     justify-content: space-evenly;
     align-items: center;
-    transform: translateX(-20px);
+   
 }
 
 .navbar_items li {
@@ -452,7 +452,7 @@ select {
 
 .navbar_items .fa-user-circle {
     cursor: pointer;
-    margin-right: 25px;
+    margin-right: 20px;
     font-size: 3.2rem;
 
 }
@@ -528,8 +528,9 @@ select {
         margin-top: 10px;
         width: 100%;
         font-size: 1.8rem;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        
     }
     
    .navbar_items li{
@@ -543,8 +544,9 @@ select {
     }
 
     .navbar_Logo{
+        margin-top: 0;
         width: 120px;
-       transform: translate(15px);
+      
    
    }
 
