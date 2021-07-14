@@ -434,6 +434,7 @@ select {
 }
 
 .navbar_items li {
+    margin-top: 4px;
     text-decoration: none;
     cursor: pointer;
     list-style: none;
