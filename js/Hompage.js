@@ -183,6 +183,8 @@ $(document).ready(function () {
 
  /* //////////海鮮管家////////// */
 
+   let bounce = 'animate__animated animate__bounceIn';
+
     //手機版
     if ($(window).width() < 480) {
 
@@ -214,11 +216,16 @@ $(document).ready(function () {
 
         if (scrollNow >= 2216){
                 
-            $('.Seafood_page').css('opacity','1').css('transition','0.5s')
+        //     $('.Seafood_page').css('opacity','1').css('transition','0.5s')
 
-        }else{
+        // }else{
 
-            $('.Seafood_page').css('opacity','0').css('transition','0.5s')
+        //     $('.Seafood_page').css('opacity','0').css('transition','0.5s')
+        $('.Seafood_page').addClass(bounce);
+
+        }
+        else{
+            $('.Seafood_page').removeClass(bounce)
         }
     }
 
