@@ -429,6 +429,7 @@ select {
     font-size: 1.8rem;
     justify-content: space-evenly;
     align-items: center;
+    transform: translateX(-20px);
    
 }
 
@@ -532,6 +533,8 @@ select {
         font-size: 1.8rem;
         justify-content: space-around;
         align-items: center;
+        transform: translateX(0px);
+   
         
     }
     
@@ -587,11 +590,13 @@ select {
     
 
     .navbar_items{
+        
         margin-top: 10px;
         width: 100%;
         font-size: 1.8rem;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        transform: translateX(0px);
     }
 
  
