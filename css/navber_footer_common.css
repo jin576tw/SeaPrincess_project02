@@ -321,12 +321,13 @@ select {
 
 
     .Cart_list{
+       
         display: block;
         position: fixed;
         z-index: 999;
         width: 300px;
         top: 80px;
-        right: 0;
+        right: -300px;
         height: calc(100vh - 80px);
        
         
