@@ -2974,6 +2974,7 @@
 }
 
 .content_tag01{
+    width: 100px;
     background-color: #ff8e00;
 }
 
@@ -2991,6 +2992,7 @@
 }
 
 .content_tag02{
+    width: 65px;
     background-color: #5aa700
 }
 
@@ -3070,7 +3072,8 @@
 
 
 
-.content_tag03{
+.content_tag03{ 
+    width: 100px;
     background-color: #d559f5;
 }
 
@@ -3088,6 +3091,7 @@
 }
 
 .content_tag04{
+    width: 65px;
     background-color: #0077ff
 }
 
@@ -3105,6 +3109,7 @@
 }
 
 .content_tag05{
+    width: 65px;
     background-color:#ff2d2d
 }
 
@@ -3122,6 +3127,7 @@
 }
 
 .content_tag06{
+    width: 100px;
     background-color: #00d5a5
 }
 
