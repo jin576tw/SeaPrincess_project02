@@ -16,6 +16,7 @@ body{
     --dark_blue: #384982;
     --sea_blue: #abd5e3;
     --grey:  #c0c0c0;
+    --dark_red: #a42021;
     
  
  }
@@ -317,6 +318,26 @@ select {
 
 }
 
+@media (max-width: 991px) {
+    
+    .list_count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+        margin: 0 10px;
+    
+    }
+
+
+}
 @media (max-width: 480px) {
 
 
