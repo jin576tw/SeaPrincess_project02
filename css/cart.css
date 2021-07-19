@@ -316,7 +316,7 @@
        ;
     }
     .cart_item_name h1{
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
 
     .cart_item_detail{
@@ -324,11 +324,11 @@
         flex-direction: column-reverse;
         align-items: flex-start;
         position: absolute;
-       
+        /* background-color: red; */
         right: 0;
         bottom: 0;
         padding: 0px 10px 10px 0px;
-        width: 58%;
+        width: 56%;
         height:50%;
        
        
@@ -347,7 +347,7 @@
     .count_left{
         position: absolute;
         bottom: 3px;
-        left: 125px;
+        left: 120px;
         font-size: 1.6rem;
         font-weight: normal;
         font-stretch: normal;
@@ -372,20 +372,112 @@
 
 /* //////購物車運送、總計/////// */
 
+/* 購物車總計*/
 .cart_fee_warp{
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+
+.cart_fee_total_content{
+    border: solid 1px rgba(23, 34, 61, 0.5);
+
+}
+.cart_fee_total_title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(23, 34, 61, 0.1);
+    border-bottom: solid 3px rgba(23, 34, 61, 0.5);
+
+}
+
+.cart_fee_total_title h1{
+    margin-top: 5px;
+    margin-left: 50px;
+    font-size: 2rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.cart_fee_total_count{
+    padding: 20px 50px;
+    border-bottom: solid 1px rgba(23, 34, 61, 0.5);
+   
+}
+.total_sum{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+
+}
+.total_sum p:nth-of-type(2)::before {
+     content: 'NT ';
+}
+
+.total_fee{
+    display: flex;
     justify-content: space-between;
 }
 
+
+.total_fee .fa-exclamation-circle{
+    font-size: 20px;
+    margin-left: 10px;
+    color:rgba(0, 0, 0, 0.31);
+    cursor: pointer;
+    
+}
+
+.total_fee p:nth-of-type(2)::before {
+    content: 'NT ';
+    
+}
+
+
+.cart_fee_checkout{
+    padding: 30px 50px;
+}
+
+.total_money{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.total_money p:nth-of-type(2)::before {
+    content: 'NT ';
+    
+}
+
+.cart_checkout_btn{
+    margin-top: 60px;
+    width: 100%;
+    height: 50px;
+    background-color: #5aa700;
+    border-radius: 6px;
+    font-size: 2rem;
+    color:white;
+
+}
+
+
+/* 運費試算 */
+
 .cart_fee_type_warp{
-    /* background-color:green; */
+   
+    
    
 }
-.cart_fee_total_warp{
-   
-    height: 600px;
-}
-
-
 .cart_fee_type_title{
    
     display: flex;
@@ -410,11 +502,14 @@
 
 
 .cart_fee_type_content{
-    
+    border: solid 1px rgba(23, 34, 61, 0.5);
     width: 100%;
-    height: 800px;
+   
 }
-
+.cart_member{
+    border-bottom: solid 1px rgba(23, 34, 61, 0.5);
+    padding: 20px 50px;
+}
 .cart_login_warp{
     justify-content:space-between;
     font-size: 2rem;
@@ -423,6 +518,7 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
+    margin-bottom: 20px;
   
 
 }
@@ -441,11 +537,233 @@
     color: var(--dark_red);
 }
 
+.cart_login_btn_warp{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cart_login_btn{
+    display: flex;
+  
+    cursor: pointer;
+    overflow: hidden;
+    width: 220px;
+    height: 50px;
+    border-radius: 6px;
+    border: solid 1px #000000;
+
+}
+
+.login_btn_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    min-width: 50px;
+    height: 50px;
+}
+
+.fb_login_icon{
+    font-size: 25px;
+    color: white;
+    background-color: #384982;
+}
+
+.line_login_icon{
+    
+    background-color: #00d5a5;
+}
+
+.google_login_icon{
+    font-size: 25px;
+    color: white;
+    background-color: #a42021;
+}
+.mail_login_icon{
+    font-size: 25px;
+    color: white;
+    background-color: #000000;
+}
+
+
+.line_login_icon img{
+    width:45%;
+
+}
+
+.login_btn_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    font-size: 1.6rem;
+    color: black;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+}
+
+.cart_fee_type_select{
+    padding: 30px 50px;
+}
+
+.cart_fee_address{
+    margin-bottom: 30px;
+    
+}
+
+
+
+.cart_fee_address p{
+    font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+
+}
+
+.fee_addres{
+    border-radius: 8px;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 50px;
+    border: solid 1px rgba(0, 0, 0, 0.31);
+    padding:0px 10px;
+}
+
+.fee_type_input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.31);
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.fee_type_input label{
+    margin-top: 5px;
+   margin-left: 10px;
+}
+
+
+@media (max-width: 992px) {
+
+    .cart_fee_total_warp{
+        margin: 60px auto 0px auto;
+
+    }
+    .cart_fee_total_title h1{
+        
+        margin-left: 10px;
+        
+    }
+
+    .cart_fee_total_count{
+        padding: 20px 15px;
+        border-bottom: solid 1px rgba(23, 34, 61, 0.5);
+       
+    }
+    
+    .cart_fee_checkout{
+        padding: 30px 15px;
+    }
+    
+    .cart_fee_type_title h1{
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 2rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+
+
+    .cart_login_btn_warp{
+        display: flex;
+        justify-content:space-around;
+        margin-bottom: 20px;
+    
+
+    }
+
+    .cart_member{
+        padding: 20px 15px;
+    }
+
+    .cart_fee_type_select{
+        padding: 30px 15px;
+    }
+}
 @media (max-width: 480px) {
+
+    .cart_fee_total_warp{
+        margin: 60px auto 0px auto;
+
+    }
+   
 
     .cart_fee_type_warp{
         margin: 0 auto;
     }
+
+    .cart_fee_type_title h1{
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 2rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+
+
+    .cart_login_warp{
+        flex-direction: column;
+        justify-content:center;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-align: center;
+      
+    
+    }
+
+    .cart_member{
+        
+        padding: 20px 10px;
+       
+
+    }
+
+    .cart_login_btn_warp{
+        display: flex;
+        /* background-color: red; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0px;
+    }
+
+    .cart_login_btn{
+        margin-bottom: 20px;
+    }
+
+    .cart_fee_type_select{
+        padding: 30px 20px;
+    }
+    
+
 }
 
 

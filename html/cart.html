@@ -184,7 +184,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="cart_table_warp col-lg-12 col-11 p-0">
+            <div class="cart_table_warp col-lg-12  col-md-12 col-11 p-0">
                 <div class="cart_table_top">
                     <div class="table_top cart_item_name_top">
                         <p>品項</p>
@@ -321,7 +321,7 @@
 <section class="Cart_fee">
     <div class="container  ">
         <div class="row cart_fee_warp  ">
-            <div class="cart_fee_type_warp col-lg-6 col-11   p-0">
+            <div class="cart_fee_type_warp col-lg-6 col-md-12 col-11 p-0">
                 <div class="cart_fee_type_title col-lg-12 m-0 p-0">
                     <h1>運費試算</h1>
                 </div>
@@ -332,9 +332,68 @@
                             <p>註冊會員</p>
                         </div>
                         <div class="cart_login_btn_warp">
-                            
+                            <div class="cart_login_btn fb_login_btn">
+                                <div class="login_btn_icon fb_login_icon">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                                <div class="login_btn_name">
+                                    FB 登入
+                                </div>
+                            </div>
+                            <div class="cart_login_btn line_login_btn">
+                                <div class="login_btn_icon line_login_icon">
+                                   <img src="../img/line.svg" alt="">
+                                </div>
+                                <div class="login_btn_name">
+                                    Line 登入
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_login_btn_warp">
+                            <div class="cart_login_btn google_login_btn">
+                                <div class="login_btn_icon google_login_icon">
+                                    <i class="fab fa-google-plus"></i>
+                                </div>
+                                <div class="login_btn_name">
+                                    Google 登入
+                                </div>
+                            </div>
+                            <div class="cart_login_btn mail_login_btn">
+                                <div class="login_btn_icon mail_login_icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="login_btn_name">
+                                    Email 登入
+                                </div>
+                            </div>
                         </div>
                         
+                    </div>
+                    <div class="cart_fee_type_select">
+                        <div class="cart_fee_address">
+                            <p>送貨地址</p>
+                            <select class="fee_addres">
+                                <option value="">請選擇送貨地址</option>
+                                <option value="台灣本地" selected>台灣本地</option>
+                                <option value="海外運送">海外運送</option>
+                            </select>
+                        </div>
+                        <div class="cart_fee_type">
+                            <p>取貨方式</p>
+                            
+                            <div class="fee_type_input">
+                                <input type="radio" name="fee_type" value="freez" id="freez">
+                                <label for="freez">冷凍宅配</label>
+                            </div>
+                            <div class="fee_type_input">
+                                <input type="radio" name="fee_type" value="self_take" id="self_take">
+                                <label for="self_take">自取</label>
+                            </div>
+                            <div class="fee_type_input">
+                                <input type="radio" name="convine" value="convine" id="convine">
+                                <label for="convine">超商取貨</label>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -342,7 +401,41 @@
 
 
             </div>
-            <div class="cart_fee_total_warp col-lg-5 col-12"></div>
+            <div class="cart_fee_total_warp col-lg-5 col-md-12 col-11   p-0">
+                <div class="cart_fee_total_title col-lg-12 m-0 p-0">
+                    <h1>購物車總計</h1>
+                </div>
+                <div class="cart_fee_total_content">
+                
+                    <div class="cart_fee_total_count">
+                        <div class="total_sum">
+                            <p>小計</p>
+                            <p>2,800,00</p>
+                        </div>
+                        <div class="total_fee">
+                            <p>運費<i class="fas fa-exclamation-circle"></i></p>
+                            <p>150</p>
+                        </div>
+                    </div>
+                    <div class="cart_fee_checkout">
+                        <div class="total_money">
+                            <p>合計</p>
+                            <p>2,801,50</p>
+                        </div>
+
+                        <button class="cart_checkout_btn">
+                            <a href="">
+                                <i class="fas fa-cash-register"></i>
+                                前往結賬
+                            </a>
+
+                        </button>
+                    </div>
+
+                   
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
