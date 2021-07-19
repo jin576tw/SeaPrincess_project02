@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princess_公主號_購物車頁</title>
+    <title>Princess_公主號_結帳頁</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../fontawesome/css/all.css">
-    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/checkout.css">
     <link rel="stylesheet" href="../css/navber_footer_common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -175,165 +175,107 @@
 </div> 
  
 
-<!-- 購物車 -->
-<section class="Cart_page">
+<!-- 結帳頁 -->
+<section class="Checkout_page">
     <div class="container">
-        <div class="row">
-            <div class="Cart_page_title col-lg-12 ">
-                <h1>購物車</h1>
+        <div class="row checkout_warp">
+            <div class="checkout_title">
+                <h1>結帳</h1>
             </div>
-        </div>
-        <div class="row">
-            <div class="cart_table_warp col-lg-12  col-md-12 col-11 p-0">
-                <div class="cart_table_top">
-                    <div class="table_top cart_item_name_top">
-                        <p>品項</p>
-                    </div>
-                    <div class="table_top cart_item_price_top">
-                        <p>單價</p>
-                    </div>
-                    <div class="table_top cart_item_count_top">
-                        <p>數量</p>
-                    </div>
-                    <div class="table_top cart_item_total_top">
-                        <p>小計</p>
-                    </div>
-                    <div class="table_top cart_item_delete_top"></div>
+            <!-- 購物車內容  -->
+            <div class="checkout_items_wrap  col-lg-5 col-md-12 col-11 p-0">
+                <div class="checkout_items_title col-lg-12 m-0 p-0">
+                    <h1>購物車內容</h1>
                 </div>
+                <div class="checkout_items_content">
+                    <div class="checkout_items_list">
 
-                <div class="cart_items">
-
-                    <div class="cart_item_title">
-
-                        <div class="cart_item_pic">
-                            <img src="../img/item01.jpg" alt="">
-                        </div>
-                        <div class="cart_item_name">
-                            <h1>真空三去深海石老魚 ( 藍豬齒魚 )</h1>
-                        </div>
-
-                    </div>
-                    <div class="cart_item_detail">
-                        <div class="count_item_price">
-                            <p>1200</p>
-                        </div>
-                        <div class="cart_item_count">
-                            <div class="list_countBtn_warp d-flex">
-                                <div class="countBtn countBtn_add">
-                                    <i class="fas fa-plus"></i>
+                        <div class="checkout_item"> 
+                            <div class="checkout_items_intro">
+                                <div class="checkout_items_pic">
+                                    <div class="items_pic_bg">
+                                        <img src="../img/item01.jpg" alt="">
+                                    </div>
+                                    <div class="item_count">1</div>
                                 </div>
-                                <div class="list_count">1</div>
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
+                                <h1>真空三去深海石老魚 ( 藍豬齒魚 )</h1>
                             </div>
-                            <div class="count_left">3</div>
-                        </div>
-                        <div class="cart_item_total">
-                            <p>1200</p>
-                        </div>
-                        <div class="cart_item_delete">
-                            <i class="far fa-trash-alt"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="cart_items">
-
-                    <div class="cart_item_title">
-
-                        <div class="cart_item_pic">
-                            <img src="../img/item03.jpg" alt="">
-                        </div>
-                        <div class="cart_item_name">
-                            <h1>真空三去深海金目鯛 (紅皮刀)</h1>
-                        </div>
-
-                    </div>
-                    <div class="cart_item_detail">
-                        <div class="count_item_price">
-                            <p>14000</p>
-                        </div>
-                        <div class="cart_item_count">
-                            <div class="list_countBtn_warp d-flex">
-                                <div class="countBtn countBtn_add">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                                <div class="list_count">20</div>
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
+                            <div class="checkout_items_price">
+                                <p>1200</p>
                             </div>
-                            <div class="count_left">3</div>
-                        </div>
-                        <div class="cart_item_total">
-                            <p>280000</p>
-                        </div>
-                        <div class="cart_item_delete">
-                            <i class="far fa-trash-alt"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="cart_items">
-
-                    <div class="cart_item_title">
-
-                        <div class="cart_item_pic">
-                            <img src="../img/item02.jpg" alt="">
-                        </div>
-                        <div class="cart_item_name">
-                            <h1>真空三去深海大目鰱</h1>
                         </div>
 
-                    </div>
-                    <div class="cart_item_detail">
-                        <div class="count_item_price">
-                            <p>970</p>
-                        </div>
-                        <div class="cart_item_count">
-                            <div class="list_countBtn_warp d-flex">
-                                <div class="countBtn countBtn_add">
-                                    <i class="fas fa-plus"></i>
+                        <div class="checkout_item"> 
+                            <div class="checkout_items_intro">
+                                <div class="checkout_items_pic">
+                                    <div class="items_pic_bg">
+                                        <img src="../img/item02.jpg" alt="">
+                                    </div>
+                                    <div class="item_count">20</div>
                                 </div>
-                                <div class="list_count">3</div>
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
+                                <h1>真空三去深海金目鯛 (紅皮刀)</h1>
                             </div>
-                            <div class="count_left">3</div>
+                            <div class="checkout_items_price">
+                                <p>280,000</p>
+                            </div>
                         </div>
-                        <div class="cart_item_total">
-                            <p>2910</p>
+
+                        <div class="checkout_item"> 
+                            <div class="checkout_items_intro">
+                                <div class="checkout_items_pic">
+                                    <div class="items_pic_bg">
+                                        <img src="../img/item03.jpg" alt="">
+                                    </div>
+                                    <div class="item_count">5</div>
+                                </div>
+                                <h1>真空三去深海大目鰱</h1>
+                            </div>
+                            <div class="checkout_items_price">
+                                <p>2,910</p>
+                            </div>
                         </div>
-                        <div class="cart_item_delete">
-                            <i class="far fa-trash-alt"></i>
+                        
+
+                    </div>
+
+
+                    <div class="checkout_total_count">
+                        <div class="total_sum">
+                            <p>小計</p>
+                            <p>2,800,00</p>
+                        </div>
+                        <div class="total_fee">
+                            <p>運費<i class="fas fa-exclamation-circle"></i></p>
+                            <p>150</p>
                         </div>
                     </div>
 
+                    <div class="checkout_sum">
+                        <div class="total_money">
+                            <p>合計</p>
+                            <p>2,801,50</p>
+                        </div>
+                    </div>
+
+                    
+
                 </div>
+
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- 購物車運送、總計 -->
-<section class="Cart_fee">
-    <div class="container  ">
-        <div class="row cart_fee_warp  ">
-            <!-- 運送試算 -->
-            <div class="cart_fee_type_warp col-lg-6 col-md-12 col-11 p-0">
-                <div class="cart_fee_type_title col-lg-12 m-0 p-0">
-                    <h1>運費試算</h1>
+            <!-- 選擇送貨及付款方式 -->
+            <div class="checkout_final_wrap col-lg-6 col-md-12 col-11 p-0">
+                
+                <div class="checkout_final_title col-lg-12 m-0 p-0">
+                    <h1>選擇送貨及付款方式</h1>
                 </div>
-                <div class="cart_fee_type_content">
-                    <div class="cart_member">
-                        <div class="cart_login_warp d-flex">
+                <div class="checkout_final_content">
+                    <div class="checkout_member">
+                        <div class="checkout_login_warp d-flex">
                             <p>已是會員？ <span>登入以管理訂單</span>/ <span>快速結帳</span></p>
                             <p>註冊會員</p>
                         </div>
-                        <div class="cart_login_btn_warp">
-                            <div class="cart_login_btn fb_login_btn">
+                        <div class="checkout_login_btn_warp">
+                            <div class="checkout_login_btn fb_login_btn">
                                 <div class="login_btn_icon fb_login_icon">
                                     <i class="fab fa-facebook-f"></i>
                                 </div>
@@ -341,7 +283,7 @@
                                     FB 登入
                                 </div>
                             </div>
-                            <div class="cart_login_btn line_login_btn">
+                            <div class="checkout_login_btn line_login_btn">
                                 <div class="login_btn_icon line_login_icon">
                                    <img src="../img/line.svg" alt="">
                                 </div>
@@ -350,8 +292,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="cart_login_btn_warp">
-                            <div class="cart_login_btn google_login_btn">
+                        <div class="checkout_login_btn_warp">
+                            <div class="checkout_login_btn google_login_btn">
                                 <div class="login_btn_icon google_login_icon">
                                     <i class="fab fa-google-plus"></i>
                                 </div>
@@ -359,7 +301,7 @@
                                     Google 登入
                                 </div>
                             </div>
-                            <div class="cart_login_btn mail_login_btn">
+                            <div class="checkout_login_btn mail_login_btn">
                                 <div class="login_btn_icon mail_login_icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>
@@ -370,172 +312,128 @@
                         </div>
                         
                     </div>
-                    <div class="cart_fee_type_select">
-                        <div class="cart_fee_address">
-                            <p>送貨地址</p>
-                            <select class="fee_addres">
-                                <option value="">請選擇送貨地址</option>
-                                <option value="台灣本地" selected>台灣本地</option>
-                                <option value="海外運送">海外運送</option>
-                            </select>
-                        </div>
-                        <div class="cart_fee_type">
+
+                    <div class="checkout_detail">
+                        
+                        <div class="cargo_type">
                             <p>取貨方式</p>
-                            
-                            <div class="fee_type_input">
-                                <input type="radio" name="fee_type" value="freez" id="freez">
+                            <div class="cargo_type_input">
+                                <input type="radio" name="cargo_type" value="freez" id="freez">
                                 <label for="freez">冷凍宅配</label>
                             </div>
-                            <div class="fee_type_input">
-                                <input type="radio" name="fee_type" value="self_take" id="self_take">
+                            <div class="cargo_type_input">
+                                <input type="radio" name="cargo_type" value="self_take" id="self_take">
                                 <label for="self_take">自取</label>
                             </div>
-                            <div class="fee_type_input">
-                                <input type="radio" name="fee_type" value="convine" id="convine">
-                                <label for="convine">超商取貨</label>
+                        </div>
+
+                        <div class="checkout_address">
+                            <p>送貨地址</p>
+
+                            <div class="address_top_warp">
+                                <select class="address_top">
+                                    <option value="">請選擇送貨地址</option>
+                                    <option value="台灣本地" selected>台灣本地</option>
+                                    <option value="海外運送">海外運送</option>
+                                </select>
+                                <select class="address_top">
+                                    <option value="">請選擇送貨城市</option>
+                                    <option value="台北市" selected>台北市</option>
+                                    <option value="台中市">台中市</option>
+                                    <option value="台南市">台南市</option>
+                                    <option value="高雄市">高雄市</option>
+                                </select>
+                                <select class="address_top">
+                                    <option value="">請選擇送貨區域</option>
+                                    <option value="大安區" selected>大安區</option>
+                                    <option value="信義區">信義區</option>
+                                    <option value="內湖區">內湖區</option>
+                                    <option value="士林區">士林區</option>
+                                    <option value="南港區">南港區</option>
+                                </select>
+                            </div>
+                            <div class="address_down">
+                                <input type="text" placeholder="詳細地址">
+                            </div>
+                            
+                           
+                        </div>
+
+                        <div class="checkout_arrive">
+                            <p>希望到貨日期</p>
+                            <div class="arrive_date_warp">
+                                <div class="arrive_time">
+                                    <input id="arrive_date" type="date" value="2021-07-22">
+                                    
+                                </div>
+                                <div class="arrive_time">
+                                    <input type="time" id="arrive_time" name="appt"
+                                    min="09:00" max="18:00">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkout_username">
+                            <p>購買資料</p>
+                            <div class="user_name">
+                                <input type="text" placeholder="取貨人姓名">
+                            </div>
+                            <div class="user_phone">
+                                <input type="text" placeholder="取貨人電話">
+                            </div>
+                            
+
+                        </div>
+
+                        <div class="checkout_payment">
+                            <p>付款方式</p>
+
+                            <div class="checkout_payment_type">
+                                <input type="radio" name="payment_type" value="credit_card" id="credit_card">
+                                <label for="credit_card">信用卡</label>
+                            </div>
+                            <div class="checkout_payment_type">
+                                <input type="radio" name="payment_type" value="self_arrive" id="self_arrive">
+                                <label for="self_arrive">貨到付款</label>
+                            </div>
+                            <div class="checkout_payment_type">
+                                <input type="radio" name="payment_type" value="atm" id="atm">
+                                <label for="atm">ATM轉帳</label>
+                            </div>
+                            <div class="checkout_payment_type">
+                                <input type="radio" name="payment_type" value="store" id="store">
+                                <label for="store">超商代繳</label>
+                            </div>
+                            <div class="checkout_payment_type">
+                                <input type="radio" name="payment_type" value="Line_pay" id="Line_pay">
+                                <label for="Line_pay">
+                                    <img src="../img/line_pay.png" alt="">
+                                </label>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-
-
-
-            </div>
-            <!-- 購物車總計 -->
-            <div class="cart_fee_total_warp col-lg-5 col-md-12 col-11   p-0">
-                <div class="cart_fee_total_title col-lg-12 m-0 p-0">
-                    <h1>購物車總計</h1>
-                </div>
-                <div class="cart_fee_total_content">
-                
-                    <div class="cart_fee_total_count">
-                        <div class="total_sum">
-                            <p>小計</p>
-                            <p>2,800,00</p>
-                        </div>
-                        <div class="total_fee">
-                            <p>運費<i class="fas fa-exclamation-circle"></i></p>
-                            <p>150</p>
-                        </div>
-                    </div>
-                    <div class="cart_fee_checkout">
-                        <div class="total_money">
-                            <p>合計</p>
-                            <p>2,801,50</p>
+                        <div class="checkout_other">
+                            <p>其他備註</p>
+                            <textarea id="checkout_other_text" name="other_text" rows="4" cols="50">
+                               
+                             </textarea>
                         </div>
 
-                        <button class="cart_checkout_btn">
-                            <a href="../html/checkout.html">
-                                <i class="fas fa-cash-register"></i>
-                                前往結賬
-                            </a>
-
+                        <button class="final_checkout_btn">
+                            <i class="fas fa-cash-register"></i>
+                            送出訂單
                         </button>
-                    </div>
 
-                   
+                    </div>
                 </div>
 
             </div>
+
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
-<!-- 相關商品推薦 -->
-<section class="Other_Product_Items"> 
-    <div class="container">
-        <div class="row">
-
-            <div class="Other_Product_Items_title">
-                <h1>相關商品推薦</h1>
-            </div>
-        
-
-        </div>
-
-        <div class="row Other_Product_items_warp d-flex ">
-                
-            <div class="item item01 p-0  col-lg-3 col-md-4 col-6">
-                <div class="item_intro ">
-                    <div class="add_btn">
-                        <i class="fas fa-cart-plus"></i>
-                    </div>
-                    <div class="item_pic">
-                        <img src="../img/item01.jpg" alt="">
-                    </div> 
-                    <div class="item_title">
-                        <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
-                    </div>    
-                </div>
-                <div class="item_detail">
-                        <p>NT 688 / 公斤</p>
-                </div> 
-            </div>
-            <div class="item item02 p-0  col-lg-3 col-md-4 col-6">
-                <div class="item_intro ">
-                    <div class="add_btn">
-                        <i class="fas fa-cart-plus"></i>
-                    </div>
-                    <div class="item_pic">
-                        <img src="../img/item02.jpg" alt="">
-                    </div> 
-                    <div class="item_title">
-                        <h3>真空三去近海黃雞魚</h3>
-                    </div>    
-                </div>
-                <div class="item_detail">
-                        <p>NT 700 / 公斤</p>
-                </div> 
-            </div>
-            <div class="item item03 p-0  col-lg-3 col-md-4 col-6">
-                <div class="item_intro ">
-                    <div class="add_btn">
-                        <i class="fas fa-cart-plus"></i>
-                    </div>
-                    <div class="item_pic">
-                        <img src="../img/item03.jpg" alt="">
-                    </div> 
-                    <div class="item_title">
-                        <h3>真空三去深海金目鯛 (紅皮刀)</h3>
-                    </div>    
-                </div>
-                <div class="item_detail">
-                        <p style="color: rgba(0, 0, 0, 0.6)
-                        ;">已售完</p>
-                </div> 
-            </div>
-            <div class="item item04 p-0  col-lg-3 col-md-4 col-6">
-                <div class="item_intro ">
-                    <div class="add_btn">
-                        <i class="fas fa-cart-plus"></i>
-                    </div>
-                    <div class="item_pic">
-                        <img src="../img/item04.jpg" alt="">
-                    </div> 
-                    <div class="item_title">
-                        <h3>真空三去深海大目鰱</h3>
-                    </div>    
-                </div>
-                <div class="item_detail">
-                        <p>NT 1400 / 公斤</p>
-                </div> 
-            </div>
-        
-
-            </div>
-    </div>
-
-
-</section> 
-
-
 
 
 
@@ -598,14 +496,6 @@
 
 
 </div>
-
-
-
-
-
-
-
-
 
 
 
