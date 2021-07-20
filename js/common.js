@@ -66,8 +66,26 @@ $(document).ready(function () {
 
     }
 
+    // Q&A
+    if ($(window).width() <  992){
 
+        $('.question_icon').click(function(){
+            
+            $( this ).toggleClass( 'minus' );
+            $( this ).parent().parent('.question').toggleClass( 'answer_open_RWD' );
+        })
 
+    }
+
+ 
+    if ($(window).width() >= 992){
+
+        $('.question_icon').click(function(){
+            
+            $( this ).toggleClass( 'minus' );
+            $( this ).parent().parent('.question').toggleClass( 'answer_open' );
+        })
+    }
 
 
 })

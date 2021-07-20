@@ -108,6 +108,26 @@ select {
     color: var(--light_blue);
 }
 
+.minus {
+    transform: rotate(-90deg);
+    transition: transform ease 400ms;
+  }
+
+.minus::after {
+    transform: rotate(-90deg);
+}
+
+.answer_open{
+    transition: 0.8s;
+    height: 320px; 
+}
+
+
+.answer_open_RWD{
+    transition: 0.8s;
+    height: 450px; 
+}
+
 
 /* ///////更多按鈕///////// */
 
