@@ -41,6 +41,9 @@
 
 }
 
+.navbar_icon_warp{
+    transform: translateY(3.5px);
+}
 .navbar_items .fa-user-circle {
     cursor: pointer;
     margin-right: 20px;
@@ -55,7 +58,7 @@
 .navbar_items .navbar_icon_shoplist{
     color:black;
     cursor: pointer;
-    font-size: 3.2rem;
+    font-size: 3.3rem;
 
    
 }
