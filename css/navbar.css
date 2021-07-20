@@ -83,6 +83,7 @@
     left: -200px;
     opacity: 0.9;
     background-color: white;
+    transition: 0.8s;
    
     
     
@@ -256,6 +257,7 @@
     right: 0px;
     background-color: white;
     padding: 50px 20px 0px 20px; 
+    transition: 0.8s;
    
 
 }
