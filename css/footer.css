@@ -1,0 +1,179 @@
+/* /////footer///// */
+.footer{
+    background-color: var(--dark_blue);
+}
+
+.footer_warp{
+    padding-top: 100px;
+}
+
+.footer_parts{
+    
+    height: 400px;
+}
+
+
+.footer_parts .logo_w{
+    width: 200px;
+}
+
+.footer_social_btn_warp{
+    margin: 40px 0 0 0;
+    width: 65%;
+    justify-content: space-evenly;
+}
+.footer_social_btn{
+    cursor: pointer;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+.footer_fb_btn .fa-facebook-f{
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.footer_line_btn img{
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.footer_yt_btn .fa-youtube{
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.footer_parts h5{
+
+
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  color: #ffffff;
+
+}
+
+.footer_parts p{
+
+    font-size: 1.6rem;
+    font-weight: 350;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    color: #ffffff;
+  
+
+}
+
+@media (max-width: 480px) {
+
+    .footer_warp{
+        padding-top: 30px;
+    }
+
+
+    .footer_parts{
+        /* margin-top: 100px; */
+        height: 250px;
+       
+    }
+    
+    
+    .footer_parts .logo_w{
+        margin: 40px auto 0 auto;
+        width: 150px;
+    }
+    
+    .footer_social_btn_warp{
+        margin: 40px auto 0 auto;
+        width: 90%;
+        justify-content: space-evenly;
+    }
+    .footer_social_btn{
+        cursor: pointer;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 100%;
+    }
+    
+    .footer_fb_btn .fa-facebook-f{
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .footer_line_btn img{
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .footer_yt_btn .fa-youtube{
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    
+    }
+    
+    .footer_parts h5{
+    
+    
+      font-size: 2rem;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.8;
+      letter-spacing: normal;
+      color: #ffffff;
+    
+    }
+    
+    .footer_parts p{
+    
+        font-size: 1.4rem;
+        font-weight: 350;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.88;
+        letter-spacing: normal;
+        color: #ffffff;
+      
+    
+    }
+    
+   
+    .part3{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+}
