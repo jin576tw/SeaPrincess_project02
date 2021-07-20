@@ -109,12 +109,15 @@ select {
 }
 
 .minus {
+   
     transform: rotate(-90deg);
     transition: transform ease 400ms;
-  }
+}
 
 .minus::after {
-    transform: rotate(-90deg);
+
+    transform: rotate(-90deg) ;
+    transition: transform ease 400ms;
 }
 
 .answer_open{
