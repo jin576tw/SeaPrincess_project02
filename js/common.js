@@ -28,45 +28,50 @@ $(".add_btn").on({
         let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,count:1}]
         //商品名稱、商品圖片、商品價格、商品ID、商品數量
 
-        let test
+       
+
+        console.log(`${arr[0].Item_title}`)
 
 
-        // let Cart_list_item = `
-        //             <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
-        //                 <div class="list_item_pic">
-        //                     <img src="${cookieArr[i].Item_pic}" alt="">
-        //                 </div>
+        let Cart_list_item = `
+                    <div class="Cart_list_item " Item-ID= "${arr[0].pid}">
+                        <div class="list_item_pic">
+                            <img src="${arr[0].Item_pic}" alt="">
+                        </div>
             
-        //                 <div class="list_item_intro">
-        //                     <div class="list_item_title">
-        //                         <h1>${cookieArr[i].Item_title}</h1>
-        //                 </div>
+                        <div class="list_item_intro">
+                            <div class="list_item_title">
+                                <h1>${arr[0].Item_title}</h1>
+                        </div>
             
             
-        //                 <div class="list_intro_count d-flex">
+                        <div class="list_intro_count d-flex">
             
-        //                     <div class="list_countBtn_warp d-flex">
-        //                         <div class="countBtn countBtn_add">
-        //                             <i class="fas fa-plus"></i>
-        //                         </div>
-        //                         <div class="list_count">${cookieArr[i].count}</div>
-        //                         <div class="countBtn countBtn_minus">
-        //                             <i class="fas fa-minus"></i>
-        //                         </div>
-        //                     </div>
-        //                     <div class="list_intro_price">
-        //                         <p>${cookieArr[i].Item_price}</p>
-        //                     </div>
-        //                         <i class="far fa-trash-alt"></i>
-        //                     </div>
-        //                 </div>
-        //             </div> `
+                            <div class="list_countBtn_warp d-flex">
+                                <div class="countBtn countBtn_add">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="list_count">${arr[0].count}</div>
+                                <div class="countBtn countBtn_minus">
+                                    <i class="fas fa-minus"></i>
+                                </div>
+                            </div>
+                            <div class="list_intro_price">
+                                <p>${arr[0].Item_price}</p>
+                            </div>
+                                <i class="far fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div> `
 
 
         if($.cookie('Cart') == null ){
 
             // 第一次加入
             $.cookie('Cart',JSON.stringify(arr),{expire : 1})
+            $('.list_item_warps').append(Cart_list_item)
+
+
 
         }else{
 
@@ -131,69 +136,62 @@ $(".add_btn").on({
 
 
 
-        let cookieStr = $.cookie('Cart');
-        let cookieArr = JSON.parse(cookieStr);
-        console.log(cookieArr);
+        // let cookieStr = $.cookie('Cart');
+        // let cookieArr = JSON.parse(cookieStr);
+        // console.log(cookieArr);
         
     
-        for(let i = 0 ; i < cookieArr.length;i++){
+        // for(let i = 0 ; i < cookieArr.length;i++){
 
-            let same = false //假設沒有添加過商品 
+        //     let same = false //假設沒有添加過商品 
 
-            // 通過迴圈判斷是否符合重復,若有，增加數量
+        //     // 通過迴圈判斷是否符合重復,若有，增加數量
            
-                if(itemID == cookieArr[i].pid){
-                    same = true;
-                    cookieArr[i].count++;
-                    break;
+        //         if(itemID == cookieArr[i].pid){
+        //             same = true;
+        //             cookieArr[i].count++;
+        //             break;
 
-                }else{
-                    let Cart_list_item = `
-                    <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
-                        <div class="list_item_pic">
-                            <img src="${cookieArr[i].Item_pic}" alt="">
-                        </div>
+        //         }else{
+        //             let Cart_list_item = `
+        //             <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
+        //                 <div class="list_item_pic">
+        //                     <img src="${cookieArr[i].Item_pic}" alt="">
+        //                 </div>
             
-                        <div class="list_item_intro">
-                            <div class="list_item_title">
-                                <h1>${cookieArr[i].Item_title}</h1>
-                        </div>
+        //                 <div class="list_item_intro">
+        //                     <div class="list_item_title">
+        //                         <h1>${cookieArr[i].Item_title}</h1>
+        //                 </div>
             
             
-                        <div class="list_intro_count d-flex">
+        //                 <div class="list_intro_count d-flex">
             
-                            <div class="list_countBtn_warp d-flex">
-                                <div class="countBtn countBtn_add">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                                <div class="list_count">${cookieArr[i].count}</div>
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
-                            </div>
-                            <div class="list_intro_price">
-                                <p>${cookieArr[i].Item_price}</p>
-                            </div>
-                                <i class="far fa-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div> `
+        //                     <div class="list_countBtn_warp d-flex">
+        //                         <div class="countBtn countBtn_add">
+        //                             <i class="fas fa-plus"></i>
+        //                         </div>
+        //                         <div class="list_count">${cookieArr[i].count}</div>
+        //                         <div class="countBtn countBtn_minus">
+        //                             <i class="fas fa-minus"></i>
+        //                         </div>
+        //                     </div>
+        //                     <div class="list_intro_price">
+        //                         <p>${cookieArr[i].Item_price}</p>
+        //                     </div>
+        //                         <i class="far fa-trash-alt"></i>
+        //                     </div>
+        //                 </div>
+        //             </div> `
         
                    
         
-                    $('.list_item_warps').append(Cart_list_item);
+        //             $('.list_item_warps').append(Cart_list_item);
 
-                }
-
-            
-
-            
+        //         }
 
 
-
-           
-
-        }
+        // }
        
 
 
