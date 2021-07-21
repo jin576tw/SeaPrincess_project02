@@ -817,11 +817,27 @@
     line-height: normal;
     letter-spacing: normal;
     
-    color: #000000;
   
   }
+
+.item_detail p:nth-of-type(1){
+    color: #000000;
+}
+.item_detail p:nth-of-type(1)::before{
+    content: 'NT ';
+}
+
+.item_detail p:nth-of-type(1)::after{
+   
+    content: ' / 公斤';
+}
+
+.sold{
+    color: rgba(0, 0, 0, 0.6)
+    
+}
   
- 
+
 .view_more_btn{
     cursor: pointer;
     margin: 60px auto 0 auto;

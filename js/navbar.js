@@ -1,11 +1,54 @@
 $(document).ready(function () {
 
-    /* ///////導覽列////////// */
+ /* ///////導覽列////////// */
+
+ 
+
+        //navbar購物車數量
+        if($.cookie("Cart") == null){
+
+            $('.navbar_shoplist_count').css('display','none')
+            $('.Cart_list_total').css('display','none')
+            $('.list_item_empty').css('display','flex')
+        
+        }else{
+
+            $('.list_item_empty').css('display','none');
+            $('.Cart_list_total').css('display','block');
+            
+            let cookieStr = $.cookie('Cart');
+            let cookieArr = JSON.parse(cookieStr);
+            let sum = 0;
+
+
+            for(let i = 0 ; i < cookieArr.length;i++){
+                sum += cookieArr[i].count;
+            }
+
+            $('.navbar_shoplist_count').text(sum)
+                
+
+        
+        }
+
+        
+
+
+   
+        
+
+        
+      
+        
+
+       
+
     
         //手機版navbar
         $('.navbar_RWD_icon').click(function(){
             
             $('.navbar_RWD_items').toggleClass('RWD_open');
+            
     
         });
     
@@ -13,7 +56,7 @@ $(document).ready(function () {
         $(window).scroll(function () {
     
         let scrollNow = $(window).scrollTop();
-        console.log('scrollTop', scrollNow);
+        // console.log('scrollTop', scrollNow);
     
     
         if ($(window).width() <  992){

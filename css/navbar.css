@@ -42,29 +42,47 @@
 }
 
 .navbar_icon_warp{
-    transform: translateY(3.5px);
+    display: flex;
+    align-items: center;
+    transform: translateY(1.5px);
 }
-.navbar_items .fa-user-circle {
+.navbar_icon_member {
     cursor: pointer;
     margin-right: 20px;
     font-size: 3.2rem;
 
 }
-.navbar_items .fa-user-circle:hover{
+.navbar_icon_member:hover{
     transition: 0.5s;
     color: var(--light_blue);
 
 }
-.navbar_items .navbar_icon_shoplist{
+.navbar_icon_shoplist{
     color:black;
     cursor: pointer;
     font-size: 3.3rem;
+    position: relative;
 
-   
 }
-.navbar_items .navbar_icon_shoplist:hover{
+.navbar_icon_shoplist:hover{
     transition: 0.5s;
     color: var(--light_blue);
+
+}
+
+.navbar_shoplist_count{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    top:0px;
+    right: -15px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: #f5a623;
 
 }
 
@@ -148,14 +166,14 @@
    
    }
 
-    .navbar_items .fa-user-circle {
+    .navbar_icon_member  {
         cursor: pointer;
-        margin-right:5px;
+        margin-right:15px;
         font-size: 2.8rem;
     
     }
 
-    .navbar_items .fa-shopping-basket{
+    .navbar_icon_shoplist{
         cursor: pointer;
         font-size: 2.8rem;
     
@@ -209,14 +227,14 @@
    
    }
 
-    .navbar_items .fa-user-circle {
+    .navbar_icon_member {
         cursor: pointer;
-        margin-right:5px;
+        margin-right:8px;
         font-size: 2.8rem;
     
     }
 
-    .navbar_items .fa-shopping-basket{
+    .navbar_icon_shoplist{
         cursor: pointer;
         font-size: 2.8rem;
     
@@ -226,6 +244,21 @@
         display: block;
    
     }
+
+    .navbar_shoplist_count{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: white;
+        top:0px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: #f5a623;
+    }    
 
 }
 
@@ -271,7 +304,7 @@
 .Cart_list_warp{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     width: 100%;
@@ -289,9 +322,24 @@
 }
 
 .list_item_warps{
+    background-color: cyan;
+    overflow: auto;
+    height: 70%;
     width: 100%;
 }
 
+
+.list_item_empty{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 2rem;
+
+}
 .Cart_list_item{
     margin-top: 20px;
     display: flex;
@@ -387,7 +435,7 @@
     letter-spacing: normal;
 }
 .list_intro_price p::before{
-    content: 'NT';
+    content: 'NT ';
    
 }
 
@@ -404,9 +452,15 @@
 
 }
 
+.Cart_list_total{
+    border-top: 2px solid black;
+    
+    width: 100%;
+   
+}
 
 .Cart_list_total p{
-    margin-top: 30px;
+    margin-top: 8px;
     font-size: 2rem;
     font-weight: 500;
     font-stretch: normal;
@@ -423,7 +477,8 @@
 
 
 .checkout_btn{
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
+    margin-top: 60px;
     width: 80%;
     height: 50px;
     background-color: var(--dark_blue);
@@ -492,7 +547,7 @@
         top: 0px;
         right: 0px;
         background-color: white;
-        padding: 0px 10px 0px 10px; 
+        padding: 20px 10px 0px 10px; 
         
     
     }
@@ -504,15 +559,21 @@
     
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: 100vh; 
        
     }
 
+    .list_item_warps{
+        
+        height: 58%;
+        width: 100%;
+    }
     
+   
     .list_item_pic{
         overflow: hidden;
         width: 100px;
@@ -543,7 +604,7 @@
 
     .list_intro_count .fa-trash-alt{
         position: absolute;
-      bottom: 0;
+        bottom: 0;
         right: 0;
         cursor: pointer;
         font-size: 18px;
@@ -552,7 +613,7 @@
     }
 
     .checkout_btn{
-        margin-bottom: 0px;
+        margin-top: 60px;
       
     }
 
