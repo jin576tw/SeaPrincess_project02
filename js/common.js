@@ -26,6 +26,9 @@ $(".add_btn").on({
         let itemID = $(this).parent().parent().attr('Item-ID')
 
 
+        
+
+
         let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,count:1}]
         //商品名稱、商品圖片、商品價格、商品ID、商品數量初始值
 
@@ -48,6 +51,8 @@ $(".add_btn").on({
 
             let same = false //假設沒有添加過商品 
 
+
+            
             // 通過迴圈判斷是否符合重復
             // 若有，增加數量
             for(let i =0 ; i < cookieArr.length; i++){
@@ -56,7 +61,7 @@ $(".add_btn").on({
                     cookieArr[i].count++;
                     break;
 
-                   
+                
                 }
 
             }
@@ -65,10 +70,17 @@ $(".add_btn").on({
                 cookieArr.push({Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,count:1})
             }
 
-            // 將數據存回cookie 
+
             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+
         }   
 
+       
+
+        
+
+       
 
         //navbar購物車
         if($.cookie("Cart") == null){

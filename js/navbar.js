@@ -36,6 +36,8 @@ $(document).ready(function () {
 
                 for(let i = 0 ; i < cookieArr.length ; i++){
 
+                        let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Item_price);
+
                         let Cart_list_item = `
                         <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
                             <div class="list_item_pic">
@@ -60,7 +62,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="list_intro_price">
-                                    <p>${cookieArr[i].Item_price}</p>
+                                    <p>${nowprice}</p>
                                 </div>
                                     <i class="far fa-trash-alt"></i>
                                 </div>
@@ -91,7 +93,11 @@ $(document).ready(function () {
                 let cookieStr = $.cookie('Cart');
                 let cookieArr = JSON.parse(cookieStr);
 
+               
+                
                 for(let i = 0 ; i < cookieArr.length ; i++){
+
+                    let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Item_price);
 
                     let Cart_list_item = `
                         <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
@@ -117,7 +123,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="list_intro_price">
-                                    <p>${cookieArr[i].Item_price}</p>
+                                    <p>${nowprice}</p>
                                 </div>
                                     <i class="far fa-trash-alt"></i>
                                 </div>
@@ -127,6 +133,17 @@ $(document).ready(function () {
                         $('.list_item_warps').append(Cart_list_item);
     
                      }
+
+
+                //商品價格
+                let itemPrice = $(this).parent().next().children('p:nth-of-type(1)').text()
+
+
+              
+
+                
+
+                
             
             
             }

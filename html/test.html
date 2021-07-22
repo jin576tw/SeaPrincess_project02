@@ -37,9 +37,7 @@
 </head>
 <body>
 
-    <!-- 導覽列 -->
-    <section id="navbar"></section>
-
+ 
 
     <div class="content">
 
@@ -64,7 +62,7 @@
 <!-- cookie -->
 <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <!-- js -->
-<script src="../js/common.js"></script>
+<!-- <script src="../js/common.js"></script> -->
 
 <script>
     $('#navbar').load('navbar.html')
@@ -72,23 +70,37 @@
 
 
 
-   let cat = [{name:'花花 ',type:'三花'},{name:'毛毛', type:'戴帽' }]
+   let cat = [{name:'花花 ',type:'三花',qty:4,price:200,total_price:0},{name:'毛毛', type:'戴帽',qty:8,price:200,total_price:0}]
 
    function addcart(){
 
     $.cookie('animal',JSON.stringify(cat));
 
-    let CAT = $.cookie('animal')
+    let carstr = $.cookie('animal')
     
-    let ATRcat =JSON.parse(CAT)
+    let catarr =JSON.parse(carstr)
 
-    console.log(cat.pop().name)
+   let sum =0 ;
+    // console.log(catarr[1].name)
+
+    for(let i = 0; i < catarr.length ;i++){
+
+        catarr[i].total_price = catarr[i].qty * catarr[i].price ;
+
+        sum += catarr[i].total_price 
+        
+        console.log(`貓價值:${catarr[i].total_price}`)
+       
+       
+    }
+   
+
+    console.log(`全部貓咪價錢:`+sum)
 
 
-    // for(let i = 0; i<=1 ;i++){
-    //     console.log(`貓名:${ATRcat[i].name}`)
-    //     console.log(`貓名:${ATRcat[i].type}`)
-    // }
+  
+
+    
   
 
    }
