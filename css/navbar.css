@@ -322,7 +322,7 @@
 }
 
 .list_item_warps{
-    background-color: cyan;
+  
     overflow: auto;
     height: 70%;
     width: 100%;
