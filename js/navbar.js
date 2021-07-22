@@ -1,15 +1,17 @@
 $(document).ready(function () {
 
  /* ///////導覽列////////// */
+       
 
- 
-
-        //navbar購物車數量
+        //navbar購物車
         if($.cookie("Cart") == null){
 
+            //cookie若無資料，顯是購物車為空
             $('.navbar_shoplist_count').css('display','none')
             $('.Cart_list_total').css('display','none')
             $('.list_item_empty').css('display','flex')
+
+
         
         }else{
 
@@ -25,16 +27,116 @@ $(document).ready(function () {
                 sum += cookieArr[i].count;
             }
 
-            $('.navbar_shoplist_count').text(sum)
+            $('.navbar_shoplist_count').text(sum)//購物車數量
+
+
+
+            // 載入cookie中的商品
+            if(cookieStr){
+
+                for(let i = 0 ; i < cookieArr.length ; i++){
+
+                        let Cart_list_item = `
+                        <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
+                            <div class="list_item_pic">
+                                <img src="${cookieArr[i].Item_pic}" alt="">
+                            </div>
                 
+                            <div class="list_item_intro">
+                                <div class="list_item_title">
+                                    <h1>${cookieArr[i].Item_title}</h1>
+                            </div>
+                
+                
+                            <div class="list_intro_count d-flex">
+                
+                                <div class="list_countBtn_warp d-flex">
+                                    <div class="countBtn countBtn_add">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="list_count">${cookieArr[i].count}</div>
+                                    <div class="countBtn countBtn_minus">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                </div>
+                                <div class="list_intro_price">
+                                    <p>${cookieArr[i].Item_price}</p>
+                                </div>
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                        </div> `
+    
+    
+                        
+                        $('.list_item_warps').append(Cart_list_item);
+            
+                }
+
+            }
 
         
         }
 
+
+        //加入購物車
+        $(".add_btn").on({
+
+
+            click: function(){
+
+                $('.list_item_warps').empty();//清空新加入商品
+
+            
+                let cookieStr = $.cookie('Cart');
+                let cookieArr = JSON.parse(cookieStr);
+
+                for(let i = 0 ; i < cookieArr.length ; i++){
+
+                    let Cart_list_item = `
+                        <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
+                            <div class="list_item_pic">
+                                <img src="${cookieArr[i].Item_pic}" alt="">
+                            </div>
+                
+                            <div class="list_item_intro">
+                                <div class="list_item_title">
+                                    <h1>${cookieArr[i].Item_title}</h1>
+                            </div>
+                
+                
+                            <div class="list_intro_count d-flex">
+                
+                                <div class="list_countBtn_warp d-flex">
+                                    <div class="countBtn countBtn_add">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="list_count">${cookieArr[i].count}</div>
+                                    <div class="countBtn countBtn_minus">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                </div>
+                                <div class="list_intro_price">
+                                    <p>${cookieArr[i].Item_price}</p>
+                                </div>
+                                    <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                        </div> `;
+
+                        $('.list_item_warps').append(Cart_list_item);
+    
+                     }
+            
+            
+            }
+
+
+        });
         
-
-
    
+
+         
         
 
         
@@ -113,6 +215,8 @@ $(document).ready(function () {
             $('.navbar_icon_shoplist').click(function(){
                 
                 $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
+
+                
     
             })
         }
@@ -127,26 +231,28 @@ $(document).ready(function () {
                 $('.Cart_list').fadeIn(100);
                 $('.Cart_list_bar').css('transform','translateX(0px)').css('transition','0.5s')
                 
-                
+
             })
     
             $('.cancle_btn').click(function(){
-    
-                $('.Cart_list').fadeOut(100);
-                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
-    
-            })
-            $('.Cart_bg').click(function(){
+                
     
                 $('.Cart_list').fadeOut(100);
                 $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
                 
     
             })
+            $('.Cart_bg').click(function(){
+               
     
-            
+                $('.Cart_list').fadeOut(100);
+                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
+              
+                
     
+            })
     
+   
     
         }
 })

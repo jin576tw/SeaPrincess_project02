@@ -685,7 +685,7 @@
 /* /////最新漁貨////// */
 
 .item_tittle{
-    opacity: 0;
+    /* opacity: 0; */
   
    text-align: center;
    margin: 80px auto 0 auto;
@@ -695,7 +695,7 @@
 
 @media (max-width: 992px) {
     .item_tittle{
-        opacity: 0;
+       
        text-align: center;
        margin: 80px auto 15px auto;
     
@@ -727,7 +727,7 @@
 }
 
 .items_warp{
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateY(20px);
 }
 

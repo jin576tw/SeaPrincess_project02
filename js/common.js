@@ -6,6 +6,8 @@ $(".add_btn").on({
 
     click: function(){
 
+        
+
         // 顯示navbar數量 
         $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
 
@@ -24,69 +26,37 @@ $(".add_btn").on({
         let itemID = $(this).parent().parent().attr('Item-ID')
 
 
-
         let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,count:1}]
-        //商品名稱、商品圖片、商品價格、商品ID、商品數量
+        //商品名稱、商品圖片、商品價格、商品ID、商品數量初始值
 
        
 
-        console.log(`${arr[0].Item_title}`)
-
-
-        let Cart_list_item = `
-                    <div class="Cart_list_item " Item-ID= "${arr[0].pid}">
-                        <div class="list_item_pic">
-                            <img src="${arr[0].Item_pic}" alt="">
-                        </div>
-            
-                        <div class="list_item_intro">
-                            <div class="list_item_title">
-                                <h1>${arr[0].Item_title}</h1>
-                        </div>
-            
-            
-                        <div class="list_intro_count d-flex">
-            
-                            <div class="list_countBtn_warp d-flex">
-                                <div class="countBtn countBtn_add">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                                <div class="list_count">${arr[0].count}</div>
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
-                            </div>
-                            <div class="list_intro_price">
-                                <p>${arr[0].Item_price}</p>
-                            </div>
-                                <i class="far fa-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div> `
-
-
+        //寫入cookie
         if($.cookie('Cart') == null ){
 
             // 第一次加入
             $.cookie('Cart',JSON.stringify(arr),{expire : 1})
-            $('.list_item_warps').append(Cart_list_item)
-
-
 
         }else{
 
-            // 若不是第一次加入
+            // 抓cookie購物車資料
             let cookieStr = $.cookie('Cart')
+
+
+            // 若不是第一次加入
             let cookieArr = JSON.parse(cookieStr);//先轉成物件
 
             let same = false //假設沒有添加過商品 
 
-            // 通過迴圈判斷是否符合重復,若有，增加數量
+            // 通過迴圈判斷是否符合重復
+            // 若有，增加數量
             for(let i =0 ; i < cookieArr.length; i++){
                 if(itemID == cookieArr[i].pid){
                     same = true;
                     cookieArr[i].count++;
                     break;
+
+                   
                 }
 
             }
@@ -97,25 +67,25 @@ $(".add_btn").on({
 
             // 將數據存回cookie 
             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-
-
         }   
 
 
-
-        //navbar購物車數量
+        //navbar購物車
         if($.cookie("Cart") == null){
 
-            $('.navbar_shoplist_count').css('display','none');
-            $('.Cart_list_total').css('display','none');
-            $('.list_item_empty').css('display','flex');
-            
-        
+            //cookie若無資料，顯是購物車為空
+            $('.navbar_shoplist_count').css('display','none')
+            $('.Cart_list_total').css('display','none')
+            $('.list_item_empty').css('display','flex')
+
+
+
         }else{
 
-            $('.list_item_empty').css('display','none')
+            $('.list_item_empty').css('display','none');
             $('.Cart_list_total').css('display','block');
             
+             // 抓cookie購物車資料
             let cookieStr = $.cookie('Cart');
             let cookieArr = JSON.parse(cookieStr);
             let sum = 0;
@@ -123,85 +93,22 @@ $(".add_btn").on({
 
             for(let i = 0 ; i < cookieArr.length;i++){
                 sum += cookieArr[i].count;
-                $('.list_count').text(cookieArr[i].count)
             }
 
             $('.navbar_shoplist_count').text(sum)
-           
-                
 
-        
+
         }
 
-
-
-
-        // let cookieStr = $.cookie('Cart');
-        // let cookieArr = JSON.parse(cookieStr);
-        // console.log(cookieArr);
-        
     
-        // for(let i = 0 ; i < cookieArr.length;i++){
-
-        //     let same = false //假設沒有添加過商品 
-
-        //     // 通過迴圈判斷是否符合重復,若有，增加數量
-           
-        //         if(itemID == cookieArr[i].pid){
-        //             same = true;
-        //             cookieArr[i].count++;
-        //             break;
-
-        //         }else{
-        //             let Cart_list_item = `
-        //             <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}">
-        //                 <div class="list_item_pic">
-        //                     <img src="${cookieArr[i].Item_pic}" alt="">
-        //                 </div>
-            
-        //                 <div class="list_item_intro">
-        //                     <div class="list_item_title">
-        //                         <h1>${cookieArr[i].Item_title}</h1>
-        //                 </div>
-            
-            
-        //                 <div class="list_intro_count d-flex">
-            
-        //                     <div class="list_countBtn_warp d-flex">
-        //                         <div class="countBtn countBtn_add">
-        //                             <i class="fas fa-plus"></i>
-        //                         </div>
-        //                         <div class="list_count">${cookieArr[i].count}</div>
-        //                         <div class="countBtn countBtn_minus">
-        //                             <i class="fas fa-minus"></i>
-        //                         </div>
-        //                     </div>
-        //                     <div class="list_intro_price">
-        //                         <p>${cookieArr[i].Item_price}</p>
-        //                     </div>
-        //                         <i class="far fa-trash-alt"></i>
-        //                     </div>
-        //                 </div>
-        //             </div> `
-        
-                   
-        
-        //             $('.list_item_warps').append(Cart_list_item);
-
-        //         }
-
-
-        // }
-       
-
-
-    
-        //cookie字串轉回物件
-        let ItemsArr = JSON.parse($.cookie('Cart'))
-        console.log(ItemsArr);
-        // console.log(cookieArr.length);
-    
+        // //cookie字串轉回物件
+        // let ItemsArr = JSON.parse($.cookie('Cart'))
+        // console.log(ItemsArr);
+        // // console.log(cookieArr.length);
+    // console.log(arr[0].pid);
  
+
+
 
     },
 
