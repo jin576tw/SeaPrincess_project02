@@ -440,15 +440,15 @@
 }
 
 
-.list_intro_count .fa-trash-alt{
+.item_delete{
     cursor: pointer;
     font-size: 18px;
     color: rgba(23, 34, 61, 0.5);
 
 }
-.list_intro_count .fa-trash-alt:hover{
+.item_delete:hover{
     transition: 0.8s;
-    color: rgba(23, 34, 61, 1);
+    color: var(--dark_red)
 
 }
 
@@ -602,7 +602,7 @@
      
     }
 
-    .list_intro_count .fa-trash-alt{
+    .item_delete{
         position: absolute;
         bottom: 0;
         right: 0;

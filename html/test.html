@@ -22,13 +22,40 @@
     <style>
 
         .content{
-            margin-top: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
 
-        button{
-            width: 500px;
-            height: 300px;
+        .item_content{
+           width: 500px;
+           height: 800px;
+           display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    
+        .item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+        }
+        .add_btn{
+            margin-top: 20px;
+            width: 300px;  
+            height: 60px;
+        }
+        .delete_btn{
+           
+            width: 100px;
+            height: 50px;
         }
 
 
@@ -36,15 +63,23 @@
 
 </head>
 <body>
-
- 
-
     <div class="content">
 
 
-        <button class="box" onclick="addcart()">cookie</button>
+        
+       <div class="item_content">
 
+        
+            <!-- <div class="item">
+                <p>商品</p>
+                <button class="delete_btn"  >刪</button>
+           </div>  -->
+         
+           
 
+       </div>
+
+       <button class = 'add_btn'>加</button>
 
      </div>
 
@@ -70,32 +105,78 @@
 
 
 
-   let cat = [{name:'花花 ',type:'三花',qty:4,price:200,total_price:0},{name:'毛毛', type:'戴帽',qty:8,price:200,total_price:0}]
+    let item = `<div class="item">
+            <p>商品</p>
+            <button class="delete_btn" id='4' >刪</button>
+           </div>`
 
-   function addcart(){
 
-    $.cookie('animal',JSON.stringify(cat));
+    $('.add_btn').on({
 
-    let carstr = $.cookie('animal')
-    
-    let catarr =JSON.parse(carstr)
+        click:function(){
+            $('.item_content').append(item)
 
-   let sum =0 ;
-    // console.log(catarr[1].name)
+        }
 
-    for(let i = 0; i < catarr.length ;i++){
 
-        catarr[i].total_price = catarr[i].qty * catarr[i].price ;
 
-        sum += catarr[i].total_price 
+    })
+    $(".item_content").on("click",".delete_btn",function(){ 
         
-        console.log(`貓價值:${catarr[i].total_price}`)
+        let Id =$(this).attr('id')
+
+        console.log(Id)
+        
+    }); 
+
+
+
+
+    // function del(){
+
+    //     let $del_btn = $('.delete_btn')
+        
+    //     $del_btn.parent().remove()
+    // //    let item = $del_btn.prev().prev()
+
+
+    //     console.log('hi')
+
+    //     // $del_btn.parent('.item').remove()
+
        
        
-    }
+    // }
+
+
+
+
+//    let cat = [{name:'花花 ',type:'三花',qty:4,price:200,total_price:0},{name:'毛毛', type:'戴帽',qty:8,price:200,total_price:0}]
+
+//    function addcart(){
+
+//     $.cookie('animal',JSON.stringify(cat));
+
+//     let carstr = $.cookie('animal')
+    
+//     let catarr =JSON.parse(carstr)
+
+//    let sum =0 ;
+//     // console.log(catarr[1].name)
+
+//     for(let i = 0; i < catarr.length ;i++){
+
+//         catarr[i].total_price = catarr[i].qty * catarr[i].price ;
+
+//         sum += catarr[i].total_price 
+        
+//         console.log(`貓價值:${catarr[i].total_price}`)
+       
+       
+//     }
    
 
-    console.log(`全部貓咪價錢:`+sum)
+//     console.log(`全部貓咪價錢:`+sum)
 
 
   
@@ -103,7 +184,7 @@
     
   
 
-   }
+//    }
   
   
 

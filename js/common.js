@@ -107,6 +107,8 @@ $(document).ready(function () {
 
             }
 
+
+       
         
 
         },
@@ -122,8 +124,25 @@ $(document).ready(function () {
     })
 
 
+    // $('.item_delete').on({
+
+    //     click:function(){
+            
+    //         // 節點刪除
+
+    //         let $navItem = $(this).parent().parent().parent()
+    //         let navItemID = $navItem.attr('Item-ID')
+
+    //         $navItem.remove()
 
 
+    //         console.log(navItemID)
+
+
+    //     }
+
+
+    // })
 
 
 

@@ -2,7 +2,7 @@ $(document).ready(function () {
 
  /* ///////導覽列////////// */
        
-
+      
         //navbar購物車
         if($.cookie("Cart") == null){
 
@@ -10,6 +10,7 @@ $(document).ready(function () {
             $('.navbar_shoplist_count').css('display','none')
             $('.Cart_list_total').css('display','none')
             $('.list_item_empty').css('display','flex')
+           
 
 
         
@@ -47,27 +48,32 @@ $(document).ready(function () {
                             <div class="list_item_intro">
                                 <div class="list_item_title">
                                     <h1>${cookieArr[i].Item_title}</h1>
-                            </div>
+                                </div>
                 
                 
-                            <div class="list_intro_count d-flex">
-                
-                                <div class="list_countBtn_warp d-flex">
-                                    <div class="countBtn countBtn_add">
-                                        <i class="fas fa-plus"></i>
+                                <div class="list_intro_count d-flex">
+                    
+                                    <div class="list_countBtn_warp d-flex">
+                                        <div class="countBtn countBtn_add">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                        <div class="list_count">${cookieArr[i].count}</div>
+                                        <div class="countBtn countBtn_minus">
+                                            <i class="fas fa-minus"></i>
+                                        </div>
                                     </div>
-                                    <div class="list_count">${cookieArr[i].count}</div>
-                                    <div class="countBtn countBtn_minus">
-                                        <i class="fas fa-minus"></i>
+
+                                    <div class="list_intro_price">
+                                        <p>${nowprice}</p>
+                                    </div>
+
+                                    <div class="item_delete">
+                                        <i class="far fa-trash-alt "></i>
                                     </div>
                                 </div>
-                                <div class="list_intro_price">
-                                    <p>${nowprice}</p>
-                                </div>
-                                    <i class="far fa-trash-alt"></i>
-                                </div>
+                                
                             </div>
-                        </div> `
+                        </div> `;
     
     
                         
@@ -108,25 +114,30 @@ $(document).ready(function () {
                             <div class="list_item_intro">
                                 <div class="list_item_title">
                                     <h1>${cookieArr[i].Item_title}</h1>
-                            </div>
+                                </div>
                 
                 
-                            <div class="list_intro_count d-flex">
-                
-                                <div class="list_countBtn_warp d-flex">
-                                    <div class="countBtn countBtn_add">
-                                        <i class="fas fa-plus"></i>
+                                <div class="list_intro_count d-flex">
+                    
+                                    <div class="list_countBtn_warp d-flex">
+                                        <div class="countBtn countBtn_add">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                        <div class="list_count">${cookieArr[i].count}</div>
+                                        <div class="countBtn countBtn_minus">
+                                            <i class="fas fa-minus"></i>
+                                        </div>
                                     </div>
-                                    <div class="list_count">${cookieArr[i].count}</div>
-                                    <div class="countBtn countBtn_minus">
-                                        <i class="fas fa-minus"></i>
+
+                                    <div class="list_intro_price">
+                                        <p>${nowprice}</p>
+                                    </div>
+
+                                    <div class="item_delete">
+                                        <i class="far fa-trash-alt "></i>
                                     </div>
                                 </div>
-                                <div class="list_intro_price">
-                                    <p>${nowprice}</p>
-                                </div>
-                                    <i class="far fa-trash-alt"></i>
-                                </div>
+
                             </div>
                         </div> `;
 
@@ -135,21 +146,75 @@ $(document).ready(function () {
                      }
 
 
-                //商品價格
-                let itemPrice = $(this).parent().next().children('p:nth-of-type(1)').text()
+               
 
-
-              
-
-                
-
-                
             
+
+                console.log(cookieArr)
             
             }
 
+            
 
         });
+
+        //刪除項目
+        ///append架構無法使用功能，須根據append父層下指令
+        $(".list_item_warps").on("click",".item_delete",function(){
+
+            // 節點刪除
+            let $navItem = $(this).parent().parent().parent()
+            let navItemID = $navItem.attr('Item-ID')
+
+
+            $navItem.remove()//視覺刪除
+
+
+            let cookieStr = $.cookie('Cart');
+            let cookieArr = JSON.parse(cookieStr);
+
+            for(let i = 0 ; i <  cookieArr.length ;i++){
+
+                if(parseInt(cookieArr[i].pid) == parseInt(navItemID)){
+
+                    let $sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
+                   
+                   
+                    $nowsum = $sum - cookieArr[i].count; //購物車現在數量減去刪除數量
+                    $('.navbar_shoplist_count').text($nowsum)//刪除後數量
+
+                    cookieArr.splice(i,1);//刪除
+
+                    if( $nowsum <= 0){ //刪除後數量小於0，計數器消失
+                        $('.navbar_shoplist_count').css('display','none');
+
+                    }
+
+                    break;
+                }
+
+            }
+
+    
+           
+            //判斷數組為空
+            if( cookieArr.length == 0){
+
+                $.removeCookie('Cart');
+
+                let empty = `<p class="list_item_empty">目前購物車為空</p>`
+                $(".list_item_warps").append(empty)//顯示目前沒有商品提示
+                
+                $('.Cart_list_total').css('display','none')
+
+            }else{
+                $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+                
+                
+            }
+
+         });
+       
         
    
 
