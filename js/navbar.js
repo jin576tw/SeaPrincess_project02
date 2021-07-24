@@ -3,7 +3,7 @@ $(document).ready(function () {
  /* ///////導覽列////////// */
        
       
-        //navbar購物車
+        //////navbar購物車功能////
         if($.cookie("Cart") == null){
 
             //cookie若無資料，顯是購物車為空
@@ -144,19 +144,14 @@ $(document).ready(function () {
                         $('.list_item_warps').append(Cart_list_item);
     
                      }
-
-
-               
-
-            
-
-                console.log(cookieArr)
             
             }
 
             
 
         });
+
+
 
         //刪除項目
         ///append架構無法使用功能，須根據append父層下指令
@@ -166,8 +161,8 @@ $(document).ready(function () {
             let $navItem = $(this).parent().parent().parent()
             let navItemID = $navItem.attr('Item-ID')
 
-
             $navItem.remove()//視覺刪除
+            alert('商品已刪除')
 
 
             let cookieStr = $.cookie('Cart');
@@ -212,23 +207,208 @@ $(document).ready(function () {
                 
                 
             }
-
+            
          });
+
+         //計算器
+         //加
+         $(".list_item_warps").on("click",".countBtn_add ",function(){
+
+            //當前所在的ID
+            $navItem = $(this).parent().parent().parent().parent();
+            let navItemID = $navItem.attr('Item-ID')
+
+   
+            let cookieStr = $.cookie('Cart');
+            let cookieArr = JSON.parse(cookieStr);
+            
+
+            for(let i = 0 ; i <  cookieArr.length ;i++){
+
+                if(parseInt(cookieArr[i].pid) == parseInt(navItemID)){
+                    cookieArr[i].count++;
+
+                    let sum = parseInt($('.navbar_shoplist_count').text())
+                    sum++ ;
+
+                    $(this).next().text(cookieArr[i].count)
+                    $('.navbar_shoplist_count').text(sum)
+
+    
+                    $newprice = cookieArr[i].Item_price
+                    * cookieArr[i].count
+
+                
+                    $(this).parent().next().children('p').text($newprice)
+
+                    $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+    
+                    break;
+
+        
+                }
+
+               
+
+            }
+
+         })
+
+
+
+        //減
+         $(".list_item_warps").on("click",".countBtn_minus ",function(){
+
+            //當前所在的ID
+            $navItem = $(this).parent().parent().parent().parent()
+            let navItemID = $navItem.attr('Item-ID')
+
+     
+
+            let cookieStr = $.cookie('Cart');
+            let cookieArr = JSON.parse(cookieStr);
+            
+
+            for(let i = 0 ; i <  cookieArr.length ;i++){
+
+                if(parseInt(cookieArr[i].pid) == parseInt(navItemID)){
+                    cookieArr[i].count--;
+
+                    let sum = parseInt($('.navbar_shoplist_count').text())
+                    sum-- ;
+
+                    $(this).prev().text(cookieArr[i].count)
+                    $('.navbar_shoplist_count').text(sum)
+
+                    
+
+                    if(cookieArr[i].count <= 0){
+                        $navItem.remove()
+                        alert('已刪除商品')
+                        cookieArr.splice(i,1);//刪除
+
+                        if(sum == 0){
+
+                            $.removeCookie('Cart');
+                            let empty = `<p class="list_item_empty">目前購物車為空</p>`
+                            $(".list_item_warps").append(empty)//顯示目前沒有商品提示
+                            $('.navbar_shoplist_count').css('display','none')
+                            $('.Cart_list_total').css('display','none')
+
+                        }else{
+                            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+                        }
+                        
+                        
+                       
+                        
+
+                    }else{
+                        $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+                    }
+
+
+                    $newprice = cookieArr[i].Item_price
+                    * cookieArr[i].count
+
+                    $(this).parent().next().children('p').text($newprice)
+                    
+                    break;
+        
+                }
+
+            }
+
+         })
+
+
+
+
+
+         //計算器效果
+         $(".list_item_warps").on("mousedown mouseup",".countBtn_add , .countBtn_minus",function(){
+
+            $(this).toggleClass('countBtn_color').css('transition','0.3s')
+    
+         })
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        
         
    
+         /////購物車按鈕效果/////
+    
+        //手機版
+        if ($(window).width() < 480) {
+            
+    
+            $('.navbar_icon_shoplist').click(function(){
+                
+                $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
 
+                
+    
+            })
+        }
+        
+        // 網頁版
+        if ($(window).width() >= 480) {
+    
+            $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
+    
+    
+            $('.navbar_icon_shoplist').click(function(){
+    
+                $('.Cart_list').fadeIn(100);
+                $('.Cart_list_bar').css('transform','translateX(0px)').css('transition','0.5s')
+                
+
+            })
+    
+            $('.cancle_btn').click(function(){
+                
+    
+                $('.Cart_list').fadeOut(100);
+                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
+                
+    
+            })
+            $('.Cart_bg').click(function(){
+               
+    
+                $('.Cart_list').fadeOut(100);
+                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
+              
+                
+    
+            })
+    
+   
+    
+        }
          
         
 
         
       
-        
-
        
-
-    
-        //手機版navbar
+        // navbar視覺
+        //手機版
         $('.navbar_RWD_icon').click(function(){
             
             $('.navbar_RWD_items').toggleClass('RWD_open');
@@ -286,55 +466,5 @@ $(document).ready(function () {
     
        
     
-        /////購物車按鈕/////
-    
-        //手機版
-        if ($(window).width() < 480) {
-            
-    
-            $('.navbar_icon_shoplist').css('color','black')
-    
-            $('.navbar_icon_shoplist').click(function(){
-                
-                $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
-
-                
-    
-            })
-        }
         
-        if ($(window).width() >= 480) {
-    
-            $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
-    
-    
-            $('.navbar_icon_shoplist').click(function(){
-    
-                $('.Cart_list').fadeIn(100);
-                $('.Cart_list_bar').css('transform','translateX(0px)').css('transition','0.5s')
-                
-
-            })
-    
-            $('.cancle_btn').click(function(){
-                
-    
-                $('.Cart_list').fadeOut(100);
-                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
-                
-    
-            })
-            $('.Cart_bg').click(function(){
-               
-    
-                $('.Cart_list').fadeOut(100);
-                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
-              
-                
-    
-            })
-    
-   
-    
-        }
 })
