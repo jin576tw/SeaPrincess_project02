@@ -34,6 +34,7 @@ $(document).ready(function () {
 
             // 載入cookie中的商品
             if(cookieStr){
+                $total_price = 0
 
                 for(let i = 0 ; i < cookieArr.length ; i++){
 
@@ -78,8 +79,11 @@ $(document).ready(function () {
     
                         
                         $('.list_item_warps').append(Cart_list_item);
-            
+                        $total_price += nowprice
                 }
+
+
+                $('.Cart_list_total').children('p').text($total_price)
 
             }
 
@@ -99,7 +103,8 @@ $(document).ready(function () {
                 let cookieStr = $.cookie('Cart');
                 let cookieArr = JSON.parse(cookieStr);
 
-               
+                $total_price = 0
+                
                 
                 for(let i = 0 ; i < cookieArr.length ; i++){
 
@@ -142,8 +147,20 @@ $(document).ready(function () {
                         </div> `;
 
                         $('.list_item_warps').append(Cart_list_item);
+
+                       
+
+                        $total_price += nowprice
+                        
+                        
+                        
     
                      }
+                    
+
+                    $('.Cart_list_total').children('p').text($total_price)
+
+               
             
             }
 
@@ -173,10 +190,21 @@ $(document).ready(function () {
                 if(parseInt(cookieArr[i].pid) == parseInt(navItemID)){
 
                     let $sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
-                   
-                   
+
+                    let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())
+
+
                     $nowsum = $sum - cookieArr[i].count; //購物車現在數量減去刪除數量
                     $('.navbar_shoplist_count').text($nowsum)//刪除後數量
+                    
+
+                    $delete_price = parseInt(cookieArr[i].count) *  parseInt(cookieArr[i].Item_price)
+
+                    $newtototal_price = $oldtotal_price - $delete_price;
+
+
+                    $('.Cart_list_total').children('p').text($newtototal_price)//刪除後總金額
+                    
 
                     cookieArr.splice(i,1);//刪除
 
@@ -191,7 +219,6 @@ $(document).ready(function () {
             }
 
     
-           
             //判斷數組為空
             if( cookieArr.length == 0){
 
@@ -211,7 +238,7 @@ $(document).ready(function () {
          });
 
          //計算器
-         //加
+         //加＋＋
          $(".list_item_warps").on("click",".countBtn_add ",function(){
 
             //當前所在的ID
@@ -226,6 +253,13 @@ $(document).ready(function () {
             for(let i = 0 ; i <  cookieArr.length ;i++){
 
                 if(parseInt(cookieArr[i].pid) == parseInt(navItemID)){
+
+                    let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
+
+                    $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Item_price)////未變化前商品金額
+
+                    $raw_price = $oldtotal_price - $old_price // 除了變化的商品金額以外的總金額
+
                     cookieArr[i].count++;
 
                     let sum = parseInt($('.navbar_shoplist_count').text())
@@ -234,12 +268,18 @@ $(document).ready(function () {
                     $(this).next().text(cookieArr[i].count)
                     $('.navbar_shoplist_count').text(sum)
 
-    
-                    $newprice = cookieArr[i].Item_price
-                    * cookieArr[i].count
-
+                    
                 
-                    $(this).parent().next().children('p').text($newprice)
+
+                    $newprice = cookieArr[i].Item_price
+                    * cookieArr[i].count; //新商品金額
+
+
+                    $newtototal_price = $raw_price + $newprice; //新商品總金額
+                
+                    $(this).parent().next().children('p').text($newprice);
+                    $('.Cart_list_total').children('p').text($newtototal_price);
+                   
 
                     $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
     
@@ -248,9 +288,10 @@ $(document).ready(function () {
         
                 }
 
-               
 
             }
+
+
 
          })
 
@@ -272,6 +313,13 @@ $(document).ready(function () {
             for(let i = 0 ; i <  cookieArr.length ;i++){
 
                 if(parseInt(cookieArr[i].pid) == parseInt(navItemID)){
+
+                    let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
+
+                    $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Item_price)////未變化前商品金額
+
+                    $raw_price = $oldtotal_price - $old_price// 除了變化的商品金額以外的總金額
+
                     cookieArr[i].count--;
 
                     let sum = parseInt($('.navbar_shoplist_count').text())
@@ -285,15 +333,17 @@ $(document).ready(function () {
                     if(cookieArr[i].count <= 0){
                         $navItem.remove()
                         alert('已刪除商品')
-                        cookieArr.splice(i,1);//刪除
+                        cookieArr.splice(i,1);//刪除指定資料
 
                         if(sum == 0){
 
                             $.removeCookie('Cart');
                             let empty = `<p class="list_item_empty">目前購物車為空</p>`
                             $(".list_item_warps").append(empty)//顯示目前沒有商品提示
+
                             $('.navbar_shoplist_count').css('display','none')
                             $('.Cart_list_total').css('display','none')
+                            break;
 
                         }else{
                             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
@@ -309,10 +359,13 @@ $(document).ready(function () {
                     }
 
 
-                    $newprice = cookieArr[i].Item_price
-                    * cookieArr[i].count
+                    $newprice = cookieArr[i].Item_price * cookieArr[i].count//新商品金額
+
+                    $newtototal_price = $raw_price + $newprice;//新商品總金額
+
 
                     $(this).parent().next().children('p').text($newprice)
+                    $('.Cart_list_total').children('p').text($newtototal_price);
                     
                     break;
         
@@ -336,20 +389,6 @@ $(document).ready(function () {
          
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-       
-        
    
          /////購物車按鈕效果/////
     

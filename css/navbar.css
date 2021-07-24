@@ -472,7 +472,7 @@
 
 }
 .Cart_list_total p::before{
-    content: '商品小計：';
+    content: '商品小計：NT ';
 }
 
 
