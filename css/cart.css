@@ -51,7 +51,6 @@
 
 }
 
-
 .cart_item_name_top{
     width: 50%;
     height: 100%;
@@ -76,6 +75,20 @@
    
 }
 
+.cart_items_warps{
+    width: 100%;
+    /* height: 500px; */
+    overflow: auto;
+
+}
+.cart_empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    color: var(--grey);
+}
 
 .cart_items{
     display: flex;

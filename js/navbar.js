@@ -32,6 +32,7 @@ $(document).ready(function () {
 
 
 
+
             // 載入cookie中的商品
             if(cookieStr){
                 $total_price = 0
@@ -148,8 +149,7 @@ $(document).ready(function () {
 
                         $('.list_item_warps').append(Cart_list_item);
 
-                       
-
+                    
                         $total_price += nowprice
                         
                         
@@ -189,9 +189,9 @@ $(document).ready(function () {
 
                 if(parseInt(cookieArr[i].pid) == parseInt(navItemID)){
 
-                    let $sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
-
-                    let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())
+                    
+                    
+                    
 
 
                     $nowsum = $sum - cookieArr[i].count; //購物車現在數量減去刪除數量
@@ -260,13 +260,14 @@ $(document).ready(function () {
 
                     $raw_price = $oldtotal_price - $old_price // 除了變化的商品金額以外的總金額
 
-                    cookieArr[i].count++;
+                    cookieArr[i].count++;//計算器數量++
 
-                    let sum = parseInt($('.navbar_shoplist_count').text())
-                    sum++ ;
+                    let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
+                    sum++ ; //navbar數量＋＋
 
-                    $(this).next().text(cookieArr[i].count)
-                    $('.navbar_shoplist_count').text(sum)
+                    $(this).next().text(cookieArr[i].count)//更新計算器數量
+                
+                    $('.navbar_shoplist_count').text(sum)//更新navbar數量
 
                     
                 
@@ -278,6 +279,7 @@ $(document).ready(function () {
                     $newtototal_price = $raw_price + $newprice; //新商品總金額
                 
                     $(this).parent().next().children('p').text($newprice);
+
                     $('.Cart_list_total').children('p').text($newtototal_price);
                    
 
@@ -297,7 +299,7 @@ $(document).ready(function () {
 
 
 
-        //減
+        //減--
          $(".list_item_warps").on("click",".countBtn_minus ",function(){
 
             //當前所在的ID
@@ -347,6 +349,8 @@ $(document).ready(function () {
 
                         }else{
                             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+                            break;
                         }
                         
                         
@@ -365,6 +369,7 @@ $(document).ready(function () {
 
 
                     $(this).parent().next().children('p').text($newprice)
+                    // $('.cart_item_total p').text($newprice)//與結帳頁金額同步
                     $('.Cart_list_total').children('p').text($newtototal_price);
                     
                     break;
@@ -391,16 +396,22 @@ $(document).ready(function () {
 
    
          /////購物車按鈕效果/////
-    
+         let Location =  location.href
+
         //手機版
         if ($(window).width() < 480) {
             
     
             $('.navbar_icon_shoplist').click(function(){
-                
-                $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
+                // 結帳頁只會重新整理
+                if(Location.substr(-9,9) == 'cart.html'){
 
-                
+                    location.reload()
+
+
+                }else{
+                    $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
+                }
     
             })
         }
@@ -412,9 +423,19 @@ $(document).ready(function () {
     
     
             $('.navbar_icon_shoplist').click(function(){
+
+                // 結帳頁只會重新整理
+                if(Location.substr(-9,9) == 'cart.html'){
+
+                    location.reload()
+
+
+                }else{
+                    $('.Cart_list').fadeIn(100);
+                    $('.Cart_list_bar').css('transform','translateX(0px)').css('transition','0.5s')
+                }
     
-                $('.Cart_list').fadeIn(100);
-                $('.Cart_list_bar').css('transform','translateX(0px)').css('transition','0.5s')
+                
                 
 
             })
@@ -428,18 +449,22 @@ $(document).ready(function () {
     
             })
             $('.Cart_bg').click(function(){
-               
+            
     
                 $('.Cart_list').fadeOut(100);
                 $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
-              
+            
                 
     
             })
     
-   
+
     
         }
+
+    
+    
+        
          
         
 
