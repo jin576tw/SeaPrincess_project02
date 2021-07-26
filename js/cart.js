@@ -15,9 +15,26 @@ $(document).ready(function () {
     //初始總結帳金額
       $('.total_money p:nth-of-type(2)').text(checkout_price)
 
+    // 購物車無商品無法結帳
+      $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
+
 
     }else{
         $('.cart_empty').css('display','none')
+
+        $('.cart_checkout_btn').attr('disabled', false).css('background-color','#5aa700')
+        $('.cart_checkout_btn').on({
+
+            click: function(){
+        
+                console.log('hi')
+                location.href = "../html/checkout.html"
+        
+            }
+        
+        })
+    
+    
 
 
         let cookieStr = $.cookie('Cart');
