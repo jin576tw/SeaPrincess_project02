@@ -159,6 +159,9 @@ $(document).ready(function () {
                                  <p>目前購物車無商品</p>
                             </div>`
                 $('.cart_items_warps').append(empty)//顯示目前沒有商品提示
+
+                 // 購物車無商品無法結帳
+                $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
                 
 
             }else{
@@ -299,6 +302,9 @@ $(document).ready(function () {
                             $('.cart_items_warps').append(empty)//顯示目前沒有商品提示
 
                             $('.navbar_shoplist_count').css('display','none')
+
+                            // 購物車無商品無法結帳
+                            $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
                             
                             break;
 

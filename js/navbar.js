@@ -21,6 +21,8 @@ $(document).ready(function () {
             $('.list_item_empty').css('display','none');
             $('.Cart_list_total').css('display','block');
 
+
+            //購物車按鈕
             $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
             $('.checkout_btn').on({
 
@@ -32,6 +34,8 @@ $(document).ready(function () {
                 }
             
             })
+
+           
                    
 
 
@@ -187,6 +191,19 @@ $(document).ready(function () {
                     let checkout_price = parseInt($total_price) + fee;
                     
                     $('.total_money p:nth-of-type(2)').text(checkout_price)
+
+                     //結帳頁購物車按鈕
+                    $('.cart_checkout_btn').attr('disabled', false).css('background-color','#5aa700')
+                    $('.cart_checkout_btn').on({
+            
+                        click: function(){
+                    
+                            console.log('hi')
+                            location.href = "../html/checkout.html"
+                    
+                        }
+                    
+                    })
 
 
 
