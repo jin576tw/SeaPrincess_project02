@@ -2,9 +2,6 @@ $(document).ready(function () {
 
  /* ///////導覽列////////// */
 
-
- 
-      
         //////navbar購物車功能////
         if($.cookie("Cart") == null){
 
@@ -115,8 +112,13 @@ $(document).ready(function () {
 
             click: function(){
 
+                let Location =  location.href
+
+                let Cart_Page = Location.substr(-9,9) == 'cart.html'
+            
+
                 // 結帳購物車頁面時
-                if(Location.substr(-9,9) == 'cart.html'){
+                if(Cart_Page){
 
                     $('.cart_items_warps').empty();
 
@@ -505,15 +507,19 @@ $(document).ready(function () {
 
    
          /////購物車按鈕效果/////
-         let Location =  location.href
+    
 
         //手機版
         if ($(window).width() < 480) {
             
-    
             $('.navbar_icon_shoplist').click(function(){
+                let Location =  location.href
+
+                let Cart_Page = Location.substr(-9,9) == 'cart.html'
+                let Checkout_Page= Location.substr(-13,13) == 'checkout.html'
+
                 // 結帳頁只會重新整理
-                if(Location.substr(-9,9) == 'cart.html'){
+                if(Cart_Page || Checkout_Page){
 
                     location.reload()
 
@@ -532,9 +538,13 @@ $(document).ready(function () {
     
     
             $('.navbar_icon_shoplist').click(function(){
+                let Location =  location.href
+
+                let Cart_Page = Location.substr(-9,9) == 'cart.html'
+                let Checkout_Page = Location.substr(-13,13) == 'checkout.html'
 
                 // 結帳頁只會重新整理
-                if(Location.substr(-9,9) == 'cart.html'){
+                if(Cart_Page || Checkout_Page){
 
                     location.reload()
 
