@@ -12,7 +12,7 @@ $(document).ready(function () {
       let checkout_price = parseInt($now_total_price) + fee;
 
         
-    //空總結帳金額
+    //初始總結帳金額
       $('.total_money p:nth-of-type(2)').text(checkout_price)
 
 
@@ -78,6 +78,8 @@ $(document).ready(function () {
         }
 
         
+
+        
        //刪除商品
        $('.cart_items_warps').on("click",".cart_item_delete ",function(){
 
@@ -96,11 +98,8 @@ $(document).ready(function () {
 
                     let $sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
 
-             
-
                     let $oldtotal_price = parseInt( $('.total_sum p:nth-of-type(2)').text())
 
-                    console.log($oldtotal_price)
 
                     $nowsum = $sum - cookieArr[i].count; //購物車現在數量減去刪除數量
                     $('.navbar_shoplist_count').text($nowsum)//刪除後數量
@@ -110,10 +109,18 @@ $(document).ready(function () {
 
                     $newtototal_price = $oldtotal_price - $delete_price;
 
-                    console.log($newtototal_price)
+                    let checkout_price = parseInt($('.total_money p:nth-of-type(2)').text());
+
+                    // console.log(checkout_price)
+
+                    $delete_checkout_price = checkout_price - $delete_price;
+
+                    
                     $('.total_sum p:nth-of-type(2)').text($newtototal_price)
 
-                    cookieArr.splice(i,1);//刪除
+                    $('.total_money p:nth-of-type(2)').text( $delete_checkout_price)
+
+                    cookieArr.splice(i,1);//刪除資料
 
                     if( $nowsum <= 0){ //刪除後數量小於0，計數器消失
                         $('.navbar_shoplist_count').css('display','none');
@@ -319,13 +326,20 @@ $(document).ready(function () {
     
 
         //總金額
-        $now_total_price = $('.total_sum p:nth-of-type(2)').text()
+    
         $('.total_sum p:nth-of-type(2)').text($total_price);
+
+        $now_total_price = $('.total_sum p:nth-of-type(2)').text()
+
+
         let fee =parseInt($('.total_fee p:nth-of-type(2)').text());
+
+        console.log($now_total_price)
+
         let checkout_price = parseInt($now_total_price) + fee;
 
        
-        //總結帳金額
+        // //總結帳金額
         $('.total_money p:nth-of-type(2)').text(checkout_price)
 
     
