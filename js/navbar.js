@@ -1,7 +1,9 @@
 $(document).ready(function () {
 
  /* ///////導覽列////////// */
-       
+
+
+ 
       
         //////navbar購物車功能////
         if($.cookie("Cart") == null){
@@ -10,6 +12,9 @@ $(document).ready(function () {
             $('.navbar_shoplist_count').css('display','none')
             $('.Cart_list_total').css('display','none')
             $('.list_item_empty').css('display','flex')
+
+            // 購物車無商品無法結帳
+            $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
            
 
 
@@ -18,7 +23,21 @@ $(document).ready(function () {
 
             $('.list_item_empty').css('display','none');
             $('.Cart_list_total').css('display','block');
+
+            $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
+            $('.checkout_btn').on({
+
+                click: function(){
             
+                    console.log('hi')
+                    location.href = "../html/cart.html"
+            
+                }
+            
+            })
+                   
+
+
             let cookieStr = $.cookie('Cart');
             let cookieArr = JSON.parse(cookieStr);
             let sum = 0;
@@ -29,9 +48,7 @@ $(document).ready(function () {
             }
 
             $('.navbar_shoplist_count').text(sum)//購物車數量
-
-
-
+            
 
             // 載入cookie中的商品
             if(cookieStr){
@@ -176,6 +193,18 @@ $(document).ready(function () {
 
                     $('.list_item_warps').empty();//清空新加入商品
 
+                    $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
+                    $('.checkout_btn').on({
+
+                        click: function(){
+                    
+                            console.log('hi')
+                            location.href = "../html/cart.html"
+                    
+                        }
+                    
+                    })
+
                 
                     let cookieStr = $.cookie('Cart');
                     let cookieArr = JSON.parse(cookieStr);
@@ -305,6 +334,7 @@ $(document).ready(function () {
                 $(".list_item_warps").append(empty)//顯示目前沒有商品提示
                 
                 $('.Cart_list_total').css('display','none')
+                $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
 
             }else{
                 $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
@@ -419,6 +449,8 @@ $(document).ready(function () {
                             $.removeCookie('Cart');
                             let empty = `<p class="list_item_empty">目前購物車為空</p>`
                             $(".list_item_warps").append(empty)//顯示目前沒有商品提示
+
+                            $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
 
                             $('.navbar_shoplist_count').css('display','none')
                             $('.Cart_list_total').css('display','none')
