@@ -3,9 +3,10 @@ $(document).ready(function () {
 
 
     // 售完項目顯示售完
-    let empty_item = $(".item[Item-left!='0']")
+    let empty_item = $(".item[Item-left='0']")
     if(empty_item){
-        empty_item.children('.item_detail').children('.sold').css('display','none')
+        empty_item.children('.item_detail').children('.sold').css('display','block')
+        empty_item.css('opacity','0.7')
         
     }
   

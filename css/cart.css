@@ -1000,6 +1000,7 @@
 }
 
 .sold{
+    display: none;
     color: rgba(0, 0, 0, 0.6)
     
 }

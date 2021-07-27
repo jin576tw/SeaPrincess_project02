@@ -75,7 +75,7 @@ $(document).ready(function () {
                                 <i class="fas fa-minus"></i>
                             </div>
                         </div>
-                        <div class="count_left">3</div>
+                        <div class="count_left">${cookieArr[i].Item_left}</div>
                     </div>
                     <div class="cart_item_total">
                         <p>${nowprice}</p>
@@ -205,32 +205,46 @@ $(document).ready(function () {
 
                     $raw_price = $oldtotal_price - $old_price // 除了變化的商品金額以外的總金額
 
-                    cookieArr[i].count++;//計算器數量++
 
-                    let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
-                    sum++ ; //navbar數量＋＋
-
-                    $newprice = cookieArr[i].Item_price
-                    * cookieArr[i].count; //新商品金額
+                    let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Item_left)
+                    //判斷商品是否超過庫存
 
 
-                    $newtototal_price = $raw_price + $newprice; //新商品總金額
+                    if(Item_over){
+                        alert('數量超過庫存')
+                        $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+                        break;
 
-                    $check_out_price = $newtototal_price + fee;//新總結帳金額
+                    }else{
+
+                        cookieArr[i].count++;//計算器數量++
+
+                        let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
+                        sum++ ; //navbar數量＋＋
+
+                        $newprice = cookieArr[i].Item_price
+                        * cookieArr[i].count; //新商品金額
 
 
-                    $(this).next().text(cookieArr[i].count)//更新計算器數量
+                        $newtototal_price = $raw_price + $newprice; //新商品總金額
 
-                    $('.navbar_shoplist_count').text(sum)//更新navbar數量
-
-                    $(this).parent().parent().next().children('p').text($newprice)//更新商品金額
-
-                    $('.total_sum p:nth-of-type(2)').text( $newtototal_price);//更新結帳金額
+                        $check_out_price = $newtototal_price + fee;//新總結帳金額
 
 
-                    $('.total_money p:nth-of-type(2)').text($check_out_price) //更新總結帳金額
+                        $(this).next().text(cookieArr[i].count)//更新計算器數量
 
-                    $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+                        $('.navbar_shoplist_count').text(sum)//更新navbar數量
+
+                        $(this).parent().parent().next().children('p').text($newprice)//更新商品金額
+
+                        $('.total_sum p:nth-of-type(2)').text( $newtototal_price);//更新結帳金額
+
+
+                        $('.total_money p:nth-of-type(2)').text($check_out_price) //更新總結帳金額
+
+                        $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+                    }
 
                     break;
                 }
@@ -276,6 +290,22 @@ $(document).ready(function () {
                     $(this).prev().text(cookieArr[i].count);
                     $('.navbar_shoplist_count').text(sum)
                     $(this).parent().parent().next().children('p').text($newprice)//更新商品金額
+
+                    //計算器數量效果變化
+                    let still_left = parseInt(cookieArr[i].Item_left) >  parseInt(cookieArr[i].count)
+
+                    if(still_left){
+
+                        let countBtn_add = $(this).prev().prev()
+                        $(countBtn_add).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+
+                    }
+                    else{
+
+                        let countBtn_add = $(this).prev().prev()
+                        $(countBtn_add).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+
+                    }
 
 
                     if(cookieArr[i].count <= 0){

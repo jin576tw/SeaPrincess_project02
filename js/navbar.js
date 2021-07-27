@@ -165,7 +165,7 @@ $(document).ready(function () {
                                             <i class="fas fa-minus"></i>
                                         </div>
                                     </div>
-                                    <div class="count_left">3</div>
+                                    <div class="count_left">${cookieArr[i].Item_left}</div>
                                 </div>
                                 <div class="cart_item_total">
                                     <p>${nowprice}</p>
@@ -210,7 +210,7 @@ $(document).ready(function () {
                 }else{
 
                     //navbar購物車
-                    $('.list_item_warps').empty();//清空新加入商品
+
 
                     //商品庫存
                     let itemLeft = $(this).parent().parent().attr('Item-left')
@@ -220,6 +220,8 @@ $(document).ready(function () {
 
                     
                     }else{
+
+                        $('.list_item_warps').empty();//清空新加入商品
 
                         // 去結帳按鈕
                         $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')

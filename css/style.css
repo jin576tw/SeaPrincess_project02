@@ -833,7 +833,7 @@
 }
 
 .sold{
-    display: block;
+    display: none;
     color: rgba(0, 0, 0, 0.6)
     
 }
