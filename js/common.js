@@ -1,3 +1,4 @@
+'use strict'
 $(document).ready(function () {
 
 ///////////////////加入購物車/////////////
@@ -6,8 +7,7 @@ $(document).ready(function () {
 
         click: function(){
 
-            
-
+    
             // 顯示navbar數量 
             $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
 
@@ -25,57 +25,91 @@ $(document).ready(function () {
             // 商品ID
             let itemID = $(this).parent().parent().attr('Item-ID')
 
+            //商品庫存
+            let itemLeft = $(this).parent().parent().attr('Item-left')
 
-
-
-            let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,count:1}]
-            //商品名稱、商品圖片、商品價格、商品ID、商品數量初始值
+            
+            let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1}]
+            //商品名稱、商品圖片、商品價格、商品ID、商品庫存、商品數量初始值
 
         
-
-            //寫入cookie
-            if($.cookie('Cart') == null ){
-
-                // 第一次加入
-                $.cookie('Cart',JSON.stringify(arr),{expire : 1})
+            // 判斷商品是否缺貨
+            if(itemLeft == 0){
+                alert('商品缺貨中')
 
             }else{
 
-                // 抓cookie購物車資料
-                let cookieStr = $.cookie('Cart')
+                //寫入cookie
+                if($.cookie('Cart') == null ){
 
-
-                // 若不是第一次加入
-                let cookieArr = JSON.parse(cookieStr);//先轉成物件
-
-                let same = false //假設沒有添加過商品 
-
-
+                    // 第一次加入
+                    $.cookie('Cart',JSON.stringify(arr),{expire : 1})
                 
-                // 通過迴圈判斷是否符合重復
-                // 若有，增加數量
-                for(let i =0 ; i < cookieArr.length; i++){
-                    if(itemID == cookieArr[i].pid){
-                        same = true;
-                        cookieArr[i].count++;
-                        break;
+
+                }else{
+
+                    // 抓cookie購物車資料
+                    let cookieStr = $.cookie('Cart')
+
+                    // 若不是第一次加入
+                    let cookieArr = JSON.parse(cookieStr);//先轉成物件
+
+                    let same = false //假設沒有添加過商品 
+
+
+                    // 通過迴圈判斷是否符合重復
+                    // 若有，增加數量
+                    for(let i =0 ; i < cookieArr.length; i++){
+                        if(itemID == cookieArr[i].pid){
+
+                            same = true;
+                            
+                            let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Item_left)
+
+                            let Zero_Item = parseInt(cookieArr[i].Item_left) == 0 
+
+
+                            if(Item_over){
+                                alert('數量超過庫存')
+                                break;
+
+                            }
+                            else if(Zero_Item){
+                                alert('商品缺貨中')
+                                break;
+
+                            }else{
+                                cookieArr[i].count++
+                                // 數量沒超過庫存
+                            }
 
                     
+                            break;
+                                
+                        
+                        }
+
                     }
 
-                }
+                    if(!same){
+                        if(itemLeft == 0){
+                            alert('商品缺貨中')
+                        }else{
+                            cookieArr.push({Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1})
 
-                if(!same){
-                    cookieArr.push({Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,count:1})
-                }
+                        }
+
+                        
+                    }
 
 
-                $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+                    $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
 
-            }   
+                }   
+                
 
-    
+            }
 
             //navbar購物車
             if($.cookie("Cart") == null){
