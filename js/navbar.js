@@ -292,14 +292,112 @@ $(document).ready(function () {
                             
     
                         $('.Cart_list_total').children('p').text($total_price)
-                    
-
 
                     }
                     
-                }
+                 } 
+            
+            }
+        });
+
+
+        //單一商品頁加入購物車
+        $(".add_btn_lg").on({
+
+            click: function(){
+
+            //navbar購物車
+            //商品庫存
+            let itemLeft = $(this).parent().parent().attr('Item-left')
+
+            // 商品數量 //計數器數量
+            let itemCount = parseInt($(this).prev().children().children('.product_count').text())
+
+            // 若商品缺貨
+            if(itemLeft == 0){
+
+            
+            }else if(itemCount == 0){
 
                
+            }
+            else{
+
+                $('.list_item_warps').empty();//清空新加入商品
+
+                // 去結帳按鈕
+                $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
+                $('.checkout_btn').on({
+
+                    click: function(){
+                
+                        console.log('hi')
+                        location.href = "../html/cart.html"
+                
+                    }
+                
+                })
+
+                let cookieStr = $.cookie('Cart');
+                let cookieArr = JSON.parse(cookieStr);
+
+                $total_price = 0
+                
+                
+                for(let i = 0 ; i < cookieArr.length ; i++){
+
+                    let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Item_price);
+
+                    let Cart_list_item = `
+                        <div class="Cart_list_item " Item-ID= "${cookieArr[i].pid}" Item-left="${cookieArr[i].Item_left}">
+                            <div class="list_item_pic">
+                                <img src="${cookieArr[i].Item_pic}" alt="">
+                            </div>
+                
+                            <div class="list_item_intro">
+                                <div class="list_item_title">
+                                    <h1>${cookieArr[i].Item_title}</h1>
+                                </div>
+                
+                
+                                <div class="list_intro_count d-flex">
+                    
+                                    <div class="list_countBtn_warp d-flex">
+                                        <div class="countBtn countBtn_add">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                        <div class="list_count">${cookieArr[i].count}</div>
+                                        <div class="countBtn countBtn_minus">
+                                            <i class="fas fa-minus"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="list_intro_price">
+                                        <p>${nowprice}</p>
+                                    </div>
+
+                                    <div class="item_delete">
+                                        <i class="far fa-trash-alt "></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> `;
+
+                        $('.list_item_warps').append(Cart_list_item);
+
+                    
+                        $total_price += nowprice
+                        
+                        
+                }
+                    
+
+                $('.Cart_list_total').children('p').text($total_price)
+
+            }
+                    
+                
             
             }
         });
