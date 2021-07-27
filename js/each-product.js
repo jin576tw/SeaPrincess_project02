@@ -43,7 +43,7 @@ $(document).ready(function () {
         if(sum <=0 ){
             $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
             
-        }else if(sum < itemLeft){
+        }else if(sum <= itemLeft){
             sum--;
             let addBtn = $(this).prev().prev()
             addBtn.css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
