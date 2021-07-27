@@ -67,13 +67,15 @@ $(document).ready(function () {
                     </div>
                     <div class="cart_item_count">
                         <div class="list_countBtn_warp d-flex">
-                            <div class="countBtn countBtn_add">
-                                <i class="fas fa-plus"></i>
-                            </div>
-                            <div class="list_count">${cookieArr[i].count}</div>
+
                             <div class="countBtn countBtn_minus">
                                 <i class="fas fa-minus"></i>
                             </div>
+                            <div class="list_count">${cookieArr[i].count}</div>
+                            <div class="countBtn countBtn_add">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            
                         </div>
                         <div class="count_left">${cookieArr[i].Item_left}</div>
                     </div>
@@ -231,7 +233,7 @@ $(document).ready(function () {
                         $check_out_price = $newtototal_price + fee;//新總結帳金額
 
 
-                        $(this).next().text(cookieArr[i].count)//更新計算器數量
+                        $(this).prev().text(cookieArr[i].count)//更新計算器數量
 
                         $('.navbar_shoplist_count').text(sum)//更新navbar數量
 
@@ -287,7 +289,7 @@ $(document).ready(function () {
                     $newprice = cookieArr[i].Item_price
                     * cookieArr[i].count; //新商品金額
 
-                    $(this).prev().text(cookieArr[i].count);
+                    $(this).next().text(cookieArr[i].count);
                     $('.navbar_shoplist_count').text(sum)
                     $(this).parent().parent().next().children('p').text($newprice)//更新商品金額
 
@@ -296,13 +298,13 @@ $(document).ready(function () {
 
                     if(still_left){
 
-                        let countBtn_add = $(this).prev().prev()
+                        let countBtn_add = $(this).next().next()
                         $(countBtn_add).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
 
                     }
                     else{
 
-                        let countBtn_add = $(this).prev().prev()
+                        let countBtn_add = $(this).next().next()
                         $(countBtn_add).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
 
                     }

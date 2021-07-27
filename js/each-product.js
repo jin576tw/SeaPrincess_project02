@@ -6,9 +6,10 @@ $(document).ready(function () {
     $(".product_countBtn_warp").on("click",".product_countBtn_add",function(){
 
         //商品庫存
-        let itemLeft =  parseInt($(this).next().next().next().attr('Item-left'))
+       
+        let itemLeft =  parseInt($(this).next().attr('Item-left'))
         
-        let sum = parseInt($(this).next().text());
+        let sum = parseInt($(this).prev().text());
         
 
         if(sum < itemLeft){
@@ -20,11 +21,11 @@ $(document).ready(function () {
            $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
         }
 
-        $(this).next().text(sum);
+        $(this).prev().text(sum);
 
         
         if(sum >= 0){
-            let countBtn_minus = $(this).next().next()
+            let countBtn_minus = $(this).prev().prev()
             $(countBtn_minus).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
         }
 
@@ -34,9 +35,10 @@ $(document).ready(function () {
 
 
         //商品庫存
-        let itemLeft =  parseInt($(this).next().attr('Item-left'))
+        let itemLeft =  parseInt($(this).next().next().next().attr('Item-left'))
 
-        let sum = parseInt($(this).prev().text());
+        
+        let sum = parseInt($(this).next().text());
 
     
 
@@ -45,7 +47,7 @@ $(document).ready(function () {
             
         }else if(sum <= itemLeft){
             sum--;
-            let addBtn = $(this).prev().prev()
+            let addBtn = $(this).next().next()
             addBtn.css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
 
         }
@@ -53,7 +55,8 @@ $(document).ready(function () {
             sum--;
         }
         
-        $(this).prev().text(sum);
+       
+        $(this).next().text(sum);
 
     })
 

@@ -73,12 +73,13 @@ $(document).ready(function () {
                                 <div class="list_intro_count d-flex">
                     
                                     <div class="list_countBtn_warp d-flex">
-                                        <div class="countBtn countBtn_add">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="list_count">${cookieArr[i].count}</div>
+
                                         <div class="countBtn countBtn_minus">
                                             <i class="fas fa-minus"></i>
+                                        </div>
+                                        <div class="list_count">${cookieArr[i].count}</div>
+                                        <div class="countBtn countBtn_add">
+                                            <i class="fas fa-plus"></i>
                                         </div>
                                     </div>
 
@@ -157,13 +158,15 @@ $(document).ready(function () {
                                 </div>
                                 <div class="cart_item_count">
                                     <div class="list_countBtn_warp d-flex">
-                                        <div class="countBtn countBtn_add">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="list_count">${cookieArr[i].count}</div>
+
                                         <div class="countBtn countBtn_minus">
                                             <i class="fas fa-minus"></i>
                                         </div>
+                                        <div class="list_count">${cookieArr[i].count}</div>
+                                        <div class="countBtn countBtn_add">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                        
                                     </div>
                                     <div class="count_left">${cookieArr[i].Item_left}</div>
                                 </div>
@@ -261,12 +264,12 @@ $(document).ready(function () {
                                         <div class="list_intro_count d-flex">
                             
                                             <div class="list_countBtn_warp d-flex">
-                                                <div class="countBtn countBtn_add">
-                                                    <i class="fas fa-plus"></i>
+                                                 <div class="countBtn countBtn_minus">
+                                                    <i class="fas fa-minus"></i>
                                                 </div>
                                                 <div class="list_count">${cookieArr[i].count}</div>
-                                                <div class="countBtn countBtn_minus">
-                                                    <i class="fas fa-minus"></i>
+                                                <div class="countBtn countBtn_add">
+                                                    <i class="fas fa-plus"></i>
                                                 </div>
                                             </div>
     
@@ -363,12 +366,12 @@ $(document).ready(function () {
                                 <div class="list_intro_count d-flex">
                     
                                     <div class="list_countBtn_warp d-flex">
-                                        <div class="countBtn countBtn_add">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="list_count">${cookieArr[i].count}</div>
                                         <div class="countBtn countBtn_minus">
                                             <i class="fas fa-minus"></i>
+                                        </div>
+                                        <div class="list_count">${cookieArr[i].count}</div>
+                                        <div class="countBtn countBtn_add">
+                                            <i class="fas fa-plus"></i>
                                         </div>
                                     </div>
 
@@ -512,7 +515,7 @@ $(document).ready(function () {
 
                         sum++ ; //navbar數量＋＋
 
-                        $(this).next().text(cookieArr[i].count)//更新計算器數量
+                        $(this).prev().text(cookieArr[i].count)//更新計算器數量
                     
                         $('.navbar_shoplist_count').text(sum)//更新navbar數量
 
@@ -578,7 +581,7 @@ $(document).ready(function () {
                     let sum = parseInt($('.navbar_shoplist_count').text())
                     sum-- ;
 
-                    $(this).prev().text(cookieArr[i].count)//現在商品數量
+                    $(this).next().text(cookieArr[i].count)//現在商品數量
 
                     $('.navbar_shoplist_count').text(sum)
 
@@ -588,13 +591,13 @@ $(document).ready(function () {
 
                     if(still_left){
 
-                        let countBtn_add = $(this).prev().prev()
+                        let countBtn_add = $(this).next().next()
                         $(countBtn_add).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
 
                     }
                     else{
 
-                        let countBtn_add = $(this).prev().prev()
+                        let countBtn_add = $(this).next().next()
                         $(countBtn_add).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
 
                     }
@@ -638,7 +641,7 @@ $(document).ready(function () {
 
 
                     $(this).parent().next().children('p').text($newprice)
-                    // $('.cart_item_total p').text($newprice)//與結帳頁金額同步
+                   
                     $('.Cart_list_total').children('p').text($newtototal_price);
                     
                     break;
