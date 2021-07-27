@@ -1,6 +1,14 @@
 'use strict'
 $(document).ready(function () {
 
+
+    // 售完項目顯示售完
+    let empty_item = $(".item[Item-left!='0']")
+    if(empty_item){
+        empty_item.children('.item_detail').children('.sold').css('display','none')
+        
+    }
+  
 ///////////////////加入購物車/////////////
 
     $(".add_btn").on({
