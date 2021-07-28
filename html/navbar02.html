@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <!-- <link rel="stylesheet" href="../css/navbar.css"> -->
+</head>
+<body>
+
+<!-- 導覽列 -->
+<div class="Navbar">
+    <div class="navbar_tool ">
+        <div class="navbar_mediabtn_warp d-flex">
+            <div class="nav_mediabtn">
+                <img src="../img/line.svg" alt="">
+            </div>
+            <div class="nav_mediabtn">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="nav_mediabtn">
+                <i class="fab fa-youtube"></i>
+            </div>
+            <div class="nav_mediabtn">
+                <img src="../img/icon-shopee.svg" alt="">
+            </div>
+
+        </div>
+        <div class="navbar_icon_warp">
+            <button class="navbar_icon_submit d-flex">
+                <i class="fas fa-pen-alt"></i>
+                投稿
+            </button>
+            <button class="navbar_icon_shoplist">
+                <div class="navbar_shoplist_count">0</div>
+                <i class="fas fa-shopping-basket"></i>
+                購物車
+
+            </button>
+            <div class="navbar_icon_member">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0">
+
+            <ul class="navbar_items d-flex p-0">
+
+                    <div class="navbar_RWD_icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+  
+                    <li><a href="../html/about.html">關於我們</a></li>
+                    <li><a href="../html/products.html">購物商城<i class="fas fa-angle-down"></i></a></li>
+                    <li>船班資訊</li>
+                    <div class="navbar_Logo">
+                        <a href="../html/index02.html">
+                            <img src="../img/Logo.svg" alt="">
+                        </a>
+                    </div>
+                    <li>點數計畫</li>
+                    <li>小編精選<i class="fas fa-angle-down"></i></li>
+                    <li>聯絡我們</li>
+
+           
+                    <div class="shoplist_RWD">
+                        <div class="navbar_shoplist_count">0</div>
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+               
+            </ul>
+            
+    </div>
+    <div class="navbar_RWD_items">
+        <div class="icon_member_RWD">
+            <i class="fas fa-user-circle"></i>
+
+        </div>
+        <div class="member_name mt-3">
+            <p>user2021</p>
+        </div>
+        <div class="navbar_RWD_tool">
+            <button class="RWD_icon_submit d-flex">
+                <i class="fas fa-pen-alt"></i>
+                投稿
+            </button>
+        </div>
+        <div class="RWD_items">
+            <li><a href="../html/about.html">關於我們</a></li>
+            <li><a href="../html/products.html">購物商城</a></li>
+            <li>船班資訊</li>
+            <li>點數計畫</li>
+            <li>小編精選</li>
+            <li>聯絡我們</li>
+        </div>
+
+    </div>
+</div>   
+
+<!-- 購物車按鈕 -->
+<div class="Cart_list ">
+    <div class="Cart_bg"></div>
+        <div class="Cart_list_bar">
+            <i class="fas fa-times cancle_btn"></i>
+            <div class="Cart_list_warp">
+                <div class="list_item_warps">
+                    <p class="list_item_empty">目前購物車為空</p>
+       
+                </div>
+                <div class="Cart_list_total">
+                    <p>0</p>
+                </div>
+
+                <button class="checkout_btn">
+                   
+                        <i class="fas fa-cash-register"></i>
+                        前往結賬
+                    
+                </button>
+
+            </div>
+        </div>
+    
+</div> 
+
+
+</body>
+
+
+<!-- cookie -->
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<!-- js -->
+<script src="../js/navbar.js"></script>
+
+<script>
+
+        
+</script>
+
+</html>
