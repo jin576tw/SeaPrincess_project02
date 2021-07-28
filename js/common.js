@@ -6,6 +6,7 @@ $(document).ready(function () {
     let empty_item = $(".item[Item-left='0']")
     if(empty_item){
         empty_item.children('.item_detail').children('.sold').css('display','block')
+        empty_item.children('.item_detail').children('p:nth-of-type(1)').css('display','none')
         empty_item.css('opacity','0.7')
         
     }
@@ -16,11 +17,6 @@ $(document).ready(function () {
 
         click: function(){
 
-    
-            // 顯示navbar數量 
-            $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
-
-            
             // 商品名稱
             let itemTitle = $(this).next().next().children().children().text()
 
@@ -47,6 +43,10 @@ $(document).ready(function () {
                 alert('商品缺貨中')
 
             }else{
+
+                // 顯示navbar數量 
+                $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
+
 
                 //寫入cookie
                 if($.cookie('Cart') == null ){
@@ -166,26 +166,6 @@ $(document).ready(function () {
 
     })
 
-
-    // $('.item_delete').on({
-
-    //     click:function(){
-            
-    //         // 節點刪除
-
-    //         let $navItem = $(this).parent().parent().parent()
-    //         let navItemID = $navItem.attr('Item-ID')
-
-    //         $navItem.remove()
-
-
-    //         console.log(navItemID)
-
-
-    //     }
-
-
-    // })
 
 
 
