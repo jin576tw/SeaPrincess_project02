@@ -128,7 +128,7 @@ $(document).ready(function () {
 
                     // 第一次加入
                     $.cookie('Cart',JSON.stringify(arr),{expire : 1})
-                
+                    alert('商品加入購物車')
 
                 }else{
 
@@ -153,6 +153,7 @@ $(document).ready(function () {
                             cookieArr[i].count = old_count + itemCount;
 
                             console.log(cookieArr[i].count )
+                            alert('商品加入購物車')
                             break;
                                 
                         
@@ -165,6 +166,7 @@ $(document).ready(function () {
                             alert('商品缺貨中')
                         }else{
                             cookieArr.push({Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:itemCount})
+                            alert('商品加入購物車')
 
                         }
 
