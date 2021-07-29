@@ -21,67 +21,52 @@
 
     <style>
 
-        .content{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
+        body{
+            height: 2000px;
         }
 
-        .item_content{
-           width: 500px;
-           height: 800px;
-           display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-    
-        .item{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid black;
-            width: 300px;
-            height: 200px;
-        }
-        .add_btn{
-            margin-top: 20px;
-            width: 300px;  
-            height: 60px;
-        }
-        .delete_btn{
-           
-            width: 100px;
-            height: 50px;
-        }
 
+        .landing01{
+            position: fixed;
+            width: 100%;
+            height: 1000px;
+            background-color: cyan;
+            z-index: 996;
+            
+        }
+        .contetPage{
+            
+            width: 100%;
+            height: 1000px;
+            background-color: #afaa;
+
+            z-index: 997;
+        }
 
     </style>
 
 </head>
 <body>
-    <div class="content">
+
+    <div class="landing01">
+
+    </div>
+
+    <div class="Itembg">
+
+    </div>
+    
+
+    <div class="contetPage">
 
 
+       
         
-       <div class="item_content">
-
         
-            <!-- <div class="item">
-                <p>商品</p>
-                <button class="delete_btn"  >刪</button>
-           </div>  -->
-         
-           
 
-       </div>
-
-       <button class = 'add_btn'>加</button>
-
-     </div>
+    </div>
+   
+     
 
 
 
@@ -100,34 +85,34 @@
 <!-- <script src="../js/common.js"></script> -->
 
 <script>
-    $('#navbar').load('navbar.html')
-    $('#footer').load('footer.html')
+    // $('#navbar').load('navbar.html')
+    // $('#footer').load('footer.html')
 
 
 
-    let item = `<div class="item">
-            <p>商品</p>
-            <button class="delete_btn" id='4' >刪</button>
-           </div>`
+    // let item = `<div class="item">
+    //                               <p>商品</p>
+    //         <button class="delete_btn" id='4' >刪</button>
+    //        </div>`
 
 
-    $('.add_btn').on({
+    // $('.add_btn').on({
 
-        click:function(){
-            $('.item_content').append(item)
+    //     click:function(){
+    //         $('.item_content').append(item)
 
-        }
+    //     }
 
 
 
-    })
-    $(".item_content").on("click",".delete_btn",function(){ 
+    // })
+    // $(".item_content").on("click",".delete_btn",function(){ 
         
-        let Id =$(this).attr('id')
+    //     let Id =$(this).attr('id')
 
-        console.log(Id)
+    //     console.log(Id)
         
-    }); 
+    // });     
 
 
 
