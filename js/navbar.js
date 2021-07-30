@@ -623,9 +623,13 @@ $(document).ready(function () {
                     if(cookieArr[i].count <= 0){
                         $navItem.remove()
                         alert('已刪除商品')
+                        let delete_price = $oldtotal_price - cookieArr[i].Item_price
+                        
+                        $('.Cart_list_total').children('p').text(delete_price)
+
                         cookieArr.splice(i,1);//刪除指定資料
 
-                        if(sum == 0){
+                        if(sum == 0 || sum_RWD == 0){
 
                             $.removeCookie('Cart');
                             let empty = `<p class="list_item_empty">目前購物車為空</p>`
