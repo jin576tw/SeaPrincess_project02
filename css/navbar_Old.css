@@ -4,49 +4,15 @@
     top: 0;
     z-index: 998;
     width: 100%;
-    max-height: 140px;
+    max-height: 80px;
     background-color: #ffff;
 
 
 }
-.navbar_tool{
-    display: flex;
-    width: 100%;
-    margin: 10px 0px 0px 0px;
-    padding: 0 150px 10px 150px;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid 1px var(--grey);
-}
-
-.navbar_mediabtn_warp{
-    max-height: 40px;
-    /* background-color:red; */
-
-}
-
-.nav_mediabtn{
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    background-color: #c0c0c0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    margin-right: 15px;
-    font-size: 10px;
-    color: white;
-}
-.nav_mediabtn img{
-    width: 45%;
-}
 
 
 .navbar_items{
-    
-    margin-top: 5px;
-    max-height: 100px;
+    padding: 0px;
     width: 100%;
     font-size: 1.8rem;
     justify-content: space-evenly;
@@ -69,10 +35,6 @@
     text-decoration: none;
 }
 
-.navbar_items .fa-angle-down{
-    margin-left: 5px;
-}
-
 .navbar_Logo{
     margin-top: 5px;
      width: 140px;
@@ -82,49 +44,29 @@
 .navbar_icon_warp{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 280px;
-   
+    transform: translateY(1.5px);
 }
-.navbar_icon_submit{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90px;
-    height: 25px;
-    font-size: 1.6rem;
-    background-color: white;
-    border-radius: 6px;
-    border: solid 1px #c0c0c0;
-}
+.navbar_icon_member {
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 3.2rem;
 
-.navbar_icon_submit:hover{
+}
+.navbar_icon_member:hover{
     transition: 0.5s;
     color: var(--light_blue);
-    border: solid 1px var(--light_blue)
 
 }
-
 .navbar_icon_shoplist{
-    /* margin-right: 20px; */
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100px;
-    height: 25px;
     color:black;
-    font-size:1.6rem;
-    background-color: white;
-    border-radius: 6px;
-    border: solid 1px #c0c0c0;
+    cursor: pointer;
+    font-size: 3.3rem;
+    position: relative;
 
-    
 }
 .navbar_icon_shoplist:hover{
     transition: 0.5s;
     color: var(--light_blue);
-    border: solid 1px var(--light_blue)
 
 }
 
@@ -135,33 +77,14 @@
     align-items: center;
     font-size: 1.5rem;
     color: white;
-    top:-10px;
-    right: -10px;
-    width: 20px;
-    height: 20px;
+    top:0px;
+    right: -15px;
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
     background-color: #f5a623;
 
 }
-.navbar_icon_member{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    width: 28px;
-    height: 28px;
-    font-size: 2.5rem;
-    overflow: hidden;
-    cursor: pointer;
-   
-
-}
-.navbar_icon_member:hover{
-    transition: 0.5s;
-    color: var(--light_blue);
-
-}
-
 
 .navbar_RWD_icon{
     display: none;
@@ -169,154 +92,97 @@
     padding: 0;
 }
 
-.navbar_RWD_tool{
-    display: none;
-}
 .navbar_RWD_items{
+    opacity: 0;
     display: none;
+    position: absolute;
+    z-index: 999;
+    width: 200px;
+    overflow: hidden;
+    height: calc(100vh - 80px);
+    top: 80px;
+    left: -200px;
+    opacity: 0.9;
+    background-color: white;
+    transition: 0.8s;
+   
+    
+    
+    
+   
+
 }
 
-.shoplist_RWD{
-    display: none;
-
-}
-
+.navbar_RWD_items  li{
+    margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+  
+} 
 
 
 @media (max-width: 991px) {
 
-    .Navbar{
-        position: fixed;
+    .navbar{
+        position: relative;
         z-index: 999;
         width: 100%;
-        max-height: 50px;
-       
-    }
-
-    .navbar_tool{
-        display: none;
+        max-height: 80px;
+        background-color: #ffff;
+        
     }
     
 
     .navbar_items{
         padding: 0 5px;
-        margin-top: 2px;
+        margin-top: 10px;
         width: 100%;
         font-size: 1.8rem;
         justify-content: space-around;
         align-items: center;
         transform: translateX(0px);
+   
         
     }
-
-
+    
    .navbar_items li{
        display: none;
    }
 
    .navbar_RWD_icon{
         display: block;
-        font-size: 2.8rem;
-       
+        font-size: 3.2rem;
         padding: 0;
     }
 
     .navbar_Logo{
-        width: 80px;
-        transform: translate(2px);
+        margin-top: 0;
+        width: 120px;
+      
    
    }
 
-   .shoplist_RWD{
-       display: block;
-       position: relative;
-       font-size: 2.8rem;
-        
-   }
+    .navbar_icon_member  {
+        cursor: pointer;
+        margin-right:15px;
+        font-size: 2.8rem;
+    
+    }
 
-   .navbar_shoplist_count{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: white;
-    top:0px;
-    right: -10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #f5a623;
-    } 
-
+    .navbar_icon_shoplist{
+        cursor: pointer;
+        font-size: 2.8rem;
+    
+    }
 
     .navbar_RWD_items{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        position: absolute;
-        z-index: 999;
-        width: 200px;
-        overflow: hidden;
-        height: calc(100vh - 50px);
-        top: 50px;
-        left: -200px;
-        opacity: 0.9;
-        background-color: white;
-        transition: 0.8s;
-        
-    }
-
-   
-
-    .icon_member_RWD{
-        margin-top: 20px;
-        width: 120px;
-        height: 120px;
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 12rem;
-    }
-
-    .navbar_RWD_tool{
         display: block;
-    }
-
-    .RWD_icon_submit{
-        width: 80px;
-        height: 30px;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 1.6rem;
-        background-color: white;
-        border-radius: 6px;
-        border: solid 1px #c0c0c0;
-    }
    
-
-    .RWD_items{
-        margin-top: 10px;
-    } 
-
-    .RWD_items  li{
-        margin-top: 20px;
-        font-size: 1.7rem;
-        font-weight: 350;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.88;
-        letter-spacing: normal;
-        
-    } 
-
-    
-    
-
-
-
+    }
 
 
     
@@ -324,132 +190,75 @@
 
 @media (max-width: 480px) {
 
-    .Navbar{
-        position: fixed;
+    .navbar{
+        position: relative;
         z-index: 999;
         width: 100%;
-        max-height: 50px;
-       
-    }
-
-    .navbar_tool{
-        display: none;
+        max-height: 60px;
+        
     }
     
 
     .navbar_items{
-        padding: 0 5px;
-        margin-top: 2px;
+        
+        margin-top: 10px;
         width: 100%;
         font-size: 1.8rem;
         justify-content: space-around;
         align-items: center;
         transform: translateX(0px);
-        
     }
 
-
+ 
+    
    .navbar_items li{
        display: none;
    }
 
    .navbar_RWD_icon{
         display: block;
-        font-size: 2.8rem;
-       
+        font-size: 3.2rem;
         padding: 0;
     }
 
     .navbar_Logo{
-        width: 80px;
-        transform: translate(2px);
+        width: 120px;
+       transform: translate(10px);
    
    }
 
-   .shoplist_RWD{
-       display: block;
-       position: relative;
-       font-size: 2.8rem;
-        
-   }
-
-   .navbar_shoplist_count{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: white;
-    top:0px;
-    right: -10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #f5a623;
-    } 
-
-
-    .navbar_RWD_items{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        position: absolute;
-        z-index: 999;
-        width: 200px;
-        overflow: hidden;
-        height: calc(100vh - 50px);
-        top: 50px;
-        left: -200px;
-        opacity: 0.9;
-        background-color: white;
-        transition: 0.8s;
-        
+    .navbar_icon_member {
+        cursor: pointer;
+        margin-right:8px;
+        font-size: 2.8rem;
+    
     }
 
-   
+    .navbar_icon_shoplist{
+        cursor: pointer;
+        font-size: 2.8rem;
+    
+    }
 
-    .icon_member_RWD{
-        margin-top: 20px;
-        width: 120px;
-        height: 120px;
-        border-radius: 100%;
+    .navbar_RWD_items{
+        display: block;
+   
+    }
+
+    .navbar_shoplist_count{
+        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 12rem;
-    }
-
-    .navbar_RWD_tool{
-        display: block;
-    }
-
-    .RWD_icon_submit{
-        width: 80px;
-        height: 30px;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 1.6rem;
-        background-color: white;
-        border-radius: 6px;
-        border: solid 1px #c0c0c0;
-    }
-   
-
-    .RWD_items{
-        margin-top: 10px;
-    } 
-
-    .RWD_items  li{
-        margin-top: 20px;
-        font-size: 1.7rem;
-        font-weight: 350;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.88;
-        letter-spacing: normal;
-        
-    } 
+        font-size: 1.5rem;
+        color: white;
+        top:0px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: #f5a623;
+    }    
 
 }
 
@@ -715,27 +524,26 @@
         position: fixed;
         z-index: 999;
         width: 300px;
-        top: 50px;
+        top: 80px;
         right: -300px;
-        /* right: 0; */
-        height: calc(100vh - 50px);
+        height: calc(100vh - 80px);
        
-
+        
     }
-
     .Cart_bg{
         display: none;
     }
 
     .Cart_list_bar .fa-times{
        display: none;
+       
     }
     
     
     .Cart_list_bar{
         position: absolute;
         width: 300px;
-        height: calc(100vh - 50px);
+        height: calc(100vh - 80px);
         top: 0px;
         right: 0px;
         background-color: white;
@@ -802,10 +610,6 @@
         font-size: 18px;
         color: rgba(23, 34, 61, 0.5);
     
-    }
-
-    .Cart_list_total{
-        margin-top: 10px;
     }
 
     .checkout_btn{

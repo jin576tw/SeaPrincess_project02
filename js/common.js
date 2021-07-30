@@ -146,6 +146,7 @@ $(document).ready(function () {
                 }
 
                 $('.navbar_shoplist_count').text(sum)
+                $('.shoplist_count_RWD').text(sum)
 
 
             }

@@ -7,6 +7,7 @@ $(document).ready(function () {
 
             //cookie若無資料，顯是購物車為空
             $('.navbar_shoplist_count').css('display','none')
+            $('.shoplist_count_RWD').css('display','none')
             $('.Cart_list_total').css('display','none')
             $('.list_item_empty').css('display','flex')
 
@@ -48,6 +49,7 @@ $(document).ready(function () {
             }
 
             $('.navbar_shoplist_count').text(sum)//購物車數量
+            $('.shoplist_count_RWD').text(sum)//RWD購物車數量
             
 
             // 載入cookie中的商品
@@ -200,7 +202,6 @@ $(document).ready(function () {
             
                         click: function(){
                     
-                            console.log('hi')
                             location.href = "../html/checkout.html"
                     
                         }
@@ -428,11 +429,17 @@ $(document).ready(function () {
 
                     let $sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
 
+                    let sum_RWD = parseInt($('.shoplist_count_RWD').text())//抓購物車RWD現在數量
+                
+
                     let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())
 
 
-                    $nowsum = $sum - cookieArr[i].count; //購物車現在數量減去刪除數量
+                    $nowsum = $sum - parseInt(cookieArr[i].count) //購物車現在數量減去刪除數量
                     $('.navbar_shoplist_count').text($nowsum)//刪除後數量
+
+                    $nowsumRWD = sum_RWD - parseInt(cookieArr[i].count) //RWD購物車現在數量減去刪除數量
+                    $('.navbar_shoplist_count').text(sum_RWD)//RWD刪除後數量
                     
 
                     $delete_price = parseInt(cookieArr[i].count) *  parseInt(cookieArr[i].Item_price)
@@ -445,8 +452,9 @@ $(document).ready(function () {
 
                     cookieArr.splice(i,1);//刪除
 
-                    if( $nowsum <= 0){ //刪除後數量小於0，計數器消失
+                    if( $nowsum <= 0 ||  $nowsumRWD <= 0){ //刪除後數量小於0，計數器消失
                         $('.navbar_shoplist_count').css('display','none');
+                        $('.shoplist_count_RWD').css('display','none');
 
                     }
 
@@ -513,11 +521,17 @@ $(document).ready(function () {
 
                         let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
 
+                        let sum_RWD = parseInt($('.shoplist_count_RWD').text()) //抓navbar RWD現在數量
+
+                       
                         sum++ ; //navbar數量＋＋
+
+                        sum_RWD++ //navbarRWD數量＋＋
 
                         $(this).prev().text(cookieArr[i].count)//更新計算器數量
                     
                         $('.navbar_shoplist_count').text(sum)//更新navbar數量
+                        $('.shoplist_count_RWD').text(sum_RWD++)//更新navbar數量
 
                         
                     
@@ -581,9 +595,13 @@ $(document).ready(function () {
                     let sum = parseInt($('.navbar_shoplist_count').text())
                     sum-- ;
 
+                    let sum_RWD = parseInt($('.shoplist_count_RWD').text())
+                    sum_RWD-- ;
+
                     $(this).next().text(cookieArr[i].count)//現在商品數量
 
                     $('.navbar_shoplist_count').text(sum)
+                    $('.shoplist_count_RWD').text(sum_RWD)
 
 
                     //計算器數量效果變化
@@ -615,6 +633,7 @@ $(document).ready(function () {
 
                             $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
 
+                            $('.shoplist_count_RWD').css('display','none')
                             $('.navbar_shoplist_count').css('display','none')
                             $('.Cart_list_total').css('display','none')
                             break;
@@ -673,7 +692,7 @@ $(document).ready(function () {
         //手機版
         if ($(window).width() < 480) {
             
-            $('.navbar_icon_shoplist').click(function(){
+            $('.shoplist_RWD').click(function(){
                 let Location =  location.href
 
                 let Cart_Page = Location.substr(-9,9) == 'cart.html'
