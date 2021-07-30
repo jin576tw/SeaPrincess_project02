@@ -376,11 +376,12 @@
 /* /////第一頁////// */
 .First_page{
     background-color: #fff;
-    box-shadow: 0px 10px 30px var(--grey);
+    /* box-shadow: 0px 10px 30px var(--grey); */
     
 }
 
 .home_intro{
+    opacity: 0;
     margin-top: 50px;
     text-align: center;
 }
@@ -710,7 +711,7 @@
 }
 
 .item_tittle{
-  
+  opacity: 0;
   
    text-align: center;
    margin: 80px auto 0 auto;
@@ -917,6 +918,11 @@
 }
 
 @media (max-width: 992px) {
+    .Tourist_page{
+    
+        padding-bottom: 80px;
+    
+    }
 
     .more_btn_yellow{
         width: 250px;
@@ -940,7 +946,13 @@
     }
     
 }
+
 @media (max-width: 480px) {
+    .Tourist_page{
+    
+        padding-bottom: 80px;
+    
+    }
 
     .Tourist_page_title h1::before{
         content: '';

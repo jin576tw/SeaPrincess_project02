@@ -5,15 +5,18 @@
     z-index: 998;
     width: 100%;
     max-height: 140px;
+    /* background-color: rgba(255, 255, 255,0.8) */
     background-color: #ffff;
+
+  
 
 
 }
 .navbar_tool{
+    background-color: #ffff;
     display: flex;
     width: 100%;
-    margin: 10px 0px 0px 0px;
-    padding: 0 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
     justify-content: center;
     align-items: center;
     border-bottom: solid 1px var(--grey);
@@ -54,7 +57,7 @@
 
 
 .navbar_items{
-    
+   
     margin-top: 5px;
     max-height: 100px;
     width: 100%;

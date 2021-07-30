@@ -2,7 +2,7 @@ $(document).ready(function () {
 
  /* ///////導覽列////////// */
 
-        //////navbar購物車功能////
+    //////navbar購物車功能////
         if($.cookie("Cart") == null){
 
             //cookie若無資料，顯是購物車為空
@@ -787,46 +787,66 @@ $(document).ready(function () {
         $(window).scroll(function () {
     
         let scrollNow = $(window).scrollTop();
-        // console.log('scrollTop', scrollNow);
+        console.log('scrollTop', scrollNow);
     
     
-        if ($(window).width() <  992){
+        // if ($(window).width() <  992){
     
-            if (scrollNow >= 400){
+        //     if (scrollNow >= 763){
     
-                $('.Navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0.5)').css('transition','0.3s')
-            }else{
-                $('.Navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0.5)').css('transition','0.1s')
+        //         $('.Navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0.5)').css('transition','0.3s')
+        //     }else{
+        //         $('.Navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0)').css('transition','0.1s')
     
                 
     
-            }
+        //     }
     
-        }
+        // }
     
         // 網頁版 
         if ($(window).width() >= 992) {
     
        
-            if (scrollNow >= 706){
+            if (scrollNow >= 425){
     
                 $('.Navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0.5)').css('transition','0.3s')
             }else{
-                $('.Navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0.5)').css('transition','0.1s')
+                $('.Navbar').css('box-shadow','0px 2px 15px 0 rgba(173, 173, 173, 0)').css('transition','0.1s')
     
                 
     
             }
-       
-            if (scrollNow >= 1000){
+
+            // 其他分頁navbar
+            if (scrollNow >= 304){
     
                 $('.navbar_Logo').css('width','80px').css('transition','0.3s')
+                $('.Navbar').css('background-color','rgba(255, 255, 255,0.8)').css('transition','0.3s')
             }else{
                 $('.navbar_Logo').css('width','140px').css('transition','0.1s')
-    
+                $('.Navbar').css('background-color','rgba(255, 255, 255,1)').css('transition','0.3s')
                 
     
             }
+
+            // 首頁navbar效果
+            let Location  =  location.href
+            if( Location.substr(-10,10) == 'index.html'){
+                if (scrollNow >= 854){
+    
+                    $('.navbar_Logo').css('width','80px').css('transition','0.3s')
+                    $('.Navbar').css('background-color','rgba(255, 255, 255,0.8)').css('transition','0.3s')
+                }else{
+                    $('.navbar_Logo').css('width','140px').css('transition','0.1s')
+                    $('.Navbar').css('background-color','rgba(255, 255, 255,1)').css('transition','0.3s')
+                    
+        
+                }
+            }
+
+          
+            
         }
     
         })
