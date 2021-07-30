@@ -46,6 +46,7 @@ $(document).ready(function () {
 
                 // 顯示navbar數量 
                 $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
+                $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
 
 
                 //寫入cookie
@@ -125,6 +126,7 @@ $(document).ready(function () {
 
                 //cookie若無資料，顯是購物車為空
                 $('.navbar_shoplist_count').css('display','none')
+                $('.shoplist_count_RWD').css('display','none')
                 $('.Cart_list_total').css('display','none')
                 $('.list_item_empty').css('display','flex')
 

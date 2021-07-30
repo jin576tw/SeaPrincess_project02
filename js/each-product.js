@@ -80,6 +80,9 @@ $(document).ready(function () {
             // 顯示navbar數量 
             $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
 
+            // 顯示navbarRWD數量 
+            $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
+
 
             // 商品名稱
             let itemTitle = $(this).prev().prev().prev().children('h1').text()
@@ -187,6 +190,7 @@ $(document).ready(function () {
 
                 //cookie若無資料，顯是購物車為空
                 $('.navbar_shoplist_count').css('display','none')
+                $('.shoplist_count_RWD').css('display','none')
                 $('.Cart_list_total').css('display','none')
                 $('.list_item_empty').css('display','flex')
 
@@ -208,10 +212,13 @@ $(document).ready(function () {
                 }
 
                 let navItem_count = parseInt($('.navbar_shoplist_count').text())
+                let navItem_count_RWD = parseInt($('.shoplist_count_RWD').text())
 
                 let new_count = itemCount+ navItem_count
+                let new_count_RWD = itemCount+ navItem_count_RWD
 
                 $('.navbar_shoplist_count').text(new_count)
+                $('.shoplist_count_RWD').text(new_count_RWD)
 
 
             }
