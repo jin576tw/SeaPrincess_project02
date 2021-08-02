@@ -183,7 +183,9 @@ $(document).ready(function () {
             mouseenter: function () {
 
                 
-                $(this).children().children('.item_title').css('border','solid 0.1px transparent')
+                $(this).children().children('.item_title').css('border','solid 0.1px transparent').css('border-top','solid 0.1px rgba(173, 173, 173, 0.5)')
+
+                $(this).children().children('.item_pic').css('border-top','solid 0.1px transparent').css('border-right','solid 0.1px transparent').css('border-left','solid 0.1px transparent')
 
                 
 
@@ -192,6 +194,9 @@ $(document).ready(function () {
 
                
                 $(this).children().children('.item_title').css('border','solid 0.1px rgba(173, 173, 173, 0.5)')
+
+
+                $(this).children().children('.item_pic').css('border-top','solid 0.1px rgba(173, 173, 173, 0.5)').css('border-right','solid 0.1px rgba(173, 173, 173, 0.5)').css('border-left','solid 0.1px rgba(173, 173, 173, 0.5)')
 
                 
 
