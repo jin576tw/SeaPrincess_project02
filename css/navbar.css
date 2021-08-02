@@ -277,7 +277,6 @@
         height: calc(100vh - 50px);
         top: 50px;
         left: -200px;
-        opacity: 0.9;
         background-color: white;
         transition: 0.8s;
         
@@ -329,7 +328,9 @@
 
     
     
-
+    .RWD_items .fa-angle-down{
+        transform: translateX(5px);
+    }
 
 
 
@@ -418,7 +419,6 @@
         height: calc(100vh - 50px);
         top: 50px;
         left: -200px;
-        opacity: 0.9;
         background-color: white;
         transition: 0.8s;
         
@@ -467,6 +467,10 @@
         letter-spacing: normal;
         
     } 
+
+    .RWD_items .fa-angle-down{
+        transform: translateX(5px);
+    }
 
 }
 
@@ -690,6 +694,7 @@
 
 
 .checkout_btn{
+  
     /* margin-bottom: 80px; */
     margin-top: 60px;
     width: 80%;

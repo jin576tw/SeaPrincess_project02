@@ -765,7 +765,7 @@ $(document).ready(function () {
 
 
                 }else{
-                    $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
+                    $('.Cart_list_bar').toggleClass('RWD_open_shoplist')
 
                     $('.navbar_RWD_items').removeClass('RWD_open')
                     
