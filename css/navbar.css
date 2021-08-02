@@ -247,7 +247,24 @@
         
    }
 
- 
+
+    .shoplist_count_RWD{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: white;
+        top:0px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: #f5a623;
+
+    }
+
+
     .navbar_RWD_items{
         display: flex;
         flex-direction: column;
