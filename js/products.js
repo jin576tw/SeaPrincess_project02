@@ -30,6 +30,9 @@ $(document).ready(function () {
 
             }
 
+
+            $('.Seafood_select_warp').fadeIn(500)
+            $('.Fishing_select_warp').fadeOut(1)
             
 
 
@@ -52,6 +55,9 @@ $(document).ready(function () {
                 $(this).prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
 
 
+
+
+
                 
             }
 
@@ -67,6 +73,9 @@ $(document).ready(function () {
 
             
             }
+
+            $('.Seafood_select_warp').fadeOut(1)
+            $('.Fishing_select_warp').fadeIn(500)
 
 
 

@@ -562,6 +562,11 @@
     height: 120px;
 }
 
+.list_item_pic img{
+    height: 100%;
+
+}
+
 .list_item_intro{
     overflow: hidden;
     width: 240px;

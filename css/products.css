@@ -2,68 +2,140 @@
     /* outline: solid var(--light_blue) 1px; */
 }
 
-.content_warp{
-    position: relative;
-    z-index: 997;
-    overflow: hidden;
-
-}
-/*/////// 商品首頁/////// */
-
-.Products_title{
-    background-color: #fff;
-
-}
-
-.Products_title_pic{
-    position: relative; 
+/* //////商品選擇//// */
+.Prouduct_select{
+    margin-top: 140px;
     width: 100%;
-    height: 360px;
-    background-image: url('../img/productbg.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    height: 250px;
+    background-color:#DDDDDD
+
 }
 
-.Products_title_pic_bg{
-    position: absolute;
+
+.Prouduct_select_warp{
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    background-color: #384982 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.Prouduct_select_btn{
+    cursor: pointer;
+    border-radius: 15px 15px 0px 0px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.Products_title_pic_text{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-top: 60px;
-    height: 40px;
+.Prouduct_select_icon{
+    width: 12%;
+    transition: 0.3s;
 }
-.Products_title_pic_text h1{
-    font-size: 3.6rem;
-    font-weight: 500;
+
+.Fishing_select{
+    opacity: 0.5;
+    background-color: #DDDDDD;
+}
+
+.Prouduct_select_btn h1{
+   margin-top: 20px;
+   font-size: 2.4rem;
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
     letter-spacing: 2px;
     text-align: center;
-    color: #ffffff;;
 }
 
+.Seafood_select_icon{
+    transform: scale(1.8) translateY(-10px);
 
-
-.Products_title_content{
-    width: 100%;
+}
     
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+    .Prouduct_select{
+        margin-top: 50px;
+    }
+
+
+}
+@media (max-width: 480px) {
+
+    .Prouduct_select{
+        margin-top: 20px;
+        width: 100%;
+        height: 200px;
+        background-color:#DDDDDD
+        
+    }
+
+    .Prouduct_select_btn{
+        cursor: pointer;
+        border-radius: 15px 15px 0px 0px;
+        height: 120px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+    
+
+    .Prouduct_select_btn{
+        justify-content: center;
+        align-items: center;
+    }
+    .Prouduct_select_icon{
+        width: 25%;
+        transition: 0.3s;
+    }
+    
+    
+    .Prouduct_select_btn h1{
+        margin-top: 10px;
+        font-size: 2rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+
+    .Seafood_select_icon{
+        transform: scale(1.5) translateY(-5px);
+    
+    }
+  
+        
 }
 
-.seafood_warp{
+.Select_content{
+    min-height: 1500px;
+}
+
+
+/* ///////////生鮮食材/////////// */
+
+/* 海鮮管家 */
+.seafood_butler{
+    padding-bottom: 80px;
+}
+.seafood_butler_warp{
     margin: 0 auto;
     cursor: pointer;
     margin-top: 80px;
@@ -76,12 +148,12 @@
     padding-top: 80px;
 }
 
-.seafood_warp:hover{
+.seafood_butler_warp:hover{
     transition: 0.5s;
     box-shadow: 2px 8px 15px 0 rgba(173, 173, 173, 0.5);
 }
 
-.seafood_text h1{
+.seafood_butler_text h1{
    
     font-size: 3.6rem;
     font-weight: 500;
@@ -92,7 +164,7 @@
     text-align: center;
 }
 
-.seafood_text p{
+.seafood_butler_text p{
    
     font-size: 2rem;
     font-weight: normal;
@@ -127,15 +199,19 @@
 
 @media (max-width: 992px) {
 
+    .seafood_butler{
+        padding-bottom: 30px;
+    }
 
-    .seafood_warp{
+
+    .seafood_butler_warp{
         height: 360px;
         margin-top: 60px;
         padding-top: 72px;
     
     }
 
-    .seafood_text h1{
+    .seafood_butler_text h1{
    
         font-size: 3.2rem;
         font-weight: 500;
@@ -147,7 +223,7 @@
         /* margin-top: 50px; */
     }
     
-    .seafood_text p{
+    .seafood_butler_text p{
        
         font-size: 1.6rem;
         font-weight: normal;
@@ -182,14 +258,14 @@
 }
 @media (max-width: 480px) {
 
-    .seafood_warp{
+    .seafood_butler_warp{
         height: 360px;
         margin-top: 60px;
         padding-top: 50px;
     
     }
 
-    .seafood_text h1{
+    .seafood_butler_text h1{
    
         font-size: 3.2rem;
         font-weight: 500;
@@ -201,7 +277,7 @@
         /* margin-top: 50px; */
     }
     
-    .seafood_text p{
+    .seafood_butler_text p{
        
         font-size: 1.6rem;
         font-weight: 350;
@@ -236,53 +312,26 @@
 
 }
 
-/*/////// 商品總攬/////// */
-.Products_Items{
+/*///////  生鮮食材總攬/////// */
+.Seafood_Products_Items{
     position: relative;
-    background-color: #fff;
-    padding-top: 100px;
-    
-    
-}
-.Products_Items::after{
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -100px;
-    width: 100%;
-    height: 100px;
-    background-color: #fff;
-    
-    
-}
-
-.Products_Items_title h1{
-    
-    font-size: 3.6rem;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #000000;
-
+    background-color: #fff;    
 }
 
 .Items_categeroy_warp{
+   
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 60px;
     
 }
 .item_type_warp{
-    /* background-color: red; */
-    width: 40%;
+   
     min-width: 378px;
     height: 50px;
-    border: solid 1px  rgba(23, 34, 61, 0.75);
     justify-content: space-evenly;
+    align-items: center;
 
 }
 
@@ -298,25 +347,26 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color:var(--dark_blue);
-
-    width: 25%;
+    color:black;
     height: 100%;
+    opacity: 0.5;
+    border-bottom: transparent solid 2px;
+
 
 }
 .item_type:hover{
     transition: 0.3s;
-    background-color:var(--dark_blue);
-    color:white
+    opacity:1;
+    border-bottom: black solid 2px;
+    
 }
 
 
 .item_status_warp{
-    /* background-color:red; */
-    height: 50px;
-    width: 30%;
-    min-width: 283px;
-    justify-content: space-evenly;
+   
+    height: 50px;  
+    align-items: center;
+    margin-right: 20px;
 }
 
 .item_status{
@@ -331,408 +381,318 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: rgba(56, 73, 130, 0.4);
-    /* width: 33.33%; */
+    color: black;
     height: 100%;
-    border-bottom: 1px solid transparent;
-    padding-top: 10px;
-}
-.item_status:hover{
-    transition: 0.3s;
-    border-bottom: 1px solid var(--dark_blue);
-    color:var(--dark_blue);
-}
-
-
-.Product_items_warp{
    
-    opacity: 1
-    /* transform: translateY(20px); */
+}
+
+
+.item_status .fa-angle-down{
+    margin-left: 5px;
+
 }
 
 
 
-  @media (max-width: 992px) {
-    .Items_categeroy_warp{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 35px;
-        
-    }
-    .item_type_warp{
-        width: 40%;
-        min-width: 378px;
-        height: 50px;
-        border: solid 1px  rgba(23, 34, 61, 0.75);
-        justify-content: space-evenly;
-    
-    }
-    .Product_items_warp{
-        margin-top: 20px;
-    }
-
-    
-}
 @media (max-width: 480px) {
 
 
     .Items_categeroy_warp{
         display: flex;
-        justify-content: space-between;
         flex-direction: column;
-        margin-top: 40px;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-top: 30px;
         
-    }
-    .item_type_warp{
-       
-        width: 100%;
-        min-width: 0px;
-        height: 50px;
-        border: solid 1px  rgba(23, 34, 61, 0.75);
-        justify-content: space-evenly;
-    
     }
 
     .item_status_warp{
-        height: 50px;
-        width: 60%;
-        min-width: 0px;
-        justify-content: space-around;
+   
+        height: 50px;  
+        align-items: center;
         margin-top: 15px;
-        
+        margin-right: 20px;
     }
 
     .item_status{
         font-size: 1.4rem;
-        padding-top: 0px;
         
+       
     }
 
-    .Product_items_warp{
-        margin-top: -10px;
-    }
-
-    
-}
-  
- 
-  /* ////////Line購物社團//////  */
-
-  
-  .LineGroup_page_bg{
-    z-index: 997;
-    position: fixed;
-    /* margin-top: 800px; */
-    top: 0%;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../img/lineGoup_bg.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-
-
-  .LineGroup_page{
-      margin-top: 100px;
-      position: relative;
-      background-color: transparent;
-      width: 100%;
-      height: 560px;
-  }
-
-  .LineGroup_page_fillter{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.5;
-      background-color: var(--dark_blue)
-
-  }
-
-
-  .LineGroup_page_content{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .LineGroup_page_content h1{
-    font-size: 3.6rem;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 2px;
-    text-align: center;
-    color: white;
-  }
-  .LineGroup_page_content p{
-      margin-top: 20px;
-    font-size: 1.6rem;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-    text-align: center;
-    color: white;
-  }
-
-  .line_btn_lg{
-      margin-top: 50px;
-      width: 320px;
-      height: 60px;
-      border-radius: 30px;
-      background-color: #00d5a5;
-      border: solid 1px transparent
-  }
-
- 
-
-  .line_btn_lg p{
-    position: relative;
-    font-size: 2.4rem;
-    font-weight: 400;
-    text-align: center;
-    color: white;
-    margin: 0 auto ;
-    padding-left: 50px;
-
-  }
-
-
-  .line_btn_lg p::before{
-      content: '';
-      display: block;
-      position: absolute;
-      top: 5px;
-      left: 50px;
-      width: 35px;
-      height: 35px;
-      background-image: url('../img/line.svg');
-      background-size: contain;
-  }
-
-
-
-  /* //////商品注意事項/////// */
-  .Product_Cauction_page{
-    /* height: 100vh; */
-    background-color: #fff;
-    padding-top: 60px;
-}
-
-
-.Product_Cauction_page_title h1{
-    
-    font-size: 3.6rem;
-    text-align: center;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 2px;
-    text-align: center;
   
 }
 
-.Product_Cauction_page_content{
-    margin: 40px auto 0 auto;
-    padding: 0 150px;
-}
-.Product_Cauction_page_content p{
-
-    color: rgba(0, 0, 0, 0.6);
-    
-    font-size: 1.8rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-    text-align: center;
-
+.Seafood_Product_items_warp{
+    padding-bottom: 100px;
 }
 
 
-.Cauction_map{
+/* /////////釣魚用具/////////// */
+
+.Fishing_select_warp{
+    display: none;
+}
+
+/* 釣魚用具分類 */
+.Fishing_type_item_warp{
     margin-top: 80px;
-    height: 500px;
-    margin-bottom: 150px;
-
-}
-
-.Cauction_map_pic{
-    margin: 0 auto;
-    width: 100%;
-    height: 80%;
-   
-    
-}
-.Cauction_map_pic iframe{
-    width: 100%;
-    height: 100%;
-}
-
-
-.contact_map_content{
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 20%;
+    display: flex;
     justify-content: center;
-    margin-top: 30px;
-    
-
+    align-items: center;
 }
 
-.map_content_title{
-    margin-right: 80px;
-    height: 100%;
-    
+.Fishing_type_item{
+    opacity: 0.3;
+    cursor: pointer;
+    margin: 0 15px 0 15px;
+    width: 180px;
+    height: 180px;
+    border:solid 1px transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.map_content_title h3{
-    margin-top: 40px;
+.Fishing_type_icon{
+    width: 70px;
+    height: 70px;
+}
+
+
+.Fishing_type_item h1{
+    margin-top: 20px;
     font-size: 2.4rem;
-    font-weight: 500;
+    font-weight: 450;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: rgba(0, 0, 0, 0.7);
-
-}
-.map_content_title h4{
-    font-size: 2rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: rgba(0, 0, 0, 0.7);
-
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--dark_blue)
 }
 
-.map_content_time{
-   
-    height: 100%;
+.type_icon01 img{
+    transform:  translate(-8px);
 }
-.map_content_time p{
-    margin-top: 40px;
-    font-size: 1.8rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: rgba(0, 0, 0, 0.7);
-    padding-left: 15px;
-    border-left: 3px solid var(--sea_blue);
+.type_icon03 img{
+    transform: scale(1.2) translate(10px,15px);
+}
+.type_icon04 img{
+    transform: scale(0.75);
+}
 
-   
+.Fishing_type01{
+    opacity: 1;
+    border:solid 1px var(--dark_blue);
 }
 
 @media (max-width: 992px) {
 
-    .Product_Cauction_page_content{
-        margin: 40px auto 0 auto;
-        padding: 0 50px;
+    .Fishing_type_item{
+        opacity: 0.3;
+        cursor: pointer;
+        margin: 0px 15px 50px 15px;
+        width: 120px;
+        height: 150px;
+        border:solid 1px transparent;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
+
+    .Fishing_type01{
+        opacity: 1;
+        border:solid 1px var(--dark_blue);
+    }
+}
+@media (max-width: 480px) {
+
+    .Fishing_type_item{
+        opacity: 0.3;
+        cursor: pointer;
+        margin: 0px 15px 50px 15px;
+        width: 120px;
+        height: 150px;
+        border:solid 1px transparent;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .Fishing_type01{
+        opacity: 1;
+        border:solid 1px var(--dark_blue);
+    }
+
 
 }
 
+
+
+
+/* 釣魚用具總攬 */
+
+
+.Fishing_Products_Items{
+    position: relative;
+    background-color: #fff;    
+}
+
+.Items_categeroy_warp{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    
+}
+.item_type_warp02{
+    min-width: 700px;
+    height: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.item_type02{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color:black;
+    height: 100%;
+    opacity: 0.5;
+    border-bottom: transparent solid 2px;
+
+
+}
+.item_type02:hover{
+    transition: 0.3s;
+    opacity:1;
+    border-bottom: black solid 2px;
+    
+}
+
+
+.item_status_warp{
+   
+    height: 50px;  
+    align-items: center;
+    margin-right: 20px;
+}
+
+.item_status{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: black;
+    height: 100%;
+   
+}
+
+
+.item_status .fa-angle-down{
+    margin-left: 5px;
+
+}
+
+.Finshing_Product_items_warp{
+    padding-bottom: 100px;
+    
+}
+
+@media (max-width: 992px) {
+
+    .Fishing_Products_Items{
+        margin-top: -40px;
+    }
+    .Items_categeroy_warp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-top: 30px;
+        
+    }
+
+    .Finshing_Product_items_warp{
+        margin-top: -30px;
+        padding-bottom: 100px;
+        
+    }
+
+
+}
 
 @media (max-width: 480px) {
 
-    .Product_Cauction_page_content{
-        margin: 40px auto 0 auto;
-        padding: 0 10px;
-    }
-    .Product_Cauction_page_content p{
-    
-        color: rgba(0, 0, 0, 0.6);
+
+    .Items_categeroy_warp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-top: 30px;
         
-        font-size: 1.8rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.8;
-        letter-spacing: normal;
-        text-align: center;
-    
-    }
-    
-    
-    .Cauction_map{
-        margin-top: 50px;
-        height: 500px;
-        margin-bottom: 150px;
-    
     }
 
+    .item_type_warp02{
 
-    .contact_map_content{
-        align-items: center;
+        min-width: 0;
+        width: 98%;
         margin: 0 auto;
-        width: 100%;
-        height: 20%;
-        justify-content: center;
-        margin-top: 0px;
+        height: 70px;
+        justify-content: flex-start;
+        align-items: center;
         
-    
+ 
     }
 
-    .map_content_title h3{
-        margin-top: 40px;
-       
-        font-size: 2rem;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        color: rgba(0, 0, 0, 0.7);
-    
-    }
-    .map_content_title h4{
-     
-        font-size: 1.8rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        color: rgba(0, 0, 0, 0.7);
-    
-    }
-    
-    .map_content_time{
-       
-        height: 100%;
-        width: 40%;
-    }
-    .map_content_time p{
-        margin-top: 40px;
-        
+    .item_type02{
+        width: 25%;
         font-size: 1.6rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        color: rgba(0, 0, 0, 0.7);
-        padding-left: 15px;
-        border-left: 3px solid var(--sea_blue);
+       
+        display: flex;
+        align-items: baseline
+        
+
+    }
     
+
+    .item_status{
+        font-size: 1.4rem;
+        
        
     }
-
+    .Finshing_Product_items_warp{
+        margin-top: -40px;
+        padding-bottom: 100px;
+        
+    }
+    
+  
 }
+
+

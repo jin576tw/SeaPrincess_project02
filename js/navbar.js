@@ -690,13 +690,72 @@ $(document).ready(function () {
 
 
    
-         /////購物車按鈕效果/////
+         /////購物車按鈕效果////
+
+        
+
+
+           
+     
+
+         // 平板版
+        if ($(window).width() > 480) {
+   
+            $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
+    
+    
+            $('.shoplist_RWD').click(function(){
+
+                let Location =  location.href
+               
+                let Cart_Page = Location.substr(-9,9) == 'cart.html'
+                let Checkout_Page = Location.substr(-13,13) == 'checkout.html'
+
+                // 結帳頁只會重新整理
+                if(Cart_Page || Checkout_Page){
+
+                    location.reload()
+
+
+                }else{
+                    $('.Cart_list').fadeIn(100);
+                    $('.Cart_list_bar').css('transform','translateX(0px)').css('transition','0.5s')
+                }
+    
+                
+                
+
+            })
+    
+            $('.cancle_btn').click(function(){
+                
+    
+                $('.Cart_list').fadeOut(100);
+                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
+                
+    
+            })
+            $('.Cart_bg').click(function(){
+            
+    
+                $('.Cart_list').fadeOut(100);
+                $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
+            
+                
+    
+            })
+    
+
+    
+        }
+
     
 
         //手機版
         if ($(window).width() < 480) {
-            
+                    
             $('.shoplist_RWD').click(function(){
+                
                 let Location =  location.href
 
                 let Cart_Page = Location.substr(-9,9) == 'cart.html'
@@ -710,20 +769,22 @@ $(document).ready(function () {
 
                 }else{
                     $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
+                    
                 }
-    
+
             })
         }
+
         
-        // 網頁版
-        if ($(window).width() >= 480) {
-    
+         // 網頁版
+         if ($(window).width() >= 992) {
+   
             $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
     
     
             $('.navbar_icon_shoplist').click(function(){
                 let Location =  location.href
-
+               
                 let Cart_Page = Location.substr(-9,9) == 'cart.html'
                 let Checkout_Page = Location.substr(-13,13) == 'checkout.html'
 

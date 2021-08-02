@@ -6,7 +6,10 @@ $(document).ready(function () {
     let empty_item = $(".item[Item-left='0']")
     if(empty_item){
         empty_item.children('.item_detail').children('.sold').css('display','block')
+        empty_item.children('.item_detail02').children('.sold').css('display','block')
         empty_item.children('.item_detail').children('p:nth-of-type(1)').css('display','none')
+        empty_item.css('opacity','0.7')
+        empty_item.children('.item_detail02').children('p:nth-of-type(1)').css('display','none')
         empty_item.css('opacity','0.7')
         
     }

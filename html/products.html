@@ -27,27 +27,44 @@
 
 <!-- 導覽列 -->
 <section id="navbar"></section>
- 
 
-<div class="LineGroup_page_bg"></div>
+<!-- 商品選擇 -->
+<section class="Prouduct_select">
+    <div class="container Prouduct_select_warp p-0">
+        
+            <div class="Prouduct_select_btn Seafood_select col-lg-5 col-6">
 
-<div class="content_warp">
+                <div class="Prouduct_select_icon Seafood_select_icon">
+                    <img src="../img/icon-shop-01.svg" alt="">
+                </div>   
+                
+                <h1>生鮮食材</h1>
 
-     <!-- 商品首頁 -->
-    <section class="Products_title">
-        <div class="Products_title_pic">
-            <div class="Products_title_pic_bg"></div>
-            <div class="Products_title_pic_text">
-                <h1 class="animate__animated animate__slideInUp">海鮮宅配</h1>
+            </div>
+            <div class="Prouduct_select_btn Fishing_select col-lg-5 col-6">
+                <div class="Prouduct_select_icon  Fishing_select_icon">
+                    <img src="../img/icon-shop-02.svg" alt="">
+                </div>   
+                
+                <h1>釣具用品</h1>
+
             </div>
 
-        </div>
-        <div class="Products_title_content">
+    </div>
+</section>
+
+<!-- 商品類別選擇 -->
+<section class="Select_content">
+
+    <!-- 生鮮食材 -->
+    <div class="Seafood_select_warp">
+        <!-- 海鮮管家 -->
+         <section class="seafood_butler">
             <div class="container ">
                 <div class="row ">
                 
-                    <div class=" seafood_warp animate__animated animate__fadeIn col-lg-12 col-11">
-                        <div class="seafood_text">
+                    <div class=" seafood_butler_warp animate__animated animate__fadeIn col-lg-12 col-11">
+                        <div class="seafood_butler_text">
                             <h1>海鮮管家</h1>
                             <p>依照您的吃魚需求、料理習慣，為您選用最新鮮的當季海鮮，<br>
                                 另可配置當季小農的新鮮農產品，讓餐桌更加豐富美味！</p>
@@ -59,370 +76,614 @@
 
                 </div>
             </div>
+        </section>  
 
-            
-            
-        </div>
 
-    
-
-    </section>  
-
-    <!-- 商品總覽 -->
-    <section class="Products_Items"> 
-        <div class="container">
-            <div class="row">
-
-                <div class="Products_Items_title">
-                    <h1>最新鮮的大海滋味</h1>
-                </div>
-            
-                <div class="Items_categeroy_warp ">
-                    <div class="item_type_warp d-flex">
-                    
-                        <div class="item_type item_type01">所有商品</div>
-                        <div class="item_type item_type02">鮮甜海味</div>
-                        <div class="item_type item_type03">小農蔬果</div>
-                        <div class="item_type item_type04">優惠組合</div>
-                
-                    </div>
-                    <div class="item_status_warp d-flex">
-                        <div class="item_status item_status01">最新上架</div>
-                        <div class="item_status item_status02">熱銷排行</div>
-                        <div class="item_status item_status03">價格</div>
-            
-                    </div>
+        <!-- 生鮮食材總覽 -->
+        <section class="Seafood_Products_Items"> 
+            <div class="container">
+                <div class="row ">
 
                     
-                </div>
-
-            </div>
-
-            <div class="row Product_items_warp d-flex ">
-                    
-                <div class="item item01 p-0 col-lg-3 col-md-4 col-6" Item-ID= "1" Item-left="200">
-                    <div class="item_intro ">
-                        <div class="add_btn">
-                            <i class="fas fa-cart-plus"></i>
-                        </div>
-                        <div class="item_pic">
-                            <a href="../html/each-product.html">
-                            <img src="../img/item01.jpg" alt="">
-                            </a>
-                        </div> 
-                        <div class="item_title">
-                            <a href="../html/each-product.html">
-                            <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
-                            </a>
-                        </div>    
-                    </div>
-                    <div class="item_detail">
-                            <p>688</p>
-                            <p class="sold">已售完</p>
-                    </div> 
-                
-                </div>
-                <div class="item item02 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "2" Item-left="10">
-                    
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item02.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去近海黃雞魚</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>700</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                    
-                </div>
-                <div class="item item03 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "3" Item-left="0">
-                    
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item03.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去深海金目鯛 (紅皮刀)</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>700</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                    
-                </div>
-                <div class="item item04 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "4" Item-left="150">
-                
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item04.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去深海大目鰱</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>1400</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                    
-                </div>
-                <div class="item item01 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "1" Item-left="200">
-                
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item01.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>688</p>
-                                <p class="sold">已售完</p>
-                        </div>
-                
-                </div>
-                <div class="item item02 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "2" Item-left="10">
-                    
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item02.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去近海黃雞魚</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>700</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                
-                </div>
-                <div class="item item03 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "3" Item-left="0">
-                    
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item03.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去深海金目鯛 (紅皮刀)</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>700</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                    
-                </div>
-                <div class="item item04 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "4" Item-left="150">
-                
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item04.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去深海大目鰱</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>1400</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                    
-                </div>
-                <div class="item item01 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "1" Item-left="200">
-                    
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item01.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>688</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                
-                </div>
-                <div class="item item02 p-0 col-lg-3 col-md-4 col-6"
-                Item-ID= "2" Item-left="10">
-                    
-                        <div class="item_intro ">
-                            <div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="item_pic">
-                                <a href="../html/each-product.html">
-                                <img src="../img/item02.jpg" alt="">
-                                </a>
-                            </div> 
-                            <div class="item_title">
-                                <a href="../html/each-product.html">
-                                <h3>真空三去近海黃雞魚</h3>
-                                </a>
-                            </div>    
-                        </div>
-                        <div class="item_detail">
-                                <p>700</p>
-                                <p class="sold">已售完</p>
-                        </div> 
-                    
-                </div>
-            
-            </div>
-
-            
-        </div>
-
-        
-
-    </section>  
-
-    <!-- Line購物社團 -->
-    <section class="LineGroup_page">
-
-        <div class="LineGroup_page_fillter"></div>
-
-        <div class="LineGroup_page_content">
-            <h1>歡迎加入Line購物社團</h1>
-            <p>歡迎加入好友生活圈，專屬每月限量好康！<br>
-                小粉絲專屬優惠，官網上沒有、來不及上架的品項、第一手新鮮貨，絕不容錯過。<br>
-                （Line搜尋官方帳號：888鮮魚管家，ID：@888seafood）</p>
-
-
-            <button class="line_btn_lg">
-                <p>Line 鮮魚管家</p>
-            </button>
-        </div>
-
-    </section>
-
-    <!--商品注意事項 -->
-    <section class="Product_Cauction_page">
-        <div class="container">
-            <div class="row">
-                <div class="Product_Cauction_page_title">
-                    <h1>注意事項</h1>
-                </div>
-                <div class="Product_Cauction_page_content">
-                    <p>自家船捕撈的漁獲，品項數量都不一定，有時常常缺貨，但都一定是以當季盛產魚貨為主，請多多包涵。也會精選認識的船家，在確保生產流程以及漁獲鮮度下，幫大家精選各式海鮮。</p><br>
-                    <p> 魚種數量會常常更新，有時候來不及更新請多多見諒，您可以先填你想要的商品以及數量，專員小馮會再與您聯繫確切的商品數量，如有疑問可以用以下方式聯絡小馮專員，也歡迎直接到現場購買魚貨喲！</p>
-        
-                </div>
-
-            </div>
-            <div class="row">
-
-                
-                <div class="Cauction_map col-lg-12">
-
-                    <div class="Cauction_map_pic ">
+                    <div class="Items_categeroy_warp p-0">
+                        <div class="item_type_warp  d-flex">
                         
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.3201442002246!2d121.68677229048065!3d25.17686516686122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4c458f2a1151%3A0x117fdd9f84c84da3!2z6JCs6YeM5Y2A5YWs5omA!5e0!3m2!1szh-TW!2stw!4v1625411476823!5m2!1szh-TW!2stw"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                    <div class="contact_map_content  d-flex">
-                        <div class="map_content_title">
-                            <h3>海鮮倉庫 (實體店面)</h3>
-                            <h4>新北市萬里區瑪鋉漁港</h4>
+                            <div class="item_type ">所有商品</div>
+                            <div class="item_type ">鮮甜海味</div>
+                            <div class="item_type ">小農蔬果</div>
+                            <div class="item_type ">優惠組合</div>
+                    
                         </div>
-                        <div class="map_content_time">
-                            <p>平日 10:00 - 19:30<br>
-                                假日 10:00 - 14:00<br>
-                                電話：02 7709 6766</p>
+                        <div class="item_status_warp d-flex">
+                            <div class="item_status">商品總覽<i class="fas fa-angle-down"></i></div>
                         </div>
+
+                        
                     </div>
 
                 </div>
 
+                <div class="row Seafood_Product_items_warp d-flex ">
+                        
+                    <div class="item item01 p-0 col-lg-3 col-md-4 col-6" Item-ID= "1" Item-left="200">
+                        <div class="item_intro ">
+                            <div class="add_btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </div>
+                            <div class="item_pic">
+                                <a href="../html/each-product.html">
+                                <img src="../img/item01.jpg" alt="">
+                                </a>
+                            </div> 
+                            <div class="item_title">
+                                <a href="../html/each-product.html">
+                                <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
+                                </a>
+                            </div>    
+                        </div>
+                        <div class="item_detail">
+                                <p>688</p>
+                                <p class="sold">已售完</p>
+                        </div> 
+                    
+                    </div>
+                    <div class="item item02 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "2" Item-left="10">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item02.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去近海黃雞魚</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>700</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item03 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "3" Item-left="0">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item03.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去深海金目鯛 (紅皮刀)</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>700</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item04 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "4" Item-left="150">
+                    
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item04.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去深海大目鰱</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>1400</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item01 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "1" Item-left="200">
+                    
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item01.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>688</p>
+                                    <p class="sold">已售完</p>
+                            </div>
+                    
+                    </div>
+                    <div class="item item02 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "2" Item-left="10">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item02.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去近海黃雞魚</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>700</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                    
+                    </div>
+                    <div class="item item03 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "3" Item-left="0">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item03.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去深海金目鯛 (紅皮刀)</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>700</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item04 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "4" Item-left="150">
+                    
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item04.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去深海大目鰱</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>1400</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item01 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "1" Item-left="200">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item01.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>688</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                    
+                    </div>
+                    <div class="item item02 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "2" Item-left="10">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item02.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>真空三去近海黃雞魚</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">
+                                    <p>700</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                
+                </div>
+
+                
+            </div>
+
+            
+
+        </section>  
+
+    </div> 
 
 
+    <!-- 釣魚用具 -->
+    <div class="Fishing_select_warp">
 
+        <!-- 釣魚用具分類 -->
+        <section class="Fishing_type">
+            <div class="container">
+                <div class="row Fishing_type_item_warp">
+                    <div class="Fishing_type_item Fishing_type01">
+                        <div class="Fishing_type_icon type_icon01">
+                            <img src="../img/icon-shop-03.svg" alt="">
+                        </div>
+                        <h1>捲線器</h1>
+                        
+                    </div>
+                    <div class="Fishing_type_item Fishing_type02">
+                        <div class="Fishing_type_icon type_icon02">
+                            <img src="../img/icon-shop-02.svg" alt="">
+                        </div>
+                        <h1>釣竿</h1>
+                    </div>
+                    <div class="Fishing_type_item Fishing_type03">
+                        <div class="Fishing_type_icon type_icon03">
+                            <img src="../img/icon-shop-04.svg" alt="">
+                        </div>
+                        <h1>釣線</h1>
+                    </div> 
+                    <div class="Fishing_type_item Fishing_type04">
+                        <div class="Fishing_type_icon type_icon04">
+                            <img src="../img/icon-shop-05.svg" alt="">
+                        </div>
+                        <h1>配件</h1>
+                    </div>
+                </div>
             </div>
 
 
-        </div>
-    </section>
+        </section>
+
+
+        <!-- 釣魚用具總攬 -->
+        <section class="Fishing_Products_Items"> 
+            <div class="container">
+                <div class="row ">
+
+                    
+                    <div class="Items_categeroy_warp p-0">
+                        <div class="item_type_warp02  d-flex">
+                        
+                            <div class="item_type02 ">所有商品</div>
+                            <div class="item_type02 ">海水紡車捲線器</div>
+                            <div class="item_type02 ">泛用型紡車式捲線器</div>
+                            <div class="item_type02 ">擬餌拋投捲線器</div>
+                            <div class="item_type02 ">雙軸鼓式捲線器</div>
+                    
+                        </div>
+                        <div class="item_status_warp d-flex">
+                            <div class="item_status">商品總覽<i class="fas fa-angle-down"></i></div>
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+
+                <div class="row Finshing_Product_items_warp d-flex ">
+                        
+                    <div class="item item05 p-0 col-lg-3 col-md-4 col-6" Item-ID= "5" Item-left="200">
+                        <div class="item_intro ">
+                            <div class="add_btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </div>
+                            <div class="item_pic">
+                                <a href="../html/each-product.html">
+                                <img src="../img/item05.jpg" alt="">
+                                </a>
+                            </div> 
+                            <div class="item_title">
+                                <a href="../html/each-product.html">
+                                <h3>OKUMA Nemesis 那美西斯 紡車捲線器 磯釣 岸拋 船釣小搞 入門首選</h3>
+                                </a>
+                            </div>    
+                        </div>
+                        <div class="item_detail02">
+                                <p>5900</p>
+                                <p class="sold">已售完</p>
+                        </div> 
+                    
+                    </div>
+                    <div class="item item06 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "6" Item-left="10">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item06.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA CEDROS 喜多智 SW 專用紡車捲線器 船拋 岸拋 鐵板</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>6799</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item07 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "7" Item-left="0">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item07.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA MAKAIRA 麥坎納 400/550號 7尺船釣竿</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>6799</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item08 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "8" Item-left="150">
+                    
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item08.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA 2021限量蝦竿 7H 星空蝦竿 極光幻夢</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>1400</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item05 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "5" Item-left="200">
+                    
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item05.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA Nemesis 那美西斯 紡車捲線器 磯釣 岸拋 船釣小搞 入門首選</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>1350</p>
+                                    <p class="sold">已售完</p>
+                            </div>
+                    
+                    </div>
+                    <div class="item item06 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "6" Item-left="10">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item06.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA CEDROS 喜多智 SW 專用紡車捲線器 船拋 岸拋 鐵板</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>6799</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                    
+                    </div>
+                    <div class="item item07 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "7" Item-left="0">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item07.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA MAKAIRA 麥坎納 400/550號 7尺船釣竿</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>1350</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item08 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "8" Item-left="150">
+                    
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item08.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA 2021限量蝦竿 7H 星空蝦竿 極光幻夢</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>1400</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                    <div class="item item05 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "5" Item-left="200">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item05.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA Nemesis 那美西斯 紡車捲線器 磯釣 岸拋 船釣小搞 入門首選</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>1350</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                    
+                    </div>
+                    <div class="item item06 p-0 col-lg-3 col-md-4 col-6"
+                    Item-ID= "6" Item-left="10">
+                        
+                            <div class="item_intro ">
+                                <div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="../img/item06.jpg" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>OKUMA CEDROS 喜多智 SW 專用紡車捲線器 船拋 岸拋 鐵板</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail02">
+                                    <p>700</p>
+                                    <p class="sold">已售完</p>
+                            </div> 
+                        
+                    </div>
+                
+                </div>
+
+                
+            </div>
+
+            
+
+        </section> 
+    </div>
+
+ 
+
+
+</section>
+
+
+<!-- footer -->
+<section id="footer"></section>
 
 
 
-    <!-- footer -->
-    <section id="footer"></section>
 
 
-</div>
-
-
-</div>
 
 
 
@@ -441,6 +702,7 @@
 
 <!-- js -->
 <script src="../js/common.js"></script>
+<script src="../js/products.js"></script>
 
 <script>
     $('#navbar').load('navbar.html')

@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="../css/products02.css">
+    <link rel="stylesheet" href="../css/products.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -27,64 +27,58 @@
 
 <!-- 導覽列 -->
 <section id="navbar"></section>
+ 
 
-<!-- 商品選擇 -->
-<section class="Prouduct_select">
-    <div class="container Prouduct_select_warp p-0">
-        
-            <div class="Prouduct_select_btn Seafood_select col-lg-5 col-6">
+<div class="LineGroup_page_bg"></div>
 
-                <div class="Prouduct_select_icon Seafood_select_icon">
-                    <img src="../img/icon-shop-01.svg" alt="">
-                </div>   
-                
-                <h1>生鮮食材</h1>
+<div class="content_warp">
 
-            </div>
-            <div class="Prouduct_select_btn Fishing_select col-lg-5 col-6">
-                <div class="Prouduct_select_icon  Fishing_select_icon">
-                    <img src="../img/icon-shop-02.svg" alt="">
-                </div>   
-                
-                <h1>釣具用品</h1>
-
+     <!-- 商品首頁 -->
+    <section class="Products_title">
+        <div class="Products_title_pic">
+            <div class="Products_title_pic_bg"></div>
+            <div class="Products_title_pic_text">
+                <h1 class="animate__animated animate__slideInUp">海鮮宅配</h1>
             </div>
 
-    </div>
-</section>
-
-<!-- 生鮮食材 -->
-<div class="Seafood_select_warp">
-
-    <!-- 海鮮管家 -->
-    <section class="seafood_butler">
-        <div class="container ">
-            <div class="row ">
-            
-                <div class=" seafood_butler_warp animate__animated animate__fadeIn col-lg-12 col-11">
-                    <div class="seafood_butler_text">
-                        <h1>海鮮管家</h1>
-                        <p>依照您的吃魚需求、料理習慣，為您選用最新鮮的當季海鮮，<br>
-                            另可配置當季小農的新鮮農產品，讓餐桌更加豐富美味！</p>
-                    </div>
-                    <button class="more_btn more07">
-                        <p>幫我搭配漁獲</p>
-                    </button>
-                </div>
-
-            </div>
         </div>
-    </section>
+        <div class="Products_title_content">
+            <div class="container ">
+                <div class="row ">
+                
+                    <div class=" seafood_warp animate__animated animate__fadeIn col-lg-12 col-11">
+                        <div class="seafood_text">
+                            <h1>海鮮管家</h1>
+                            <p>依照您的吃魚需求、料理習慣，為您選用最新鮮的當季海鮮，<br>
+                                另可配置當季小農的新鮮農產品，讓餐桌更加豐富美味！</p>
+                        </div>
+                        <button class="more_btn more07">
+                            <p>幫我搭配漁獲</p>
+                        </button>
+                    </div>
 
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+    
+
+    </section>  
 
     <!-- 商品總覽 -->
-    <section class="Seafood_Products_Items"> 
+    <section class="Products_Items"> 
         <div class="container">
-            <div class="row ">
+            <div class="row">
 
-                
-                <div class="Items_categeroy_warp p-0">
-                    <div class="item_type_warp  d-flex">
+                <div class="Products_Items_title">
+                    <h1>最新鮮的大海滋味</h1>
+                </div>
+            
+                <div class="Items_categeroy_warp ">
+                    <div class="item_type_warp d-flex">
                     
                         <div class="item_type item_type01">所有商品</div>
                         <div class="item_type item_type02">鮮甜海味</div>
@@ -93,7 +87,10 @@
                 
                     </div>
                     <div class="item_status_warp d-flex">
-                        <div class="item_status">商品總覽<i class="fas fa-angle-down"></i></div>
+                        <div class="item_status item_status01">最新上架</div>
+                        <div class="item_status item_status02">熱銷排行</div>
+                        <div class="item_status item_status03">價格</div>
+            
                     </div>
 
                     
@@ -351,22 +348,81 @@
 
     </section>  
 
+    <!-- Line購物社團 -->
+    <section class="LineGroup_page">
+
+        <div class="LineGroup_page_fillter"></div>
+
+        <div class="LineGroup_page_content">
+            <h1>歡迎加入Line購物社團</h1>
+            <p>歡迎加入好友生活圈，專屬每月限量好康！<br>
+                小粉絲專屬優惠，官網上沒有、來不及上架的品項、第一手新鮮貨，絕不容錯過。<br>
+                （Line搜尋官方帳號：888鮮魚管家，ID：@888seafood）</p>
+
+
+            <button class="line_btn_lg">
+                <p>Line 鮮魚管家</p>
+            </button>
+        </div>
+
+    </section>
+
+    <!--商品注意事項 -->
+    <section class="Product_Cauction_page">
+        <div class="container">
+            <div class="row">
+                <div class="Product_Cauction_page_title">
+                    <h1>注意事項</h1>
+                </div>
+                <div class="Product_Cauction_page_content">
+                    <p>自家船捕撈的漁獲，品項數量都不一定，有時常常缺貨，但都一定是以當季盛產魚貨為主，請多多包涵。也會精選認識的船家，在確保生產流程以及漁獲鮮度下，幫大家精選各式海鮮。</p><br>
+                    <p> 魚種數量會常常更新，有時候來不及更新請多多見諒，您可以先填你想要的商品以及數量，專員小馮會再與您聯繫確切的商品數量，如有疑問可以用以下方式聯絡小馮專員，也歡迎直接到現場購買魚貨喲！</p>
+        
+                </div>
+
+            </div>
+            <div class="row">
+
+                
+                <div class="Cauction_map col-lg-12">
+
+                    <div class="Cauction_map_pic ">
+                        
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.3201442002246!2d121.68677229048065!3d25.17686516686122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4c458f2a1151%3A0x117fdd9f84c84da3!2z6JCs6YeM5Y2A5YWs5omA!5e0!3m2!1szh-TW!2stw!4v1625411476823!5m2!1szh-TW!2stw"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="contact_map_content  d-flex">
+                        <div class="map_content_title">
+                            <h3>海鮮倉庫 (實體店面)</h3>
+                            <h4>新北市萬里區瑪鋉漁港</h4>
+                        </div>
+                        <div class="map_content_time">
+                            <p>平日 10:00 - 19:30<br>
+                                假日 10:00 - 14:00<br>
+                                電話：02 7709 6766</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <section id="footer"></section>
 
 
 </div>
- 
 
 
-
-
-
-<!-- footer -->
-<section id="footer"></section>
-
-
-
-
-
+</div>
 
 
 
@@ -385,7 +441,6 @@
 
 <!-- js -->
 <script src="../js/common.js"></script>
-<script src="../js/products.js"></script>
 
 <script>
     $('#navbar').load('navbar.html')
