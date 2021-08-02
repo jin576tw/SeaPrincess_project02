@@ -692,11 +692,7 @@ $(document).ready(function () {
    
          /////購物車按鈕效果////
 
-        
 
-
-           
-     
 
          // 平板版
         if ($(window).width() > 480) {
@@ -720,6 +716,7 @@ $(document).ready(function () {
                 }else{
                     $('.Cart_list').fadeIn(100);
                     $('.Cart_list_bar').css('transform','translateX(0px)').css('transition','0.5s')
+                    $('.navbar_RWD_items').removeClass('RWD_open')
                 }
     
                 
@@ -769,6 +766,8 @@ $(document).ready(function () {
 
                 }else{
                     $('.Cart_list_bar').toggleClass('RWD_open_shoplist').css('opacity','0.9');
+
+                    $('.navbar_RWD_items').removeClass('RWD_open')
                     
                 }
 
@@ -840,7 +839,7 @@ $(document).ready(function () {
         $('.navbar_RWD_icon').click(function(){
             
             $('.navbar_RWD_items').toggleClass('RWD_open');
-            
+            $('.Cart_list_bar').removeClass('RWD_open_shoplist')
     
         });
     
