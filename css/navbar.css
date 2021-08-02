@@ -236,7 +236,7 @@
 
     .navbar_Logo{
         width: 80px;
-        transform: translate(2px);
+        transform: translate(-5px);
    
    }
 
@@ -301,7 +301,7 @@
     }
 
     .RWD_icon_submit{
-        width: 80px;
+        width: 90px;
         height: 30px;
         justify-content: space-around;
         align-items: center;
@@ -377,7 +377,7 @@
 
     .navbar_Logo{
         width: 80px;
-        transform: translate(2px);
+        transform: translate(-5px);
    
    }
 
@@ -442,7 +442,7 @@
     }
 
     .RWD_icon_submit{
-        width: 80px;
+        width: 90px;
         height: 30px;
         justify-content: space-around;
         align-items: center;
