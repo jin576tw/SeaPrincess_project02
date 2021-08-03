@@ -85,26 +85,26 @@ $(document).ready(function () {
 
 
             // 商品名稱
-            let itemTitle = $(this).prev().prev().prev().children('h1').text()
+            let itemTitle = $(this).parent().prev().prev().prev().children('h1').text()
 
 
             //商品圖片
-            let itemPic = $(this).parent().prev().children('.other_product_pic_warp').children('.other_product_pic01').children().attr('src')
+            let itemPic = $(this).parent().parent().prev().children('.other_product_pic_warp').children('.other_product_pic01').children().attr('src')
 
         
             //商品價格
-            let itemPrice = $(this).prev().prev().children('.product_intro_price').children('p').text()
+            let itemPrice = $(this).parent().prev().prev().children('.product_intro_price').children('p').text()
 
             
             // 商品ID
-            let itemID = $(this).parent().attr('Item-ID')
+            let itemID = $(this).parent().parent().attr('Item-ID')
 
     
             //商品庫存
-            let itemLeft =  $(this).prev().children().children('.product_left').attr('Item-left')
+            let itemLeft =  $(this).parent().prev().children().children('.product_left').attr('Item-left')
 
             // 商品數量 //計數器數量
-            let itemCount = parseInt($(this).prev().children().children('.product_count').text())
+            let itemCount = parseInt($(this).parent().prev().children().children('.product_count').text())
 
             // console.log(itemCount)
 
@@ -204,10 +204,11 @@ $(document).ready(function () {
                 // 抓cookie購物車資料
                 let cookieStr = $.cookie('Cart');
                 let cookieArr = JSON.parse(cookieStr);
-                let sum = 0;
+                
 
 
                 for(let i = 0 ; i < cookieArr.length;i++){
+                    let sum = 0;
                     sum += cookieArr[i].count;
                 }
 
@@ -225,6 +226,60 @@ $(document).ready(function () {
 
 
         }
+
+
+    })
+
+
+
+
+
+    $('.label01').on({
+
+        click:function(){
+
+          
+            $(this).css('border','solid 1px rgba(23, 34, 61, 0.3)').css('border-bottom','1px solid white')
+            $(this).children('h1').css('border-bottom',' 2px solid #abd5e3').css('color','rgba(23, 34, 61, 0.8)')
+
+            $(this).siblings().css('border','solid 1px transparent')
+
+            $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent')
+        }
+
+
+
+    })
+
+    $('.label02').on({
+
+        click:function(){
+
+          
+            $(this).css('border','solid 1px rgba(23, 34, 61, 0.3)').css('border-bottom','1px solid white')
+            $(this).children('h1').css('border-bottom',' 2px solid #abd5e3').css('color','rgba(23, 34, 61, 0.8)')
+
+            $(this).siblings().css('border','solid 1px transparent')
+            $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent');
+
+        }
+
+    })
+
+    $('.label03').on({
+
+        click:function(){
+
+          
+            $(this).css('border','solid 1px rgba(23, 34, 61, 0.3)').css('border-bottom','1px solid white')
+            $(this).children('h1').css('border-bottom',' 2px solid #abd5e3').css('color','rgba(23, 34, 61, 0.8)')
+
+            $(this).siblings().css('border','solid 1px transparent')
+            $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent')
+
+
+        }
+
 
 
     })
