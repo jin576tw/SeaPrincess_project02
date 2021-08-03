@@ -620,7 +620,7 @@
 
 /*// 商品描述/// */
 
-.Product_intro_content{
+.IntroProduct_content{
     width: 70%;
     margin: 60px auto 0 auto;
     font-size: 2rem;
@@ -632,14 +632,14 @@
 
 }
 
-.Product_intro_content h2{
+.IntroProduct_content h2{
     font-size: 2.4rem;
     margin-bottom: 25px;
   
 
 }
 
-.Product_intro_pic{
+.IntroProduct_pic{
     margin-top: 40px;
     background-color: #aaaa;
     height: 400px;
@@ -647,12 +647,12 @@
     overflow: hidden;
 }
 
-.Product_intro_pic img{
+.IntroProduct_pic img{
     object-fit: contain
 }
 
 @media (max-width: 992px) {
-    .Product_intro_content{
+    .IntroProduct_content{
         width: 95%;
         margin: 60px auto 0 auto;
         font-size: 2rem;
@@ -664,7 +664,7 @@
     
     }
     
-    .Product_intro_pic{
+    .IntroProduct_pic{
         margin-top: 40px;
         background-color: #aaaa;
         height: 350px;
@@ -674,7 +674,7 @@
 @media (max-width: 480px) {
 
 
-    .Product_intro_content{
+    .IntroProduct_content{
         width: 95%;
         margin: 60px auto 0 auto;
         font-size: 2rem;
@@ -686,7 +686,7 @@
 
     }
 
-    .Product_intro_pic{
+    .IntroProduct_pic{
         margin-top: 40px;
         background-color: #aaaa;
         height: 180px;
@@ -699,6 +699,7 @@
 /* ///團隊介紹/// */
 
 .Product_intro_team{
+    display: none;
     margin: 60px auto 0 auto;
     width: 85%
 

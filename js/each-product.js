@@ -241,10 +241,12 @@ $(document).ready(function () {
           
             $(this).css('border','solid 1px rgba(23, 34, 61, 0.3)').css('border-bottom','1px solid white')
             $(this).children('h1').css('border-bottom',' 2px solid #abd5e3').css('color','rgba(23, 34, 61, 0.8)')
-
             $(this).siblings().css('border','solid 1px transparent')
-
             $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent')
+
+            $('.IntroProduct_content').fadeIn(500)
+            $('.Product_intro_team').fadeOut(1)
+            
         }
 
 
@@ -261,6 +263,9 @@ $(document).ready(function () {
 
             $(this).siblings().css('border','solid 1px transparent')
             $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent');
+
+            $('.IntroProduct_content').fadeOut(1)
+            $('.Product_intro_team').fadeIn(500)
 
         }
 
