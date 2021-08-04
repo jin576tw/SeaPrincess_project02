@@ -218,6 +218,12 @@ $(document).ready(function () {
             $( this ).parent().parent('.question').toggleClass( 'answer_open_RWD' );
         })
 
+        $('.question_title').click(function(){
+            
+            
+            $( this ).parent().toggleClass( 'answer_open_RWD' );
+        })
+
     }
 
  
@@ -227,6 +233,11 @@ $(document).ready(function () {
             
             $( this ).toggleClass( 'minus' );
             $( this ).parent().parent('.question').toggleClass( 'answer_open' )
+        })
+
+        $('.question_title').click(function(){
+            
+            $( this ).parent().toggleClass( 'answer_open' )
         })
     }
 

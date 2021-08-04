@@ -186,7 +186,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 22px;
-   
+    cursor: pointer;
 }
 
 .question_title h3{
