@@ -226,7 +226,7 @@ $(document).ready(function () {
         $('.question_icon').click(function(){
             
             $( this ).toggleClass( 'minus' );
-            $( this ).parent().parent('.question').toggleClass( 'answer_open' );
+            $( this ).parent().parent('.question').toggleClass( 'answer_open' )
         })
     }
 

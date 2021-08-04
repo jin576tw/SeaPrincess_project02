@@ -1,0 +1,602 @@
+/* ////常見ＱＡ標題//// */
+.QA_title{
+    position: relative;
+    margin-top: 140px;
+}
+
+
+.QA_title_warp{
+    width: 100%;
+    height: 360px;
+    background-image: url('../img/productbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+}
+
+.QA_title_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+
+.QA_content{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.QA_title_text{
+   overflow: hidden;
+    height: 50px;
+}
+
+.QA_title_text h1{
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .QA_title{
+        margin-top: 50px;
+    }
+    .QA_title_warp{
+        width: 100%;
+        height: 300px;
+        background-image: url('../img/productbg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .QA_title{
+        margin-top: 50px;
+    }
+
+    .QA_title_warp{
+        width: 100%;
+        height: 250px;
+        background-image: url('../img/productbg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      
+    }
+
+}
+
+/* ////常見ＱＡ介紹//// */
+.QA_intro{
+    margin-top: 60px;
+    margin-bottom: 80px;
+    /* padding: 0 10px; */
+}
+
+.QA_intro_warp{
+    height: 220px;
+    background-color: rgba(171, 213, 227, 0.46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.QA_intro_warp p{
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .QA_intro_warp{
+        height: 220px;
+        background-color: rgba(171, 213, 227, 0.46);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+    
+    }
+}
+@media (max-width: 480px) {
+
+    .QA_intro{
+        margin-top: 30px;
+        margin-bottom: 60px;
+        padding: 0 10px;
+    }
+    
+    .QA_intro_warp{
+        height: 220px;
+        background-color: rgba(171, 213, 227, 0.46);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    
+    .QA_intro_warp p{
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        text-align: center;
+    }
+
+}
+
+
+/* ////問題格式//// */
+
+.question{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: 100px;  
+    border-bottom: solid 1px rgba(0, 0, 0, 0.31);
+    transition: 0.8s;
+}
+
+
+
+.question_wrap{
+    margin-bottom: 150px;
+}
+
+.question_title{
+    margin-top: 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+   
+}
+
+.question_title h3{
+    
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.7);
+
+}
+
+
+.question_icon{
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    transition: transform ease 400ms;
+    
+    
+}
+.question_icon::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -2px;
+    width: 5px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transition: transform ease 400ms;
+    
+}
+.question_icon::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 41%;
+    width: 25px;
+    height:5px;;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transition: transform ease 400ms;
+    
+}
+
+
+
+.answer{
+    margin-top: 25px;
+    padding: 0 22px;
+   
+}
+.answer p{
+  
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  color: rgba(23, 34, 61, 0.75);
+  
+}
+
+.answer span{
+    cursor: pointer;
+    color: #417505;
+}
+
+.answer span:hover{
+    transition: 0.5s;
+    color:red;
+}
+
+.QA_shop_btn_warp{
+    display: flex;
+    justify-content: center;
+}
+
+.QA_shop_btn{
+    cursor: pointer;
+    width: 380px;
+    height: 220px;
+    border-radius: 10px;
+    background-color: rgba(23, 34, 61, 0.75);
+    margin: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.QA_shop_btn:hover{
+   transition: 0.8s;
+   background-color: var(--light_blue);
+ 
+}
+
+.QA_shop_btn .fa-shopping-basket{
+    font-size: 60px;
+}
+
+.QA_shop_btn img{
+    width: 15%;
+}
+
+.QA_shop_btn p:nth-of-type(1){
+    margin-top: 20px;
+    color: white;
+    font-size: 2.4rem;
+    font-weight:300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+
+}
+
+.QA_shop_btn p:nth-of-type(2){
+    color: white;
+    font-size: 1.6rem;
+    font-weight:300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+
+}
+
+
+
+@media (max-width: 480px) {
+
+
+    .question{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: hidden;
+        height: 120px;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.31);
+        transition: 0.8s;
+    }
+
+    .question_wrap{
+        margin-bottom: 100px;
+    }
+    
+
+    .question_title{
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px 
+      
+       
+    }
+
+    .question_title h3{
+        font-size: 1.8rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: rgba(0, 0, 0, 0.7);
+        width: 300px;
+
+    }
+
+    .qt2 {
+
+        margin-top: 30px;
+
+    }
+
+
+    .answer{
+        margin-top: 35px;
+        padding: 0 10px;
+    }
+
+    .answer p{
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        color: rgba(23, 34, 61, 0.75);
+        
+      }
+
+
+    .question_icon{
+        cursor: pointer;
+        position: relative;
+        width: 25px;
+        height: 25px;
+        transition: transform ease 400ms;
+        
+        
+    }
+    .question_icon::before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -2px;
+        width: 5px;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        transition: transform ease 400ms;
+        
+    }
+    .question_icon::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 41%;
+        width: 25px;
+        height:5px;;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        transition: transform ease 400ms;
+        
+    }
+    
+
+    .QA_shop_btn{
+        
+        width: 380px;
+        height: 100px;
+        background-color: rgba(23, 34, 61, 0.75);
+        margin: 30px 10px;
+       
+    }
+    
+
+    .QA_shop_btn .fa-shopping-basket{
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    .QA_shop_btn img{
+        width: 35%;
+        transform: scale(0.7) translateY(10px);
+    }
+    
+    .QA_shop_btn p:nth-of-type(1){
+        margin-top: 0px;
+        font-size: 1.6rem;
+    }
+    
+    .QA_shop_btn p:nth-of-type(2){
+        margin-top: -10px;
+        font-size: 1.4rem;
+    
+    }
+    
+}
+
+
+
+/* /////訂購問題////// */
+
+.QA_shipment_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    margin: 0 auto;
+}
+
+.shipment_title_line{
+    width: 40%;
+    height: 3px;
+    background-color: var(--sea_blue);
+}
+
+
+.QA_shipment_title h1{ 
+    font-size: 3.2rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.78px;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+@media (max-width: 992px) {
+
+
+    .QA_shipment_title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto 60px auto;
+    }
+
+    .shipment_title_line{
+        width: 20%;
+        height: 3px;
+        background-color: var(--sea_blue);
+    }
+    
+}
+@media (max-width: 480px) {
+
+    .QA_shipment_title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto -10px auto;
+    }
+
+    .shipment_title_line{
+        width: 40%;
+        height: 3px;
+        background-color: var(--sea_blue);
+    }
+}
+
+
+
+/* /////退貨退款問題////// */
+
+.QA_refund_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    margin: 0 auto;
+   
+}
+
+.refund_title_line{
+    width: 70%;
+    height: 3px;
+    background-color: var(--sea_blue);
+}
+
+
+.QA_refund_title h1{ 
+    font-size: 3.2rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.78px;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+@media (max-width: 992px) {
+
+
+    .QA_refund_title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto 60px auto;
+       
+    }
+
+    .refund_title_line{
+        width: 20%;
+        height: 3px;
+        background-color: var(--sea_blue);
+    }
+    
+}
+@media (max-width: 480px) {
+
+    .QA_refund_title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 60%;
+        margin: 0 auto -10px auto;
+    }
+
+    .refund_title_line{
+        width: 60%;
+        height: 3px;
+        background-color: var(--sea_blue);
+    }
+}
