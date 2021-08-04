@@ -95,28 +95,11 @@
 .navbar_icon_warp{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 280px;
+    justify-content: space-between;
+    width: 150px;
    
 }
-.navbar_icon_submit{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90px;
-    height: 25px;
-    font-size: 1.6rem;
-    background-color: white;
-    border-radius: 6px;
-    border: solid 1px #c0c0c0;
-}
 
-.navbar_icon_submit:hover{
-    transition: 0.5s;
-    color: var(--light_blue);
-    border: solid 1px var(--light_blue)
-
-}
 
 .navbar_icon_shoplist{
     /* margin-right: 20px; */
