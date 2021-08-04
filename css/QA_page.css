@@ -182,15 +182,18 @@
 
 .question_title{
     margin-top: 33px;
+    position: relative;
+    z-index: 29;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 22px;
-    cursor: pointer;
+    
 }
 
 .question_title h3{
-    
+    position: relative;
+    z-index: 30;
     font-size: 2.4rem;
     font-weight: 500;
     font-stretch: normal;
@@ -198,6 +201,7 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
 
 }
 
@@ -205,9 +209,11 @@
 .question_icon{
     cursor: pointer;
     position: relative;
+    z-index: 30;
     width: 25px;
     height: 25px;
     transition: transform ease 400ms;
+
     
     
 }

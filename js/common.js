@@ -218,10 +218,9 @@ $(document).ready(function () {
             $( this ).parent().parent('.question').toggleClass( 'answer_open_RWD' );
         })
 
-        $('.question_title').click(function(){
-            
-            
-            $( this ).parent().toggleClass( 'answer_open_RWD' );
+        $('.question_title h3').click(function(){
+           
+            $( this ).parent().parent('.question').toggleClass( 'answer_open' )
         })
 
     }
@@ -235,9 +234,9 @@ $(document).ready(function () {
             $( this ).parent().parent('.question').toggleClass( 'answer_open' )
         })
 
-        $('.question_title').click(function(){
-            
-            $( this ).parent().toggleClass( 'answer_open' )
+        $('.question_title h3').click(function(){
+           
+            $( this ).parent().parent('.question').toggleClass( 'answer_open' )
         })
     }
 

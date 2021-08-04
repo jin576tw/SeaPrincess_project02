@@ -4,6 +4,7 @@
 
 /* ///////部落格首頁////// */
 .Blog_title{
+    margin-top: 140px;
     position: relative;
     width: 100%;
     height: 360px;
@@ -30,7 +31,6 @@
 .Blog_title_text{
     position: absolute;
     overflow: hidden;
-    margin-top: 60px;
     width: 200px;
     height: 50px;
      
@@ -45,6 +45,28 @@
     text-align: center;
     color: white;
 }
+
+
+@media (max-width: 992px) {
+
+    .Blog_title{
+        margin-top: 50px;
+        height: 300px;
+       
+    }
+
+}
+@media (max-width: 480px) {
+
+    .Blog_title{
+        margin-top: 50px;
+
+        height: 250px;
+       
+    }
+
+}
+
 
 /* //////主要文章/////// */
 
