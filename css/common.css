@@ -564,6 +564,7 @@ select {
     width: 240px;
     height: 240px;
     background-color: #d8d8d8;
+    cursor: pointer;
 }
 
 .Blog_artical_title{
@@ -589,11 +590,11 @@ select {
 }
 
 .Blog_artical_author{
-    margin-top: 2px;
-    margin-left: 2px;
+    margin: 2px 0px 2px 2px;
     width: 80%;
     display: flex;
     align-items: center;
+   
 }
 
 .artical_author_pic{
@@ -605,10 +606,12 @@ select {
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    cursor: pointer;
 
 }
 
 .artical_author_name{
+    cursor: pointer;
     font-size: 1.4rem;
     font-weight: normal;
     font-stretch: normal;
@@ -616,6 +619,7 @@ select {
     line-height: 1.86;
     letter-spacing: normal;
     color: #8c8c8c;
+    transition: 0.8s;
     
 
 
@@ -624,16 +628,21 @@ select {
     content: '@';
 }
 
+.artical_author_name:hover{
+    color: var(--light_blue)
+}
+
 .Blog_artical_tags{
-    width: 80%;
-    margin-top: 2px;
+    display: flex;
+    min-width: 240px
+
 }
 
 .artical_tag{
     margin-top: 12px;
     display: flex;
     justify-content: center;
-    transform: translateX(14px);
+  
     
 }
 .artical_tag_outline{
@@ -644,6 +653,7 @@ select {
     border: solid 1px var(--sea_blue);
     display: flex;
     justify-content: center;
+    transition: 0.8s;
     
 }
 
@@ -656,22 +666,11 @@ select {
     line-height: 2.17;
     letter-spacing: normal;
     color: var(--sea_blue);
+    transition: 0.8s;
       
   
 }
 
-.artical_tag_outline:hover{
-    transition: 0.8s;
-    border: solid 1px var(--light_blue);
-    
-    
-}
-
-.artical_tag_outline p:hover{
-   
-      color: var(--light_blue);
-  
-}
 
 @media (max-width: 992px) {
 
