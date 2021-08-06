@@ -565,6 +565,14 @@ select {
     height: 240px;
     background-color: #d8d8d8;
     cursor: pointer;
+   
+}
+
+.Blog_artical_pic img{
+    height: 100%;
+    object-fit: cover;
+  
+
 }
 
 .Blog_artical_title{
@@ -642,12 +650,14 @@ select {
     margin-top: 12px;
     display: flex;
     justify-content: center;
+    max-height: 25px;
   
     
 }
 .artical_tag_outline{
     cursor: pointer;
-    min-width: 80%;
+    min-width: 64px;
+    width: 80%;
     height: 25px;
     border-radius: 13px;
     border: solid 1px var(--sea_blue);
@@ -718,20 +728,23 @@ select {
     }
 
     .Blog_artical_tags{
+        min-width: 150px;
         width: 95%;
+       
         
     }
 
     .artical_tag{
         margin-top: 10px;
         display: flex;
-        justify-content: flex-start;
-        transform: translateX(15px);
+        justify-content: center;
+        
 
     }
 
     .artical_tag_outline{
-        min-width: 80%;
+        min-width: 61px;
+        width: 80%;
         height: 25px;
         border-radius: 13px;
         border: solid 1px var(--sea_blue);
@@ -805,7 +818,8 @@ select {
     }
 
     .artical_tag_outline{
-        min-width: 90%;
+        min-width: 55px;
+        width: 90%;
         height: 25px;
         border-radius: 13px;
         border: solid 1px var(--sea_blue);

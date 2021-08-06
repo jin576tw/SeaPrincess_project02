@@ -1,0 +1,418 @@
+/* 食譜封面 */
+.Recipe_title{
+    position: relative;
+    margin-top: 140px;
+    width: 100%;
+    height: 360px;
+    background-image: url('../img/diary_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    
+}
+
+.Recipe_title_bg{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #384982 ;
+    
+}
+
+.Recipe_title_text_warp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+}
+
+.Recipe_title_text{
+    overflow: hidden;
+    width: 250px;  
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    
+
+}
+.Recipe_title_text h1{
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+}
+
+.Recipe_title_subtext{
+    overflow: hidden;
+    margin: 20px auto 0 auto; 
+    width: 40%;
+    height: 80px;
+}
+
+.Recipe_title_subtext p{
+    font-size: 2rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.11px;
+    text-align: center;
+    color: #fff;
+
+ 
+}
+
+
+
+
+
+@media (max-width: 992px) {
+
+    .Recipe_title{
+        margin-top: 50px;
+        height: 300px;
+       
+    }
+
+    .Recipe_title_subtext{
+        overflow: hidden;
+        margin: 20px auto 0 auto; 
+        width: 60%;
+        height: 80px;
+    }
+
+}
+@media (max-width: 480px) {
+
+    .Recipe_title{
+        margin-top: 50px;
+
+        height: 250px;
+       
+    }
+    .Recipe_title_subtext{
+        overflow: hidden;
+        margin: 20px auto 0 auto; 
+        width: 80%;
+        height: 130px;
+        
+    }
+
+    .Recipe_title_subtext p{
+        font-size: 1.4rem;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1.11px;
+        text-align: center;
+        color: #fff;
+    
+     
+    }
+    
+
+}
+
+/* /////食譜廣吿////// */
+
+.Recipe_ad{ 
+    background-color: rgba(23, 34, 61, 0.05);
+}
+
+
+.Recipe_ad_content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:80px 0 80px 0;
+}
+
+.ad_content{
+    cursor: pointer;
+    min-width: 500px;
+    border-radius: 10px;
+    width: 40%;
+    height: 300px;
+    transition: 0.8s;
+    
+
+}
+.ad_content:hover{
+    
+    transition: 0.8s;
+    box-shadow: 0px 10px 30px var(--grey);
+
+
+}
+
+.ad_content img{
+    height: 100%;
+}
+
+@media (max-width: 992px) {
+
+  
+    
+    .Recipe_ad_content{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        margin:80px 0 80px 0;
+    }
+
+    .ad_content{
+        min-width: 45%;
+        width: 45%;
+        margin-top: 30px;
+        height: 200px;
+        background-color: #d8d8d8;
+    
+    }
+
+
+}
+@media (max-width: 480px) {
+
+    
+    .Recipe_ad_content{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        margin: 20px 0 60px 0;
+    }
+
+    .ad_content{
+        min-width: 95%;
+        width: 95%;
+        margin-top: 30px;
+        height: 200px;
+        background-color: #d8d8d8;
+    
+    }
+
+}
+
+
+/* 食譜文章 */
+
+.Recipe_articale{
+    margin-top: 80px;
+}
+
+.Recipe_tool{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #7cafbf;
+    margin-bottom: 60px;
+}
+
+
+.Recipe_tool_search{
+    width: 30%;
+    height: 100%;
+    /* background-color: red; */
+    border-radius: 40px;
+    border: 1px solid #7cafbf;
+
+    display: flex;
+}
+
+.search_input_warp{
+    position: relative;
+    width: 75%;
+}
+.search_input{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px 0 0  40px;
+    background-color: white;
+    border: transparent;
+    padding-left: 50px;
+    font-size: 1.6rem;
+    color:#7cafbf ;
+}
+
+.search_input_warp::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/magnifying-glass.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+
+.search_btn{
+    cursor: pointer;
+    padding-top: 8px;
+    width: 25%;
+    height: 100%;
+    background-color: #7cafbf;
+    border-radius: 0 40px 40px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.Recipe_tags{
+    display: flex;
+    justify-content: space-between;
+    width: 52%;
+    
+}
+
+
+.Recipe_tag_warp{
+    display: flex;
+    height: 100%;
+    align-content: flex-start;
+  
+}
+
+.Recipe_tag_warp .artical_tag{
+
+    display: flex;
+    align-content: center;
+    margin: auto 5px  ; 
+
+}
+
+.Recipe_more_tag{
+    cursor: pointer;
+    height: 100%;
+   
+
+}
+.Recipe_more_tag p{
+    margin-top: 8px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #7cafbf;
+}
+.Recipe_more_tag .fa-caret-down{
+    margin-left: 8px;
+    
+}
+
+
+@media (max-width: 992px) {
+
+    .Recipe_tool_search{
+        width: 40%;
+        height: 100%;
+        
+        border-radius: 40px;
+        border: 1px solid #7cafbf;
+    
+        display: flex;
+    }
+
+    .Recipe_tags{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-content: flex-end;
+        width: 50%;
+        /* overflow: hidden; */
+        
+    }
+
+    .Recipe_more_tag p{
+        text-align: right;
+    }
+}
+@media (max-width: 480px) {
+
+    .Recipe_articale{
+        margin-top: 40px;
+    }
+
+    .Recipe_tool{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 120px;
+        padding-bottom: 30px;
+        border-bottom: solid 1px #7cafbf;
+        margin-bottom: 60px;
+    }
+
+    .Recipe_tool_search{
+        width: 100%;
+        height: 100%;
+        
+        border-radius: 40px;
+        border: 1px solid #7cafbf;
+    
+        display: flex;
+    }
+
+    .Recipe_tags{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-content: flex-end;
+        width: 100%;
+        
+    }
+
+    .Recipe_tag_warp{
+        margin: 20px auto 0 auto;
+        display: flex;
+        width: 95%;
+        overflow: hidden;
+        height: 100%;
+        justify-content: space-around;
+        align-content: flex-start;
+      
+    }
+
+    .Recipe_tag_warp .artical_tag{
+
+        display: flex;
+        align-content: center;
+        margin: auto 0px  ; 
+    
+    }
+
+    .Recipe_more_tag p{
+        text-align: right;
+    }
+    
+
+}
+
+
+.recipe_articale_warp{
+    margin-bottom: 80px;
+}
