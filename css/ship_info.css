@@ -1,0 +1,761 @@
+/* 船班資訊標題  */
+
+.Ship_info_title{
+    margin-top: 140px;
+    position: relative;
+    height: 360px;
+    background-image: url('../img/princess_boat.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Ship_info_title_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #384982 ;
+}
+
+.Ship_info_title_text{
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    height: 50px;
+     
+}
+.Ship_info_title_text h1{
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 992px) {
+
+    .Ship_info_title{
+        margin-top: 50px;
+        height: 300px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+
+    .Ship_info_title{
+        margin-top: 50px;
+        height: 250px;
+    }
+    
+}
+
+
+/* 船班資訊介紹 */
+
+.Ship_info_intro_warp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px;
+}
+
+.Ship_info_intro_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Ship_info_intro_title h1{
+
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.67px;
+    text-align: center;
+    color: #000;
+  
+}
+
+.Ship_info_intro_text{
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    border-left:  solid 3px var(--sea_blue);
+    padding-left: 30px;
+}
+
+.Ship_info_intro_text p{
+
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #000;
+}
+
+
+@media (max-width: 992px) {
+
+    .Ship_info_intro_warp{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0px;
+    }
+
+    .Ship_info_intro_text{
+
+        display: flex;
+        justify-content: flex-start;
+        align-items:center;
+        padding-left: 0px;
+      
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+
+    .Ship_info_intro_warp{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 35px 0px;
+    }
+
+    .Ship_info_intro_text{
+
+        display: flex;
+        justify-content: flex-start;
+        align-items:flex-start;
+        border-left:  solid 3px transparent;
+        border-top:  solid 3px var(--sea_blue);
+        padding-left: 0px;
+        margin-top: 20px;
+        padding-top: 20px;
+       
+    }
+
+}
+
+.Ship_info_media{
+    padding: 0;
+    min-height: 600px;
+    background-color: #dedede;
+    margin:0 auto 80px auto;
+    overflow: hidden;
+}
+
+.Ship_info_media iframe{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.Ship_info_content_text{
+    width: 80%;
+    margin: 0 auto 80px auto;
+}
+
+.Ship_info_content_text p{
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+
+@media (max-width: 992px) {
+
+    .Ship_info_media{
+        width: 96%;
+        min-height: 350px;
+        background-color: #dedede;
+        margin:0 auto 60px auto;
+        overflow: hidden;
+    }
+
+    .Ship_info_content_text{
+        width: 85%;
+        margin: 0 auto 60px auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .Ship_info_media{
+        width: 96%;
+        min-height: 250px;
+        background-color: #dedede;
+        margin:0 auto 60px auto;
+        overflow: hidden;
+    }
+
+    .Ship_info_content_text{
+        width: 90%;
+        margin: 0 auto 60px auto;
+    }
+
+
+}
+
+
+/* //////航班團隊///// */
+
+.Ship_info_team_title{
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    height: 140px;
+    margin: 0 auto 100px auto ;
+    z-index: 60;
+}
+
+.title_up{
+    z-index: 61;
+    position: absolute;
+    top: 0;
+    right: 2%;
+    width: 50%;
+    max-width: 550px;
+    height: 90%;
+    max-height: 126px;
+    transform: skew(-35deg);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.title_up_bg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;  
+    background-color: white;
+    
+}
+
+.title_up_text{
+    opacity: 1;
+    transform: skew(35deg);
+}
+
+.title_up_text h1{
+  
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3rem;
+    letter-spacing: 2px;
+    color: black;
+    
+    
+}
+.title_up_text h1 span{
+    font-size: 2.4rem;
+    opacity: 1;
+    color:#0077ff;
+}
+
+.title_up_text .zero-text{
+    font-size: 4rem;
+    font-family: Menlo-Regular;
+
+}
+
+.title_up_text h1:nth-of-type(2){
+    transform: translateX(-20px);
+}
+.title_up_text h1:nth-of-type(3){
+    transform: translateX(-40px);
+}
+
+
+
+
+.title_down{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+    max-height: 126px;
+    background-color: #fff773;
+    transform: skew(-35deg);
+    z-index: 60;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.title_down_text h1{
+ 
+    font-size: 2.8rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    
+  }
+  .title_down_text h1:nth-of-type(2){
+      margin-left: 20px;
+  
+  }
+
+.title_down_text{
+    margin-left: 120px;
+    transform: skew(35deg);
+
+}
+
+
+.title-icon01{
+    z-index: 61;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: -10px;
+}
+
+
+.title-icon02{
+    z-index: 61;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: 0;
+    bottom: 10px;
+  
+} 
+
+@media (max-width: 992px) {
+
+
+    .title_up_text{
+        opacity: 1;
+        transform: skew(35deg) translateX(30px);
+    }
+
+
+    .title_up_text h1{
+    
+        font-size: 2rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 3rem;
+        letter-spacing: 2px;
+        color: black;
+        
+        
+    }
+
+    .title_up_text h1 span{
+        font-size: 2rem;
+        opacity: 1;
+        color:#0077ff;
+    }
+    
+    .title_up_text .zero-text{
+        font-size: 3rem;
+        font-family: Menlo-Regular;
+    
+    }
+
+    
+
+    .title_down_text{
+        margin-left: 40px;
+        margin-bottom: 0px;
+        transform: skew(35deg);
+    
+    }
+
+    .title_down_text h1{
+ 
+        font-size: 2.4rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 2px;
+        
+    }
+
+
+    .title-icon01{
+        z-index: 61;
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        top: -10px;
+        left: -20px;
+    }
+    
+    
+    .title-icon02{
+        z-index: 61;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        right: 0;
+        bottom: 10px;
+      
+    } 
+}
+@media (max-width: 480px) {
+
+    .Ship_info_team_title{
+        position: relative;
+        width: 80%;
+        max-width: 900px;
+        height: 200px;
+        margin: 0 auto 60px auto ;
+    }
+
+
+    
+
+    .title_up{
+        z-index: 61;
+        position: absolute;
+        top: 90px;
+        right: 2%;
+        width: 90%;
+        max-width: 550px;
+        height: 90%;
+        max-height: 126px;
+        transform: skew(-35deg);
+    
+    }
+
+    .title_up_bg{
+        width: 90%;
+        height: 100%;
+        opacity: 1;
+        background-color: white;
+        border:solid 2px #fff773;
+    
+    
+    }
+
+    .title_down{
+        position: absolute;
+        top: 0;
+        width: 90%;
+        height: 90%;
+        max-height: 126px;
+        transform: skew(-35deg);
+        z-index: 60;
+        
+    }
+
+    .title_down_text{
+        margin-left: 80px;
+        margin-bottom: 25px;
+        transform: skew(35deg);
+    
+    }
+
+
+    .title_down_text h1{
+ 
+        font-size: 1.8rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 2px;
+        
+    }
+
+    .title_up_text{
+        margin-top: 10px;
+        opacity: 1;
+        transform: skew(35deg) translateX(30px);
+    }
+
+
+    .title_up_text h1{
+    
+        font-size: 1.6rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 3rem;
+        letter-spacing: 2px;
+        color: black;
+        
+        
+    }
+
+    .title_up_text h1 span{
+        font-size: 1.6rem;
+        opacity: 1;
+        color:#0077ff;
+    }
+    
+    .title_up_text .zero-text{
+        font-size: 3.2rem;
+        font-family: Menlo-Regular;
+    
+    }
+
+
+    .title-icon01{
+        z-index: 61;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: -20px;
+        left: 0;
+    }
+    
+    
+    .title-icon02{
+        z-index: 61;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        right: 0;
+        bottom: 10px;
+      
+    } 
+    
+
+
+
+}
+
+
+/* 團員介紹 */
+.Ship_info_team_content{
+    position: relative;
+    min-height: 850px;
+    background-color: var(--sea_blue);
+    display: flex;
+    
+    align-items: center;
+    /* background-color:red; */
+    margin: 850px 0 728px 0;
+}
+.Ship_info_team_content::before{
+    content: '';
+    top: -850px;
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 850px;
+    background-image: url('../img/teambg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.Ship_info_team_content::after{
+    content: '';
+    bottom: -728px;
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 728px;
+    background-image: url('../img/new_map.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--dark_blue);
+}
+
+.Ship_info_team_pic{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    max-width: 2000px;
+    height: 300px;
+    top: -880px;
+    left: 0;
+}
+
+.mask{
+    width: 240px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    /* background-color: red; */
+
+   
+}
+
+.mask_pic{
+    width: 240px;
+    height: 240px; 
+    border-radius: 100%;
+    background-color: var(--sea_blue);
+    border: solid 3px #ffffff;
+    overflow: hidden;
+}
+
+.mask_title p{
+   
+    width: 180px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6rem;
+    letter-spacing : 1.33px;
+    text-align: center;
+    color: #000000;
+  
+}
+
+.mask_title p:nth-of-type(1){
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .Ship_info_team_content{
+        position: relative;
+        min-height: 300px;
+        background-color: var(--sea_blue);
+        margin: 500px 0 400px 0;
+    }
+
+    .Ship_info_team_content::before{
+        content: '';
+        top: -500px;
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 500px;
+        background-image: url('../img/teambg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .Ship_info_team_content::after{
+        content: '';
+        bottom: -400px;
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 400px;
+        background-image: url('../img/new_map.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: var(--dark_blue);
+    }
+    
+}
+@media (max-width: 480px) {
+
+    .Ship_info_team_content{
+        position: relative;
+        min-height: 300px;
+        background-color: var(--sea_blue);
+        margin: 500px 0 250px 0;
+    }
+
+    .Ship_info_team_content::before{
+        content: '';
+        top: -500px;
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 500px;
+        background-image: url('../img/teambg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .Ship_info_team_content::after{
+        content: '';
+        bottom: -250px;
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 250px;
+        background-image: url('../img/new_map.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: var(--dark_blue);
+    }
+
+    .Ship_info_team_pic{
+        position: absolute;
+        display: flex;
+        width: 100%;
+        max-width: 2000px;
+        height: 300px;
+        top: -400px;
+        left: 0;
+    }
+
+    .mask{
+        width: 240px;
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+        /* background-color: red; */
+    
+       
+    }
+    
+
+    .mask_pic{
+        width: 80px;
+        height: 80px; 
+        border-radius: 100%;
+        background-color: var(--sea_blue);
+        border: solid 3px #ffffff;
+        overflow: hidden;
+    }
+  
+
+
+}
