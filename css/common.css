@@ -254,8 +254,10 @@ select {
 
 .item_pic img{
     height: 100%;
+  
    
 }
+
 .item_title{
     padding: 0px 15px;
     background-color:white;

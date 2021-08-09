@@ -312,6 +312,7 @@
     cursor: pointer;
 }
 
+
 .Recipe_more_tags p{
 
     margin-top: 8px;
@@ -327,6 +328,12 @@
 
 
 }
+
+.Recipe_more_tags p:hover{
+    transition: 0.8s;
+    color:#dc7e00;
+}
+
 
 .Recipe_more_tags .fa-caret-down{
     margin-left: 5px;
@@ -480,9 +487,7 @@
 
 @media (max-width: 480px) {
 
-    /* .recipe_articale_warp{
-        margin-top: -30px;
-    } */
+  
 }
 
 /* 分頁 */
