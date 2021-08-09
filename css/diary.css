@@ -894,6 +894,9 @@
         transform: translate(-50px,-30px);
     
     }
+    .artical_tag_warp{
+        margin-bottom: 20px;
+    }
 
     .all_artical_tag{
         justify-content: center;

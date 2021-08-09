@@ -151,6 +151,11 @@
 }
 
 @media (max-width: 992px) {
+    .Articale_Content{
+        margin-top: 80px;
+        margin-bottom: 0px;
+    }
+    
 
     .articale_type_warp{
         display: flex;
@@ -202,6 +207,10 @@
 
 }
 @media (max-width: 480px) {
+    .Articale_Content{
+        margin-top: 80px;
+        margin-bottom: 0px;
+    }
 
       
     .articale_type_warp{
