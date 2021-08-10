@@ -613,15 +613,14 @@
 
 }
 
-.Each_intro_content{
-
+.Each_intro_content{ 
    min-height: 1000px;
 }
 
 /*// 商品描述/// */
 
 .IntroProduct_content{
-    width: 70%;
+    width: 90%;
     margin: 60px auto 80px auto;
     font-size: 2rem;
     font-weight: normal;
@@ -642,13 +641,15 @@
 .IntroProduct_pic{
     margin-top: 40px;
     background-color: #aaaa;
-    height: 400px;
+    height: 450px;
     margin-bottom: 80px;
     overflow: hidden;
 }
 
 .IntroProduct_pic img{
-    object-fit: contain
+    height: 100%;
+    object-fit: cover;
+    
 }
 
 @media (max-width: 992px) {
@@ -697,55 +698,97 @@
 }
 
 /* ////食譜推薦//// */
+
 .recipe_recommand{
-    min-height: 600px;
-    border-top: solid 1px rgba(23, 34, 61, 0.3);
+    margin: 0 auto;
+    border-top:solid 1px #979797;
+    min-height: 500px;
 }
-
 .recipe_recommand_warp{
-     width: 70%;
-     margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 
 }
 
-.recipe_title{
-    margin-top: 50px;
+.Blog_cate_title{
+    padding: 0;
+    margin-top: 60px;
+    width: 100%;
+    height: 60px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
 }
 
-.recipe_title h1{
-    margin-left: 65px;
-    position: relative;
-    margin-top: 8px;
-    font-size: 2.8rem;
+
+.Blog_cate_name{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+
+}
+
+.Blog_title_icon{
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+   
+}
+
+.recipe_icon{
+    background-image: url('../img/shrimp-02.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+ 
+
+.Blog_title_text_content{
+
+    padding-left: 15px;
+}
+
+.Blog_title_text h1{
+    font-size: 2.2rem;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.79;
+    line-height: normal;
     letter-spacing: normal;
 
 }
-.recipe_title h1::before{
-    content: '';
-    display: block;
-    position: absolute;
-    left: -65px;
-    width: 50px;
-    height: 50px;
-    background-image: url('../img/shrimp-02.svg');
-    background-size: contain;
+.Blog_subtitle_text {
+    width: 100%;
 
-   
+}
+.Blog_subtitle_text p{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #8c8c8c;
+}
+
+.Blog_subtitle_text p span{
+    cursor: pointer;
+}
+.Blog_subtitle_text p span:hover{
+    transition: 0.8s;
+    color: var(--light_blue)
+}
+.Blog_more_artical{
+  
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 
 }
 
-.more_recipe p{
+.Blog_more_artical p{
     cursor: pointer;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
     font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
@@ -753,31 +796,129 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: right;
-
+    color: #000000;
 
 }
+.Blog_more_artical p:hover{
+   transition: 0.8s;
+   color: var(--light_blue)
+
+}
+.Blog_more_artical .fa-chevron-right{
+    margin-left: 8px;
+}
+
+
+.Blog_cate_content_warp{
+    overflow: hidden;
+    margin-top: 20px;
+    min-height: 420px;
+
+}
+
 
 
 @media (max-width: 992px) {
 
+    .Blog_cate_name{
+        display: flex;
+        width: 60%;
+        height: 100%;
+       
+    }
+
+    .Blog_cate_content_warp{
+        margin-top: 40px;
+        min-height: 200px;
+       
+    }
+    .Blog_artical_pic{
+        width: 150px;
+        height: 150px;
+       
+    }
+    
+    
 }
+
 
 @media (max-width: 480px) {
 
-    .recipe_recommand_warp{
-        width: 95%;
-        margin: 0 auto;
+    .Blog_cate{
+        width: 100%;
+        padding: 0 10px;
+        border-bottom: solid 1px #979797;
+    
+    
+    }
+
+    .Blog_cate_title{
+        padding: 0 10px;
+        margin-top: 30px;
+        width: 100%;
+        height: 75px;
+      
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+       
+    
+        
+    }
+
+    .Blog_title_text_content{
+       
+        padding-left: 10px;
+    }
+
+    
+
+    .Blog_cate_name{
+        display: flex;
+        width: 70%;
+        height: 100%;
+        
+    }
+
+    .Blog_subtitle_text p{
+        font-size: 1.4rem;
+      
+    }
    
-   }
 
-   .recipe_title{
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .Blog_more_artical{
+      
+        height: 100%;
+        margin-top: 10px;
+        justify-content: flex-end;
+       
+    
+    }
+
+    .Blog_more_artical p{
+       
+        font-size: 1.4rem;
+        transform: translateY(6px);
+        
+    
+    
+    }
+
+    .Blog_more_artical .fa-chevron-right{
+        margin-left: 3px;
+    }   
+
+    .Blog_cate_content_warp{
+        margin-top: 30px;
+
+        min-height: 380px;
+       
+    }
+
 }
 
-}
+
+
 
 
 /* ///團隊介紹/// */
@@ -1152,7 +1293,7 @@
     .teampic03{
         overflow: hidden;   
         height: 200px;
-        background-color: cyan;
+        
     
     }
 
@@ -1218,6 +1359,7 @@
 
 .About_Items_warp{
     position: relative;
+    margin-bottom: 60px;
 }
 
 
@@ -1234,88 +1376,139 @@
     
 }
 
+.Step_warp{
+    position: relative;
+    /* background-color: cyan; */
+    min-height: 1920px;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 80px 0 ;
+}
+
+.step_line_warp{
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 1px;
+}
+
+.step_line{ 
+   
+    width: 2px;
+    height: 100%;
+    background-color: #dedede;
+    /* background-color: var(--dark_blue); */
+
+}
+.step_line_green{
+    width: 2px;
+    height: 12%;
+    transform: translateX(-2px);
+    background-color:  var(--dark_blue);
+
+}
+
+
+.dot_arrow{
+    position: absolute;
+    z-index: 62;
+    color: white;
+    transform: translateY(210px);
+ }
+
+ .dot_arrow .fa-caret-down{
+     font-size: 30px;
+ }
+
+.start_dot{
+    position: absolute;
+    margin-left: 1px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: var(--dark_blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transform: scale(1);
+    /* transform: scale(1.8); */
+} 
+
+.final_dot{
+     position: absolute;
+     margin-left: 1px;
+     bottom: 0;
+     width: 24px;
+     height: 24px;
+     border-radius: 100%;
+     background-color: var(--dark_blue);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+     color: white;
+     /* transform: scale(1.8); */
+     transform: scale(1);
+     filter:grayscale(80%); 
+} 
+
+
+
+
+
 .food_steps_warp{
-    margin-top: 100px;
+    position: relative;
+    z-index: 60;
+    margin-top: 60px;
 }
 
 .food_steps{
     position: relative;
     width: 100%;
-    height: 320px;
+    min-height: 320px;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 60px;
-}
-
-.step_line_warp{
-    position: relative;
-    width: 55px;
-    height: 87.5%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    position: absolute;
-   
-    
-}
-
-.step_line{
-   margin-left: 45%;
-    width: 2px;
-    height: 100%;
-    border: solid 2px var(--dark_blue)
+    transform: scale(0.8);
+    filter:grayscale(80%); 
 
 }
 
-.step_dot_arrow{
-    position: absolute;
-    top: 0;
-    left: 15px;
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
-    background-color: var(--dark_blue);
-    transform: scale(2);
-}
-
-.dot_arrow{
-
-    transform: translateY(px);
-}
-
-.dot_arrow .fa-caret-down{
-    font-size: 20px;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 52%;
-    transform: translate(-50%,-50%);;
-
+.steps01{
+    transform: scale(1);
+    filter:grayscale(0%); 
 
 }
 
-.step_dot_warp{
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+.step_dot01{
+    transform: scale(1.8);
+
 }
 
+ 
 
 .step_dot{
+
+    position: absolute;
+    z-index: 61;
     width: 24px;
     height: 24px;
     border-radius: 100%;
     background-color: var(--dark_blue);
+    /* transform: scale(1.8); */
     
   
 }
 
 
+
+
 .food_steps_pic{
+    position: relative;
+    z-index: 62;
     overflow: hidden;
     width: 40%;
     height: 100%;
@@ -1376,43 +1569,8 @@
 
 
 
-.more07{
- 
-    padding-right: 35px;
-    /* text-align: center; */
-    margin: 0px auto 80px auto;
-
-    
-}
-
-.more07 p::after{
-    content: '';
-    display: block;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    background-image: url('../img/right-arrow-w.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    top: 9px;
-    right: 12px;
-
-}
-
-
 @media (max-width: 992px) {
-    .step_line_warp{
-        position: relative;
-        width: 55px;
-        height: 88.5%;
-        top: 51%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        position: absolute;
-       
-        
-    }
-   
+  
 
     .food_steps_pic{
         overflow: hidden;
@@ -1422,194 +1580,65 @@
     
     }
 
-    .more07 p::after{
-        content: '';
-        display: block;
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-image: url('../img/right-arrow-w.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        top: 7px;
-        right: 2px;
-    
-    }
+   
     
 
 }
 
 @media (max-width: 480px) {
 
-    .About_Items_warp{
-        position: relative;
-    }
-    
-    
-    
-    .food_steps_warp{
-        margin-top: 100px;
-    }
-    
-    .food_steps{
-        position: relative;
-        width: 80%;
-        height: 400px;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+  
 
-        margin: 0 auto 60px auto;
-       
-        border:2px solid var(--dark_blue);
-       
-       
-        background-color: white;
-    }
-
-    .steps01{
-        margin-top: 70px;
-    }
-    
-    .step_line_warp{
-        position: relative;
-        width: 55px;
-        height: 90.5%;
-        top: 51%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        position: absolute;
-        
-        
-    }
-    
-    .step_line{
-       margin-left: 45%;
-        width: 2px;
-        height: 100%;
-        border: solid 2px var(--dark_blue)
-    
-    }
-    
-    .step_dot_arrow{
-        position: absolute;
-        top: 0;
-        left: 15px;
-        width: 24px;
-        height: 24px;
-        border-radius: 100%;
-        background-color: var(--dark_blue);
-        transform: scale(2);
-    }
-    
-   
-    
-    .dot_arrow .fa-caret-down{
-        font-size: 20px;
-        color: white;
-        position: absolute;
-        top: 50%;
-        left: 52%;
-        transform: translate(-50%,-50%);;
-    
-    
-    }
-    
-    .step_dot_warp{
-        position: absolute;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-    
-    
     .step_dot{
-        display: none;
-        width: 24px;
-        height: 24px;
-        border-radius: 100%;
-        background-color: var(--dark_blue);
-        
+
+       display: none;
       
     }
-    
-    
+
+    .dot_arrow{
+        display: none;
+    }
+
+    .food_steps{
+        flex-direction: column;
+    }
+   
+
+
+    .food_steps_warp{
+        position: relative;
+        z-index: 60;
+        margin-top: 80px;
+    }
+
+    .food_steps{
+        background-color: white;
+        border: solid 1px var(--dark_blue);
+    }
+
     .food_steps_pic{
+        position: relative;
+        z-index: 62;
         overflow: hidden;
         width: 100%;
-        height: 100%;
-        
-    
-    }
-    
-    .food_steps_pic img{
-        width: 120%;
-        
-    }
-    
-    
-    .steps_pic01 img{
-        transform: translateY(-30px)
-    }
-    
-    .steps_pic05 img{
-        transform: translateX(-30px)
-    }
-    
-    
-    
-    .food_steps_content{
-      
-        width: 80%;
         height: 60%;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .food_steps_content h1{
-        margin-top: 15px;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: 1.33px;
-        color: #000000;
-    
-    
-    }
-    .food_steps_content p{
-    
-        font-size: 1.4rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.8;
-        letter-spacing: normal;
-        color: #000000;
-    
-    
-    
-    }
-    
-    .more07 p::after{
-        content: '';
-        display: block;
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-image: url('../img/right-arrow-w.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        top: 7px;
-        right: 2px;
+        
     
     }
 
+    .food_steps_content{
+        width: 100%;
+        height: 40%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    
+
+
+    
+   
 }
 
 
@@ -1618,7 +1647,7 @@
 
 .Each_Product_Items{
     
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 100px;
       
 }

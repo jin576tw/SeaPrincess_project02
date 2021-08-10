@@ -244,7 +244,7 @@ $(document).ready(function () {
             $(this).siblings().css('border','solid 1px transparent')
             $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent')
 
-            $('.IntroProduct_content').fadeIn(500)
+            $('.IntroProduct_content_warp').fadeIn(500)
             $('.Product_intro_team').fadeOut(1)
             
         }
@@ -264,7 +264,7 @@ $(document).ready(function () {
             $(this).siblings().css('border','solid 1px transparent')
             $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent');
 
-            $('.IntroProduct_content').fadeOut(1)
+            $('.IntroProduct_content_warp').fadeOut(1)
             $('.Product_intro_team').fadeIn(500)
 
         }
