@@ -227,7 +227,7 @@
     width: 80%;
     max-width: 900px;
     height: 140px;
-    margin: 0 auto 100px auto ;
+    margin: 0 auto 80px auto ;
     z-index: 60;
 }
 
@@ -556,33 +556,34 @@
 
 /* 團員介紹 */
 .Ship_info_team_content{
+    z-index: 60;
     position: relative;
-    min-height: 850px;
     background-color: var(--sea_blue);
+    min-height: 2200px;
     display: flex;
-    
     align-items: center;
-    /* background-color:red; */
-    margin: 850px 0 728px 0;
 }
+
 .Ship_info_team_content::before{
     content: '';
-    top: -850px;
+    top: 0px;
     left: 0;
     position: absolute;
     display: block;
     width: 100%;
-    height: 850px;
+    height: 700px;
     background-image: url('../img/teambg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-color: #fff;
 }
 
 
 .Ship_info_team_content::after{
+
     content: '';
-    bottom: -728px;
+    bottom: 0px;
     left: 0;
     position: absolute;
     display: block;
@@ -596,24 +597,20 @@
 }
 
 .Ship_info_team_pic{
-    position: absolute;
+    position: relative;
     display: flex;
     width: 100%;
-    max-width: 2000px;
-    height: 300px;
-    top: -880px;
-    left: 0;
+    top: -150px;
+    
+
 }
 
 .mask{
-    width: 240px;
-    min-height: 450px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
-    /* background-color: red; */
-
    
 }
 
@@ -630,7 +627,7 @@
    
     width: 180px;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6rem;
@@ -643,6 +640,24 @@
 .mask_title p:nth-of-type(1){
     margin-top: 20px;
     font-size: 2rem;
+    font-weight: 500;
+}
+
+.mask01{
+    transform: translate(0px,-95px);
+}
+.mask04{
+    transform: translate(0px,-90px);
+}
+.mask06{
+    transform: translate(0px,80px);
+}
+.mask07{
+    transform: translate(0px,-60px);
+}
+
+.mask08{
+    transform: translate(0px,80px);
 }
 
 
@@ -650,15 +665,17 @@
 @media (max-width: 992px) {
 
     .Ship_info_team_content{
+        z-index: 60;
         position: relative;
-        min-height: 300px;
         background-color: var(--sea_blue);
-        margin: 500px 0 400px 0;
+        min-height: 3000px;
+        display: flex;
+        align-items: center;
     }
 
     .Ship_info_team_content::before{
         content: '';
-        top: -500px;
+        top: 0px;
         left: 0;
         position: absolute;
         display: block;
@@ -672,7 +689,7 @@
 
     .Ship_info_team_content::after{
         content: '';
-        bottom: -400px;
+        bottom: 0px;
         left: 0;
         position: absolute;
         display: block;
@@ -684,25 +701,52 @@
         background-position: center;
         background-color: var(--dark_blue);
     }
+
+    .Ship_info_team_pic{
+        position: relative;
+        display: flex;
+        width: 100%;
+        top:-100px
+        
+    }
+
+    .mask01{
+        transform: translate(0px,0px);
+    }
+    .mask04{
+        transform: translate(0px,0px);
+    }
+    .mask06{
+        transform: translate(0px,0px);
+    }
+    .mask07{
+        transform: translate(0px,0px);
+    }
+    
+    .mask08{
+        transform: translate(0px,0px);
+    }
     
 }
 @media (max-width: 480px) {
 
     .Ship_info_team_content{
+        z-index: 60;
         position: relative;
-        min-height: 300px;
         background-color: var(--sea_blue);
-        margin: 500px 0 250px 0;
+        min-height: 2400px;
+        display: flex;
+        align-items: center;
     }
 
     .Ship_info_team_content::before{
         content: '';
-        top: -500px;
+        top: 0px;
         left: 0;
         position: absolute;
         display: block;
         width: 100%;
-        height: 500px;
+        height: 200px;
         background-image: url('../img/teambg.svg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -711,7 +755,7 @@
 
     .Ship_info_team_content::after{
         content: '';
-        bottom: -250px;
+        bottom: 0px;
         left: 0;
         position: absolute;
         display: block;
@@ -725,13 +769,11 @@
     }
 
     .Ship_info_team_pic{
-        position: absolute;
+        position: relative;
         display: flex;
         width: 100%;
-        max-width: 2000px;
-        height: 300px;
-        top: -400px;
-        left: 0;
+        top:-60px
+        
     }
 
     .mask{
@@ -748,14 +790,569 @@
     
 
     .mask_pic{
-        width: 80px;
-        height: 80px; 
+        width: 120px;
+        height: 120px; 
         border-radius: 100%;
         background-color: var(--sea_blue);
         border: solid 3px #ffffff;
         overflow: hidden;
     }
+
+
+    .mask_title p{
+    
+        width: 160px;
+        font-size: 1.6rem;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.6rem;
+        letter-spacing : 1.33px;
+        text-align: center;
+        color: #000000;
+    
+    }
+
+    .mask_title p:nth-of-type(1){
+        margin-top: 12px;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+
+    .mask01{
+        transform: translate(0px,0px);
+    }
+    .mask04{
+        transform: translate(0px,0px);
+    }
+    .mask06{
+        transform: translate(0px,0px);
+    }
+    .mask07{
+        transform: translate(0px,0px);
+    }
+    
+    .mask08{
+        transform: translate(0px,0px);
+    }
+    
+
+
+}
+
+
+/* 預約海釣 */
+.Ship_info_appointment{
+    position: relative;
+    z-index: 61;
+    top:0px;
+    width: 100%;
+   
+}
+
+.Ship_info_appointment_text{
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+
+}
   
+.Ship_info_appointment_text p{
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+  
+}
+
+.more_btn_yellow{
+    padding-left: 45px;
+    margin: 60px auto 0 auto;
+    width: 320px;
+    height: 60px;
+    background-color: #fff773;
+    border-radius: 30px;
+    cursor: pointer;
+
+    
+}
+
+
+.more_btn_yellow p{
+    
+    position: relative;
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+    color: #384982;
+    margin: 0 auto ;
+    
+}
+.more_btn_yellow p::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    top:6px;
+    left: 20px;
+    background-image: url('../img/line-db.svg');
+    background-size: contain;
+    
+
+   
+}
+
+.Ship_info_appointment_video{
+    display: flex;
+    flex-direction: column;
+    
+  
+}
+
+
+.m_video{
+    position: relative;
+    width: 240px;
+    height: 190px;
+    background-image: url('../img/videoframe.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* margin-top: 40px; */
+
+
+}
+
+.m_video iframe{
+     border-radius: 10px;
+     position: absolute;
+     width: 210px;
+     height: 130px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-60%);
+ }
+
+
+ .m_video01{
+    transform: translate(200px,-30px);
+
+ }
+ .m_video02{
+    transform: translate(50px,0px);
+
+ }
+ .m_video03{
+    transform: translate(400px,0px);
+
+ }
+ 
+
+@media (max-width: 992px) {
+
+    .Ship_info_appointment{
+        position: relative;
+        z-index: 61;
+        top:0px;
+        width: 100%;
+       
+    }
+
+    .Ship_info_appointment_text{
+    
+        margin-top: -120px;
+    
+    }
+
+
+    .more_btn_yellow{
+        margin: 50px auto 0 auto;
+        width: 250px;
+        height: 50px;
+        background-color: #fff773;
+        border-radius: 30px;
+        cursor: pointer;
+    
+        
+    }
+   
+    
+    .more_btn_yellow p{
+        position: relative;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        color: black;
+        margin: 0 auto ;
+        
+    }
+
+    
+    .more_btn_yellow p::after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top:3px;
+        left: 0px;
+        background-image: url('../img/line-db.svg');
+        background-size: contain;
+        
+    
+       
+    }
+
+    .Ship_info_appointment_video{
+        margin-top: 60px;
+        align-items: center;
+     }
+
+    .m_video01{
+        transform: translate(0px,0px);
+    
+     }
+     .m_video02{
+        transform: translate(0px,0px);
+    
+     }
+     .m_video03{
+        transform: translate(0px,0px);
+    
+     }
+
+}
+@media (max-width: 480px) {
+
+    .Ship_info_appointment_text{
+        margin-top: -30px;
+    
+    }
+
+    .Ship_info_appointment{
+        position: relative;
+        z-index: 61;
+        top:0px;
+        width: 100%;
+       
+    }
+
+
+  
+    .more_btn_yellow{
+        margin: 20px auto 0 auto;
+        width: 250px;
+        height: 50px;
+        background-color: #fff773;
+        border-radius: 30px;
+        cursor: pointer;
+    
+        
+    }
+
+    .more_btn_yellow p::after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top:3px;
+        left: 0px;
+        background-image: url('../img/line-db.svg');
+        background-size: contain;
+        
+    
+       
+    }
+
+    
+    .more_btn_yellow p{
+        position: relative;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        color: black;
+        margin: 0 auto ;
+        
+    }
+
+    .Ship_info_appointment_video{
+       margin-top: 40px;
+       align-items: center;
+    }
+
+    .m_video01{
+        transform: translate(0px,0px);
+    
+     }
+     .m_video02{
+        transform: translate(0px,0px);
+    
+     }
+     .m_video03{
+        transform: translate(0px,0px);
+    
+     }
+}
+
+
+.Ship_info_more{
+    padding-top: 80px;
+    background-color:var(--dark_blue);
+}
+.Tourist{
+    height: 500px;
+    margin-bottom: 100px;
+   
+    
+}
+
+.Tourist_outframe{
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto ;
+    max-width: 345px;
+    height: 100%;
+    background-color: white;
+}
+
+.Tourist_pic{
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    background-color: white;
+    width: 90%;
+    height: 80%;
+    box-shadow:rgba(0,0,0,0.4) 3px 3px 30px 0px inset;  
+
+}
+
+.tour_pic01 img{
+    width: 120%;
+    
+}
+.tour_pic02 img{
+    width: 180%;
+}
+.tour_pic03 img{
+    width: 190%;
+    transform: translateX(-160px);
+}
+
+.Tourist_icon{
+    cursor: pointer;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: var(--dark_blue);
+    border-radius: 100%;
+    border:25px solid white;
+    bottom: -2%;
+}
+
+.tour_icon01 img{
+    width: 75%;
+    transform: translate(25% ,20%);
+}
+.tour_icon02 img{
+    width: 75%;
+    transform: translate(20% ,30%);
+}
+.tour_icon03 img{
+    width: 75%;
+    transform: translate(20% ,32%);
+}
+
+.Tourist_link{
+    cursor: pointer;
+    position: absolute;
+    right: 30%;
+    bottom: 3%;
+   
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #384982;
+}
+
+.Tourist_link p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: -30px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/right-arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+@media (max-width: 992px) {
+
+    .Tourist{
+        height: 500px;
+        margin-bottom: 80px;
+        
+    }
+
+
+    .Tourist_outframe{
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto ;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    
+    .Tourist_pic{
+        overflow: hidden;
+        position: absolute;
+        top: 15px;
+        left: 11px;
+        background-color: white;
+        width: 90%;
+        height: 80%;
+        box-shadow:rgba(0,0,0,0.4) 3px 3px 30px 0px inset;  
+    
+    }
+    
+    .tour_pic01 img{
+        width: 120%;
+        
+    }
+    .tour_pic02 img{
+        width: 180%;
+    }
+    .tour_pic03 img{
+        width: 190%;
+        transform: translateX(-100px);
+    }
+    
+    .Tourist_icon{
+        cursor: pointer;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: var(--dark_blue);
+        border-radius: 100%;
+        border:20px solid white;
+        bottom: -2%;
+    }
+    
+    .tour_icon01 img{
+        width: 75%;
+        transform: translate(25% ,20%);
+    }
+    .tour_icon02 img{
+        width: 75%;
+        transform: translate(20% ,30%);
+    }
+    .tour_icon03 img{
+        width: 75%;
+        transform: translate(20% ,32%);
+    }
+    
+    .Tourist_link{
+        cursor: pointer;
+        position: absolute;
+        right: 30%;
+        bottom: 3%;
+       
+        font-size: 1.6rem;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #384982;
+    }
+    
+    .Tourist_link p::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: -18px;
+        width: 15px;
+        height: 15px;
+        background-image: url("../img/right-arrow.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    
+    }
+
+
+}
+@media (max-width: 480px) {
+
+    .Tourist{
+        height: 500px;
+        margin-bottom: 60px;
+        
+    }
+
+    .Tourist_icon{
+        cursor: pointer;
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: var(--dark_blue);
+        border-radius: 100%;
+        border:25px solid white;
+        bottom: -2%;
+    }
+
+    
+
+    .Tourist_link{
+        cursor: pointer;
+        position: absolute;
+        right: 30%;
+        bottom: 3%;
+       
+        font-size: 2.4rem;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #384982;
+    }
+    
+    .Tourist_link p::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: -25px;
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/right-arrow.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    
+    }
 
 
 }
