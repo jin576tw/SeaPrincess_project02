@@ -560,7 +560,7 @@ select {
     justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: 30px;
-    background-color: red;
+ 
 }
 
 .Blog_artical_pic{
@@ -584,7 +584,7 @@ select {
     margin-top: 5px;
     max-width: 240px;
     width: 90%;
-    background-color: green;
+   
     
 
 }
@@ -603,7 +603,7 @@ select {
 }
 
 .Blog_artical_author{
-    margin: 2px 0px 5px 2px;
+    margin: 0px 0px 10px 2px;
     width: 80%;
     display: flex;
     align-items: center;
@@ -649,9 +649,9 @@ select {
     margin-top: 0px;
     display: flex;
     width: 240px;
-    min-height: 25px;
+    min-height: 30px;
     flex-wrap: wrap;
-    background-color: orange;
+    
 
 
 }

@@ -163,7 +163,7 @@
 }
 
 .main_artical_tags{
-    /* background-color: orange; */
+    
     width: 100%;
     max-width: 476px;
     display: flex;
@@ -670,7 +670,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-color: orange;
     margin:0 auto 30px auto;
 }
 
