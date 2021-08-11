@@ -174,23 +174,23 @@ $(document).ready(function () {
 
     //////文章頁標籤效果//////
 
-    $('.artical_tag_outline').on({
+    $('.artical_tag').on({
 
         mouseenter: function () {
 
 
-            $(this).css('border','solid 1px #dc7e00')
+            $(this).children('.artical_tag_outline').css('border','solid 1px #dc7e00')
 
-            $(this).children('p').css('color','#dc7e00')
+            $(this).children('.artical_tag_outline').children('p').css('color','#dc7e00')
 
 
         },
 
         mouseleave: function () {
 
-            $(this).css('border','solid 1px var(--sea_blue)')
+            $(this).children('.artical_tag_outline').css('border','solid 1px var(--sea_blue)')
 
-            $(this).children('p').css('color','var(--sea_blue)')
+            $(this).children('.artical_tag_outline').children('p').css('color','var(--sea_blue)')
 
         }
 

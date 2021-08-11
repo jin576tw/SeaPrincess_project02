@@ -21,38 +21,21 @@
 
     <style>
 
-        .outline{
+        .warp{
             display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-            max-width: 600px;
-            height:400px;
-            outline: 1px solid black;
-        
-        }
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 500px;
+            background-color:red;
+        }  
 
-        .box{
-            /* min-width: 200px; */
-            width: 200px;
-            height: 200px;
-            background-color: red;
+        .fb-page{
+            width: 500px;
+            height: 300px;
+            vertical-align: middle;
         }
-
-        .box1{
-            background-color: cyan;
-        }
-
-        .box2{
-            background-color: green;
-        }
-
-        .box3{
-            background-color: blueviolet;
-        }
-        .box4{
-            background-color: orange;
-        }
+       
        
 
     </style>
@@ -60,41 +43,21 @@
 </head>
 <body>
 
-   
-
-
-       
-   <div class="Blog_artical_tags  m-0 ">
-
-        <div class="artical_tag p-0">
-            <div class="artical_tag_outline"><p>店家推薦</p></div>
-        </div>
-        <div class="artical_tag p-0">
-            <div class="artical_tag_outline"><p>心得</p></div>
-        </div>
-        <div class="artical_tag p-0">
-            <div class="artical_tag_outline"><p>心得</p></div>
-        </div>
-        <div class="artical_tag p-0">
-            <div class="artical_tag_outline"><p>觀光旅遊</p></div>
-        </div>
-        <div class="artical_tag p-0">
-            <div class="artical_tag_outline"><p>知識</p></div>
-        </div>
+    <div class="warp">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v11.0" nonce="sch2QjgF"></script>
     
-       
-
+        
+        <div class="fb-page" data-href="https://www.facebook.com/princess888ship" data-tabs="timeline" data-width="500" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/princess888ship" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/princess888ship">公主888 觀光 娛樂 海釣船！</a></blockquote></div>
     </div>
+
+  
         
         
 
 
      
 
-
-
-    <!-- footer -->
-    <section id="footer"></section>
 
 
 </body>
@@ -106,93 +69,11 @@
 <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <!-- js -->
 <!-- <script src="../js/common.js"></script> -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v11.0" nonce="sch2QjgF"></script>
+
 
 <script>
-    // $('#navbar').load('navbar.html')
-    // $('#footer').load('footer.html')
-
-
-
-    // let item = `<div class="item">
-    //                               <p>商品</p>
-    //         <button class="delete_btn" id='4' >刪</button>
-    //        </div>`
-
-
-    // $('.add_btn').on({
-
-    //     click:function(){
-    //         $('.item_content').append(item)
-
-    //     }
-
-
-
-    // })
-    // $(".item_content").on("click",".delete_btn",function(){ 
-        
-    //     let Id =$(this).attr('id')
-
-    //     console.log(Id)
-        
-    // });     
-
-
-
-
-    // function del(){
-
-    //     let $del_btn = $('.delete_btn')
-        
-    //     $del_btn.parent().remove()
-    // //    let item = $del_btn.prev().prev()
-
-
-    //     console.log('hi')
-
-    //     // $del_btn.parent('.item').remove()
-
-       
-       
-    // }
-
-
-
-
-//    let cat = [{name:'花花 ',type:'三花',qty:4,price:200,total_price:0},{name:'毛毛', type:'戴帽',qty:8,price:200,total_price:0}]
-
-//    function addcart(){
-
-//     $.cookie('animal',JSON.stringify(cat));
-
-//     let carstr = $.cookie('animal')
-    
-//     let catarr =JSON.parse(carstr)
-
-//    let sum =0 ;
-//     // console.log(catarr[1].name)
-
-//     for(let i = 0; i < catarr.length ;i++){
-
-//         catarr[i].total_price = catarr[i].qty * catarr[i].price ;
-
-//         sum += catarr[i].total_price 
-        
-//         console.log(`貓價值:${catarr[i].total_price}`)
-       
-       
-//     }
-   
-
-//     console.log(`全部貓咪價錢:`+sum)
-
-
   
-
-    
-  
-
-//    }
   
   
 

@@ -107,24 +107,32 @@
 
 .articale_type_left{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cyan;
+    width: 76%;
+    min-height: 25px;
     /* height: 100%; */
 
 }
 
-.articale_type_left .Blog_artical_tags{
-   
-    min-width: 280px;
-   display: flex;
-   align-items: flex-end;
-   transform: translateX(10px);
-   /* background-color: red; */
-  
-    
+.each_artical_tags{
+
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    background-color: orange;
+
 }
 
-.articale_type_left .artical_tag{
-    margin-top: 0;
+.each_artical_tags .artical_tag{
+    min-width: 55px;
+    max-height: 25px;
+    margin: 5px 5px 5px 0;
+
 }
+
+
 
 
 
@@ -187,12 +195,26 @@
         font-size: 1.4rem;
     }
 
-    .articale_type_warp .Blog_artical_tags{
-        transform: translateX(0px);
-        justify-content: center;
+    .each_artical_tags{
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
-       
+        max-width: 100%;
+        background-color: orange;
+    
     }
+    
+    .each_artical_tags .artical_tag{
+        min-width: 55px;
+        max-height: 25px;
+        margin: 0px 5px 5px 0;
+    
+    }
+
+   
+    
+
+    
 
 
     .articale_share_btn{
@@ -241,18 +263,29 @@
     }
 
     .articale_type_left .new_artical_date{
-        margin-top: 15px;
+        margin-top: 0px;
         margin-right: 10px;
+        margin-bottom: 10px;
         font-size: 1.4rem;
     }
   
-    .articale_type_warp .Blog_artical_tags{
-        transform: translateX(0px);
-        justify-content: center;
+    .each_artical_tags{
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 20px;
         width: 100%;
-       
+        max-width: 500px;
+        background-color: orange;
+    
     }
-
+    
+    .each_artical_tags .artical_tag{
+        min-width: 55px;
+        max-height: 25px;
+        margin: 0px 5px 5px 0;
+    
+    }
+   
     .articale_type_right{
         display: flex;
         margin-right: 0px;
@@ -917,12 +950,14 @@
  }
  
  .all_artical_tag{
-     margin-bottom: 30px;
- }
- 
- .all_artical_tag .artical_tag{
-     transform: translateX(0);
- }
+    max-width: 310px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: orange;
+    margin:0 auto 30px auto;
+}
+
  
  @media (max-width: 992px) {
      .Blog_Bar_warp{
@@ -1158,16 +1193,11 @@
         margin-bottom: 20px;
     }
     
-     .all_artical_tag{
-         justify-content: center;
-         padding: 0 20px;
-         
-     }
- 
-     .all_artical_tag .artical_tag{
-         transform: translateX(5px);
-         
-     }
+    .all_artical_tag{
+        
+        justify-content: center;
+        
+    }
  }
 
 
