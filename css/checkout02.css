@@ -135,8 +135,8 @@
 
 .checkout_login_text span{
     cursor: pointer;
-    color: #e47f00;
-    border-bottom: 1px solid #e47f00;
+    color: var(--orange);
+    border-bottom: 1px solid var(--orange);
     padding-bottom: 2px;
     margin: 0 5px ;
 }
@@ -155,8 +155,12 @@
     background-color: black;
     font-size: 2rem;
     color:white;
+    transition: 0.8s;
 }
 
+.check_logbtn:hover{
+    background-color: var(--light_blue);
+}
 
 @media (max-width: 992px) {
 
@@ -366,6 +370,16 @@
     margin-left: 30px;
 }
 
+.Items_type{
+    margin-top: 5px;
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.31);
+    padding-left: 10px;
+    font-size: 1.6rem;
+}
+
 .Items_name h3{
     font-size: 2rem;
     font-weight: normal;
@@ -478,7 +492,7 @@
 
     .Items_list_count{
         position: absolute;
-        bottom: 12px; 
+        bottom: 22px; 
         left: 140px;
         width: 80px;
         height: 30px;
@@ -486,7 +500,7 @@
     }
     .Items_list_price{
         position: absolute;
-        bottom: 14px; 
+        bottom: 25px; 
         left: 224px;
         width: 70px;
         height: 25px;
@@ -494,7 +508,7 @@
     }
     .Items_list_delete{
         position: absolute;
-        bottom: 12px;
+        bottom: 24px;
         right: 20px;
         width: 30px;
         height: 30px;
@@ -510,8 +524,9 @@
 
     .Items_name{
         width: 150px;
-        margin-top: -50px;
+        margin-top: -24px;
         margin-left: 12px;
+        background-color: green;
     }
     
     .Items_name h3{
@@ -523,6 +538,16 @@
         letter-spacing: normal;
         color: #000;
     
+    }
+
+    .Items_type{
+        margin-top: 5px;
+        width: 100%;
+        height: 30px;
+        border-radius: 8px;
+        border: solid 1px rgba(0, 0, 0, 0.31);
+        padding-left: 5px;
+        font-size: 1.6rem;
     }
 
 }
