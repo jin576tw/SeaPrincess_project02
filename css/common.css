@@ -34,6 +34,7 @@ body{
 p {
     font-size: 1.8rem;
     margin: 0px;
+    padding: 0;
 }
 
 
@@ -559,6 +560,7 @@ select {
     justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: 30px;
+    background-color: red;
 }
 
 .Blog_artical_pic{
@@ -582,6 +584,7 @@ select {
     margin-top: 5px;
     max-width: 240px;
     width: 90%;
+    background-color: green;
     
 
 }
@@ -600,7 +603,7 @@ select {
 }
 
 .Blog_artical_author{
-    margin: 2px 0px 2px 2px;
+    margin: 2px 0px 5px 2px;
     width: 80%;
     display: flex;
     align-items: center;
@@ -643,35 +646,40 @@ select {
 }
 
 .Blog_artical_tags{
+    margin-top: 0px;
     display: flex;
-    min-width: 240px
+    width: 240px;
+    min-height: 25px;
+    flex-wrap: wrap;
+    background-color: orange;
+
 
 }
 
 .artical_tag{
-    margin-top: 12px;
-    display: flex;
-    justify-content: center;
+    /* background-color: red; */
+    min-width: 60px;
     max-height: 25px;
-  
-    
+    margin: 0px 5px 5px 0;
+
 }
+
 .artical_tag_outline{
     cursor: pointer;
-    min-width: 64px;
-    width: 80%;
-    height: 25px;
-    border-radius: 13px;
-    border: solid 1px var(--sea_blue);
     display: flex;
     justify-content: center;
-    transition: 0.8s;
+    width: 100%;
+    max-height: 25px;
+    border: solid 1px var(--sea_blue);
+    border-radius: 13px;
+   
     
 }
 
 .artical_tag_outline p{
-    margin:-1px 5px 0 5px;
-    font-size: 1.2rem;
+
+    margin: -3px 10px;
+    font-size: 1.4rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -679,14 +687,14 @@ select {
     letter-spacing: normal;
     color: var(--sea_blue);
     transition: 0.8s;
-      
-  
+
 }
 
 
 @media (max-width: 992px) {
 
     .Blog_artical_pic{
+        min-width: 150px;
         width: 150px;
         height: 150px;
        
@@ -720,7 +728,6 @@ select {
         width: 20px;
         height: 20px;
         border-radius: 100%;
-       
         margin-right: 5px;
         display: flex;
         justify-content: center;
@@ -730,34 +737,32 @@ select {
     }
 
     .Blog_artical_tags{
-        min-width: 150px;
-        width: 95%;
-       
-        
+        width: 150px;
+        min-height: 20px; 
     }
 
     .artical_tag{
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        
-
+        background-color: red;
+        min-width: 50px;
+        max-height: 20px;
+        margin: 0px 5px 5px 0;
+    
     }
-
+    
     .artical_tag_outline{
-        min-width: 61px;
-        width: 80%;
-        height: 25px;
-        border-radius: 13px;
-        border: solid 1px var(--sea_blue);
+        cursor: pointer;
         display: flex;
         justify-content: center;
+        width: 100%;
+        max-height: 20px;
+        border: solid 1px var(--sea_blue);
+        border-radius: 13px;
        
         
     }
-
+    
     .artical_tag_outline p{
-        margin:-1px 2px 0 2px;
+        margin: -3.5px 4px;
         font-size: 1.2rem;
         font-weight: normal;
         font-stretch: normal;
@@ -765,9 +770,10 @@ select {
         line-height: 2.17;
         letter-spacing: normal;
         color: var(--sea_blue);
-          
-      
+        transition: 0.8s;
+    
     }
+    
     
 
     
@@ -793,9 +799,7 @@ select {
        
     }
 
-    .Blog_artical_tags{
-        width: 95%;
-    }
+  
 
     .Blog_artical_pic{
         width: 95%;
@@ -811,24 +815,42 @@ select {
        
     }
 
+    .Blog_artical_tags{
+        width: 95%;
+        min-height: 25px; 
+    }
 
     .artical_tag{
-        margin-top: 10px;
-        display: flex;
-        justify-content: flex-start;
-        transform: translateX(0px);
+        background-color: red;
+        min-width: 50px;
+        max-height: 25px;
+        margin: 0px 5px 5px 0;
+    
     }
-
+    
     .artical_tag_outline{
-        min-width: 55px;
-        width: 90%;
-        height: 25px;
-        border-radius: 13px;
-        border: solid 1px var(--sea_blue);
+        cursor: pointer;
         display: flex;
         justify-content: center;
+        width: 100%;
+        max-height: 25px;
+        border: solid 1px var(--sea_blue);
+        border-radius: 13px;
+       
         
     }
-
+    
+    .artical_tag_outline p{
+        margin: -3.5px 4px;
+        font-size: 1.2rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2.17;
+        letter-spacing: normal;
+        color: var(--sea_blue);
+        transition: 0.8s;
+    
+    }
    
 }
