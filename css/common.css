@@ -657,7 +657,7 @@ select {
 }
 
 .artical_tag{
-    min-width: 60px;
+    min-width: 55px;
     max-height: 25px;
     margin: 0px 5px 5px 0;
 
@@ -739,10 +739,11 @@ select {
     .Blog_artical_tags{
         width: 150px;
         min-height: 20px; 
+        /* background-color: red; */
     }
 
     .artical_tag{
-        min-width: 50px;
+        min-width: 45px;
         max-height: 20px;
         margin: 0px 5px 5px 0;
     
@@ -761,7 +762,7 @@ select {
     }
     
     .artical_tag_outline p{
-        margin: -3.5px 10px;
+        margin: -3.5px 8px;
         font-size: 1.2rem;
         font-weight: normal;
         font-stretch: normal;
@@ -817,10 +818,11 @@ select {
     .Blog_artical_tags{
         width: 95%;
         min-height: 25px; 
+        
     }
 
     .artical_tag{
-       
+      
         min-width: 50px;
         max-height: 25px;
         margin: 0px 5px 5px 0;
