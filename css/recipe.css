@@ -285,7 +285,7 @@
     min-height: 35px;
     width: 550px;
     justify-content: space-between;
-    background-color: cyan;
+
    
     
 }
@@ -297,7 +297,7 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
-    background-color: orange;
+    
     overflow: hidden;
 
 }
@@ -362,7 +362,7 @@
         min-height: 25px;
         width: 400px;
         justify-content: space-between;
-        background-color: cyan;
+     
        
         
     }
@@ -374,7 +374,7 @@
         display: flex;
         flex-wrap: wrap;
         max-width: 350px;
-        background-color: orange;
+        
         overflow: hidden;
     
     }
@@ -427,7 +427,7 @@
         width: 100%;
         flex-direction: column;
         justify-content: space-between;
-        background-color: cyan;
+        
         align-items: flex-end;
        
         
@@ -440,7 +440,6 @@
         display: flex;
         flex-wrap: wrap;
         max-width: 100%;
-        background-color: orange;
         overflow: hidden;
         padding-left: 20px;
     
