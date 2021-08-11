@@ -196,7 +196,7 @@
 
 .Cart_items_top_warp{
     min-height: 60px;
-    background-color: 60px;
+   
     padding: 0px 20px;
     display: flex;
     justify-items: center;
@@ -255,8 +255,6 @@
 
     .Cart_items_top_warp{
         display: none;
-        min-height: 50px;
-        padding: 0px 10px;
         
     }
     
@@ -281,9 +279,13 @@
 .Cart_items_content{
     width: 100%;
     min-height: 300px;
+    margin: 0 0 60px 0px;
     /* background-color: red; */
 }
 
+.Items_warps{
+    margin-bottom: 60px;
+}
 
 .Items_title{
     display: flex;
@@ -297,7 +299,7 @@
     justify-items: flex-start;
     align-items: center;
     width: 55%;
-    background-color: cyan;
+   
 }
 
 .Item_check{
@@ -334,22 +336,22 @@
 .Items_list_name{
     width: 55%;
     height: 100%;
-    background-color: green;
+   
 }
 .Items_list_count{
     width: 15%;
     height: 100%;
-    background-color: yellow;
+  
 }
 .Items_list_price{
     width: 15%;
     height: 100%;
-    background-color: orange;
+    
 }
 .Items_list_delete{
     width: 15%;
     height: 100%;
-    background-color: red;
+   
 }
 
 .Items_pic{
@@ -422,12 +424,21 @@
 
 }
 @media (max-width: 480px) {
+
+    .Items_title{
+        display: flex;
+        padding: 0 5px; 
+        width: 100%;
+        height: 60px;
+        background-color: rgba(23, 34, 61, 0.1);
+    }
+
     .Items_title_name{
         display: flex;
         justify-items: flex-start;
         align-items: center;
         width: 100%;
-        background-color: cyan;
+       
     }
 
     .Items_title_name h2{
@@ -452,7 +463,7 @@
 
     .Items_list{
         position: relative;
-        padding: 0 20px; 
+        padding: 0 5px; 
         height: 160px;
         display: flex;
         flex-direction: column;
@@ -462,32 +473,32 @@
         width: 100%;
         height: 100%;
         min-height: 160px;
-        background-color: green;
+       
     }
 
     .Items_list_count{
         position: absolute;
-        bottom: 36px;
-        left: 155px;
+        bottom: 12px; 
+        left: 140px;
         width: 80px;
         height: 30px;
-        background-color: yellow;
+        
     }
     .Items_list_price{
         position: absolute;
-        bottom: 12px; 
-        left: 155px;
+        bottom: 14px; 
+        left: 224px;
         width: 70px;
         height: 25px;
-        background-color: orange;
+       
     }
     .Items_list_delete{
         position: absolute;
-        bottom: 10px;
-        right: 30px;
+        bottom: 12px;
+        right: 20px;
         width: 30px;
         height: 30px;
-        background-color: red;
+       
     }
 
     .Items_pic{
@@ -514,4 +525,13 @@
     
     }
 
+}
+
+/* 生鮮食材 */
+
+
+
+/* 客製鮮魚箱 */
+.fishbox_items_list{
+    border-bottom:  solid 1px transparent;
 }
