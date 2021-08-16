@@ -1287,11 +1287,12 @@
   .LineGroup_page{
       /* margin-top: 100px; */
       position: relative;
-      background-image: url('../img/lineGoup_bg.jpg');
+      background-image: url('../img/addline-bg.jpg');
       width: 100%;
       height: 560px;
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
  
   }
 
