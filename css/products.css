@@ -132,10 +132,10 @@
 /* ///////////生鮮食材/////////// */
 
 /* 海鮮管家 */
-.seafood_butler{
+.fishbox{
     padding-bottom: 80px;
 }
-.seafood_butler_warp{
+.fishbox_warp{
     margin: 0 auto;
     cursor: pointer;
     margin-top: 80px;
@@ -148,12 +148,12 @@
     padding-top: 80px;
 }
 
-.seafood_butler_warp:hover{
+.fishbox_warp:hover{
     transition: 0.5s;
     box-shadow: 2px 8px 15px 0 rgba(173, 173, 173, 0.5);
 }
 
-.seafood_butler_text h1{
+.fishbox_text h1{
    
     font-size: 3.6rem;
     font-weight: 500;
@@ -164,7 +164,7 @@
     text-align: center;
 }
 
-.seafood_butler_text p{
+.fishbox_text p{
    
     font-size: 2rem;
     font-weight: normal;
@@ -199,19 +199,19 @@
 
 @media (max-width: 992px) {
 
-    .seafood_butler{
+    .fishbox{
         padding-bottom: 30px;
     }
 
 
-    .seafood_butler_warp{
+    .fishbox_warp{
         height: 360px;
         margin-top: 60px;
         padding-top: 72px;
     
     }
 
-    .seafood_butler_text h1{
+    .fishbox_text h1{
    
         font-size: 3.2rem;
         font-weight: 500;
@@ -223,7 +223,7 @@
         /* margin-top: 50px; */
     }
     
-    .seafood_butler_text p{
+    .fishbox_text p{
        
         font-size: 1.6rem;
         font-weight: normal;
@@ -258,14 +258,14 @@
 }
 @media (max-width: 480px) {
 
-    .seafood_butler_warp{
+    .fishbox_warp{
         height: 360px;
         margin-top: 60px;
         padding-top: 50px;
     
     }
 
-    .seafood_butler_text h1{
+    .fishbox_text h1{
    
         font-size: 3.2rem;
         font-weight: 500;
@@ -277,7 +277,7 @@
         /* margin-top: 50px; */
     }
     
-    .seafood_butler_text p{
+    .fishbox_text p{
        
         font-size: 1.6rem;
         font-weight: 350;
