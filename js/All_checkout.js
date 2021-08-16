@@ -82,7 +82,44 @@ $(document).ready(function () {
         })
 
 
+    $('.cargo_info_edit').on({
 
+        click: function(){
+
+            $(this).parent().parent().parent().next('.checkout_info').fadeIn(100)
+
+        }
+
+
+
+    })
+
+    $('.fishbox_edit').on({
+
+        click: function(){
+
+            $(this).parent().parent().parent().next().next('.fishbox_detail').fadeIn(100)
+
+        }
+
+
+
+    })
+
+
+
+    $('.info_cancel , .checkout_info_bg ').on({
+
+        click: function(){
+
+            $('.checkout_info').fadeOut(100)
+
+        }
+
+
+
+    })
+  
 
 
 

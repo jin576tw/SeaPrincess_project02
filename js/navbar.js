@@ -29,8 +29,8 @@ $(document).ready(function () {
 
                 click: function(){
             
-                    console.log('hi')
-                    location.href = "../html/cart.html"
+                
+                    location.href = "../html/checkout.html"
             
                 }
             
@@ -234,7 +234,7 @@ $(document).ready(function () {
                             click: function(){
                         
                                 console.log('hi')
-                                location.href = "../html/cart.html"
+                                location.href = "../html/checkout.html"
                         
                             }
                         
@@ -336,7 +336,7 @@ $(document).ready(function () {
                     click: function(){
                 
                         console.log('hi')
-                        location.href = "../html/cart.html"
+                        location.href = "../html/checkout.html"
                 
                     }
                 
