@@ -918,5 +918,18 @@ $(document).ready(function () {
     
        
     
+        // navbar會員登入
+
+       $('.navbar_icon_member').on({
+
+                click: function(){
+                    
+                        
+                    location.href = "../html/Login_sign.html"
+            
+                }
+
+
+       })
         
 })

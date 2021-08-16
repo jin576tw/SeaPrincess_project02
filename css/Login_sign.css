@@ -1,0 +1,133 @@
+.LoginSign{
+    margin-top: 140px;
+    height: calc( 100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+@media (max-width: 992px) {
+    .LoginSign{
+        margin-top: 50px;
+        height: calc( 100vh - 50px)
+    }
+}
+@media (max-width: 480px) {
+    .LoginSign{
+        margin-top: 50px;
+        height: calc( 100vh - 50px)
+    }
+
+}
+
+
+.LoginSign_warp{
+    width: 420px;
+    min-height: 585px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.LoginSign_tag_warp{
+    display: flex;
+    height: 10%;
+    width: 100%;
+  
+}
+
+.LoginSign_tag{
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+
+}
+.Login_tag{
+    border-top: solid 1px rgba(23, 34, 61, 0.5);
+    border-right: solid 1px rgba(23, 34, 61, 0.5);
+    border-left: solid 1px rgba(23, 34, 61, 0.5);
+    border-bottom: solid 1px white;
+    transform: translateY(1px);
+}
+
+.LoginSign_content{
+    width: 100%;
+    height: 90%;
+    border: solid 1px rgba(23, 34, 61, 0.5);
+    padding: 60px;
+
+}
+
+.login_btn{
+    position: relative;
+  
+    width: 100%;
+    height: 50px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+
+}
+
+.Line_login{
+    background-color: #00d5a5;
+
+}
+
+.Line_login::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/line.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top:10px;
+    left: 20px;
+    
+   
+
+}
+
+
+
+.FB_login{
+    background-color: #404e80;
+
+}
+
+.FB_login::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px; 
+    background-image: url('../img/facebook.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top:10px;
+    left: 20px;
+    
+   
+
+}
