@@ -107,7 +107,7 @@
 
 .articale_type_left{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 76%;
     min-height: 25px;
@@ -115,11 +115,16 @@
 
 }
 
+.articale_type_left .new_artical_date{
+    min-width: 130px;
+}
+
 .each_artical_tags{
 
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
+    margin-left: 10px;
     
 
 }
@@ -262,8 +267,8 @@
     }
 
     .articale_type_left .new_artical_date{
-        margin-top: 0px;
-        margin-right: 10px;
+        margin-top: 15px;
+        margin-right: -5px;
         margin-bottom: 10px;
         font-size: 1.4rem;
     }
@@ -271,7 +276,7 @@
     .each_artical_tags{
         display: flex;
         flex-wrap: wrap;
-        padding-left: 20px;
+        padding-left: 35px;
         width: 100%;
         max-width: 500px;
         
