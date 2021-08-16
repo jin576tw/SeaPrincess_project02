@@ -456,6 +456,11 @@ $(document).ready(function () {
                         $('.navbar_shoplist_count').css('display','none');
                         $('.shoplist_count_RWD').css('display','none');
 
+                    }else{
+
+                        $('.navbar_shoplist_count').text($nowsum)
+                        $('.shoplist_count_RWD').text($nowsumRWD)
+
                     }
 
                     break;
