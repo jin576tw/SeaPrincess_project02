@@ -2,6 +2,9 @@
     /* outline: solid var(--light_blue) 1px; */
 }
 
+
+
+
 body{
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 400;
@@ -73,6 +76,7 @@ input:focus {
 select {
     outline: none;
 }
+
 
 /* ///////////動畫////////// */
 .Bounce{

@@ -39,15 +39,79 @@
              <div class="LoginSign_tag Sign_tag">會員登入
              </div>
          </div>
+
          <div class="LoginSign_content">
 
-            
-             <div class="Login_content">
-                <button class="login_btn Line_login">Line 登入</button>
-                <button class="login_btn FB_login">Facebook 登入</button>
+            <!-- 登入 -->
+              <div class="Login_content">
+                <button class="logSign_btn Line_login">Line 登入</button>
+                <button class="logSign_btn FB_login">Facebook 登入</button>
 
-             </div>
-            
+                <div class="midLine_warp">
+                    <p>or</p>
+                    <div class="midLine"></div>
+                </div>
+
+                <div class="Login_input_wrap">
+                    <div class="Login_account">
+                        <input type="text" name="account" placeholder="Email 或 手機">
+                    </div>
+                    <div class="Login_password">
+                        <input type="password" name="password" placeholder="密碼">
+                        <div class="Login_password_hide">
+                            <i class="far fa-eye-slash"></i>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <button class="Login_btn">登入</button>
+
+                <div class="forget_password">
+                    <p>忘記密碼？</p>
+                </div>
+
+             </div> 
+
+
+             <!-- 註冊 -->
+              <div class="Sign_content">
+                <button class="logSign_btn Line_login">使用 Line 註冊</button>
+                <button class="logSign_btn FB_login">使用 Facebook 註冊</button>
+                <button class="logSign_btn phone_login">
+                    <i class="fas fa-mobile-alt"></i>
+                    使用手機註冊</button>
+
+                <div class="midLine_warp">
+                    <p>or</p>
+                    <div class="midLine"></div>
+                </div>
+
+                <div class="Sign_input_wrap">
+                    <div class="Sign_account">
+                        <input type="text" name="account" placeholder="用戶名">
+                    </div>
+                    <div class="Sign_email">
+                        <input type="text" name="account" placeholder="Email">
+                    </div>
+                    <div class="Sign_password">
+                        <input type="password" name="password" placeholder="密碼">
+                        <div class="Sign_password_hide">
+                            <i class="far fa-eye-slash"></i>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <button class="Sign_btn">加入！</button>
+
+                <div class="Sign_detail">
+                    <p>*繼續進行代表您同意我們的 <span>服務條款</span></p>
+                </div>
+
+             </div> 
+
+             
          </div>
          
 
@@ -78,6 +142,7 @@
 
 <!-- js -->
 <script src="../js/common.js"></script>
+<script src="../js/Login_sign.js"></script>
 
 
 

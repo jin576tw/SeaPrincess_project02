@@ -1,8 +1,8 @@
 .LoginSign{
     margin-top: 140px;
-    height: calc( 100vh - 140px);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 
     
@@ -11,22 +11,19 @@
 @media (max-width: 992px) {
     .LoginSign{
         margin-top: 50px;
-        height: calc( 100vh - 50px)
     }
 }
 @media (max-width: 480px) {
     .LoginSign{
         margin-top: 50px;
-        height: calc( 100vh - 50px)
     }
 
 }
 
-
 .LoginSign_warp{
-    width: 420px;
-    min-height: 585px;
-    height: 90%;
+    margin: 40px 0 100px 0;
+    width: 400px;
+    max-height: 750px;
     display: flex;
     flex-direction: column;
 }
@@ -34,13 +31,28 @@
 .LoginSign_tag_warp{
     display: flex;
     height: 10%;
+    min-height: 75px;
     width: 100%;
   
 }
 
+.LoginSign_content{
+    width: 100%;
+    height: 90%;
+    border-right: solid 1px rgba(23, 34, 61, 0.5);
+    border-left: solid 1px rgba(23, 34, 61, 0.5);
+    border-bottom: solid 1px rgba(23, 34, 61, 0.5);
+    padding: 50px 40px 50px 40px;
+
+}
+
+
+
+
 .LoginSign_tag{
     cursor: pointer;
     width: 50%;
+    min-height: 75px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -52,27 +64,34 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
+    transform: translateY(1px);
+    border-top: solid 1px transparent;
+    border-right: solid 1px transparent;
+    border-left: solid 1px transparent;
+    border-bottom: solid 1px rgba(23, 34, 61, 0.5);
 
 }
+
 .Login_tag{
     border-top: solid 1px rgba(23, 34, 61, 0.5);
     border-right: solid 1px rgba(23, 34, 61, 0.5);
     border-left: solid 1px rgba(23, 34, 61, 0.5);
     border-bottom: solid 1px white;
-    transform: translateY(1px);
+   
 }
 
-.LoginSign_content{
-    width: 100%;
-    height: 90%;
-    border: solid 1px rgba(23, 34, 61, 0.5);
-    padding: 60px;
 
+
+/* 登入 */
+
+.Login_content{
+    display: none;
+    height: 100%;
+    overflow: auto;
 }
 
-.login_btn{
+.logSign_btn{
     position: relative;
-  
     width: 100%;
     height: 50px;
     font-size: 1.8rem;
@@ -87,6 +106,7 @@
     padding-left: 30px;
 
 }
+
 
 .Line_login{
     background-color: #00d5a5;
@@ -110,7 +130,6 @@
 }
 
 
-
 .FB_login{
     background-color: #404e80;
 
@@ -131,3 +150,208 @@
    
 
 }
+
+.phone_login{
+    background-color: #aa9170;
+}
+
+.fa-mobile-alt{
+    position: absolute;
+    top:10px;
+    left: 25px;
+    font-size: 30px
+
+
+}
+
+.midLine_warp{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    /* background-color: red; */
+}
+
+.midLine_warp p{
+    position:absolute;
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.31);
+    background-color: white;
+    margin: -4px 0 0 0;
+    padding: 0 20px;
+}
+
+.midLine{
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.31);
+
+}
+
+
+.Login_input_wrap{
+    width: 100%;
+}
+
+.Login_input_wrap input{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.31);
+    font-size: 1.6rem;
+    padding-left: 20px;
+
+}
+
+.Login_password{
+    position: relative;
+}
+
+.Login_password_hide{
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.6rem;
+    color:  rgba(0, 0, 0, 0.31);
+
+}
+
+
+.Login_btn{
+    margin-top: 25px;
+    width: 100%;
+    height: 50px;
+    font-size: 1.6rem;
+    border-radius: 8px;
+    color:white;
+    background-color: black;
+}
+
+.forget_password{
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+
+.forget_password p{
+    width: 70px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    border-bottom: 1.5px solid #000;
+   
+}
+
+
+@media (max-width: 480px) {
+
+    .LoginSign_warp{
+        width: 95%;
+        height:90%;
+        max-height: 600px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .LoginSign_content{
+        width: 100%;
+        height: 90%;
+        border: solid 1px rgba(23, 34, 61, 0.5);
+        padding: 20px;
+    
+    }
+}
+
+
+/* 註冊 */
+
+.Sign_content{
+
+    height: 100%;
+    overflow: auto;
+
+}
+
+.Sign_input_wrap{
+    width: 100%;
+}
+.Sign_input_wrap input{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.31);
+    font-size: 1.6rem;
+    padding-left: 20px;
+
+}
+
+.Sign_password{
+    position: relative;
+}
+
+.Sign_password_hide{
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.6rem;
+    color:  rgba(0, 0, 0, 0.31);
+
+}
+
+
+.Sign_btn{
+    margin-top: 25px;
+    width: 100%;
+    height: 50px;
+    font-size: 1.6rem;
+    border-radius: 8px;
+    color:white;
+    background-color: black;
+}
+
+
+.Sign_detail{
+   
+    margin-top: 20px;
+
+}
+
+.Sign_detail p{
+    margin: 0 auto;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    /* border-bottom: 1.5px solid #000; */
+   
+}
+
+.Sign_detail span{
+    cursor: pointer;
+    border-bottom: 1.5px solid #000;
+
+}
+
