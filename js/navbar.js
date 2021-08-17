@@ -920,7 +920,7 @@ $(document).ready(function () {
     
         // navbar會員登入
 
-       $('.navbar_icon_member').on({
+       $('.member_icon').on({
 
                 click: function(){
                     
@@ -949,6 +949,25 @@ $(document).ready(function () {
 
             
                 }
+
+
+       })
+
+       $('.navbar_icon_member').on({
+
+            mouseenter: function () {
+               $('.navbar_member_list_warp').fadeIn(10)
+
+            },
+
+            mouseleave: function () {
+                $('.navbar_member_list_warp').fadeOut(1)
+
+                
+            }
+
+            
+
 
 
        })

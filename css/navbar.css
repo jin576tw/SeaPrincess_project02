@@ -140,6 +140,7 @@
 
 }
 .navbar_icon_member{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,16 +148,72 @@
     width: 28px;
     height: 28px;
     font-size: 2.5rem;
-    overflow: hidden;
     cursor: pointer;
-   
 
 }
+
+.member_icon{
+   
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%; 
+}
+
+.member_icon .fa-user-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 28px;
+}
+
+
 .navbar_icon_member:hover{
     transition: 0.5s;
     color: var(--light_blue);
 
 }
+
+.navbar_member_list_warp{
+    display: none;
+    position: absolute;
+    top: 30px;
+    width: 120px;
+    min-height: 40px;
+    box-shadow: 2px 2px 8px 0 rgba(173, 173, 173, 0.3);
+    padding: 10px 0px;
+    background-color: white;
+
+}
+
+.navbar_member_list{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.navbar_member_list:hover{
+    transition: 0.8s;
+    background-color: #dedede
+}
+
+.navbar_member_list p{
+    margin-top: 9px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+
+
+}
+
+
 
 
 .navbar_RWD_icon{

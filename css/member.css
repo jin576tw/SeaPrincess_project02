@@ -1,0 +1,256 @@
+/* 會員中心 */
+.Member{
+    margin-top: 140px;
+    min-height: 100vh;
+    background-color: rgba(23, 34, 61, 0.05);
+    padding: 60px 0;
+
+}
+
+
+@media (max-width: 992px) {
+
+    .Member{
+        margin-top: 50px;
+        min-height: 800px
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .Member{
+        margin-top: 50px;
+        min-height: 100vh;
+        padding: 0px 0;
+    }
+
+  
+}
+
+
+.Member_warp{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.Member_tool{
+    
+    
+}
+
+.Member_tool_list{
+    background-color: white;
+    min-height: 100px;
+    border-bottom: solid 1px #dedede;
+    padding: 40px 30px 20px 30px;
+
+}
+
+.Member_tool_list:last-of-type{
+    border-bottom: solid 1px transparent
+}
+
+.Member_tool_list h2{
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.22px;
+    color: #000;
+
+}
+
+.Member_tool_list h3{
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.22px;
+    color: #8c8c8c;
+    margin-bottom: 20px;
+
+
+}
+.Member_tool_list h3:hover{
+    transition: 0.8s;
+    color: #7cafbf;
+}
+
+.LogOut{
+    cursor: pointer;
+}
+.LogOut h2:hover{
+    transition: 0.8s;
+    color: #7cafbf;
+}
+
+/* 會員中心內容 */
+.Member_content{
+    position: relative;
+    min-height: 600px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.Member_content_title{
+    width: 100%;
+    height: 10%;
+    min-height: 60px;
+    background-color: white;
+    border-bottom: solid 1px #dedede;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.Member_content_title h2{
+    font-size: 2rem;
+    margin-top: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.11px;
+    color: #000;
+}
+
+.Member_content_wrap{
+    padding: 40px;
+    height: 90%;
+
+}
+
+.Member_RWD_content{
+    display: none;
+}
+
+.userName{
+    display: none;
+
+}
+
+
+@media (max-width: 480px) {
+
+
+    .Member_warp{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+
+    .Member_tool{
+        margin: 40px 0;
+
+    }
+    
+
+    .Member_content{
+        min-height: 260px;
+    }
+
+    .Member_content_wrap{
+        padding: 40px 0 0 0;
+        min-height: 200px;
+        height: 90%;
+    }
+
+    .userName{
+        display: block;
+    
+    }
+    .userName::before{
+        content: 'Hi, ';
+    
+    }
+
+    .Member_RWD_content{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .Member_type_box{
+        width: 120px;
+        height: 120px;
+        border: solid 1px #7cafbf;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        
+    }
+
+    
+
+    .Member_type_box .fa-truck{
+        font-size: 25px;
+        color: #7cafbf;
+
+    }
+    .Member_type_box .fa-address-card{
+        font-size: 26px;
+        color: #7cafbf;
+
+    }
+
+    .Member_type_box h3{
+        font-family: Helvetica;
+        font-size: 3.6rem;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #7cafbf;
+
+
+    }
+
+    .Member_type_box p{
+        /* margin-top: 8px; */
+        font-size: 1.6rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.89px;
+        text-align: center;
+        color: #7cafbf;
+    }
+
+
+    .cargo_box p{
+
+        margin-top: 10px;
+    }
+
+    .member_box p{
+
+        margin-top: 9px;
+    }
+
+    .point_box p{
+
+        transform: translateY(-5px);
+    }
+
+    
+    
+
+ 
+
+}
+
+
+
