@@ -924,8 +924,29 @@ $(document).ready(function () {
 
                 click: function(){
                     
+                        location.href = "../html/Login_sign.html"
+
+            
+                }
+
+
+       })
+
+       $('.icon_member_RWD').on({
+
+                click: function(){
+                    
+
+                    if ($(window).width() >480) {
                         
-                    location.href = "../html/Login_sign.html"
+                        location.href = "../html/Login_sign.html"
+
+                    }else{
+
+                        location.href = "../html/Login_sign_RWD.html"
+
+                    }
+
             
                 }
 

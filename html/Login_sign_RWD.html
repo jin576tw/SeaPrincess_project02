@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess_公主號_會員登入ＲＷＤ</title>
+  
+
+   <!-- CDN -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link rel="stylesheet" href="../fontawesome/css/all.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../css/Login_sign_RWD.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+
+</head>
+<body>
+
+    <!-- 登入流程  -->
+    <section class="LoginSign_steps">
+        <div class="steps_warp">
+            <h5>手機號碼</h5>
+            <h5>簡訊驗證</h5>
+            <h5>基本資料</h5>
+            <h5>完成！</h5>
+        </div>
+    </section>
+
+    <!-- 登入/註冊頁面 -->
+    <section class="LoginSign_content">
+
+        <!-- 手機號碼登入 -->
+        <div class="RWD_Content phone_login">
+            <div class="phone_login_content">
+                <h3>手機號碼</h3>
+                <div class="phone_number_warp">
+                    <select name="" id="">
+                        <option>+886</option>
+                    </select>
+                    <input type="text" name="phone_number" placeholder="手機號碼 (即會員帳號)">
+                 </div>
+                 <p>欄位未填，或格式不正確</p>
+                
+            </div>
+            <div class="loginSign_btn_warp">
+                <button class="loginSign_btn_rwd login_btn_rwd">登入 (連結手機)</button>
+                <button class="loginSign_btn_rwd sign_btn_rwd">新會員註冊</button>
+            </div>
+        </div>
+
+        <!-- 簡訊驗證 -->
+        <div class="RWD_Content text_check">
+            <div class="text_check_content">
+                <h3>驗證碼</h3>
+                <input type="text" placeholder="請輸入驗證碼">
+                <p>重新發送驗證碼</p>
+            </div>
+            <div class="loginSign_btn_warp">
+                <button class="loginSign_btn_rwd sendText_btn_rwd">送出驗證碼</button>
+            </div>
+
+        </div>
+
+        
+        <!-- 基本資料 -->
+        <div class="RWD_Content data_input">
+            <div class="data_input_content">
+                <div class="member_list menber_name">
+                    <h3>用戶名<span>*</span></h3>
+                    <input type="text" name="menberName" id="">
+                </div>
+                <div class="member_list menber_birthday">
+                    <h3>生日</h3>
+                    <div class="birthday_input_warp">
+                        <select name="B_year" id="">
+                            <option>年</option>
+                        </select>
+                        <select name="B_mounth" id="">
+                            <option>月</option>
+                        </select>
+                        <select name="B_date" id="">
+                            <option>日</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="member_list menber_email">
+                    <h3>Email</h3>
+                    <input type="text" name="menberEmail" id="">
+                </div>
+
+            </div>
+
+            <div class="loginSign_btn_warp">
+                <button class="loginSign_btn_rwd member_btn_rwd">綁定會員服務</button>
+            </div>
+
+        </div>
+
+        <!-- 綁訂成功 -->
+        <div class="RWD_Content Sign_sucess">
+            <div class="Sign_sucess_content">
+                <i class="fas fa-check animate__bounceIn animate__animated`"></i>
+                <h3>綁定成功！</h3>
+                <p>開始使用公主888會員專屬服務</p>
+            </div>
+
+            <div class="loginSign_btn_warp">
+                <button class="loginSign_btn_rwd Sign_sucess_rwd">成功
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </section>
+
+
+</body>
+
+<!-- cdn -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="../jq/jquery-3.6.0.js"></script>
+
+<!-- cookie -->
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<!-- js -->
+<script src="../js/common.js"></script>
+<script src="../js/Login_sign_RWD.js"></script>
+
+
+
+
+<script>
+  
+</script>
+</html>
