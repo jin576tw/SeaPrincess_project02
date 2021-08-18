@@ -939,11 +939,11 @@ $(document).ready(function () {
 
                     if ($(window).width() >480) {
                         
-                        location.href = "../html/Login_sign.html"
+                        location.href = "../html/member.html"
 
                     }else{
 
-                        location.href = "../html/Login_sign_RWD.html"
+                        location.href = "../html/member.html"
 
                     }
 

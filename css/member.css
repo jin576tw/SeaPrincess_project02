@@ -48,6 +48,7 @@
 
 }
 
+
 .Member_tool_list:last-of-type{
     border-bottom: solid 1px transparent
 }
@@ -77,26 +78,33 @@
 
 
 }
-.Member_tool_list h3:hover{
+/* .Member_tool_list h3:hover{
     transition: 0.8s;
     color: #7cafbf;
-}
+} */
 
 .LogOut{
     cursor: pointer;
 }
 .LogOut h2:hover{
     transition: 0.8s;
-    color: #7cafbf;
+    color: var(--dark_red)
 }
+
+.cargo_list h3{
+    color: #7cafbf;
+
+}
+
 
 /* 會員中心內容 */
 .Member_content{
     position: relative;
     min-height: 600px;
-    background-color: white;
     display: flex;
     flex-direction: column;
+    background-color: white;
+
 }
 
 .Member_content_title{
@@ -125,7 +133,8 @@
 
 .Member_content_wrap{
     padding: 40px;
-    height: 90%;
+    /* min-height: 90%; */
+
 
 }
 
@@ -149,7 +158,7 @@
     }
 
     .Member_tool{
-        margin: 40px 0;
+        margin: 40px 0 0 0;
 
     }
     
@@ -159,9 +168,9 @@
     }
 
     .Member_content_wrap{
-        padding: 40px 0 0 0;
+        padding: 40px 0;
         min-height: 200px;
-        height: 90%;
+      
     }
 
     .userName{
@@ -176,6 +185,7 @@
     .Member_RWD_content{
         display:flex;
         justify-content: space-around;
+
     }
 
     .Member_type_box{
@@ -245,11 +255,617 @@
         transform: translateY(-5px);
     }
 
+
+}
+
+.detail_bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom:  solid 1px #dedede;
+    
+
+}
+
+.detail_bar h4{
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.78px;
+    text-align: center;
+    color: #dedede;
+    padding-bottom: 8px;
+    transform: translateY(6px);
+    cursor: pointer;
+}
+
+.detail_bar h4:nth-of-type(1){
+    color: #000;
+    border-bottom:  solid 3px var(--sea_blue)
+
+}
+
+.content_empty{
+    width: 100%;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+
+}
+
+.content_emptyBG{
+    width: 120px;
+    /* background-color: red; */
+}
+
+.content_empty h5{
+    margin: 20px 0;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #8c8c8c;
+
+}
+.shopmore_btn{
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #384982;
+    color: white;
+    font-size: 1.6rem;
+}
+
+
+/* 訂單明細 */
+
+
+
+.order_detail_list{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 120px;
+    border-bottom:  solid 1px #dedede;
+    padding: 0 20px;
+
+}
+
+
+.order_content{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.order_detail_head{
+    height: 100%;
+    width: 20%;
+
+}
+
+.order_detail_pic{
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    background-color: #e7e7e7;
+}
+
+.order_detail_pic img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.order_detail_warp{
+    width: 80%;
+    height: 100%;
+   
+}
+
+.order_detail_name{
+    width: 45%;
+    height: 100%;
+    flex-direction: column;
+    
+    justify-content:center;
+    align-items: flex-start;
+   
+}
+
+.order_detail_name h3{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+
+}
+
+.order_detail_name h5{
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #8c8c8c;
+
+}
+
+.order_detail_name h5:nth-of-type(2):before{
+    content: '總共 NT$ ';
+}
+
+.order_detail_tool{
+    width: 55%;
+    height: 100%;
+   
+}
+
+
+.order_detail_status{
+    width: 60%;
+    height: 100%;
+   
+
+}
+
+.status_tag{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
     
     
 
- 
+}
 
+.S_tag01{
+    background-color: #00d5a5;
+    color: #fff;
+}
+.S_tag02{
+    background-color:#ff7e7e;
+    color: #fff;
+}
+.S_tag03{
+    background-color: #7cafbf;
+    color: #fff;
+}
+.S_tag04{
+    background-color: #7cafbf;
+    color: #fff;
+}
+.S_tag05{
+    background-color: #aaaaaa;
+    color: #fff;
+}
+.S_tag06{
+    background-color: rgba(23, 34, 61, 0.1);
+    color: rgba(0, 0, 0, 0.31);
+
+}
+
+.more_order{
+    width: 40%;
+    height: 100%;
+   
+}
+
+.more_order h5{
+    cursor: pointer;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #8c8c8c;
+
+}
+
+.more_order h5::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: -15px;
+    width: 10px;
+    height: 10px;
+    background-image: url('../img/right-arrow_grey.svg');
+    background-size: contain;
+
+
+}
+
+
+@media (max-width: 992px) {
+
+    .order_detail_list{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100px;
+        border-bottom:  solid 1px #dedede;
+        padding: 0 5px;
+    
+    }
+
+    .order_detail_head{
+        height: 100%;
+        width: 23%;
+        
+      
+    }
+
+    .order_detail_pic{
+        width: 60px;
+        height: 60px;
+        background-color: #e7e7e7;
+    }
+
+
+    .order_detail_warp{
+        width: 77%;
+        height: 100%;
+        
+    }
+
+    .order_detail_status{
+        width: 100%;
+        height: 100%;
+        
+        justify-content: center;
+    
+    }
+
+    .order_detail_name{
+        width: 70%;
+        height: 100%;
+        
+    }
+    
+    .order_detail_tool{
+        width: 30%;
+        height: 100%;
+        
+    }
+
+    .more_order{
+        display: none;
+    }
+
+    .status_tag{
+      
+        width: 60px;
+        height: 30px;
+       
+    }
+
+
+}
+
+.orderDetail_pagewarp{
+    margin-top: 25px;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.order_page{
+    cursor: pointer;
+    margin: 0 10px;
+    color: #8c8c8c;
+}
+.order_page:hover{
+    transition: 0.8s;
+    color: black;
+}
+
+@media (max-width: 480px) {
+
+    .order_detail_list{
+        padding: 0 10px 0 30px;
+    
+    }
+
+    .order_detail_head{
+        height: 100%;
+        width: 23%;
+      
+    }
+
+
+    .order_detail_warp{
+        width: 77%;
+        height: 100%;
+        
+    }
+
+
+    .order_detail_name{
+        width: 70%;
+        height: 100%;
+       
+    }
+    
+    .order_detail_tool{
+        width: 30%;
+        height: 100%;
+       
+    }
+    
+    
+    .order_detail_status{
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        /* background-color: blue; */
+      
+    
+    }
+
+
+    .more_order{
+        display: none;
+    }
+
+    .status_tag{
+      
+        width: 60px;
+        height: 25px;
+       
+    }
+
+}
+
+
+/* 我的公主幣  */
+.Fish_point{
+    display: none;
+}
+.point_content_warp{
+    display: flex;
+}
+.point_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150px;
+    margin-bottom: 40px;
+}
+
+.point_content h5{
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.78px;
+    text-align: center;
+    color: #000;
+
+}
+
+.point_content  .fa-exclamation-circle{
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.31);
+}
+
+.point_content h1{
+    font-family: Helvetica;
+    font-size: 6rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7cafbf;
+
+}
+
+.Fish_point_listwarp{
+
+}
+
+
+
+.Fish_point_list{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 80px;
+    border-bottom:  solid 1px #dedede;
+    padding: 0 20px;
+
+}
+
+.p_list{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Fish_point_time{
+    width: 30%;
+
+}
+
+.Fish_point_time h5{
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #8c8c8c;
+}
+
+.Fish_point_name{
+    width: 55%;
+
+}
+
+.Fish_point_name h4{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+
+}
+
+.Fish_point_name h5{
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #8c8c8c;
+
+}
+
+.Fish_point_status{
+    width: 15%;
+
+}
+
+.Fish_point_status h4{
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+   
+}
+
+.Fish_point_status .plus_point{
+    color: #7cafbf;
+
+}
+.Fish_point_status .minus_point{
+    color: rgba(0, 0, 0, 0.7);
+
+
+}
+
+
+.Fish_point_bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    width: 100%;
+    height: 20px;
+    padding: 0 20px;
+}
+
+.point_record h5{
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #8c8c8c;
+}
+
+.point_pagewarp{
+    display: flex;
+    justify-content: center;
+}
+
+.point_page{
+    cursor: pointer;
+    margin: 0 10px;
+    color: #8c8c8c;
+}
+.point_page:hover{
+    transition: 0.8s;
+    color: black;
+}
+
+@media (max-width: 992px) {
+
+    .Fish_point_list{
+        padding: 0 5px;
+    }
+    .Fish_point_time{
+        width: 30%;
+      
+    }
+
+    .Fish_point_name{
+        width: 54%;
+    
+
+    }
+
+    .Fish_point_status{
+        width: 16%;
+       
+    }
+    .Fish_point_bottom{
+        padding: 0 5px;
+    }
+
+}
+@media (max-width: 480px) {
+    .Fish_point_list{
+        padding: 0 10px;
+
+    }
+
+    .Fish_point_time{
+        width: 25%;
+        
+    }
+
+    .Fish_point_name{
+        width: 65%;
+        
+    }
+
+    .Fish_point_status{
+        width: 15%;
+       
+    }
+
+    .Fish_point_bottom{
+        padding: 0 20px;
+    }
 }
 
 
