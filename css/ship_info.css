@@ -182,6 +182,7 @@
 .Ship_info_content_text{
     width: 80%;
     margin: 0 auto 80px auto;
+    background-color: red;
 }
 
 .Ship_info_content_text p{
