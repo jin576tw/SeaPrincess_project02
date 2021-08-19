@@ -272,12 +272,11 @@
 
 .forget_password{
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 40px;
 
 }
 
 .forget_password p{
-    width: 70px;
     margin: 0 auto;
     font-size: 1.4rem;
     font-weight: normal;
@@ -287,10 +286,14 @@
     letter-spacing: normal;
     text-align: center;
     color: rgba(0, 0, 0, 0.7);
-    border-bottom: 1.5px solid #000;
    
 }
 
+.forget_password span{
+   
+    border-bottom: 1.5px solid #000;
+}
+ 
 
 /* 註冊 */
 
@@ -364,6 +367,7 @@
 .Sign_detail span{
     cursor: pointer;
     border-bottom: 1.5px solid #000;
+   
 
 }
 
