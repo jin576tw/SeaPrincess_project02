@@ -119,6 +119,40 @@ $(document).ready(function () {
         
 
      })
+
+    $(".more_order , .order_detail_name , .order_detail_pic").on({
+        
+        click:function(){
+
+        
+        $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
+
+        $('.Each_orderDetail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+
+        $('body,html').animate({
+            scrollTop: 0
+        }, 10 ,'swing');
+
+
+        if($(window).width() <= 480){
+
+            $('.Member_RWD_content').fadeOut(1)
+            $('.userName').fadeOut(1)
+            $('.Member_content_title h2:nth-of-type(1)').css('display','block')
+            
+           
+
+        }
+       
+
+        
+    
+    
+        }
+        
+
+     })
+
     $(".point_list h3").on({
         
         click:function(){
@@ -194,7 +228,7 @@ $(document).ready(function () {
             
         $(this).siblings('h3').css('color','#8c8c8c');
         $(this).parents().siblings().children('h3').css('color','#8c8c8c')
-        $('.Member_content_title h2:nth-of-type(1)').text('會員資料修改')
+        $('.Member_content_title h2:nth-of-type(1)').text('密碼修改')
 
 
         $('.Password_edit').fadeIn(100).siblings('.Mcontent').fadeOut(1)
@@ -220,6 +254,9 @@ $(document).ready(function () {
         
 
      })
+
+
+
 
   
    

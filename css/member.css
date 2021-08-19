@@ -131,7 +131,7 @@
 .Member_content_wrap{
     position: relative;
     padding: 40px;
-    min-height: 624px;
+    /* min-height: 624px; */
 
 
 }
@@ -144,6 +144,7 @@
     display: none;
 
 }
+
 
 
 @media (max-width: 480px) {
@@ -651,6 +652,504 @@
 
 }
 
+/* 單一訂單明細 */
+.Each_orderDetail{
+    display: none;
+    margin-bottom: 30px;
+}
+
+.E_orderDetail_warp{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.OD_detial{
+    /* height: 300px; */
+    /* background-color: red; */
+}
+.OD_detial h3{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.89px;
+    color: #000;
+    margin-bottom: 12px;
+
+}
+
+.OD_content{
+    width: 100%;
+    border: solid 1px #dedede;
+    padding: 20px;
+}
+
+
+.order_staus_warp{
+    position: relative;
+    width: 100%;
+    height: 420px
+}
+
+.staus_Line{
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    left: 16px;
+    background-color: #c0c0c0;
+
+}
+
+.order_staus{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.staus_dot{
+    width: 10px;
+    height: 10px;
+    background-color: #c0c0c0;
+    border-radius: 100%;
+}
+
+.staus_text{
+    width: 70%; 
+}
+.staus_text h5{
+    font-size: 1.2rem;
+    color:#8c8c8c;
+}
+
+.staus_text h3{
+    font-size: 1.6rem;
+    color:#000000
+}
+
+
+
+@media (max-width: 992px) {
+    .E_orderDetail_warp{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .OD_detial{
+        margin: 0 auto;
+
+    }
+
+    .OD_status{
+        margin-bottom: 40px;
+    }
+
+
+    .OD_content{
+        width: 100%;
+        border: solid 1px #dedede;
+        /* background-color: red; */
+        padding: 20px 10px 20px 10px;
+    }
+
+    .order_staus_warp{
+        position: relative;
+        width: 100%;
+        height: 450px;
+    }
+
+    .staus_Line{
+        position: absolute;
+        width: 1px;
+        height: 80%;
+        left: 26px;
+        background-color: #c0c0c0;
+       
+    }
+    
+
+}
+@media (max-width: 480px) {
+
+    .E_orderDetail_warp{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .OD_detial{
+        margin: 0 auto;
+
+    }
+
+    .OD_status{
+        margin-bottom: 40px;
+    }
+
+    .OD_content{
+        width: 100%;
+        border: solid 1px #dedede;
+        padding: 40px;
+    }
+
+    .order_staus_warp{
+        position: relative;
+        width: 100%;
+        height: 360px;
+        
+    }
+
+    .staus_Line{
+        position: absolute;
+        width: 1px;
+        height: 80%;
+        left: 22px;
+        background-color: #c0c0c0;
+    
+    }
+
+}
+
+.OD_info_item{
+    padding-bottom: 20px;
+    border-bottom:solid 1px #dedede;
+    margin-bottom: 20px;
+
+}
+.OD_info_item:last-of-type{
+    padding-bottom: 0px;
+    border-bottom:solid 1px transparent;
+    margin-bottom: 0px;
+
+}
+.OD_info_item h3{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.89px;
+    color: #7cafbf;
+
+}
+
+.OD_info_item h4{
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.86;
+    letter-spacing: 0.88px;
+    color: #000;
+}
+
+.info_total_list{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.info_total_list h4:nth-of-type(2)::before{
+    content: 'NT ';
+}
+
+.od_point h4:nth-of-type(2)::before{
+    content: '- NT ';
+}
+
+.OD_info_deilver h4:nth-of-type(2)::before{
+    content: '(冷凍) 希望到貨日：';
+}
+
+.cargoID{
+    display: flex;
+    align-items: center;
+}
+
+.cargoID h4::before{
+    content: '物流編號：';
+}
+
+.cargoID p{
+    cursor: pointer;
+    color: var(--orange);
+    font-size: 1.4rem;
+    margin-top: 3px;
+    margin-left: 10px;
+
+}
+
+.cargoID .fa-share-square{
+    margin-left: 3px;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .info_total_list h4:nth-of-type(2){
+        font-size: 1.2rem;
+    }
+
+    
+
+    .OD_info_item{
+        padding-bottom: 15px;
+        border-bottom:solid 1px #dedede;
+        margin-bottom: 15px;
+    
+    }
+
+    .cargoID{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cargoID p{
+        cursor: pointer;
+        color: var(--orange);
+        font-size: 1.4rem;
+        margin-top: 3px;
+        margin-left: 0px;
+    
+    }
+}
+@media (max-width: 480px) {
+
+    .cargoID{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .cargoID p{
+        cursor: pointer;
+        color: var(--orange);
+        font-size: 1.4rem;
+        margin-top: 4px;
+        margin-left: 10px;
+    
+    }
+
+    
+
+}
+
+/* 出貨明細 */
+.Cargo_detail {
+    margin-bottom: 40px;
+}
+.Cargo_detail h3{
+    margin-bottom: 12px;
+
+}
+.cargo_detail_content{
+    min-height: 140px;
+    border: solid 1px #dedede;
+    padding: 0 20px;
+}
+
+.cargo_detail_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 140px;
+    border-bottom:  solid 1px #dedede;
+    
+}
+
+.cargo_detail_list:last-of-type{
+    border-bottom:  solid 1px transparent
+
+}
+
+.cargo_detail_head{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 140px;
+}
+.cargo_detail_pic{
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    background:#9e9e9e;
+    overflow: hidden;
+}
+
+.cargo_detail_pic img{
+    height: 100%;
+   
+
+}
+.cargo_detail_name{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.cargo_detail_name h3{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+
+}
+.cargo_detail_name h4{
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7cafbf;
+
+
+}
+
+.cargo_detail_bottom{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.cargo_detail_bottom h3{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+}
+
+
+.cargo_detail_count h3::before{
+    content: 'x';
+}
+
+.cargo_detail_price h3::before{
+    content: 'NT ';
+}
+
+@media (max-width: 992px) {
+
+    .cargo_detail_head{
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height: 140px;
+    }
+
+    .cargo_detail_name{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 15px;
+
+    }
+
+    .cargo_detail_bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 25%;
+        height: 80px;
+
+    }
+    .cargo_detail_price h3{
+        transform: translateY(8px);
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .Cargo_detail{
+        padding: 0 15px;
+    }
+
+    .cargo_detail_head{
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height: 140px;
+    }
+
+    .cargo_detail_name{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 15px;
+
+    }
+
+    .cargo_detail_bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 25%;
+        height: 80px;
+
+    }
+    .cargo_detail_price h3{
+        transform: translateY(8px);
+    }
+
+}
+
+
+.Custom_message h3{
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.89px;
+    color: #000;
+    margin-bottom: 12px;
+
+}
+
+.Custom_message_content{
+    width: 100%;
+    min-height: 140px;
+    border: solid 1px #dedede;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.Custom_message_content p{
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.14;
+    letter-spacing: normal;
+    color: #000;
+}
+
+@media (max-width: 480px) {
+    .Custom_message{
+        padding: 0 15px;
+    }
+}
+
 
 /* 我的公主幣  */
 .Fish_point{
@@ -1001,6 +1500,9 @@
     display: none;
 }
 
+.Password_edit_content{
+    margin: 0 0 300px 0;
+}
 
 .Password_edit h3{
     font-size: 1.8rem;
