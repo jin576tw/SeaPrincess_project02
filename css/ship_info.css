@@ -156,7 +156,8 @@
 
 .Ship_info_media{
     padding: 0;
-    min-height: 600px;
+    width: 100%;
+    height: 600px;
     background-color: #dedede;
     margin:0 auto 80px auto;
     overflow: hidden;
@@ -189,7 +190,7 @@
 
     .Ship_info_media{
         width: 96%;
-        min-height: 350px;
+        height: 350px;
         background-color: #dedede;
         margin:0 auto 60px auto;
         overflow: hidden;
@@ -212,7 +213,7 @@
 
     .Ship_info_media{
         width: 96%;
-        min-height: 250px;
+        height: 250px;
         background-color: #dedede;
         margin:0 auto 60px auto;
         overflow: hidden;
@@ -585,7 +586,7 @@
     position: absolute;
     display: block;
     width: 100%;
-    height: 700px;
+    height: 1000px;
     background-image: url('../img/teambg.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -608,7 +609,7 @@
     background-size: cover;
     background-position: center;
     background-color: var(--dark_blue);
-}
+} 
 
 .Ship_info_team_pic{
     position: relative;
