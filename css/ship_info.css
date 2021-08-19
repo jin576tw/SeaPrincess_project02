@@ -197,46 +197,71 @@
 
 @media (max-width: 992px) {
 
-    .Ship_info_media{
+    /* .Ship_info_media{
         width: 96%;
         height: 350px;
         background-color: #dedede;
         margin:0 auto 60px auto;
         overflow: hidden;
-    }
+    } */
 
     .Ship_info_content_text{
         width: 85%;
         margin: 0 auto 60px auto;
     }
-
+/* 
     .Ship_info_media iframe{
         width: 100%;
         height: 100%;
        
-    }
+    } */
     
 }
 
 @media (max-width: 480px) {
 
-    .Ship_info_media{
+    /* .Ship_info_media{
         width: 96%;
         height: 250px;
         background-color: #dedede;
         margin:0 auto 60px auto;
         overflow: hidden;
-    }
+    } */
 
     .Ship_info_content_text{
         width: 90%;
         margin: 0 auto 60px auto;
     }
-
+/* 
     .Ship_info_media iframe{
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+ */
+
+    .Ship_info_media{
+        position: relative;
+        padding: 0;
+        width: 100%;
+        height: 0px;
+        /* margin:0 auto 80px auto; */
+        /* overflow: hidden; */
+        /* background-color: red; */
+        padding-bottom: 56.25%;
+    }
+
+    .Ship_info_media iframe{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        /* transform: translate(-50%,-50%); */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
     }
     
 
