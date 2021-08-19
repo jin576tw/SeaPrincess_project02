@@ -953,23 +953,24 @@ $(document).ready(function () {
 
        })
 
-       $('.navbar_icon_member').on({
+       $('.navbar_icon_member , .navbar_member_list_warp ,.member_icon').on({
 
             mouseenter: function () {
-               $('.navbar_member_list_warp').fadeIn(10)
+               $('.navbar_member_list_warp').fadeIn(100)
+               console.log('hi');
 
             },
 
             mouseleave: function () {
-                $('.navbar_member_list_warp').fadeOut(1)
+                $('.navbar_member_list_warp').fadeOut(100)
 
                 
             }
 
-            
-
-
+           
 
        })
+
+   
         
 })

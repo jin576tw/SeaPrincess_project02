@@ -144,20 +144,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 100%;
-    width: 28px;
-    height: 28px;
     font-size: 2.5rem;
     cursor: pointer;
 
 }
 
+.navbar_icon_member:hover{
+    transition: 0.5s;
+    color: var(--light_blue);
+
+}
+
 .member_icon{
-   
+    position: relative;
     padding: 0;
-    width: 100%;
-    height: 100%;
+    width: 28px;
+    height: 28px;
     border-radius: 100%; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.member_icon img{
+    height: 100%;
+    object-fit: cover;
+
 }
 
 .member_icon .fa-user-circle{
@@ -168,15 +180,11 @@
 }
 
 
-.navbar_icon_member:hover{
-    transition: 0.5s;
-    color: var(--light_blue);
 
-}
 
 .navbar_member_list_warp{
     display: none;
-    position: absolute;
+    position:absolute;
     top: 30px;
     width: 120px;
     min-height: 40px;
