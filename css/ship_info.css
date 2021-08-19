@@ -170,7 +170,6 @@
 .Ship_info_content_text{
     width: 80%;
     margin: 0 auto 80px auto;
-    background-color: cyan;
 }
 
 .Ship_info_content_text p{
@@ -223,8 +222,10 @@
 
     .Ship_info_content_text{
         width: 90%;
-        margin: 0 auto 60px auto;
+        margin: 0 auto 80px auto;
     }
+
+    
 
 
 
