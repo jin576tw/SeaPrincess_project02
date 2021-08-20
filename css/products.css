@@ -650,6 +650,7 @@
     min-height: 60px;
     background-color: white;
     padding: 10px 0;
+    box-shadow: 2px 2px 8px 0 rgba(173, 173, 173, 0.3);
 }
 
 .status_list{
