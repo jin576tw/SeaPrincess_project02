@@ -977,31 +977,33 @@ $(document).ready(function () {
        $('.navbar_items li:nth-of-type(2), .prouduct_list_warp').on({
 
         mouseenter: function () {
-           $(this).children('.navbar_list_warp').fadeIn(100)
-           console.log('hi');
+           $(this).children('.navbar_list_warp').fadeIn(100);
+           $(this).children('a').children('.navDown').css('transform','rotate(180deg)').css('transition','0.3s');
+        
+           
 
         },
 
         mouseleave: function () {
             $(this).children('.navbar_list_warp').fadeOut(100)
+            $(this).children('a').children('.navDown').css('transform','rotate(0deg)').css('transition','0.3s');
 
             
         }
 
-       
 
         })
 
        $('.navbar_items li:nth-of-type(4), .blog_list_warp').on({
 
         mouseenter: function () {
-           $(this).children('.navbar_list_warp').fadeIn(100)
-           console.log('hi');
-
+            $(this).children('.navbar_list_warp').fadeIn(100);
+            $(this).children('a').children('.navDown').css('transform','rotate(180deg)').css('transition','0.3s');
         },
 
         mouseleave: function () {
             $(this).children('.navbar_list_warp').fadeOut(100)
+            $(this).children('a').children('.navDown').css('transform','rotate(0deg)').css('transition','0.3s');
 
             
         }

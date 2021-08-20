@@ -85,6 +85,49 @@ $(document).ready(function () {
 
     })
 
+    // 商品排序選單
+
+    $('.item_status_warp ,.item_status_list').on({
+
+        mouseenter: function () {
+
+            $('.listDown').css('transform','rotate(180deg)');
+            $('.listUp').css('transform','rotate(0deg)')
+
+            $('.item_status_list').fadeIn(100);
+           
+ 
+         },
+ 
+         mouseleave: function () {
+            $('.listDown').css('transform','rotate(0deg)')
+            $('.listUp').css('transform','rotate(-180deg)')
+
+            $('.item_status_list').fadeOut(100)
+ 
+             
+         }
+
+
+
+    })
+
+    $('.status_list').on({
+
+        click: function () {
+            let arrow = `<i class="fas fa-angle-up listUp"></i>`
+           
+            $('.item_status').html( $(this).text()+ arrow)
+           
+           
+ 
+         }
+
+
+    })
+
+
+
 
 
 

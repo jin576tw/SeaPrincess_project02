@@ -456,6 +456,15 @@
     flex-direction: column;
 }
 
+.Fishing_type_item:hover{
+
+    transition: 0.8s;
+    opacity: 1;
+    border:solid 1px var(--dark_blue);
+
+
+}
+
 .Fishing_type_icon{
     width: 70px;
     height: 70px;
@@ -589,10 +598,14 @@
 
 
 .item_status_warp{
-   
+    display: flex;
+    position: relative;
     height: 50px;  
     align-items: center;
     margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .item_status{
@@ -609,19 +622,68 @@
     text-align: center;
     color: black;
     height: 100%;
+    
    
 }
 
 
 .item_status .fa-angle-down{
     margin-left: 5px;
+    transition: 0.3s;
+    /* transform: rotate(180deg); */
+    /* background-color: green; */
 
 }
+.item_status .fa-angle-up{
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.item_status_list{
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    z-index: 990;
+    top: 40px;
+    right: -20px;
+    width: 120px;
+    min-height: 60px;
+    background-color: white;
+    padding: 10px 0;
+}
+
+.status_list{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+
+.status_list:hover{
+    transition: 0.8s;
+    background-color: #dedede
+}
+
+/* 排序選單 */
+
+
 
 .Finshing_Product_items_warp{
     padding-bottom: 100px;
     
 }
+
+
 
 @media (max-width: 992px) {
 

@@ -246,6 +246,7 @@ select {
 
 .item{
    height: 400px;
+   /* z-index: 980; */
 
 }
 .item_intro{
