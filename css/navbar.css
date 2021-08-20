@@ -351,7 +351,7 @@
 
     }
 
-
+/* 
     .navbar_RWD_items{
         display: flex;
         flex-direction: column;
@@ -424,7 +424,7 @@
         transform: translateX(5px);
     }
 
-
+ */
 
 
     
@@ -464,7 +464,6 @@
    .navbar_RWD_icon{
         display: block;
         font-size: 2.8rem;
-       
         padding: 0;
     }
 
@@ -510,64 +509,61 @@
         overflow: hidden;
         height: calc(100vh - 50px);
         top: 50px;
-        left: -200px;
+        /* left: -200px; */
+        left: 0px;
         background-color: white;
         transition: 0.8s;
         
     }
 
-   
-
     .icon_member_RWD{
-        margin-top: 20px;
+        margin: 20px 0px 10px 0px;
+        background-color: red;
         width: 80px;
         height: 80px;
-        border-radius: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 12rem;
-        margin-bottom: 8px;
-    }
-
-    .icon_member_RWD .fa-user-circle{
+        border-radius: 100%;
         font-size: 80px;
     }
 
-    .navbar_RWD_tool{
-        display: block;
-    }
-
-    .RWD_icon_submit{
-        width: 90px;
-        height: 30px;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.6rem;
-        background-color: white;
-        border-radius: 6px;
-        border: solid 1px #c0c0c0;
-    }
-   
-
-    .RWD_items{
-        margin-top: 10px;
-    } 
-
-    .RWD_items  li{
-        margin-top: 20px;
+    
+    .RWD_items li{
+        width: 200px;
+        height: 25px;
+        text-align: center;
+        margin: 0 0 20px 0;
         font-size: 1.7rem;
         font-weight: 350;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.88;
         letter-spacing: normal;
-        
-    } 
+        background-color: cyan;
+        overflow: hidden;
+
+    }
 
     .RWD_items .fa-angle-down{
-        transform: translateX(5px);
+       margin-left: 5px;
     }
+
+    .RWD_items li:nth-of-type(2){
+
+        height: 200px;
+
+    }
+
+    .nav_listwarp_RWD{
+        width: 200px;
+        height: 80px;
+        background-color: #eeeeee;
+        box-shadow:0px 0px 3px 0px rgba(0,0,0,0.4) inset;
+
+    } 
+
+
 
 }
 
