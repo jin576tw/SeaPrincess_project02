@@ -82,6 +82,18 @@ $(document).ready(function () {
         })
 
 
+    $('.check_logbtn').on({
+
+        click: function(){
+
+            location.href="../html/Login_sign.html"
+
+        }
+
+
+
+    })
+
     $('.cargo_info_edit').on({
 
         click: function(){

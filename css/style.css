@@ -540,7 +540,8 @@
 
 .intro_btn_warp{
     margin-top: 60px;
-   padding-bottom: 80px;
+    padding-bottom: 80px;
+   
 }
 
 .intro_btn{
@@ -562,18 +563,20 @@
     color: #000000;
 }
 
+
+
 .intro_btn_icon{
     cursor: pointer;
-
     width: 250px;
     height: 250px;
     border-radius: 100%;
     background-color: var(--dark_blue);
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:center;
     align-items: center;
     color: white;
+   
 }
 
 .intro_btn_icon:hover{
@@ -582,8 +585,9 @@
 
 }
 
-.intro_btn_icon p{
-    margin-top: 50px;
+
+
+.intro_btn_icon h5{
     font-size: 2rem;
     font-weight: 500;
     font-stretch: normal;
@@ -595,13 +599,29 @@
 
 }
 
+
+.intro_icon_pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    height: 120px;
+    /* background-color: red; */
+}
+
+.intro_icon_pic img{
+    height: 100%;
+    
+}
+
+.icon_pic03 img{
+   transform: scale(1.2) translateY(10px);
+}
+
 .intro_icon02 .fa-shopping-basket{
     font-size: 100px;
 }
 
-.intro_icon03 .img{
-    width: 60%;
-}
 
 
 @media (max-width: 992px) {
@@ -613,33 +633,19 @@
 
     .intro_btn_icon{
         cursor: pointer;
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         border-radius: 100%;
         background-color: var(--dark_blue);
         display: flex;
         flex-direction: column;
-        justify-content:flex-start;
+        justify-content:center;
         align-items: center;
         color: white;
+       
     }
 
-    .intro_btn p{
-        margin-top: 20px;
-        text-align: center;
-        font-size: 1.4rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #000000;
-    }
-
-
-    .intro_btn_icon p{
-        margin-top: 15px;
+    .intro_btn_icon h5{
         font-size: 1.6rem;
         font-weight: 500;
         font-stretch: normal;
@@ -651,17 +657,48 @@
     
     }
 
-    .intro_icon02 .fa-shopping-basket{
-        font-size: 40px;
+    .intro_icon_pic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 60px;
+        height: 60px;
+        /* background-color: red; */
     }
 
+    .intro_icon02 .fa-shopping-basket{
+        font-size: 60px;
+    }
+
+
+    .icon_pic03 img{
+        transform: scale(1.2) translateY(3px);
+     }
+
+ 
+    
 }
 @media (max-width: 480px) {
 
     .intro_btn_warp{
         margin-top: 40px;
-       padding-bottom: 60px;
+        padding-bottom: 60px;
     }
+
+
+    .intro_btn p{
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+    }
+    
 
     .intro_btn_icon{
         cursor: pointer;
@@ -671,28 +708,14 @@
         background-color: var(--dark_blue);
         display: flex;
         flex-direction: column;
-        justify-content:flex-start;
+        justify-content:center;
         align-items: center;
         color: white;
+       
     }
 
-    .intro_btn p{
-        margin-top: 20px;
-        text-align: center;
+    .intro_btn_icon h5{
         font-size: 1.4rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #000000;
-    }
-
-
-    .intro_btn_icon p{
-        margin-top: 15px;
-        font-size: 1.6rem;
         font-weight: 500;
         font-stretch: normal;
         font-style: normal;
@@ -703,9 +726,28 @@
     
     }
 
-    .intro_icon02 .fa-shopping-basket{
-        font-size: 40px;
+    .intro_icon_pic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 50px;
+        height: 50px;
+        /* background-color: red; */
     }
+
+    .intro_icon02 .fa-shopping-basket{
+        font-size: 50px;
+    }
+
+
+    .icon_pic03 img{
+        transform: scale(1.5) translateY(3px);
+     }
+
+  
+    
+  
+
 
 } 
 

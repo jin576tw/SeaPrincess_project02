@@ -498,7 +498,7 @@ select {
 @media (max-width: 480px) {
 
     .item{
-        margin: 55px 0 0 0;
+        margin: 30px 0 0 0;
         max-height: 300px;
      
      }
