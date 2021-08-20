@@ -351,80 +351,98 @@
 
     }
 
-/* 
-    .navbar_RWD_items{
+     .navbar_RWD_items{
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
         position: absolute;
         z-index: 999;
-        width: 200px;
-        overflow: hidden;
+        width: 100%;
         height: calc(100vh - 50px);
         top: 50px;
-        left: -200px;
-        background-color: white;
-        transition: 0.8s;
+        left: -100%;
+        transition: 1.2s;
         
     }
 
-   
+    .navbar_RWD_bg{
+        width: 100%;
+        height: calc(100vh - 50px);
+      
+    }
+
+    .navbar_RWD_BAR{
+        position: absolute;
+        width: 200px;
+        height: calc(100vh - 50px);
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    
 
     .icon_member_RWD{
-        margin-top: 20px;
+        margin: 20px auto 12px auto;
         width: 80px;
         height: 80px;
-        border-radius: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 12rem;
-        margin-bottom: 10px;
-    }
-
-    .icon_member_RWD .fa-user-circle{
+        border-radius: 100%;
         font-size: 80px;
     }
 
-    .navbar_RWD_tool{
-        display: block;
+    .member_name{
+        text-align: center;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 6px;
     }
-
-    .RWD_icon_submit{
-        width: 90px;
-        height: 30px;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.6rem;
-        background-color: white;
-        border-radius: 6px;
-        border: solid 1px #c0c0c0;
-    }
-   
 
     .RWD_items{
         margin-top: 20px;
-    } 
-
-    .RWD_items  li{
-        margin-top: 20px;
+    }
+    
+    .RWD_items li{
+        height: 30px;
+        text-align: center;
+        margin: 0 0 20px 0;
         font-size: 1.7rem;
         font-weight: 350;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.88;
         letter-spacing: normal;
-        
-    } 
+        overflow: hidden;
+        transition: 0.8s;
+        position: relative;
 
-    
-    
-    .RWD_items .fa-angle-down{
-        transform: translateX(5px);
     }
 
- */
+    .RWD_items .fa-angle-down{
+        transition: 0.8s;
+        position: absolute;
+        top: 6px;
+        right: 50px;
+    }
+
+
+    .nav_listwarp_RWD{
+        width: 200px;
+        height: 80px;
+        background-color: #eeeeee;
+        box-shadow:0px 1px 2px 0px rgba(0,0,0,0.4) inset;
+
+    } 
+
+    .nav_list_RWD{
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
 
 
     
@@ -493,32 +511,43 @@
         width: 20px;
         height: 20px;
         border-radius: 100%;
-        background-color: #f5a623;
 
     }
 
 
     .navbar_RWD_items{
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
         position: absolute;
         z-index: 999;
-        width: 200px;
-        overflow: hidden;
+        width: 100%;
         height: calc(100vh - 50px);
         top: 50px;
-        /* left: -200px; */
-        left: 0px;
-        background-color: white;
-        transition: 0.8s;
+        left: -100%;
+        transition: 1.2s;
         
     }
 
+    .navbar_RWD_bg{
+        width: 100%;
+        height: calc(100vh - 50px);
+      
+    }
+
+    .navbar_RWD_BAR{
+        position: absolute;
+        width: 200px;
+        height: calc(100vh - 50px);
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    
+
     .icon_member_RWD{
-        margin: 20px 0px 10px 0px;
-        background-color: red;
+        margin: 20px auto 12px auto;
         width: 80px;
         height: 80px;
         display: flex;
@@ -528,10 +557,18 @@
         font-size: 80px;
     }
 
+    .member_name{
+        text-align: center;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 6px;
+    }
+
+    .RWD_items{
+        margin-top: 20px;
+    }
     
     .RWD_items li{
-        width: 200px;
-        height: 25px;
+        height: 30px;
         text-align: center;
         margin: 0 0 20px 0;
         font-size: 1.7rem;
@@ -540,28 +577,38 @@
         font-style: normal;
         line-height: 1.88;
         letter-spacing: normal;
-        background-color: cyan;
         overflow: hidden;
+        transition: 0.8s;
+        position: relative;
 
     }
 
     .RWD_items .fa-angle-down{
-       margin-left: 5px;
+        transition: 0.8s;
+        position: absolute;
+        top: 6px;
+        right: 50px;
     }
 
-    .RWD_items li:nth-of-type(2){
-
-        height: 200px;
-
-    }
 
     .nav_listwarp_RWD{
         width: 200px;
         height: 80px;
         background-color: #eeeeee;
-        box-shadow:0px 0px 3px 0px rgba(0,0,0,0.4) inset;
+        box-shadow:0px 1px 2px 0px rgba(0,0,0,0.4) inset;
 
     } 
+
+    .nav_list_RWD{
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    
+    
 
 
 

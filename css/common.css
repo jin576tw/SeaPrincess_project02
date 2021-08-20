@@ -114,10 +114,22 @@ select {
 }
 
 .RWD_open{
-    transition: 0.3s;
-    transform: translateX(200px);
+    transition: 1.5s;
+    transform: translateX(100%);
     
 }
+
+.RWD_listopen{
+    transition: 0.8s;
+    height: 110px !important;
+}
+
+.RWD_navUp{
+    transition: 0.8s;
+    transform: rotate(180deg);
+}
+
+
 .RWD_open_shoplist{
     transition: 0.5s;
     transform: translateX(-300px);
