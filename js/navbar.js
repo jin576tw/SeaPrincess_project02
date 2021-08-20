@@ -1049,12 +1049,6 @@ $(document).ready(function () {
          
              })
 
-          
-
-
-
-
-
 
         }
 

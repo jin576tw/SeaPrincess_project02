@@ -257,14 +257,15 @@ select {
 /* ///////////商品外觀//////////////// */
 
 .item{
-   height: 400px;
-   /* z-index: 980; */
+   max-height: 400px;
+   margin: 50px 0 0 0;
 
 }
 .item_intro{
     cursor: pointer;
     position: relative;
-    margin: 50px auto 0 auto;
+    margin: 0px auto 0 auto;
+
     width: 90%;
     height: 80%;
     
@@ -406,14 +407,15 @@ select {
 @media (max-width: 992px) {
 
     .item{
-        height: 350px;
+        margin: 55px 0 0 0;
+        max-height: 350px;
      
      }
      
      .item_intro{
         cursor: pointer;
         position: relative;
-        margin: 55px auto 0 auto;
+       
         width: 90%;
         height: 80%;
         
@@ -496,14 +498,15 @@ select {
 @media (max-width: 480px) {
 
     .item{
-        height: 300px;
+        margin: 55px 0 0 0;
+        max-height: 300px;
      
      }
      
      .item_intro{
         cursor: pointer;
         position: relative;
-        margin: 55px auto 0 auto;
+        
         width: 90%;
         height: 80%;
         

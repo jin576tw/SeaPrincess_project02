@@ -87,7 +87,7 @@ $(document).ready(function () {
 
     // 商品排序選單
 
-    $('.item_status_warp ,.item_status_list').on({
+    $('.item_status_warp , .item_status_list').on({
 
         mouseenter: function () {
 
@@ -107,8 +107,6 @@ $(document).ready(function () {
  
              
          }
-
-
 
     })
 
