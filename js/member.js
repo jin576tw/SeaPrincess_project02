@@ -110,11 +110,15 @@ $(document).ready(function () {
            
 
         }
-       
 
-        
+        let url = location.pathname + '?Cargo'
+        history.pushState({
+            url: url,
+            title: document.title
+        }, document.title, url)
     
-    
+
+
         }
         
 
@@ -144,6 +148,13 @@ $(document).ready(function () {
 
         }
        
+
+        let url = location.pathname + '?Detail'
+        history.pushState({
+            url: url,
+            title: document.title
+        }, document.title, url)
+    
 
         
     
@@ -179,6 +190,13 @@ $(document).ready(function () {
         }
 
 
+        let url = location.pathname + '?Point'
+        history.pushState({
+            url: url,
+            title: document.title
+        }, document.title, url)
+
+
     
     
         }
@@ -211,6 +229,13 @@ $(document).ready(function () {
 
 
         }
+
+        let url = location.pathname + '?User'
+        history.pushState({
+            url: url,
+            title: document.title
+        }, document.title, url)
+
 
 
     
@@ -246,6 +271,12 @@ $(document).ready(function () {
 
 
         }
+
+        let url = location.pathname + '?Password'
+        history.pushState({
+            url: url,
+            title: document.title
+        }, document.title, url)
 
 
     

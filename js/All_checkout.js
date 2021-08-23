@@ -1,7 +1,79 @@
 $(document).ready(function () {
 
-  
+
+    let Step1URL = location.href.substr(-6,9) == '?step1'
+    let Step2URL = location.href.substr(-6,9) == '?step2'
+    let Step3URL = location.href.substr(-6,9) == '?step3'
+
+    let Step01 = $('.Cart_step01');
+    let Step02 = $('.Checkout_step02');
+    let Step03 = $('.FinishCheck_step03')
+    let StepLine = $('.Checkout_Step_line')
+
+
+    let check =`<i class="fas fa-check check01"></i>`;
     let bounce = `animate__bounceIn animate__animated`;
+
+
+    if(Step1URL){
+
+        Step01.css('display','block')
+        Step02.css('display','none')
+        Step03.css('display','none')
+
+
+    }
+
+    if(Step2URL){
+
+        Step01.css('display','none')
+        Step02.fadeIn(500)
+        Step03.css('display','none')
+
+
+        StepLine.css('width','50%')
+        $('.step_number01').html(check)
+        $('.step_number02').css('background-color','var(--dark_blue)').css('transition','2.5s')
+        $('.step_name02 p').css('color','var(--dark_blue)').css('transition','2.5s')
+
+    
+
+
+    }
+       
+
+    if(Step3URL){
+
+        Step01.css('display','none')
+        Step02.css('display','none')
+        Step03.fadeIn(500)
+
+
+        $('.step_number01').html(check)
+        $('.step_number02').css('background-color','var(--dark_blue)').css('transition','2.5s')
+        $('.step_name02 p').css('color','var(--dark_blue)').css('transition','2.5s')
+
+        StepLine.css('width','100%')
+        $('.step_number02').html(check)
+        $('.step_number03').css('background-color','var(--dark_blue)').css('transition','2.5s')
+        $('.step_name03 p').css('color','var(--dark_blue)').css('transition','2.5s')
+
+
+        setTimeout(() => {
+            $('.check01').addClass(bounce)
+            $('.check02').addClass(bounce)
+            $('.check03').addClass(bounce)
+           
+    
+        },300)
+       
+
+    
+       
+    }
+    
+  
+
 
     // 第一步驟成功
     $('.cart_checkout_btn').on({
@@ -9,16 +81,11 @@ $(document).ready(function () {
 
         click: function(){
            
-            let check =`<i class="fas fa-check check01"></i>`;
 
-            $('body,html').animate({
-                scrollTop: 0
-            }, 1 ,'swing');
+            Step01.fadeOut(1000)
+            Step02.fadeIn(500)
 
-            $('.Cart_step01').fadeOut(1000)
-            $('.Checkout_step02').fadeIn(500)
-
-            $('.Checkout_Step_line').css('width','50%')
+            StepLine.css('width','50%')
 
             $('.step_number01').html(check)
 
@@ -31,6 +98,16 @@ $(document).ready(function () {
 
             }, 700);
         
+
+            let url = location.pathname + '?step2'
+            history.pushState({
+                url: url,
+                title: document.title
+            }, document.title, url)
+
+            $('body,html').animate({
+                scrollTop: 0
+            }, 1 ,'swing');
            
             
         }
@@ -46,21 +123,15 @@ $(document).ready(function () {
                 let check =`<i class="fas fa-check check02"></i>`;
 
                 $('.fa-check').removeClass(bounce)
-
-            
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 1 ,'swing');
+                
     
-                $('.Checkout_step02').fadeOut(1000)
-                $('.FinishCheck_step03').fadeIn(500)
+                Step02.fadeOut(1000)
+                Step03.fadeIn(500)
     
-                $('.Checkout_Step_line').css('width','100%')
+                StepLine.css('width','100%')
     
                 $('.step_number02').html(check)
-    
                 $('.step_number03').css('background-color','var(--dark_blue)').css('transition','2.5s')
-    
                 $('.step_name03 p').css('color','var(--dark_blue)').css('transition','2.5s')
 
                 setTimeout(() => {
@@ -74,6 +145,16 @@ $(document).ready(function () {
                     $('.check03').addClass(bounce)
 
                 }, 1000);
+
+                let url = location.pathname + '?step3'
+                history.pushState({
+                    url: url,
+                    title: document.title
+                }, document.title, url)
+
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 1 ,'swing');
             
                
                 
@@ -86,7 +167,7 @@ $(document).ready(function () {
 
         click: function(){
 
-            location.href="../html/Login_sign.html"
+            location.href="../html/Login_sign.html??Login"
 
         }
 

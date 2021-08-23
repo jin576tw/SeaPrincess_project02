@@ -20,70 +20,21 @@
     <link rel="stylesheet" href="../css/footer.css">
 
     <style>
-        .title_warp{
-            background-color:#384982;
-            height: 50px;
+
+        .test{
+            width: 150px;
+            height: 150px;
+            background-color: red;
         }
-        .title_warp h1{
-            color:white;
-            font-size: 500;
-            text-align: center;
-            font-size: 36px;
-
-        }
-
-        .content_warp p{
-
-            font-size: 400;
-            text-align: center;
-            font-size: 18px;
-            margin: 20px 0px;
-
-
-
-        }
-
-        .warp{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }  
-
-        .fb-page{
-            width: 500px;
-            height: 300px;
-            vertical-align: middle;
-        }
-       
        
 
     </style>
 
 </head>
 <body>
-    <div class="title_warp">
-        <h1>公主888夏日豐年祭</h1>
-    </div>
-
-    <div class="content_warp">
-        <p>我們是熱情的海釣職人<br>
-            只為提供最新鮮的港區海鮮</p>
-    </div>
-
-
-    <div class="warp">
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v11.0" nonce="sch2QjgF"></script>
-    
-        
-        <div class="fb-page" data-href="https://www.facebook.com/princess888ship" data-tabs="timeline" data-width="500" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/princess888ship" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/princess888ship">公主888 觀光 娛樂 海釣船！</a></blockquote></div>
-    </div>
-
+   
   
-        
+        <button class="test">按鈕</button>
         
 
 
@@ -104,9 +55,57 @@
 
 
 <script>
+
+let Location =  location.href;
+               
+let fishitem_Page = Location.substr(-9,9) == '?fishitem'
+// let Checkout_Page = Location.substr(-13,13) == 'checkout.html'
   
+  $('.test').on({
+      click:function(){
+
+        // const state = { 'page_id': 1, 'user_id': 5 }
+        // const title = ''
+        // const url = location.pathname + '?fishitem';
+
+        // history.pushState(state, title, url)
+        // location.reload();
+
+        let url = location.pathname + '?fishitem'
+        history.pushState({
+            url: url,
+            title: document.title
+        }, document.title, url)
+
+        location.reload();
+
+        
+
+
+      }
+  })
+
+
+  if(fishitem_Page){
+
+
+
+            $('.test').css('background-color', 'cyan');
+      
+
+
+        }else{
+
+            $('.test').css('background-color', 'red');
+
+
+        }
   
-  
+
+
+
+
+
 
 
 
