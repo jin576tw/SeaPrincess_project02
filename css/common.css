@@ -271,10 +271,34 @@ select {
     
 }
 
+.empty_Item{
+    opacity: 0.7;
+}
+
 .item_intro:hover{
     transition: 0.5s;
     box-shadow: 2px 6px 15px 0 rgba(173, 173, 173, 0.5);
 
+}
+
+.item_tag{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 30px;
+    background-color: #d0021b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
 }
 
 .item_pic{
@@ -359,6 +383,11 @@ select {
     
   
   }
+
+  .sold{
+    color: rgba(0, 0, 0, 0.6)
+    
+}
   
  .item_detail02{
 
@@ -380,17 +409,7 @@ select {
   
   }
 
-.item_detail p:nth-of-type(1){
-    color: #000000;
-}
-.item_detail p:nth-of-type(1)::before{
-    content: 'NT ';
-}
 
-.item_detail p:nth-of-type(1)::after{
-   
-    content: ' / 公斤';
-}
 
 .item_detail02 p:nth-of-type(1){
     color: #000000;
@@ -398,11 +417,7 @@ select {
 .item_detail02 p:nth-of-type(1)::before{
     content: 'NT ';
 }
-.sold{
-    display: none;
-    color: rgba(0, 0, 0, 0.6)
-    
-}
+
 
 @media (max-width: 992px) {
 
@@ -510,6 +525,12 @@ select {
         width: 90%;
         height: 80%;
         
+    }
+
+    .item_tag{
+       
+        font-size: 1.4rem;
+       
     }
 
      .item_pic img{

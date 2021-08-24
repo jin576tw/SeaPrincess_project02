@@ -2,17 +2,183 @@
 $(document).ready(function () {
 
 
-    // 售完項目顯示售完
-    let empty_item = $(".item[Item-left='0']")
-    if(empty_item){
-        empty_item.children('.item_detail').children('.sold').css('display','block')
-        empty_item.children('.item_detail02').children('.sold').css('display','block')
-        empty_item.children('.item_detail').children('p:nth-of-type(1)').css('display','none')
-        empty_item.css('opacity','0.7')
-        empty_item.children('.item_detail02').children('p:nth-of-type(1)').css('display','none')
-        empty_item.css('opacity','0.7')
+    init_fish()
+
+    let HomeItemWarp = $(".items_warp")
+    let SeafoodItemWarp = $('.Seafood_Product_items_warp')
+
+    // 商品資料載入
+    // 生鮮商品
+    function init_fish() {
+
+        $.get("../JSON/Seafood.json", function (data) {
+
+
+            for(let i= 0 ; i < data.length ;i++ ){
+
+                let ITEMTAG = ` `;
+
+                //判斷商品標籤
+                function itemTag(input) {
+
+                    let tagName = " ";
+
+                    let ItemTIME = new Date(input.create_at).getMonth();
+
+                    let nowTIME = new Date().getMonth();
+
+                   
+                    if(ItemTIME == nowTIME){
+                         //判斷新商品
+                        tagName = "NEW"
+                        ITEMTAG = `<div class="item_tag">${tagName}</div>`
+
+                    }else if(input.hot == true){
+                        //判斷熱銷商品
+                        tagName = "熱銷";
+                        ITEMTAG = `<div class="item_tag">${tagName}</div>`
+                        
+
+                    }else if(input.vip == true){
+                        //判斷官網限定
+                        tagName =  "官網限定";
+                        ITEMTAG = `<div class="item_tag">${tagName}</div>`
+    
+    
+                    }else{
+                        ITEMTAG = ` `;
+                    }
+            
+                }
+
+
+                //判斷商品是否有庫存
+                let ITEMDETAIL = ` `
+                function itemDetail(input) {
+
+                    let ItemLeft = input.left;
+
+                    ItemLeft == 0 ? ITEMDETAIL = `<p class="sold">已售完</p>`:ITEMDETAIL = `<p>NT ${input.price}  / 公斤</p>`;
+
+                    
+                }
+
+            
+
+                itemTag(data[i])
+                itemDetail(data[i])
+                
+
+                let ITEM = ``
+                if(data[i].left > 0){
+
+                    ITEM = `
+                    <div class="item p-0 col-lg-3 col-md-4 col-6">
+                         <div class="item_intro">`+ITEMTAG+
+                                `<div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="${data[i].pic[0]}" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>${data[i].name}</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">` 
+                                    +ITEMDETAIL+
+                
+                             `</div> 
+                                
+                    </div>`;
+
+                }else{
+
+                    ITEM = `
+                    <div class="item p-0 col-lg-3 col-md-4 col-6">
+                         <div class="item_intro empty_Item">`+ITEMTAG+
+                                `<div class="item_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="${data[i].pic}" alt="">
+                                    </a>
+                                </div> 
+                                <div class="item_title">
+                                    <a href="../html/each-product.html">
+                                    <h3>${data[i].name}</h3>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="item_detail">` 
+                                    +ITEMDETAIL+
+                
+                             `</div> 
+                                
+                    </div>`;
+
+
+                    
+
+                }
+
+
+    
+
+                HomeItemWarp.append(ITEM)
+                SeafoodItemWarp.append(ITEM)
+                
+            
+                HomeItemWarp.on("mouseenter",".add_btn",function(){
+
+                    $(this).addClass('Bounce')
+            
+                })
+                HomeItemWarp.on("mouseleave",".add_btn",function(){
+
+                    $(this).removeClass('Bounce')
+            
+                })
+            
+                SeafoodItemWarp.on("mouseenter",".add_btn",function(){
+
+                    $(this).addClass('Bounce')
+            
+                })
+                SeafoodItemWarp.on("mouseleave",".add_btn",function(){
+
+                    $(this).removeClass('Bounce')
+            
+                })
+
+
+                
+    
+
+            }
+
+
+        })
+
+
         
     }
+
+
+
+    // 售完項目顯示售完
+    // let empty_item = $(".item[Item-left='0']")
+    // if(empty_item){
+    //     empty_item.children('.item_detail').children('.sold').css('display','block')
+    //     empty_item.children('.item_detail02').children('.sold').css('display','block')
+    //     empty_item.children('.item_detail').children('p:nth-of-type(1)').css('display','none')
+    //     empty_item.css('opacity','0.7')
+    //     empty_item.children('.item_detail02').children('p:nth-of-type(1)').css('display','none')
+    //     empty_item.css('opacity','0.7')
+        
+    // }
   
 ///////////////////加入購物車/////////////
 

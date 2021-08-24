@@ -858,7 +858,7 @@ $(document).ready(function () {
         $(window).scroll(function () {
     
         let scrollNow = $(window).scrollTop();
-        console.log('scrollTop', scrollNow);
+        // console.log('scrollTop', scrollNow);
     
     
         // if ($(window).width() <  992){
