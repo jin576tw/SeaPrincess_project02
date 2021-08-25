@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     let SeafoodURL = location.href.substr(-8,9) == '?Seafood';
-    let FishingURL = location.href.substr(-8,9) == '?Fishing';
+    let ItemURL = location.href.substr(-5,9) == '?Item';
 
 
     ////////////起始分頁/////////
@@ -36,22 +36,22 @@ $(document).ready(function () {
 
 
         $('.Seafood_select_warp').fadeIn(500)
-        $('.Fishing_select_warp').fadeOut(1)
+        $('.Item_select_warp').fadeOut(1)
 
 
     }
 
 
     // 釣具用品
-    if(FishingURL){
+    if(ItemURL){
 
         if ($(window).width() <  992){
 
-            $('.Fishing_select').css('background-color','white').css('opacity','1')
-            $('.Fishing_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
+            $('.Item_select').css('background-color','white').css('opacity','1')
+            $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
 
-            $('.Fishing_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
-            $('.Fishing_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
+            $('.Item_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
+            $('.Item_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
 
             
         }
@@ -59,11 +59,11 @@ $(document).ready(function () {
 
         if ($(window).width() >= 992){
 
-            $('.Fishing_select').css('background-color','white').css('opacity','1')
-            $('.Fishing_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
+            $('.Item_select').css('background-color','white').css('opacity','1')
+            $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
 
-            $('.Fishing_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
-            $('.Fishing_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
+            $('.Item_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
+            $('.Item_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
 
 
         
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
 
         $('.Seafood_select_warp').fadeOut(1)
-        $('.Fishing_select_warp').fadeIn(500)
+        $('.Item_select_warp').fadeIn(500)
 
     }
 
@@ -107,7 +107,7 @@ $(document).ready(function () {
 
 
             $('.Seafood_select_warp').fadeIn(500)
-            $('.Fishing_select_warp').fadeOut(1)
+            $('.Item_select_warp').fadeOut(1)
 
 
             let url = location.pathname + '?Seafood'
@@ -125,7 +125,7 @@ $(document).ready(function () {
     })
 
     // 釣具用品分頁按鈕    
-    $('.Fishing_select').on({
+    $('.Item_select').on({
 
         click:function(){
 
@@ -153,10 +153,10 @@ $(document).ready(function () {
             }
 
             $('.Seafood_select_warp').fadeOut(1)
-            $('.Fishing_select_warp').fadeIn(500)
+            $('.Item_select_warp').fadeIn(500)
 
 
-            let url = location.pathname + '?Fishing'
+            let url = location.pathname + '?Item'
             history.pushState({
                 url: url,
                 title: document.title
@@ -169,14 +169,14 @@ $(document).ready(function () {
 
     // 商品排序選單
 
-    $('.item_status_warp , .item_status_list').on({
+    $('.Products_status_warp , .product_status_list').on({
 
         mouseenter: function () {
 
             $('.listDown').css('transform','rotate(180deg)');
             $('.listUp').css('transform','rotate(0deg)')
 
-            $('.item_status_list').fadeIn(100);
+            $('.product_status_list').fadeIn(100);
            
  
          },
@@ -185,7 +185,7 @@ $(document).ready(function () {
             $('.listDown').css('transform','rotate(0deg)')
             $('.listUp').css('transform','rotate(-180deg)')
 
-            $('.item_status_list').fadeOut(100)
+            $('.product_status_list').fadeOut(100)
  
              
          }
@@ -197,7 +197,7 @@ $(document).ready(function () {
         click: function () {
             let arrow = `<i class="fas fa-angle-up listUp"></i>`
            
-            $('.item_status').html( $(this).text()+ arrow)
+            $('.product_status').html( $(this).text()+ arrow)
            
            
  
@@ -205,6 +205,146 @@ $(document).ready(function () {
 
 
     })
+
+
+    // 商品資料載入
+    init_fish()
+
+    let SeafoodItemWarp = $('.Seafood_Products_warp')
+
+    
+    // 生鮮商品
+    function init_fish() {
+
+        $.get("../JSON/Seafood.json", function (data) {
+
+
+            for(let i= 0 ; i < data.length ;i++ ){
+
+                let PRODUCTTAG = ` `;
+
+                //判斷商品標籤
+                function productTag(input) {
+
+                    let tagName = " ";
+
+                    let ProductTIME = new Date(input.create_at).getMonth();
+
+                    let nowTIME = new Date().getMonth();
+
+                   
+                    if(ProductTIME == nowTIME){
+                         //判斷新商品
+                        tagName = "NEW"
+                        PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
+
+                    }else if(input.hot == true){
+                        //判斷熱銷商品
+                        tagName = "熱銷";
+                        PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
+                        
+
+                    }else if(input.vip == true){
+                        //判斷官網限定
+                        tagName =  "官網限定";
+                        PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
+    
+    
+                    }else{
+                        PRODUCTTAG = ` `;
+                    }
+            
+                }
+
+
+                //判斷商品是否有庫存
+                let PRODUCTDETAIL = ` `
+                function productDetail(input) {
+
+                    let ProductLeft = input.left;
+
+                    ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p>NT ${input.price}  / 公斤</p>`;
+
+                    
+                }
+
+            
+
+                productTag(data[i])
+                productDetail(data[i])
+                
+
+                let PRODUCT = ``
+                if(data[i].left > 0){
+
+                    PRODUCT = `
+                    <div class="product p-0 col-lg-3 col-md-4 col-6">
+                         <div class="product_intro">`+PRODUCTTAG+
+                                `<div class="add_btn">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="product_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="${data[i].pic[0]}" alt="">
+                                    </a>
+                                </div> 
+                                <a href="../html/each-product.html">
+                                    <div class="product_title">
+                                        <h3>${data[i].name}</h3>
+                                    </div>  
+                                </a>  
+                            </div>
+                            <div class="product_detail">` 
+                                    +PRODUCTDETAIL+
+                
+                             `</div> 
+                                
+                    </div>`;
+
+                }else{
+
+                    PRODUCT = `
+                    <div class="product p-0 col-lg-3 col-md-4 col-6">
+                         <div class="product_intro empty_product">`+ PRODUCTTAG+
+                                `<div class="product_pic">
+                                    <a href="../html/each-product.html">
+                                    <img src="${data[i].pic}" alt="">
+                                    </a>
+                                </div> 
+                                <a href="../html/each-product.html">
+                                    <div class="product_title">
+                                        <h3>${data[i].name}</h3>
+                                    </div>  
+                                </a>  
+                            </div>
+                            <div class="product_detail">` 
+                                    + PRODUCTDETAIL+
+                
+                             `</div> 
+                                
+                    </div>`;
+
+
+                    
+
+                }
+
+               
+                SeafoodItemWarp.append(PRODUCT)
+                
+            
+            
+         
+    
+
+            }
+
+
+        })
+
+
+        
+    }
 
 
 

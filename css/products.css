@@ -35,7 +35,7 @@
     transition: 0.3s;
 }
 
-.Fishing_select{
+.Item_select{
     opacity: 0.5;
     background-color: #DDDDDD;
 }
@@ -56,9 +56,6 @@
 
 }
     
-
-
-
 
 
 
@@ -126,6 +123,153 @@
 
 .Select_content{
     min-height: 1500px;
+}
+
+/* ////商品分類條/////// */
+.Products_categeroy_warp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    
+}
+.product_type_warp{
+    min-width: 378px;
+    height: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product_type{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color:black;
+    height: 100%;
+    opacity: 0.5;
+    border-bottom: transparent solid 2px;
+
+
+}
+.product_type:hover{
+    transition: 0.3s;
+    opacity:1;
+    border-bottom: black solid 2px;
+    
+}
+
+/* 商品排序選擇 */
+.Products_status_warp{
+    display: flex;
+    position: relative;
+    height: 50px;  
+    align-items: center;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_status{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: black;
+    height: 100%;
+    
+}
+
+
+.product_status .fa-angle-down{
+    margin-left: 5px;
+    transition: 0.3s;
+   
+
+}
+.product_status .fa-angle-up{
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.product_status_list{
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    z-index: 990;
+    top: 40px;
+    right: -20px;
+    width: 120px;
+    min-height: 60px;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 2px 2px 8px 0 rgba(173, 173, 173, 0.3);
+}
+
+.status_list{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+
+.status_list:hover{
+    transition: 0.8s;
+    background-color: #dedede
+}
+
+@media (max-width: 480px) {
+
+
+    .Products_categeroy_warp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-top: 30px;
+        
+    }
+
+    .Products_status_warp{
+   
+        height: 50px;  
+        align-items: center;
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+
+    .product_status{
+        font-size: 1.4rem;
+        
+       
+    }
+
+  
 }
 
 
@@ -313,22 +457,144 @@
 }
 
 /*///////  生鮮食材總攬/////// */
-.Seafood_Products_Items{
+.Seafood_ALLProduct{
     position: relative;
     background-color: #fff;    
 }
 
-.Items_categeroy_warp{
-   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 60px;
-    
+
+.Seafood_Products_warp{
+    padding-bottom: 100px;
 }
+
+
+/* /////////釣魚用具/////////// */
+
+.Item_select_warp{
+    display: none;
+}
+
+/* 釣魚用具分類 */
+.Item_type_content{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Item_type_box{
+    opacity: 0.3;
+    cursor: pointer;
+    margin: 0 15px 0 15px;
+    width: 180px;
+    height: 180px;
+    border:solid 1px transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Item_type_box:hover{
+
+    transition: 0.8s;
+    opacity: 1;
+    border:solid 1px var(--dark_blue);
+
+
+}
+
+.Item_type_icon{
+    width: 70px;
+    height: 70px;
+}
+
+
+.Item_type_box h1{
+    margin-top: 20px;
+    font-size: 2.4rem;
+    font-weight: 450;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--dark_blue)
+}
+
+.type_icon01 img{
+    transform:  translate(-8px);
+}
+.type_icon03 img{
+    transform: scale(1.2) translate(10px,15px);
+}
+.type_icon04 img{
+    transform: scale(0.75);
+}
+
+.Item_type01{
+    opacity: 1;
+    border:solid 1px var(--dark_blue);
+}
+
+@media (max-width: 992px) {
+
+    .Item_type_box{
+        opacity: 0.3;
+        cursor: pointer;
+        margin: 0px 15px 50px 15px;
+        width: 120px;
+        height: 150px;
+        border:solid 1px transparent;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .Item_type01{
+        opacity: 1;
+        border:solid 1px var(--dark_blue);
+    }
+}
+@media (max-width: 480px) {
+
+    .Item_type_box{
+        opacity: 0.3;
+        cursor: pointer;
+        margin: 0px 15px 50px 15px;
+        width: 120px;
+        height: 150px;
+        border:solid 1px transparent;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .Item_type01{
+        opacity: 1;
+        border:solid 1px var(--dark_blue);
+    }
+
+
+}
+
+
+
+
+/* 釣魚用具總攬 */
+.Item_ALLProducts{
+    position: relative;
+    background-color: #fff;    
+}
+
+
 .item_type_warp{
-   
-    min-width: 378px;
+    min-width: 700px;
     height: 50px;
     justify-content: space-evenly;
     align-items: center;
@@ -362,333 +628,15 @@
 }
 
 
-.item_status_warp{
-   
-    height: 50px;  
-    align-items: center;
-    margin-right: 20px;
-}
-
-.item_status{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: black;
-    height: 100%;
-   
-}
-
-
-.item_status .fa-angle-down{
-    margin-left: 5px;
-
-}
-
-
-
-@media (max-width: 480px) {
-
-
-    .Items_categeroy_warp{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items:flex-end;
-        margin-top: 30px;
-        
-    }
-
-    .item_status_warp{
-   
-        height: 50px;  
-        align-items: center;
-        margin-top: 15px;
-        margin-right: 20px;
-    }
-
-    .item_status{
-        font-size: 1.4rem;
-        
-       
-    }
-
-  
-}
-
-.Seafood_Product_items_warp{
-    padding-bottom: 100px;
-}
-
-
-/* /////////釣魚用具/////////// */
-
-.Fishing_select_warp{
-    display: none;
-}
-
-/* 釣魚用具分類 */
-.Fishing_type_item_warp{
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Fishing_type_item{
-    opacity: 0.3;
-    cursor: pointer;
-    margin: 0 15px 0 15px;
-    width: 180px;
-    height: 180px;
-    border:solid 1px transparent;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.Fishing_type_item:hover{
-
-    transition: 0.8s;
-    opacity: 1;
-    border:solid 1px var(--dark_blue);
-
-
-}
-
-.Fishing_type_icon{
-    width: 70px;
-    height: 70px;
-}
-
-
-.Fishing_type_item h1{
-    margin-top: 20px;
-    font-size: 2.4rem;
-    font-weight: 450;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 2px;
-    text-align: center;
-    color: var(--dark_blue)
-}
-
-.type_icon01 img{
-    transform:  translate(-8px);
-}
-.type_icon03 img{
-    transform: scale(1.2) translate(10px,15px);
-}
-.type_icon04 img{
-    transform: scale(0.75);
-}
-
-.Fishing_type01{
-    opacity: 1;
-    border:solid 1px var(--dark_blue);
-}
-
-@media (max-width: 992px) {
-
-    .Fishing_type_item{
-        opacity: 0.3;
-        cursor: pointer;
-        margin: 0px 15px 50px 15px;
-        width: 120px;
-        height: 150px;
-        border:solid 1px transparent;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .Fishing_type01{
-        opacity: 1;
-        border:solid 1px var(--dark_blue);
-    }
-}
-@media (max-width: 480px) {
-
-    .Fishing_type_item{
-        opacity: 0.3;
-        cursor: pointer;
-        margin: 0px 15px 50px 15px;
-        width: 120px;
-        height: 150px;
-        border:solid 1px transparent;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .Fishing_type01{
-        opacity: 1;
-        border:solid 1px var(--dark_blue);
-    }
-
-
-}
-
-
-
-
-/* 釣魚用具總攬 */
-
-
-.Fishing_Products_Items{
-    position: relative;
-    background-color: #fff;    
-}
-
-.Items_categeroy_warp{
-   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 80px;
-    
-}
-.item_type_warp02{
-    min-width: 700px;
-    height: 50px;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-
-.item_type02{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color:black;
-    height: 100%;
-    opacity: 0.5;
-    border-bottom: transparent solid 2px;
-
-
-}
-.item_type02:hover{
-    transition: 0.3s;
-    opacity:1;
-    border-bottom: black solid 2px;
-    
-}
-
-
-.item_status_warp{
-    display: flex;
-    position: relative;
-    height: 50px;  
-    align-items: center;
-    margin-right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.item_status{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: black;
-    height: 100%;
-    
-   
-}
-
-
-.item_status .fa-angle-down{
-    margin-left: 5px;
-    transition: 0.3s;
-    /* transform: rotate(180deg); */
-    /* background-color: green; */
-
-}
-.item_status .fa-angle-up{
-    margin-left: 5px;
-    transition: 0.3s;
-}
-
-.item_status_list{
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    z-index: 990;
-    top: 40px;
-    right: -20px;
-    width: 120px;
-    min-height: 60px;
-    background-color: white;
-    padding: 10px 0;
-    box-shadow: 2px 2px 8px 0 rgba(173, 173, 173, 0.3);
-}
-
-.status_list{
-    height: 40px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    font-size: 1.4rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #000;
-}
-
-.status_list:hover{
-    transition: 0.8s;
-    background-color: #dedede
-}
-
-/* 排序選單 */
-
-
-
-.Finshing_Product_items_warp{
+.Item_Products_warp{
     padding-bottom: 100px;
     
 }
 
 
-
 @media (max-width: 992px) {
 
-    .Fishing_Products_Items{
+    .Item_ALLProducts{
         margin-top: -40px;
     }
     .Items_categeroy_warp{
@@ -700,7 +648,7 @@
         
     }
 
-    .Finshing_Product_items_warp{
+    .Item_Products_warp{
         margin-top: -30px;
         padding-bottom: 100px;
         
@@ -721,7 +669,7 @@
         
     }
 
-    .item_type_warp02{
+    .item_type_warp{
 
         min-width: 0;
         width: 98%;
@@ -733,10 +681,9 @@
  
     }
 
-    .item_type02{
+    .item_type{
         width: 25%;
         font-size: 1.6rem;
-       
         display: flex;
         align-items: baseline
         
@@ -744,12 +691,8 @@
     }
     
 
-    .item_status{
-        font-size: 1.4rem;
-        
-       
-    }
-    .Finshing_Product_items_warp{
+    
+    .Item_Products_warp{
         margin-top: -40px;
         padding-bottom: 100px;
         

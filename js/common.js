@@ -2,169 +2,22 @@
 $(document).ready(function () {
 
 
-    init_fish()
 
-    let HomeItemWarp = $(".items_warp")
-    let SeafoodItemWarp = $('.Seafood_Product_items_warp')
+    let PROPUCTSWARP = $('.products_warp')
 
-    // 商品資料載入
-    // 生鮮商品
-    function init_fish() {
+    PROPUCTSWARP.on("mouseenter",".add_btn",function(){
 
-        $.get("../JSON/Seafood.json", function (data) {
+        $(this).addClass('Bounce')
 
+     })
 
-            for(let i= 0 ; i < data.length ;i++ ){
+     PROPUCTSWARP.on("mouseleave",".add_btn",function(){
 
-                let ITEMTAG = ` `;
+        $(this).removeClass('Bounce')
 
-                //判斷商品標籤
-                function itemTag(input) {
-
-                    let tagName = " ";
-
-                    let ItemTIME = new Date(input.create_at).getMonth();
-
-                    let nowTIME = new Date().getMonth();
-
-                   
-                    if(ItemTIME == nowTIME){
-                         //判斷新商品
-                        tagName = "NEW"
-                        ITEMTAG = `<div class="item_tag">${tagName}</div>`
-
-                    }else if(input.hot == true){
-                        //判斷熱銷商品
-                        tagName = "熱銷";
-                        ITEMTAG = `<div class="item_tag">${tagName}</div>`
-                        
-
-                    }else if(input.vip == true){
-                        //判斷官網限定
-                        tagName =  "官網限定";
-                        ITEMTAG = `<div class="item_tag">${tagName}</div>`
-    
-    
-                    }else{
-                        ITEMTAG = ` `;
-                    }
-            
-                }
+    })
 
 
-                //判斷商品是否有庫存
-                let ITEMDETAIL = ` `
-                function itemDetail(input) {
-
-                    let ItemLeft = input.left;
-
-                    ItemLeft == 0 ? ITEMDETAIL = `<p class="sold">已售完</p>`:ITEMDETAIL = `<p>NT ${input.price}  / 公斤</p>`;
-
-                    
-                }
-
-            
-
-                itemTag(data[i])
-                itemDetail(data[i])
-                
-
-                let ITEM = ``
-                if(data[i].left > 0){
-
-                    ITEM = `
-                    <div class="item p-0 col-lg-3 col-md-4 col-6">
-                         <div class="item_intro">`+ITEMTAG+
-                                `<div class="add_btn">
-                                    <i class="fas fa-cart-plus"></i>
-                                </div>
-                                <div class="item_pic">
-                                    <a href="../html/each-product.html">
-                                    <img src="${data[i].pic[0]}" alt="">
-                                    </a>
-                                </div> 
-                                <div class="item_title">
-                                    <a href="../html/each-product.html">
-                                    <h3>${data[i].name}</h3>
-                                    </a>
-                                </div>    
-                            </div>
-                            <div class="item_detail">` 
-                                    +ITEMDETAIL+
-                
-                             `</div> 
-                                
-                    </div>`;
-
-                }else{
-
-                    ITEM = `
-                    <div class="item p-0 col-lg-3 col-md-4 col-6">
-                         <div class="item_intro empty_Item">`+ITEMTAG+
-                                `<div class="item_pic">
-                                    <a href="../html/each-product.html">
-                                    <img src="${data[i].pic}" alt="">
-                                    </a>
-                                </div> 
-                                <div class="item_title">
-                                    <a href="../html/each-product.html">
-                                    <h3>${data[i].name}</h3>
-                                    </a>
-                                </div>    
-                            </div>
-                            <div class="item_detail">` 
-                                    +ITEMDETAIL+
-                
-                             `</div> 
-                                
-                    </div>`;
-
-
-                    
-
-                }
-
-
-    
-
-                HomeItemWarp.append(ITEM)
-                SeafoodItemWarp.append(ITEM)
-                
-            
-                HomeItemWarp.on("mouseenter",".add_btn",function(){
-
-                    $(this).addClass('Bounce')
-            
-                })
-                HomeItemWarp.on("mouseleave",".add_btn",function(){
-
-                    $(this).removeClass('Bounce')
-            
-                })
-            
-                SeafoodItemWarp.on("mouseenter",".add_btn",function(){
-
-                    $(this).addClass('Bounce')
-            
-                })
-                SeafoodItemWarp.on("mouseleave",".add_btn",function(){
-
-                    $(this).removeClass('Bounce')
-            
-                })
-
-
-                
-    
-
-            }
-
-
-        })
-
-
-        
-    }
 
 
 
