@@ -181,7 +181,7 @@ $(document).ready(function () {
 
     // 商品排序選單
 
-    $('.Products_status_warp , .product_status_list').on({
+    $('.Products_status_warp,.product_status_list').on({
 
         mouseenter: function () {
 
@@ -218,117 +218,89 @@ $(document).ready(function () {
 
     })
 
-    // 生鮮商品資料載入
+
    
 
-    // 商品資料載入
-    init_fish()
+  
 
+    //生鮮商品資料載入
     let SeafoodItemWarp = $('.Seafood_Products_warp')
 
-    // 生鮮商品
-    function init_fish() {
+    $.get("../JSON/Seafood.json", function (data) {
 
-        $.get("../JSON/Seafood.json", function (data) {
-
-           
-            for(let i= 0 ; i < data.length ;i++ ){
-
-                let d = data;
-
-                // 由剩餘數量來排序,並按照id排序
-                d = d.sort(function (a, b) {
         
-                     return b.left - a.left || a.pid - b.pid;
+        for(let i= 0 ; i < data.length ;i++ ){
+
+            let d = data;
+
+            // 由剩餘數量來排序,並按照id排序
+            d = d.sort(function (a, b) {
+    
+                    return b.left - a.left || a.pid - b.pid;
+    
+            })
+
         
-                })
+            let PRODUCTTAG = ` `;
 
-            
-                let PRODUCTTAG = ` `;
+            //判斷商品標籤
+            function productTag(input) {
 
-                //判斷商品標籤
-                function productTag(input) {
+                let tagName = " ";
 
-                    let tagName = " ";
+                let ProductTIME = new Date(input.create_at).getMonth();
 
-                    let ProductTIME = new Date(input.create_at).getMonth();
+                let nowTIME = new Date().getMonth();
 
-                    let nowTIME = new Date().getMonth();
+                
+                if(ProductTIME == nowTIME){
+                        //判斷新商品
+                    tagName = "NEW"
+                    PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
 
-                   
-                    if(ProductTIME == nowTIME){
-                         //判斷新商品
-                        tagName = "NEW"
-                        PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
-
-                    }else if(input.hot == true){
-                        //判斷熱銷商品
-                        tagName = "熱銷";
-                        PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
-                        
-
-                    }else if(input.vip == true){
-                        //判斷官網限定
-                        tagName =  "官網限定";
-                        PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
-    
-    
-                    }else{
-                        PRODUCTTAG = ` `;
-                    }
-            
-                }
-
-
-                //判斷商品是否有庫存
-                let PRODUCTDETAIL = ` `
-                function productDetail(input) {
-
-                    let ProductLeft = input.left;
-
-                    ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p>NT ${input.price}  / 公斤</p>`;
-
+                }else if(input.hot == true){
+                    //判斷熱銷商品
+                    tagName = "熱銷";
+                    PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
                     
-                }
 
-        
-                productTag(d[i])
-                productDetail(d[i])
+                }else if(input.vip == true){
+                    //判斷官網限定
+                    tagName =  "官網限定";
+                    PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
 
-    
-                let PRODUCT = ``;
 
-                if(d[i].left==0){
-
-                    PRODUCT = `
-                        <div class="product p-0 col-lg-3 col-md-4 col-6">
-                             <div class="product_intro empty_product">`+ PRODUCTTAG+
-                                    `<div class="product_pic">
-                                        <a href="../html/each-product.html">
-                                        <img src="${d[i].pic[0]}" alt="">
-                                        </a>
-                                    </div> 
-                                    <a href="../html/each-product.html">
-                                        <div class="product_title">
-                                            <h3>${d[i].name}</h3>
-                                        </div>  
-                                    </a>  
-                                </div>
-                                <div class="product_detail">` 
-                                        + PRODUCTDETAIL+
-                    
-                                 `</div> 
-                                    
-                        </div>`;
                 }else{
+                    PRODUCTTAG = ` `;
+                }
+        
+            }
 
-                    PRODUCT = `
+
+            //判斷商品是否有庫存
+            let PRODUCTDETAIL = ` `
+            function productDetail(input) {
+
+                let ProductLeft = input.left;
+
+                ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p>NT ${input.price}  / 公斤</p>`;
+
+                
+            }
+
+    
+            productTag(d[i])
+            productDetail(d[i])
+
+
+            let PRODUCT = ``;
+
+            if(d[i].left==0){
+
+                PRODUCT = `
                     <div class="product p-0 col-lg-3 col-md-4 col-6">
-                    <div class="product_intro">`+PRODUCTTAG+
-                                `<div class="add_btn">
-                                    <i class="fas fa-cart-plus"></i>
-                                </div>
-                                <div class="product_pic">
+                            <div class="product_intro empty_product">`+ PRODUCTTAG+
+                                `<div class="product_pic">
                                     <a href="../html/each-product.html">
                                     <img src="${d[i].pic[0]}" alt="">
                                     </a>
@@ -340,24 +312,49 @@ $(document).ready(function () {
                                 </a>  
                             </div>
                             <div class="product_detail">` 
-                                    +PRODUCTDETAIL+
+                                    + PRODUCTDETAIL+
                 
-                             `</div> 
+                                `</div> 
                                 
-                    </div>`
+                    </div>`;
+            }else{
 
-
-                }
+                PRODUCT = `
+                <div class="product p-0 col-lg-3 col-md-4 col-6">
+                <div class="product_intro">`+PRODUCTTAG+
+                            `<div class="add_btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </div>
+                            <div class="product_pic">
+                                <a href="../html/each-product.html">
+                                <img src="${d[i].pic[0]}" alt="">
+                                </a>
+                            </div> 
+                            <a href="../html/each-product.html">
+                                <div class="product_title">
+                                    <h3>${d[i].name}</h3>
+                                </div>  
+                            </a>  
+                        </div>
+                        <div class="product_detail">` 
+                                +PRODUCTDETAIL+
             
-               
-                 SeafoodItemWarp.append(PRODUCT)
+                            `</div> 
+                            
+                </div>`
 
-      
+
             }
-
-        })
         
-    }
+            
+            SeafoodItemWarp.append(PRODUCT)
+
+    
+        }
+
+    })
+        
+
 
 
    
