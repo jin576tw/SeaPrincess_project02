@@ -85,10 +85,10 @@ $(document).ready(function () {
         if ($(window).width() < 992) {
 
             if (scrollNow >= 588){
-                $('.item_tittle').css('opacity','1').css('transition','0.5s')
+                $('.product_tittle').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.item_tittle').css('opacity','0').css('transition','0.5s')
+                $('.product_tittle').css('opacity','0').css('transition','0.5s')
     
             }
     
@@ -108,10 +108,10 @@ $(document).ready(function () {
            if ($(window).width() < 480) {
 
             if (scrollNow >= 638){
-                $('.item_tittle').css('opacity','1').css('transition','0.5s')
+                $('.product_tittle').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.item_tittle').css('opacity','0').css('transition','0.5s')
+                $('.product_tittle').css('opacity','0').css('transition','0.5s')
     
             }
     
@@ -132,10 +132,10 @@ $(document).ready(function () {
 
 
             if (scrollNow >= 825){
-                $('.item_tittle').css('opacity','1').css('transition','0.5s')
+                $('.product_tittle').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.item_tittle').css('opacity','0').css('transition','0.5s')
+                $('.product_tittle').css('opacity','0').css('transition','0.5s')
     
             }
     

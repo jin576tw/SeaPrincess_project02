@@ -754,12 +754,12 @@
 
 /* /////最新漁貨////// */
 
-.Items_page{
+.Products_page{
     background-color: white;
    padding-bottom: 60px;
 }
 
-.item_tittle{
+.product_tittle{
   opacity: 0;
   
    text-align: center;
@@ -769,7 +769,7 @@
 }
 
 @media (max-width: 992px) {
-    .item_tittle{
+    .product_tittle{
        
        text-align: center;
        margin: 80px auto 15px auto;
@@ -779,7 +779,7 @@
 }
 @media (max-width: 480px) {
 
-    .item_tittle{
+    .product_tittle{
        text-align: center;
        margin: 80px auto 15px auto;
       
@@ -789,7 +789,7 @@
 }
 
 
-.item_tittle h1{
+.product_tittle h1{
   
     font-size: 3.6rem;
     font-weight: 500;
