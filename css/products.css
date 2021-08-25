@@ -243,6 +243,22 @@
     background-color: #dedede
 }
 
+@media (max-width: 992px) {
+
+    .Products_categeroy_warp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-top: 30px;
+        
+    }
+
+   
+
+
+}
+
 @media (max-width: 480px) {
 
 
@@ -639,17 +655,10 @@
     .Item_ALLProducts{
         margin-top: -40px;
     }
-    .Items_categeroy_warp{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items:flex-end;
-        margin-top: 30px;
-        
-    }
+    
 
     .Item_Products_warp{
-        margin-top: -30px;
+        margin-top: 10px;
         padding-bottom: 100px;
         
     }
@@ -693,7 +702,7 @@
 
     
     .Item_Products_warp{
-        margin-top: -40px;
+        margin-top: 10px;
         padding-bottom: 100px;
         
     }

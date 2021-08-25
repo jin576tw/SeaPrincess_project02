@@ -116,36 +116,34 @@
 
 
 
+    $.get("../JSON/Seafood.json", function (data) {
 
-        $(function() {
+    // 由剩餘數量來排序
 
-            $.get("../JSON/Seafood.json", function (data) {
+    for(let i= 0 ; i < data.length ;i++ ){
 
+        let d = data;
 
-                for(let i= 0 ; i < data.length ;i++ ){
+        d = d.sort(function (a, b) {
 
-                    let ITEM = `
-                    <div class="test_item">
+            return a.left < b.left ? 1 : -1;
 
-                        <div class="test_pic">
-                            <img src="${data[i].pic}" alt="">
-                        </div>
-                        <div class="test_title">
-                            <p>${data[i].name}</p>
-                        </div>
-                        <div class="test_price">
-                            <p>${data[i].price}</p>
-                        </div>
-                    </div>`;
+        })
 
-                    $('.pic_warp').append(ITEM)
-
-                }
+        let test = data[i].name + ','+ data[i].price+'元,剩下'+data[i].left+"隻";
 
 
-            });
-           
-        });
+        console.log(test);
+
+    }
+
+
+
+
+
+        
+    })
+
 
 
 

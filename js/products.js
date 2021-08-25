@@ -3,77 +3,8 @@ $(document).ready(function () {
     let SeafoodURL = location.href.substr(-8,9) == '?Seafood';
     let ItemURL = location.href.substr(-5,9) == '?Item';
 
-
-    ////////////起始分頁/////////
-
-    // 生鮮漁貨
-    if(SeafoodURL){
-
-
-        if ($(window).width() <  992){
-
-            $('.Seafood_select').css('background-color','white').css('opacity','1')
-            $('.Seafood_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
-
-            $('.Seafood_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
-            $('.Seafood_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
-
-            
-        }
-
-
-        if ($(window).width() >= 992){
-
-            $('.Seafood_select').css('background-color','white').css('opacity','1')
-            $('.Seafood_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
-
-            $('.Seafood_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
-            $('.Seafood_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
-
-
-        
-        }
-
-
-        $('.Seafood_select_warp').fadeIn(500)
-        $('.Item_select_warp').fadeOut(1)
-
-
-    }
-
-
-    // 釣具用品
-    if(ItemURL){
-
-        if ($(window).width() <  992){
-
-            $('.Item_select').css('background-color','white').css('opacity','1')
-            $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
-
-            $('.Item_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
-            $('.Item_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
-
-            
-        }
-
-
-        if ($(window).width() >= 992){
-
-            $('.Item_select').css('background-color','white').css('opacity','1')
-            $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
-
-            $('.Item_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
-            $('.Item_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
-
-
-        
-        }
-
-
-        $('.Seafood_select_warp').fadeOut(1)
-        $('.Item_select_warp').fadeIn(500)
-
-    }
+    let ItemPage = false;
+    let SeafoodPage = false;
 
 
     // 生鮮漁貨分頁按鈕    
@@ -81,6 +12,9 @@ $(document).ready(function () {
 
         click:function(){
 
+            SeafoodPage = true;
+            ItemPage = false;
+          
             if ($(window).width() <  992){
 
                 $(this).css('background-color','white').css('opacity','1')
@@ -124,10 +58,16 @@ $(document).ready(function () {
 
     })
 
+   
+
     // 釣具用品分頁按鈕    
     $('.Item_select').on({
 
         click:function(){
+
+            ItemPage = true;
+            SeafoodPage = false;
+           
 
             if ($(window).width() <  992){
 
@@ -166,6 +106,78 @@ $(document).ready(function () {
 
 
     })
+
+
+    ////////////起始分頁/////////
+
+    // 生鮮漁貨
+    if(SeafoodURL && SeafoodPage == true){
+
+
+        if ($(window).width() <  992){
+
+            $('.Seafood_select').css('background-color','white').css('opacity','1')
+            $('.Seafood_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
+
+            $('.Seafood_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
+            $('.Seafood_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
+
+            
+        }
+
+
+        if ($(window).width() >= 992){
+
+            $('.Seafood_select').css('background-color','white').css('opacity','1')
+            $('.Seafood_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
+
+            $('.Seafood_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
+            $('.Seafood_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
+
+
+        
+        }
+
+
+        $('.Seafood_select_warp').fadeIn(500)
+        $('.Item_select_warp').fadeOut(1)
+
+
+    }
+
+
+    // 釣具用品
+    if(ItemURL && ItemPage == true){
+
+        if ($(window).width() <  992){
+
+            $('.Item_select').css('background-color','white').css('opacity','1')
+            $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
+
+            $('.Item_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
+            $('.Item_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
+
+            
+        }
+
+
+        if ($(window).width() >= 992){
+
+            $('.Item_select').css('background-color','white').css('opacity','1')
+            $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
+
+            $('.Item_select').prev().css('background-color','#DDDDDD').css('opacity','0.5')
+            $('.Item_select').prev().children('.Prouduct_select_icon').css('transform', 'scale(1) translateY(0px)')
+
+
+        
+        }
+
+
+        $('.Seafood_select_warp').fadeOut(1)
+        $('.Item_select_warp').fadeIn(500)
+
+    }
 
     // 商品排序選單
 
@@ -206,21 +218,32 @@ $(document).ready(function () {
 
     })
 
+    // 生鮮商品資料載入
+   
 
     // 商品資料載入
     init_fish()
 
     let SeafoodItemWarp = $('.Seafood_Products_warp')
 
-    
     // 生鮮商品
     function init_fish() {
 
         $.get("../JSON/Seafood.json", function (data) {
 
-
+           
             for(let i= 0 ; i < data.length ;i++ ){
 
+                let d = data;
+
+                // 由剩餘數量來排序
+                d = d.sort(function (a, b) {
+        
+                    return a.left < b.left ? 1 : -1;
+        
+                })
+
+            
                 let PRODUCTTAG = ` `;
 
                 //判斷商品標籤
@@ -268,29 +291,51 @@ $(document).ready(function () {
                     
                 }
 
-            
+        
+                productTag(d[i])
+                productDetail(d[i])
 
-                productTag(data[i])
-                productDetail(data[i])
-                
+    
+                let PRODUCT = ``;
 
-                let PRODUCT = ``
-                if(data[i].left > 0){
+                if(d[i].left==0){
+
+                    PRODUCT = `
+                        <div class="product p-0 col-lg-3 col-md-4 col-6">
+                             <div class="product_intro empty_product">`+ PRODUCTTAG+
+                                    `<div class="product_pic">
+                                        <a href="../html/each-product.html">
+                                        <img src="${d[i].pic}" alt="">
+                                        </a>
+                                    </div> 
+                                    <a href="../html/each-product.html">
+                                        <div class="product_title">
+                                            <h3>${d[i].name}</h3>
+                                        </div>  
+                                    </a>  
+                                </div>
+                                <div class="product_detail">` 
+                                        + PRODUCTDETAIL+
+                    
+                                 `</div> 
+                                    
+                        </div>`;
+                }else{
 
                     PRODUCT = `
                     <div class="product p-0 col-lg-3 col-md-4 col-6">
-                         <div class="product_intro">`+PRODUCTTAG+
+                    <div class="product_intro">`+PRODUCTTAG+
                                 `<div class="add_btn">
                                     <i class="fas fa-cart-plus"></i>
                                 </div>
                                 <div class="product_pic">
                                     <a href="../html/each-product.html">
-                                    <img src="${data[i].pic[0]}" alt="">
+                                    <img src="${d[i].pic[0]}" alt="">
                                     </a>
                                 </div> 
                                 <a href="../html/each-product.html">
                                     <div class="product_title">
-                                        <h3>${data[i].name}</h3>
+                                        <h3>${d[i].name}</h3>
                                     </div>  
                                 </a>  
                             </div>
@@ -299,63 +344,23 @@ $(document).ready(function () {
                 
                              `</div> 
                                 
-                    </div>`;
+                    </div>`
 
-                }else{
-
-                    PRODUCT = `
-                    <div class="product p-0 col-lg-3 col-md-4 col-6">
-                         <div class="product_intro empty_product">`+ PRODUCTTAG+
-                                `<div class="product_pic">
-                                    <a href="../html/each-product.html">
-                                    <img src="${data[i].pic}" alt="">
-                                    </a>
-                                </div> 
-                                <a href="../html/each-product.html">
-                                    <div class="product_title">
-                                        <h3>${data[i].name}</h3>
-                                    </div>  
-                                </a>  
-                            </div>
-                            <div class="product_detail">` 
-                                    + PRODUCTDETAIL+
-                
-                             `</div> 
-                                
-                    </div>`;
-
-
-                    
 
                 }
-
+            
                
-                SeafoodItemWarp.append(PRODUCT)
-                
-            
-            
-         
-    
+                 SeafoodItemWarp.append(PRODUCT)
 
+      
             }
 
-
         })
-
-
         
     }
 
 
-
-
-
-
-
-
-
-
-
+   
 
 
 

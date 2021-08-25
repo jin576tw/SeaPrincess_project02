@@ -18,9 +18,6 @@ $(document).ready(function () {
     })
 
 
-
-
-
     // 售完項目顯示售完
     // let empty_item = $(".item[Item-left='0']")
     // if(empty_item){
