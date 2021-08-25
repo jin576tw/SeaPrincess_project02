@@ -288,9 +288,38 @@ $(document).ready(function () {
                 
             }
 
-    
+
+
+            function productID(num) {
+
+                if(num < 10){ 
+
+                num ='00'+num;
+
+                return num
+                }
+                else if(num < 100){
+
+                    num ='0'+num;
+
+                return num
+
+                }else{
+
+                    return num
+
+                }
+                
+            }
+
+
+
+           
             productTag(d[i])
             productDetail(d[i])
+
+            let PRODUCTID  =  productID(d[i].pid)
+
 
 
             let PRODUCT = ``;
@@ -301,7 +330,7 @@ $(document).ready(function () {
                     <div class="product p-0 col-lg-3 col-md-4 col-6">
                             <div class="product_intro empty_product">`+ PRODUCTTAG+
                                 `<div class="product_pic">
-                                    <a href="../html/each-product.html">
+                                    <a href="../html/each-product.html?pid=`+PRODUCTID+`">
                                     <img src="${d[i].pic[0]}" alt="">
                                     </a>
                                 </div> 
@@ -326,7 +355,7 @@ $(document).ready(function () {
                                 <i class="fas fa-cart-plus"></i>
                             </div>
                             <div class="product_pic">
-                                <a href="../html/each-product.html">
+                                <a href="../html/each-product.html?pid=`+PRODUCTID+`">
                                 <img src="${d[i].pic[0]}" alt="">
                                 </a>
                             </div> 

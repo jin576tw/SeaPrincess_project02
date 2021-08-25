@@ -1,6 +1,28 @@
 'use strict'
 $(document).ready(function () {
 
+    $.get("../JSON/Seafood.json", function (data) {
+        let d = data;
+        let ProductID = parseInt(location.href.substr(-3,3));
+
+        for(let i= 0 ; i < d.length ;i++ ){
+
+            if(d[i].pid == ProductID){
+
+
+                console.log(d[i].name)
+
+
+            }
+
+        }
+
+    })
+
+
+
+
+
     //計算器
     //加＋＋
     $(".product_countBtn_warp").on("click",".product_countBtn_add",function(){

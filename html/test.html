@@ -118,24 +118,24 @@
 
    
 
-    let arr = []
+    // let arr = []
 
-    function init(){
+    // function init(){
 
-        $.get("../JSON/Seafood.json", function (data) {
+    //     $.get("../JSON/Seafood.json", function (data) {
 
-            data[0]
-            arr.push(data[0]);
+    //         data[0]
+    //         arr.push(data[0]);
             
            
-        })
+    //     })
 
 
-    }
+    // }
 
-    init()
+    // init()
 
-    console.log(arr[0]);
+    // console.log(arr[0]);
 
 
     
@@ -144,9 +144,47 @@
   
 
 
-    // $.get("../JSON/Seafood.json", function (data) {
+    $.get("../JSON/Seafood.json", function (data) {
 
-    // // 由剩餘數量來排序
+
+
+
+    let ITEMID = data[0].pid
+
+
+    
+    function itemID(num) {
+
+        if(num < 10){ 
+
+           num ='00'+num;
+
+           return num
+        }
+        else if(num < 100){
+
+            num ='0'+num;
+
+           return num
+
+        }else{
+
+            return num
+
+        }
+        
+    }
+
+
+    let realID = itemID(ITEMID)
+
+    
+
+     console.log(parseInt(realID))
+
+
+
+    // 由剩餘數量來排序
 
     // for(let i= 0 ; i < data.length ;i++ ){
 
@@ -174,7 +212,7 @@
 
 
         
-    // })
+    })
 
 
 
