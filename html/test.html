@@ -122,15 +122,31 @@
 
     for(let i= 0 ; i < data.length ;i++ ){
 
-        let d = data;
+ 
 
-        d = d.sort(function (a, b) {
+        data = data.sort(function (a, b) {
 
-            return a.left < b.left ? 1 : -1;
+
+           
+
+            return b.left - a.left || a.pid - b.pid;
+        
+
+            // return a.pid >b.pid ? 1 : -1;
+
+            
+           
+
+            // function sort(a, b){
+
+            //     return a.pid >b.pid ? 1 : -1;
+
+            // }
 
         })
+       
 
-        let test = data[i].name + ','+ data[i].price+'元,剩下'+data[i].left+"隻";
+        let test = 'ID:'+data[i].pid + ','+ data[i].price+'元,剩下'+data[i].left+"隻";
 
 
         console.log(test);

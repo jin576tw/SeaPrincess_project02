@@ -236,10 +236,10 @@ $(document).ready(function () {
 
                 let d = data;
 
-                // 由剩餘數量來排序
+                // 由剩餘數量來排序,並按照id排序
                 d = d.sort(function (a, b) {
         
-                    return a.left < b.left ? 1 : -1;
+                     return b.left - a.left || a.pid - b.pid;
         
                 })
 
@@ -305,7 +305,7 @@ $(document).ready(function () {
                              <div class="product_intro empty_product">`+ PRODUCTTAG+
                                     `<div class="product_pic">
                                         <a href="../html/each-product.html">
-                                        <img src="${d[i].pic}" alt="">
+                                        <img src="${d[i].pic[0]}" alt="">
                                         </a>
                                     </div> 
                                     <a href="../html/each-product.html">
