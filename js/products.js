@@ -180,49 +180,73 @@ $(document).ready(function () {
     }
 
     // 商品排序選單
-
-    $('.Products_status_warp').on({
-
-        click:function (){
-            $('.listDown').css('transform','rotate(180deg)');
-            $(".product_status_list").toggle()
-            
-        },
-        mouseenter: function () {
-
-            $('.listDown').css('transform','rotate(180deg)');
-            $('.listUp').css('transform','rotate(0deg)')
-            $('.product_status_list').fadeIn(100)
+    if ($(window).width() < 992){
+        $('.Products_status_warp').on({
 
           
+           click:function (){
+                
+                $(".product_status_list").toggle()
+                   
+                
+            }
             
-
-        },
-        mouseleave: function () {
-            $('.listDown').css('transform','rotate(0deg)')
-            $('.listUp').css('transform','rotate(-180deg)')
-            $('.product_status_list').fadeOut(100)
-
-         
             
-        }
+         })
 
 
+    }
 
+    if ($(window).width() >= 992){
+        $('.Products_status_warp').on({
 
-    })
+            click:function (){
+                $('.listDown').css('transform','rotate(180deg)');
+                $(".product_status_list").toggle()
+                
+            },
+            mouseenter: function () {
+
+                $('.listDown').css('transform','rotate(180deg)');
+                $('.listUp').css('transform','rotate(0deg)')
+                $('.product_status_list').fadeIn(100)
+
+            
+                
+
+            },
+            mouseleave: function () {
+                $('.listDown').css('transform','rotate(0deg)')
+                $('.listUp').css('transform','rotate(-180deg)')
+                $('.product_status_list').fadeOut(100)
+
+            
+                
+            }
+
+        })
     
 
-
+    }
 
     $('.status_list').on({
 
         click: function () {
+
+            if ($(window).width() < 992){
+
+                let arrow = `<i class="fas fa-angle-down listDown"></i>`;
+                $('.product_status').html($(this).text()+ arrow);
+                
+            }
+            
+            if ($(window).width() >= 992){
+
             let arrow = `<i class="fas fa-angle-up listUp"></i>`
            
             $('.product_status').html($(this).text()+ arrow)
         
- 
+            }
          }
 
 

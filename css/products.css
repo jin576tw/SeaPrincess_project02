@@ -128,6 +128,7 @@
     align-items: center;
     margin-top: 60px;
     
+    
 }
 .product_type_warp{
     min-width: 378px;
@@ -476,6 +477,7 @@
 
 
 .Seafood_Products_warp{
+    margin-top: 50px;
     padding-bottom: 100px;
 }
 
@@ -641,6 +643,7 @@
 
 
 .Item_Products_warp{
+    margin-top: 50px;
     padding-bottom: 100px;
     
 }
