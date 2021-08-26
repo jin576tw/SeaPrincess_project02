@@ -183,15 +183,14 @@ $(document).ready(function () {
     if ($(window).width() < 992){
         $('.Products_status_warp').on({
 
-          
-           click:function (){
+            click:function (){
                 
                 $(".product_status_list").toggle()
-                   
                 
             }
-            
-            
+
+          
+           
          })
 
 
@@ -205,6 +204,7 @@ $(document).ready(function () {
                 $(".product_status_list").toggle()
                 
             },
+
             mouseenter: function () {
 
                 $('.listDown').css('transform','rotate(180deg)');
@@ -239,7 +239,7 @@ $(document).ready(function () {
                 $('.product_status').html($(this).text()+ arrow);
                 
             }
-            
+
             if ($(window).width() >= 992){
 
             let arrow = `<i class="fas fa-angle-up listUp"></i>`
@@ -253,12 +253,12 @@ $(document).ready(function () {
     })
 
 
-
+    //生鮮商品資料載入  
     let SeafoodItemWarp = $('.Seafood_Products_warp')
 
     $.get("../JSON/Seafood.json", function (data) {
 
-        //生鮮商品資料載入
+        
         for(let i= 0 ; i < data.length ;i++ ){
 
             let d = data;

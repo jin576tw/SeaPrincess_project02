@@ -482,6 +482,22 @@
 }
 
 
+@media (max-width: 992px) {
+    .Seafood_Products_warp{
+        margin-top: 20px;
+        padding-bottom: 80px;
+    }
+
+}
+@media (max-width: 480px) {
+    .Seafood_Products_warp{
+        margin-top: 30px;
+        padding-bottom: 80px;
+    }
+
+}
+
+
 /* /////////釣魚用具/////////// */
 
 .Item_select_warp{
@@ -657,8 +673,8 @@
     
 
     .Item_Products_warp{
-        margin-top: 10px;
-        padding-bottom: 100px;
+        margin-top: 20px;
+        padding-bottom: 80px;
         
     }
 
@@ -701,8 +717,8 @@
 
     
     .Item_Products_warp{
-        margin-top: 10px;
-        padding-bottom: 100px;
+        margin-top: 30px;
+        padding-bottom: 80px;
         
     }
     
