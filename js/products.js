@@ -180,44 +180,47 @@ $(document).ready(function () {
     }
 
     // 商品排序選單
-    $('.Products_status_warp').toggle(function () {
 
-        // $(this).hide()
-        
+    $('.Products_status_warp').on({
+
+        click:function (){
+            $('.listDown').css('transform','rotate(180deg)');
+            $(".product_status_list").toggle()
+            
+        },
+        mouseenter: function () {
+
+            $('.listDown').css('transform','rotate(180deg)');
+            $('.listUp').css('transform','rotate(0deg)')
+
+          
+            
+
+        },
+        mouseleave: function () {
+            $('.listDown').css('transform','rotate(0deg)')
+            $('.listUp').css('transform','rotate(-180deg)')
+            $('.product_status_list').fadeOut(100)
+
+         
+            
+        }
+
+
+
+
     })
     
 
-    // $('.Products_status_warp,.product_status_list').on({
 
-    //     mouseenter: function () {
-
-    //         $('.listDown').css('transform','rotate(180deg)');
-    //         $('.listUp').css('transform','rotate(0deg)')
-
-    //         $('.product_status_list').fadeIn(100);
-           
- 
-    //      },
- 
-    //      mouseleave: function () {
-    //         $('.listDown').css('transform','rotate(0deg)')
-    //         $('.listUp').css('transform','rotate(-180deg)')
-
-    //         $('.product_status_list').fadeOut(100)
- 
-             
-    //      }
-
-    // })
 
     $('.status_list').on({
 
         click: function () {
             let arrow = `<i class="fas fa-angle-up listUp"></i>`
            
-            $('.product_status').html( $(this).text()+ arrow)
-           
-           
+            $('.product_status').html($(this).text()+ arrow)
+        
  
          }
 
@@ -225,16 +228,12 @@ $(document).ready(function () {
     })
 
 
-   
 
-  
-
-    //生鮮商品資料載入
     let SeafoodItemWarp = $('.Seafood_Products_warp')
 
     $.get("../JSON/Seafood.json", function (data) {
 
-        
+        //生鮮商品資料載入
         for(let i= 0 ; i < data.length ;i++ ){
 
             let d = data;
@@ -295,7 +294,7 @@ $(document).ready(function () {
             }
 
 
-
+            //商品ID三位數
             function productID(num) {
 
                 if(num < 10){ 
@@ -386,6 +385,9 @@ $(document).ready(function () {
 
     
         }
+
+
+
 
     })
         
