@@ -1,30 +1,12 @@
 'use strict'
 
-
-let PROPUCTSWARP = $('.products_warp')
-
-PROPUCTSWARP.on("mouseenter",".add_btn",function(){
-
-    $(this).addClass('Bounce')
-
-    })
-
-    PROPUCTSWARP.on("mouseleave",".add_btn",function(){
-
-    $(this).removeClass('Bounce')
-
-})
-
-
 // 商品架構
 function PRODUCT(p){
-
+     // 商品標籤
     let PRODUCTTAG = ` `;
-
 
     function productTag(p) {
 
-        // 商品標籤
         let tagName = " ";
 
         let ProductTIME = new Date(p.create_at).getMonth();
@@ -92,15 +74,15 @@ function PRODUCT(p){
 
     productTag(p)
     productDetail(p)
-
     let PRODUCTID  =  productID(p)
+
+     // 商品架構生成
     let PRODUCT = ``;
 
-    // 商品架構生成
     if(p.left==0){
 
         PRODUCT = `
-            <div class="product p-0 col-lg-3 col-md-4 col-6">
+            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn">
                     <div class="product_intro empty_product">`+ PRODUCTTAG+
                         `<div class="product_pic">
                             <a href="../html/each-product.html?pid=`+PRODUCTID+`">
@@ -119,10 +101,11 @@ function PRODUCT(p){
                         `</div> 
                         
             </div>`;
-        }else{
+
+    }else{
 
         PRODUCT = `
-        <div class="product p-0 col-lg-3 col-md-4 col-6">
+        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn">
         <div class="product_intro">`+PRODUCTTAG+
                     `<div class="add_btn">
                         <i class="fas fa-cart-plus"></i>
@@ -152,165 +135,167 @@ function PRODUCT(p){
 
 }
 
+// 商品加入購物車效果
+let PROPUCTSWARP = $('.products_warp')
 
+PROPUCTSWARP.on("mouseenter",".add_btn",function(){
+
+    $(this).addClass('Bounce')
+
+})
+
+PROPUCTSWARP.on("mouseleave",".add_btn",function(){
+
+    $(this).removeClass('Bounce')
+
+})
 
 ///////////////////加入購物車/////////////
 
-$(".add_btn").on({
+PROPUCTSWARP.on("click",".add_btn",function(){
 
-    click: function(){
+    // 商品名稱
+    let itemTitle = $(this).next().next().children().children().text()
 
-        // 商品名稱
-        let itemTitle = $(this).next().next().children().children().text()
-
-        //商品圖片
-        let itemPic = $(this).next().children().children().attr('src')
+    //商品圖片
+    let itemPic = $(this).next().children().children().attr('src')
 
 
-        //商品價格
-        let itemPrice = $(this).parent().next().children('p:nth-of-type(1)').text()
+    //商品價格
+    let itemPrice = $(this).parent().next().children('p:nth-of-type(1)').text()
 
-        // 商品ID
-        let itemID = $(this).parent().parent().attr('Item-ID')
+    // 商品ID
+    let itemID = $(this).parent().parent().attr('Item-ID')
 
-        //商品庫存
-        let itemLeft = $(this).parent().parent().attr('Item-left')
-
-        
-        let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1}]
-        //商品名稱、商品圖片、商品價格、商品ID、商品庫存、商品數量初始值
+    //商品庫存
+    let itemLeft = $(this).parent().parent().attr('Item-left')
 
     
-        // 判斷商品是否缺貨
-        if(itemLeft == 0){
-            alert('商品缺貨中')
+    let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1}]
+    //商品名稱、商品圖片、商品價格、商品ID、商品庫存、商品數量初始值
+
+
+    // 判斷商品是否缺貨
+    if(itemLeft == 0){
+        alert('商品缺貨中')
+
+    }else{
+
+        // 顯示navbar數量 
+        $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
+        $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
+
+
+        //寫入cookie
+        if($.cookie('Cart') == null ){
+
+            // 第一次加入
+            $.cookie('Cart',JSON.stringify(arr),{expire : 1})
+        
 
         }else{
 
-            // 顯示navbar數量 
-            $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
-            $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
-
-
-            //寫入cookie
-            if($.cookie('Cart') == null ){
-
-                // 第一次加入
-                $.cookie('Cart',JSON.stringify(arr),{expire : 1})
-            
-
-            }else{
-
-                // 抓cookie購物車資料
-                let cookieStr = $.cookie('Cart')
-
-                // 若不是第一次加入
-                let cookieArr = JSON.parse(cookieStr);//先轉成物件
-
-                let same = false //假設沒有添加過商品 
-
-
-                // 通過迴圈判斷是否符合重復
-                // 若有，增加數量
-                for(let i =0 ; i < cookieArr.length; i++){
-                    if(itemID == cookieArr[i].pid){
-
-                        same = true;
-                        
-                        let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Item_left)
-
-                        let Zero_Item = parseInt(cookieArr[i].Item_left) == 0 
-
-
-                        if(Item_over){
-                            alert('數量超過庫存')
-                            break;
-
-                        }
-                        else if(Zero_Item){
-                            alert('商品缺貨中')
-                            break;
-
-                        }else{
-                            cookieArr[i].count++
-                            // 數量沒超過庫存
-                        }
-
-                
-                        break;
-                            
-                    
-                    }
-
-                }
-
-                if(!same){
-                    if(itemLeft == 0){
-                        alert('商品缺貨中')
-                    }else{
-                        cookieArr.push({Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1})
-
-                    }
-
-                    
-                }
-
-
-                $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-
-
-            }   
-            
-
-        }
-
-        //navbar購物車
-        if($.cookie("Cart") == null){
-
-            //cookie若無資料，顯是購物車為空
-            $('.navbar_shoplist_count').css('display','none')
-            $('.shoplist_count_RWD').css('display','none')
-            $('.Cart_list_total').css('display','none')
-            $('.list_item_empty').css('display','flex')
-
-
-
-        }else{
-
-            $('.list_item_empty').css('display','none');
-            $('.Cart_list_total').css('display','block');
-            
             // 抓cookie購物車資料
-            let cookieStr = $.cookie('Cart');
-            let cookieArr = JSON.parse(cookieStr);
-            let sum = 0;
+            let cookieStr = $.cookie('Cart')
+
+            // 若不是第一次加入
+            let cookieArr = JSON.parse(cookieStr);//先轉成物件
+
+            let same = false //假設沒有添加過商品 
 
 
-            for(let i = 0 ; i < cookieArr.length;i++){
-                sum += cookieArr[i].count;
+            // 通過迴圈判斷是否符合重復
+            // 若有，增加數量
+            for(let i =0 ; i < cookieArr.length; i++){
+                if(itemID == cookieArr[i].pid){
+
+                    same = true;
+                    
+                    let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Item_left)
+
+                    let Zero_Item = parseInt(cookieArr[i].Item_left) == 0 
+
+
+                    if(Item_over){
+                        alert('數量超過庫存')
+                        break;
+
+                    }
+                    else if(Zero_Item){
+                        alert('商品缺貨中')
+                        break;
+
+                    }else{
+                        cookieArr[i].count++
+                        // 數量沒超過庫存
+                    }
+
+            
+                    break;
+                        
+                
+                }
+
             }
 
-            $('.navbar_shoplist_count').text(sum)
-            $('.shoplist_count_RWD').text(sum)
+            if(!same){
+                if(itemLeft == 0){
+                    alert('商品缺貨中')
+                }else{
+                    cookieArr.push({Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1})
+
+                }
+
+                
+            }
 
 
-        }
+            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
 
-    
-    
+        }   
+        
 
-    },
-
-    // 加入購物車效果
-    mouseenter: function () {
-        $(this).addClass('Bounce')
-    },
-    mouseleave: function () {
-        $(this).removeClass('Bounce')
     }
 
+    //navbar購物車
+    if($.cookie("Cart") == null){
+
+        //cookie若無資料，顯是購物車為空
+        $('.navbar_shoplist_count').css('display','none')
+        $('.shoplist_count_RWD').css('display','none')
+        $('.Cart_list_total').css('display','none')
+        $('.list_item_empty').css('display','flex')
+
+
+
+    }else{
+
+        $('.list_item_empty').css('display','none');
+        $('.Cart_list_total').css('display','block');
+        
+        // 抓cookie購物車資料
+        let cookieStr = $.cookie('Cart');
+        let cookieArr = JSON.parse(cookieStr);
+        let sum = 0;
+
+
+        for(let i = 0 ; i < cookieArr.length;i++){
+            sum += cookieArr[i].count;
+        }
+
+        $('.navbar_shoplist_count').text(sum)
+        $('.shoplist_count_RWD').text(sum)
+
+
+    }
+    
+
 })
+
+
+
+
 
 //////文章頁標籤效果//////
 
@@ -342,14 +327,14 @@ $('.artical_tag').on({
 ////////商品列效果////////
 if ($(window).width() >= 992) {
 
-    $(".item").on({
+    $(".product").on({
 
         mouseenter: function () {
 
             
-            $(this).children().children('.item_title').css('border','solid 0.1px transparent').css('border-top','solid 0.1px rgba(173, 173, 173, 0.5)')
+            $(this).children().children('.product_title').css('border','solid 0.1px transparent').css('border-top','solid 0.1px rgba(173, 173, 173, 0.5)')
 
-            $(this).children().children('.item_pic').css('border-top','solid 0.1px transparent').css('border-right','solid 0.1px transparent').css('border-left','solid 0.1px transparent')
+            $(this).children().children('.product_pic').css('border-top','solid 0.1px transparent').css('border-right','solid 0.1px transparent').css('border-left','solid 0.1px transparent')
 
             
 
@@ -357,10 +342,10 @@ if ($(window).width() >= 992) {
         mouseleave: function () {
 
             
-            $(this).children().children('.item_title').css('border','solid 0.1px rgba(173, 173, 173, 0.5)')
+            $(this).children().children('.product_title').css('border','solid 0.1px rgba(173, 173, 173, 0.5)')
 
 
-            $(this).children().children('.item_pic').css('border-top','solid 0.1px rgba(173, 173, 173, 0.5)').css('border-right','solid 0.1px rgba(173, 173, 173, 0.5)').css('border-left','solid 0.1px rgba(173, 173, 173, 0.5)')
+            $(this).children().children('.product_pic').css('border-top','solid 0.1px rgba(173, 173, 173, 0.5)').css('border-right','solid 0.1px rgba(173, 173, 173, 0.5)').css('border-left','solid 0.1px rgba(173, 173, 173, 0.5)')
 
             
 

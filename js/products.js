@@ -279,6 +279,7 @@ $(document).ready(function () {
 
 
         // 商品排序
+        // 熱銷商品
         $('.hot_list').on({
 
             click:function () {
@@ -299,23 +300,70 @@ $(document).ready(function () {
                  
                         SeafoodItemWarp.append(PRODUCT(d[i]));
                         
-    
                         
                     }
-    
-
-
 
                 }
-                
+            
+            
+            }
 
-                
+        })
 
-               
+        // 價格由低到高
+        $('.priceLow_list').on({
 
+            click:function () {
 
+                SeafoodItemWarp.empty()
 
-                
+                for(let i= 0 ; i < data.length ;i++ ){
+
+                    let d = data;
+
+                    // 由價格低到高來排序
+                    d = d.sort(function (a, b) {
+                        return   b.left - a.left || a.price - b.price;
+                     })
+
+    
+                    SeafoodItemWarp.append(PRODUCT(d[i]));
+                        
+                        
+                   
+
+                }
+            
+            
+            }
+
+        })
+
+        // 價格高到低
+        $('.priceHigh_list').on({
+
+            click:function () {
+
+                SeafoodItemWarp.empty()
+
+                for(let i= 0 ; i < data.length ;i++ ){
+
+                    let d = data;
+
+                    // 由價格高到低來排序
+                    d = d.sort(function (a, b) {
+                        return   b.left - a.left || b.price - a.price;
+                     })
+
+    
+                    SeafoodItemWarp.append(PRODUCT(d[i]));
+                        
+                        
+                   
+
+                }
+            
+            
             }
 
         })
