@@ -334,7 +334,7 @@ $(document).ready(function () {
                                     <img src="${d[i].pic[0]}" alt="">
                                     </a>
                                 </div> 
-                                <a href="../html/each-product.html">
+                                <a href="../html/each-product.html?pid=`+PRODUCTID+`">
                                     <div class="product_title">
                                         <h3>${d[i].name}</h3>
                                     </div>  
@@ -359,7 +359,7 @@ $(document).ready(function () {
                                 <img src="${d[i].pic[0]}" alt="">
                                 </a>
                             </div> 
-                            <a href="../html/each-product.html">
+                            <a href="../html/each-product.html?pid=`+PRODUCTID+`">
                                 <div class="product_title">
                                     <h3>${d[i].name}</h3>
                                 </div>  

@@ -1,22 +1,76 @@
 'use strict'
 $(document).ready(function () {
-
+    // 商品資料載入
     $.get("../JSON/Seafood.json", function (data) {
         let d = data;
         let ProductID = parseInt(location.href.substr(-3,3));
+        let ProrductTitle = $('.product_intro_title h1');
+        let ProductMainPic =$('.main_product_pic img');
+        let ProductPrice = $('.product_intro_price p');
+        let Productleft = $('.product_left p');
+
+        let AddBtnLG = $('.add_btn_lg');
 
         for(let i= 0 ; i < d.length ;i++ ){
 
             if(d[i].pid == ProductID){
 
+                // 商品名稱
+                ProrductTitle.text(d[i].name)
 
-                console.log(d[i].name)
+                // 商品圖片
+                ProductMainPic.attr('src',d[i].pic[0])
+       
+                //其他圖片
+                for(let j=0 ; j < d[i].pic.length;j++ ){
+
+                    let ProductOtherPic = `
+                    <div class="other_product_pic other_product_pic01">
+                        <img src="${d[i].pic[j]}" alt="">
+                    </div>
+                    `
+
+                    $('.other_product_pic_warp').append(ProductOtherPic)
+
+
+                }
+
+                // 商品資訊
+                let ProductDetail = `
+                <p>包裝方式：${d[i].detail[0]}</p>
+                <p>保存方式：${d[i].detail[1]}</p>
+                <p>保存期限：${d[i].detail[2]}</p>`
+                
+                $('.product_intro_detail').html(ProductDetail)
+
+                // 商品價格
+                ProductPrice.text(d[i].price)
+
+                // 商品庫存
+                Productleft.text(d[i].left)
+
+                if(d[i].left==0){
+
+                    let SoldOut =`<p>已售完</p>`
+                    AddBtnLG.html(SoldOut)
+        
+                    AddBtnLG.attr('disabled', true).css('background-color','#dedede').children('p').css('color','#aaaaaa')
+
+                    
+
+                }else{
+                    AddBtnLG.attr('disabled', false).css('background-color','#a42021')
+
+                }
+                
+           
+               console.log(d[i].intro[1]);
 
 
             }
 
         }
-
+      
     })
 
 
@@ -92,7 +146,9 @@ $(document).ready(function () {
      })
 
 
-    
+     
+
+     
 
     //單一商品頁加入購物車
     $('.add_btn_lg').on({

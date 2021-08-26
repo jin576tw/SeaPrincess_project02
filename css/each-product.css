@@ -99,7 +99,7 @@
     min-width: 120px;
     width: 120px;
     height: 120px;
-    margin-right: 30px;
+    margin-right: 20px;
     cursor: pointer;
    
 }
@@ -146,10 +146,12 @@
 
 
 .product_intro_detail{
+    margin-top: 40px;
     height: 100%;
+    padding-left: 15px;
+    border-left: 3px solid var(--sea_blue);
 }
 .product_intro_detail p{
-    margin-top: 40px;
     font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
@@ -157,10 +159,6 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.7);
-    padding-left: 15px;
-    border-left: 3px solid var(--sea_blue);
-
-   
 }
 
 .product_intro_price {
