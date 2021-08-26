@@ -24,42 +24,7 @@
     <style>
 
 
-            .pic_warp{
-                width: 100%;
-                min-height: 600px;
-                display: flex;
-                justify-content: space-around;
-                align-items: flex-start;
-                flex-wrap: wrap;
-
-            }
-
-            .test_item{
-                width: 300px;
-                height: 500px;
-                border: 1px solid black;
-               
-            
-                
-            }
-
-            .test_pic{
-                width: 300px;
-                height: 300px;
-                overflow: hidden
-            }
-
-            .test_title{
-                width: 100%;
-                height: 100px;
-            }
-
-            .test_price{
-                width: 300px;
-                height: 100px;
-
-            }
-
+          
         
 
        
@@ -71,25 +36,18 @@
 <body>
 
 
-   <div class="pic_warp" id="warp">
-
-    <div class="test_item">
-        <div class="test_pic">
-            <img src="../img/item01.jpg" alt="">
-        </div>
-        <div class="test_title">
-            <p>haha</p>
-        </div>
-        <div class="test_price">
-            <p>200</p>
-        </div>
-
-    </div>
-        
-            
 
 
-   </div>
+<!-- 
+<div class="test_articale">
+    <h2></h2>
+    
+    <p></p>
+
+</div>
+ -->
+
+
   
   
    
@@ -109,39 +67,7 @@
 
 
 
-
-
-
 <script>
-
-
-
-   
-
-    // let arr = []
-
-    // function init(){
-
-    //     $.get("../JSON/Seafood.json", function (data) {
-
-    //         data[0]
-    //         arr.push(data[0]);
-            
-           
-    //     })
-
-
-    // }
-
-    // init()
-
-    // console.log(arr[0]);
-
-
-    
-   
-
-  
 
 
     $.get("../JSON/Seafood.json", function (data) {
@@ -149,38 +75,68 @@
 
 
 
-    let ITEMID = data[0].pid
+
+
+
+
+
+
+
+
+
+
+
+
+    // let ITEMID = data[0].pid
 
 
     
-    function itemID(num) {
+    // function itemID(num) {
 
-        if(num < 10){ 
+    //     if(num < 10){ 
 
-           num ='00'+num;
+    //        num ='00'+num;
 
-           return num
-        }
-        else if(num < 100){
+    //        return num
+    //     }
+    //     else if(num < 100){
 
-            num ='0'+num;
+    //         num ='0'+num;
 
-           return num
+    //        return num
 
-        }else{
+    //     }else{
 
-            return num
+    //         return num
 
-        }
+    //     }
         
-    }
+    // }
 
 
-    let realID = itemID(ITEMID)
+    // let realID = itemID(ITEMID)
 
     
 
-     console.log(parseInt(realID))
+    //  console.log(parseInt(realID))
+
+
+//      let item= [
+
+// //         {
+// //             name:{
+// //                 name01:"james",
+// //                 name02:'allen',
+// //                 name03:'rick'
+
+// //             }
+// //         }
+// //     ]
+
+    
+   
+
+//   console.log(item[0].name.name01);
 
 
 

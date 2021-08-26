@@ -8,6 +8,7 @@ $(document).ready(function () {
         let ProductMainPic =$('.main_product_pic img');
         let ProductPrice = $('.product_intro_price p');
         let Productleft = $('.product_left p');
+        let ProductInfo = $('.IntroProduct_content_text')
 
         let AddBtnLG = $('.add_btn_lg');
 
@@ -63,8 +64,112 @@ $(document).ready(function () {
 
                 }
                 
-           
-               console.log(d[i].intro[1]);
+
+
+                // 商品描述
+
+                // 第一段文字
+                let P01_CONTENT =``
+
+                //若沒內容，就不顯示
+                if(d[i].intro.p01 == ''){
+
+                    P01_CONTENT = ``
+
+                }else{
+               
+                    for(let j = 0 ; j<d[i].intro.p01.length;j++){
+
+
+                        let p01_str = `<p>${d[i].intro.p01[j]}</p>`
+
+                        P01_CONTENT +=p01_str
+
+                    }
+                }
+
+
+                //第一段圖片
+                let INTRO_IMG01 = ``
+
+                if(d[i].intro.img01 == ''){
+
+                    INTRO_IMG01 = ``
+
+                }else{
+
+                    for(let j = 0 ; j<d[i].intro.img01.length;j++){
+
+                        let img01_data = `<div class="IntroProduct_pic">
+                                            <img src="${d[i].intro.img01[j]}" alt="">
+                                        </div>`
+                        
+
+                        INTRO_IMG01+=img01_data
+                        
+
+                    }
+                }
+
+
+                // 第二段文字
+                let P02_CONTENT =``
+
+                if(d[i].intro.p02 == ''){
+
+                    P02_CONTENT = ``
+
+                }else{
+
+                    for(let j = 0 ; j<d[i].intro.p02.length;j++){
+
+
+                        let p02_str = `<p>${d[i].intro.p02[j]}</p>`
+
+                        P02_CONTENT +=p02_str
+
+                    }
+                }
+
+                //第二段圖片
+                let INTRO_IMG02 = ``
+                if(d[i].intro.img02 == ''){
+
+                    INTRO_IMG02 = ``
+
+                }else{
+
+
+                    for(let j = 0 ; j<d[i].intro.img02.length;j++){
+
+
+                        let img02_data = `<div class="IntroProduct_pic">
+                                            <img src="${d[i].intro.img02[j]}" alt="">
+                                            </div>`
+                        
+    
+                        INTRO_IMG02+=img02_data
+    
+                    }
+                }
+    
+              
+                let ARTICLE =  
+                `<h2>${d[i].name}</h2>`+
+                P01_CONTENT+
+                `<div class="IntroProduct_pic_warp">`+
+                    INTRO_IMG01+
+                `</div>`+
+                P02_CONTENT+
+                `<div class="IntroProduct_pic_warp">`+
+                    INTRO_IMG02+
+                `</div>`
+                    
+                
+                ProductInfo.html(ARTICLE)
+                
+
+        
 
 
             }
