@@ -270,146 +270,63 @@ $(document).ready(function () {
     
             })
 
-        
-            let PRODUCTTAG = ` `;
 
-            //判斷商品標籤
-            function productTag(input) {
+            SeafoodItemWarp.append(PRODUCT(d[i]))
 
-                let tagName = " ";
+          
 
-                let ProductTIME = new Date(input.create_at).getMonth();
-
-                let nowTIME = new Date().getMonth();
-
-                
-                if(ProductTIME == nowTIME){
-                        //判斷新商品
-                    tagName = "NEW"
-                    PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
-
-                }else if(input.hot == true){
-                    //判斷熱銷商品
-                    tagName = "熱銷";
-                    PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
-                    
-
-                }else if(input.vip == true){
-                    //判斷官網限定
-                    tagName =  "官網限定";
-                    PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
+        }
 
 
-                }else{
-                    PRODUCTTAG = ` `;
-                }
-        
-            }
+        // 商品排序
+        $('.hot_list').on({
 
+            click:function () {
 
-            //判斷商品是否有庫存
-            let PRODUCTDETAIL = ` `
-            function productDetail(input) {
+                SeafoodItemWarp.empty()
 
-                let ProductLeft = input.left;
+                for(let i= 0 ; i < data.length ;i++ ){
 
-                ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p>NT ${input.price}  / 公斤</p>`;
+                    let d = data;
 
-                
-            }
-
-
-            //商品ID三位數
-            function productID(num) {
-
-                if(num < 10){ 
-
-                num ='00'+num;
-
-                return num
-                }
-                else if(num < 100){
-
-                    num ='0'+num;
-
-                return num
-
-                }else{
-
-                    return num
-
-                }
-                
-            }
-
-
-
-           
-            productTag(d[i])
-            productDetail(d[i])
-
-            let PRODUCTID  =  productID(d[i].pid)
-
-
-
-            let PRODUCT = ``;
-
-            if(d[i].left==0){
-
-                PRODUCT = `
-                    <div class="product p-0 col-lg-3 col-md-4 col-6">
-                            <div class="product_intro empty_product">`+ PRODUCTTAG+
-                                `<div class="product_pic">
-                                    <a href="../html/each-product.html?pid=`+PRODUCTID+`">
-                                    <img src="${d[i].pic[0]}" alt="">
-                                    </a>
-                                </div> 
-                                <a href="../html/each-product.html?pid=`+PRODUCTID+`">
-                                    <div class="product_title">
-                                        <h3>${d[i].name}</h3>
-                                    </div>  
-                                </a>  
-                            </div>
-                            <div class="product_detail">` 
-                                    + PRODUCTDETAIL+
-                
-                                `</div> 
-                                
-                    </div>`;
-            }else{
-
-                PRODUCT = `
-                <div class="product p-0 col-lg-3 col-md-4 col-6">
-                <div class="product_intro">`+PRODUCTTAG+
-                            `<div class="add_btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="product_pic">
-                                <a href="../html/each-product.html?pid=`+PRODUCTID+`">
-                                <img src="${d[i].pic[0]}" alt="">
-                                </a>
-                            </div> 
-                            <a href="../html/each-product.html?pid=`+PRODUCTID+`">
-                                <div class="product_title">
-                                    <h3>${d[i].name}</h3>
-                                </div>  
-                            </a>  
-                        </div>
-                        <div class="product_detail">` 
-                                +PRODUCTDETAIL+
-            
-                            `</div> 
-                            
-                </div>`
-
-
-            }
-        
-            
-            SeafoodItemWarp.append(PRODUCT)
+                    // 由剩餘數量來排序,並按照id排序
+                    d = d.sort(function (a, b) {
+                        return b.left - a.left || a.pid - b.pid;
+                     })
 
     
-        }
+                    if(d[i].hot== true){
+                 
+                        SeafoodItemWarp.append(PRODUCT(d[i]));
+                        
+    
+                        
+                    }
+    
+
+
+
+                }
+                
+
+                
+
+               
+
+
+
+                
+            }
+
+        })
+
+
+       
+
+       
+
+
+
 
 
 

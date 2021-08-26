@@ -72,6 +72,37 @@
 
     $.get("../JSON/Seafood.json", function (data) {
 
+        let d = data;
+
+    //    let num = '00'+d[0].pid
+
+
+        function productID(p) {
+
+            if(p.pid < 10){ 
+
+                let num ='00'+p.pid;
+
+                return num
+
+            }
+           
+        }
+
+
+
+        console.log(productID(d[3]))
+
+
+       
+
+
+       
+
+
+
+    })
+
 
 
 
@@ -168,7 +199,7 @@
 
 
         
-    })
+
 
 
 
