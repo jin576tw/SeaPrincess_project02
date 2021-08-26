@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    let SeafoodURL = location.href.substr(-8,9) == '?Seafood';
-    let ItemURL = location.href.substr(-5,9) == '?Item';
+    let SeafoodURL = location.href.substr(-8,8) == '?Seafood';
+    let ItemURL = location.href.substr(-5,5) == '?Item';
 
     let ItemPage = false;
     let SeafoodPage = false;
@@ -111,7 +111,7 @@ $(document).ready(function () {
     ////////////起始分頁/////////
 
     // 生鮮漁貨
-    if(SeafoodURL && SeafoodPage == true){
+    if(SeafoodURL || SeafoodPage){
 
 
         if ($(window).width() <  992){
@@ -147,7 +147,7 @@ $(document).ready(function () {
 
 
     // 釣具用品
-    if(ItemURL && ItemPage == true){
+    if(ItemURL || ItemPage == true){
 
         if ($(window).width() <  992){
 
@@ -180,29 +180,35 @@ $(document).ready(function () {
     }
 
     // 商品排序選單
+    $('.Products_status_warp').toggle(function () {
 
-    $('.Products_status_warp,.product_status_list').on({
+        // $(this).hide()
+        
+    })
+    
 
-        mouseenter: function () {
+    // $('.Products_status_warp,.product_status_list').on({
 
-            $('.listDown').css('transform','rotate(180deg)');
-            $('.listUp').css('transform','rotate(0deg)')
+    //     mouseenter: function () {
 
-            $('.product_status_list').fadeIn(100);
+    //         $('.listDown').css('transform','rotate(180deg)');
+    //         $('.listUp').css('transform','rotate(0deg)')
+
+    //         $('.product_status_list').fadeIn(100);
            
  
-         },
+    //      },
  
-         mouseleave: function () {
-            $('.listDown').css('transform','rotate(0deg)')
-            $('.listUp').css('transform','rotate(-180deg)')
+    //      mouseleave: function () {
+    //         $('.listDown').css('transform','rotate(0deg)')
+    //         $('.listUp').css('transform','rotate(-180deg)')
 
-            $('.product_status_list').fadeOut(100)
+    //         $('.product_status_list').fadeOut(100)
  
              
-         }
+    //      }
 
-    })
+    // })
 
     $('.status_list').on({
 
