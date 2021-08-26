@@ -192,6 +192,7 @@ $(document).ready(function () {
 
             $('.listDown').css('transform','rotate(180deg)');
             $('.listUp').css('transform','rotate(0deg)')
+            $('.product_status_list').fadeIn(100)
 
           
             
