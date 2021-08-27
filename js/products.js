@@ -329,6 +329,7 @@ $(document).ready(function () {
         
                 }
 
+                // 判斷商品種類參數
                 type01 = true;
                 type02 = false;
                 type03 = false;
@@ -358,6 +359,7 @@ $(document).ready(function () {
         
                 }
 
+                // 判斷商品種類參數
                 type01 = false;
                 type02 = true;
                 type03 = false;
@@ -389,6 +391,7 @@ $(document).ready(function () {
         
                 }
 
+                // 判斷商品種類參數
                 type01 = false;
                 type02 = false;
                 type03 = true;
@@ -419,7 +422,7 @@ $(document).ready(function () {
 
                 for(let i= 0 ; i < d.length ;i++ ){
 
-
+                    // 判斷商品種類
                     if(type01){
 
                       if(d[i].type_sid == 1){
@@ -478,6 +481,7 @@ $(document).ready(function () {
 
                 for(let i= 0 ; i < d.length ;i++ ){
                     
+                     // 判斷商品種類
                     if(type01){
 
                         if(d[i].type_sid == 1){
@@ -535,6 +539,7 @@ $(document).ready(function () {
 
                 for(let i= 0 ; i < data.length ;i++ ){
 
+                     // 判斷商品種類
                     if(type01){
 
                         if(d[i].type_sid == 1){
@@ -593,6 +598,7 @@ $(document).ready(function () {
 
                 for(let i = 0 ; i < d.length ; i++){
 
+                     // 判斷商品種類
                     if(type01){
 
                         if(d[i].type_sid == 1){
