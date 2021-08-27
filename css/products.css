@@ -156,6 +156,12 @@
 
 
 }
+
+.Ａll_S_type{
+    opacity:1;
+    border-bottom: black solid 2px;
+
+}
 .product_type:hover{
     transition: 0.3s;
     opacity:1;
