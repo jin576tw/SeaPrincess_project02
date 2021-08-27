@@ -255,7 +255,8 @@ $(document).ready(function () {
     $('.product_type').on({
 
         click:function () {
-            $(this).css('opacity','1').css('border-bottom','black solid 2px').siblings('.product_type').css('opacity','0.5').css('border-bottom','transparent solid 2px')
+        
+            $(this).addClass('lightUP').siblings('.product_type').removeClass('lightUP')
             
         }
 
