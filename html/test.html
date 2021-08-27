@@ -66,6 +66,11 @@
 <script src="../js/common.js"></script>
 
 
+<button onclick="hot()">熱銷</button>
+<button>高低</button>
+<button>低高</button>
+
+
 
 <script>
 
@@ -74,31 +79,37 @@
 
         let d = data;
 
-    
-
-        // 由剩餘數量來排序
-
-    for(let i= 0 ; i < data.length ;i++ ){
-
- 
-
-        data = data.sort(function (a, b) {
+     
+        function hot(){
 
 
-    
-            return a.price - b.price || a.pid - b.pid;
-    
 
-        })
+            for(let i = 0 ; i < d.length ; i++){
+
+                d = d.sort(function (a, b) {
+                            return b.left - a.left || b.hot - a.hot
+                })
+
+
+                let test = '熱銷：'+data[i].hot+' ,ID:'+data[i].pid + ','+ data[i].price+'元,剩下'+data[i].left+"隻,時間："+ d[i].create_at;
+
+
+                console.log(test);
+
+
+            }
+
+
+        }
        
 
-        let test = 'ID:'+data[i].pid + ','+ data[i].price+'元,剩下'+data[i].left+"隻";
 
 
-        console.log(test);
+       
+        
+        
 
-    }
-
+       
 
        
 

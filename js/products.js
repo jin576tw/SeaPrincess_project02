@@ -258,22 +258,14 @@ $(document).ready(function () {
 
     $.get("../JSON/Seafood.json", function (data) {
 
-        
-        for(let i= 0 ; i < data.length ;i++ ){
+        let d = data;
 
-            let d = data;
+        originSort(d)
 
-            // 由剩餘數量來排序,並按照id排序
-            d = d.sort(function (a, b) {
-    
-                    return b.left - a.left || a.pid - b.pid;
-    
-            })
-
+        for(let i= 0 ; i < d.length ;i++ ){
 
             SeafoodItemWarp.append(PRODUCT(d[i]))
 
-          
 
         }
 
@@ -286,22 +278,17 @@ $(document).ready(function () {
 
                 SeafoodItemWarp.empty()
 
-                for(let i= 0 ; i < data.length ;i++ ){
+                // 回歸原始排序
+                originSort(d)
 
-                    let d = data;
+                //依熱銷商品
+                hotSort(d)
 
-                    // 由剩餘數量來排序,並按照id排序
-                    d = d.sort(function (a, b) {
-                        return b.left - a.left || a.pid - b.pid;
-                     })
+                for(let i= 0 ; i < d.length ;i++ ){
 
-    
-                    if(d[i].hot== true){
-                 
-                        SeafoodItemWarp.append(PRODUCT(d[i]));
-                        
-                        
-                    }
+            
+                     SeafoodItemWarp.append(PRODUCT(d[i]));
+
 
                 }
             
@@ -317,20 +304,15 @@ $(document).ready(function () {
 
                 SeafoodItemWarp.empty()
 
-                for(let i= 0 ; i < data.length ;i++ ){
+                // 回歸原始排序
+                originSort(d)
 
-                    let d = data;
+                // 由價格低到高來排序
+                priceDownSort(d)
 
-                    // 由價格低到高來排序
-                    d = d.sort(function (a, b) {
-                        return   b.left - a.left || a.price - b.price;
-                     })
+                for(let i= 0 ; i < d.length ;i++ ){
 
-    
                     SeafoodItemWarp.append(PRODUCT(d[i]));
-                        
-                        
-                   
 
                 }
             
@@ -346,22 +328,47 @@ $(document).ready(function () {
 
                 SeafoodItemWarp.empty()
 
+                // 回歸原始排序
+                originSort(d)
+
+                // 由價格高到低來排序
+                priceUpSort(d)
+
                 for(let i= 0 ; i < data.length ;i++ ){
 
-                    let d = data;
-
-                    // 由價格高到低來排序
-                    d = d.sort(function (a, b) {
-                        return   b.left - a.left || b.price - a.price;
-                     })
-
-    
                     SeafoodItemWarp.append(PRODUCT(d[i]));
-                        
-                        
-                   
+
 
                 }
+            
+            
+            }
+
+        })
+
+        
+        $('.new_list').on({
+
+            click:function () {
+
+                SeafoodItemWarp.empty()
+
+                // 回歸原始排序
+                originSort(d)
+
+        
+                //依最新時間排序
+                timeSort(d)
+                
+
+
+                for(let i = 0 ; i < d.length ; i++){
+
+                    SeafoodItemWarp.append(PRODUCT(d[i]));
+        
+                }
+
+               
             
             
             }

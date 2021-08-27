@@ -135,6 +135,74 @@ function PRODUCT(p){
 
 }
 
+// 回歸原始商品排序
+function originSort(p) {
+    // 由剩餘數量來排序,並按照id排序
+    p = p.sort(function (a, b) {
+
+        return b.left - a.left || a.pid - b.pid;
+
+    })
+    return p;
+    
+}
+
+// 商品依熱銷排序
+function hotSort(p) {
+
+    p = p.sort(function (a, b) {
+        return b.left - a.left || b.hot - a.hot
+    })
+    return p;
+}
+
+//商品依最新時間排序
+function timeSort(p) {
+
+    // 將時間轉成秒數
+    function newTime(time){
+        let newtime = new Date(time.create_at).getTime();
+        return newtime
+    
+    }
+
+    // 新秒數存入物件 
+    for(let i = 0 ; i < p.length ; i++){
+
+        p[i].newTime = newTime(p[i]);
+        
+    }
+
+    // 由商品建立時間排序
+    p.sort(function(a, b) {
+        return b.left - a.left || b.newTime - a.newTime ;
+    });
+
+    return p
+    
+}
+
+// 商品依價格高到低來排序
+function priceUpSort(p) {
+
+    p = p.sort(function (a, b) {
+        return b.left - a.left || b.price - a.price;
+    })
+    return p;
+}
+
+// 商品依價格低到高來排序
+function priceDownSort(p) {
+
+    p = p.sort(function (a, b) {
+        return b.left - a.left || a.price - b.price;
+    })
+    return p;
+}
+
+
+
+
 // 商品加入購物車效果
 let PROPUCTSWARP = $('.products_warp')
 

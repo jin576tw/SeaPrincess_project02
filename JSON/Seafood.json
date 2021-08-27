@@ -8,7 +8,7 @@
    "left":300,
    "hot": true,
    "vip": false,
-   "create_at": "2021-05-11",
+   "create_at": "2021-01-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
@@ -56,8 +56,8 @@
    "type_sid": 3,
    "left": 0,
    "hot": false,
-   "vip": false,
-   "create_at": "2021-05-11",
+   "vip": true,
+   "create_at": "2021-03-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
@@ -80,7 +80,7 @@
    "left": 300,
    "hot": false,
    "vip": true,
-   "create_at": "2021-06-11",
+   "create_at": "2021-04-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
@@ -100,9 +100,9 @@
    "pid" : 5,
    "type_sid": 1,
    "left":300,
-   "hot": true,
+   "hot":false,
    "vip": false,
-   "create_at": "2021-05-11",
+   "create_at": "2021-08-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
@@ -147,9 +147,9 @@
    "pid" : 7,
    "type_sid": 3,
    "left": 0,
-   "hot": false,
+   "hot": true,
    "vip": false,
-   "create_at": "2021-05-11",
+   "create_at": "2021-08-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
@@ -169,9 +169,9 @@
    "pid" : 8,
    "type_sid": 4,
    "left": 300,
-   "hot": false,
+   "hot": true,
    "vip": true,
-   "create_at": "2021-06-11",
+   "create_at": "2021-07-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
@@ -191,9 +191,9 @@
    "pid" : 9,
    "type_sid": 1,
    "left":300,
-   "hot": true,
+   "hot": false,
    "vip": false,
-   "create_at": "2021-05-11",
+   "create_at": "2021-08-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
@@ -216,9 +216,9 @@
    "pid" : 10,
    "type_sid": 2,
    "left":300,
-   "hot": false,
+   "hot": true,
    "vip": false,
-   "create_at": "2021-08-11",
+   "create_at": "2021-07-11",
    "detail":["1份/包，真空包裝","-18°C以下冷凍保存","1年"],
    "intro" :{
       
