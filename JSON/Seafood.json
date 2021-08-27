@@ -1,7 +1,7 @@
 [
 {
    "name": "真空三去深海石老魚 ( 藍豬齒魚 )",
-   "price": 688,
+   "price": 300,
    "pic" : ["../img/item01.jpg","../img/item01.jpg","../img/item01.jpg","../img/item01.jpg"],
    "pid" : 1,
    "type_sid": 1,
@@ -95,7 +95,7 @@
 },
 {
    "name": "真空三去深海石老魚 ( 藍豬齒魚 )",
-   "price": 688,
+   "price": 400,
    "pic" : ["../img/item03.jpg","../img/item03.jpg","../img/item03.jpg","../img/item03.jpg"],
    "pid" : 5,
    "type_sid": 1,
@@ -186,7 +186,7 @@
 },
 {
    "name": "真空三去深海石老魚 ( 藍豬齒魚 )",
-   "price": 688,
+   "price": 500,
    "pic" : ["../img/item02.jpg","../img/item01.jpg","../img/item01.jpg","../img/item01.jpg"],
    "pid" : 9,
    "type_sid": 1,

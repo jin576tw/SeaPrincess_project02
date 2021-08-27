@@ -281,6 +281,12 @@ $(document).ready(function () {
 
 
 //////////商品種類 
+
+      
+        let type01 = false;
+        let type02 = false;
+        let type03 = false;
+
         $('.Ａll_S_type').on({
 
             click:function () {
@@ -295,6 +301,8 @@ $(document).ready(function () {
         
         
                 }
+
+            
                
                 
             }
@@ -320,6 +328,11 @@ $(document).ready(function () {
                 
         
                 }
+
+                type01 = true;
+                type02 = false;
+                type03 = false;
+
                
                 
             }
@@ -344,6 +357,13 @@ $(document).ready(function () {
                 
         
                 }
+
+                type01 = false;
+                type02 = true;
+                type03 = false;
+
+
+                
                
                 
             }
@@ -368,7 +388,12 @@ $(document).ready(function () {
                 
         
                 }
-               
+
+                type01 = false;
+                type02 = false;
+                type03 = true;
+
+                
                 
             }
 
@@ -393,8 +418,42 @@ $(document).ready(function () {
                 hotSort(d)
 
                 for(let i= 0 ; i < d.length ;i++ ){
+
+
+                    if(type01){
+
+                      if(d[i].type_sid == 1){
+
+                        SeafoodItemWarp.append(PRODUCT(d[i]));
+                        
+
+                      }
+
+                    }else if(type02){
+
+                        if(d[i].type_sid == 2){
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+                          
+  
+                        }
+  
+                    }else if(type03){
+
+                        if(d[i].type_sid == 3){
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+                          
+  
+                        }
+  
+                    }else{
+
+                        SeafoodItemWarp.append(PRODUCT(d[i]));
+
+                    }
             
-                     SeafoodItemWarp.append(PRODUCT(d[i]));
+                    
 
 
                 }
@@ -419,7 +478,38 @@ $(document).ready(function () {
 
                 for(let i= 0 ; i < d.length ;i++ ){
                     
-                    SeafoodItemWarp.append(PRODUCT(d[i]));
+                    if(type01){
+
+                        if(d[i].type_sid == 1){
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+                          
+  
+                        }
+  
+                      }else if(type02){
+  
+                          if(d[i].type_sid == 2){
+    
+                            SeafoodItemWarp.append(PRODUCT(d[i]));
+                            
+    
+                          }
+    
+                      }else if(type03){
+  
+                          if(d[i].type_sid == 3){
+    
+                            SeafoodItemWarp.append(PRODUCT(d[i]));
+                            
+    
+                          }
+    
+                      }else{
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+  
+                      }
 
                 }
 
@@ -445,7 +535,38 @@ $(document).ready(function () {
 
                 for(let i= 0 ; i < data.length ;i++ ){
 
-                    SeafoodItemWarp.append(PRODUCT(d[i]));
+                    if(type01){
+
+                        if(d[i].type_sid == 1){
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+                          
+  
+                        }
+  
+                      }else if(type02){
+  
+                          if(d[i].type_sid == 2){
+    
+                            SeafoodItemWarp.append(PRODUCT(d[i]));
+                            
+    
+                          }
+    
+                      }else if(type03){
+  
+                          if(d[i].type_sid == 3){
+    
+                            SeafoodItemWarp.append(PRODUCT(d[i]));
+                            
+    
+                          }
+    
+                      }else{
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+  
+                      }
 
 
                 }
@@ -472,7 +593,38 @@ $(document).ready(function () {
 
                 for(let i = 0 ; i < d.length ; i++){
 
-                    SeafoodItemWarp.append(PRODUCT(d[i]));
+                    if(type01){
+
+                        if(d[i].type_sid == 1){
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+                          
+  
+                        }
+  
+                      }else if(type02){
+  
+                          if(d[i].type_sid == 2){
+    
+                            SeafoodItemWarp.append(PRODUCT(d[i]));
+                            
+    
+                          }
+    
+                      }else if(type03){
+  
+                          if(d[i].type_sid == 3){
+    
+                            SeafoodItemWarp.append(PRODUCT(d[i]));
+                            
+    
+                          }
+    
+                      }else{
+  
+                          SeafoodItemWarp.append(PRODUCT(d[i]));
+  
+                      }
         
                 }
 
