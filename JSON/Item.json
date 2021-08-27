@@ -1,0 +1,104 @@
+[
+    {
+       "name": "OKUMA Nemesis 那美西斯 紡車捲線器 磯釣 岸拋 船釣小搞 入門首選",
+       "price": 5900,
+       "pic" : ["../img/item05.jpg"],
+       "pid" : 1,
+       "type_sid": 1,
+       "sub_type_sid": 1,
+       "left": 100,
+       "hot": false,
+       "vip": false,
+       "create_at": "2021-01-11",
+       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
+       "intro" :{
+          
+          "p01":[],
+          "img01":["../img/item05-1.jpeg"],
+          "p02":[],
+          "img02":[]
+          
+       }
+          
+       
+    
+    
+    },
+    {
+       "name": "OKUMA ",
+       "price": 5900,
+       "pic" : ["../img/item06.jpg","../img/item06.jpg","../img/item06.jpg","../img/item06.jpg"],
+       "pid" : 2,
+       "type_sid": 1,
+       "sub_type_sid": 1,
+       "left": 100,
+       "hot": false,
+       "vip": false,
+       "create_at": "2021-01-11",
+       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
+       "intro" :{
+          
+          "p01":[],
+          "img01":["../img/item05-1.jpeg"],
+          "p02":[],
+          "img02":[]
+          
+       }
+          
+       
+    
+    
+    },
+    {
+       "name": "OKUMA",
+       "price": 5900,
+       "pic" : ["../img/item07.jpg","../img/item07.jpg","../img/item07.jpg","../img/item07.jpg"],
+       "pid" : 3,
+       "type_sid": 1,
+       "sub_type_sid": 1,
+       "left": 100,
+       "hot": false,
+       "vip": false,
+       "create_at": "2021-01-11",
+       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
+       "intro" :{
+          
+          "p01":[],
+          "img01":["../img/item05-1.jpeg"],
+          "p02":[],
+          "img02":[]
+          
+       }
+          
+       
+    
+    
+    },
+    {
+       "name": "OKUMA Nemesis 那美西斯 紡車捲線器 磯釣 岸拋 船釣小搞 入門首選",
+       "price": 5900,
+       "pic" : ["../img/item08.jpg","../img/item08.jpg","../img/item08.jpg","../img/item08.jpg"],
+       "pid" : 4,
+       "type_sid": 1,
+       "sub_type_sid": 1,
+       "left": 100,
+       "hot": false,
+       "vip": false,
+       "create_at": "2021-01-11",
+       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
+       "intro" :{
+          
+          "p01":[],
+          "img01":["../img/item05-1.jpeg"],
+          "p02":[],
+          "img02":[]
+          
+       }
+          
+       
+    
+    
+    }
+    
+    
+]

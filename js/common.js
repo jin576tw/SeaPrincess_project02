@@ -1,6 +1,6 @@
 'use strict'
 
-// 商品架構
+// 生鮮商品架構
 function PRODUCT(p){
      // 商品標籤
     let PRODUCTTAG = ` `;
@@ -85,11 +85,11 @@ function PRODUCT(p){
             <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn">
                     <div class="product_intro empty_product">`+ PRODUCTTAG+
                         `<div class="product_pic">
-                            <a href="../html/each-product.html?pid=`+PRODUCTID+`">
+                            <a href="../html/each-product.html?S&&pid=`+PRODUCTID+`">
                             <img src="${p.pic[0]}" alt="">
                             </a>
                         </div> 
-                        <a href="../html/each-product.html?pid=`+PRODUCTID+`">
+                        <a href="../html/each-product.html?S&&pid=`+PRODUCTID+`">
                             <div class="product_title">
                                 <h3>${p.name}</h3>
                             </div>  
@@ -111,11 +111,146 @@ function PRODUCT(p){
                         <i class="fas fa-cart-plus"></i>
                     </div>
                     <div class="product_pic">
-                        <a href="../html/each-product.html?pid=`+PRODUCTID+`">
+                        <a href="../html/each-product.html?S&&pid=`+PRODUCTID+`">
                         <img src="${p.pic[0]}" alt="">
                         </a>
                     </div> 
-                    <a href="../html/each-product.html?pid=`+PRODUCTID+`">
+                    <a href="../html/each-product.html?S&&pid=`+PRODUCTID+`">
+                        <div class="product_title">
+                            <h3>${p.name}</h3>
+                        </div>  
+                    </a>  
+                </div>
+                <div class="product_detail">` 
+                        +PRODUCTDETAIL+
+    
+                    `</div> 
+                    
+        </div>`
+
+
+    }
+
+    return PRODUCT;
+
+}
+
+//釣具商品架構
+function PRODUCT_B(p){
+     // 商品標籤
+    let PRODUCTTAG = ` `;
+
+    function productTag(p) {
+
+        let tagName = " ";
+
+        let ProductTIME = new Date(p.create_at).getMonth();
+
+        let nowTIME = new Date().getMonth();
+
+
+        if(ProductTIME == nowTIME){
+            //判斷新商品
+            tagName = "NEW"
+            PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
+
+        }else if(p.hot == true){
+            //判斷熱銷商品
+            tagName = "熱銷";
+            PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
+            
+
+        }else if(p.vip == true){
+            //判斷官網限定
+            tagName =  "官網限定";
+            PRODUCTTAG = `<div class="product_tag">${tagName}</div>`
+
+
+        }else{
+            PRODUCTTAG = ` `;
+        }
+
+    }
+
+    //商品ID三位數
+    function productID(p) {
+
+        if(p.pid < 10){ 
+
+            let num ='00'+p.pid;
+
+            return num
+
+        }
+        else if(p.pid < 100){
+
+            let num ='0'+p.pid;
+
+            return num
+
+        }else{
+            let num = p.id
+            return num
+
+        }
+
+    }
+
+    //判斷商品是否有庫存
+    let PRODUCTDETAIL = ` `
+    function productDetail(p) {
+
+        let ProductLeft = p.left;
+
+        ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p>NT ${p.price} </p>`;
+
+        
+    }
+
+    productTag(p)
+    productDetail(p)
+    let PRODUCTID  =  productID(p)
+
+     // 商品架構生成
+    let PRODUCT = ``;
+
+    if(p.left==0){
+
+        PRODUCT = `
+            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn">
+                    <div class="product_intro empty_product">`+ PRODUCTTAG+
+                        `<div class="product_pic">
+                            <a href="../html/each-product.html?I&&pid=`+PRODUCTID+`">
+                            <img src="${p.pic[0]}" alt="">
+                            </a>
+                        </div> 
+                        <a href="../html/each-product.html?I&&pid=`+PRODUCTID+`">
+                            <div class="product_title">
+                                <h3>${p.name}</h3>
+                            </div>  
+                        </a>  
+                    </div>
+                    <div class="product_detail">` 
+                            + PRODUCTDETAIL+
+        
+                        `</div> 
+                        
+            </div>`;
+
+    }else{
+
+        PRODUCT = `
+        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn">
+        <div class="product_intro">`+PRODUCTTAG+
+                    `<div class="add_btn">
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
+                    <div class="product_pic">
+                        <a href="../html/each-product.html?I&&pid=`+PRODUCTID+`">
+                        <img src="${p.pic[0]}" alt="">
+                        </a>
+                    </div> 
+                    <a href="../html/each-product.html?I&&pid=`+PRODUCTID+`">
                         <div class="product_title">
                             <h3>${p.name}</h3>
                         </div>  

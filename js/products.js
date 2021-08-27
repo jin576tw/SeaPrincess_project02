@@ -265,7 +265,7 @@ $(document).ready(function () {
 
 /////////////////////////////生鮮商品資料載入//////////////////////////////////
 
-    let SeafoodItemWarp = $('.Seafood_Products_warp')
+    let SeafoodWarp = $('.Seafood_Products_warp')
 
     $.get("../JSON/Seafood.json", function (data) {
 
@@ -275,7 +275,7 @@ $(document).ready(function () {
 
         for(let i= 0 ; i < d.length ;i++ ){
 
-            SeafoodItemWarp.append(PRODUCT(d[i]))
+            SeafoodWarp.append(PRODUCT(d[i]))
 
 
         }
@@ -292,13 +292,13 @@ $(document).ready(function () {
 
             click:function () {
 
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
 
                 originSort(d)
 
                 for(let i= 0 ; i < d.length ;i++ ){
 
-                    SeafoodItemWarp.append(PRODUCT(d[i]))
+                    SeafoodWarp.append(PRODUCT(d[i]))
         
                 }
                 type01 = false;
@@ -311,7 +311,7 @@ $(document).ready(function () {
 
             click:function () {
 
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
 
                 originSort(d)
 
@@ -319,7 +319,7 @@ $(document).ready(function () {
 
                     if(d[i].type_sid == 1){
 
-                        SeafoodItemWarp.append(PRODUCT(d[i]))
+                        SeafoodWarp.append(PRODUCT(d[i]))
                      
                     }
                 
@@ -336,14 +336,14 @@ $(document).ready(function () {
 
             click:function () {
 
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
                 originSort(d)
 
                 for(let i= 0 ; i < d.length ;i++ ){
 
                     if(d[i].type_sid == 2){
 
-                        SeafoodItemWarp.append(PRODUCT(d[i]))
+                        SeafoodWarp.append(PRODUCT(d[i]))
 
                     }
                 }
@@ -361,14 +361,14 @@ $(document).ready(function () {
 
             click:function () {
 
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
                 originSort(d)
 
                 for(let i= 0 ; i < d.length ;i++ ){
 
                     if(d[i].type_sid == 3){
 
-                        SeafoodItemWarp.append(PRODUCT(d[i]))
+                        SeafoodWarp.append(PRODUCT(d[i]))
 
                     }
 
@@ -395,7 +395,7 @@ $(document).ready(function () {
 
                 if(p.type_sid == 1){
 
-                SeafoodItemWarp.append(PRODUCT(p));
+                SeafoodWarp.append(PRODUCT(p));
                 
 
                 }
@@ -404,7 +404,7 @@ $(document).ready(function () {
 
                 if(p.type_sid == 2){
 
-                    SeafoodItemWarp.append(PRODUCT(p));
+                    SeafoodWarp.append(PRODUCT(p));
                     
 
                 }
@@ -413,7 +413,7 @@ $(document).ready(function () {
 
                 if(p.type_sid == 3){
 
-                    SeafoodItemWarp.append(PRODUCT(p));
+                    SeafoodWarp.append(PRODUCT(p));
                     
 
                 }
@@ -421,7 +421,7 @@ $(document).ready(function () {
             }else{
 
 
-                SeafoodItemWarp.append(PRODUCT(p));
+                SeafoodWarp.append(PRODUCT(p));
 
             }
     
@@ -437,7 +437,7 @@ $(document).ready(function () {
             click:function () {
 
         
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
 
                 // 回歸原始排序
                 originSort(d)
@@ -462,7 +462,7 @@ $(document).ready(function () {
 
             click:function () {
 
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
 
                 // 回歸原始排序
                 originSort(d)
@@ -488,7 +488,7 @@ $(document).ready(function () {
 
             click:function () {
 
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
 
                 // 回歸原始排序
                 originSort(d)
@@ -514,7 +514,7 @@ $(document).ready(function () {
 
             click:function () {
 
-                SeafoodItemWarp.empty()
+                SeafoodWarp.empty()
 
                 // 回歸原始排序
                 originSort(d)
@@ -541,8 +541,27 @@ $(document).ready(function () {
         
 
 
+/////////////////////////////生鮮商品資料載入//////////////////////////////////
+    let ItemWarp = $('.Item_Products_warp ')
 
-   
+    $.get("../JSON/Item.json", function (data) {
+
+        let d = data;
+
+        originSort(d)
+
+        for(let i= 0 ; i < d.length ;i++ ){
+
+            ItemWarp.append(PRODUCT_B(d[i]))
+
+
+        }
+
+
+
+
+
+    })
 
 
 

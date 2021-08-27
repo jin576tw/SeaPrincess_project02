@@ -1,186 +1,263 @@
 'use strict'
 $(document).ready(function () {
-    // 商品資料載入
-    $.get("../JSON/Seafood.json", function (data) {
-        let d = data;
-        let ProductID = parseInt(location.href.substr(-3,3));
-        let ProrductTitle = $('.product_intro_title h1');
-        let ProductMainPic =$('.main_product_pic img');
-        let ProductPrice = $('.product_intro_price p');
-        let Productleft = $('.product_left p');
-        let ProductInfo = $('.IntroProduct_content_text')
 
-        let AddBtnLG = $('.add_btn_lg');
+    let ItemURL = location.href.substr(-10,1) == "I";
 
-        for(let i= 0 ; i < d.length ;i++ ){
+    if(ItemURL){
 
-            if(d[i].pid == ProductID){
+        $.get("../JSON/Item.json", function (data) {
 
-                // 商品名稱
-                ProrductTitle.text(d[i].name)
+            let d = data; 
+            let ProductID = parseInt(location.href.substr(-3,3));
+            let ProrductTitle = $('.product_intro_title h1');
+            let ProductMainPic =$('.main_product_pic img');
+            let ProductPrice = $('.product_intro_price p');
+            let Productleft = $('.product_left p');
+            let ProductInfo = $('.IntroProduct_content_text')
 
-                // 商品圖片
-                ProductMainPic.attr('src',d[i].pic[0])
-       
-                //其他圖片
-                for(let j=0 ; j < d[i].pic.length;j++ ){
+            let AddBtnLG = $('.add_btn_lg');
 
-                    let ProductOtherPic = `
-                    <div class="other_product_pic other_product_pic01">
-                        <img src="${d[i].pic[j]}" alt="">
-                    </div>
-                    `
+             for(let i= 0 ; i < d.length ;i++ ){
 
-                    $('.other_product_pic_warp').append(ProductOtherPic)
-
-
-                }
-
-                // 商品資訊
-                let ProductDetail = `
-                <p>包裝方式：${d[i].detail[0]}</p>
-                <p>保存方式：${d[i].detail[1]}</p>
-                <p>保存期限：${d[i].detail[2]}</p>`
-                
-                $('.product_intro_detail').html(ProductDetail)
-
-                // 商品價格
-                ProductPrice.text(d[i].price)
-
-                // 商品庫存
-                Productleft.text(d[i].left)
-
-                if(d[i].left==0){
-
-                    let SoldOut =`<p>已售完</p>`
-                    AddBtnLG.html(SoldOut)
-        
-                    AddBtnLG.attr('disabled', true).css('background-color','#dedede').children('p').css('color','#aaaaaa')
-
+                if(d[i].pid == ProductID){
                     
+                    // 商品名稱
+                    ProrductTitle.text(d[i].name)
 
-                }else{
-                    AddBtnLG.attr('disabled', false).css('background-color','#a42021')
-
-                }
-                
-
-
-                // 商品描述
-
-                // 第一段文字
-                let P01_CONTENT =``
-
-                //若沒內容，就不顯示
-                if(d[i].intro.p01 == ''){
-
-                    P01_CONTENT = ``
-
-                }else{
-               
-                    for(let j = 0 ; j<d[i].intro.p01.length;j++){
+                    // 商品圖片
+                    ProductMainPic.attr('src',d[i].pic[0])
 
 
-                        let p01_str = `<p>${d[i].intro.p01[j]}</p>`
+                    //其他圖片
+                    for(let j=0 ; j < d[i].pic.length;j++ ){
 
-                        P01_CONTENT +=p01_str
+                        let ProductOtherPic = `
+                        <div class="other_product_pic">
+                            <img src="${d[i].pic[j]}" alt="">
+                        </div>
+                        `
+
+                        $('.other_product_pic_warp').append(ProductOtherPic)
+
 
                     }
-                }
 
+                    // 商品資訊
+                    let ProductDetail = `
+                    <p>${d[i].detail}</p>`
+                    $('.product_intro_detail').html(ProductDetail)
 
-                //第一段圖片
-                let INTRO_IMG01 = ``
-
-                if(d[i].intro.img01 == ''){
-
-                    INTRO_IMG01 = ``
-
-                }else{
-
-                    for(let j = 0 ; j<d[i].intro.img01.length;j++){
-
-                        let img01_data = `<div class="IntroProduct_pic">
-                                            <img src="${d[i].intro.img01[j]}" alt="">
-                                        </div>`
-                        
-
-                        INTRO_IMG01+=img01_data
-                        
-
-                    }
-                }
-
-
-                // 第二段文字
-                let P02_CONTENT =``
-
-                if(d[i].intro.p02 == ''){
-
-                    P02_CONTENT = ``
-
-                }else{
-
-                    for(let j = 0 ; j<d[i].intro.p02.length;j++){
-
-
-                        let p02_str = `<p>${d[i].intro.p02[j]}</p>`
-
-                        P02_CONTENT +=p02_str
-
-                    }
-                }
-
-                //第二段圖片
-                let INTRO_IMG02 = ``
-                if(d[i].intro.img02 == ''){
-
-                    INTRO_IMG02 = ``
-
-                }else{
-
-
-                    for(let j = 0 ; j<d[i].intro.img02.length;j++){
-
-
-                        let img02_data = `<div class="IntroProduct_pic">
-                                            <img src="${d[i].intro.img02[j]}" alt="">
-                                            </div>`
-                        
-    
-                        INTRO_IMG02+=img02_data
-    
-                    }
-                }
-    
+                    // 商品價格
+                    ProductPrice.text(d[i].price)
               
-                let ARTICLE =  
-                `<h2>${d[i].name}</h2>`+
-                P01_CONTENT+
-                `<div class="IntroProduct_pic_warp">`+
-                    INTRO_IMG01+
-                `</div>`+
-                P02_CONTENT+
-                `<div class="IntroProduct_pic_warp">`+
-                    INTRO_IMG02+
-                `</div>`
-                    
-                
-                ProductInfo.html(ARTICLE)
-                
 
-        
+
+
+
+
+                }
+
+
 
 
             }
+            
 
-        }
-      
-    })
-
-
+    
+           
 
 
+
+
+        })
+
+
+
+    }else{
+
+    
+        // 商品資料載入
+        $.get("../JSON/Seafood.json", function (data) {
+            let d = data;
+            let ProductID = parseInt(location.href.substr(-3,3));
+            let ProrductTitle = $('.product_intro_title h1');
+            let ProductMainPic =$('.main_product_pic img');
+            let ProductPrice = $('.product_intro_price p');
+            let Productleft = $('.product_left p');
+            let ProductInfo = $('.IntroProduct_content_text')
+
+            let AddBtnLG = $('.add_btn_lg');
+
+            for(let i= 0 ; i < d.length ;i++ ){
+
+                if(d[i].pid == ProductID){
+
+                    // 商品名稱
+                    ProrductTitle.text(d[i].name)
+
+                    // 商品圖片
+                    ProductMainPic.attr('src',d[i].pic[0])
+        
+                    //其他圖片
+                    for(let j=0 ; j < d[i].pic.length;j++ ){
+
+                        let ProductOtherPic = `
+                        <div class="other_product_pic">
+                            <img src="${d[i].pic[j]}" alt="">
+                        </div>
+                        `
+
+                        $('.other_product_pic_warp').append(ProductOtherPic)
+
+
+                    }
+
+                    // 商品資訊
+                    let ProductDetail = `
+                    <p>包裝方式：${d[i].detail[0]}</p>
+                    <p>保存方式：${d[i].detail[1]}</p>
+                    <p>保存期限：${d[i].detail[2]}</p>`
+                    
+                    $('.product_intro_detail').html(ProductDetail)
+
+                    // 商品價格
+                    let Price = `${d[i].price} / 公斤`
+                    ProductPrice.text(Price)
+
+                    // 商品庫存
+                    Productleft.text(d[i].left)
+
+                    if(d[i].left==0){
+
+                        let SoldOut =`<p>已售完</p>`
+                        AddBtnLG.html(SoldOut)
+            
+                        AddBtnLG.attr('disabled', true).css('background-color','#dedede').children('p').css('color','#aaaaaa')
+
+                        
+
+                    }else{
+                        AddBtnLG.attr('disabled', false).css('background-color','#a42021')
+
+                    }
+                    
+
+
+                    // 商品描述
+
+                    // 第一段文字
+                    let P01_CONTENT =``
+
+                    //若沒內容，就不顯示
+                    if(d[i].intro.p01 == ''){
+
+                        P01_CONTENT = ``
+
+                    }else{
+                
+                        for(let j = 0 ; j<d[i].intro.p01.length;j++){
+
+
+                            let p01_str = `<p>${d[i].intro.p01[j]}</p>`
+
+                            P01_CONTENT +=p01_str
+
+                        }
+                    }
+
+
+                    //第一段圖片
+                    let INTRO_IMG01 = ``
+
+                    if(d[i].intro.img01 == ''){
+
+                        INTRO_IMG01 = ``
+
+                    }else{
+
+                        for(let j = 0 ; j<d[i].intro.img01.length;j++){
+
+                            let img01_data = `<div class="IntroProduct_pic">
+                                                <img src="${d[i].intro.img01[j]}" alt="">
+                                            </div>`
+                            
+
+                            INTRO_IMG01+=img01_data
+                            
+
+                        }
+                    }
+
+
+                    // 第二段文字
+                    let P02_CONTENT =``
+
+                    if(d[i].intro.p02 == ''){
+
+                        P02_CONTENT = ``
+
+                    }else{
+
+                        for(let j = 0 ; j<d[i].intro.p02.length;j++){
+
+
+                            let p02_str = `<p>${d[i].intro.p02[j]}</p>`
+
+                            P02_CONTENT +=p02_str
+
+                        }
+                    }
+
+                    //第二段圖片
+                    let INTRO_IMG02 = ``
+                    if(d[i].intro.img02 == ''){
+
+                        INTRO_IMG02 = ``
+
+                    }else{
+
+
+                        for(let j = 0 ; j<d[i].intro.img02.length;j++){
+
+
+                            let img02_data = `<div class="IntroProduct_pic">
+                                                <img src="${d[i].intro.img02[j]}" alt="">
+                                                </div>`
+                            
+        
+                            INTRO_IMG02+=img02_data
+        
+                        }
+                    }
+        
+                
+                    let ARTICLE =  
+                    `<h2>${d[i].name}</h2>`+
+                    P01_CONTENT+
+                    `<div class="IntroProduct_pic_warp">`+
+                        INTRO_IMG01+
+                    `</div>`+
+                    P02_CONTENT+
+                    `<div class="IntroProduct_pic_warp">`+
+                        INTRO_IMG02+
+                    `</div>`
+                        
+                    
+                    ProductInfo.html(ARTICLE)
+                    
+
+            
+
+
+                }
+
+            }
+        
+        })
+
+
+
+    }
 
     //計算器
     //加＋＋

@@ -48,7 +48,14 @@
     width: 100%;
     height: 450px;
    
+ 
   
+}
+
+.main_product_pic img{
+  
+    height: 100%;
+
 }
 
 .other_product_pic_content{
@@ -102,6 +109,10 @@
     margin-right: 20px;
     cursor: pointer;
    
+}
+
+.other_product_pic img{
+    height: 100%;
 }
 
 
@@ -182,9 +193,9 @@
     
     
 }
-.product_intro_price p::after{
+/* .product_intro_price p::after{
     content: ' / 公斤';
-}
+} */
 
 .product_intro_count{
     margin-top: 50px;
