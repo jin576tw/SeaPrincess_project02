@@ -27,7 +27,7 @@
 {
 
    "name": "真空三去近海黃雞魚",
-   "price": 700,
+   "price": 500,
    "pic" : ["../img/item02.jpg","../img/item02.jpg","../img/item02.jpg","../img/item02.jpg"],
    "pid" : 2,
    "type_sid": 2,
@@ -120,7 +120,7 @@
 {
 
    "name": "真空三去近海黃雞魚",
-   "price": 700,
+   "price": 600,
    "pic" : ["../img/item02.jpg","../img/item02.jpg","../img/item02.jpg","../img/item02.jpg"],
    "pid" : 6,
    "type_sid": 2,

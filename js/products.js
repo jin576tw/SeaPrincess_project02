@@ -7,7 +7,7 @@ $(document).ready(function () {
     let SeafoodPage = false;
 
    ////////////////////////////////起始分頁選擇//////////////////////////////////
-   
+
     // 生鮮漁貨分頁按鈕    
     $('.Seafood_select').on({
 
@@ -180,7 +180,7 @@ $(document).ready(function () {
 
     }
 
-    // 商品排序選單
+////// 商品排序選單
     if ($(window).width() < 992){
         $('.Products_status_warp').on({
 
@@ -189,11 +189,8 @@ $(document).ready(function () {
                 $(".product_status_list").toggle()
                 
             }
-
-          
            
          })
-
 
     }
 
@@ -253,6 +250,17 @@ $(document).ready(function () {
 
     })
 
+//////////商品種類
+
+    $('.product_type').on({
+
+        click:function () {
+            $(this).css('opacity','1').css('border-bottom','black solid 2px').siblings('.product_type').css('opacity','0.5').css('border-bottom','transparent solid 2px')
+            
+        }
+
+    })
+
 
 /////////////////////////////生鮮商品資料載入//////////////////////////////////
 
@@ -272,12 +280,110 @@ $(document).ready(function () {
         }
 
 
-        // 商品排序
+//////////商品種類 
+        $('.Ａll_S_type').on({
+
+            click:function () {
+
+                SeafoodItemWarp.empty()
+
+                originSort(d)
+
+                for(let i= 0 ; i < d.length ;i++ ){
+
+                    SeafoodItemWarp.append(PRODUCT(d[i]))
+        
+        
+                }
+               
+                
+            }
+
+        })
+        $('.s_type01').on({
+
+            click:function () {
+
+                SeafoodItemWarp.empty()
+
+                originSort(d)
+
+                for(let i= 0 ; i < d.length ;i++ ){
+
+                    if(d[i].type_sid == 1){
+
+                        SeafoodItemWarp.append(PRODUCT(d[i]))
+                     
+
+                    }
+
+                
+        
+                }
+               
+                
+            }
+
+        })
+        $('.s_type02').on({
+
+            click:function () {
+
+                SeafoodItemWarp.empty()
+                originSort(d)
+
+                for(let i= 0 ; i < d.length ;i++ ){
+
+                    if(d[i].type_sid == 2){
+
+                        SeafoodItemWarp.append(PRODUCT(d[i]))
+
+
+                    }
+
+                
+        
+                }
+               
+                
+            }
+
+        })
+        $('.s_type03').on({
+
+            click:function () {
+
+                SeafoodItemWarp.empty()
+                originSort(d)
+
+                for(let i= 0 ; i < d.length ;i++ ){
+
+                    if(d[i].type_sid == 3){
+
+                        SeafoodItemWarp.append(PRODUCT(d[i]))
+
+
+                    }
+
+                
+        
+                }
+               
+                
+            }
+
+        })
+    
+
+
+///////// 商品排序
+
         // 熱銷商品
         $('.hot_list').on({
 
             click:function () {
 
+        
                 SeafoodItemWarp.empty()
 
                 // 回歸原始排序
@@ -287,7 +393,6 @@ $(document).ready(function () {
                 hotSort(d)
 
                 for(let i= 0 ; i < d.length ;i++ ){
-
             
                      SeafoodItemWarp.append(PRODUCT(d[i]));
 
@@ -313,17 +418,19 @@ $(document).ready(function () {
                 priceDownSort(d)
 
                 for(let i= 0 ; i < d.length ;i++ ){
-
+                    
                     SeafoodItemWarp.append(PRODUCT(d[i]));
 
                 }
+
+                
             
             
             }
 
         })
 
-        // 價格高到低
+        // // 價格高到低
         $('.priceHigh_list').on({
 
             click:function () {
@@ -348,7 +455,7 @@ $(document).ready(function () {
 
         })
 
-        
+        // 商品建立時間排序
         $('.new_list').on({
 
             click:function () {
@@ -363,7 +470,6 @@ $(document).ready(function () {
                 timeSort(d)
                 
 
-
                 for(let i = 0 ; i < d.length ; i++){
 
                     SeafoodItemWarp.append(PRODUCT(d[i]));
@@ -371,7 +477,6 @@ $(document).ready(function () {
                 }
 
                
-            
             
             }
 
