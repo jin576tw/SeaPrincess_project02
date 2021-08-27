@@ -300,17 +300,10 @@ $(document).ready(function () {
 
                     SeafoodItemWarp.append(PRODUCT(d[i]))
         
-        
                 }
-
-
                 type01 = false;
                 type02 = false;
-                type03 = false;
-
-            
-               
-                
+                type03 = false; 
             }
 
         })
@@ -328,20 +321,14 @@ $(document).ready(function () {
 
                         SeafoodItemWarp.append(PRODUCT(d[i]))
                      
-
                     }
-
                 
-        
                 }
-
                 // 判斷商品種類參數
                 type01 = true;
                 type02 = false;
                 type03 = false;
-
-               
-                
+ 
             }
 
         })
@@ -358,11 +345,7 @@ $(document).ready(function () {
 
                         SeafoodItemWarp.append(PRODUCT(d[i]))
 
-
                     }
-
-                
-        
                 }
 
                 // 判斷商品種類參數
@@ -371,9 +354,6 @@ $(document).ready(function () {
                 type03 = false;
 
 
-                
-               
-                
             }
 
         })
@@ -390,11 +370,8 @@ $(document).ready(function () {
 
                         SeafoodItemWarp.append(PRODUCT(d[i]))
 
-
                     }
 
-                
-        
                 }
 
                 // 判斷商品種類參數
@@ -402,8 +379,7 @@ $(document).ready(function () {
                 type02 = false;
                 type03 = true;
 
-                
-                
+            
             }
 
         })
@@ -411,6 +387,49 @@ $(document).ready(function () {
 
 
 ///////// 商品排序
+
+        // 判斷商品種類
+        function SeafoodTypeCheck(p) {
+
+            if(type01){
+
+                if(p.type_sid == 1){
+
+                SeafoodItemWarp.append(PRODUCT(p));
+                
+
+                }
+
+            }else if(type02){
+
+                if(p.type_sid == 2){
+
+                    SeafoodItemWarp.append(PRODUCT(p));
+                    
+
+                }
+
+            }else if(type03){
+
+                if(p.type_sid == 3){
+
+                    SeafoodItemWarp.append(PRODUCT(p));
+                    
+
+                }
+
+            }else{
+
+
+                SeafoodItemWarp.append(PRODUCT(p));
+
+            }
+    
+
+
+
+            
+        }
 
         // 熱銷商品
         $('.hot_list').on({
@@ -429,45 +448,10 @@ $(document).ready(function () {
                 for(let i= 0 ; i < d.length ;i++ ){
 
                     // 判斷商品種類
-                    if(type01){
-
-                      if(d[i].type_sid == 1){
-
-                        SeafoodItemWarp.append(PRODUCT(d[i]));
-                        
-
-                      }
-
-                    }else if(type02){
-
-                        if(d[i].type_sid == 2){
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-                          
-  
-                        }
-  
-                    }else if(type03){
-
-                        if(d[i].type_sid == 3){
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-                          
-  
-                        }
-  
-                    }else{
-
-
-                        SeafoodItemWarp.append(PRODUCT(d[i]));
-
-                    }
+                    SeafoodTypeCheck(d[i])
             
-                    
-
-
+                
                 }
-            
             
             }
 
@@ -489,42 +473,10 @@ $(document).ready(function () {
                 for(let i= 0 ; i < d.length ;i++ ){
                     
                      // 判斷商品種類
-                    if(type01){
-
-                        if(d[i].type_sid == 1){
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-                          
-  
-                        }
-  
-                      }else if(type02){
-  
-                          if(d[i].type_sid == 2){
-    
-                            SeafoodItemWarp.append(PRODUCT(d[i]));
-                            
-    
-                          }
-    
-                      }else if(type03){
-  
-                          if(d[i].type_sid == 3){
-    
-                            SeafoodItemWarp.append(PRODUCT(d[i]));
-                            
-    
-                          }
-    
-                      }else{
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-  
-                      }
+                    SeafoodTypeCheck(d[i])
 
                 }
 
-                
             
             
             }
@@ -547,38 +499,7 @@ $(document).ready(function () {
                 for(let i= 0 ; i < data.length ;i++ ){
 
                      // 判斷商品種類
-                    if(type01){
-
-                        if(d[i].type_sid == 1){
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-                          
-  
-                        }
-  
-                      }else if(type02){
-  
-                          if(d[i].type_sid == 2){
-    
-                            SeafoodItemWarp.append(PRODUCT(d[i]));
-                            
-    
-                          }
-    
-                      }else if(type03){
-  
-                          if(d[i].type_sid == 3){
-    
-                            SeafoodItemWarp.append(PRODUCT(d[i]));
-                            
-    
-                          }
-    
-                      }else{
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-  
-                      }
+                     SeafoodTypeCheck(d[i])
 
 
                 }
@@ -606,38 +527,7 @@ $(document).ready(function () {
                 for(let i = 0 ; i < d.length ; i++){
 
                      // 判斷商品種類
-                    if(type01){
-
-                        if(d[i].type_sid == 1){
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-                          
-  
-                        }
-  
-                      }else if(type02){
-  
-                          if(d[i].type_sid == 2){
-    
-                            SeafoodItemWarp.append(PRODUCT(d[i]));
-                            
-    
-                          }
-    
-                      }else if(type03){
-  
-                          if(d[i].type_sid == 3){
-    
-                            SeafoodItemWarp.append(PRODUCT(d[i]));
-                            
-    
-                          }
-    
-                      }else{
-  
-                          SeafoodItemWarp.append(PRODUCT(d[i]));
-  
-                      }
+                     SeafoodTypeCheck(d[i])
         
                 }
 
@@ -646,17 +536,6 @@ $(document).ready(function () {
             }
 
         })
-
-
-       
-
-       
-
-
-
-
-
-
 
     })
         
