@@ -6,7 +6,8 @@ $(document).ready(function () {
     let ItemPage = false;
     let SeafoodPage = false;
 
-
+   ////////////////////////////////起始分頁選擇//////////////////////////////////
+   
     // 生鮮漁貨分頁按鈕    
     $('.Seafood_select').on({
 
@@ -108,7 +109,7 @@ $(document).ready(function () {
     })
 
 
-    ////////////起始分頁/////////
+    /////////////////////起始分頁載入//////////////////////////////////////////
 
     // 生鮮漁貨
     if(SeafoodURL || SeafoodPage){
@@ -253,7 +254,8 @@ $(document).ready(function () {
     })
 
 
-    //生鮮商品資料載入  
+/////////////////////////////生鮮商品資料載入//////////////////////////////////
+
     let SeafoodItemWarp = $('.Seafood_Products_warp')
 
     $.get("../JSON/Seafood.json", function (data) {
