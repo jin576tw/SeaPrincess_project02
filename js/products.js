@@ -282,7 +282,7 @@ $(document).ready(function () {
 
 //////////商品種類 
 
-      
+        // 設定判斷參數
         let type01 = false;
         let type02 = false;
         let type03 = false;
@@ -301,6 +301,11 @@ $(document).ready(function () {
         
         
                 }
+
+
+                type01 = false;
+                type02 = false;
+                type03 = false;
 
             
                
@@ -451,6 +456,7 @@ $(document).ready(function () {
                         }
   
                     }else{
+
 
                         SeafoodItemWarp.append(PRODUCT(d[i]));
 
