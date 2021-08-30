@@ -15,8 +15,6 @@ $(document).ready(function () {
             let Productleft = $('.product_left p');
             let ProductInfo = $('.IntroProduct_content_text')
 
-            let AddBtnLG = $('.add_btn_lg');
-
              for(let i= 0 ; i < d.length ;i++ ){
 
                 if(d[i].pid == ProductID){

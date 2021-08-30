@@ -750,6 +750,13 @@
         height: 350px;
         
     }
+
+    .IntroProduct_Item_pic{
+        margin: 40px 0 60px 0;
+        background-color: #aaaa;
+        width: 100%;
+    
+    }
 }
 @media (max-width: 480px) {
 
@@ -771,6 +778,13 @@
         background-color: #aaaa;
         height: 180px;
         
+    }
+
+    .IntroProduct_Item_pic{
+        margin: 40px 0 60px 0;
+        background-color: #aaaa;
+        width: 100%;
+    
     }
 
 
@@ -1753,6 +1767,7 @@
 
 
 .Each_products_warp{
+    margin-top: 40px;
     opacity: 1
     /* transform: translateY(20px); */
 }
