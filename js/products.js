@@ -277,30 +277,45 @@ $(document).ready(function () {
 
         }
 
-
+      
 //////////商品種類 
 
-        // 設定判斷參數
-        let type01 = false;
-        let type02 = false;
-        let type03 = false;
+  //  // 判斷商品種類
+         function SeafoodTypeCheck(p) {
 
+            for(let i = 0 ; i < p.length ;i++){ 
+
+                if(p[i].type_sid == s_type){
+
+                    SeafoodWarp.append(PRODUCT(p[i]));
+
+                }else if(s_type == ''){
+                    SeafoodWarp.append(PRODUCT(p[i]));
+
+                }
+                
+            }
+
+        
+            
+        }
+
+        // 設定判斷參數
+        let s_type = ''
+       
         $('.Ａll_S_type').on({
 
             click:function () {
 
                 SeafoodWarp.empty()
 
+                s_type = ''
+
+                // 回歸原始排序
                 originSort(d)
 
-                for(let i= 0 ; i < d.length ;i++ ){
-
-                    SeafoodWarp.append(PRODUCT(d[i]))
-        
-                }
-                type01 = false;
-                type02 = false;
-                type03 = false; 
+                SeafoodTypeCheck(d)
+            
             }
 
         })
@@ -310,22 +325,14 @@ $(document).ready(function () {
 
                 SeafoodWarp.empty()
 
-                originSort(d)
+                s_type = 1;
 
-                for(let i= 0 ; i < d.length ;i++ ){
+                 // 回歸原始排序
+                 originSort(d)
 
-                    if(d[i].type_sid == 1){
-
-                        SeafoodWarp.append(PRODUCT(d[i]))
-                     
-                    }
+                SeafoodTypeCheck(d)
                 
-                }
-                // 判斷商品種類參數
-                type01 = true;
-                type02 = false;
-                type03 = false;
- 
+               
             }
 
         })
@@ -334,21 +341,15 @@ $(document).ready(function () {
             click:function () {
 
                 SeafoodWarp.empty()
+
+                s_type = 2;
+
+                // 回歸原始排序
                 originSort(d)
 
-                for(let i= 0 ; i < d.length ;i++ ){
+                SeafoodTypeCheck(d)
 
-                    if(d[i].type_sid == 2){
-
-                        SeafoodWarp.append(PRODUCT(d[i]))
-
-                    }
-                }
-
-                // 判斷商品種類參數
-                type01 = false;
-                type02 = true;
-                type03 = false;
+             
 
 
             }
@@ -359,75 +360,24 @@ $(document).ready(function () {
             click:function () {
 
                 SeafoodWarp.empty()
+
+                s_type = 3;
+
+                // 回歸原始排序
                 originSort(d)
 
-                for(let i= 0 ; i < d.length ;i++ ){
+                SeafoodTypeCheck(d)
 
-                    if(d[i].type_sid == 3){
-
-                        SeafoodWarp.append(PRODUCT(d[i]))
-
-                    }
-
-                }
-
-                // 判斷商品種類參數
-                type01 = false;
-                type02 = false;
-                type03 = true;
-
+        
             
             }
 
         })
+
     
-
-
 ///////// 商品排序
 
-        // 判斷商品種類
-        function SeafoodTypeCheck(p) {
-
-            if(type01){
-
-                if(p.type_sid == 1){
-
-                SeafoodWarp.append(PRODUCT(p));
-                
-
-                }
-
-            }else if(type02){
-
-                if(p.type_sid == 2){
-
-                    SeafoodWarp.append(PRODUCT(p));
-                    
-
-                }
-
-            }else if(type03){
-
-                if(p.type_sid == 3){
-
-                    SeafoodWarp.append(PRODUCT(p));
-                    
-
-                }
-
-            }else{
-
-
-                SeafoodWarp.append(PRODUCT(p));
-
-            }
     
-
-
-
-            
-        }
-
         // 熱銷商品
         $('.hot_list').on({
 
@@ -442,13 +392,9 @@ $(document).ready(function () {
                 //依熱銷商品
                 hotSort(d)
 
-                for(let i= 0 ; i < d.length ;i++ ){
 
-                    // 判斷商品種類
-                    SeafoodTypeCheck(d[i])
-            
-                
-                }
+                // 判斷商品種類
+                SeafoodTypeCheck(d)
             
             }
 
@@ -467,12 +413,8 @@ $(document).ready(function () {
                 // 由價格低到高來排序
                 priceDownSort(d)
 
-                for(let i= 0 ; i < d.length ;i++ ){
-                    
-                     // 判斷商品種類
-                    SeafoodTypeCheck(d[i])
-
-                }
+                // 判斷商品種類
+                SeafoodTypeCheck(d)
 
             
             
@@ -493,13 +435,8 @@ $(document).ready(function () {
                 // 由價格高到低來排序
                 priceUpSort(d)
 
-                for(let i= 0 ; i < data.length ;i++ ){
-
-                     // 判斷商品種類
-                     SeafoodTypeCheck(d[i])
-
-
-                }
+                // 判斷商品種類
+                SeafoodTypeCheck(d)
             
             
             }
@@ -520,13 +457,8 @@ $(document).ready(function () {
                 //依最新時間排序
                 timeSort(d)
                 
-
-                for(let i = 0 ; i < d.length ; i++){
-
-                     // 判斷商品種類
-                     SeafoodTypeCheck(d[i])
-        
-                }
+                // 判斷商品種類
+                SeafoodTypeCheck(d)
 
                
             
@@ -558,13 +490,14 @@ $(document).ready(function () {
     $.get("../JSON/Item.json", function (data) {
 
         let d = data;
-
         itype = 1;
-
         subitype = '';
        
+
+
         ItemChecktype(d)
 
+    /// 商品種類架構
         function  ItemChecktype(p) {
 
             ItemWarp.empty()
@@ -585,16 +518,16 @@ $(document).ready(function () {
         }
 
 
-    // 商品種類
+    /// 商品種類
         $('.Item_type01').on({
 
             click:function(){
 
-                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
-                <div class="product_type item_type01_01">海水紡車捲線器</div>
-                <div class="product_type item_type01_02">泛用型紡車式捲線器</div>
-                <div class="product_type item_type01_03">擬餌拋投捲線器</div>
-                <div class="product_type item_type01_04">雙軸鼓式捲線器</div>`
+                let SUBTYPE = `<div class="product_type All_i_type lightUP">所有商品</div>
+                <div class="product_type i_type01_01">海水紡車捲線器</div>
+                <div class="product_type i_type01_02">泛用型紡車式捲線器</div>
+                <div class="product_type i_type01_03">擬餌拋投捲線器</div>
+                <div class="product_type i_type01_04">雙軸鼓式捲線器</div>`
 
                 ItemTypeWarp.html(SUBTYPE)
 
@@ -615,14 +548,14 @@ $(document).ready(function () {
 
             click:function(){
 
-                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
-                <div class="product_type item_type02_01">日式釣竿</div>
-                <div class="product_type item_type02_02">遠投竿</div>
-                <div class="product_type item_type02_03">淡水路亞</div>
-                <div class="product_type item_type02_04">海水路亞</div>
-                <div class="product_type item_type02_05">船釣竿</div>
-                <div class="product_type item_type02_06">池釣竿</div>
-                <div class="product_type item_type02_07">竿輪Combo組</div>`
+                let SUBTYPE = `<div class="product_type All_i_type lightUP">所有商品</div>
+                <div class="product_type i_type02_01">日式釣竿</div>
+                <div class="product_type i_type02_02">遠投竿</div>
+                <div class="product_type i_type02_03">淡水路亞</div>
+                <div class="product_type i_type02_04">海水路亞</div>
+                <div class="product_type i_type02_05">船釣竿</div>
+                <div class="product_type i_type02_06">池釣竿</div>
+                <div class="product_type i_type02_07">竿輪Combo組</div>`
 
                 ItemTypeWarp.html(SUBTYPE)
 
@@ -644,10 +577,10 @@ $(document).ready(function () {
 
             click:function(){
 
-                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
-                <div class="product_type item_type03_01">PE/編織線</div>
-                <div class="product_type item_type03_02">碳纖維</div>
-                <div class="product_type item_type03_03">尼龍繩</div>`
+                let SUBTYPE = `<div class="product_type All_i_type lightUP">所有商品</div>
+                <div class="product_type i_type03_01">PE/編織線</div>
+                <div class="product_type i_type03_02">碳纖維</div>
+                <div class="product_type i_type03_03">尼龍繩</div>`
 
                 ItemTypeWarp.html(SUBTYPE)
 
@@ -668,11 +601,11 @@ $(document).ready(function () {
 
             click:function(){
 
-                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
-                <div class="product_type item_type04_01">捲線器改裝配件</div>
-                <div class="product_type item_type04_02">服飾配件</div>
-                <div class="product_type item_type04_03">釣具收納＆保養</div>
-                <div class="product_type item_type04_04">釣蝦仕掛／周邊</div>`
+                let SUBTYPE = `<div class="product_type All_i_type lightUP">所有商品</div>
+                <div class="product_type i_type04_01">捲線器改裝配件</div>
+                <div class="product_type i_type04_02">服飾配件</div>
+                <div class="product_type i_type04_03">釣具收納＆保養</div>
+                <div class="product_type i_type04_04">釣蝦仕掛／周邊</div>`
 
                 ItemTypeWarp.html(SUBTYPE)
 
@@ -691,33 +624,48 @@ $(document).ready(function () {
 
 
 
-        // 商品子種類
+    /// 商品子種類
         ItemCheckSubtype = function (p) {
 
-            ItemWarp.empty()
-
-            originSort(d)
 
             for(let i = 0 ; i < p.length ;i++){
 
                 if(p[i].type_sid==itype && p[i].sub_type_sid==subitype){
 
                     ItemWarp.append(PRODUCT_B(p[i]))
-                }
 
+                    
+                }else if(p[i].type_sid==itype && p[i].sub_type_sid==""){
+                    if(p[i].type_sid==itype){
+
+                        ItemWarp.append(PRODUCT_B(p[i]))
+                    }
+                }
             }
             
         }
 
 
-        $(".item_type_warp").on("click",".item_typeAll",function(){
+        $(".item_type_warp").on("click",".All_i_type",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
+
+            subitype = ' ';
+            
             ItemChecktype(d);
+
 
             console.log(itype,subitype);
         })
 
 
-        $(".item_type_warp").on("click",".item_type01_01,.item_type02_01,.item_type03_01,.item_type04_01",function(){
+        $(".item_type_warp").on("click",".i_type01_01,.i_type02_01,.i_type03_01,.i_type04_01",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
 
             subitype = 1;
 
@@ -727,7 +675,11 @@ $(document).ready(function () {
 
 
         })
-        $(".item_type_warp").on("click",".item_type01_02,.item_type02_02,.item_type03_02,.item_type04_02",function(){
+        $(".item_type_warp").on("click",".i_type01_02,.i_type02_02,.i_type03_02,.i_type04_02",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
 
             subitype = 2;
 
@@ -737,7 +689,11 @@ $(document).ready(function () {
 
 
         })
-        $(".item_type_warp").on("click",".item_type01_03,.item_type02_03,.item_type03_03,.item_type04_03",function(){
+        $(".item_type_warp").on("click",".i_type01_03,.i_type02_03,.i_type03_03,.i_type04_03",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
 
             subitype = 3;
 
@@ -747,7 +703,11 @@ $(document).ready(function () {
 
 
         })
-        $(".item_type_warp").on("click",".item_type01_04,.item_type02_04,.item_type04_04",function(){
+        $(".item_type_warp").on("click",".i_type01_04,.i_type02_04,.i_type04_04",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
 
             subitype = 4;
 
@@ -757,7 +717,11 @@ $(document).ready(function () {
 
 
         })
-        $(".item_type_warp").on("click",".item_type02_05",function(){
+        $(".item_type_warp").on("click",".i_type02_05",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
 
             subitype = 5;
 
@@ -767,7 +731,11 @@ $(document).ready(function () {
 
 
         })
-        $(".item_type_warp").on("click",".item_type02_06",function(){
+        $(".i_type_warp").on("click",".i_type02_06",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
 
             subitype = 6;
 
@@ -777,7 +745,11 @@ $(document).ready(function () {
 
 
         })
-        $(".item_type_warp").on("click",".item_type02_07",function(){
+        $(".item_type_warp").on("click",".i_type02_07",function(){
+
+            ItemWarp.empty()
+
+            originSort(d)
 
             subitype = 7;
 
@@ -787,7 +759,108 @@ $(document).ready(function () {
 
 
         })
+
+
+        ///商品排序
        
+         // 熱銷商品
+         $('.hot_list').on({
+
+            click:function () {
+
+        
+                ItemWarp.empty()
+
+                // 回歸原始排序
+                originSort(d)
+
+                //依熱銷商品
+                hotSort(d)
+
+                console.log(itype,subitype);
+
+                for(let i = 0 ; i < d.length ;i++){
+
+                    if(d[i].type_sid==itype && d[i].sub_type_sid==subitype){
+    
+                        ItemWarp.append(PRODUCT_B(d[i]))
+    
+                        
+                    }
+                }
+                
+            }
+
+        })
+
+        // 價格由低到高
+        $('.priceLow_list').on({
+
+            click:function () {
+
+                ItemWarp.empty()
+
+                // 回歸原始排序
+                originSort(d)
+
+                // 由價格低到高來排序
+                priceDownSort(d)
+
+                ItemCheckSubtype(d)
+
+              
+
+            
+            
+            }
+
+        })
+
+        // // 價格高到低
+        $('.priceHigh_list').on({
+
+            click:function () {
+
+                ItemWarp.empty()
+
+                // 回歸原始排序
+                originSort(d)
+
+                // 由價格高到低來排序
+                priceUpSort(d)
+
+                ItemCheckSubtype(d)
+
+               
+            
+            
+            }
+
+        })
+
+        // 商品建立時間排序
+        $('.new_list').on({
+
+            click:function () {
+
+                ItemWarp.empty()
+
+                // 回歸原始排序
+                originSort(d)
+
+        
+                //依最新時間排序
+                timeSort(d)
+                
+
+                ItemCheckSubtype(d)
+                
+
+               
+            
+            }
+
+        })
 
      
 
