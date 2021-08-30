@@ -367,7 +367,7 @@
        "intro" :{
           
           "p01":[],
-          "img01":["../img/items/i15-A.png"],
+          "img01":["../img/items/i15-A.png","../img/items/i15-B.png","../img/items/i15-C.jpg"],
           "p02":[],
           "img02":[]
           
