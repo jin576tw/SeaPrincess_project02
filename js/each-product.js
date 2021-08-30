@@ -11,7 +11,7 @@ $(document).ready(function () {
             let ProductID = parseInt(location.href.substr(-3,3));
             let ProrductTitle = $('.product_intro_title h1');
             let ProductMainPic =$('.main_product_pic img');
-            let ProductPrice = $('.product_intro_price p');
+            let ProductPriceWarp = $('.product_intro_option_warp');
             let Productleft = $('.product_left p');
             let ProductInfo = $('.IntroProduct_content_text')
 
@@ -47,27 +47,153 @@ $(document).ready(function () {
                     <p>${d[i].detail}</p>`
                     $('.product_intro_detail').html(ProductDetail)
 
+                  
+
                     // 商品價格
-                    ProductPrice.text(d[i].price)
-              
+                    let productOption = (p) =>{
+
+                        let OptionSelect = ``;
+                        let FirstOPTION =` <option>產品規格</option>`
+                       
+                        for(let j = 0 ; j <p.type.length ;j++){ 
+                           
+                            let OPTION = `<option>${p.type[j]}</option>`
+    
+                            OptionSelect = OptionSelect + OPTION
+                            
+                        }
+    
+                        let AllOption = ` <div class="product_intro_option">
+                        <select class="option_select">`+FirstOPTION+OptionSelect+`</select>
+                        </div>`
+
+                        return AllOption;
+
+                    }
+                    
+                   
+                    let ProductOption = productOption(d[i])
+                   
+                    let ProductPrice = `<div class="product_intro_price">
+                                            <h2>${d[i].price}</h2>
+                                        </div>`
+
+                    ProductPriceWarp.append(ProductOption+ProductPrice)
 
 
+                     // 商品庫存
+                     Productleft.text(d[i].left)
+
+                      // 商品描述
+
+                    // 第一段文字
+                    let P01_CONTENT =``
+
+                    //若沒內容，就不顯示
+                    if(d[i].intro.p01 == ''){
+
+                        P01_CONTENT = ``
+
+                    }else{
+                
+                        for(let j = 0 ; j<d[i].intro.p01.length;j++){
+
+
+                            let p01_str = `<p>${d[i].intro.p01[j]}</p>`
+
+                            P01_CONTENT +=p01_str
+
+                        }
+                    }
+
+
+                    //第一段圖片
+                    let INTRO_IMG01 = ``
+
+                    if(d[i].intro.img01 == ''){
+
+                        INTRO_IMG01 = ``
+
+                    }else{
+
+                        for(let j = 0 ; j<d[i].intro.img01.length;j++){
+
+                            let img01_data = `<div class="IntroProduct_Item_pic">
+                                                <img src="${d[i].intro.img01[j]}" alt="">
+                                            </div>`
+                            
+
+                            INTRO_IMG01+=img01_data
+                            
+
+                        }
+                    }
+
+
+                    // 第二段文字
+                    let P02_CONTENT =``
+
+                    if(d[i].intro.p02 == ''){
+
+                        P02_CONTENT = ``
+
+                    }else{
+
+                        for(let j = 0 ; j<d[i].intro.p02.length;j++){
+
+
+                            let p02_str = `<p>${d[i].intro.p02[j]}</p>`
+
+                            P02_CONTENT +=p02_str
+
+                        }
+                    }
+
+                    //第二段圖片
+                    let INTRO_IMG02 = ``
+                    if(d[i].intro.img02 == ''){
+
+                        INTRO_IMG02 = ``
+
+                    }else{
+
+
+                        for(let j = 0 ; j<d[i].intro.img02.length;j++){
+
+
+                            let img02_data = `<div class="IntroProduct_Item_pic">
+                                                <img src="${d[i].intro.img02[j]}" alt="">
+                                                </div>`
+                            
+        
+                            INTRO_IMG02+=img02_data
+        
+                        }
+                    }
+        
+                
+                    let ARTICLE =  
+                    P01_CONTENT+
+                    `<div class="IntroProduct_pic_warp">`+
+                        INTRO_IMG01+
+                    `</div>`+
+                    P02_CONTENT+
+                    `<div class="IntroProduct_pic_warp">`+
+                        INTRO_IMG02+
+                    `</div>`
+                        
+
+                    ProductInfo.html(ARTICLE)
+                    
+                
 
 
 
                 }
 
 
-
-
             }
             
-
-    
-           
-
-
-
 
         })
 
@@ -82,7 +208,7 @@ $(document).ready(function () {
             let ProductID = parseInt(location.href.substr(-3,3));
             let ProrductTitle = $('.product_intro_title h1');
             let ProductMainPic =$('.main_product_pic img');
-            let ProductPrice = $('.product_intro_price p');
+            let ProductPriceWarp = $('.product_intro_option_warp');
             let Productleft = $('.product_left p');
             let ProductInfo = $('.IntroProduct_content_text')
 
@@ -121,8 +247,12 @@ $(document).ready(function () {
                     $('.product_intro_detail').html(ProductDetail)
 
                     // 商品價格
-                    let Price = `${d[i].price} / 公斤`
-                    ProductPrice.text(Price)
+                    let ProductPrice = `<div class="product_intro_price">
+                                    <h2>${d[i].price} / 公斤</h2>
+                                </div>`
+
+                    ProductPriceWarp.append(ProductPrice)
+                    
 
                     // 商品庫存
                     Productleft.text(d[i].left)

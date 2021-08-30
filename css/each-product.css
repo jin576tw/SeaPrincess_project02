@@ -171,11 +171,24 @@
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.7);
 }
-
-.product_intro_price {
+.product_intro_option_warp{
     margin-top: 60px;
+    display: flex;
+    align-items: center;
 }
-.product_intro_price p{
+
+.product_intro_option{
+    margin-right: 30px;
+}
+
+.option_select{
+    width: 250px;
+    height: 50px;
+    font-size: 1.6rem;
+}
+
+.product_intro_price h2{
+
     position: relative;
     font-size: 2.6rem;
     font-weight: 400;
@@ -188,14 +201,12 @@
 
 }
 
-.product_intro_price p::before{
+.product_intro_price h2::before{
     content: 'NT ';
     
     
 }
-/* .product_intro_price p::after{
-    content: ' / 公斤';
-} */
+
 
 .product_intro_count{
     margin-top: 50px;
@@ -387,11 +398,41 @@
     
     }
 
+
+    .product_intro_option_warp{
+        margin-top: 30px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .option_select{
+        width: 300px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+
+
+    .product_intro_price{
+        margin-top: 30px;
+    }
+  
+    .product_intro_price h2{
+        position: relative;
+        font-size: 2.6rem;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #a42021;
+    
+    }
     
 
     .add_btn_lg{
         
-        margin: 20px 0 0 0 ;
+        margin: 40px 0 0 0 ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -482,6 +523,41 @@
     
     }
 
+    .product_intro_content{
+        padding: 0 10px 30px 10px;
+    }
+
+
+    .product_intro_option_warp{
+        margin-top: 40px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .option_select{
+        width: 300px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+
+
+    .product_intro_price{
+        margin-top: 20px;
+    }
+  
+    .product_intro_price h2{
+        position: relative;
+        font-size: 2.6rem;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #a42021;
+    
+    }
+
     .product_intro_count{
         margin-top: 25px;
         font-size: 1.8rem;
@@ -494,29 +570,6 @@
      
     }
     
-
-    .product_intro_price {
-        margin-top: 40px;
-    }
-    .product_intro_content{
-        padding: 0 10px 30px 10px;
-
-    }
-    
-
-
-    .product_intro_price p{
-        position: relative;
-        font-size: 2.6rem;
-        font-weight: 400;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #a42021;
-        
-    
-    }
 
     .add_btn_lg{
         
@@ -660,6 +713,19 @@
 }
 
 .IntroProduct_pic img{
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.IntroProduct_Item_pic{
+    margin: 40px 0 80px 0;
+    background-color: #aaaa;
+    width: 100%;
+
+}
+
+.IntroProduct_Item_pic img{
     height: 100%;
     object-fit: cover;
     
