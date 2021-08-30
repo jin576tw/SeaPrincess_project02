@@ -963,7 +963,7 @@ $(document).ready(function () {
 
             mouseenter: function () {
                $('.navbar_member_list_warp').fadeIn(100)
-               console.log('hi');
+            
 
             },
 

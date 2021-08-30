@@ -112,7 +112,7 @@ select {
 }
 
 .RWD_open{
-    transition: 1.5s;
+    transition: 0.8s;
     transform: translateX(100%);
     
 }

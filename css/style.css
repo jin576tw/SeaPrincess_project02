@@ -1317,28 +1317,12 @@
 
 /* ////////Line購物社團//////  */
 
-  
-/* .LineGroup_page_bg{
-    z-index: 997;
-    position: fixed;
-    
-    top: 0%;
-    width: 100%;
-    height: 100vh;
-    
-    background-size: cover;
-    background-position: center;
- 
-  } */
-
-
   .LineGroup_page{
-      /* margin-top: 100px; */
       position: relative;
       background-image: url('../img/addline-bg.jpg');
       width: 100%;
       height: 560px;
-      background-size: contain;
+      background-size: cover;
       background-position: center;
       background-attachment: fixed;
       background-repeat: no-repeat;
