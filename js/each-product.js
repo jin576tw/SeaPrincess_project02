@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     let ItemURL = location.href.substr(-10,1) == "I";
 
+    ///////////////////////釣具商品載入////////////////////////////////
     if(ItemURL){
 
         $.get("../JSON/Item.json", function (data) {

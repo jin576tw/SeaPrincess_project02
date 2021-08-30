@@ -252,15 +252,12 @@ $(document).ready(function () {
 
 //////////商品種類
 
-    $('.product_type').on({
+    $(".product_type_warp ").on("click",".product_type",function(){
 
-        click:function () {
-        
-            $(this).addClass('lightUP').siblings('.product_type').removeClass('lightUP')
-            
-        }
+        $(this).addClass('lightUP').siblings('.product_type').removeClass('lightUP')
 
     })
+
 
 
 /////////////////////////////生鮮商品資料載入//////////////////////////////////
@@ -541,21 +538,265 @@ $(document).ready(function () {
         
 
 
-/////////////////////////////生鮮商品資料載入//////////////////////////////////
+/////////////////////////////釣具商品資料載入//////////////////////////////////
+
+    //釣魚用具分類視覺    
+    $('.Item_type_box').on({
+        click:function(){
+
+            $(this).addClass('TypeLight').siblings('.Item_type_box').removeClass('TypeLight')
+        }
+
+    })
+    
+
+    //資料載入
     let ItemWarp = $('.Item_Products_warp ')
+
+    let ItemTypeWarp = $('.item_type_warp')
 
     $.get("../JSON/Item.json", function (data) {
 
         let d = data;
 
-        originSort(d)
+        itype = 1;
 
-        for(let i= 0 ; i < d.length ;i++ ){
+        subitype = '';
+       
+        ItemChecktype(d)
 
-            ItemWarp.append(PRODUCT_B(d[i]))
+        function  ItemChecktype(p) {
 
+            ItemWarp.empty()
 
+            originSort(p)
+
+            for(let i= 0 ; i < p.length ;i++ ){
+
+                if(p[i].type_sid == itype){
+    
+                    ItemWarp.append(PRODUCT_B(p[i]))
+    
+                }
+    
+            }
+
+            
         }
+
+
+    // 商品種類
+        $('.Item_type01').on({
+
+            click:function(){
+
+                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
+                <div class="product_type item_type01_01">海水紡車捲線器</div>
+                <div class="product_type item_type01_02">泛用型紡車式捲線器</div>
+                <div class="product_type item_type01_03">擬餌拋投捲線器</div>
+                <div class="product_type item_type01_04">雙軸鼓式捲線器</div>`
+
+                ItemTypeWarp.html(SUBTYPE)
+
+                itype = 1;
+
+                ItemChecktype(d)
+
+            
+                console.log(itype,subitype);
+               
+                
+            }
+
+
+
+        })
+        $('.Item_type02').on({
+
+            click:function(){
+
+                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
+                <div class="product_type item_type02_01">日式釣竿</div>
+                <div class="product_type item_type02_02">遠投竿</div>
+                <div class="product_type item_type02_03">淡水路亞</div>
+                <div class="product_type item_type02_04">海水路亞</div>
+                <div class="product_type item_type02_05">船釣竿</div>
+                <div class="product_type item_type02_06">池釣竿</div>
+                <div class="product_type item_type02_07">竿輪Combo組</div>`
+
+                ItemTypeWarp.html(SUBTYPE)
+
+                itype = 2;
+
+                ItemChecktype(d)
+
+                console.log(itype,subitype);
+
+              
+                
+                
+            }
+
+
+
+        })
+        $('.Item_type03').on({
+
+            click:function(){
+
+                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
+                <div class="product_type item_type03_01">PE/編織線</div>
+                <div class="product_type item_type03_02">碳纖維</div>
+                <div class="product_type item_type03_03">尼龍繩</div>`
+
+                ItemTypeWarp.html(SUBTYPE)
+
+                itype = 3;
+
+                ItemChecktype(d)
+
+                console.log(itype,subitype);
+                
+
+                
+            }
+
+
+
+        })
+        $('.Item_type04').on({
+
+            click:function(){
+
+                let SUBTYPE = `<div class="product_type item_typeAll lightUP">所有商品</div>
+                <div class="product_type item_type04_01">捲線器改裝配件</div>
+                <div class="product_type item_type04_02">服飾配件</div>
+                <div class="product_type item_type04_03">釣具收納＆保養</div>
+                <div class="product_type item_type04_04">釣蝦仕掛／周邊</div>`
+
+                ItemTypeWarp.html(SUBTYPE)
+
+                itype = 4;
+
+                ItemChecktype(d)
+
+                console.log(itype,subitype);
+                
+                
+            }
+
+
+
+        })
+
+
+
+        // 商品子種類
+        ItemCheckSubtype = function (p) {
+
+            ItemWarp.empty()
+
+            originSort(d)
+
+            for(let i = 0 ; i < p.length ;i++){
+
+                if(p[i].type_sid==itype && p[i].sub_type_sid==subitype){
+
+                    ItemWarp.append(PRODUCT_B(p[i]))
+                }
+
+            }
+            
+        }
+
+
+        $(".item_type_warp").on("click",".item_typeAll",function(){
+            ItemChecktype(d);
+
+            console.log(itype,subitype);
+        })
+
+
+        $(".item_type_warp").on("click",".item_type01_01,.item_type02_01,.item_type03_01,.item_type04_01",function(){
+
+            subitype = 1;
+
+            ItemCheckSubtype(d);
+
+            console.log(itype,subitype);
+
+
+        })
+        $(".item_type_warp").on("click",".item_type01_02,.item_type02_02,.item_type03_02,.item_type04_02",function(){
+
+            subitype = 2;
+
+            ItemCheckSubtype(d)
+
+            console.log(itype,subitype);
+
+
+        })
+        $(".item_type_warp").on("click",".item_type01_03,.item_type02_03,.item_type03_03,.item_type04_03",function(){
+
+            subitype = 3;
+
+            ItemCheckSubtype(d);
+
+            console.log(itype,subitype);
+
+
+        })
+        $(".item_type_warp").on("click",".item_type01_04,.item_type02_04,.item_type04_04",function(){
+
+            subitype = 4;
+
+            ItemCheckSubtype(d);
+
+            console.log(itype,subitype);
+
+
+        })
+        $(".item_type_warp").on("click",".item_type02_05",function(){
+
+            subitype = 5;
+
+            ItemCheckSubtype(d);
+
+            console.log(itype,subitype);
+
+
+        })
+        $(".item_type_warp").on("click",".item_type02_06",function(){
+
+            subitype = 6;
+
+            ItemCheckSubtype(d);
+
+            console.log(itype,subitype);
+
+
+        })
+        $(".item_type_warp").on("click",".item_type02_07",function(){
+
+            subitype = 7;
+
+            ItemCheckSubtype(d);
+
+            console.log(itype,subitype);
+
+
+        })
+       
+
+     
+
+
+
+
+
+
+
 
 
 

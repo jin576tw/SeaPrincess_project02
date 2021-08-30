@@ -133,8 +133,14 @@
 .product_type_warp{
     min-width: 378px;
     height: 50px;
-    justify-content: space-evenly;
-    align-items: center;
+    /* background-color: red; */
+
+}
+
+.item_type_warp{
+    min-width: 700px;
+    
+
 }
 
 .product_type{
@@ -153,6 +159,7 @@
     height: 100%;
     opacity: 0.5;
     border-bottom: transparent solid 2px;
+    margin: 0 10px;
 
 
 }
@@ -167,6 +174,41 @@
     opacity:1;
     border-bottom: black solid 2px;
     
+}
+
+@media (max-width: 992px) {
+
+    .product_type_warp{
+        min-width: 378px;
+        height: 50px;
+        justify-content: flex-end;
+    
+    }
+
+    .product_type{
+
+        margin: 0 20px 0 0px;
+
+    }
+
+
+
+}
+@media (max-width: 992px) {
+
+    .product_type_warp{
+        min-width: 378px;
+        height: 50px;
+        justify-content: center;
+    
+    }
+
+    .product_type{
+        margin: 0 10px;
+    }
+
+
+
 }
 
 /* 商品排序選擇 */
@@ -541,6 +583,11 @@
 
 }
 
+.TypeLight{
+    opacity: 1;
+    border:solid 1px var(--dark_blue);
+}
+
 .Item_type_icon{
     width: 70px;
     height: 70px;
@@ -569,10 +616,7 @@
     transform: scale(0.75);
 }
 
-.Item_type01{
-    opacity: 1;
-    border:solid 1px var(--dark_blue);
-}
+
 
 @media (max-width: 992px) {
 
@@ -590,10 +634,7 @@
         flex-direction: column;
     }
 
-    .Item_type01{
-        opacity: 1;
-        border:solid 1px var(--dark_blue);
-    }
+
 }
 @media (max-width: 480px) {
 
@@ -611,10 +652,7 @@
         flex-direction: column;
     }
 
-    .Item_type01{
-        opacity: 1;
-        border:solid 1px var(--dark_blue);
-    }
+   
 
 
 }
@@ -629,39 +667,8 @@
 }
 
 
-.item_type_warp{
-    min-width: 700px;
-    height: 50px;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-
-.item_type{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color:black;
-    height: 100%;
-    opacity: 0.5;
-    border-bottom: transparent solid 2px;
 
 
-}
-.item_type:hover{
-    transition: 0.3s;
-    opacity:1;
-    border-bottom: black solid 2px;
-    
-}
 
 
 .Item_Products_warp{
@@ -711,15 +718,6 @@
  
     }
 
-    .item_type{
-        width: 25%;
-        font-size: 1.6rem;
-        display: flex;
-        align-items: baseline
-        
-
-    }
-    
 
     
     .Item_Products_warp{
