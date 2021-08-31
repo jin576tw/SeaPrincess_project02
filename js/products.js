@@ -350,7 +350,7 @@ $(document).ready(function () {
 
             let url = location.pathname + '?Seafood'+tid+hotSort+newSort+p_highSort+ p_lowSort;
 
-            history.pushState({
+            history.pushState({     
                 url: url,
                 title: document.title
             }, document.title, url)
@@ -709,10 +709,10 @@ $(document).ready(function () {
             let p_lowSort = ``
             f == true ? p_lowSort = `&&p_low=trues`:p_lowSort = `&&p_low=false`;
 
-            
-
+    
             let url = location.pathname +'?Item'+tid+sub_tid+hotSort+newSort+p_highSort+ p_lowSort;
 
+            //傳送網址
             history.pushState({
                 url: url,
                 title: document.title
@@ -728,6 +728,7 @@ $(document).ready(function () {
 
             click:function(){
 
+                // 商品參數
                 itype = 1;
                 subitype = '';
                 hot = false
@@ -748,10 +749,10 @@ $(document).ready(function () {
 
                 ItemTypeWarp.html(SUBTYPE)
 
-               
+                // 送入商品    
                 ItemChecktype(d)
 
-
+                // 傳送URL
                 I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
             
                 
@@ -764,6 +765,7 @@ $(document).ready(function () {
 
             click:function(){
 
+                // 商品參數
                 itype = 2;
                 subitype = '';
                 hot = false
@@ -788,8 +790,10 @@ $(document).ready(function () {
                 ItemTypeWarp.html(SUBTYPE)
 
                
-
+                // 送入商品    
                 ItemChecktype(d)
+
+                 // 傳送URL
                 I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                 
@@ -806,6 +810,7 @@ $(document).ready(function () {
 
             click:function(){
 
+                // 商品參數
                 itype = 3;
                 subitype = '';
                 hot = false
@@ -825,9 +830,12 @@ $(document).ready(function () {
                 ItemTypeWarp.html(SUBTYPE)
 
                 
-
+                // 送入商品    
                 ItemChecktype(d)
+
+                 // 傳送URL
                 I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+
 
                 
                 
@@ -842,6 +850,7 @@ $(document).ready(function () {
 
             click:function(){
 
+                 // 商品參數
                 itype = 4;
                 subitype = '';
                 hot = false
@@ -862,7 +871,10 @@ $(document).ready(function () {
                 ItemTypeWarp.html(SUBTYPE)
 
                 
+                // 送入商品    
                 ItemChecktype(d)
+
+                 // 傳送URL
                 I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                 
@@ -898,14 +910,17 @@ $(document).ready(function () {
 
             originSort(d)
 
+            // 商品參數
             subitype = '';
             hot = false
             newTime = false
             p_high = false
             p_low = false
         
-            ItemChecktype(d);
+            // 送入商品    
+            ItemChecktype(d)
 
+            // 傳送URL
             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
 
@@ -919,15 +934,17 @@ $(document).ready(function () {
 
             originSort(d)
 
+            // 商品參數
             subitype = 1;
             hot = false
             newTime = false
             p_high = false
             p_low = false
 
+            // 送入子商品
             ItemCheckSubtype(d);
 
-
+            // 傳送URL
             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
@@ -940,15 +957,19 @@ $(document).ready(function () {
 
             originSort(d)
 
+            // 商品參數
             subitype = 2;
             hot = false
             newTime = false
             p_high = false
             p_low = false
 
-            ItemCheckSubtype(d)
+            // 送入子商品
+            ItemCheckSubtype(d);
 
+            // 傳送URL
             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+
 
             
 
@@ -960,14 +981,17 @@ $(document).ready(function () {
 
             originSort(d)
 
+            // 商品參數
             subitype = 3;
             hot = false
             newTime = false
             p_high = false
             p_low = false
 
+            // 送入子商品
             ItemCheckSubtype(d);
 
+            // 傳送URL
             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
@@ -980,16 +1004,19 @@ $(document).ready(function () {
 
             originSort(d)
 
+            // 商品參數
             subitype = 4;
             hot = false
             newTime = false
             p_high = false
             p_low = false
 
+            
+            // 送入子商品
             ItemCheckSubtype(d);
 
+            // 傳送URL
             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
-
             
 
 
@@ -1000,15 +1027,18 @@ $(document).ready(function () {
 
             originSort(d)
 
+             // 商品參數
             subitype = 5;
             hot = false
             newTime = false
             p_high = false
             p_low = false
 
-            ItemCheckSubtype(d);
+             // 送入子商品
+             ItemCheckSubtype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+             // 傳送URL
+             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1020,14 +1050,17 @@ $(document).ready(function () {
 
             originSort(d)
 
+            // 商品參數
             subitype = 6;
             hot = false
             newTime = false
             p_high = false
             p_low = false
 
+            // 送入子商品
             ItemCheckSubtype(d);
 
+            // 傳送URL
             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
@@ -1040,15 +1073,19 @@ $(document).ready(function () {
 
             originSort(d)
 
+            // 商品參數
             subitype = 7;
             hot = false
             newTime = false
             p_high = false
             p_low = false
 
-            ItemCheckSubtype(d);
+             // 送入子商品
+             ItemCheckSubtype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+             // 傳送URL
+             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+ 
 
             
 
@@ -1076,19 +1113,23 @@ $(document).ready(function () {
                 // 若子分類為空值
                 if(subitype == ''){
 
+                    // 送入商品
                     ItemChecktype(d)
                 
                 }else{
 
+                    // 送入子商品
                     ItemCheckSubtype(d);
 
                 }
 
+                //商品參數
                 hot = true;
                 newTime = false
                 p_high = false
                 p_low = false
 
+                 // 傳送URL
                 I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             }
