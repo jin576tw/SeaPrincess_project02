@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     let SeafoodURL = location.href.substr(-65,8) == '?Seafood';
-    let ItemURL = location.href.substr(-75,5) == '?Item';
+    let ItemURL = location.href.substr(-76,5) == '?Item';
 
     let ItemPage = false;
     let SeafoodPage = false;
