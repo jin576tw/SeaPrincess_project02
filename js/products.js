@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    let SeafoodURL = location.href.substr(-8,8) == '?Seafood';
-    let ItemURL = location.href.substr(-5,5) == '?Item';
+    let SeafoodURL = location.href.substr(-65,8) == '?Seafood';
+    let ItemURL = location.href.substr(-75,5) == '?Item';
 
     let ItemPage = false;
     let SeafoodPage = false;
@@ -45,7 +45,9 @@ $(document).ready(function () {
             $('.Item_select_warp').fadeOut(1)
 
 
-            let url = location.pathname + '?Seafood'
+            let stateURL = '&&tid=000&&hot=false&&new=false&&p_High=false&&p_Low=false'
+
+            let url = location.pathname + '?Seafood' + stateURL
             history.pushState({
                 url: url,
                 title: document.title
@@ -97,7 +99,9 @@ $(document).ready(function () {
             $('.Item_select_warp').fadeIn(500)
 
 
-            let url = location.pathname + '?Item'
+            let stateURL = '&&tid=000&&sub_tid=000&&hot=false&&new=false&&p_High=false&&p_Low=false'
+
+            let url = location.pathname + '?Item' + stateURL
             history.pushState({
                 url: url,
                 title: document.title
@@ -300,8 +304,69 @@ $(document).ready(function () {
             
         }
 
+
+        // 傳送URL
+        let S_sendURL= function(a,b,c,d,e) {
+
+            // 種類ID
+            let tid = 0 
+
+            tid = tid + a;
+
+            if(tid < 10){
+                tid = '&&tid=00'+tid
+               
+
+            }else if(tid < 100){
+                tid = '&&tid=0'+tid
+
+
+            }else{
+
+                tid = '&&tid='+a
+            
+            }
+
+            // 熱銷狀態
+            let hotSort = ``
+            b == true ? hotSort = `&&hot=trues`:hotSort = `&&hot=false`;
+            
+          
+            // 新商品狀態
+            let newSort = ``
+            c == true ? newSort = `&&new=trues`:newSort = `&&new=false`;
+
+         
+            // 價格由高到低
+            let p_HighSort =``
+            d == true ? p_HighSort = `&&p_High=trues`:p_HighSort = `&&p_High=false`;
+
+            
+            // 價格由低到高
+            let p_LowSort = ``
+            e == true ? p_LowSort = `&&p_Low=trues`:p_LowSort = `&&p_Low=false`;
+
+            
+
+            let url = location.pathname + '?Seafood'+tid+hotSort+newSort+p_HighSort+ p_LowSort;
+
+            history.pushState({
+                url: url,
+                title: document.title
+            }, document.title, url)
+
+            return url
+
+        }
+
+
+
         // 設定判斷參數
         let s_type = ''
+        let hot = false
+        let newTime = false
+        let p_High = false
+        let p_Low = false
        
         $('.Ａll_S_type').on({
 
@@ -310,11 +375,18 @@ $(document).ready(function () {
                 SeafoodWarp.empty()
 
                 s_type = ''
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
 
                 // 回歸原始排序
                 originSort(d)
 
                 SeafoodTypeCheck(d)
+
+                // 傳送狀態URL
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
             
             }
 
@@ -326,11 +398,18 @@ $(document).ready(function () {
                 SeafoodWarp.empty()
 
                 s_type = 1;
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
 
                  // 回歸原始排序
                  originSort(d)
 
                 SeafoodTypeCheck(d)
+
+                // 傳送狀態URL
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
                 
                
             }
@@ -343,11 +422,18 @@ $(document).ready(function () {
                 SeafoodWarp.empty()
 
                 s_type = 2;
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
 
                 // 回歸原始排序
                 originSort(d)
 
                 SeafoodTypeCheck(d)
+
+                // 傳送狀態URL
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
 
              
 
@@ -362,11 +448,18 @@ $(document).ready(function () {
                 SeafoodWarp.empty()
 
                 s_type = 3;
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
 
                 // 回歸原始排序
                 originSort(d)
 
                 SeafoodTypeCheck(d)
+
+                // 傳送狀態URL
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
 
         
             
@@ -379,7 +472,7 @@ $(document).ready(function () {
 
     
         // 熱銷商品
-        $('.hot_list').on({
+        $('.hot_slist').on({
 
             click:function () {
 
@@ -395,13 +488,23 @@ $(document).ready(function () {
 
                 // 判斷商品種類
                 SeafoodTypeCheck(d)
+
+                hot = true
+                newTime = false
+                p_High = false
+                p_Low = false
+
+                 // 傳送狀態URL
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
             
             }
 
         })
 
+        
+
         // 價格由低到高
-        $('.priceLow_list').on({
+        $('.priceLow_slist').on({
 
             click:function () {
 
@@ -416,6 +519,13 @@ $(document).ready(function () {
                 // 判斷商品種類
                 SeafoodTypeCheck(d)
 
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = true
+
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+
             
             
             }
@@ -423,7 +533,7 @@ $(document).ready(function () {
         })
 
         // // 價格高到低
-        $('.priceHigh_list').on({
+        $('.priceHigh_slist').on({
 
             click:function () {
 
@@ -437,14 +547,24 @@ $(document).ready(function () {
 
                 // 判斷商品種類
                 SeafoodTypeCheck(d)
+
+                hot = false
+                newTime = false
+                p_High = true
+                p_Low = false
+
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+
             
             
             }
 
         })
 
+     
+
         // 商品建立時間排序
-        $('.new_list').on({
+        $('.new_slist').on({
 
             click:function () {
 
@@ -459,6 +579,14 @@ $(document).ready(function () {
                 
                 // 判斷商品種類
                 SeafoodTypeCheck(d)
+
+
+                hot = false
+                newTime = true
+                p_High = false
+                p_Low = false
+
+                S_sendURL(s_type,hot,newTime,p_High,p_Low)
 
                
             
@@ -495,6 +623,11 @@ $(document).ready(function () {
         itype = 1;
         // 商品子分類參數
         subitype = '';
+
+        let hot = false
+        let newTime = false
+        let p_High = false
+        let p_Low = false
        
 
         ItemChecktype(d)
@@ -516,6 +649,79 @@ $(document).ready(function () {
             
         }
 
+         // 傳送URL
+         let I_sendURL = function(a,b,c,d,e,f) {
+
+            // 母種類ID
+            let tid = 0 
+
+            tid = tid + a;
+
+            if(tid < 10){
+                tid = '&&tid=00'+tid
+               
+
+            }else if(tid < 100){
+                tid = '&&tid=0'+tid
+
+
+            }else{
+
+                tid = '&&tid='+a
+            
+            }
+
+            // 子種類ID
+            let sub_tid = 0 
+
+            sub_tid = sub_tid + b;
+
+            if(sub_tid  < 10){
+                sub_tid  = '&&sub_tid=00'+ sub_tid 
+               
+
+            }else if( sub_tid  < 100){
+                sub_tid  = '&&sub_tid=0'+ sub_tid 
+
+
+            }else{
+
+                sub_tid  = '&&sub_tid='+b
+            
+            }
+
+            // 熱銷狀態
+            let hotSort = ``
+            c == true ? hotSort = `&&hot=trues`:hotSort = `&&hot=false`;
+            
+          
+            // 新商品狀態
+            let newSort = ``
+            d == true ? newSort = `&&new=trues`:newSort = `&&new=false`;
+
+         
+            // 價格由高到低
+            let p_HighSort =``
+            e == true ? p_HighSort = `&&p_High=trues`:p_HighSort = `&&p_High=false`;
+
+            
+            // 價格由低到高
+            let p_LowSort = ``
+            f == true ? p_LowSort = `&&p_Low=trues`:p_LowSort = `&&p_Low=false`;
+
+            
+
+            let url = location.pathname +'?Item'+tid+sub_tid+hotSort+newSort+p_HighSort+ p_LowSort;
+
+            history.pushState({
+                url: url,
+                title: document.title
+            }, document.title, url)
+
+            return url
+
+        }
+
 
     /// 商品母種類
         $('.Item_type01').on({
@@ -524,6 +730,11 @@ $(document).ready(function () {
 
                 itype = 1;
                 subitype = '';
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
+               
                 ItemWarp.empty()
 
                 originSort(d)
@@ -540,6 +751,8 @@ $(document).ready(function () {
                
                 ItemChecktype(d)
 
+
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
             
                 
             }
@@ -553,6 +766,10 @@ $(document).ready(function () {
 
                 itype = 2;
                 subitype = '';
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
 
                 ItemWarp.empty()
 
@@ -573,6 +790,7 @@ $(document).ready(function () {
                
 
                 ItemChecktype(d)
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
                 
 
@@ -590,6 +808,10 @@ $(document).ready(function () {
 
                 itype = 3;
                 subitype = '';
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
 
                 ItemWarp.empty()
 
@@ -605,6 +827,7 @@ $(document).ready(function () {
                 
 
                 ItemChecktype(d)
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
                 
                 
@@ -621,6 +844,10 @@ $(document).ready(function () {
 
                 itype = 4;
                 subitype = '';
+                hot = false
+                newTime = false
+                p_High = false
+                p_Low = false
 
                 ItemWarp.empty()
 
@@ -636,6 +863,7 @@ $(document).ready(function () {
 
                 
                 ItemChecktype(d)
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
                 
                 
@@ -671,8 +899,14 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = '';
-            
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
+        
             ItemChecktype(d);
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
 
             
@@ -686,8 +920,15 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = 1;
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
 
             ItemCheckSubtype(d);
+
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
             
 
@@ -700,8 +941,14 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = 2;
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
 
             ItemCheckSubtype(d)
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
             
 
@@ -714,8 +961,14 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = 3;
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
 
             ItemCheckSubtype(d);
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
             
 
@@ -728,8 +981,14 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = 4;
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
 
             ItemCheckSubtype(d);
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
             
 
@@ -742,8 +1001,14 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = 5;
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
 
             ItemCheckSubtype(d);
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
             
 
@@ -756,8 +1021,14 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = 6;
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
 
             ItemCheckSubtype(d);
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
             
 
@@ -770,8 +1041,14 @@ $(document).ready(function () {
             originSort(d)
 
             subitype = 7;
+            hot = false
+            newTime = false
+            p_High = false
+            p_Low = false
 
             ItemCheckSubtype(d);
+
+            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
 
             
 
@@ -783,7 +1060,7 @@ $(document).ready(function () {
         ///商品排序
        
          // 熱銷商品
-         $('.hot_list').on({
+         $('.hot_ilist').on({
 
             click:function () {
 
@@ -807,12 +1084,19 @@ $(document).ready(function () {
 
                 }
 
+                hot = true;
+                newTime = false
+                p_High = false
+                p_Low = false
+
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+
             }
 
         })
 
         // 價格由低到高
-        $('.priceLow_list').on({
+        $('.priceLow_ilist').on({
 
             click:function () {
 
@@ -836,6 +1120,13 @@ $(document).ready(function () {
                 }
 
 
+                hot = false;
+                newTime = false
+                p_High = false
+                p_Low = true
+
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+
               
 
             
@@ -845,7 +1136,7 @@ $(document).ready(function () {
         })
 
         // // 價格高到低
-        $('.priceHigh_list').on({
+        $('.priceHigh_ilist').on({
 
             click:function () {
 
@@ -870,6 +1161,13 @@ $(document).ready(function () {
                 }
 
 
+                hot = false;
+                newTime = false
+                p_High = true
+                p_Low = false
+
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+
                
             
             
@@ -878,7 +1176,7 @@ $(document).ready(function () {
         })
 
         // 商品建立時間排序
-        $('.new_list').on({
+        $('.new_ilist').on({
 
             click:function () {
 
@@ -902,6 +1200,14 @@ $(document).ready(function () {
 
                 }
                 
+
+                hot = false;
+                newTime = true
+                p_High = false
+                p_Low = false
+
+                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+
 
                
             
