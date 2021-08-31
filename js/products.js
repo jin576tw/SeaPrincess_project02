@@ -45,7 +45,7 @@ $(document).ready(function () {
             $('.Item_select_warp').fadeOut(1)
 
 
-            let stateURL = '&&tid=000&&hot=false&&new=false&&p_High=false&&p_Low=false'
+            let stateURL = '&&tid=000&&hot=false&&new=false&&p_high=false&&p_low=false'
 
             let url = location.pathname + '?Seafood' + stateURL
             history.pushState({
@@ -99,7 +99,7 @@ $(document).ready(function () {
             $('.Item_select_warp').fadeIn(500)
 
 
-            let stateURL = '&&tid=000&&sub_tid=000&&hot=false&&new=false&&p_High=false&&p_Low=false'
+            let stateURL = '&&tid=000&&sub_tid=000&&hot=false&&new=false&&p_high=false&&p_low=false'
 
             let url = location.pathname + '?Item' + stateURL
             history.pushState({
@@ -338,17 +338,17 @@ $(document).ready(function () {
 
          
             // 價格由高到低
-            let p_HighSort =``
-            d == true ? p_HighSort = `&&p_High=trues`:p_HighSort = `&&p_High=false`;
+            let p_highSort =``
+            d == true ? p_highSort = `&&p_high=trues`:p_highSort = `&&p_high=false`;
 
             
             // 價格由低到高
-            let p_LowSort = ``
-            e == true ? p_LowSort = `&&p_Low=trues`:p_LowSort = `&&p_Low=false`;
+            let p_lowSort = ``
+            e == true ? p_lowSort = `&&p_low=trues`:p_lowSort = `&&p_low=false`;
 
             
 
-            let url = location.pathname + '?Seafood'+tid+hotSort+newSort+p_HighSort+ p_LowSort;
+            let url = location.pathname + '?Seafood'+tid+hotSort+newSort+p_highSort+ p_lowSort;
 
             history.pushState({
                 url: url,
@@ -365,8 +365,8 @@ $(document).ready(function () {
         let s_type = ''
         let hot = false
         let newTime = false
-        let p_High = false
-        let p_Low = false
+        let p_high = false
+        let p_low = false
        
         $('.Ａll_S_type').on({
 
@@ -377,8 +377,8 @@ $(document).ready(function () {
                 s_type = ''
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                 // 回歸原始排序
                 originSort(d)
@@ -386,7 +386,7 @@ $(document).ready(function () {
                 SeafoodTypeCheck(d)
 
                 // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
             
             }
 
@@ -400,8 +400,8 @@ $(document).ready(function () {
                 s_type = 1;
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                  // 回歸原始排序
                  originSort(d)
@@ -409,7 +409,7 @@ $(document).ready(function () {
                 SeafoodTypeCheck(d)
 
                 // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
                 
                
             }
@@ -424,8 +424,8 @@ $(document).ready(function () {
                 s_type = 2;
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                 // 回歸原始排序
                 originSort(d)
@@ -433,7 +433,7 @@ $(document).ready(function () {
                 SeafoodTypeCheck(d)
 
                 // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
 
              
 
@@ -450,8 +450,8 @@ $(document).ready(function () {
                 s_type = 3;
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                 // 回歸原始排序
                 originSort(d)
@@ -459,7 +459,7 @@ $(document).ready(function () {
                 SeafoodTypeCheck(d)
 
                 // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
 
         
             
@@ -491,11 +491,11 @@ $(document).ready(function () {
 
                 hot = true
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                  // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
             
             }
 
@@ -521,10 +521,10 @@ $(document).ready(function () {
 
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = true
+                p_high = false
+                p_low = true
 
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
 
             
             
@@ -550,10 +550,10 @@ $(document).ready(function () {
 
                 hot = false
                 newTime = false
-                p_High = true
-                p_Low = false
+                p_high = true
+                p_low = false
 
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
 
             
             
@@ -583,10 +583,10 @@ $(document).ready(function () {
 
                 hot = false
                 newTime = true
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
-                S_sendURL(s_type,hot,newTime,p_High,p_Low)
+                S_sendURL(s_type,hot,newTime,p_high,p_low)
 
                
             
@@ -626,8 +626,8 @@ $(document).ready(function () {
 
         let hot = false
         let newTime = false
-        let p_High = false
-        let p_Low = false
+        let p_high = false
+        let p_low = false
        
 
         ItemChecktype(d)
@@ -701,17 +701,17 @@ $(document).ready(function () {
 
          
             // 價格由高到低
-            let p_HighSort =``
-            e == true ? p_HighSort = `&&p_High=trues`:p_HighSort = `&&p_High=false`;
+            let p_highSort =``
+            e == true ? p_highSort = `&&p_high=trues`:p_highSort = `&&p_high=false`;
 
             
             // 價格由低到高
-            let p_LowSort = ``
-            f == true ? p_LowSort = `&&p_Low=trues`:p_LowSort = `&&p_Low=false`;
+            let p_lowSort = ``
+            f == true ? p_lowSort = `&&p_low=trues`:p_lowSort = `&&p_low=false`;
 
             
 
-            let url = location.pathname +'?Item'+tid+sub_tid+hotSort+newSort+p_HighSort+ p_LowSort;
+            let url = location.pathname +'?Item'+tid+sub_tid+hotSort+newSort+p_highSort+ p_lowSort;
 
             history.pushState({
                 url: url,
@@ -732,8 +732,8 @@ $(document).ready(function () {
                 subitype = '';
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
                
                 ItemWarp.empty()
 
@@ -752,7 +752,7 @@ $(document).ready(function () {
                 ItemChecktype(d)
 
 
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
             
                 
             }
@@ -768,8 +768,8 @@ $(document).ready(function () {
                 subitype = '';
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                 ItemWarp.empty()
 
@@ -790,7 +790,7 @@ $(document).ready(function () {
                
 
                 ItemChecktype(d)
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                 
 
@@ -810,8 +810,8 @@ $(document).ready(function () {
                 subitype = '';
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                 ItemWarp.empty()
 
@@ -827,7 +827,7 @@ $(document).ready(function () {
                 
 
                 ItemChecktype(d)
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                 
                 
@@ -846,8 +846,8 @@ $(document).ready(function () {
                 subitype = '';
                 hot = false
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
                 ItemWarp.empty()
 
@@ -863,7 +863,7 @@ $(document).ready(function () {
 
                 
                 ItemChecktype(d)
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                 
                 
@@ -901,12 +901,12 @@ $(document).ready(function () {
             subitype = '';
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
         
             ItemChecktype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
 
             
@@ -922,13 +922,13 @@ $(document).ready(function () {
             subitype = 1;
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
 
             ItemCheckSubtype(d);
 
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -943,12 +943,12 @@ $(document).ready(function () {
             subitype = 2;
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
 
             ItemCheckSubtype(d)
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -963,12 +963,12 @@ $(document).ready(function () {
             subitype = 3;
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
 
             ItemCheckSubtype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -983,12 +983,12 @@ $(document).ready(function () {
             subitype = 4;
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
 
             ItemCheckSubtype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1003,12 +1003,12 @@ $(document).ready(function () {
             subitype = 5;
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
 
             ItemCheckSubtype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1023,12 +1023,12 @@ $(document).ready(function () {
             subitype = 6;
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
 
             ItemCheckSubtype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1043,12 +1043,12 @@ $(document).ready(function () {
             subitype = 7;
             hot = false
             newTime = false
-            p_High = false
-            p_Low = false
+            p_high = false
+            p_low = false
 
             ItemCheckSubtype(d);
 
-            I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1086,10 +1086,10 @@ $(document).ready(function () {
 
                 hot = true;
                 newTime = false
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             }
 
@@ -1122,10 +1122,10 @@ $(document).ready(function () {
 
                 hot = false;
                 newTime = false
-                p_High = false
-                p_Low = true
+                p_high = false
+                p_low = true
 
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
               
 
@@ -1163,10 +1163,10 @@ $(document).ready(function () {
 
                 hot = false;
                 newTime = false
-                p_High = true
-                p_Low = false
+                p_high = true
+                p_low = false
 
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                
             
@@ -1203,10 +1203,10 @@ $(document).ready(function () {
 
                 hot = false;
                 newTime = true
-                p_High = false
-                p_Low = false
+                p_high = false
+                p_low = false
 
-                I_sendURL(itype,subitype,hot,newTime,p_High,p_Low)
+                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
 
                
