@@ -256,7 +256,7 @@ select {
 
 .product{
    max-height: 400px;
-   margin: 0px 0 50px 0;
+   margin: 0px 0 30px 0;
 
 }
 .product_intro{
@@ -514,7 +514,7 @@ select {
 @media (max-width: 480px) {
 
     .product{
-        margin: 0px 0 30px 0;
+        margin: 0px 0 20px 0;
         max-height: 300px;
      
      }

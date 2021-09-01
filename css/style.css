@@ -801,7 +801,7 @@
 }
 
 .homeProducts_warp{
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 
@@ -841,7 +841,7 @@
    
     .view_more_btn{
         cursor: pointer;
-        margin: 0px auto 0 auto;
+        margin: 20px auto 0px auto;
         text-align: center;
         color:rgba(29, 30, 30, 0.55);
         width: 140px;
