@@ -3,6 +3,8 @@ $(document).ready(function () {
 
     let ItemURL = location.href.substr(-10,1) == "I";
 
+    let EachProductsWarp = $('.Each_products_warp')
+
     ///////////////////////釣具商品載入////////////////////////////////
     if(ItemURL){
 
@@ -13,7 +15,6 @@ $(document).ready(function () {
             let ProrductTitle = $('.product_intro_title h1');
             let ProductMainPic =$('.main_product_pic img');
             let ProductPriceWarp = $('.product_intro_option_warp');
-            let Productleft = $('.product_left p');
             let ProductInfo = $('.IntroProduct_content_text')
 
              for(let i= 0 ; i < d.length ;i++ ){
@@ -80,8 +81,7 @@ $(document).ready(function () {
                     ProductPriceWarp.append(ProductOption+ProductPrice)
 
 
-                     // 商品庫存
-                     Productleft.text(d[i].left)
+                     
 
                       // 商品描述
 
@@ -192,6 +192,24 @@ $(document).ready(function () {
 
 
             }
+
+           
+            // 相關商品
+            let rd = []
+
+            randomProuducts(4,d,rd)
+    
+            // 依照商品時間排序
+            originSort(rd)
+    
+            for(let i = 0 ; i < rd.length ;i++){ 
+                // 送隨機商品上去
+                EachProductsWarp.append(PRODUCT_B(rd[i]))
+    
+            }
+
+        
+            
             
 
         })
@@ -208,7 +226,6 @@ $(document).ready(function () {
             let ProrductTitle = $('.product_intro_title h1');
             let ProductMainPic =$('.main_product_pic img');
             let ProductPriceWarp = $('.product_intro_option_warp');
-            let Productleft = $('.product_left p');
             let ProductInfo = $('.IntroProduct_content_text')
 
             let AddBtnLG = $('.add_btn_lg');
@@ -254,7 +271,12 @@ $(document).ready(function () {
                     
 
                     // 商品庫存
-                    Productleft.text(d[i].left)
+
+                    let Productleft = `<div class="product_left">
+                                            <p>${d[i].left}</p>
+                                        </div>`
+                   
+                    $('.product_countBtn_warp').append(Productleft)
 
                     if(d[i].left==0){
 
@@ -380,6 +402,20 @@ $(document).ready(function () {
 
                 }
 
+            }
+
+            // 相關商品
+            let rd = []
+
+            randomProuducts(4,d,rd)
+    
+            // 依照商品時間排序
+            originSort(rd)
+    
+            for(let i = 0 ; i < rd.length ;i++){ 
+                // 送隨機商品上去
+                EachProductsWarp.append(PRODUCT(rd[i]))
+    
             }
         
         })
