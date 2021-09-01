@@ -178,6 +178,56 @@ $(document).ready(function () {
 
     })
 
+    let HOMESEAFOOD = $('.homeSeafood_warp')
+    let HOMEITEM = $('.homeItem_warp')
+
+    $.get("../JSON/Seafood.json", function (data) {
+
+        let d = data;
+
+        //新隨機商品資料
+        let rd = []
+
+        //商品隨機產生
+        randomProuducts(8,d,rd)
+
+        // 依照商品時間排序
+        timeSort(rd)
+
+
+        for(let i = 0 ; i < rd.length ;i++){ 
+            // 送隨機商品上去
+            HOMESEAFOOD.append(PRODUCT(rd[i]))
+
+        }
+        
+
+
+
+    })
+
+
+    $.get("../JSON/Item.json", function (data) {
+
+        let d = data;
+
+        let rd = []
+
+        randomProuducts(8,d,rd)
+
+        // 依照商品時間排序
+        timeSort(rd)
+
+        for(let i = 0 ; i < rd.length ;i++){ 
+            // 送隨機商品上去
+            HOMEITEM.append(PRODUCT_B(rd[i]))
+
+        }
+
+
+
+    })
+
 
 
 

@@ -66,41 +66,143 @@
 <script src="../js/common.js"></script>
 
 
-<button onclick="hot()">熱銷</button>
-<button>高低</button>
-<button>低高</button>
 
 
 
 <script>
+
+    var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var result = [ ];
+     var ranNum = 5; 
+    for (var i = 0; i < ranNum; i++) { 
+        var ran = Math.floor(Math.random() * (arr.length - i)); 
+        if(result.includes(arr[ran])){ 
+            continue; 
+        } 
+        result.push(arr[ran]); 
+        arr[ran] = arr[arr.length - i - 1]; 
+    }; 
+
+    // console.log(result);
+    
 
 
     $.get("../JSON/Seafood.json", function (data) {
 
         let d = data;
 
-     
-        function hot(){
+        let rd = []
 
 
+        function randomProuducts(num){
 
-            for(let i = 0 ; i < d.length ; i++){
+            let newArr = []
 
-                d = d.sort(function (a, b) {
-                            return b.left - a.left || b.hot - a.hot
-                })
+            for(let i = 0 ; i < d.length ;i++){  
 
-
-                let test = '熱銷：'+data[i].hot+' ,ID:'+data[i].pid + ','+ data[i].price+'元,剩下'+data[i].left+"隻,時間："+ d[i].create_at;
+                if(d[i].left != 0 || typeof d[i].left != 'number'){
 
 
-                console.log(test);
-
+                    newArr.push(d[i])
+                    
+            
+                }
 
             }
 
+            for(let j = 0 ; j < num ; j++){ 
+
+                let ran = Math.floor(Math.random() * (d.length - j)); 
+
+                if(rd.includes(d[ran]) ){ 
+                    continue; 
+                } 
+
+                rd.push(d[ran]); 
+
+                d[ran] = d[d.length - j - 1];     
+                
+
+            }
+
+            return rd
 
         }
+
+
+        randomProuducts(5)
+
+        console.log(rd);
+
+      
+
+        // console.log(newArr);
+
+
+
+
+        // function randomProuducts(num,rArr,arr){
+
+        //     for(let i = 0 ; i < num ;i++){ 
+
+    
+
+        //             let ran = Math.floor(Math.random() * (arr.length - i)); 
+
+        //             if(rArr.includes(arr[ran]) ){ 
+        //                 continue; 
+        //             } 
+
+        //             rArr.push(arr[ran]); 
+
+        //             console.log(rArr[i].left);
+
+        //             arr[ran] = arr[arr.length - i - 1];     
+
+
+
+        //             return rArr
+
+     
+
+               
+        //     }
+
+            
+        // }
+       
+        
+
+        // randomProuducts(4,rd,d)
+
+       
+        // console.log(rd);
+
+
+        
+
+        
+        // for(let i = 0 ; i < d.length ; i++){
+
+
+           
+        //     if(randomArr.includes(randomArr[i].pid==6)){
+
+        //         console.log(true);
+
+        //     }else{
+        //         console.log(false);
+        //     }
+
+
+
+           
+          
+
+            
+        // }
+
+     
        
 
 
@@ -122,16 +224,28 @@
 
 
 
+     // function hot(){
 
 
 
+        //     for(let i = 0 ; i < d.length ; i++){
+
+        //         d = d.sort(function (a, b) {
+        //                     return b.left - a.left || b.hot - a.hot
+        //         })
 
 
+        //         let test = '熱銷：'+data[i].hot+' ,ID:'+data[i].pid + ','+ data[i].price+'元,剩下'+data[i].left+"隻,時間："+ d[i].create_at;
 
 
+        //         console.log(test);
 
 
+        //     }
 
+
+        // }
+       
 
 
 

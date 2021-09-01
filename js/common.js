@@ -336,6 +336,45 @@ function priceDownSort(p) {
 }
 
 
+//商品隨機產生
+function randomProuducts(num,p,rp){
+
+    let newArr = []
+
+    // 先抓還有庫存的商品  
+    for(let i = 0 ; i < p.length ;i++){  
+
+        if(p[i].left != 0 || typeof p[i].left != 'number'){
+
+
+            newArr.push(p[i])
+            
+    
+        }
+
+    }
+
+    // 在抓指定數目的亂數
+    for(let j = 0 ; j < num ; j++){ 
+
+        let ran = Math.floor(Math.random() * (newArr.length - j)); 
+
+        if(rp.includes(newArr[ran]) ){ 
+            continue; 
+        } 
+
+        rp.push(newArr[ran]); 
+
+        newArr[ran] = newArr[newArr.length - j - 1];     
+        
+
+    }
+
+    return rp
+
+}
+
+
 
 
 // 商品加入購物車效果
