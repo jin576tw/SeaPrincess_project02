@@ -130,18 +130,46 @@
     
     
 }
+
+@media (max-width: 992px) {
+
+    .Products_categeroy_warp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-top: 20px;
+        
+    }
+
+
+
+}
+
+
+@media (max-width: 480px) {
+
+
+    .Products_categeroy_warp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-end;
+        margin-top: 20px;
+        
+    }
+
+
+}
+
+/*//////商品種類/////// */
 .product_type_warp{
-    min-width: 378px;
+    display: flex;
     height: 50px;
     /* background-color: red; */
 
 }
 
-.item_type_warp{
-    min-width: 700px;
-    
-
-}
 
 .product_type{
     cursor: pointer;
@@ -176,35 +204,54 @@
     
 }
 
+.RWD_type{
+    display: none;
+}
+
 @media (max-width: 992px) {
 
     .product_type_warp{
-        min-width: 378px;
-        height: 50px;
+        margin-right: 20px;
+        height: 30px;
         justify-content: flex-end;
     
     }
 
     .product_type{
+        display: none;
+      
+    }
 
-        margin: 0 20px 0 0px;
+    .RWD_type{
+        display: block;
+        font-size: 1.6rem;
+        height: 100%;
+        width: 200px;
+       
 
     }
 
 
 
 }
-@media (max-width: 992px) {
+@media (max-width: 480px) {
 
     .product_type_warp{
-        min-width: 378px;
-        height: 50px;
+        margin: 0 auto;
+        width: 90%;
+        height: 40px;
         justify-content: center;
     
     }
 
     .product_type{
-        margin: 0 10px;
+        display: none;
+    }
+
+
+    .RWD_type{
+        width: 100%;
+        display: block;
     }
 
 
@@ -288,40 +335,17 @@
     background-color: #dedede
 }
 
-@media (max-width: 992px) {
 
-    .Products_categeroy_warp{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items:flex-end;
-        margin-top: 30px;
-        
-    }
-
-   
-
-
-}
 
 @media (max-width: 480px) {
 
-
-    .Products_categeroy_warp{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items:flex-end;
-        margin-top: 30px;
-        
-    }
 
     .Products_status_warp{
    
         height: 50px;  
         align-items: center;
         margin-top: 15px;
-        margin-right: 20px;
+        margin-right:20px;
     }
 
     .product_status{
@@ -532,14 +556,14 @@
 
 @media (max-width: 992px) {
     .Seafood_Products_warp{
-        margin-top: 20px;
+        margin-top: 30px;
         padding-bottom: 80px;
     }
 
 }
 @media (max-width: 480px) {
     .Seafood_Products_warp{
-        margin-top: 30px;
+        margin-top: 20px;
         padding-bottom: 80px;
     }
 
@@ -553,8 +577,11 @@
 }
 
 /* 釣魚用具分類 */
+
+.Item_type{
+    margin: 80px 0 20px 0;
+}
 .Item_type_content{
-    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -638,6 +665,10 @@
 }
 @media (max-width: 480px) {
 
+    .Item_type{
+        margin: 60px 0 20px 0;
+    }
+
     .Item_type_box{
         opacity: 0.3;
         cursor: pointer;
@@ -653,8 +684,6 @@
     }
 
    
-
-
 }
 
 
@@ -705,19 +734,6 @@
         margin-top: 30px;
         
     }
-
-    .item_type_warp{
-
-        min-width: 0;
-        width: 98%;
-        margin: 0 auto;
-        height: 70px;
-        justify-content: flex-start;
-        align-items: center;
-        
- 
-    }
-
 
     
     .Item_Products_warp{
