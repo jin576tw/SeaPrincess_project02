@@ -216,5 +216,56 @@ $(document).ready(function () {
 
 
 
+    // 相關商品載入
+    let OtherSeafoodWarp = $('.Other_Seafood_warp')
+    let OtherItemWarp = $('.Other_Item_warp')
+
+    $.get("../JSON/Seafood.json", function (data) {
+
+        let d = data;
+
+        //新隨機商品資料
+        let rd = []
+
+        //商品隨機產生
+        randomProuducts(4,d,rd)
+
+        // 依照商品時間排序
+        timeSort(rd)
+
+
+        for(let i = 0 ; i < rd.length ;i++){ 
+            // 送隨機商品上去
+            OtherSeafoodWarp.append(PRODUCT(rd[i]))
+
+        }
+        
+
+
+
+    })
+
+
+    $.get("../JSON/Item.json", function (data) {
+
+        let d = data;
+
+        let rd = []
+
+        randomProuducts(4,d,rd)
+
+        // 依照商品時間排序
+        timeSort(rd)
+
+        for(let i = 0 ; i < rd.length ;i++){ 
+            // 送隨機商品上去
+            OtherItemWarp.append(PRODUCT_B(rd[i]))
+
+        }
+
+
+
+    })
+
 
 })
