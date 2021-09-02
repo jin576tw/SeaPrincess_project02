@@ -113,11 +113,9 @@ $(document).ready(function () {
 
 
         //加入購物車
-        $(".add_btn").on({
+        PROPUCTSWARP.on("click",".add_btn",function(){
 
-
-            click: function(){
-
+        
                 let Location =  location.href
 
                 let Cart_Page = Location.substr(-9,9) == 'cart.html'
@@ -301,7 +299,7 @@ $(document).ready(function () {
                     
                  } 
             
-            }
+            
         });
 
 
@@ -413,10 +411,12 @@ $(document).ready(function () {
         $(".list_item_warps").on("click",".item_delete",function(){
 
             // 節點刪除
-            let $navItem = $(this).parent().parent().parent()
-            let navItemID = $navItem.attr('Item-ID')
+            let navItem = $(this).parent().parent().parent()
+            let navItemID = navItem.attr('Item-ID')
 
-            $navItem.remove()//視覺刪除
+            
+
+            navItem.remove()//視覺刪除
             alert('商品已刪除')
 
 
@@ -493,10 +493,9 @@ $(document).ready(function () {
          $(".list_item_warps").on("click",".countBtn_add ",function(){
 
             //當前所在的ID
-            $navItem = $(this).parent().parent().parent().parent();
-            let navItemID = $navItem.attr('Item-ID')
+            let navItem = $(this).parent().parent().parent().parent();
+            let navItemID = navItem.attr('Item-ID')
 
-   
             let cookieStr = $.cookie('Cart');
             let cookieArr = JSON.parse(cookieStr);
             
@@ -576,8 +575,8 @@ $(document).ready(function () {
          $(".list_item_warps").on("click",".countBtn_minus ",function(){
 
             //當前所在的ID
-            $navItem = $(this).parent().parent().parent().parent()
-            let navItemID = $navItem.attr('Item-ID')
+            let navItem = $(this).parent().parent().parent().parent()
+            let navItemID = navItem.attr('Item-ID')
 
      
 
@@ -626,7 +625,7 @@ $(document).ready(function () {
                     }
 
                     if(cookieArr[i].count <= 0){
-                        $navItem.remove()
+                        navItem.remove()
                         alert('已刪除商品')
                         let delete_price = $oldtotal_price - cookieArr[i].Item_price
                         

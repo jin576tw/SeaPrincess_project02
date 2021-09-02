@@ -367,105 +367,124 @@ $(document).ready(function () {
         let newTime = false
         let p_high = false
         let p_low = false
-       
-        $('.Ａll_S_type').on({
 
-            click:function () {
+        if ($(window).width() > 992){
 
-                SeafoodWarp.empty()
+            // 網頁版
+            $('.Ａll_S_type').on({
 
-                s_type = ''
-                hot = false
-                newTime = false
-                p_high = false
-                p_low = false
+                click:function () {
 
-                // 回歸原始排序
-                originSort(d)
+                    SeafoodWarp.empty()
 
-                SeafoodTypeCheck(d)
+                    s_type = ''
+                    hot = false
+                    newTime = false
+                    p_high = false
+                    p_low = false
 
-                // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
-            
-            }
+                    // 回歸原始排序
+                    originSort(d)
 
-        })
-        $('.s_type01').on({
+                    SeafoodTypeCheck(d)
 
-            click:function () {
-
-                SeafoodWarp.empty()
-
-                s_type = 1;
-                hot = false
-                newTime = false
-                p_high = false
-                p_low = false
-
-                 // 回歸原始排序
-                 originSort(d)
-
-                SeafoodTypeCheck(d)
-
-                // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    // 傳送狀態URL
+                    S_sendURL(s_type,hot,newTime,p_high,p_low)
                 
-               
-            }
+                }
 
-        })
-        $('.s_type02').on({
+            })
+            $('.s_type01').on({
 
-            click:function () {
+                click:function () {
 
-                SeafoodWarp.empty()
+                    SeafoodWarp.empty()
 
-                s_type = 2;
-                hot = false
-                newTime = false
-                p_high = false
-                p_low = false
+                    s_type = 1;
+                    hot = false
+                    newTime = false
+                    p_high = false
+                    p_low = false
 
-                // 回歸原始排序
-                originSort(d)
+                    // 回歸原始排序
+                    originSort(d)
 
-                SeafoodTypeCheck(d)
+                    SeafoodTypeCheck(d)
 
-                // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    // 傳送狀態URL
+                    S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    
+                
+                }
 
-             
+            })
+            $('.s_type02').on({
+
+                click:function () {
+
+                    SeafoodWarp.empty()
+
+                    s_type = 2;
+                    hot = false
+                    newTime = false
+                    p_high = false
+                    p_low = false
+
+                    // 回歸原始排序
+                    originSort(d)
+
+                    SeafoodTypeCheck(d)
+
+                    // 傳送狀態URL
+                    S_sendURL(s_type,hot,newTime,p_high,p_low)
+
+                
 
 
-            }
+                }
 
-        })
-        $('.s_type03').on({
+            })
+            $('.s_type03').on({
 
-            click:function () {
+                click:function () {
 
-                SeafoodWarp.empty()
+                    SeafoodWarp.empty()
 
-                s_type = 3;
-                hot = false
-                newTime = false
-                p_high = false
-                p_low = false
+                    s_type = 3;
+                    hot = false
+                    newTime = false
+                    p_high = false
+                    p_low = false
 
-                // 回歸原始排序
-                originSort(d)
+                    // 回歸原始排序
+                    originSort(d)
 
-                SeafoodTypeCheck(d)
+                    SeafoodTypeCheck(d)
 
-                // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    // 傳送狀態URL
+                    S_sendURL(s_type,hot,newTime,p_high,p_low)
 
-        
             
-            }
+                
+                }
 
-        })
+            })
+
+
+        }else{
+
+            // 手機、平板
+
+    
+            // let value = $('.SeafoodRWD_type').find('option:selected').val();
+
+           
+            // console.log(value);
+
+
+
+          
+        }
 
     
 ///////// 商品排序

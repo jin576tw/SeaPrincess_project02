@@ -67,7 +67,7 @@ function PRODUCT(p){
 
         let ProductLeft = p.left;
 
-        ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p>NT ${p.price}  / 公斤</p>`;
+        ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p class="S_price">${p.price}</p>`;
 
         
     }
@@ -82,7 +82,7 @@ function PRODUCT(p){
     if(p.left==0){
 
         PRODUCT = `
-            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn">
+            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn" Item-ID=${p.pid} Item-left=${p.left} >
                     <div class="product_intro empty_product">`+ PRODUCTTAG+
                         `<div class="product_pic">
                             <a href="../html/each-product.html?S&&pid=`+PRODUCTID+`">
@@ -105,7 +105,7 @@ function PRODUCT(p){
     }else{
 
         PRODUCT = `
-        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn">
+        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn" Item-ID=${p.pid} Item-left=${p.left}>
         <div class="product_intro">`+PRODUCTTAG+
                     `<div class="add_btn">
                         <i class="fas fa-cart-plus"></i>
@@ -202,7 +202,7 @@ function PRODUCT_B(p){
 
         let ProductLeft = p.left;
 
-        ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p>NT ${p.price} </p>`;
+        ProductLeft == 0 ? PRODUCTDETAIL = `<p class="sold">已售完</p>`:PRODUCTDETAIL = `<p class="I_price">${p.price} </p>`;
 
         
     }
@@ -396,15 +396,18 @@ PROPUCTSWARP.on("mouseleave",".add_btn",function(){
 
 PROPUCTSWARP.on("click",".add_btn",function(){
 
-    // 商品名稱
-    let itemTitle = $(this).next().next().children().children().text()
+     // 商品名稱
+     let itemTitle = $(this).next().next().children().children().text()
 
-    //商品圖片
-    let itemPic = $(this).next().children().children().attr('src')
 
+     //商品圖片
+     let itemPic = $(this).next().children().children().attr('src')
 
     //商品價格
-    let itemPrice = $(this).parent().next().children('p:nth-of-type(1)').text()
+    let itemPrice = $(this).parent().next().children('p').text()
+
+    console.log(itemPrice);
+     
 
     // 商品ID
     let itemID = $(this).parent().parent().attr('Item-ID')
@@ -412,13 +415,12 @@ PROPUCTSWARP.on("click",".add_btn",function(){
     //商品庫存
     let itemLeft = $(this).parent().parent().attr('Item-left')
 
-    
     let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1}]
-    //商品名稱、商品圖片、商品價格、商品ID、商品庫存、商品數量初始值
+    // 商品名稱、商品圖片、商品價格、商品ID、商品庫存、商品數量初始值
 
 
-    // 判斷商品是否缺貨
-    if(itemLeft == 0){
+     // 判斷商品是否缺貨
+    if(itemLeft == 0 ){
         alert('商品缺貨中')
 
     }else{
@@ -523,7 +525,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
 
         for(let i = 0 ; i < cookieArr.length;i++){
-            sum += cookieArr[i].count;
+        sum += cookieArr[i].count;
         }
 
         $('.navbar_shoplist_count').text(sum)
@@ -533,9 +535,9 @@ PROPUCTSWARP.on("click",".add_btn",function(){
     }
     
 
+
+
 })
-
-
 
 
 

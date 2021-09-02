@@ -385,7 +385,21 @@ select {
   
   }
 
-  .sold{
+.S_price::before{
+    content: 'NT ';
+
+}
+.S_price::after{
+    content: '  / 公斤';
+
+}
+
+.I_price::before{
+
+    content: 'NT ';
+}
+
+.sold{
     color: rgba(0, 0, 0, 0.6)
     
 }
@@ -412,12 +426,7 @@ select {
 
 
 
-.product_detail02 p:nth-of-type(1){
-    color: #000000;
-}
-.product_detail02 p:nth-of-type(1)::before{
-    content: 'NT ';
-}
+
 
 
 @media (max-width: 992px) {
