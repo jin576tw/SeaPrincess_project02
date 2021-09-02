@@ -217,7 +217,7 @@ function PRODUCT_B(p){
     if(p.left==0){
 
         PRODUCT = `
-            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn">
+            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn" Item-ID=${p.pid}>
                     <div class="product_intro empty_product">`+ PRODUCTTAG+
                         `<div class="product_pic">
                             <a href="../html/each-product.html?I&&pid=`+PRODUCTID+`">
@@ -240,7 +240,7 @@ function PRODUCT_B(p){
     }else{
 
         PRODUCT = `
-        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn">
+        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn" Item-ID=${p.pid}>
         <div class="product_intro">`+PRODUCTTAG+
                     `<div class="add_btn">
                         <i class="fas fa-cart-plus"></i>
