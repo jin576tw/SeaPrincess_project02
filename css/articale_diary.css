@@ -452,6 +452,7 @@
 /* 文章圖片 */
 .articale_pic{
     /* background-color: cyan; */
+    margin: 0px 0 20px 0 ;
 }
 
 /* 文章圖片註解 */
@@ -459,7 +460,7 @@
     display: flex;
     align-items: center;
     color: #8c8c8c;
-    margin: 20px 0 0 0 ;
+    /* margin: 20px 0 0 0 ; */
 }
 .articale_pic_detail .fa-caret-up{
     font-size: 18px;

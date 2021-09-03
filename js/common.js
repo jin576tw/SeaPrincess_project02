@@ -542,6 +542,27 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
 
 //////文章頁標籤效果//////
+let Artical_Tagslist = $('.Tags_list')
+
+Artical_Tagslist.on("mouseenter",".artical_tag",function(){
+
+    $(this).children('.artical_tag_outline').css('border','solid 1px #dc7e00')
+
+    $(this).children('.artical_tag_outline').children('p').css('color','#dc7e00')
+
+
+})
+
+Artical_Tagslist.on("mouseleave",".artical_tag",function(){
+
+
+    $(this).children('.artical_tag_outline').css('border','solid 1px var(--sea_blue)')
+
+    $(this).children('.artical_tag_outline').children('p').css('color','var(--sea_blue)')
+
+
+})
+
 
 $('.artical_tag').on({
 
