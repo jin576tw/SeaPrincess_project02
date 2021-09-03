@@ -377,6 +377,8 @@ function randomProuducts(num,p,rp){
 
 
 
+
+
 // 商品加入購物車效果
 let PROPUCTSWARP = $('.products_warp')
 
@@ -543,6 +545,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
 //////文章頁標籤效果//////
 let Artical_Tagslist = $('.Tags_list')
+let Blog_Content = $('.Blog_content')
 
 Artical_Tagslist.on("mouseenter",".artical_tag",function(){
 
@@ -562,6 +565,28 @@ Artical_Tagslist.on("mouseleave",".artical_tag",function(){
 
 
 })
+
+Blog_Content .on("mouseenter",".artical_tag",function(){
+
+    $(this).children('.artical_tag_outline').css('border','solid 1px #dc7e00')
+
+    $(this).children('.artical_tag_outline').children('p').css('color','#dc7e00')
+
+
+})
+
+Blog_Content .on("mouseleave",".artical_tag",function(){
+
+
+    $(this).children('.artical_tag_outline').css('border','solid 1px var(--sea_blue)')
+
+    $(this).children('.artical_tag_outline').children('p').css('color','var(--sea_blue)')
+
+
+})
+
+
+
 
 
 $('.artical_tag').on({

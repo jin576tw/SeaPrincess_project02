@@ -63,14 +63,15 @@
 }
 
 
-/* /////////文章頁///////// */
+/* /////////食譜頁///////// */
 
-/* 文章內容 */
+/* 食譜內容 */
 .Articale_Content{
     margin-top: 80px;
     margin-bottom: 80px;
 }
 
+/* 食譜標題  */
 .articale_title{
     padding-top: 10px;
     min-height: 60px;
@@ -86,6 +87,56 @@
     line-height: 1.53;
     letter-spacing: normal;
     text-align: center;
+
+}
+
+@media (max-width: 992px) {
+
+    .articale_title{
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 10px;
+
+        border-top: solid 1px var(--sea_blue);
+        border-bottom: solid 1px var(--sea_blue);
+    }
+
+    .articale_title h2{
+        word-break:keep-all;
+        font-size: 2.4rem;
+        font-weight: 450;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.53;
+        letter-spacing: normal;
+        text-align: center;
+    
+    }
+
+}
+@media (max-width: 480px) {
+
+
+    .articale_title{
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 10px;
+        /* background-color: #afa; */
+        border-top: solid 1px var(--sea_blue);
+        border-bottom: solid 1px var(--sea_blue);
+    }
+
+    .articale_title h2{
+        word-break:keep-all;
+        font-size: 2.4rem;
+        font-weight: 450;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.53;
+        letter-spacing: normal;
+        text-align: center;
+    
+    }
 
 }
 
@@ -298,38 +349,83 @@
 
 }
 
-/* 文章文字 */
+/* 食譜段落 */
 .articale_contnet_warp{
     min-height: 800px;
     /* padding: 0 10px; */
 }
 
-.recipe_main_pic{
-    width: 100%;
-    height: 600px;
-    background-color: red;
-}
 
-.recipe_main_pic img{
-    height: 100%;
-    object-fit: cover;
+/* 規定格式大小/顏色 */
+.articale_contnet_warp p{
 
-}
- 
-.main_pic_detail{
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-.main_pic_detail p{
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.8;
     letter-spacing: normal;
+
+}
+
+@media (max-width: 992px) {
+
+
+    .articale_contnet_warp{
+        padding: 0 10px;
+    }
+    
+    
 }
 
 
+@media (max-width: 480px) {
+
+    .articale_contnet_warp{
+        padding: 0 10px;
+    }
+
+}
+
+
+
+/* 食譜圖片 */
+.Recpie_pic{
+    width: 100%;
+    height: 600px;
+    background-color: red;
+}
+
+.Recpie_pic img{
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.Recipe_pic_detail{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+@media (max-width: 992px) {
+
+    .Recpie_pic{
+        width: 100%;
+        height: 400px;
+       
+    }
+}
+@media (max-width: 480px) {
+
+
+    .Recpie_pic{
+        width: 100%;
+        height: 300px; 
+    }
+}
+
+
+/* 食譜原料表格  */
 .recipe_form{
     width: 100%;
     min-height: 240px;
@@ -343,7 +439,7 @@
     
     border-bottom: solid 1px var(--sea_blue);
 }
-.recipe_form_title h5{
+.recipe_form_title h2{
     font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
@@ -364,7 +460,7 @@
     margin-bottom: 12px;
 }
 
-.recipe_form_list p{
+.recipe_form_list h3{
     font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
@@ -375,12 +471,12 @@
 
 }
 
+/* 食譜步驟 */
 .recipe_step{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    /* background-color:cyan; */
     min-height: 100px;
     padding:30px 0; 
     border-bottom: 1px solid var(--sea_blue);
@@ -414,31 +510,7 @@
 
 }
 
-@media (max-width: 992px) {
 
-    .articale_contnet_warp{
-        padding: 0 10px;
-    }
-    
-
-    .recipe_main_pic{
-        width: 100%;
-        height: 400px;
-       
-    }
-}
-@media (max-width: 480px) {
-
-    .articale_contnet_warp{
-        padding: 0 10px;
-    }
-    
-
-    .recipe_main_pic{
-        width: 100%;
-        height: 300px; 
-    }
-}
 
 
 /* 上一頁/下一頁文章 */
@@ -528,26 +600,7 @@
 
 @media (max-width: 992px) {
 
-    .articale_title{
-        width: 95%;
-        margin: 0 auto;
-        padding-top: 10px;
-
-        border-top: solid 1px var(--sea_blue);
-        border-bottom: solid 1px var(--sea_blue);
-    }
-
-    .articale_title h2{
-        word-break:keep-all;
-        font-size: 2.4rem;
-        font-weight: 450;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.53;
-        letter-spacing: normal;
-        text-align: center;
     
-    }
 
     .pre_articale_arrow{
         font-family: Helvetica;
@@ -577,51 +630,6 @@
 }
 @media (max-width: 480px) {
 
-
-    .Articale_Content{
-        margin-top: 20px;
-    }
-    .Articale_warp{
-        width: 90%;
-        border-bottom: solid 1px var(--sea_blue);
-        margin-bottom: 60px;
-       
-    }
-
-    .articale_title{
-        width: 95%;
-        margin: 0 auto;
-        padding-top: 10px;
-        /* background-color: #afa; */
-        border-top: solid 1px var(--sea_blue);
-        border-bottom: solid 1px var(--sea_blue);
-    }
-
-    .articale_title h2{
-        word-break:keep-all;
-        font-size: 2.4rem;
-        font-weight: 450;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.53;
-        letter-spacing: normal;
-        text-align: center;
-    
-    }
-
-  
-
-    .articale_text p{
-        font-size: 1.8rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.8;
-        letter-spacing: normal;
-      
-    
-    
-    }
 
     .pre_articale_arrow{
         display: none;
