@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
 
@@ -64,8 +62,10 @@ $(document).ready(function () {
                 
                 ////////////文章段落////////////
 
+                    // 文章架構function 
                     let Article = (a) => {
                         
+                        // 文章圖片架構function
                         function ArticalePic(img,detail) {
 
                             let a_pic = ``
@@ -117,6 +117,7 @@ $(document).ready(function () {
                             
                         }
 
+                        // 文章文字框架構function
                         function ArticaleText(text) {
 
                             let text_content =``
@@ -144,6 +145,7 @@ $(document).ready(function () {
                             
                         }
 
+                        // 延伸閱讀架構function
                         function MoreArticale(more) {
 
                             let more_read = ``
@@ -152,7 +154,7 @@ $(document).ready(function () {
 
                             }else{
 
-                                more_read = `<div class="more_articale          col-lg-12 col-11 pl-5">
+                                more_read = `<div class="more_articale  col-lg-12 col-11 pl-5">
                                         <p>延伸閱讀：<span>${more}}</p>
                                 </div>`
 
@@ -163,37 +165,41 @@ $(document).ready(function () {
                             
                         }
                         
-
+                        // 抓取海上日誌內容
                         let ArticleContnet = a.content
 
+                        // 抓取第一段圖片/圖片說明/文字內容/延伸閱讀
                         let img01  = ArticleContnet.img01;
                         let detail01  = ArticleContnet.img01_detail;
                         let text01 = ArticleContnet.p01
                         let more01 =  ArticleContnet.more01
 
-                    
+                        // 第一段全部內容
                         let paragraph01 =  ArticalePic(img01,detail01) + ArticaleText(text01)+MoreArticale(more01)
 
 
+                         // 抓取第二段圖片/圖片說明/文字內容/延伸閱讀
                         let img02  = ArticleContnet.img02;
                         let detail02  = ArticleContnet.img02_detail;
                         let text02 = ArticleContnet.p02
                         let more02 =  ArticleContnet.more02
 
                     
+                        //第二段全部內容
                         let paragraph02 =  ArticalePic(img02,detail02) + ArticaleText(text02)+MoreArticale(more02)
 
 
+                       // 抓取第三段圖片/圖片說明/文字內容/延伸閱讀
                         let img03  = ArticleContnet.img03;
                         let detail03  = ArticleContnet.img03_detail;
                         let text03 = ArticleContnet.p03
                         let more03 =  ArticleContnet.more03
 
-                    
+                        // 第三段全部內容
                         let paragraph03 =  ArticalePic(img03,detail03) + ArticaleText(text03)+MoreArticale(more03)
 
                         
-
+                        // 全部段落整合
                         let Article = paragraph01 + paragraph02 + paragraph03;
                         
                     
@@ -201,6 +207,7 @@ $(document).ready(function () {
                 
                     }
 
+                    // 文章輸出
                     ArticleContent.append(Article(d[i]))
 
 
@@ -221,7 +228,6 @@ $(document).ready(function () {
             for(let i = 0 ; i < d.length ;i++){
 
                 if(d[i].aid ==RecipeID){
-
 
 
                     // 文章標題    
@@ -262,98 +268,161 @@ $(document).ready(function () {
 
                     ////////////食譜段落////////////
 
-
+                    // 食譜架構function 
                     let Article = (a) => {
 
-                        
-                 
-                        let Rcontent = a.content
-
-                        let Recipeintro = ``
-
-                        if(Rcontent.img_intro ==''){
-
-                            Recipeintro = ``
+                        // 統整食譜資料
+                        let RECIPE= a.content
 
 
-                        }else{
+                        // 食譜圖片架構    
+                        function RecipePic(a){
 
-                            for(let j = 0 ; j < Rcontent.img_intro.length ;j++){ 
+                            // 食譜圖片介紹
+                            let Recipeintro = ``
 
-                                introStr=`<p>${Rcontent.img_intro[j]}</p>`
+                            if(a.img_intro ==''){
 
-                                Recipeintro +=introStr
+                                Recipeintro = ``
 
+
+                            }else{
+
+                                for(let j = 0 ; j < a.img_intro.length ;j++){ 
+
+                                    introStr=`<p>${a.img_intro[j]}</p>`
+
+                                    Recipeintro +=introStr
+
+                                }
+                            
                             }
+
+                            // 食譜圖片產生
+                            let r_pic=`
+                            <div class="Recipe_pic_warp col-lg-12 col-12">
+                                    <div class="Recipe_pic">
+                                        <img src="${a.img[0]}" alt="">
+                                    </div>
+
+                                    <div class="Recipe_pic_detail">`+Recipeintro+`</div>
+                            </div>`
+
+
+                            return r_pic
+                        }
+
                         
+                        // 食譜原料表格架構
+                        function RecipeForm(a){
+
+                            let Ingred = a.ingredient;
+                        
+                            let AllForm =``
+
+                            for(let j = 0 ; j < Ingred.name.length ;j++){ 
+
+                                let List =``
+                                for(let k = 0 ; k < Ingred.list[j].item.length; k++){
+
+
+                                    let listStr = ` <div class="recipe_form_list col-lg-6 col-md-6 col-12">
+                                            <h3>${Ingred.list[j].item[k]}</h3>
+                                            <h3>${Ingred.list[j].count[k]}</h3>
+                                        </div>`
+    
+
+                                    List +=listStr
+
+                                }
+
+                            
+                                let Form =`<div class="recipe_form">
+                                <div class="recipe_form_title">
+                                <h2>${Ingred.name[j]}</h2>
+                                </div>
+                                <div class="recipe_form_content row">`+List+`</div>
+                                </div>`
+
+
+                                AllForm += Form
+
+                            
+                            }
+
+
+                            return AllForm
+
                         }
 
 
-                        let RecipePic=`
-                        <div class="Recipe_pic_warp col-lg-12 col-12">
-                                <div class="Recipe_pic">
-                                    <img src="${Rcontent.img[0]}" alt="">
+                        //食譜步驟
+                        function RecipeSteps(a) {
+
+                            let Steps = a.step;
+                        
+                            let Allstep = ``
+
+                            for(let j = 0 ; j < Steps.stepName.length ;j++){ 
+
+                                // 步驟圖片
+                                let StepPic =``;
+                                if(Steps.stepPic[j] == ""){
+
+                                    StepPic =`` ;
+
+                                }else{
+
+                                    StepPic =`<div class="recipe_step_pic">
+                                                <img src="${Steps.stepPic[j]}" alt="">
+                                            </div> ` ;
+
+                                }
+
+                                // 步驟介紹
+                                let StepIntro = ``;
+                                if(Steps.stepIntro[j] == ""){
+
+                                    StepIntro = ``;
+
+                                }else{
+
+                                    StepIntro = `<p>${Steps.stepIntro[j]}</p>`;
+
+                                }
+
+
+                                // 單一步驟架構
+                                let stepStr = ` <div class="recipe_step">
+                                <div class="recipe_step_title">
+                                    <h3><span>${j+1}.</span>${Steps.stepName[j]}</h3>
                                 </div>
+                                <div class="recipe_step_content">`+StepIntro+StepPic+`</div>
+                                </div>`
 
-                                <div class="Recipe_pic_detail">`+Recipeintro+`</div>
-                        </div>`
+                               
+                                Allstep +=stepStr;
 
-                        let ingredient = Rcontent.ingredient;
-
-                        function  RecipeForm(params) {
-
-                            let Form =`
-                            <div class="recipe_form recipe_form01">
-                                <div class="recipe_form_title">
-                                  <h2>${Rcontent.ingredient.name[0]}</h2>
-                                </div>
-                                <div class="recipe_form_content row">
-                                    <div class="recipe_form_list col-lg-6 col-md-6 col-12">
-                                        <h3>魷魚</h3>
-                                        <h3>100g</h3>
-                                    </div>
-                                    <div class="recipe_form_list col-lg-6 col-md-6 col-12">
-                                        <h3>老薑片</h3>
-                                        <h3>3片</h3>
-                                    </div>
-                                    <div class="recipe_form_list col-lg-6 col-md-6 col-12">
-                                        <h3>米酒</h3>
-                                        <h3>1大匙</h3>
-                                    </div>
-                                    <div class="recipe_form_list col-lg-6 col-md-6 col-12">
-                                        <h3>蒜末</h3>
-                                        <h3>1大匙</h3>
-                                    </div>
-                                    <div class="recipe_form_list col-lg-6 col-md-6 col-12">
-                                        <h3>蔥末</h3>
-                                        <h3>2大匙</h3>
-                                    </div>
-                                    <div class="recipe_form_list col-lg-6 col-md-6 col-12">
-                                        <h3>辣椒末</h3>
-                                        <h3>適量</h3>
-                                    </div>
-                                </div>
-                            </div>
+                                
     
-                            `
+                            }
+
+                            let StepWarp =`<div class="recipe_steps_warp">`+Allstep+`</div>`
+
+                            return StepWarp;
                             
                         }
-                       
+                        
+                        let Article = RecipePic(RECIPE) +RecipeForm(RECIPE) +RecipeSteps(RECIPE)
 
-
-
-
-                        ArticleContent.append(RecipePic)
-
-
-
+                    
+                        return Article;
 
 
                     }
 
-
-                    
-                    Article(d[i])
+                    // 食譜輸出
+                    ArticleContent.append(Article(d[i]))
 
 
 
