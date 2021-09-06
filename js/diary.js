@@ -62,7 +62,7 @@ $(document).ready(function () {
                 <div class="Blog_artical diary_artical col-lg-4 col-md-4 col-12 p-0">
 
                         <div class="Blog_artical_pic">
-                            <a href="../html/articale_diary.html?D&&aid=`+ArticleID 
+                            <a href="../html/articale.html?D&&aid=`+ArticleID 
                             +
                             `">
                                 <img src="${a.content.img01[0]}" alt="">
@@ -71,7 +71,7 @@ $(document).ready(function () {
         
                        
                         <div class="Blog_artical_title">
-                            <a href="../html/articale_diary.html?D&&aid=`+ArticleID +`">
+                            <a href="../html/articale.html?D&&aid=`+ArticleID +`">
                             <p>${a.title}</p>
                             </a>
                         </div>
