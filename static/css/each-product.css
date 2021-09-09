@@ -17,7 +17,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Each_product_content{
         margin-top: 50px;
@@ -26,7 +26,7 @@
     }
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Each_product_content{
         margin-top: 50px;
@@ -352,7 +352,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Each_product_warp{
         padding-top: 50px;
@@ -458,7 +458,7 @@
 
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Each_product_warp{
@@ -612,12 +612,12 @@
     padding: 0 40px 0 40px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .labels_warp{
         padding: 0 10px;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .labels_warp{
         padding: 0 10px;
@@ -731,7 +731,7 @@
     
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .IntroProduct_content{
         width: 95%;
         margin: 60px auto 30px auto;
@@ -758,7 +758,7 @@
     
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .IntroProduct_content{
@@ -911,7 +911,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Blog_cate_name{
         display: flex;
@@ -935,7 +935,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Blog_cate{
         width: 100%;
@@ -1234,7 +1234,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .Product_intro_team{
         margin: 60px auto 0 auto;
         width: 95%
@@ -1261,7 +1261,7 @@
         min-height: 350px;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Product_intro_team{
@@ -1667,7 +1667,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   
 
     .food_steps_pic{
@@ -1683,7 +1683,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
   
 
@@ -1774,7 +1774,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Each_Product_Items{
         

@@ -47,7 +47,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Diary_title{
         margin-top: 50px;
@@ -56,7 +56,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Diary_title{
         margin-top: 50px;
@@ -75,7 +75,7 @@
     margin-bottom: 80px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Articale_Content{
         margin-top: 80px;
@@ -84,7 +84,7 @@
 
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Articale_Content{
@@ -118,7 +118,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .articale_title{
         width: 95%;
@@ -143,7 +143,7 @@
 
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .articale_title{
         width: 95%;
@@ -238,7 +238,7 @@
     
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   
     .articale_type_warp{
         display: flex;
@@ -301,7 +301,7 @@
     
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     
 
       
@@ -378,7 +378,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
 
     .articale_contnet_warp{
@@ -389,7 +389,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .articale_contnet_warp{
         padding: 0 10px;
@@ -526,7 +526,7 @@
   
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
    
 
@@ -544,7 +544,7 @@
     
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     
 
@@ -601,7 +601,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Recpie_pic{
         width: 100%;
@@ -609,7 +609,7 @@
        
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Recpie_pic{
@@ -793,7 +793,7 @@
     color: #8c8c8c;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
 
 
@@ -823,7 +823,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .pre_articale_arrow{
@@ -1120,7 +1120,7 @@
 }
 
  
- @media (max-width: 992px) {
+ @media (max-width: 1024px) {
      .Blog_Bar_warp{
          display: flex;
          flex-direction:column;
@@ -1260,7 +1260,7 @@
  
  
  }
- @media (max-width: 480px) {
+ @media (max-width: 768px) {
  
      
  

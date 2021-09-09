@@ -9,14 +9,14 @@
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
     .Landing_page{
         margin-top: 80px;
     }
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .Landing_page{
         margin-top: 80px;
     }
@@ -154,7 +154,7 @@
 }
 
 /* /////////RWD////////////////////////// */
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
 
     .Logo_pic{
         width: 250px;
@@ -251,7 +251,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Logo_pic{
         width: 200px;
@@ -368,7 +368,7 @@
        
 } 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .homepage_video_wrap{
         position: relative;
@@ -396,7 +396,7 @@
    } 
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .homepage_video_wrap{
         position: relative;
@@ -537,7 +537,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .home_intro{
         margin-top: 50px;
@@ -574,7 +574,7 @@
 
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .home_intro{
         margin-top: 25px;
@@ -631,7 +631,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .more01{
         padding-right: 28px;
@@ -656,7 +656,7 @@
 
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .more01{
         padding-right: 28px;
@@ -693,7 +693,7 @@
  
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .item_tittle{
        
        text-align: center;
@@ -702,7 +702,7 @@
     }
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .item_tittle{
         opacity: 0;
@@ -752,7 +752,7 @@
   font-size: 30px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .view_more_btn{
         cursor: pointer;
@@ -764,7 +764,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
    
     .view_more_btn{
         cursor: pointer;
@@ -847,7 +847,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .seafood_warp{
         height: 360px;
@@ -904,7 +904,7 @@
   
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .seafood_warp{
         height: 360px;
@@ -1090,7 +1090,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Caution_warp{
         text-align: center;
@@ -1136,7 +1136,7 @@
   
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Caution_warp{
         text-align: center;
@@ -1348,7 +1348,7 @@
     transform: translateY(-10px);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .Apppointment_title{
         /* overflow: hidden; */
         position: relative;
@@ -1471,7 +1471,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Apppointment_title{
         /* overflow: hidden; */
@@ -1816,7 +1816,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .Apppointment_intro{
         flex-direction: column;
         position: relative;
@@ -2034,7 +2034,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Apppointment_intro{
         flex-direction: column;
@@ -2371,7 +2371,7 @@
     margin-left: 320px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Apppointment_map::after{
         content: '';
@@ -2453,7 +2453,7 @@
      }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Apppointment_map{
         background-color: var(--sea_blue);
@@ -2904,7 +2904,7 @@
     display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .content_tags_warp{
        display: flex;
     }
@@ -3108,7 +3108,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Blog_Page{
@@ -3387,7 +3387,7 @@
     
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .texture{
         position: absolute;
@@ -3551,7 +3551,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .texture{
         position: absolute;
@@ -3815,7 +3815,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Tourist_warp{
         margin-top: 100px;
@@ -3918,7 +3918,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Tourist{
         height: 500px;
@@ -4171,7 +4171,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .contact_map{
         height: 500px;
@@ -4354,7 +4354,7 @@
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .question{

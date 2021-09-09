@@ -47,7 +47,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Diary_title{
         margin-top: 50px;
@@ -56,7 +56,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Diary_title{
         margin-top: 50px;
@@ -171,7 +171,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .main_artical{
         display: flex;
@@ -236,7 +236,7 @@
    
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
  
     .Main_artical_page{
         display: none;
@@ -258,9 +258,9 @@
     flex-direction: row;
 }
 
-@media (max-width: 992px) {}
+@media (max-width: 1024px) {}
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .Diary_Content_warp{
         display: flex;
         flex-direction: column;
@@ -293,7 +293,7 @@
    
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Diary_artical_content{
         display: flex;
@@ -306,7 +306,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Diary_artical_content{
         display: flex;
@@ -385,7 +385,7 @@
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
  
     .Diary_Content{
         margin-top: 0px;
@@ -675,7 +675,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .Blog_Bar_warp{
         display: flex;
         flex-direction:column;
@@ -812,7 +812,7 @@
 
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     
 

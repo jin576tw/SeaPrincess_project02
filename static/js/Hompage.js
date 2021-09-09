@@ -9,7 +9,7 @@ $(document).ready(function () {
 /* ///////////第一頁//////////// */
 
   // 平板版
-        if ($(window).width() < 992) {
+        if ($(window).width() < 1024) {
 
             if (scrollNow >= 63){
                 
@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
 
         //手機版
-        if ($(window).width() < 480) {
+        if ($(window).width() < 768) {
             if (scrollNow >= 36){
                 
                 $('.home_intro').css('opacity','1').css('transition','0.5s')
@@ -55,7 +55,7 @@ $(document).ready(function () {
       
 
         // 網頁版 
-        if ($(window).width() >= 992) {
+        if ($(window).width() > 1024) {
 
             if (scrollNow >= 91){
                 
@@ -82,7 +82,7 @@ $(document).ready(function () {
      
 
         // 平板版
-        if ($(window).width() < 992) {
+        if ($(window).width() <= 1024) {
 
             if (scrollNow >= 588){
                 $('.product_tittle').css('opacity','1').css('transition','0.5s')
@@ -105,7 +105,7 @@ $(document).ready(function () {
         }
 
            //手機版
-           if ($(window).width() < 480) {
+           if ($(window).width() <= 768) {
 
             if (scrollNow >= 638){
                 $('.product_tittle').css('opacity','1').css('transition','0.5s')
@@ -128,7 +128,7 @@ $(document).ready(function () {
 
 
         // 網頁版
-        if ($(window).width() >= 992) {
+        if ($(window).width() > 1024) {
 
 
             if (scrollNow >= 825){

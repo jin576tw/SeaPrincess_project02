@@ -283,7 +283,7 @@
 
 
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
 
     .Navbar{
         position: fixed;
@@ -448,7 +448,7 @@
     
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Navbar{
         position: fixed;
@@ -853,7 +853,7 @@
 
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
     
     .list_count {
         display: flex;
@@ -873,7 +873,7 @@
 
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Cart_list{

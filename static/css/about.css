@@ -109,7 +109,7 @@
     letter-spacing: normal;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .About_title_pic_text { 
         margin-top: 60px;
@@ -171,7 +171,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
         .About_title_pic_text { 
             margin-top: 60px;
          
@@ -390,7 +390,7 @@
     transform: translateY(-40px);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .mask{
         width: 200px;
@@ -412,7 +412,7 @@
     
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .About_team::after{
         z-index: 88;
@@ -682,7 +682,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .About_Intro_title{
         margin-top: 40px;
@@ -732,7 +732,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .About_Intro_pic_warp{
         overflow: hidden;
@@ -1023,7 +1023,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .step_line_warp{
         position: relative;
         width: 55px;
@@ -1062,7 +1062,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .About_Items_warp{
         position: relative;

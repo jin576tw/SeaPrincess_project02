@@ -43,7 +43,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Recipe_title{
         margin-top: 50px;
@@ -52,7 +52,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Recipe_title{
         margin-top: 50px;
@@ -90,7 +90,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .articale_title{
         width: 95%;
@@ -114,7 +114,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .articale_title{
@@ -209,7 +209,7 @@
     
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .Articale_Content{
         margin-top: 80px;
         margin-bottom: 0px;
@@ -275,7 +275,7 @@
     
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .Articale_Content{
         margin-top: 80px;
         margin-bottom: 0px;
@@ -368,7 +368,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
 
     .articale_contnet_warp{
@@ -379,7 +379,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .articale_contnet_warp{
         padding: 0 10px;
@@ -407,7 +407,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Recpie_pic{
         width: 100%;
@@ -415,7 +415,7 @@
        
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Recpie_pic{
@@ -599,7 +599,7 @@
     color: #8c8c8c;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     
 
@@ -629,7 +629,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .pre_articale_arrow{
@@ -944,7 +944,7 @@
     margin:0 auto 30px auto;
 }
  
- @media (max-width: 992px) {
+ @media (max-width: 1024px) {
      .Blog_Bar_warp{
          display: flex;
          flex-direction:column;
@@ -1085,7 +1085,7 @@
  
  
  }
- @media (max-width: 480px) {
+ @media (max-width: 768px) {
  
      
  

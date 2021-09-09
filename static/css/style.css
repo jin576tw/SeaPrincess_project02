@@ -1,14 +1,6 @@
 *{
     /* outline: solid var(--light_blue) 1px; */
 }
-/* 
-.seafood_bg{  
-    position: fixed;
-    width: 100%;
-    height: 300px;
-    background-color: red;
-    z-index: 996;
-} */
 
 /* /////////////////////Landingpage//////////////// */
 .Landing_page{
@@ -19,7 +11,7 @@
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
     .Landing_page{
         margin-top: 50px;
         height: calc(100vh - 50px);
@@ -159,7 +151,7 @@
    
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
 
     .Logo_pic{
         width: 250px;
@@ -256,7 +248,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Logo_pic{
         width: 200px;
@@ -463,7 +455,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .home_intro{
         margin-top: 50px;
@@ -501,7 +493,7 @@
     
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .home_intro{
         margin-top: 25px;
@@ -624,7 +616,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .intro_btn_warp{
         margin-top: 40px;
@@ -678,7 +670,7 @@
  
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .intro_btn_warp{
         margin-top: 40px;
@@ -768,7 +760,7 @@
  
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .product_tittle{
        
        text-align: center;
@@ -777,7 +769,7 @@
     }
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .product_tittle{
        text-align: center;
@@ -825,7 +817,7 @@
   font-size: 30px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .view_more_btn{
         cursor: pointer;
@@ -837,7 +829,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
    
     .view_more_btn{
         cursor: pointer;
@@ -965,7 +957,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .Tourist_page{
     
         padding-bottom: 80px;
@@ -995,7 +987,7 @@
     
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .Tourist_page{
     
         padding-bottom: 80px;
@@ -1160,7 +1152,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Blog_Page{
         margin: 80px auto 0 auto;
@@ -1235,7 +1227,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Blog_Page{
         margin: 80px auto 0 auto;

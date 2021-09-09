@@ -55,7 +55,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .ContactUs_title{
         margin-top: 50px;
@@ -72,7 +72,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .ContactUs_title{
         margin-top: 50px;
@@ -124,7 +124,7 @@
   
 
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .ContactUs_intro{
         width: 100%;
         height: 300px;
@@ -133,7 +133,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .ContactUs_intro{
         width: 100%;
@@ -305,7 +305,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
 
     .contact_btn{
@@ -320,7 +320,7 @@
   
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .contact_btn{
@@ -469,7 +469,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .contact_map{
         height: 500px;
@@ -570,7 +570,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     
     .Bussines_social_btn{
         display: flex;
@@ -581,7 +581,7 @@
     }
     
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .ContactUs_Bussines{
         margin-bottom: 80px;

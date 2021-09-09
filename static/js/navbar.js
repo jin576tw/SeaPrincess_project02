@@ -699,7 +699,7 @@ $(document).ready(function () {
 
 
          // 平板版
-        if ($(window).width() > 480) {
+        if ($(window).width() > 768) {
    
             $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
     
@@ -753,7 +753,7 @@ $(document).ready(function () {
     
 
         //手機版
-        if ($(window).width() < 480) {
+        if ($(window).width() < 768) {
                     
             $('.shoplist_RWD').click(function(){
                 
@@ -780,7 +780,7 @@ $(document).ready(function () {
 
         
          // 網頁版
-         if ($(window).width() >= 992) {
+         if ($(window).width() >= 1024) {
    
             $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
     
@@ -860,7 +860,7 @@ $(document).ready(function () {
         // console.log('scrollTop', scrollNow);
     
     
-        // if ($(window).width() <  992){
+        // if ($(window).width() <  1024){
     
         //     if (scrollNow >= 763){
     
@@ -875,7 +875,7 @@ $(document).ready(function () {
         // }
     
         // 網頁版 
-        if ($(window).width() >= 992) {
+        if ($(window).width() > 1024) {
     
        
             if (scrollNow >= 425){
@@ -942,7 +942,7 @@ $(document).ready(function () {
                 click: function(){
                     
 
-                    if ($(window).width() >480) {
+                    if ($(window).width() >768) {
                         
                         location.href = "./member.html"
 
@@ -1019,7 +1019,7 @@ $(document).ready(function () {
 
 
     
-        if ($(window).width() < 992) {
+        if ($(window).width() < 1024) {
 
             $('.RWD_items li:nth-of-type(2)').on({
 

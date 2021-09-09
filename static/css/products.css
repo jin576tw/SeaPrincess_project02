@@ -55,7 +55,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Prouduct_select{
         margin-top: 50px;
@@ -63,7 +63,7 @@
 
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Prouduct_select{
         margin-top: 20px;
@@ -131,7 +131,7 @@
     
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Products_categeroy_warp{
         display: flex;
@@ -147,7 +147,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Products_categeroy_warp{
@@ -208,7 +208,7 @@
     display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .product_type_warp{
         margin-right: 20px;
@@ -234,7 +234,7 @@
 
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .product_type_warp{
         margin: 0 auto;
@@ -337,7 +337,7 @@
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Products_status_warp{
@@ -426,7 +426,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .fishbox{
         padding-bottom: 30px;
@@ -485,7 +485,7 @@
     
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .fishbox_warp{
         height: 360px;
@@ -554,14 +554,14 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .Seafood_Products_warp{
         margin-top: 30px;
         padding-bottom: 80px;
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .Seafood_Products_warp{
         margin-top: 20px;
         padding-bottom: 80px;
@@ -645,7 +645,7 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Item_type_box{
         opacity: 0.3;
@@ -663,7 +663,7 @@
 
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Item_type{
         margin: 60px 0 20px 0;
@@ -707,7 +707,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Item_ALLProducts{
         margin-top: -40px;
@@ -723,7 +723,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 
     .Items_categeroy_warp{

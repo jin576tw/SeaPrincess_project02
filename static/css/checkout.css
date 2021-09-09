@@ -91,7 +91,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
 
     .Checkout_Steps{
@@ -101,7 +101,7 @@
 
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Checkout_Steps{
         margin-top: 50px;
@@ -173,12 +173,12 @@
     background-color: var(--light_blue);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .checkout_login_warp{
         display: flex;
@@ -278,7 +278,7 @@
   
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Cart_items_top_warp{
         min-height: 50px;
@@ -287,7 +287,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Cart_items_top_warp{
         display: none;
@@ -503,7 +503,7 @@
     
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Item_check{
         width: 20px;
@@ -571,7 +571,7 @@
     
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Cart_items_content{
         width: 100%;
@@ -825,7 +825,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .Cart_total_caution ul{
         padding-right: 20px;
@@ -847,7 +847,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .Cart_total_content{
         display: flex;
@@ -978,7 +978,7 @@
 
   
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
 
     .Other_Product_Items{
         position: relative;
@@ -1161,7 +1161,7 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .checkout_item_pic{
         position: relative;
@@ -1191,7 +1191,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .checkout_content{
         display: flex;
@@ -1346,7 +1346,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .cargo_info_text p{
         width: 85%;
@@ -1357,7 +1357,7 @@
     }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .cargo_info_text p{
       
@@ -1497,7 +1497,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .checkout_info_warp{
         width: 95%;
@@ -1508,7 +1508,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .checkout_info_warp{
         width: 95%;
@@ -1588,7 +1588,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
     .checkout_info_list textarea{
         margin-top: 2px;
@@ -1597,7 +1597,7 @@
     
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .fishbox_btn{
        width: 130px;
@@ -1736,10 +1736,10 @@
 
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .payment_content{
         display: flex;
@@ -1878,7 +1878,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .payment_method{
         margin-bottom: 40px;
     }
