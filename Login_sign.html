@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess_公主號_登入註冊</title>
+  
+
+   <!-- CDN -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link rel="stylesheet" href="./static/fontawesome/css/all.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./static/css/Login_sign.css">
+  <link rel="stylesheet" href="./static/css/common.css">
+  <link rel="stylesheet" href="./static/css/navbar.css">
+  <link rel="stylesheet" href="./static/css/footer.css">
+
+
+</head>
+<body>
+    
+<!-- 導覽列 -->
+<section id="navbar"></section>
+
+
+<!-- 登入註冊頁 -->
+<section class="LoginSign">
+
+     <div class="LoginSign_warp">
+         <div class="LoginSign_tag_warp">
+             <div class="LoginSign_tag Sign_tag">註冊
+             </div>
+             <div class="LoginSign_tag Login_tag">會員登入
+             </div>
+         </div>
+
+         <div class="LoginSign_content">
+
+            <!-- 登入 -->
+              <div class="Login_content">
+                <button class="logSign_btn Line_login">Line 登入</button>
+                <button class="logSign_btn FB_login">Facebook 登入</button>
+
+                <div class="midLine_warp">
+                    <p>or</p>
+                    <div class="midLine"></div>
+                </div>
+
+                <div class="Login_input_wrap">
+                    <div class="Login_account">
+                        <input type="text" name="account" placeholder="Email 或 手機">
+                    </div>
+                    <div class="Login_password">
+                        <input type="password" name="password" placeholder="密碼">
+                        <div class="Login_password_hide">
+                            <i class="far fa-eye-slash"></i>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <button class="Login_btn">登入</button>
+
+                <div class="forget_password">
+                    <p><span>忘記密碼？</span></p>
+                </div>
+
+             </div> 
+
+
+             <!-- 註冊 -->
+              <div class="Sign_content">
+                <button class="logSign_btn Line_login">使用 Line 註冊</button>
+                <button class="logSign_btn FB_login">使用 Facebook 註冊</button>
+                <button class="logSign_btn phone_login">
+                    <i class="fas fa-mobile-alt"></i>
+                    使用手機註冊</button>
+
+                <div class="midLine_warp">
+                    <p>or</p>
+                    <div class="midLine"></div>
+                </div>
+
+                <div class="Sign_input_wrap">
+                    <div class="Sign_account">
+                        <input type="text" name="account" placeholder="用戶名">
+                    </div>
+                    <div class="Sign_email">
+                        <input type="text" name="account" placeholder="Email">
+                    </div>
+                    <div class="Sign_password">
+                        <input type="password" name="password" placeholder="密碼">
+                        <div class="Sign_password_hide">
+                            <i class="far fa-eye-slash"></i>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <button class="Sign_btn">加入！</button>
+
+                <div class="Sign_detail">
+                    <p>*繼續進行代表您同意我們的 <span>服務條款</span></p>
+                </div>
+
+             </div> 
+
+             
+         </div>
+         
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+<!-- footer -->
+<section id="footer"></section>
+
+
+</body>
+
+<!-- cdn -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="./static/jq/jquery-3.6.0.js"></script>
+
+<!-- cookie -->
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<!-- js -->
+<script src="./static/js/common.js"></script>
+<script src="./static/js/Login_sign.js"></script>
+
+
+
+
+<script>
+    $('#navbar').load('navbar.html')
+    $('#footer').load('footer.html')
+</script>
+</html>

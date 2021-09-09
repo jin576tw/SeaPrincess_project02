@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess_公主號_海鮮管家</title>
+  
+
+   <!-- CDN -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link rel="stylesheet" href="./static/fontawesome/css/all.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./static/css/fishbox.css">
+  <link rel="stylesheet" href="./static/css/common.css">
+  <link rel="stylesheet" href="./static/css/navbar.css">
+  <link rel="stylesheet" href="./static/css/footer.css">
+
+
+</head>
+<body>
+    
+<!-- 導覽列 -->
+<section id="navbar"></section>
+
+<!-- 海鮮管家標題-->
+<section class="fishbox_title">
+    <div class="fishbox_title_warp">
+        <div class="fishbox_title_bg"></div>
+        <div class="fishbox_content">
+            <div class="fishbox_title_text">
+                <h1 class="animate__animated animate__slideInUp">海鮮管家</h1>
+            </div>
+            <div class="fishbox_title_intro">
+                <p class="animate__animated animate__slideInUp">依照您的吃魚需求、料理習慣，為您選用最新鮮的當季海鮮，<br>另可配置當季小農的新鮮農產品，讓餐桌更加豐富美味！</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 海鮮管家服務選擇 -->
+<section class="fishbox_package animate__animated animate__fadeIn">
+    <div class="container">
+        <div class="row">
+
+            <div class="fishbox_package_text">
+                <p>您目前選擇的方案是【客製魚箱】，我們會依照您填寫的吃魚需求、料理習慣為您選用當季海鮮來搭配您的客製組合，總之就是當季、新鮮、好吃！</p>
+                <br>
+                <p>您填寫完成後我們也會同步寄送表單紀錄給您，我們會在收到填表需求後，【1~2個工作天內】為您依照新鮮貨客製組合給您，請留意客製組合通知唷，感謝您</p>
+            </div>
+        </div>
+           
+        <div class="row fishbox_package_warp">
+            <div class="fishbox_package_box ">
+                <div class="fishbox_package_pic package_pic01 "></div>
+                <div class="fishbox_package_title">
+                    <input type="radio" name="fishbox_package" id="">
+                    <p>全鮮魚魚箱</p>
+                </div>
+            </div>
+            <div class="fishbox_package_box">
+                <div class="fishbox_package_pic package_pic02 "></div>
+                <div class="fishbox_package_title">
+                    <input type="radio" name="fishbox_package" id="">
+                    <p>綜合海鮮魚箱</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- 海鮮管家客製 -->
+<section class="fishbox_custom">
+    <div class="container">
+        <div class="row">
+
+            <div class="checkout_info_list">
+                <h3>客製組合預算<span>*</span></h3>
+                <div class="fishbox_select_wrap fishbox_pice_select">
+
+                    <div class="fishbox_btn fishbox_pice_btn">
+                        <input type="radio" name="fishbox_pice" required>
+                        <p>2000</p>
+
+                    </div>
+                    <div class="fishbox_btn fishbox_pice_btn">
+                        <input type="radio" name="fishbox_pice" required>
+                        <p>3000</p>
+
+                    </div>
+                    <div class="fishbox_btn fishbox_pice_btn">
+                        <input type="radio"
+                        name="fishbox_pice" required>
+                        <p>4000</p>
+
+                    </div>
+                    <div class="fishbox_btn fishbox_pice_btn">
+                        <input type="radio"
+                        name="fishbox_pice" required>
+                        <p>5000</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout_info_list">
+                <h3>食用人數<span>*</span></h3>
+                <div class="fishbox_select_wrap fishbox_people_select">
+
+                    <div class="fishbox_btn">
+                        <input type="radio" name="fishbox_people" required>
+                        <p>1-2人</p>
+
+                    </div>
+                    <div class="fishbox_btn">
+                        <input type="radio" name="fishbox_people" required>
+                        <p>3-4人</p>
+
+                    </div>
+                    <div class="fishbox_btn">
+                        <input type="radio"
+                        name="fishbox_people" required>
+                        <p>5-6人</p>
+
+                    </div>
+                    <div class="fishbox_btn">
+                        <input type="radio"
+                        name="fishbox_people" required>
+                        <p>6人以上</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout_info_list">
+                <h3>料理習慣 (可複選)</h3>
+                <div class="fishbox_select_wrap fishbox_cook_select">
+
+                    <div class="fishbox_btn">
+                        <input type="checkbox" name="fishbox_cook">
+                        <p>清蒸</p>
+
+                    </div>
+                    <div class="fishbox_btn">
+                        <input type="checkbox" name="fishbox_cook">
+                        <p>煮湯</p>
+
+                    </div>
+                    <div class="fishbox_btn">
+                        <input type="checkbox"
+                        name="fishbox_cook">
+                        <p>乾煎(紅燒)</p>
+
+                    </div>
+                    <div class="fishbox_btn">
+                        <input type="checkbox"
+                        name="fishbox_cook">
+                        <p>鹽烤</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout_info_list">
+                <h3>可選填想配入的品項，若無現貨會再通知您。</h3>
+                <textarea name="mytext"rows="6"cols="40"></textarea>
+
+               
+            </div>
+
+
+            <button class="fishbox_addCart">
+                <i class="fas fa-cart-plus"></i>
+                加入購物車
+            </button>
+
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- footer -->
+<section id="footer"></section>
+
+
+</body>
+
+<!-- cdn -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="./static/jq/jquery-3.6.0.js"></script>
+
+<!-- cookie -->
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<!-- js -->
+<script src="./static/js/common.js"></script>
+
+
+
+
+<script>
+    $('#navbar').load('navbar.html')
+    $('#footer').load('footer.html')
+</script>
+</html>

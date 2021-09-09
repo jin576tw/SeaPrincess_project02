@@ -1,0 +1,1236 @@
+*{
+    /* outline: solid var(--light_blue) 1px; */
+}
+
+/* /////////關於公主號////////// */
+.About_title{
+
+  width: 100%;
+  height: 100vh;
+
+}
+
+.About_title_pic{
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background-image: url('../images/princess_boat.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.About_title_pic_bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #384982 ;
+
+}
+
+.About_title_pic_text{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   overflow: hidden;
+    height: 40px;
+}
+
+.About_title_pic_text h1{ 
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+
+.About_title_content{
+ padding: 40px 150px; 
+    width: 100%;
+    height: 40%;
+    
+    
+}
+
+.About_title_content_text{
+    
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-top: solid 1px rgba(23, 34, 61, 0.75);
+    border-bottom: solid 1px rgba(23, 34, 61, 0.75);
+
+}
+
+.About_story_title{
+    padding: 40px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.About_story_title h2{
+  font-size: 3rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.67px;
+  text-align: center;
+}
+
+.About_story_content{
+    padding: 40px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.About_story_content p{
+    font-size: 1.8rem;
+    font-weight: 350;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+}
+
+@media (max-width: 992px) {
+
+    .About_title_pic_text { 
+        margin-top: 60px;
+    
+    }
+    .About_title_content{
+        padding: 30px 20px;
+           width: 100%;
+           height: 40%;
+           
+           
+       }
+       
+       .About_title_content_text{
+           
+           display: flex;
+           width: 100%;
+           height: 100%;
+           border-top: solid 1px rgba(23, 34, 61, 0.75);
+           border-bottom: solid 1px rgba(23, 34, 61, 0.75);
+       
+       }
+       
+       .About_story_title{
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 40%;
+       }
+       
+       .About_story_title h2{
+         font-size: 3rem;
+         font-weight: 500;
+         font-stretch: normal;
+         font-style: normal;
+         line-height: normal;
+         letter-spacing: 1.67px;
+         text-align: center;
+       }
+       
+       .About_story_content{
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 60%;
+       }
+       
+       .About_story_content p{
+           font-size: 1.8rem;
+           font-weight: 350;
+           font-stretch: normal;
+           font-style: normal;
+           line-height: 1.8;
+           letter-spacing: normal;
+       }
+
+
+}
+
+@media (max-width: 480px) {
+        .About_title_pic_text { 
+            margin-top: 60px;
+         
+        }
+
+       .About_title_content{
+            padding: 12px 0;
+            width: 100%;
+            height: 40%;
+            
+           
+       }
+       
+       .About_title_content_text{
+           padding-top: 18px;
+           display: flex;
+           flex-direction: column;
+           width: 100%;
+           height: 100%;
+           border-top: solid 1px rgba(23, 34, 61, 0.75);
+           border-bottom: solid 1px rgba(23, 34, 61, 0.75);
+       
+       }
+       
+       .About_story_title{
+           margin: 0 auto;
+           padding: 0px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 100%;
+       }
+       
+       .About_story_title h2{
+         font-size: 2.6rem;
+         font-weight: 500;
+         font-stretch: normal;
+         font-style: normal;
+         line-height: normal;
+         letter-spacing: 1.67px;
+         text-align: center;
+       }
+       
+       .About_story_content{
+           margin: 0 auto;
+           padding: 10px 0 0 0 ;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 90%;
+           text-align: center;
+       }
+       
+       .About_story_content p{
+           font-size: 1.5rem;
+           font-weight: 350;
+           font-stretch: normal;
+           font-style: normal;
+           line-height: 1.8;
+           letter-spacing: normal;
+       }
+
+
+}
+
+
+/* ///////////關於成員////////// */
+.About_team{
+    /* overflow: hidden; */
+   position: relative;
+   
+}
+
+.About_team::after{
+   z-index: 88;
+   content: '';
+   display: block;
+   position: absolute;
+   background-image: url('../images/teambg.svg');
+
+   background-size: cover;
+   bottom: 0px;
+   background-repeat: no-repeat;
+   background-position:top;
+   width: 100%;
+   height: 850px;
+}
+
+
+.About_team_warp{
+    width: 100%;
+    position: relative;
+}
+
+
+
+.About_team_title h1{
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #000000;
+    margin-top: 30px;
+  
+}
+
+.About_team_intro{
+    margin-top: 30px;
+}
+.About_team_intro p{
+    font-size: 1.8rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+
+
+}
+
+.About_team_pic{
+    margin-top: 60px;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 89;
+}
+
+.About_team_pic_warp{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    
+}
+
+.mask{
+    width: 240px;
+    height: 300px;
+    margin: 0 10px;
+}
+
+.mask_pic{
+    height: 240px; 
+    border-radius: 100%;
+    background-color: var(--sea_blue);
+    border: solid 3px #ffffff;
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+
+}
+
+.mask_pic1{
+    background-image: url('../pictures/mask01.jpg');
+}
+.mask_pic2{
+    background-image: url('../pictures/mask02.jpg');
+    background-position: 0 0px;
+}
+.mask_pic3{
+    background-image: url('../pictures/mask03.jpg');
+}
+.mask_pic4{
+    background-image: url('../pictures/24.jpg');
+}
+.mask_pic5{
+    background-image: url('../pictures/mask05.jpg');
+    background-position: 0 20px;
+}
+.mask_pic6{
+    background-image: url('../pictures/mask06.jpg');
+}
+
+.mask_title p{
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5rem;
+    letter-spacing : 1.33px;
+    text-align: center;
+    color: #000000;
+  
+
+}
+.mask_title p:nth-of-type(1){
+    margin-top: 12px;
+    font-size: 2rem;
+}
+
+ .mask2{
+    margin-top: 140px;
+    transform: translateY(10px);
+}
+
+
+.mask3{
+    margin-top: 60px;
+}
+
+
+.mask4{
+    transform: translateY(-100px);
+}
+.mask5{
+    margin-top: 40px;
+}
+
+.mask6{
+    margin-left: 30px;
+    transform: translateY(-40px);
+}
+
+@media (max-width: 992px) {
+
+    .mask{
+        width: 200px;
+        height: 300px;
+       
+    }
+    
+    .mask_pic{
+       
+        height: 200px; 
+        border-radius: 100%;
+        background-color: var(--sea_blue);
+        border: solid 5px #ffffff;
+        background-size: cover;
+        background-position: center ;
+        background-repeat: no-repeat;
+    
+    }
+    
+
+}
+@media (max-width: 480px) {
+
+    .About_team::after{
+        z-index: 88;
+        content: '';
+        display: block;
+        position: absolute;
+        background-image: url('../images/teambg.svg');
+        background-size: cover;
+        bottom: 0px;
+        background-repeat: no-repeat;
+        background-position:top;
+        width: 100%;
+        height: 500px;
+     }
+
+    .About_team_intro{
+        margin: 0 auto;
+        width: 95%;
+        margin-top: 25px;
+    }
+    .About_team_intro p{
+        font-size: 1.6rem;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.8;
+      letter-spacing: normal;
+      text-align: center;
+      color: #000000;
+    
+    
+    }
+
+    .About_team_pic{
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 70px;
+        position: relative;
+        z-index: 89;
+    }
+    
+    .About_team_pic_warp{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    
+        
+    }
+    
+    .mask{
+        width: 100px;
+        height: 200px;
+       
+    }
+    
+    .mask_pic{
+       
+        height: 100px; 
+        border-radius: 100%;
+        background-color: var(--sea_blue);
+        border: solid 5px #ffffff;
+        background-size: cover;
+        background-position: center ;
+        background-repeat: no-repeat;
+    
+    }
+    
+ 
+    
+    .mask_title p{
+        font-size: 1.4rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5rem;
+        letter-spacing : 1.33px;
+        text-align: center;
+        color: #000000;
+      
+    
+    }
+    .mask_title p:nth-of-type(1){
+        margin-top: 12px;
+        font-size: 1.6rem;
+    }
+    
+     .mask2{
+        margin-top: 0px;
+        transform: translateY(0px);
+    }
+    
+    
+    .mask3{
+        margin-top: 0px;
+    }
+    
+    
+    .mask4{
+        transform: translateY(0px);
+    }
+    .mask5{
+        margin-top: 0px;
+    }
+    
+    .mask6{
+        margin-left: 0px;
+        transform: translateY(0px);
+    }
+
+}
+
+/* ///////船上娛樂生活/////// */
+
+.About_Intro{
+    position: relative;
+    background-color: var(--sea_blue);
+}
+
+.About_Intro::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -80px;
+    background-color: var(--sea_blue);
+    height: 80px;
+    width: 100%;
+}
+
+.About_Intro_warp{
+    overflow: hidden;
+    width: 100%; 
+    background-color: white;
+    box-shadow: 4px 8px 20px 0 rgba(23, 34, 61, 0.2);
+}
+
+.About_Intro_title{
+    margin-top: 60px;
+}
+
+.About_Intro_title h1{
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #000000;
+
+}
+
+.About_Intro_pic_warp{
+    overflow: hidden;
+    display: flex;
+    height: 500px;
+    margin: 40px 0 40px 0;
+    padding: 0 50px;
+}
+
+.Intro_pic_L{
+    width: 33.33%;
+    height: 100%;
+    
+}
+
+.pic_L01{
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+.pic_L01 img{
+    width: 120%;
+}
+
+.pic_L02{
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+}
+
+.pic_L02 img{
+    width: 160%;
+    transform: translate(-80px,-50px);
+}
+
+.Intro_pic_M{
+    overflow: hidden;
+    width: 33.33%;
+    height: 100%;
+    margin: 0 10px; 
+    
+}
+
+.Intro_pic_M img{
+    width: 150%;
+    transform: translate(-80px,-120px);
+}
+
+
+.Intro_pic_R{
+    overflow: hidden;
+    width: 33.33%;
+    height: 100%;
+    
+}
+
+.pic_R01{
+    overflow: hidden;
+    width: 100%;
+    height: 65%;
+    margin-bottom: 10px;
+}
+
+.pic_R01 img{
+    width: 100%;
+    transform: translate(0px,-80px);
+}
+
+.pic_R02{
+    overflow: hidden;
+    width: 100%;
+    height: 35%;
+}
+
+.pic_R02 img{
+    width: 100%;
+    transform: translate(0px,-80px);
+}
+
+.About_Intro_content {
+    padding: 0 50px;
+    /* margin-bottom: 60px; */ 
+}
+
+.About_Intro_content p{
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+  
+}
+
+.more06{
+ 
+    padding-right: 35px;
+    margin: 40px auto 40px auto;
+
+    
+}
+
+.more06 p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/right-arrow-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 9px;
+    right: 25px;
+
+}
+
+@media (max-width: 992px) {
+
+    .About_Intro_title{
+        margin-top: 40px;
+    }
+
+    .About_Intro_pic_warp{
+        overflow: hidden;
+        display: flex;
+        height: 350px;
+        margin: 30px 0 40px 0;
+        padding: 0 50px;
+        
+    }
+
+    .pic_L01 img{
+        width: 160%;
+        transform: translate(-10px,-20px);
+    }
+
+    .Intro_pic_M img{
+        width: 180%;
+        transform: translate(-80px,-100px);
+    }
+
+
+    .pic_R01 img{
+        width: 120%;
+        transform: translate(0px,-60px);
+    }
+
+    .pic_R02 img{
+        width: 160%;
+        transform: translate(0px,-80px);
+    }
+    .more06 p::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/right-arrow-w.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 6px;
+        right:10px;
+    
+    }
+
+}
+@media (max-width: 480px) {
+
+    .About_Intro_pic_warp{
+        overflow: hidden;
+        display: flex;
+        height: 300px;
+        margin: 30px 0 40px 0;
+        padding: 0 30px;
+        
+    }
+
+    .Intro_pic_L{
+        width: 50%;
+        height: 100%;
+        
+    }
+    
+    .pic_L01{
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        margin-bottom: 10px;
+        
+    }
+    .pic_L01 img{
+        width: 200%;
+        transform: translate(-10px,0px);
+    }
+    
+    .pic_L02{
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        
+    }
+    
+    .pic_L02 img{
+        width: 200%;
+        transform: translate(-100px,-20px);
+    }
+
+    .Intro_pic_M{
+        overflow: hidden;
+        width: 50%;
+        height: 100%;
+        margin: 0 0px 0 10px; 
+       
+        
+    }
+    
+    .Intro_pic_M img{
+        width: 250%;
+        transform: translate(-120px,-100px);
+    }
+    
+
+    .Intro_pic_R{
+        display: none;
+    }
+
+    .About_Intro_content {
+        padding: 0 50px;
+        
+    }
+    
+    .About_Intro_content p{
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+      
+    }
+
+    .more06{
+ 
+        padding-right: 35px;
+        margin: 30px auto 50px auto;
+    
+        
+    }
+    
+    .more06 p::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/right-arrow-w.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 6px;
+        right:10px;
+    
+    }
+}
+
+/* ///////專業的魚貨流程/////// */
+
+.About_Items{
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.About_Items_title h1{
+    margin-top: 60px;
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #000000;
+
+}
+.About_Items_warp{
+    position: relative;
+}
+
+
+
+.food_steps_warp{
+    margin-top: 100px;
+}
+
+.food_steps{
+    position: relative;
+    width: 100%;
+    height: 320px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.step_line_warp{
+    position: relative;
+    width: 55px;
+    height: 87.5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+   
+    
+}
+
+.step_line{
+   margin-left: 45%;
+    width: 2px;
+    height: 100%;
+    border: solid 2px var(--dark_blue)
+
+}
+
+.step_dot_arrow{
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: var(--dark_blue);
+    transform: scale(2);
+}
+
+.dot_arrow{
+
+    transform: translateY(px);
+}
+
+.dot_arrow .fa-caret-down{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%,-50%);;
+
+
+}
+
+.step_dot_warp{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.step_dot{
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: var(--dark_blue);
+    
+  
+}
+
+
+.food_steps_pic{
+    overflow: hidden;
+    width: 40%;
+    height: 100%;
+    
+
+}
+
+.food_steps_pic img{
+    width: 120%;
+    
+}
+
+
+.steps_pic01 img{
+    transform: translateY(-30px)
+}
+
+.steps_pic05 img{
+    transform: translateX(-30px)
+}
+
+
+
+.food_steps_content{
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.food_steps_content h1{
+
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.33px;
+    color: #000000;
+
+
+}
+.food_steps_content p{
+
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #000000;
+
+
+
+}
+
+
+
+
+
+.more07{
+ 
+    padding-right: 35px;
+    /* text-align: center; */
+    margin: 0px auto 80px auto;
+
+    
+}
+
+.more07 p::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/right-arrow-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 9px;
+    right: 12px;
+
+}
+
+
+@media (max-width: 992px) {
+    .step_line_warp{
+        position: relative;
+        width: 55px;
+        height: 88.5%;
+        top: 51%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: absolute;
+       
+        
+    }
+   
+
+    .food_steps_pic{
+        overflow: hidden;
+        width: 40%;
+        height: 60%;
+        
+    
+    }
+
+    .more07 p::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/right-arrow-w.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 7px;
+        right: 2px;
+    
+    }
+    
+
+}
+
+@media (max-width: 480px) {
+
+    .About_Items_warp{
+        position: relative;
+    }
+    
+    
+    
+    .food_steps_warp{
+        margin-top: 100px;
+    }
+    
+    .food_steps{
+        position: relative;
+        width: 80%;
+        height: 400px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        margin: 0 auto 60px auto;
+       
+        border:2px solid var(--dark_blue);
+       
+       
+        background-color: white;
+    }
+
+    .steps01{
+        margin-top: 70px;
+    }
+    
+    .step_line_warp{
+        position: relative;
+        width: 55px;
+        height: 90.5%;
+        top: 51%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: absolute;
+        
+        
+    }
+    
+    .step_line{
+       margin-left: 45%;
+        width: 2px;
+        height: 100%;
+        border: solid 2px var(--dark_blue)
+    
+    }
+    
+    .step_dot_arrow{
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        background-color: var(--dark_blue);
+        transform: scale(2);
+    }
+    
+   
+    
+    .dot_arrow .fa-caret-down{
+        font-size: 20px;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 52%;
+        transform: translate(-50%,-50%);;
+    
+    
+    }
+    
+    .step_dot_warp{
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    
+    .step_dot{
+        display: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        background-color: var(--dark_blue);
+        
+      
+    }
+    
+    
+    .food_steps_pic{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        
+    
+    }
+    
+    .food_steps_pic img{
+        width: 120%;
+        
+    }
+    
+    
+    .steps_pic01 img{
+        transform: translateY(-30px)
+    }
+    
+    .steps_pic05 img{
+        transform: translateX(-30px)
+    }
+    
+    
+    
+    .food_steps_content{
+      
+        width: 80%;
+        height: 60%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .food_steps_content h1{
+        margin-top: 15px;
+    text-align: center;
+        font-size: 2rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1.33px;
+        color: #000000;
+    
+    
+    }
+    .food_steps_content p{
+    
+        font-size: 1.4rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.8;
+        letter-spacing: normal;
+        color: #000000;
+    
+    
+    
+    }
+    
+    .more07 p::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/right-arrow-w.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 7px;
+        right: 2px;
+    
+    }
+
+}
