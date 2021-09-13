@@ -184,7 +184,7 @@ select {
 
 .more_btn p{
     position: relative;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 400;
     text-align: center;
     color: white;
@@ -304,7 +304,7 @@ select {
     border-right:solid 0.1px rgba(173, 173, 173, 0.5);
     border-left:solid 0.1px rgba(173, 173, 173, 0.5);
     width: 100%;
-    height: 75%;
+    height: 70%;
     overflow: hidden;
     
 
@@ -320,10 +320,10 @@ select {
 }
 
 .product_title{
-    padding: 0px 15px;
+    padding: 10px 15px;
     background-color:white;
     border:solid 0.1px rgba(173, 173, 173, 0.5);
-    height: 25%;
+    height: 30%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -374,7 +374,7 @@ select {
 }
 
 .product_detail p{
-   
+    margin-top: 26px;
     font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
@@ -383,7 +383,7 @@ select {
     letter-spacing: normal;
     
   
-  }
+}
 
 .S_price::before{
     content: 'NT ';
