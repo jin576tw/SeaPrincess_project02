@@ -144,12 +144,15 @@
     width: 20%;
     font-size: 1.6rem;
 }
+
 .Landing_page_content .bt-text p{
     cursor: pointer;
     padding: 0 12px;
     margin: 0 6px;
     border: 0.5px solid white;
     border-radius: 22.5px;
+    min-width: 64px;
+    max-height: 30px;
 
 }
 .Landing_page_content .bt-text p:hover{

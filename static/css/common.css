@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif,'Noto Serif TC', serif;
     font-weight: 400;
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
