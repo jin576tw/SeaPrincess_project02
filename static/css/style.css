@@ -762,14 +762,15 @@
 
 .Products_page{
     background-color: white;
-   padding-bottom: 60px;
+    padding: 80px 0 60px 0;
+   
 }
 
 .product_tittle{
-  opacity: 0;
-  
-   text-align: center;
-   margin: 80px auto 0 auto;
+    opacity: 0;
+    text-align: center;
+    margin: 0px auto 50px auto;
+
   
  
 }
@@ -778,7 +779,7 @@
     .product_tittle{
        
        text-align: center;
-       margin: 80px auto 15px auto;
+       margin: 0px auto 30px auto;
     
     }
     
@@ -787,9 +788,13 @@
 
     .product_tittle{
        text-align: center;
-       margin: 80px auto 15px auto;
+       margin: 0px auto 30px auto;
       
      
+    }
+
+    .ItemProduct_tittle{
+        margin-top: 60px;
     }
 
 }
@@ -805,10 +810,10 @@
     letter-spacing: 2px;
 
 }
-
+/* 
 .homeProducts_warp{
     margin-top: 50px;
-}
+} */
 
 
 .view_more_btn{

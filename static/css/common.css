@@ -253,19 +253,22 @@ select {
 }
 
 /* ///////////商品外觀//////////////// */
-
 .product{
    max-height: 400px;
    margin: 0px 0 30px 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
 
 }
 .product_intro{
     cursor: pointer;
     position: relative;
-    margin: 0px auto 0 auto;
-
+    max-width: 252px;
+    min-height: 360px;
     width: 90%;
-    height: 80%;
+    height: 90%;
     
 }
 
@@ -306,17 +309,15 @@ select {
     width: 100%;
     height: 70%;
     overflow: hidden;
-    
+    min-height: 252px;
+
 
 }
 
 .product_pic img{
-
     height: 100%;
     object-fit: cover;
     object-position: center;
-  
-   
 }
 
 .product_title{
@@ -350,7 +351,7 @@ select {
     height: 55px;
     background-color: var(--light_blue);
     border-radius: 100%;
-    top: 56%;
+    top: 53%;
     right: 3%;
 }
 
@@ -366,15 +367,13 @@ select {
  }
 
  .product_detail{
-
     width: 60%;
     text-align: center;
-    margin: 15px auto 0 auto;
+    margin: 10px auto 0 auto;
  
 }
 
 .product_detail p{
-    margin-top: 26px;
     font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
@@ -404,25 +403,7 @@ select {
     
 }
   
- .product_detail02{
-
-    width: 60%;
-    text-align: center;
-    margin: 15px auto 0 auto;
  
-}
-
-.product_detail02 p{
-   
-    font-size: 1.6rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    
-  
-  }
 
 
 
@@ -431,20 +412,27 @@ select {
 
 @media (max-width: 1025px) {
 
-    .product{
-        margin: 0px 0 40px 0;
+     .product{
         max-height: 350px;
-     
+        margin: 0px 0 40px 0;
      }
      
      .product_intro{
         cursor: pointer;
         position: relative;
-       
+        max-width: 212px;
+        min-height: 300px;
         width: 90%;
-        height: 80%;
+        height: 90%;
         
     }
+
+
+    .product_pic{
+        min-height: 212px;
+        height: 70%;
+    }
+
 
      .product_pic img{
          height: 100%;
@@ -454,7 +442,7 @@ select {
          padding: 0px 10px;
          background-color:white;
          border:solid 0.1px rgba(173, 173, 173, 0.5);
-         height: 25%;
+         height: 30%;
          width: 100%;
          display: flex;
          justify-content: center;
@@ -483,7 +471,6 @@ select {
         border-radius: 100%;
         top: 52%;
         right: 3%;
-        /* transform:  translateY(60px); */
     }
     
     .add_btn .fa-cart-plus{
@@ -501,7 +488,7 @@ select {
     
         width: 60%;
         text-align: center;
-        margin: 15px auto 0 auto;
+        margin: 10px auto 0 auto;
      
     }
     
@@ -522,16 +509,16 @@ select {
 
 @media (max-width: 767px) {
 
-    .product{
-        margin: 0px 0 20px 0;
+     .product{
         max-height: 300px;
-     
+        margin: 0px 0 20px 0;
      }
      
      .product_intro{
         cursor: pointer;
         position: relative;
-        
+        max-width: 168px;
+        min-height: 230px;
         width: 90%;
         height: 80%;
         
@@ -543,6 +530,11 @@ select {
        
     }
 
+    .product_pic {
+        min-height: 168px;
+        height: 70%;
+    }
+
      .product_pic img{
          height: 100%;
         
@@ -551,7 +543,7 @@ select {
          padding: 0px 8px;
          background-color:white;
          border:solid 0.1px rgba(173, 173, 173, 0.5);
-         height: 25%;
+         height: 30%;
          width: 100%;
          display: flex;
          justify-content: center;
@@ -578,9 +570,8 @@ select {
         height: 50px;
         background-color: var(--light_blue);
         border-radius: 100%;
-        top: 52%;
-        right: 3%;
-        /* transform:  translateY(60px); */
+        top: 50%;
+        right: 2%;
     }
     
     .add_btn .fa-cart-plus{
@@ -595,10 +586,9 @@ select {
      }
     
      .product_detail{
-    
         width: 60%;
         text-align: center;
-        margin: 15px auto 0 auto;
+        margin: 10px auto 0 auto;
      
     }
     
@@ -612,8 +602,7 @@ select {
         letter-spacing: normal;
         
     
-      
-      }
+    }
       
 }
 
