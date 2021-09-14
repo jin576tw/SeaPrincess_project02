@@ -3,7 +3,7 @@
 }
 
 /* ///////部落格首頁////// */
-.Diary_title{
+.Articale_title{
     margin-top: 140px;
     position: relative;
     width: 100%;
@@ -17,7 +17,7 @@
     align-items: center;
 }
 
-.Diary_title_bg{
+.Articale_title_bg{
     position: absolute;
     top: 0;
     left: 0;
@@ -28,14 +28,14 @@
     
 }
 
-.Diary_title_text{
+.Articale_title_text{
     position: absolute;
     overflow: hidden;
     width: 200px;
     height: 50px;
      
 }
-.Diary_title_text h1{
+.Articale_title_text h1{
     font-size: 3.6rem;
     font-weight: 500;
     font-stretch: normal;
@@ -49,7 +49,7 @@
 
 @media (max-width: 1025px) {
 
-    .Diary_title{
+    .Articale_title{
         margin-top: 50px;
         height: 300px;
        
@@ -58,7 +58,7 @@
 }
 @media (max-width: 767px) {
 
-    .Diary_title{
+    .Articale_title{
         margin-top: 50px;
 
         height: 250px;
@@ -382,7 +382,7 @@
 
 
     .articale_contnet_warp{
-        padding: 0 10px;
+        padding: 0 15px 0px 15px;
     }
     
     
@@ -392,22 +392,49 @@
 @media (max-width: 767px) {
 
     .articale_contnet_warp{
-        padding: 0 10px;
+         padding: 0 12px 60px 15px;
     }
 
 }
 /* /////////////////////海上日誌////////////////// */
 
-/* 文字框 */
-.articale_text{
-    margin: 20px 0 50px 0;
-    /* background-color: red; */
+/* 文章圖片 */
+.articale_contnet_warp img{
+   
+}
+
+/* 圖片註解 */
+.articale_contnet_warp small{
+    
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 350;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #8c8c8c;
+    margin-top: 10px;
+   
+}
+
+.articale_contnet_warp small::before{
+    content: '';
+    display: block;
+    width: 12px;
+    height: 10px;
+    margin-right: 5px;
+    background-image: url('../images/sort.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+ 
+   
 }
 
 /* 規定格式大小/顏色 */
-.articale_text p{
-    
-    font-size: 2rem;
+.articale_contnet_warp p{
+    font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -416,22 +443,40 @@
 
 }
 /* 小標題 */
-.articale_text h2{
-
-    margin: 0px 0 30px 0;
-    font-size: 2.8rem;
+.articale_contnet_warp h2{
+    font-size: 2.6rem;
     font-weight: 450;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.53;
     letter-spacing: normal;
-
-  
+   
 
 }
+
+/* 藍標題 */
+.articale_contnet_warp h3{
+    font-size: 2.6rem;
+    font-weight: 350;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    color:#137ea1;
+    
+
+}
+
+
 /* 強調段落  */
-.articale_text h3{
-    margin: 60px 0px;
+.articale_contnet_warp blockquote{
+    
+    padding-left: 30px;
+    border-left: 3px solid var(--sea_blue);
+
+}
+
+.articale_contnet_warp blockquote p{
     font-size: 1.8rem;
     font-weight: 350;
     font-stretch: normal;
@@ -439,36 +484,11 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: #137ea1;
-    padding-left: 30px;
-    border-left: 3px solid var(--sea_blue);
-
-}
-/* 藍標題 */
-.articale_text h4{
-
-    margin: 0px 0 30px 0;
-    font-size: 2.8rem;
-    font-weight: 350;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: normal;
-    color:#137ea1;
-
-}
-/* 圖片註解 */
-.articale_text h5{
-
-    font-size: 1.6rem;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-   
 }
 
-.articale_text span{
+
+/* 連結顏色 */
+.articale_contnet_warp span{
     cursor: pointer;
     color: #e47f00;
     border-bottom: solid 1px #e47f00;
@@ -476,42 +496,53 @@
 }
 
 
-/* 文章圖片 */
-.articale_pic{
-    /* background-color: cyan; */
-    margin: 0px 0 20px 0 ;
+/* 食譜原料表格  */
+.articale_contnet_warp table{
+    width: 100%;
+    min-height: 240px;
+    border: solid 1px var(--sea_blue);
+
+
 }
 
-/* 文章圖片註解 */
-.articale_pic_detail{
-    display: flex;
-    align-items: center;
-    color: #8c8c8c;
-    /* margin: 20px 0 0 0 ; */
+
+/* 食譜原料項目 */
+.articale_contnet_warp td{
+    padding: 20px 40px;
+    font-size: 1.8rem;
+    border-bottom: solid 1px var(--sea_blue);
+ 
 }
-.articale_pic_detail .fa-caret-up{
-    font-size: 18px;
-    margin-bottom: 8px;
-    margin-right: 10px;
+
+
+/* 食譜原料標題 */
+.articale_contnet_warp caption {
+    caption-side: top;
+    font-size: 2.6rem;
+    color: var(--sea_blue);
 }
+
+.articale_contnet_warp hr{
+    margin-top: 50px;
+    color: var(--sea_blue);
+}
+
 
 
 
 
 /* 延伸閱讀 */
-.more_articale{
+.articale_contnet_warp ul{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 120px;
     border:solid 2px var(--sea_blue);
-    margin: 0px auto 60px auto ;
-    /* background-color: #afa; */
+    margin: 50px 0;
 
 }
 
-.more_articale p{
-    margin-top: 10px;
+.articale_contnet_warp li{
     font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
@@ -519,192 +550,35 @@
     line-height: 1.8;
     letter-spacing: normal;
 }
-.more_articale span{
-    cursor: pointer;
-    color: #e47f00;
-    border-bottom: solid 1px #e47f00;
-  
-}
+
 
 @media (max-width: 1025px) {
 
-   
-
-    .articale_contnet_warp h3{
-        margin: 40px 0px 65px 0;
-        padding-left: 15px;
-  
-    
-    }
-
-    .more_articale{
-       
-        margin: 0px auto 60px auto ;
-       
-    
-    }
-}
-@media (max-width: 767px) {
-
-    
-
-    .articale_contnet_warp h3{
+    .articale_contnet_warp blockquote{
        
         padding-left: 15px;
   
     
     }
 
-    /* 文字框 */
-    .articale_text{
-        margin: 20px 0 30px 0;
-        /* background-color: red; */
-    }
 
 
-    .more_articale{
-       
-        margin: 0px auto 45px auto ;
-       
-    
-    }
-}
-
-/* //////////////海鮮料理//////////////// */
-
-/* 食譜圖片 */
-.Recpie_pic{
-    width: 100%;
-    height: 600px;
-    background-color: red;
-}
-
-.Recpie_pic img{
-    height: 100%;
-    object-fit: cover;
-}
- 
-.Recipe_pic_detail{
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-
-.Recipe_pic_detail p{
-    
-    font-size: 1.6rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-
-}
-
-@media (max-width: 1025px) {
-
-    .Recpie_pic{
-        width: 100%;
-        height: 400px;
-       
-    }
 }
 @media (max-width: 767px) {
 
 
-    .Recpie_pic{
-        width: 100%;
-        height: 300px; 
-    }
-}
 
-
-/* 食譜原料表格  */
-.recipe_form{
-    width: 100%;
-    min-height: 240px;
-    margin-bottom: 40px;
-    border: solid 1px var(--sea_blue);
-    padding: 15px 40px;
-
-}
-
-.recipe_form_title{
-    
-    border-bottom: solid 1px var(--sea_blue);
-}
-.recipe_form_title h2{
-    font-size: 2rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.64;
-    letter-spacing: normal;
-    color:  var(--sea_blue);
+    .articale_contnet_warp blockquote{
+       
+        padding-left: 15px;
   
-}
-
-.recipe_form_content{
-    margin-top: 20px;
-}
-.recipe_form_list{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    /* max-height: 40px; */
-}
-
-.recipe_form_list h3{
-    font-size: 1.8rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-    color: #000;
-
-}
-
-/* 食譜步驟 */
-.recipe_step{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    min-height: 100px;
-    padding:30px 0; 
-    border-bottom: 1px solid var(--sea_blue);
     
-}
+    }
 
-.recipe_step:last-child{
 
-    border-bottom: 1px solid transparent;
-}
-
-.recipe_step_title h3{
-    margin-top: 10px;
-    font-size: 2.4rem;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.38;
-    letter-spacing: normal;
-    color: #000;
-}
-
-.recipe_step_content p{
-    margin-top: 12px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-    color: #000;
 
 }
+
 
 
 
