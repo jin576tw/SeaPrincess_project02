@@ -615,7 +615,7 @@ $('.artical_tag').on({
 
 
 ////////商品列效果////////
-if ($(window).width() >= 992) {
+if ($(window).width() > 1024) {
 
     $(".product").on({
 
@@ -649,7 +649,7 @@ if ($(window).width() >= 992) {
 }
 
 // Q&A
-if ($(window).width() <  992){
+if ($(window).width() <=  1024){
 
     $('.question_icon').click(function(){
         
@@ -665,7 +665,7 @@ if ($(window).width() <  992){
 }
 
 
-if ($(window).width() >= 992){
+if ($(window).width() > 1024){
 
     $('.question_icon').click(function(){
         

@@ -753,7 +753,7 @@ $(document).ready(function () {
     
 
         //手機版
-        if ($(window).width() < 768) {
+        if ($(window).width() <= 768) {
                     
             $('.shoplist_RWD').click(function(){
                 
@@ -780,7 +780,7 @@ $(document).ready(function () {
 
         
          // 網頁版
-         if ($(window).width() >= 1024) {
+         if ($(window).width() > 1024) {
    
             $('.Cart_list_bar').css('transform','translateX(80px)').css('transition','0.5s')
     

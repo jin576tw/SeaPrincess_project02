@@ -9,7 +9,7 @@ $(document).ready(function () {
 /* ///////////第一頁//////////// */
 
   // 平板版
-        if ($(window).width() < 1024) {
+        if ($(window).width() <= 1024) {
 
             if (scrollNow >= 63){
                 

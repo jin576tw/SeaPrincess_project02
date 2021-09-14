@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    if($(window).width() <= 480){
+    if($(window).width() <= 768){
 
         // 手機版起始版面
         $(".Member_RWD_content").siblings('.Mcontent').css('display','none')
@@ -101,7 +101,7 @@ $(document).ready(function () {
         }, 10 ,'swing');
 
 
-        if($(window).width() <= 480){
+        if($(window).width() <= 768){
 
             $('.Member_RWD_content').fadeOut(1)
             $('.userName').fadeOut(1)
@@ -138,7 +138,7 @@ $(document).ready(function () {
         }, 10 ,'swing');
 
 
-        if($(window).width() <= 480){
+        if($(window).width() <= 768){
 
             $('.Member_RWD_content').fadeOut(1)
             $('.userName').fadeOut(1)
@@ -180,7 +180,7 @@ $(document).ready(function () {
         }, 10 ,'swing');
 
 
-        if($(window).width() <= 480){
+        if($(window).width() <= 768){
 
             $('.Member_RWD_content').fadeOut(1)
             $('.userName').fadeOut(1)
@@ -221,7 +221,7 @@ $(document).ready(function () {
         }, 10 ,'swing');
 
 
-        if($(window).width() <= 480){
+        if($(window).width() <= 768){
 
             $('.Member_RWD_content').fadeOut(1)
             $('.userName').fadeOut(1)
@@ -263,7 +263,7 @@ $(document).ready(function () {
         }, 10 ,'swing');
 
 
-        if($(window).width() <= 480){
+        if($(window).width() <= 768){
 
             $('.Member_RWD_content').fadeOut(1)
             $('.userName').fadeOut(1)

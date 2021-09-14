@@ -216,7 +216,7 @@
     color:var( --dark_red);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .cart_table_top{
         padding: 0 10px;
@@ -279,7 +279,7 @@
     
     
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .Cart_page_title{
         margin-bottom: 10px;
     }
@@ -679,7 +679,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .cart_fee_total_warp{
         margin: 60px auto 0px auto;
@@ -729,7 +729,7 @@
         padding: 30px 15px;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .cart_fee_total_warp{
         margin: 60px auto 0px auto;
@@ -901,7 +901,7 @@
 
   
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1025px) {
 
     .Other_Product_Items{
         position: relative;

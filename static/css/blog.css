@@ -11,7 +11,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
 
     .Blog_title{
@@ -23,7 +23,7 @@
 
 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Blog_title{
         margin-top: 50px;
@@ -153,7 +153,7 @@
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Blog_cate_name{
         display: flex;
@@ -174,7 +174,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Blog_cate{
         width: 100%;
@@ -316,7 +316,7 @@
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Blog_ad_title{
         margin-top: 60px;
@@ -341,7 +341,7 @@
 
 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Blog_ad_title{
         margin-top: 60px;

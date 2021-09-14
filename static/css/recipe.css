@@ -76,7 +76,7 @@
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Recipe_title{
         margin-top: 50px;
@@ -92,7 +92,7 @@
     }
 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Recipe_title{
         margin-top: 50px;
@@ -160,7 +160,7 @@
     height: 100%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
   
     
@@ -182,7 +182,7 @@
 
 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     
     .Recipe_ad_content{
@@ -345,7 +345,7 @@
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Recipe_tool_search{
         width: 35%;
@@ -392,7 +392,7 @@
     
     
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
    
 
@@ -476,7 +476,7 @@
    
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   
 }

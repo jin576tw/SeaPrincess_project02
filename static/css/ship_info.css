@@ -41,7 +41,7 @@
     color: white;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Ship_info_title{
         margin-top: 50px;
@@ -50,7 +50,7 @@
     
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Ship_info_title{
         margin-top: 50px;
@@ -108,7 +108,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Ship_info_intro_warp{
         display: flex;
@@ -129,7 +129,7 @@
    
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Ship_info_intro_warp{
         display: flex;
@@ -183,7 +183,7 @@
     color: #000;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     /* .Ship_info_media{
         width: 96%;
@@ -209,7 +209,7 @@
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   
     .Ship_info_media{
@@ -369,7 +369,7 @@
   
 } 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
 
     .title_up_text{
@@ -444,7 +444,7 @@
       
     } 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Ship_info_team_title{
         position: relative;
@@ -677,7 +677,7 @@
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Ship_info_team_content{
         z-index: 60;
@@ -743,7 +743,7 @@
     }
     
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Ship_info_team_content{
         z-index: 60;
@@ -974,7 +974,7 @@
  }
  
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Ship_info_appointment{
         position: relative;
@@ -1048,7 +1048,7 @@
      }
 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Ship_info_appointment_text{
         margin-top: -30px;
@@ -1215,7 +1215,7 @@
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 
     .Tourist{
         height: 500px;
@@ -1308,7 +1308,7 @@
 
 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .Tourist{
         height: 500px;
