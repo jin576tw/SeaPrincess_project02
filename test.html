@@ -24,11 +24,22 @@
     <style>
 
 
-          
-        
+        .EditPage_text_warp{
+            width: 100%;
+            min-height: 500px;
+            
+        }
 
-       
-       
+
+        .save{
+            text-align: center;
+            margin: 60px 0;
+            width: 150px;
+            height: 60px;
+        }
+
+
+        
 
     </style>
 
@@ -36,17 +47,16 @@
 <body>
 
 
+    <div class="EditPage_text_warp">
+        <textarea name="content" id="content" rows="10" cols="80"></textarea>
+
+        
+    </div>
 
 
-<!-- 
-<div class="test_articale">
-    <h2></h2>
-    
-    <p></p>
-
-</div>
- -->
-
+      <!-- 送出儲存按鈕 -->
+      <button class="save" type="submit" onclick="save()">编辑</button>
+           
 
   
   
@@ -66,260 +76,31 @@
 <script src="./static/js/common.js"></script>
 
 
+<!-- 編輯器 -->
+<script src="./static/ckeditor/ckeditor.js"></script>
+
+
 
 
 
 <script>
 
-    var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var result = [ ];
-     var ranNum = 5; 
-    for (var i = 0; i < ranNum; i++) { 
-        var ran = Math.floor(Math.random() * (arr.length - i)); 
-        if(result.includes(arr[ran])){ 
-            continue; 
-        } 
-        result.push(arr[ran]); 
-        arr[ran] = arr[arr.length - i - 1]; 
-    }; 
+CKEDITOR.replace( 'content', {
+      height: 500
+  });
 
-    // console.log(result);
-    
 
 
-    $.get("../JSON/Seafood.json", function (data) {
+  // 送出編輯
+function save(){
 
-        let d = data;
+// 內容編輯
+    let contentEdit = CKEDITOR.instances.content.getData()
 
-        let rd = []
+    alert(contentEdit)
 
 
-        function randomProuducts(num){
-
-            let newArr = []
-
-            for(let i = 0 ; i < d.length ;i++){  
-
-                if(d[i].left != 0 || typeof d[i].left != 'number'){
-
-
-                    newArr.push(d[i])
-                    
-            
-                }
-
-            }
-
-            for(let j = 0 ; j < num ; j++){ 
-
-                let ran = Math.floor(Math.random() * (d.length - j)); 
-
-                if(rd.includes(d[ran]) ){ 
-                    continue; 
-                } 
-
-                rd.push(d[ran]); 
-
-                d[ran] = d[d.length - j - 1];     
-                
-
-            }
-
-            return rd
-
-        }
-
-
-        randomProuducts(5)
-
-        console.log(rd);
-
-      
-
-        // console.log(newArr);
-
-
-
-
-        // function randomProuducts(num,rArr,arr){
-
-        //     for(let i = 0 ; i < num ;i++){ 
-
-    
-
-        //             let ran = Math.floor(Math.random() * (arr.length - i)); 
-
-        //             if(rArr.includes(arr[ran]) ){ 
-        //                 continue; 
-        //             } 
-
-        //             rArr.push(arr[ran]); 
-
-        //             console.log(rArr[i].left);
-
-        //             arr[ran] = arr[arr.length - i - 1];     
-
-
-
-        //             return rArr
-
-     
-
-               
-        //     }
-
-            
-        // }
-       
-        
-
-        // randomProuducts(4,rd,d)
-
-       
-        // console.log(rd);
-
-
-        
-
-        
-        // for(let i = 0 ; i < d.length ; i++){
-
-
-           
-        //     if(randomArr.includes(randomArr[i].pid==6)){
-
-        //         console.log(true);
-
-        //     }else{
-        //         console.log(false);
-        //     }
-
-
-
-           
-          
-
-            
-        // }
-
-     
-       
-
-
-
-       
-        
-        
-
-       
-
-       
-
-
-       
-
-
-
-    })
-
-
-
-     // function hot(){
-
-
-
-        //     for(let i = 0 ; i < d.length ; i++){
-
-        //         d = d.sort(function (a, b) {
-        //                     return b.left - a.left || b.hot - a.hot
-        //         })
-
-
-        //         let test = '熱銷：'+data[i].hot+' ,ID:'+data[i].pid + ','+ data[i].price+'元,剩下'+data[i].left+"隻,時間："+ d[i].create_at;
-
-
-        //         console.log(test);
-
-
-        //     }
-
-
-        // }
-       
-
-
-
-    // let ITEMID = data[0].pid
-
-
-    
-    // function itemID(num) {
-
-    //     if(num < 10){ 
-
-    //        num ='00'+num;
-
-    //        return num
-    //     }
-    //     else if(num < 100){
-
-    //         num ='0'+num;
-
-    //        return num
-
-    //     }else{
-
-    //         return num
-
-    //     }
-        
-    // }
-
-
-    // let realID = itemID(ITEMID)
-
-    
-
-    //  console.log(parseInt(realID))
-
-
-//      let item= [
-
-// //         {
-// //             name:{
-// //                 name01:"james",
-// //                 name02:'allen',
-// //                 name03:'rick'
-
-// //             }
-// //         }
-// //     ]
-
-    
-   
-
-//   console.log(item[0].name.name01);
-
-
-
-    
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
+}
 
 </script>
 
