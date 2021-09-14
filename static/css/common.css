@@ -540,7 +540,7 @@ select {
         
      }
      .product_title{
-         padding: 0px 8px;
+         padding: 4px 8px;
          background-color:white;
          border:solid 0.1px rgba(173, 173, 173, 0.5);
          height: 30%;
@@ -548,6 +548,7 @@ select {
          display: flex;
          justify-content: center;
          align-items: flex-start;
+         min-height: 72px;
          
      }
      
@@ -570,7 +571,7 @@ select {
         height: 50px;
         background-color: var(--light_blue);
         border-radius: 100%;
-        top: 50%;
+        top: 48%;
         right: 2%;
     }
     
