@@ -4,28 +4,6 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here.
-	// For complete reference see:
-	// https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
-
-	// The toolbar groups arrangement, optimized for two toolbar rows.
-	config.toolbarGroups = [
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-		{ name: 'links' },
-		{ name: 'insert' },
-		{ name: 'forms' },
-		{ name: 'tools' },
-		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		{ name: 'others' },
-		'/',
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-		{ name: 'styles' },
-		{ name: 'colors' },
-		{ name: 'about' }
-	];
-
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';
@@ -35,4 +13,11 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+	baseurl = 'https://'+window.location.hostname;
+	config.filebrowserBrowseUrl = baseurl+'/includes/ckfinder/ckfinder.html';
+	config.filebrowserImageBrowseUrl = baseurl+'/includes/ckfinder/ckfinder.html?Type=Images';
+	config.filebrowserFlashBrowseUrl = baseurl+'/includes/ckfinder/ckfinder.html?Type=Flash';
+	config.filebrowserUploadUrl = baseurl+'/includes/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'; //可上傳一般檔案
+	config.filebrowserImageUploadUrl = baseurl+'/includes/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';//可上傳圖檔
+	config.filebrowserFlashUploadUrl = baseurl+'/includes/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';//可上傳Flash檔案
 };
