@@ -24,7 +24,7 @@
     <style>
 
 
-        .EditPage_text_warp{
+        /* .EditPage_text_warp{
             width: 100%;
             min-height: 500px;
             
@@ -36,9 +36,69 @@
             margin: 60px 0;
             width: 150px;
             height: 60px;
+        } */
+
+
+        /* 插入分頁 */
+        .pagination{
+            display: flex;
+            justify-content: center;
+            
+           
+        }
+
+        /* 分頁條 */
+        .paginationjs-pages ul{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+
+        /* 分頁頁碼 */
+        .paginationjs-page{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 100%;
+            color: var(--dark_blue);
+            font-size: 1.4rem;
+            margin: 0 5px
+        }
+
+        /* 分頁頁碼往前  */
+        .paginationjs-prev{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            
+        }
+
+         /* 分頁頁碼往後  */
+        .paginationjs-next{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+
         }
 
 
+        /* 當前頁面 */
+        .paginationjs-pages ul .active{
+            background-color: var(--grey);
+            color:white
+        }
+
+        /* 第一頁/最後一頁 */
+        .paginationjs-pages ul .disabled{
+            color: var(--grey);
+        }
         
 
     </style>
@@ -46,22 +106,31 @@
 </head>
 <body>
 
-
+<!-- 
     <div class="EditPage_text_warp">
         <textarea name="content" id="content" rows="10" cols="80"></textarea>
 
         
-    </div>
+    </div> -->
 
 
       <!-- 送出儲存按鈕 -->
-      <button class="save" type="submit" onclick="save()">编辑</button>
+      <!-- <button class="save" type="submit" onclick="save()">编辑</button> -->
            
 
-  
+    <div class="warp row">
 
-   
+    </div>
+
+
      
+    <div class="pagination" id="pagination"></div>
+
+
+
+
+
+
 
 
 
@@ -80,6 +149,11 @@
 <script type="text/javascript" src="./static/ckeditor/ckeditor.js"></script>
 
 
+<!-- 分頁 -->
+<script type="text/javascript" src="./static/Pagination/pagination.js"></script>
+
+
+
 
 
 
@@ -89,23 +163,61 @@
 <script>
 
 
-CKEDITOR.replace( 'content', {
+    $.get("./static/JSON/Seafood.json", function (data) {
+
+
+
+        $('#pagination').pagination({
+            dataSource: data,
+            pageSize: 4,
+            // autoHidePrevious: true,
+            // autoHideNext: true,
+            callback: function(data, pagination) {
+
+
+                $('.warp').empty()
+
+                let d = data
+
+                for(let i = 0 ; i < d.length ;i++){ 
+
+
+                    $('.warp').append(PRODUCT(d[i]))
+
+                }
+
+            }
+        })
+
+
+})
+
+
+
+
+
+
+
+
+
+
+// CKEDITOR.replace( 'content', {
       
-      height: 500
-});
+//       height: 500
+// });
 
 
 
-  // 送出編輯
-function save(){
+//   // 送出編輯
+// function save(){
 
-// 內容編輯
-    let contentEdit = CKEDITOR.instances.content.getData()
+// // 內容編輯
+//     let contentEdit = CKEDITOR.instances.content.getData()
 
-    alert(contentEdit)
+//     alert(contentEdit)
 
 
-}
+// }
 
 
 // let pic_detail = $('.img01').attr('alt') 

@@ -270,16 +270,31 @@ $(document).ready(function () {
 
     $.get("./static/JSON/Seafood.json", function (data) {
 
-        let d = data;
+       let d = data
 
         originSort(d)
 
-        for(let i= 0 ; i < d.length ;i++ ){
+        // 載入分頁
+        $('#seafood_page').pagination({
+            dataSource: data,
+            pageSize: 16,
+            callback: function(data, pagination) {
 
-            SeafoodWarp.append(PRODUCT(d[i]))
+                // 商品載入
+                SeafoodWarp.empty()
 
+                let d = data
 
-        }
+                for(let i = 0 ; i < d.length ;i++){ 
+
+                    SeafoodWarp.append(PRODUCT(d[i]))
+
+                }
+
+            }
+        })
+
+        
 
       
 //////////商品種類 
@@ -649,8 +664,32 @@ $(document).ready(function () {
         let p_low = false
        
 
-        ItemChecktype(d)
 
+        // 載入分頁
+        $('#Item_page').pagination({
+        dataSource: data,
+        pageSize: 16,
+        callback: function(data, pagination) {
+
+            // 商品載入
+            ItemWarp.empty()
+
+            let d = data
+
+            for(let i= 0 ; i < d.length ;i++ ){
+
+                if(d[i].type_sid == itype){
+    
+                    ItemWarp.append(PRODUCT_B(d[i]))
+    
+                }
+    
+            }
+
+        }
+    })
+        
+    ItemChecktype(d)
 
     /// 商品母種類架構
         function  ItemChecktype(p) {

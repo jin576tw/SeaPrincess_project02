@@ -117,9 +117,6 @@
         
 }
 
-.Select_content{
-    min-height: 1500px;
-}
 
 /* ////商品分類條/////// */
 .Products_categeroy_warp{
@@ -541,30 +538,68 @@
 
 }
 
+
+/* /////////分頁條/////////// */
+.product_page{
+    height: 60px;
+    margin: 60px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width: 1025px) {
+    .product_page{
+        height: 60px;
+        margin: 60px 0px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+}
+@media (max-width: 767px) {
+
+    .product_page{
+        height: 60px;
+        margin: 30px 0px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+}
+
+
 /*///////  生鮮食材總攬/////// */
-.Seafood_ALLProduct{
+.Seafood_ALLProducts{
     position: relative;
-    background-color: #fff;    
 }
 
 
 .Seafood_Products_warp{
     margin-top: 50px;
-    padding-bottom: 100px;
+    min-height: 800px;
+    
 }
 
 
 @media (max-width: 1025px) {
     .Seafood_Products_warp{
         margin-top: 30px;
-        padding-bottom: 80px;
+        min-height: 800px;
+        
     }
 
 }
 @media (max-width: 767px) {
     .Seafood_Products_warp{
         margin-top: 20px;
-        padding-bottom: 80px;
+        min-height: 500px;  
+        
     }
 
 }
@@ -702,7 +737,8 @@
 
 .Item_Products_warp{
     margin-top: 50px;
-    padding-bottom: 100px;
+    min-height: 800px;
+  
     
 }
 
@@ -711,12 +747,14 @@
 
     .Item_ALLProducts{
         margin-top: -40px;
+        min-height: 800px;
     }
     
 
     .Item_Products_warp{
         margin-top: 20px;
-        padding-bottom: 80px;
+        min-height: 500px;
+
         
     }
 
@@ -738,7 +776,7 @@
     
     .Item_Products_warp{
         margin-top: 30px;
-        padding-bottom: 80px;
+
         
     }
     
