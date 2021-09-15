@@ -118,7 +118,7 @@ select {
 }
 
 .RWD_listopen{
-    transition: 0.8s;
+    transition: 0.5s;
     height: 110px !important;
 }
 
@@ -185,7 +185,7 @@ select {
 .more_btn p{
     position: relative;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     color: white;
     margin: 0 auto ;
@@ -286,13 +286,13 @@ select {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80px;
-    height: 30px;
+    width: 70px;
+    height: 25px;
     background-color: #d0021b;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 400;
     font-stretch: normal;
     font-style: normal;

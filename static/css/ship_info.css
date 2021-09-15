@@ -66,7 +66,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 0px;
+    padding: 100px 0px;
 }
 
 .Ship_info_intro_title{
@@ -93,12 +93,12 @@
     justify-content: flex-start;
     align-items:flex-start;
     border-left:  solid 3px var(--sea_blue);
-    padding-left: 30px;
+    padding-left: 25px;
 }
 
 .Ship_info_intro_text p{
 
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -242,7 +242,7 @@
     width: 80%;
     max-width: 900px;
     height: 140px;
-    margin: 0 auto 80px auto ;
+    margin: 30px auto 80px auto ;
     z-index: 60;
 }
 
@@ -336,10 +336,11 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: 2px;
+    margin-left: 10px;
     
   }
   .title_down_text h1:nth-of-type(2){
-      margin-left: 20px;
+      margin-left: 40px;
   
   }
 
@@ -630,8 +631,8 @@
 }
 
 .mask_pic{
-    width: 240px;
-    height: 240px; 
+    width: 200px;
+    height: 200px; 
     border-radius: 100%;
     background-color: var(--sea_blue);
     border: solid 3px #ffffff;
@@ -645,7 +646,7 @@
     font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.6rem;
+    line-height: 2rem;
     letter-spacing : 1.33px;
     text-align: center;
     color: #000000;
@@ -656,6 +657,7 @@
     margin-top: 20px;
     font-size: 2rem;
     font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .mask01{
@@ -879,7 +881,7 @@
 }
   
 .Ship_info_appointment_text p{
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -906,7 +908,7 @@
 .more_btn_yellow p{
     
     position: relative;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 500;
     text-align: center;
     color: #384982;
@@ -919,7 +921,7 @@
     display: block;
     width: 30px;
     height: 30px;
-    top:6px;
+    top:4px;
     left: 20px;
     background-image: url('../images/line-db.svg');
     background-size: contain;
@@ -1167,11 +1169,11 @@
 .Tourist_icon{
     cursor: pointer;
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     background-color: var(--dark_blue);
     border-radius: 100%;
-    border:25px solid white;
+    border:20px solid white;
     bottom: -2%;
 }
 
@@ -1201,6 +1203,9 @@
     color: #384982;
 }
 
+.Tourist_link p{
+    padding-bottom: 15px;
+}
 .Tourist_link p::after{
     content: '';
     display: block;

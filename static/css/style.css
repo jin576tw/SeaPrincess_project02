@@ -116,6 +116,7 @@
     line-height: normal;
     letter-spacing: 2px;
     text-align: center;
+    text-shadow: #0000005e 0em 0.1em 0.1em;
 
 
 }
@@ -321,7 +322,7 @@
     }
 
     .Landing_page_content .md-text{
-        margin-top: 20px;
+        margin-top: 40px;
        justify-content: space-between;
        width: 48%;
        align-items: center;
@@ -342,7 +343,7 @@
     .Landing_page_content .bt-text{
         margin-top: 10px;
         justify-content: space-around;
-        width: 80%;
+        width: 70%;
         
     }
     .Landing_page_content .bt-text p{
@@ -413,6 +414,7 @@
     display: block;
     position: absolute;
     background-image: url('../images/top-icon.svg');
+    background-size: contain;
     background-repeat: no-repeat;
     top: -10px;
     right: -40px;
@@ -518,9 +520,12 @@
     }
 
     .home_intro h2::after{
-        right: -20px;
+        width:15px;
+        height: 15px;
+        right: 20px;
       
     }
+
 
     .home_intro_title{
         margin-top: 35px;
@@ -719,6 +724,7 @@
         color: white;
        
     }
+    
 
     .intro_btn_icon h5{
         font-size: 1.4rem;
@@ -741,8 +747,14 @@
         /* background-color: red; */
     }
 
+    .intro_icon_pic img{
+        width: 70%;
+        height: 70%;
+       
+    }
+
     .intro_icon02 .fa-shopping-basket{
-        font-size: 50px;
+        font-size: 40px;
     }
 
 
@@ -1019,6 +1031,15 @@
     
     }
 
+    .Tourist_page_title h1{
+       
+      font-size: 3.2rem;
+      font-weight: 500;
+      
+     
+    
+    }
+
     .Tourist_page_title h1::before{
         content: '';
         display: block;
@@ -1032,6 +1053,11 @@
      
     
     }
+
+    .Tourist_page_intro{
+        margin: 20px auto 0 auto;
+        text-align: center;
+    } 
 
     .Tourist_page_intro p{
 
@@ -1048,10 +1074,10 @@
 
     .Tourist_page_pic{
         margin-top: 20px;
-        background-image: url('../images/tourad.png');
+        background-image: url('../images/tourad-m.png');
         background-size: contain;
         background-repeat: no-repeat;
-        height: 120px;
+        height: 200px;
         background-position: center center;
         
     }
@@ -1070,8 +1096,8 @@
     
     .more_btn_yellow p{
         position: relative;
-        font-size: 2rem;
-        font-weight: 400;
+        font-size: 1.8rem;
+        font-weight: 500;
         text-align: center;
         color: black;
         margin: 0 auto ;
@@ -1087,7 +1113,7 @@
         background-image: url('../images/right-arrow-b.svg');
         background-repeat: no-repeat;
         background-size: contain;
-        top: 5px;
+        top: 3px;
         right: 10px;
     
     }
@@ -1245,7 +1271,7 @@
         background-image: url('../images/right-arrow-w.svg');
         background-repeat: no-repeat;
         background-size: contain;
-        top: 6px;
+        top: 5px;
         right: 20px;
     
     }
@@ -1395,7 +1421,7 @@
       height: 60px;
       border-radius: 30px;
       background-color: #00d5a5;
-      border: solid 2px #ffffff;
+      border: solid 1px #ffffff;
 
   }
 
@@ -1423,5 +1449,34 @@
       height: 35px;
       background-image: url('../images/line.svg');
       background-size: contain;
+      background-repeat: no-repeat;
   }
 
+
+
+@media (max-width: 767px) {
+
+    .line_btn_lg p{
+        position: relative;
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        color: white;
+        margin: 0 auto ;
+        padding-left: 40px;
+    
+      }
+
+    .line_btn_lg p::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 75px;
+        width: 30px;
+        height: 30px;
+        background-image: url('../images/line.svg');
+        background-size: contain;
+    }
+
+}
