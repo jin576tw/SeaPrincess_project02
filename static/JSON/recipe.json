@@ -20,7 +20,7 @@
         "user":"user2021",
         "user_pic":"",
         "article_tid":2,
-        "create_at": "2021-09-01",
+        "create_at": "2021-10-01",
         "tag": ["店家推薦","推薦","店家推薦","推薦","店家推薦","推薦"],
         "cover":"./static/images/recipe/recipe01-1.jpeg",
         "content": "<img src=./static/images/recipe/recipe01-1.jpeg alt= ><p>&nbsp</p><p>烤魚分成兩種，一種是偏日式的鹽烤方式(口感乾酥、鹹香)，最適合當假日配酒的下酒菜呢！另一種是偏法式的紙包魚作法(口感濕潤、多汁)，剛從烤箱出爐的紙包魚，用手將紙包撕開，香氣撲鼻而來，讓人馬上食指大動！兩種都可以吃出魚不同的風味。</p><p>&nbsp</p><table><caption>食材</caption><tbody><tr><td>魷魚</td><td>100g</td></tr><tr><td>米酒</td><td>1大匙</td></tr><tr><td>蔥末</td><td>2大匙</td></tr><tr><td>老薑片</td><td>3片</td></tr><tr><td>蒜末</td><td>1大匙</</tbody></table><p>&nbsp</p><table><caption>涼拌醬汁</caption><tbody><tr><td>醬油</td><td>1大匙</td></tr><tr><td>白醋</td><td>1-1/2大匙</td></tr><tr><td>香油</td><td>1大匙</td></tr><tr><td>甜辣醬</td><td>1大匙</td></tr><tr><td>糖</td><td>1/2茶匙</td></tr></tbody></table><p>&nbsp</p><h2>1.煮飯</h2><p>內鍋米1：水0.8,目測水就大概蓋過米就可以了！外鍋1杯水。</p><p>因之後還會加蝦高湯拌飯,避免飯最後過於軟爛所以我選擇煮飯時水減量。</p><img src=./static/images/recipe/step01-1.jpeg alt= ><hr /><p>&nbsp</p><h2>2. 蔥白及蔥綠分開放</h2><p>蔥白及蔥綠分開放，蒜頭切丁或末</p><hr /><p>&nbsp</p><h2>3. 起油鍋加入蒜頭及蔥白爆香</h2><hr /><p>&nbsp</p><h2>4. </h2><p>再加入蔥綠及醃漬好的火燒蝦仁拌炒，蝦仁半熟後將白米飯加入拌炒至上色</p><img src=./static/images/recipe/step01-4.jpeg alt= >"
@@ -34,7 +34,7 @@
         "user":"user2021",
         "user_pic":"",
         "article_tid":3,
-        "create_at": "2021-09-01",
+        "create_at": "2021-11-01",
         "tag": ["店家推薦","推薦","店家推薦","推薦","店家推薦","推薦"],
         "cover":"./static/images/recipe/recipe01-1.jpeg",
         "content": "<img src=./static/images/recipe/recipe01-1.jpeg alt= ><p>&nbsp</p><p>烤魚分成兩種，一種是偏日式的鹽烤方式(口感乾酥、鹹香)，最適合當假日配酒的下酒菜呢！另一種是偏法式的紙包魚作法(口感濕潤、多汁)，剛從烤箱出爐的紙包魚，用手將紙包撕開，香氣撲鼻而來，讓人馬上食指大動！兩種都可以吃出魚不同的風味。</p><p>&nbsp</p><table><caption>食材</caption><tbody><tr><td>魷魚</td><td>100g</td></tr><tr><td>米酒</td><td>1大匙</td></tr><tr><td>蔥末</td><td>2大匙</td></tr><tr><td>老薑片</td><td>3片</td></tr><tr><td>蒜末</td><td>1大匙</</tbody></table><p>&nbsp</p><table><caption>涼拌醬汁</caption><tbody><tr><td>醬油</td><td>1大匙</td></tr><tr><td>白醋</td><td>1-1/2大匙</td></tr><tr><td>香油</td><td>1大匙</td></tr><tr><td>甜辣醬</td><td>1大匙</td></tr><tr><td>糖</td><td>1/2茶匙</td></tr></tbody></table><p>&nbsp</p><h2>1.煮飯</h2><p>內鍋米1：水0.8,目測水就大概蓋過米就可以了！外鍋1杯水。</p><p>因之後還會加蝦高湯拌飯,避免飯最後過於軟爛所以我選擇煮飯時水減量。</p><img src=./static/images/recipe/step01-1.jpeg alt= ><hr /><p>&nbsp</p><h2>2. 蔥白及蔥綠分開放</h2><p>蔥白及蔥綠分開放，蒜頭切丁或末</p><hr /><p>&nbsp</p><h2>3. 起油鍋加入蒜頭及蔥白爆香</h2><hr /><p>&nbsp</p><h2>4. </h2><p>再加入蔥綠及醃漬好的火燒蝦仁拌炒，蝦仁半熟後將白米飯加入拌炒至上色</p><img src=./static/images/recipe/step01-4.jpeg alt= >"
@@ -48,7 +48,7 @@
         "user":"user2021",
         "user_pic":"",
         "article_tid":4,
-        "create_at": "2021-09-01",
+        "create_at": "2021-12-01",
         "tag": ["店家推薦","推薦","店家推薦","推薦","店家推薦","推薦"],
         "cover":"./static/images/recipe/recipe01-1.jpeg",
         "content": "<img src=./static/images/recipe/recipe01-1.jpeg alt= ><p>&nbsp</p><p>烤魚分成兩種，一種是偏日式的鹽烤方式(口感乾酥、鹹香)，最適合當假日配酒的下酒菜呢！另一種是偏法式的紙包魚作法(口感濕潤、多汁)，剛從烤箱出爐的紙包魚，用手將紙包撕開，香氣撲鼻而來，讓人馬上食指大動！兩種都可以吃出魚不同的風味。</p><p>&nbsp</p><table><caption>食材</caption><tbody><tr><td>魷魚</td><td>100g</td></tr><tr><td>米酒</td><td>1大匙</td></tr><tr><td>蔥末</td><td>2大匙</td></tr><tr><td>老薑片</td><td>3片</td></tr><tr><td>蒜末</td><td>1大匙</</tbody></table><p>&nbsp</p><table><caption>涼拌醬汁</caption><tbody><tr><td>醬油</td><td>1大匙</td></tr><tr><td>白醋</td><td>1-1/2大匙</td></tr><tr><td>香油</td><td>1大匙</td></tr><tr><td>甜辣醬</td><td>1大匙</td></tr><tr><td>糖</td><td>1/2茶匙</td></tr></tbody></table><p>&nbsp</p><h2>1.煮飯</h2><p>內鍋米1：水0.8,目測水就大概蓋過米就可以了！外鍋1杯水。</p><p>因之後還會加蝦高湯拌飯,避免飯最後過於軟爛所以我選擇煮飯時水減量。</p><img src=./static/images/recipe/step01-1.jpeg alt= ><hr /><p>&nbsp</p><h2>2. 蔥白及蔥綠分開放</h2><p>蔥白及蔥綠分開放，蒜頭切丁或末</p><hr /><p>&nbsp</p><h2>3. 起油鍋加入蒜頭及蔥白爆香</h2><hr /><p>&nbsp</p><h2>4. </h2><p>再加入蔥綠及醃漬好的火燒蝦仁拌炒，蝦仁半熟後將白米飯加入拌炒至上色</p><img src=./static/images/recipe/step01-4.jpeg alt= >"

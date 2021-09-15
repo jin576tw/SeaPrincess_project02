@@ -431,7 +431,7 @@ function Blog_artical_B(a) {
 
 // 回歸原始商品排序
 function originSort(p) {
-    // 由剩餘數量來排序,並按照id排序
+    // 由剩餘數量來排序,並按照id大到小排序
     p = p.sort(function (a, b) {
 
         return b.left - a.left || b.pid - a.pid;

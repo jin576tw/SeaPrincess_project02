@@ -11,7 +11,10 @@ $.get("./static/JSON/diary.json", function (data) {
 
     randomProuducts(4,d,rd)
 
-    // 依照商品時間排序
+    // 依照先後排序
+    originSort(rd)
+
+ 
     timeSort(rd)
 
     for(let i = 0 ; i < rd.length ;i++){ 
@@ -35,7 +38,7 @@ $.get("./static/JSON/recipe.json", function (data) {
 
     randomProuducts(4,d,rd)
 
-    // 依照商品時間排序
+    // 依照先後排序
     timeSort(rd)
 
     for(let i = 0 ; i < rd.length ;i++){ 
