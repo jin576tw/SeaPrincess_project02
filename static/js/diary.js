@@ -1,5 +1,6 @@
 'use strict'
 
+let DiaryContent =  $('.Diary_content')
 $(document).ready(function () {
     $.get("./static/JSON/diary.json", function (data) {
 
@@ -10,13 +11,61 @@ $(document).ready(function () {
         // 依照先後排序
         timeSort(d)
 
-        for(let i = 0 ; i < d.length ;i++){ 
 
 
-            $('.Diary_content').append(Blog_artical(d[i]))
 
+        if ($(window).width() <= 1024){
+
+            $('#Diary_page').pagination({
+                dataSource: data,
+                pageSize: 4,
+               
+                callback: function(data, pagination) {
+    
+    
+                    DiaryContent.empty()
+    
+            
+                    for(let i = 0 ; i < d.length ;i++){ 
+    
+    
+                        DiaryContent.append(Blog_artical(d[i]))
+    
+                    }
+    
+                }
+            })
+
+
+        }else{
+
+            $('#Diary_page').pagination({
+                dataSource: data,
+                pageSize: 16,
+               
+                callback: function(data, pagination) {
+    
+    
+                    DiaryContent.empty()
+    
+            
+                    for(let i = 0 ; i < d.length ;i++){ 
+    
+    
+                        DiaryContent.append(Blog_artical(d[i]))
+    
+                    }
+    
+                }
+            })
 
         }
+
+        
+        
+
+       
+
 
         
 

@@ -215,7 +215,6 @@
 /* 文章列表  */
 .Recipe_content{
     min-height: 840px;
-    margin-bottom: 60px;
 }
 
 .Recipe_content .Blog_artical{
@@ -225,21 +224,42 @@
    
 }
 
+
+
+
+
+
+/* /////////分頁條/////////// */
+.Articale_page{
+    height: 60px;
+    margin: 60px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width: 1025px) {
+    .Articale_page{
+        height: 60px;
+        margin: 60px 0px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+}
 @media (max-width: 767px) {
 
-  
-}
+    .Articale_page{
+        height: 60px;
+        margin: 30px 0px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
 
-/* 分頁 */
-.articale_pages_warp{
-    margin-bottom: 80px;
-}
-
-
-.articale_pages{
-    width:30%;
-    height: 60px;
-    margin: 0 auto;
-    /* background-color: green; */
 }
 

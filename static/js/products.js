@@ -16,7 +16,7 @@ $(document).ready(function () {
             SeafoodPage = true;
             ItemPage = false;
           
-            if ($(window).width() <  992){
+            if ($(window).width() <=  1024){
 
                 $(this).css('background-color','white').css('opacity','1')
                 $(this).children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
             }
 
-            if ($(window).width() >= 992){
+            if ($(window).width() >1024){
 
                 $(this).css('background-color','white').css('opacity','1')
                 $(this).children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
@@ -72,7 +72,7 @@ $(document).ready(function () {
             SeafoodPage = false;
            
 
-            if ($(window).width() <  992){
+            if ($(window).width() <=  1024){
 
                 $(this).css('background-color','white').css('opacity','1')
                 $(this).children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
@@ -84,7 +84,7 @@ $(document).ready(function () {
             }
 
 
-            if ($(window).width() >= 992){
+            if ($(window).width() >1024){
 
                 $(this).css('background-color','white').css('opacity','1')
                 $(this).children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
@@ -119,7 +119,7 @@ $(document).ready(function () {
     if(SeafoodURL || SeafoodPage){
 
 
-        if ($(window).width() <  992){
+        if ($(window).width() <=  1024){
 
             $('.Seafood_select').css('background-color','white').css('opacity','1')
             $('.Seafood_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
@@ -131,7 +131,7 @@ $(document).ready(function () {
         }
 
 
-        if ($(window).width() >= 992){
+        if ($(window).width() > 1024){
 
             $('.Seafood_select').css('background-color','white').css('opacity','1')
             $('.Seafood_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
@@ -154,7 +154,7 @@ $(document).ready(function () {
     // 釣具用品
     if(ItemURL || ItemPage == true){
 
-        if ($(window).width() <  992){
+        if ($(window).width() <=  1024){
 
             $('.Item_select').css('background-color','white').css('opacity','1')
             $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.5) translateY(-5px)')
@@ -166,7 +166,7 @@ $(document).ready(function () {
         }
 
 
-        if ($(window).width() >= 992){
+        if ($(window).width() > 1024){
 
             $('.Item_select').css('background-color','white').css('opacity','1')
             $('.Item_select').children('.Prouduct_select_icon').css('transform', 'scale(1.8) translateY(-10px)')
@@ -185,7 +185,7 @@ $(document).ready(function () {
     }
 
 ////// 商品排序選單
-    if ($(window).width() < 992){
+    if ($(window).width() <= 1024){
         $('.Products_status_warp').on({
 
             click:function (){
@@ -198,7 +198,7 @@ $(document).ready(function () {
 
     }
 
-    if ($(window).width() >= 992){
+    if ($(window).width() > 1024){
         $('.Products_status_warp').on({
 
             click:function (){
@@ -235,14 +235,14 @@ $(document).ready(function () {
 
         click: function () {
 
-            if ($(window).width() < 992){
+            if ($(window).width() <= 1024){
 
                 let arrow = `<i class="fas fa-angle-down listDown"></i>`;
                 $('.product_status').html($(this).text()+ arrow);
                 
             }
 
-            if ($(window).width() >= 992){
+            if ($(window).width() >1024){
 
             let arrow = `<i class="fas fa-angle-up listUp"></i>`
            
@@ -383,7 +383,7 @@ $(document).ready(function () {
         let p_high = false
         let p_low = false
 
-        if ($(window).width() > 992){
+        if ($(window).width() > 1024){
 
             // 網頁版
             $('.Ａll_S_type').on({

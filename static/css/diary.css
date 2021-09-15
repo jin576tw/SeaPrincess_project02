@@ -248,7 +248,7 @@
 
 .Diary_content{
     min-height: 840px;
-    margin-bottom: 60px;
+    
 }
 
 .Diary_content .Blog_artical{
@@ -259,7 +259,42 @@
 
 
 
-/* 頁碼 */
+
+
+
+/* /////////分頁條/////////// */
+.Articale_page{
+    height: 60px;
+    margin: 60px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width: 1025px) {
+    .Articale_page{
+        height: 60px;
+        margin: 60px 0px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+}
+@media (max-width: 767px) {
+
+    .Articale_page{
+        height: 60px;
+        margin: 30px 0px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+}
 
 
 
