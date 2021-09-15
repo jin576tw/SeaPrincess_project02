@@ -243,198 +243,28 @@
     }
 
 }
-/* /////////部落格內容///////// */
-
-.Diary_Content{
-    width: 100%;
-    overflow: hidden;
-    /* background-color: red; */
-    /* padding-bottom: 80px; */
-
-}
-
-.Diary_Content_warp{
-    display: flex;
-    flex-direction: row;
-}
-
-@media (max-width: 1025px) {}
-
-@media (max-width: 767px) {
-    .Diary_Content_warp{
-        display: flex;
-        flex-direction: column;
-    }
-    
-
-}
-
-
 
 
 /* 海上日誌文章 */
-
-.Diary_artical{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* background-color: red; */
+.Diary_articale{
+    margin-top: 60px;
 }
 
-.Diary_artical_content{
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
+.Diary_content{
     min-height: 840px;
-    max-height: 2250px;
-    margin-bottom: 30px;
-    /* background-color: cyan; */
+    margin-bottom: 60px;
+}
+
+.Diary_content .Blog_artical{
    
+    justify-content:flex-start;
+    align-items: center;
 }
 
-@media (max-width: 1025px) {
-
-    .Diary_artical_content{
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-        min-height: 680px;
-        max-height: 1700px;
-        /* background-color: cyan; */
-       
-    }
-}
-
-@media (max-width: 767px) {
-
-    .Diary_artical_content{
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-        min-height: 840px;
-        max-height: 6300px;
-        /* background-color: cyan; */
-       
-    }
-
-}
 
 
 /* 頁碼 */
 
-.artical_page_warp{
-   
-    /* background-color: green; */
-    width: 500px;
-    height: 40px;
-    margin-bottom: 60px;
-
-    
-}
-/* .artical_page_warp ul{
-   
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.artical_page_warp ul ::after{
- 
-    content: '';
-    display: block; 
-    position: absolute;
-    top:10px;
-    right:45px;
-    width: 20px;
-    height: 20px;
-    background-image: url('./static/images/right-arrow.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-   
-}
-
-.artical_page_warp li{
-    width: 40px;
-    height: 40px;
-    font-size: 1.8rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 1px;
-    text-align: center;
-    color: var(--dark_blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-    border-radius: 100%;
-    margin: 0 10px;
-
-}
-.artical_page_warp li:hover{
-    transition: 0.5s;
-    color: white;
-   
-    background-color: var(--dark_blue);
-
-
-}
-
-
-
-@media (max-width: 767px) {
- 
-    .Diary_Content{
-        margin-top: 0px;
-     
-     }
-   
-
-
-    .artical_page_warp ul{
-        margin-right: 60px;
-    }
-
-     .artical_page_warp ul ::after{
- 
-        content: '';
-        display: block; 
-        position: absolute;
-        top:12px;
-        right:-10px;
-        width: 15px;
-        height: 15px;
-        background-image: url('./static/images/right-arrow.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        cursor: pointer;
-       
-    }
-    
-    .artical_page_warp li{
-        width: 40px;
-        height: 40px;
-        font-size: 1.8rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: 1px;
-        text-align: center;
-        color: var(--dark_blue);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-       
-        border-radius: 100%;
-        margin: 0 5px;
-    
-    }
-
-} */
 
 /* 部落格列 */
 .Blog_Bar{

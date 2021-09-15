@@ -8,7 +8,7 @@ $(document).ready(function () {
         for(let i = 0 ; i < d.length ;i++){ 
 
 
-            $('.Diary_artical_content').append(Blog_artical(d[i]))
+            $('.Diary_content').append(Blog_artical(d[i]))
 
 
         }

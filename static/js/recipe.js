@@ -8,7 +8,7 @@ $(document).ready(function () {
         for(let i = 0 ; i < d.length ;i++){ 
 
 
-            $('.recipe_articale_warp').append(Blog_artical_B(d[i]))
+            $('.Recipe_content').append(Blog_artical_B(d[i]))
 
 
         }

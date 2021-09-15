@@ -389,7 +389,7 @@ $(document).ready(function () {
                     SeafoodTypeCheck(d)
 
                     // 傳送狀態URL
-                    S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    // S_sendURL(s_type,hot,newTime,p_high,p_low)
                 
                 }
 
@@ -412,7 +412,7 @@ $(document).ready(function () {
                     SeafoodTypeCheck(d)
 
                     // 傳送狀態URL
-                    S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    // S_sendURL(s_type,hot,newTime,p_high,p_low)
                     
                 
                 }
@@ -436,7 +436,7 @@ $(document).ready(function () {
                     SeafoodTypeCheck(d)
 
                     // 傳送狀態URL
-                    S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    // S_sendURL(s_type,hot,newTime,p_high,p_low)
 
                 
 
@@ -462,7 +462,7 @@ $(document).ready(function () {
                     SeafoodTypeCheck(d)
 
                     // 傳送狀態URL
-                    S_sendURL(s_type,hot,newTime,p_high,p_low)
+                    // S_sendURL(s_type,hot,newTime,p_high,p_low)
 
             
                 
@@ -514,7 +514,7 @@ $(document).ready(function () {
                 p_low = false
 
                  // 傳送狀態URL
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
+                // S_sendURL(s_type,hot,newTime,p_high,p_low)
             
             }
 
@@ -543,7 +543,7 @@ $(document).ready(function () {
                 p_high = false
                 p_low = true
 
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
+                // S_sendURL(s_type,hot,newTime,p_high,p_low)
 
             
             
@@ -572,7 +572,7 @@ $(document).ready(function () {
                 p_high = true
                 p_low = false
 
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
+                // S_sendURL(s_type,hot,newTime,p_high,p_low)
 
             
             
@@ -605,7 +605,7 @@ $(document).ready(function () {
                 p_high = false
                 p_low = false
 
-                S_sendURL(s_type,hot,newTime,p_high,p_low)
+                // S_sendURL(s_type,hot,newTime,p_high,p_low)
 
                
             
@@ -772,7 +772,7 @@ $(document).ready(function () {
                 ItemChecktype(d)
 
                 // 傳送URL
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
             
                 
             }
@@ -813,7 +813,7 @@ $(document).ready(function () {
                 ItemChecktype(d)
 
                  // 傳送URL
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                 
 
@@ -853,7 +853,7 @@ $(document).ready(function () {
                 ItemChecktype(d)
 
                  // 傳送URL
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
 
                 
@@ -894,7 +894,7 @@ $(document).ready(function () {
                 ItemChecktype(d)
 
                  // 傳送URL
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                 
                 
@@ -940,7 +940,7 @@ $(document).ready(function () {
             ItemChecktype(d)
 
             // 傳送URL
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
 
             
@@ -964,7 +964,7 @@ $(document).ready(function () {
             ItemCheckSubtype(d);
 
             // 傳送URL
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -987,7 +987,7 @@ $(document).ready(function () {
             ItemCheckSubtype(d);
 
             // 傳送URL
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
 
             
@@ -1011,7 +1011,7 @@ $(document).ready(function () {
             ItemCheckSubtype(d);
 
             // 傳送URL
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1035,7 +1035,7 @@ $(document).ready(function () {
             ItemCheckSubtype(d);
 
             // 傳送URL
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
             
 
 
@@ -1057,7 +1057,7 @@ $(document).ready(function () {
              ItemCheckSubtype(d);
 
              // 傳送URL
-             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            //  I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1080,7 +1080,7 @@ $(document).ready(function () {
             ItemCheckSubtype(d);
 
             // 傳送URL
-            I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             
 
@@ -1103,7 +1103,7 @@ $(document).ready(function () {
              ItemCheckSubtype(d);
 
              // 傳送URL
-             I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+            //  I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
  
 
             
@@ -1149,7 +1149,7 @@ $(document).ready(function () {
                 p_low = false
 
                  // 傳送URL
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
             }
 
@@ -1185,7 +1185,7 @@ $(document).ready(function () {
                 p_high = false
                 p_low = true
 
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
               
 
@@ -1226,7 +1226,7 @@ $(document).ready(function () {
                 p_high = true
                 p_low = false
 
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
                
             
@@ -1266,7 +1266,7 @@ $(document).ready(function () {
                 p_high = false
                 p_low = false
 
-                I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
+                // I_sendURL(itype,subitype,hot,newTime,p_high,p_low)
 
 
                

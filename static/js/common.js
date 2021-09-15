@@ -316,7 +316,7 @@ function Blog_artical(a) {
   
 
    let Blog_artical =`
-   <div class="Blog_artical diary_artical col-lg-4 col-md-4 col-12 p-0">
+   <div class="Blog_artical diary_artical col-lg-3 col-md-3 col-12 p-0">
 
            <div class="Blog_artical_pic">
                <a href="./articale.html?D&&aid=`+ArticleID 
