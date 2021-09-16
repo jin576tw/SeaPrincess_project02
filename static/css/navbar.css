@@ -626,7 +626,7 @@
 /* ////////購物車按鈕////////// */
 
 .Cart_list{
-    display: none;
+    /* display: none; */
     position: fixed;
     top: 0;
     z-index: 999;
@@ -659,6 +659,50 @@
 
 }
 
+@media (max-width: 767px) {
+
+
+    /* RWD購物車架構 */
+    
+    .Cart_list{
+       
+        display: block;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        top: 50px;
+        right: -100%;
+        /* right: 0; */
+        height: calc(100vh - 50px);
+
+    }
+
+    .Cart_bg{
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: transparent;
+     
+    }
+
+    .Cart_list_bar .fa-times{
+       display: none;
+    }
+    
+    
+    .Cart_list_bar{
+        position: absolute;
+        width: 300px;
+        height: calc(100vh - 50px);
+        top: 0px;
+        right: 0px;
+        background-color: white;
+        padding: 20px 10px 0px 10px; 
+        
+    
+    }
+
+}
+
 
 
 
@@ -682,14 +726,36 @@
    
 }
 
+/* cookie商品內容 */
 .list_item_warps{
-  
+    /* background-color: cyan; */
     overflow: auto;
     height: 70%;
     width: 100%;
 }
 
+.product_list{
+    min-height: 181px;
+}
 
+.product_list_title{
+    height: 40px;
+    width: 100%;
+    background-color: rgba(23, 34, 61, 0.1);
+    color:  rgba(0, 0, 0, 0.31);
+    display: flex;  
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+}
+
+.product_list_title h3{
+    margin-top: 5px;
+    font-size: 1.8rem;
+
+}
+
+/* 空購物車狀態 */
 .list_item_empty{
     width: 100%;
     height: 100%;
@@ -699,14 +765,21 @@
     text-align: center;
     color: rgba(0, 0, 0, 0.7);
     font-size: 2rem;
+    display: none;
 
 }
+
+/* 購物車項目架構 */
 .Cart_list_item{
     margin-top: 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding-bottom: 20px;
     border-bottom: solid 1px rgba(23, 34, 61, 0.5);
+}
+
+.Cart_list_item:last-child{
+    border-bottom: solid 1px transparent;
 }
 
 .list_item_pic{
@@ -723,10 +796,15 @@
 .list_item_intro{
     overflow: hidden;
     width: 240px;
-    margin-left: 25px
+    margin-left: 25px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.list_item_title h1{
 
+
+.list_item_title h1{
     font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
@@ -736,11 +814,21 @@
     color: #000000;
 
 }
-.list_intro_count{
+
+.list_item_option{ 
+    margin: 10px 0;
+}
+.list_item_option select{
+    width: 100%;
+    height: 30px;
+    font-size: 1.6rem;
+}
+
+.list_item_detail{
+    display: flex;
     position: relative;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
     font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
@@ -751,8 +839,38 @@
  
 }
 
-.list_countBtn_warp{
-    justify-content:flex-start;
+@media (max-width: 767px) {
+
+
+    .list_item_warps{
+        
+        height: 60%;
+        width: 100%;
+       
+    }
+    
+   
+    .list_item_pic{
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .list_item_intro{
+        overflow: hidden;
+        width: 200px;
+        min-height: 100px;
+        margin-left: 10px
+    }
+
+    .list_item_option{ 
+        margin: 5px 0;
+    }
+}
+
+/* 計算器 */
+.Counter{
+    display: flex;
     align-items: center;
 }
 .countBtn{
@@ -774,7 +892,7 @@
   
 }
 
-.list_count {
+.countNum {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -790,9 +908,25 @@
 
 }
 
-.list_intro_price p{
-    margin-right: 25px;
-    margin-top: 8px;
+
+@media (max-width: 767px) {
+
+    .countNum {
+       
+        margin: 0 10px;
+    
+    }
+
+    
+}
+
+
+
+
+
+/* 價錢 */
+.list_intro_price h4{
+    margin-top: 3px;
     font-size: 1.6rem;
     font-weight: 500;
     font-stretch: normal;
@@ -800,12 +934,12 @@
     line-height: normal;
     letter-spacing: normal;
 }
-.list_intro_price p::before{
+.list_intro_price h4::before{
     content: 'NT ';
    
 }
 
-
+/* 刪除按鈕 */
 .item_delete{
     cursor: pointer;
     font-size: 18px;
@@ -818,9 +952,10 @@
 
 }
 
+/* 商品小計 */
 .Cart_list_total{
-    /* border-top: 2px solid black; */
-    
+    border-top: 2px solid rgba(23, 34, 61, 0.5);
+
     width: 100%;
    
 }
@@ -843,8 +978,7 @@
 
 
 .checkout_btn{
-  
-    /* margin-bottom: 80px; */
+
     margin-top: 60px;
     width: 80%;
     height: 50px;
@@ -858,127 +992,10 @@
     color: white;
     border-radius: 6px;
    
-
-
 }
 
-@media (max-width: 1025px) {
-    
-    .list_count {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.6rem;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #000000;
-        margin: 0 10px;
-    
-    }
 
-
-}
 @media (max-width: 767px) {
-
-
-    .Cart_list{
-       
-        display: block;
-        position: fixed;
-        z-index: 999;
-        width: 300px;
-        top: 50px;
-        right: -300px;
-        /* right: 0; */
-        height: calc(100vh - 50px);
-       
-
-    }
-
-    .Cart_bg{
-        display: none;
-    }
-
-    .Cart_list_bar .fa-times{
-       display: none;
-    }
-    
-    
-    .Cart_list_bar{
-        position: absolute;
-        width: 300px;
-        height: calc(100vh - 50px);
-        top: 0px;
-        right: 0px;
-        background-color: white;
-        padding: 20px 10px 0px 10px; 
-        
-    
-    }
-
-    
-    
-    
-    .Cart_list_warp{
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        height: 100vh; 
-       
-    }
-
-    .list_item_warps{
-        
-        height: 58%;
-        width: 100%;
-    }
-    
-   
-    .list_item_pic{
-        overflow: hidden;
-        width: 100px;
-        height: 100px;
-    }
-    
-    .list_item_intro{
-        overflow: hidden;
-        width: 200px;
-        margin-left: 10px
-    }
-
-    .list_intro_count{
-        position: relative;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-direction:column-reverse;
-        margin-top: 5px;
-        font-size: 1.6rem;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.89;
-        letter-spacing: normal;
-        color: rgba(0, 0, 0, 0.7);
-     
-    }
-
-    .item_delete{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        cursor: pointer;
-        font-size: 18px;
-        color: rgba(23, 34, 61, 0.5);
-    
-    }
 
     .Cart_list_total{
         margin-top: 10px;
