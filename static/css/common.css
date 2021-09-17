@@ -130,7 +130,7 @@ select {
 
 .RWD_open_shoplist{
     transition: 0.5s;
-    transform: translateX(-300px);
+    transform: translateX(-100%);
   
     
 }

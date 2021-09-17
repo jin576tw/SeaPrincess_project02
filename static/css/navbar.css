@@ -626,12 +626,13 @@
 /* ////////購物車按鈕////////// */
 
 .Cart_list{
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 0;
     z-index: 999;
     width: 100%;
     height: 100vh;
+
     
 }
 
@@ -674,6 +675,7 @@
         right: -100%;
         /* right: 0; */
         height: calc(100vh - 50px);
+        transition: 1.2s;
 
     }
 
@@ -855,7 +857,17 @@
         width: 100px;
         height: 100px;
     }
+
+    .list_item_title h1{
+        font-size: 1.6rem;
+        
+    }
     
+    .list_item_option select{
+        width: 100%;
+        height: 25px;
+        font-size: 1.4rem;
+    }
     .list_item_intro{
         overflow: hidden;
         width: 200px;
@@ -877,6 +889,7 @@
     cursor: pointer;
     width: 25px;
     height: 25px;
+    font-size: 1.2rem;
     border-radius: 100%;
     border: solid 1px rgba(0, 0, 0, 0.3);
     color: rgba(0, 0, 0, 0.3);
@@ -917,6 +930,14 @@
     
     }
 
+    .countBtn{
+        
+        width: 20px;
+        height: 20px;
+       
+      
+    }
+
     
 }
 
@@ -926,6 +947,7 @@
 
 /* 價錢 */
 .list_intro_price h4{
+    margin-right: 20px;
     margin-top: 3px;
     font-size: 1.6rem;
     font-weight: 500;
@@ -937,6 +959,18 @@
 .list_intro_price h4::before{
     content: 'NT ';
    
+}
+
+@media (max-width: 767px) {
+
+    .list_intro_price h4{
+
+        margin-right: 10px;
+
+
+
+    }
+
 }
 
 /* 刪除按鈕 */

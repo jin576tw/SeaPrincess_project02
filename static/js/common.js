@@ -82,7 +82,7 @@ function PRODUCT(p){
     if(p.left==0){
 
         PRODUCT = `
-            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn" Item-ID=${p.pid} Item-left=${p.left} >
+            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn" Product-ID=${p.pid} food="true" >
                     <div class="product_intro empty_product">`+ PRODUCTTAG+
                         `<div class="product_pic">
                             <a href="./each-product.html?S&&pid=`+PRODUCTID+`">
@@ -105,9 +105,9 @@ function PRODUCT(p){
     }else{
 
         PRODUCT = `
-        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn" Item-ID=${p.pid} Item-left=${p.left}>
+        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn" Product-ID=${p.pid} food="true">
         <div class="product_intro">`+PRODUCTTAG+
-                    `<div class="add_btn">
+                    `<div class="add_btn" id="add_seafood" >
                         <i class="fas fa-cart-plus"></i>
                     </div>
                     <div class="product_pic">
@@ -217,7 +217,7 @@ function PRODUCT_B(p){
     if(p.left==0){
 
         PRODUCT = `
-            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn" Item-ID=${p.pid}>
+            <div class="product p-0 col-lg-3 col-md-4 col-6  animate__animated animate__fadeIn" Product-ID=${p.pid} food="false">
                     <div class="product_intro empty_product">`+ PRODUCTTAG+
                         `<div class="product_pic">
                             <a href="./each-product.html?I&&pid=`+PRODUCTID+`">
@@ -240,9 +240,9 @@ function PRODUCT_B(p){
     }else{
 
         PRODUCT = `
-        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn" Item-ID=${p.pid}>
+        <div class="product p-0 col-lg-3 col-md-4 col-6 animate__animated animate__fadeIn" Product-ID=${p.pid} food="false">
         <div class="product_intro">`+PRODUCTTAG+
-                    `<div class="add_btn">
+                    `<div class="add_btn" id="add_item">
                         <i class="fas fa-cart-plus"></i>
                     </div>
                     <div class="product_pic">
@@ -534,7 +534,159 @@ function randomProuducts(num,p,rp){
 }
 
 
+//navbar購物車商品架構
+function CartProduct(arr){
 
+    let SEAFOOD_LIST =  $('.seafood_list_warp')
+    let ITEM_LIST =  $('.item_list_warp')
+
+
+    
+    //商品ID三位數
+    function productID(p) {
+
+        if(p.pid < 10){ 
+
+            let num ='00'+p.pid;
+
+            return num
+
+        }
+        else if(p.pid < 100){
+
+            let num ='0'+p.pid;
+
+            return num
+
+        }else{
+            let num = p.id
+            return num
+
+        }
+
+    }
+
+    let PID = productID(arr)
+
+    // 計算當前商品金額
+    let nowprice = parseInt(arr.count) * parseInt(arr.Product_Price);
+
+    let isFood = arr.food;
+    // 是否為食物
+    if(isFood){
+
+        let Seafood_product =`<div class="Cart_list_item" Product-ID="${arr.pid}">
+
+            <div class="list_item_pic">
+                <a href="./each-product.html?S&&pid=${PID}">
+                    <img src="${arr.Product_Pic}" alt="">
+                </a>
+            </div>
+
+            <div class="list_item_intro">
+
+                <div class="list_item_title">
+                    <a href="./each-product.html?S&&pid=${PID}">
+                        <h1>${arr.Product_Name}</h1>
+                    </a>
+                </div>
+
+
+                <div class="list_item_detail">
+    
+                    <div class="Counter">
+                        <div class="countBtn countBtn_minus">
+                            <i class="fas fa-minus"></i>
+                        </div>
+                        <div class="countNum">${arr.count}</div>
+                        <div class="countBtn countBtn_plus">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+
+                    <div class="list_intro_price">
+                        <h4>${nowprice}</h4>
+                    </div>
+
+                    <div class="item_delete">
+                        <i class="far fa-trash-alt "></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>`
+
+
+        SEAFOOD_LIST.append(Seafood_product);
+    
+        
+    }else{
+
+
+        // 釣具型號選擇
+        let Item_type = `<option>產品規格</option>`;
+
+        for(let j = 0 ; j < arr.Product_type.length ;j++){ 
+
+            let optiStr = `<option>${arr.Product_type[j]}</option>`
+
+            Item_type+=optiStr
+
+        }
+        
+       
+        let Item_product =`<div class="Cart_list_item" Product-ID="${arr.pid}">
+
+            <div class="list_item_pic">
+                <a href="./each-product.html?I&&pid=${PID}">
+                    <img src="${arr.Product_Pic}" alt="">
+                </a>
+            </div>
+
+            <div class="list_item_intro">
+
+                <div class="list_item_title">
+                    <a href="./each-product.html?I&&pid=${PID}">
+                        <h1>${arr.Product_Name}</h1>
+                    </a>
+                </div>
+
+
+                <div class="list_item_option">
+                    <select>`+Item_type+`</select>
+
+                </div>
+
+
+                <div class="list_item_detail">
+    
+                    <div class="Counter">
+                        <div class="countBtn countBtn_minus">
+                            <i class="fas fa-minus"></i>
+                        </div>
+                        <div class="countNum">${arr.count}</div>
+                        <div class="countBtn countBtn_plus">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+
+                    <div class="list_intro_price">
+                        <h4>${nowprice}</h4>
+                    </div>
+
+                    <div class="item_delete">
+                        <i class="far fa-trash-alt "></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>`
+
+        ITEM_LIST.append(Item_product);
+
+    }
+
+}
 
 
 
@@ -554,151 +706,318 @@ PROPUCTSWARP.on("mouseleave",".add_btn",function(){
 })
 
 ///////////////////加入購物車/////////////
+// 海鮮商品資料
+$.get("./static/JSON/Seafood.json", function (data) {
 
-PROPUCTSWARP.on("click",".add_btn",function(){
-
-     // 商品名稱
-     let itemTitle = $(this).next().next().children().children().text()
-
-
-     //商品圖片
-     let itemPic = $(this).next().children().children().attr('src')
-
-    //商品價格
-    let itemPrice = $(this).parent().next().children('p').text()
-
-    console.log(itemPrice);
-     
-
-    // 商品ID
-    let itemID = $(this).parent().parent().attr('Item-ID')
-
-    //商品庫存
-    let itemLeft = $(this).parent().parent().attr('Item-left')
-
-    let arr =[{Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1}]
-    // 商品名稱、商品圖片、商品價格、商品ID、商品庫存、商品數量初始值
+    let d = data;
 
 
-     // 判斷商品是否缺貨
-    if(itemLeft == 0 ){
-        alert('商品缺貨中')
+    PROPUCTSWARP.on("click","#add_seafood",function(){
 
-    }else{
+        // 商品ID
+        let PID = $(this).parent().parent().attr('Product-id')
 
-        // 顯示navbar數量 
-        $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
-        $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
-
-
-        //寫入cookie
-        if($.cookie('Cart') == null ){
-
-            // 第一次加入
-            $.cookie('Cart',JSON.stringify(arr),{expire : 1})
+        // 判斷食物或商品
+        let Food = $(this).parent().parent().attr('food') == 'true'
+            
         
-
-        }else{
-
-            // 抓cookie購物車資料
-            let cookieStr = $.cookie('Cart')
-
-            // 若不是第一次加入
-            let cookieArr = JSON.parse(cookieStr);//先轉成物件
-
-            let same = false //假設沒有添加過商品 
-
-
-            // 通過迴圈判斷是否符合重復
-            // 若有，增加數量
-            for(let i =0 ; i < cookieArr.length; i++){
-                if(itemID == cookieArr[i].pid){
-
-                    same = true;
+        if(Food){
+       
+            for(let i = 0 ; i < d.length ;i++){ 
+                // 資料庫抓到相同商品
+                if( PID  == d[i].pid){
                     
-                    let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Item_left)
-
-                    let Zero_Item = parseInt(cookieArr[i].Item_left) == 0 
-
-
-                    if(Item_over){
-                        alert('數量超過庫存')
-                        break;
-
-                    }
-                    else if(Zero_Item){
+                    // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品型號、商品數量初始值、判斷是否是食物
+                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:true}]
+                
+                
+                     // 判斷商品是否缺貨
+                    if(d[i].left == 0 ){
                         alert('商品缺貨中')
-                        break;
 
                     }else{
-                        cookieArr[i].count++
-                        // 數量沒超過庫存
+
+
+                        // 顯示navbar數量 
+                        $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
+                        $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
+
+
+                        //寫入cookie
+                        if($.cookie('Cart') == null ){
+
+                            // 第一次加入
+                            $.cookie('Cart',JSON.stringify(arr),{expire : 1})
+
+
+                        }else{
+
+
+                            // 抓cookie購物車資料
+                            let cookieStr = $.cookie('Cart')
+
+                            // 若不是第一次加入
+                            let cookieArr = JSON.parse(cookieStr);//先轉成物件
+
+                            let same = false //假設沒有添加過商品 
+
+
+                            // 通過迴圈判斷是否符合重復
+                            // 若有，增加數量
+                            for(let j =0 ; j < cookieArr.length; j++){
+
+                                if(d[i].pid == cookieArr[j].pid){
+
+                                    same = true;
+                                    
+                                    let Item_over = parseInt(cookieArr[j].count) >= parseInt(cookieArr[j].Product_Left)
+
+                                    let Zero_Item = parseInt(cookieArr[j].Product_Left) == 0 
+
+
+                                    if(Item_over){
+                                        alert('數量超過庫存')
+                                        break;
+
+                                    }
+                                    else if(Zero_Item){
+                                        alert('商品缺貨中')
+                                        break;
+
+                                    }else{
+                                        cookieArr[j].count++
+                                        // 數量沒超過庫存
+                                    }
+
+                            
+                                    break;
+                                        
+                                
+                                }
+
+                            }
+
+                            if(!same){
+
+                                if(d[i].left == 0){
+                                    alert('商品缺貨中')
+                                }else{
+                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:true})
+
+                                }
+
+                                
+                            }
+
+                            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+                        }
+            
+
                     }
 
-            
-                    break;
+                    //navbar購物車
+                    if($.cookie("Cart") == null){
+
+                        //cookie若無資料，顯是購物車為空
+                        $('.navbar_shoplist_count').css('display','none')
+                        $('.shoplist_count_RWD').css('display','none')
+                        $('.Cart_list_total').css('display','none')
+                        $('.list_item_empty').css('display','flex')
+
+
+
+                    }else{
+
+                        $('.list_item_empty').css('display','none');
+                        $('.Cart_list_total').css('display','block');
                         
-                
+                        // 抓cookie購物車資料
+                        let cookieStr = $.cookie('Cart');
+                        let cookieArr = JSON.parse(cookieStr);
+                        let sum = 0;
+
+
+                        for(let j = 0 ; j < cookieArr.length;j++){
+                            sum += cookieArr[j].count;
+                        }
+
+                        $('.navbar_shoplist_count').text(sum)
+                        $('.shoplist_count_RWD').text(sum)
+
+
+                    }
+
+
                 }
 
             }
 
-            if(!same){
-                if(itemLeft == 0){
-                    alert('商品缺貨中')
-                }else{
-                    cookieArr.push({Item_title:itemTitle,Item_pic:itemPic,Item_price:itemPrice,pid:itemID,Item_left:itemLeft,count:1})
 
-                }
-
-                
-            }
-
-
-            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-
-
-        }   
-        
-
-    }
-
-    //navbar購物車
-    if($.cookie("Cart") == null){
-
-        //cookie若無資料，顯是購物車為空
-        $('.navbar_shoplist_count').css('display','none')
-        $('.shoplist_count_RWD').css('display','none')
-        $('.Cart_list_total').css('display','none')
-        $('.list_item_empty').css('display','flex')
-
-
-
-    }else{
-
-        $('.list_item_empty').css('display','none');
-        $('.Cart_list_total').css('display','block');
-        
-        // 抓cookie購物車資料
-        let cookieStr = $.cookie('Cart');
-        let cookieArr = JSON.parse(cookieStr);
-        let sum = 0;
-
-
-        for(let i = 0 ; i < cookieArr.length;i++){
-        sum += cookieArr[i].count;
         }
-
-        $('.navbar_shoplist_count').text(sum)
-        $('.shoplist_count_RWD').text(sum)
+    })
 
 
-    }
-    
+})
+
+// 釣具用品資料
+$.get("./static/JSON/Item.json", function (data) {
+
+    let d = data
+
+    PROPUCTSWARP.on("click","#add_item",function(){
+
+        // 商品ID
+        let PID = $(this).parent().parent().attr('Product-id')
+
+        // 判斷食物或商品
+        let Food = $(this).parent().parent().attr('food') == 'true'
+
+
+        if(!Food){
+       
+            for(let i = 0 ; i < d.length ;i++){ 
+                // 資料庫抓到相同商品
+                if( PID  == d[i].pid){
+                    
+                    // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品母種類、商品子種類、商品型號、商品數量初始值、判斷是否是食物
+                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_tid:d[i].type_sid,Product_sub_tid:d[i].sub_type_sid,Product_type:d[i].type,count:1,food:false}]
+                
+                
+                     // 判斷商品是否缺貨
+                    if(d[i].left == 0 ){
+                        alert('商品缺貨中')
+
+                    }else{
+
+
+                        // 顯示navbar數量 
+                        $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
+                        $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
+
+
+                        //寫入cookie
+                        if($.cookie('Cart') == null ){
+
+                            // 第一次加入
+                            $.cookie('Cart',JSON.stringify(arr),{expire : 1})
+
+
+                        }else{
+
+
+                            // 抓cookie購物車資料
+                            let cookieStr = $.cookie('Cart')
+
+                            // 若不是第一次加入
+                            let cookieArr = JSON.parse(cookieStr);//先轉成物件
+
+                            let same = false //假設沒有添加過商品 
+
+
+                            // 通過迴圈判斷是否符合重復
+                            // 若有，增加數量
+                            for(let j =0 ; j < cookieArr.length; j++){
+
+                                if(d[i].pid == cookieArr[j].pid){
+
+                                    same = true;
+                                    
+                                    let Item_over = parseInt(cookieArr[j].count) >= parseInt(cookieArr[j].Product_Left)
+
+                                    let Zero_Item = parseInt(cookieArr[j].Product_Left) == 0 
+
+
+                                    if(Item_over){
+                                        alert('數量超過庫存')
+                                        break;
+
+                                    }
+                                    else if(Zero_Item){
+                                        alert('商品缺貨中')
+                                        break;
+
+                                    }else{
+                                        cookieArr[j].count++
+                                        // 數量沒超過庫存
+                                    }
+
+                            
+                                    break;
+                                        
+                                
+                                }
+
+                            }
+
+                            if(!same){
+
+                                if(d[i].left == 0){
+                                    alert('商品缺貨中')
+                                }else{
+                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:false})
+
+                                }
+
+                                
+                            }
+
+                            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+                        }
+            
+
+                    }
+
+                    //navbar購物車
+                    if($.cookie("Cart") == null){
+
+                        //cookie若無資料，顯是購物車為空
+                        $('.navbar_shoplist_count').css('display','none')
+                        $('.shoplist_count_RWD').css('display','none')
+                        $('.Cart_list_total').css('display','none')
+                        $('.list_item_empty').css('display','flex')
+
+
+
+                    }else{
+
+                        $('.list_item_empty').css('display','none');
+                        $('.Cart_list_total').css('display','block');
+                        
+                        // 抓cookie購物車資料
+                        let cookieStr = $.cookie('Cart');
+                        let cookieArr = JSON.parse(cookieStr);
+                        let sum = 0;
+
+
+                        for(let j = 0 ; j < cookieArr.length;j++){
+                            sum += cookieArr[j].count;
+                        }
+
+                        $('.navbar_shoplist_count').text(sum)
+                        $('.shoplist_count_RWD').text(sum)
+
+
+                    }
+
+
+                }
+
+            }
+
+
+        }
+    })
+
+
 
 
 
 })
+
+
+
 
 
 
