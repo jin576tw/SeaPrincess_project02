@@ -539,6 +539,7 @@ function CartProduct(arr){
 
     let SEAFOOD_LIST =  $('.seafood_list_warp')
     let ITEM_LIST =  $('.item_list_warp')
+    let FISHBOX_LIST =  $('.fishbox_list_warp')
 
 
     
@@ -620,6 +621,53 @@ function CartProduct(arr){
         SEAFOOD_LIST.append(Seafood_product);
     
         
+    }else if(arr.fishbox){//若為鮮魚箱
+
+        // let Fishbox_product =`<div class="Cart_list_item" Product-ID="999">
+
+        //     <div class="list_item_pic">
+        //         <a href="./fishbox.html">
+        //             <img src="${arr.Product_Pic}" alt="">
+        //         </a>
+        //     </div>
+
+        //     <div class="list_item_intro">
+
+        //         <div class="list_item_title">
+        //             <a href="./fishbox.html">
+        //                 <h1>${arr.Product_Name}</h1>
+        //             </a>
+        //         </div>
+
+
+        //         <div class="list_item_detail">
+    
+        //             <div class="Counter">
+        //                 <div class="countBtn countBtn_minus">
+        //                     <i class="fas fa-minus"></i>
+        //                 </div>
+        //                 <div class="countNum">${arr.count}</div>
+        //                 <div class="countBtn countBtn_plus">
+        //                     <i class="fas fa-plus"></i>
+        //                 </div>
+        //             </div>
+
+        //             <div class="list_intro_price">
+        //                 <h4>${nowprice}</h4>
+        //             </div>
+
+        //             <div class="item_delete">
+        //                 <i class="far fa-trash-alt "></i>
+        //             </div>
+        //         </div>
+
+        //     </div>
+        // </div>`
+
+
+        // FISHBOX_LIST.append(Fishbox_product)
+
+
     }else{
 
 

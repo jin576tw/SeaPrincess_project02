@@ -184,12 +184,7 @@
     overflow: hidden;
 }
 
-.package_pic01{
-    background-image: url('../images/fishbox01.webp');
-}
-.package_pic02{
-    background-image: url('../images/fishbox02.jpeg');
-}
+
 .fishbox_package_pic img{
     height: 100%;
     object-fit: cover;
@@ -276,7 +271,19 @@
 
 }
 
-.fishbox_btn{
+
+.checkout_info_list span{
+    color: red;
+}
+
+
+.fishbox_btn input{
+    width: 15px;
+    height: 15px;
+    margin: 0px 10px 0  10px;
+}
+
+.fishbox_btn label{
     cursor: pointer;
     width: 160px;
     height: 50px;
@@ -284,19 +291,16 @@
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    border-radius: 8px;
     border: solid 1px rgba(0, 0, 0, 0.31);
+    border-radius: 8px;
     margin-right: 20px;
-    margin-bottom: 20px;
+
+    font-size: 1.8rem;
+
+
+
 }
-.checkout_info_list span{
-    color: red;
-}
-.fishbox_btn input{
-    width: 15px;
-    height: 15px;
-    margin: 0px 10px 0  10px;
-}
+
 
 .fishbox_btn p{
     margin: 0px 0 0 0 ;
@@ -315,7 +319,8 @@
 }
 
 .checkout_info_list textarea{
-   
+   padding-left: 10px;
+   padding-top: 10px;
     width: 100%;
     border-radius: 8px;
     font-size: 1.6rem;
@@ -336,8 +341,9 @@
 }
 @media (max-width: 767px) {
 
-    .fishbox_btn{
+    .fishbox_btn label{
        width: 130px;
+       margin-bottom: 15px;
     }
 }
 

@@ -57,17 +57,23 @@
         </div>
            
         <div class="row fishbox_package_warp">
-            <div class="fishbox_package_box ">
-                <div class="fishbox_package_pic package_pic01 "></div>
+
+            <div class="fishbox_package_box " id="full_fishbox">
+                <div class="fishbox_package_pic package_pic01 ">
+                    <img src="./static/images/fishbox01.webp" alt="">
+                </div>
                 <div class="fishbox_package_title">
-                    <input type="radio" name="fishbox_package" id="">
+                    <input type="radio" name="fishbox" id="full_fish" value="全鮮魚魚箱">
                     <p>全鮮魚魚箱</p>
                 </div>
             </div>
-            <div class="fishbox_package_box">
-                <div class="fishbox_package_pic package_pic02 "></div>
+
+            <div class="fishbox_package_box" id="mix_fishbox">
+                <div class="fishbox_package_pic package_pic02 ">
+                    <img src="./static/images/fishbox02.jpeg" alt="">
+                </div>
                 <div class="fishbox_package_title">
-                    <input type="radio" name="fishbox_package" id="">
+                    <input type="radio" name="fishbox" id="mix_fish"  value="綜合海鮮魚箱">
                     <p>綜合海鮮魚箱</p>
                 </div>
             </div>
@@ -86,57 +92,46 @@
                 <h3>客製組合預算<span>*</span></h3>
                 <div class="fishbox_select_wrap fishbox_pice_select">
 
-                    <div class="fishbox_btn fishbox_pice_btn">
-                        <input type="radio" name="fishbox_pice" required>
-                        <p>2000</p>
-
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_pice" value="2000" required>2000</label>
                     </div>
-                    <div class="fishbox_btn fishbox_pice_btn">
-                        <input type="radio" name="fishbox_pice" required>
-                        <p>3000</p>
 
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_pice" value="3000" required>3000</label>
                     </div>
-                    <div class="fishbox_btn fishbox_pice_btn">
-                        <input type="radio"
-                        name="fishbox_pice" required>
-                        <p>4000</p>
 
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_pice" value="4000" required>4000</label>
                     </div>
-                    <div class="fishbox_btn fishbox_pice_btn">
-                        <input type="radio"
-                        name="fishbox_pice" required>
-                        <p>5000</p>
 
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_pice" value="5000" required>5000</label>
                     </div>
                 </div>
+
             </div>
 
             <div class="checkout_info_list">
                 <h3>食用人數<span>*</span></h3>
-                <div class="fishbox_select_wrap fishbox_people_select">
+                <div class="fishbox_select_wrap fishbox_qty_select">
 
-                    <div class="fishbox_btn">
-                        <input type="radio" name="fishbox_people" required>
-                        <p>1-2人</p>
-
+        
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_qty" value="1-2人" required>1-2人</label>
                     </div>
-                    <div class="fishbox_btn">
-                        <input type="radio" name="fishbox_people" required>
-                        <p>3-4人</p>
 
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_qty" value="3-4人" required>3-4人</label>
                     </div>
-                    <div class="fishbox_btn">
-                        <input type="radio"
-                        name="fishbox_people" required>
-                        <p>5-6人</p>
 
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_qty" value="5-6人" required>5-6人</label>
                     </div>
-                    <div class="fishbox_btn">
-                        <input type="radio"
-                        name="fishbox_people" required>
-                        <p>6人以上</p>
 
+                    <div class="fishbox_btn ">
+                        <label><input type="radio" name="fishbox_qty" value="6人以上" >6人以上</label>
                     </div>
+                    
                 </div>
             </div>
 
@@ -145,33 +140,30 @@
                 <div class="fishbox_select_wrap fishbox_cook_select">
 
                     <div class="fishbox_btn">
-                        <input type="checkbox" name="fishbox_cook">
-                        <p>清蒸</p>
+                        <label><input type="checkbox" name="fishbox_cook[]" value="清蒸">清蒸</label> 
+                       
 
                     </div>
                     <div class="fishbox_btn">
-                        <input type="checkbox" name="fishbox_cook">
-                        <p>煮湯</p>
+                        
+                        <label><input type="checkbox" name="fishbox_cook[]" value="煮湯">煮湯</label> 
 
                     </div>
                     <div class="fishbox_btn">
-                        <input type="checkbox"
-                        name="fishbox_cook">
-                        <p>乾煎(紅燒)</p>
-
+                        <label><input type="checkbox" name="fishbox_cook[]" value="乾煎(紅燒)">乾煎(紅燒)</label> 
                     </div>
+
                     <div class="fishbox_btn">
-                        <input type="checkbox"
-                        name="fishbox_cook">
-                        <p>鹽烤</p>
-
+                        <label><input type="checkbox" name="fishbox_cook[]" value="鹽烤">鹽烤</label> 
                     </div>
+
+                    
                 </div>
             </div>
 
             <div class="checkout_info_list">
                 <h3>可選填想配入的品項，若無現貨會再通知您。</h3>
-                <textarea name="mytext"rows="6"cols="40"></textarea>
+                <textarea name="fishbox_message"rows="6"cols="40" id="fishbox_message"></textarea>
 
                
             </div>
@@ -207,6 +199,7 @@
 
 <!-- js -->
 <script src="./static/js/common.js"></script>
+<script src="./static/js/fishbox.js"></script>
 
 
 

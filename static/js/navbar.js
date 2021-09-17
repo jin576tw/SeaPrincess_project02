@@ -104,6 +104,60 @@ let CheckBtn = $('.checkout_btn')//結帳按鈕
                     // 載入購物車商品
                      CartProduct(cookieArr[i],total_price)
 
+
+                     let FISHBOX_LIST =  $('.fishbox_list_warp')
+
+
+                     
+                     if(cookieArr[i].fishbox){
+
+                        let Fishbox_product =`<div class="Cart_list_item" Product-ID="999">
+    
+                        <div class="list_item_pic">
+                            <a href="./fishbox.html">
+                                <img src="${cookieArr[i].Product_Pic}" alt="">
+                            </a>
+                        </div>
+            
+                        <div class="list_item_intro">
+            
+                            <div class="list_item_title">
+                                <a href="./fishbox.html">
+                                    <h1>${cookieArr[i].Product_Name}</h1>
+                                </a>
+                            </div>
+            
+            
+                            <div class="list_item_detail">
+                
+                                <div class="Counter">
+                                    <div class="countBtn countBtn_minus">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                    <div class="countNum">${cookieArr[i].count}</div>
+                                    <div class="countBtn countBtn_plus">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                </div>
+            
+                                <div class="list_intro_price">
+                                    <h4>${nowprice}</h4>
+                                </div>
+            
+                                <div class="item_delete">
+                                    <i class="far fa-trash-alt "></i>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>`
+            
+            
+                    FISHBOX_LIST.append(Fishbox_product)
+    
+    
+                    }
+
                    
 
                 }
