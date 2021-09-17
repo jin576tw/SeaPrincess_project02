@@ -249,6 +249,8 @@ $('.fishbox_addCart').on({
 
             }
 
+            let CartTotalPrice = $('.Cart_list_total').children('p')
+
              // 購物車總金額
              CartTotalPrice.text(total_price)
 
