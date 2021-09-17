@@ -185,8 +185,16 @@ $('.fishbox_addCart').on({
             let cookieArr = JSON.parse(cookieStr)
 
             let FISHBOX_LIST =  $('.fishbox_list_warp')
+            
 
+            let total_price = 0;
             for(let i = 0 ; i < cookieArr.length ;i++){
+
+
+                // 計算當前商品金額
+                let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+                total_price += nowprice;
+
 
                 if(cookieArr[i].fishbox){
 
@@ -221,7 +229,7 @@ $('.fishbox_addCart').on({
                             </div>
         
                             <div class="list_intro_price">
-                                <h4>${nowprice}</h4>
+                                <h4>${cookieArr[i].Product_Price}</h4>
                             </div>
         
                             <div class="item_delete">
@@ -240,6 +248,9 @@ $('.fishbox_addCart').on({
 
 
             }
+
+             // 購物車總金額
+             CartTotalPrice.text(total_price)
 
 
 
