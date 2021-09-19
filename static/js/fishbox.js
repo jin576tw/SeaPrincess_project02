@@ -80,26 +80,65 @@ $('.fishbox_addCart').on({
         if(isPass){
 
 
-            
-            
             // 魚箱選擇、組合預算、魚箱圖片、食用人數、其他留言、商品數量初始值、判斷是否是鮮魚箱
-            let arr= [{Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,food:false}]
+            let arr= [{Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,pid:999,food:false}]
 
+
+            let CheckBtn = $('.checkout_btn')//結帳按鈕
+
+             // 啟動結帳按鈕
+            CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
+            CheckBtn.on({
+
+                click: function(){
+            
+                    location.href = "./checkout.html"
+            
+                }
+            
+            })
 
             // 顯示navbar數量 
             $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
             $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
 
+
+            $('.list_item_empty').css('display','none');
+            $('.Cart_list_total').css('display','block');
+
+            let ListCount = $('.navbar_shoplist_count');//購物車數量
+            let ListCount_RWD =  $('.shoplist_count_RWD');//購物車數量RWD
+
+            
+
             //寫入cookie
             if($.cookie('Cart') == null ){
 
-                // 第一次加入
-                $.cookie('Cart',JSON.stringify(arr),{expire : 1})
-                alert('海鮮魚箱已加入購物車')
+                 // 第一次加入
+                 $.cookie('Cart',JSON.stringify(arr),{expire : 1})
 
 
-               
-               
+                 for(let i = 0 ; i < arr.length ;i++){ 
+ 
+                     CartProduct(arr[i])
+ 
+ 
+                 }
+ 
+                 alert('海鮮魚箱已加入購物車')
+
+
+
+                // 購物車數量
+                let old_count = parseInt( ListCount.text()) 
+                ListCount.text(old_count+1)
+
+
+                let old_count_rwd = parseInt(ListCount_RWD.text()) 
+                ListCount_RWD.text(old_count_rwd+1)
+ 
+
+              
 
 
             }else{
@@ -118,7 +157,19 @@ $('.fishbox_addCart').on({
 
                         same = true;
 
-                        alert('已經加入過海鮮魚箱')
+                        // 修改魚箱內容
+                        cookieArr[j] = arr[0];
+
+
+                        let FISHBOX_LIST =  $('.fishbox_list_warp');
+
+
+                        FISHBOX_LIST.empty();
+
+
+                        CartProduct(arr[0])
+                        
+                        alert('海鮮魚箱已修改！')
 
                         break;
 
@@ -130,16 +181,54 @@ $('.fishbox_addCart').on({
 
                 if(!same){
 
+                    //購物車已有商品時
 
-                    cookieArr.push({Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,food:false})
+                    cookieArr.push({Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,food:false,pid:999})
 
+                   
+
+                    for(let i = 0 ; i < arr.length ;i++){ 
+
+
+                        CartProduct(arr[i])
+    
+    
+                    }
+
+                   
+
+                    // 購物車數量
+                    let old_count = parseInt( ListCount.text()) 
+                    ListCount.text(old_count+1)
+
+
+                    let old_count_rwd = parseInt(ListCount_RWD.text()) 
+                    ListCount_RWD.text(old_count_rwd+1)
+
+
+            
                     alert('海鮮魚箱已加入購物車')
 
                 }
 
                 $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
-                console.log(cookieArr);
+                let total_price = 0 
+
+                for(let j = 0 ; j <  cookieArr.length; j++){
+
+                    // 計算當前商品金額
+                    let nowprice = parseInt(cookieArr[j].count) * parseInt(cookieArr[j].Product_Price);
+
+                    total_price+= nowprice
+
+                }
+
+               
+                //購物車總金額
+                let CartTotalPrice = $('.Cart_list_total').children('p')
+                CartTotalPrice.text(total_price)
+
 
             }
 
@@ -160,99 +249,10 @@ $('.fishbox_addCart').on({
                 $('.Cart_list_total').css('display','block');
 
 
-                let ListCount = $('.navbar_shoplist_count');//購物車數量
-                let ListCount_RWD =  $('.shoplist_count_RWD');//購物車數量RWD
-        
                 
-
-                let old_count = parseInt( ListCount.text()) 
-              
-                ListCount.text(old_count+1)
-
-
-                let old_count_rwd = parseInt(ListCount_RWD.text()) 
-              
-                ListCount_RWD.text(old_count_rwd+1)
-
-
-
+    
 
             }
-
-
-
-            let cookieStr = $.cookie('Cart')
-            let cookieArr = JSON.parse(cookieStr)
-
-            let FISHBOX_LIST =  $('.fishbox_list_warp')
-            
-
-            let total_price = 0;
-            for(let i = 0 ; i < cookieArr.length ;i++){
-
-
-                // 計算當前商品金額
-                let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-                total_price += nowprice;
-
-
-                if(cookieArr[i].fishbox){
-
-
-                    let Fishbox_product =`<div class="Cart_list_item" Product-ID="999">
-
-                    <div class="list_item_pic">
-                        <a href="./fishbox.html">
-                            <img src="${cookieArr[i].Product_Pic}" alt="">
-                        </a>
-                    </div>
-        
-                    <div class="list_item_intro">
-        
-                        <div class="list_item_title">
-                            <a href="./fishbox.html">
-                                <h1>${cookieArr[i].Product_Name}</h1>
-                            </a>
-                        </div>
-        
-        
-                        <div class="list_item_detail">
-            
-                            <div class="Counter">
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
-                                <div class="countNum">${cookieArr[i].count}</div>
-                                <div class="countBtn countBtn_plus">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                            </div>
-        
-                            <div class="list_intro_price">
-                                <h4>${cookieArr[i].Product_Price}</h4>
-                            </div>
-        
-                            <div class="item_delete">
-                                <i class="far fa-trash-alt "></i>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>`
-        
-        
-                FISHBOX_LIST.append(Fishbox_product)
-
-
-                }
-
-
-            }
-
-            let CartTotalPrice = $('.Cart_list_total').children('p')
-
-             // 購物車總金額
-             CartTotalPrice.text(total_price)
 
 
 

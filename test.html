@@ -163,36 +163,62 @@
 <script>
 
 
-    $.get("./static/JSON/Seafood.json", function (data) {
+//     $.get("./static/JSON/Seafood.json", function (data) {
 
 
 
-        $('#pagination').pagination({
-            dataSource: data,
-            pageSize: 4,
-            // autoHidePrevious: true,
-            // autoHideNext: true,
-            callback: function(data, pagination) {
+//         $('#pagination').pagination({
+//             dataSource: data,
+//             pageSize: 4,
+//             // autoHidePrevious: true,
+//             // autoHideNext: true,
+//             callback: function(data, pagination) {
 
 
-                $('.warp').empty()
+//                 $('.warp').empty()
 
-                let d = data
+//                 let d = data
 
-                for(let i = 0 ; i < d.length ;i++){ 
-
-
-                    $('.warp').append(PRODUCT(d[i]))
-
-                }
-
-            }
-        })
+//                 for(let i = 0 ; i < d.length ;i++){ 
 
 
-})
+//                     $('.warp').append(PRODUCT(d[i]))
+
+//                 }
+
+//             }
+//         })
 
 
+// })
+
+
+
+
+let cookieStr = $.cookie('Cart')
+
+let cookieArr = JSON.parse(cookieStr);
+
+
+for(let j = 0 ; j <  cookieArr.length; j++){ 
+
+    
+
+   if(cookieArr[j].fishbox){
+       console.log(cookieArr[j].fishbox);
+
+
+   }else if(!cookieArr[j].food ){
+
+    console.log(typeof cookieArr[j].Product_type.length);
+
+
+
+   }
+  
+    
+
+}
 
 
 

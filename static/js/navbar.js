@@ -14,217 +14,162 @@ let SEAFOOD_LIST =  $('.seafood_list_warp')//生鮮食品購物車
 
 let ITEM_LIST =  $('.item_list_warp')//釣具購物車
 
+let FISHBOX_LIST = $('.fishbox_list_warp')
+
 
 let CheckBtn = $('.checkout_btn')//結帳按鈕
 
 
-    //////navbar購物車功能////
-        if($.cookie("Cart") == null){
+//////navbar購物車功能////
 
-            //cookie若無資料，顯是購物車為空
-            ListCount.css('display','none')
-            ListCount_RWD.css('display','none')
-            CartTotal.css('display','none')
-            ListEmptyStatus.css('display','flex')
+if($.cookie("Cart") == null){
 
-            // 購物車無商品無法結帳
-            CheckBtn.attr('disabled', true).css('background-color','var(--grey)')
+    //cookie若無資料，顯是購物車為空
+    ListCount.css('display','none')
+    ListCount_RWD.css('display','none')
+    CartTotal.css('display','none')
+    ListEmptyStatus.css('display','flex')
+
+    // 購物車無商品無法結帳
+    CheckBtn.attr('disabled', true).css('background-color','var(--grey)')
 
 
-           
+    
+
+
+}else{
+
+
+    //一開始載入的購物車資料
+    let cookieStr = $.cookie('Cart');
+    let cookieArr = JSON.parse(cookieStr);
+    let sum = 0;
+
+
+    for(let i = 0 ; i < cookieArr.length;i++){
+        sum += cookieArr[i].count;
+    }
+
+    
+    ListEmptyStatus.css('display','none');
+    CartTotal.css('display','block');
+
+    ListCount.text(sum)//購物車數量
+    ListCount_RWD.text(sum)//RWD購物車數量
+
+    
+
+    $('.seafood_list').css('display','block');
+    $('.fishbox_list').css('display','block');
+    $('.item_list').css('display','block');
+    
+
+
+
+    //購物車按鈕啟動
+    CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
+    CheckBtn.on({
+
+        click: function(){
 
         
-        }else{
+            location.href = "./checkout.html?step1"
 
+        }
+    
+    })
 
-            //一開始載入的購物車資料
-            let cookieStr = $.cookie('Cart');
-            let cookieArr = JSON.parse(cookieStr);
-            let sum = 0;
-
+    
         
+    
+// 載入cookie中的商品
+if(cookieStr){
 
-            $('.seafood_list').css('display','block')
-            $('.item_list').css('display','block')
-            $('.fishbox_list').css('display','block')
+    let total_price = 0
+    
+    for(let i = 0 ; i < cookieArr.length ; i++){
 
     
-
-            for(let i = 0 ; i < cookieArr.length;i++){
-                sum += cookieArr[i].count;
-            }
-
-            ListCount.text(sum)//購物車數量
-            ListCount_RWD.text(sum)//RWD購物車數量
-
-            
-
-            $('.seafood_list').css('display','block');
-            $('.fishbox_list').css('display','block');
-            $('.item_list').css('display','block');
-           
-
-            ListEmptyStatus.css('display','none');
-            CartTotal.css('display','block');
+        // 計算當前商品金額
+        let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+        total_price += nowprice;
 
 
-            //購物車按鈕啟動
-            CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
-            CheckBtn.on({
-
-                click: function(){
-            
-                
-                    location.href = "./checkout.html?step1"
-            
-                }
-            
-            })
-
-           
-                
-     
-
-            
-           
-            // 載入cookie中的商品
-            if(cookieStr){
-
-                let total_price = 0
-               
-                for(let i = 0 ; i < cookieArr.length ; i++){
-
-                
-                    // 計算當前商品金額
-                    let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-                     total_price += nowprice;
-
-            
-
-                    // 載入購物車商品
-                     CartProduct(cookieArr[i],total_price)
+        // 載入購物車商品
+        CartProduct(cookieArr[i],total_price)
 
 
-                     let FISHBOX_LIST =  $('.fishbox_list_warp')
 
 
-                     
-                     if(cookieArr[i].fishbox){
+    }
 
-                        let Fishbox_product =`<div class="Cart_list_item" Product-ID="999">
+
+
+        //購物車總金額
+        CartTotalPrice.text(total_price)
+
+    }
+
+
+}
+
+
+//商品加入navbar購物車
+PROPUCTSWARP.on("click",".add_btn",function(){
+
+    ListEmptyStatus.css('display','none');
     
-                        <div class="list_item_pic">
-                            <a href="./fishbox.html">
-                                <img src="${cookieArr[i].Product_Pic}" alt="">
-                            </a>
-                        </div>
+    SEAFOOD_LIST.empty();//清空新加入商品
+    ITEM_LIST.empty();//清空新加入商品
+    FISHBOX_LIST.empty()//清空新加入新魚箱
+
+    // 啟動結帳按鈕
+    CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
+    CheckBtn.on({
+
+        click: function(){
+    
+            location.href = "./checkout.html"
+    
+        }
+    
+    })
+
+    ListCount.css('display','flex').addClass('Bounce');
+    ListCount_RWD.css('display','flex').addClass('Bounce');
+
+    let cookieStr = $.cookie('Cart');
+    let cookieArr = JSON.parse(cookieStr);
+
+    if(cookieStr){
+
+        let total_price = 0
+
+        for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+    
+            // 計算當前商品金額
+            let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+            total_price += nowprice;
+
             
-                        <div class="list_item_intro">
-            
-                            <div class="list_item_title">
-                                <a href="./fishbox.html">
-                                    <h1>${cookieArr[i].Product_Name}</h1>
-                                </a>
-                            </div>
-            
-            
-                            <div class="list_item_detail">
+
+            // 載入購物車商品
+            CartProduct(cookieArr[i],total_price)
                 
-                                <div class="Counter">
-                                    <div class="countBtn countBtn_minus">
-                                        <i class="fas fa-minus"></i>
-                                    </div>
-                                    <div class="countNum">${cookieArr[i].count}</div>
-                                    <div class="countBtn countBtn_plus">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
-                                </div>
             
-                                <div class="list_intro_price">
-                                    <h4>${nowprice}</h4>
-                                </div>
-            
-                                <div class="item_delete">
-                                    <i class="far fa-trash-alt "></i>
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>`
-            
-            
-                    FISHBOX_LIST.append(Fishbox_product)
-    
-    
-                    }
 
-                   
-
-                }
-
-
-
-                //購物車總金額
-                CartTotalPrice.text(total_price)
-
-            }
-
-        
         }
 
+            // 購物車總金額
+            CartTotalPrice.text(total_price)
 
-        //加入navbar購物車
-        PROPUCTSWARP.on("click",".add_btn",function(){
+        
 
-            ListEmptyStatus.css('display','none');
-            
-            SEAFOOD_LIST.empty();//清空新加入商品
-            ITEM_LIST.empty();//清空新加入商品
+    }
 
-            // 啟動結帳按鈕
-            CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
-            CheckBtn.on({
 
-                click: function(){
-            
-                    location.href = "./checkout.html"
-            
-                }
-            
-            })
-
-            let cookieStr = $.cookie('Cart');
-            let cookieArr = JSON.parse(cookieStr);
-
-            if(cookieStr){
-
-                let total_price = 0
-
-                for(let i = 0 ; i < cookieArr.length ;i++){ 
-
-            
-                    // 計算當前商品金額
-                    let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-                    total_price += nowprice;
-
-                    
-
-                    // 載入購物車商品
-                    CartProduct(cookieArr[i],total_price)
-                        
-                    
-
-                }
-
-                    // 購物車總金額
-                    CartTotalPrice.text(total_price)
-
-                
-
-            }
-
-    
-        })
+})
 
 
     
@@ -543,8 +488,10 @@ let CheckBtn = $('.checkout_btn')//結帳按鈕
 
             for(let i = 0 ; i <  cookieArr.length ;i++){
 
+                // 找到相同ID
                 if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
 
+                   
                     let sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
 
                     let sum_RWD = parseInt($('.shoplist_count_RWD').text())//抓購物車RWD現在數量
@@ -580,7 +527,7 @@ let CheckBtn = $('.checkout_btn')//結帳按鈕
                         $('.shoplist_count_RWD').text($nowsumRWD)
 
                     }
-
+                    
                     break;
                 }
 
@@ -620,64 +567,73 @@ let CheckBtn = $('.checkout_btn')//結帳按鈕
 
             for(let i = 0 ; i <  cookieArr.length ;i++){
 
-                if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
+                if(cookieArr[i].fishbox){
 
-                    $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
-
-                    $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
-
-                    $raw_price = $oldtotal_price - $old_price // 除了變化的商品金額以外的總金額
-
-                    let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Product_Left)
-                    //判斷商品是否超過庫存
-
-
-                    if(Item_over){
-                        alert('數量超過庫存')
-                        $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
-                        break;
-
-                    }else{
-
-                        cookieArr[i].count++;//計算器數量++
-
-                        let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
-
-                        let sum_RWD = parseInt($('.shoplist_count_RWD').text()) //抓navbar RWD現在數量
-
-                       
-                        sum++ ; //navbar數量＋＋
-
-                        sum_RWD++ //navbarRWD數量＋＋
-
-                        $(this).prev().text(cookieArr[i].count)//更新計算器數量
-                    
-                        $('.navbar_shoplist_count').text(sum)//更新navbar數量
-                        $('.shoplist_count_RWD').text(sum_RWD++)//更新navbar數量
-
-                        
-                    
-
-                        $newprice = cookieArr[i].Product_Price
-                        * cookieArr[i].count; //新商品金額
-
-
-                        $newtototal_price = $raw_price + $newprice; //新商品總金額
-                    
-                        $(this).parent().next().children('h4').text($newprice);
-
-                        $('.Cart_list_total').children('p').text($newtototal_price);
-                    
-
-                        $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-    
-
-                    }
-
-                    
+                    alert('海鮮魚箱限購一組')
                     break;
 
+                }else{
+
+                    if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
+
+                        $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
+
+                        $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
+
+                        $raw_price = $oldtotal_price - $old_price // 除了變化的商品金額以外的總金額
+
+                        let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Product_Left)
+                        //判斷商品是否超過庫存
+
+
+                        if(Item_over){
+                            alert('數量超過庫存')
+                            $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+                            break;
+
+                        }else{
+
+                            cookieArr[i].count++;//計算器數量++
+
+                            let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
+
+                            let sum_RWD = parseInt($('.shoplist_count_RWD').text()) //抓navbar RWD現在數量
+
+                        
+                            sum++ ; //navbar數量＋＋
+
+                            sum_RWD++ //navbarRWD數量＋＋
+
+                            $(this).prev().text(cookieArr[i].count)//更新計算器數量
+                        
+                            $('.navbar_shoplist_count').text(sum)//更新navbar數量
+                            $('.shoplist_count_RWD').text(sum_RWD++)//更新navbar數量
+
+                            
+                        
+
+                            $newprice = cookieArr[i].Product_Price
+                            * cookieArr[i].count; //新商品金額
+
+
+                            $newtototal_price = $raw_price + $newprice; //新商品總金額
+                        
+                            $(this).parent().next().children('h4').text($newprice);
+
+                            $('.Cart_list_total').children('p').text($newtototal_price);
+                        
+
+                            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
         
+
+                        }
+
+                        
+                        break;
+
+            
+                    }
+
                 }
 
 
@@ -703,9 +659,14 @@ let CheckBtn = $('.checkout_btn')//結帳按鈕
             
 
             for(let i = 0 ; i <  cookieArr.length ;i++){
-
+            
+                
                 if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
 
+
+                    console.log(navProuductID);
+
+                    console.log(cookieArr[i]);
                     let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
 
                     $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額

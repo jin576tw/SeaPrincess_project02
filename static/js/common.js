@@ -619,56 +619,60 @@ function CartProduct(arr){
 
 
         SEAFOOD_LIST.append(Seafood_product);
+
+      
     
         
     }else if(arr.fishbox){//若為鮮魚箱
 
-        // let Fishbox_product =`<div class="Cart_list_item" Product-ID="999">
+        let Fishbox_product =`<div class="Cart_list_item" Product-ID="999">
 
-        //     <div class="list_item_pic">
-        //         <a href="./fishbox.html">
-        //             <img src="${arr.Product_Pic}" alt="">
-        //         </a>
-        //     </div>
+            <div class="list_item_pic">
+                <a href="./fishbox.html">
+                    <img src="${arr.Product_Pic}" alt="">
+                </a>
+            </div>
 
-        //     <div class="list_item_intro">
+            <div class="list_item_intro">
 
-        //         <div class="list_item_title">
-        //             <a href="./fishbox.html">
-        //                 <h1>${arr.Product_Name}</h1>
-        //             </a>
-        //         </div>
+                <div class="list_item_title">
+                    <a href="./fishbox.html">
+                        <h1>${arr.Product_Name}</h1>
+                    </a>
+                </div>
 
 
-        //         <div class="list_item_detail">
+                <div class="list_item_detail">
     
-        //             <div class="Counter">
-        //                 <div class="countBtn countBtn_minus">
-        //                     <i class="fas fa-minus"></i>
-        //                 </div>
-        //                 <div class="countNum">${arr.count}</div>
-        //                 <div class="countBtn countBtn_plus">
-        //                     <i class="fas fa-plus"></i>
-        //                 </div>
-        //             </div>
+                    <div class="Counter">
+                        <div class="countBtn countBtn_minus">
+                            <i class="fas fa-minus"></i>
+                        </div>
+                        <div class="countNum">${arr.count}</div>
+                        <div class="countBtn countBtn_plus">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
 
-        //             <div class="list_intro_price">
-        //                 <h4>${nowprice}</h4>
-        //             </div>
+                    <div class="list_intro_price">
+                        <h4>${nowprice}</h4>
+                    </div>
 
-        //             <div class="item_delete">
-        //                 <i class="far fa-trash-alt "></i>
-        //             </div>
-        //         </div>
+                    <div class="item_delete">
+                        <i class="far fa-trash-alt "></i>
+                    </div>
+                </div>
 
-        //     </div>
-        // </div>`
-
-
-        // FISHBOX_LIST.append(Fishbox_product)
+            </div>
+        </div>`
 
 
-    }else{
+        FISHBOX_LIST.append(Fishbox_product)
+
+        
+
+
+    }else if(!isFood){
 
 
         // 釣具型號選擇
@@ -732,6 +736,7 @@ function CartProduct(arr){
 
         ITEM_LIST.append(Item_product);
 
+
     }
 
 }
@@ -754,10 +759,14 @@ PROPUCTSWARP.on("mouseleave",".add_btn",function(){
 })
 
 ///////////////////加入購物車/////////////
+
+
 // 海鮮商品資料
 $.get("./static/JSON/Seafood.json", function (data) {
 
     let d = data;
+    let ListCount = $('.navbar_shoplist_count');//購物車數量
+    let ListCount_RWD =  $('.shoplist_count_RWD');//購物車數量RWD
 
 
     PROPUCTSWARP.on("click","#add_seafood",function(){
@@ -785,10 +794,11 @@ $.get("./static/JSON/Seafood.json", function (data) {
 
                     }else{
 
+                        
 
                         // 顯示navbar數量 
-                        $('.navbar_shoplist_count').css('display','flex').addClass('Bounce');
-                        $('.shoplist_count_RWD').css('display','flex').addClass('Bounce');
+                        ListCount.css('display','flex').addClass('Bounce');
+                        ListCount_RWD.css('display','flex').addClass('Bounce');
 
 
                         //寫入cookie
@@ -868,8 +878,8 @@ $.get("./static/JSON/Seafood.json", function (data) {
                     if($.cookie("Cart") == null){
 
                         //cookie若無資料，顯是購物車為空
-                        $('.navbar_shoplist_count').css('display','none')
-                        $('.shoplist_count_RWD').css('display','none')
+                        ListCount.css('display','none')
+                        ListCount_RWD.css('display','none')
                         $('.Cart_list_total').css('display','none')
                         $('.list_item_empty').css('display','flex')
 
