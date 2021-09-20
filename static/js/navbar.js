@@ -366,106 +366,106 @@ PROPUCTSWARP.on("click",".add_btn",function(){
         // });
 
 
-        //單一商品頁加入購物車
-        $(".add_btn_lg").on({
+        // //單一商品頁加入購物車
+        // $(".add_btn_lg").on({
 
-            click: function(){
+        //     click: function(){
 
-            //navbar購物車
-            //商品庫存
-            let itemLeft = $(this).parent().parent().attr('Item-left')
+        //     //navbar購物車
+        //     //商品庫存
+        //     let itemLeft = $(this).parent().parent().attr('Item-left')
 
-            // 商品數量 //計數器數量
-            let itemCount = parseInt($(this).prev().children().children('.product_count').text())
+        //     // 商品數量 //計數器數量
+        //     let itemCount = parseInt($(this).prev().children().children('.product_count').text())
 
-            // 若商品缺貨
-            if(itemLeft == 0){
+        //     // 若商品缺貨
+        //     if(itemLeft == 0){
 
             
-            }else if(itemCount == 0){
+        //     }else if(itemCount == 0){
 
                
-            }
-            else{
+        //     }
+        //     else{
 
-                $('.list_item_warps').empty();//清空新加入商品
+        //         $('.list_item_warps').empty();//清空新加入商品
 
-                // 去結帳按鈕
-                $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
-                $('.checkout_btn').on({
+        //         // 去結帳按鈕
+        //         $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
+        //         $('.checkout_btn').on({
 
-                    click: function(){
+        //             click: function(){
                 
 
-                        location.href = "./checkout.html?step1"
+        //                 location.href = "./checkout.html?step1"
                 
-                    }
+        //             }
                 
-                })
+        //         })
 
-                let cookieStr = $.cookie('Cart');
-                let cookieArr = JSON.parse(cookieStr);
+        //         let cookieStr = $.cookie('Cart');
+        //         let cookieArr = JSON.parse(cookieStr);
 
-                $total_price = 0
+        //         $total_price = 0
                 
                 
-                for(let i = 0 ; i < cookieArr.length ; i++){
+        //         for(let i = 0 ; i < cookieArr.length ; i++){
 
-                    let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+        //             let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
 
-                    let Cart_list_item = `
-                        <div class="Cart_list_item " Product-ID= "${cookieArr[i].pid}" Item-left="${cookieArr[i].Product_Left}">
-                            <div class="list_item_pic">
-                                <img src="${cookieArr[i].Item_pic}" alt="">
-                            </div>
+        //             let Cart_list_item = `
+        //                 <div class="Cart_list_item " Product-ID= "${cookieArr[i].pid}" Item-left="${cookieArr[i].Product_Left}">
+        //                     <div class="list_item_pic">
+        //                         <img src="${cookieArr[i].Item_pic}" alt="">
+        //                     </div>
                 
-                            <div class="list_item_intro">
-                                <div class="list_item_title">
-                                    <h1>${cookieArr[i].Item_title}</h1>
-                                </div>
+        //                     <div class="list_item_intro">
+        //                         <div class="list_item_title">
+        //                             <h1>${cookieArr[i].Item_title}</h1>
+        //                         </div>
                 
                 
-                                <div class="list_intro_count d-flex">
+        //                         <div class="list_intro_count d-flex">
                     
-                                    <div class="list_countBtn_warp d-flex">
-                                        <div class="countBtn countBtn_minus">
-                                            <i class="fas fa-minus"></i>
-                                        </div>
-                                        <div class="list_count">${cookieArr[i].count}</div>
-                                        <div class="countBtn countBtn_plus">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                    </div>
+        //                             <div class="list_countBtn_warp d-flex">
+        //                                 <div class="countBtn countBtn_minus">
+        //                                     <i class="fas fa-minus"></i>
+        //                                 </div>
+        //                                 <div class="list_count">${cookieArr[i].count}</div>
+        //                                 <div class="countBtn countBtn_plus">
+        //                                     <i class="fas fa-plus"></i>
+        //                                 </div>
+        //                             </div>
 
-                                    <div class="list_intro_price">
-                                        <p>${nowprice}</p>
-                                    </div>
+        //                             <div class="list_intro_price">
+        //                                 <p>${nowprice}</p>
+        //                             </div>
 
-                                    <div class="item_delete">
-                                        <i class="far fa-trash-alt "></i>
-                                    </div>
-                                </div>
+        //                             <div class="item_delete">
+        //                                 <i class="far fa-trash-alt "></i>
+        //                             </div>
+        //                         </div>
 
-                            </div>
-                        </div> `;
+        //                     </div>
+        //                 </div> `;
 
-                        $('.list_item_warps').append(Cart_list_item);
+        //                 $('.list_item_warps').append(Cart_list_item);
 
                     
-                        $total_price += nowprice
+        //                 $total_price += nowprice
                         
                         
-                }
+        //         }
                     
 
-                $('.Cart_list_total').children('p').text($total_price)
+        //         $('.Cart_list_total').children('p').text($total_price)
 
-            }
+        //     }
                     
                 
             
-            }
-        });
+        //     }
+        // });
 
 
 
