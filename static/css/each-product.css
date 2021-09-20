@@ -220,7 +220,7 @@
  
 }
 
-.product_countBtn_warp{
+.product_counter{
     margin-top: 10px;
     justify-content:flex-start;
     align-items: center;
@@ -238,7 +238,7 @@
     
 }
 
-.product_count {
+.product_countNum {
     display: flex;
     justify-content: center;
     align-items: center;

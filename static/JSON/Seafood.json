@@ -224,7 +224,7 @@
    "pic" : ["./static/images/seafood/s02-1.jpg","./static/images/seafood/s02-1.jpg","./static/images/seafood/s02-1.jpg","./static/images/seafood/s02-1.jpg"],
    "pid" : 10,
    "type_sid": 2,
-   "left":300,
+   "left":5,
    "hot": true,
    "vip": false,
    "create_at": "2021-07-11",

@@ -424,6 +424,183 @@ $(document).ready(function () {
 
     }
 
+
+    ////////////////////加入購物車/////////////
+
+    //計算器效果
+    $(".product_counter").on("mousedown mouseup",".product_countBtn_plus , .product_countBtn_minus",function(){
+
+        $(this).toggleClass('countBtn_color').css('transition','0.3s')
+
+    })
+
+    if(ItemURL){
+
+        // 釣具用品
+        $.get("./static/JSON/Seafood.json", function (data) {
+
+            let d = data
+            let ProductID = parseInt(location.href.substr(-3,3))
+
+
+            for(let i = 0 ; i < d.length ;i++){ 
+
+
+                if(ProductID == d[i].pid){
+                
+                    //計算器
+                    //加＋＋
+                    $(".product_counter").on("click",".product_countBtn_plus",function(){
+
+
+                        let countNum = parseInt($(this).prev().text());
+
+                        if(countNum < d[i].left){
+                            countNum++
+                            $(this).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+                            
+                        }else{
+                        alert('數量超過庫存')
+                        $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+                        }
+
+                        $(this).prev().text(countNum);
+
+                        
+                        if(countNum >= 0){
+                            let countBtn_minus = $(this).prev().prev()
+                            countBtn_minus.css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+                        }
+
+                    })
+
+
+
+                    //減--
+                    $(".product_counter").on("click",".product_countBtn_minus",function(){
+
+
+                        
+                        let countNum = parseInt($(this).next().text());
+
+                    
+
+                        if(countNum <=0 ){
+
+                            $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+                            
+                        }else if(countNum <= d[i].left){
+                            countNum--;
+                            let addBtn = $(this).next().next()
+                            addBtn.css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+
+                        }
+                        else{
+                            countNum--;
+                        }
+                        
+                    
+                        $(this).next().text(countNum);
+
+                    })
+
+                
+
+                    
+
+
+                }
+
+            }
+
+
+
+        })
+
+
+
+    }else{
+
+        // 海鮮商品
+        $.get("./static/JSON/Seafood.json", function (data) {
+
+            let d = data
+            let ProductID = parseInt(location.href.substr(-3,3))
+
+
+            for(let i = 0 ; i < d.length ;i++){ 
+
+
+                if(ProductID == d[i].pid){
+                
+                    //計算器
+                    //加＋＋
+                    $(".product_counter").on("click",".product_countBtn_plus",function(){
+
+
+                        let countNum = parseInt($(this).prev().text());
+
+                        if(countNum < d[i].left){
+                            countNum++
+                            $(this).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+                            
+                        }else{
+                        alert('數量超過庫存')
+                        $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+                        }
+
+                        $(this).prev().text(countNum);
+
+                        
+                        if(countNum >= 0){
+                            let countBtn_minus = $(this).prev().prev()
+                            countBtn_minus.css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+                        }
+
+                    })
+
+
+
+                    //減--
+                    $(".product_counter").on("click",".product_countBtn_minus",function(){
+
+
+                        
+                        let countNum = parseInt($(this).next().text());
+
+                    
+
+                        if(countNum <=0 ){
+
+                            $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+                            
+                        }else if(countNum <= d[i].left){
+                            countNum--;
+                            let addBtn = $(this).next().next()
+                            addBtn.css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+
+                        }
+                        else{
+                            countNum--;
+                        }
+                        
+                    
+                        $(this).next().text(countNum);
+
+                    })
+
+                
+                }
+
+            }
+
+
+
+        })
+    }
+
+
+    
     //計算器
     //加＋＋
     $(".product_countBtn_warp").on("click",".product_countBtn_add",function(){
