@@ -79,9 +79,12 @@ $('.fishbox_addCart').on({
 
         if(isPass){
 
+            let FISHBOX_Cart = $('.fishbox_list')//海鮮魚箱欄位
+            FISHBOX_Cart.css('display','block');
+
 
             // 魚箱選擇、組合預算、魚箱圖片、食用人數、其他留言、商品數量初始值、判斷是否是鮮魚箱
-            let arr= [{Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,pid:999,food:false}]
+            let arr= [{Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,pid:999}]
 
 
             let CheckBtn = $('.checkout_btn')//結帳按鈕
@@ -183,7 +186,7 @@ $('.fishbox_addCart').on({
 
                     //購物車已有商品時
 
-                    cookieArr.push({Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,food:false,pid:999})
+                    cookieArr.push({Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,pid:999})
 
                    
 

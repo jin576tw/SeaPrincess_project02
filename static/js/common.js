@@ -771,6 +771,9 @@ $.get("./static/JSON/Seafood.json", function (data) {
 
     PROPUCTSWARP.on("click","#add_seafood",function(){
 
+        let SEAFOOD_Cart = $('.seafood_list')//生鮮食品欄位
+        SEAFOOD_Cart.css('display','block');
+
         // 商品ID
         let PID = $(this).parent().parent().attr('Product-id')
 
@@ -924,6 +927,9 @@ $.get("./static/JSON/Item.json", function (data) {
     let d = data
 
     PROPUCTSWARP.on("click","#add_item",function(){
+
+        let ITEM_Cart = $('.item_list')//釣具欄位
+        ITEM_Cart.css('display','block');
 
         // 商品ID
         let PID = $(this).parent().parent().attr('Product-id')
