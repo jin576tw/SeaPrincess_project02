@@ -785,7 +785,7 @@ $.get("./static/JSON/Seafood.json", function (data) {
                 if( PID  == d[i].pid){
                     
                     // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品型號、商品數量初始值、判斷是否是食物
-                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:true}]
+                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:true,fishbox:false}]
                 
                 
                      // 判斷商品是否缺貨
@@ -860,7 +860,7 @@ $.get("./static/JSON/Seafood.json", function (data) {
                                 if(d[i].left == 0){
                                     alert('商品缺貨中')
                                 }else{
-                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:true})
+                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:true,fishbox:false})
 
                                 }
 
@@ -939,7 +939,7 @@ $.get("./static/JSON/Item.json", function (data) {
                 if( PID  == d[i].pid){
                     
                     // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品母種類、商品子種類、商品型號、商品數量初始值、判斷是否是食物
-                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_tid:d[i].type_sid,Product_sub_tid:d[i].sub_type_sid,Product_type:d[i].type,count:1,food:false}]
+                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_tid:d[i].type_sid,Product_sub_tid:d[i].sub_type_sid,Product_type:d[i].type,count:1,food:false,fishbox:false}]
                 
                 
                      // 判斷商品是否缺貨
@@ -1013,7 +1013,7 @@ $.get("./static/JSON/Item.json", function (data) {
                                 if(d[i].left == 0){
                                     alert('商品缺貨中')
                                 }else{
-                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:false})
+                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:false,fishbox:false})
 
                                 }
 

@@ -11,10 +11,13 @@ let ListEmptyStatus = $('.list_item_empty')//空購物車狀態
 
 
 let SEAFOOD_LIST =  $('.seafood_list_warp')//生鮮食品購物車
-
 let ITEM_LIST =  $('.item_list_warp')//釣具購物車
+let FISHBOX_LIST = $('.fishbox_list_warp')//海鮮魚箱
 
-let FISHBOX_LIST = $('.fishbox_list_warp')
+
+let SEAFOOD_Cart = $('.seafood_list')//生鮮食品欄位
+let ITEM_Cart = $('.item_list')//釣具欄位
+let FISHBOX_Cart = $('.fishbox_list')//海鮮魚箱欄位
 
 
 let CheckBtn = $('.checkout_btn')//結帳按鈕
@@ -34,7 +37,10 @@ if($.cookie("Cart") == null){
     CheckBtn.attr('disabled', true).css('background-color','var(--grey)')
 
 
-    
+    // 商品欄位狀態
+    SEAFOOD_LIST .css('display','none');
+    ITEM_Cart.css('display','none');
+    FISHBOX_LIST.css('display','none');
 
 
 }else{
@@ -51,17 +57,61 @@ if($.cookie("Cart") == null){
     }
 
     
-    ListEmptyStatus.css('display','none');
-    CartTotal.css('display','block');
+    ListEmptyStatus.css('display','none');//商品空狀態
+    CartTotal.css('display','block');//商品總金額
 
     ListCount.text(sum)//購物車數量
     ListCount_RWD.text(sum)//RWD購物車數量
 
     
 
-    $('.seafood_list').css('display','block');
-    $('.fishbox_list').css('display','block');
-    $('.item_list').css('display','block');
+    // 判斷商品欄位是否出現
+    function filter(arr){
+
+
+        let fishbox =  arr.filter ((p) => p.fishbox == true)
+        let seafood =  arr.filter ((p) => p.food == true)
+        let item=  arr.filter ((p) => p.food == false)
+    
+
+        // 若生鮮食品為空
+        if(seafood.length == 0 ){
+    
+            SEAFOOD_Cart.css('display','none');
+        }else{
+
+            SEAFOOD_Cart.css('display','block');
+
+        }
+
+        // 若釣具用品為空
+        if(item.length == 0  ){
+    
+            ITEM_Cart.css('display','none');
+        }else{
+
+            ITEM_Cart.css('display','block');
+
+        }
+
+
+        //若海鮮魚箱為空
+        if(fishbox.length == 0 ){
+    
+            FISHBOX_Cart.css('display','none');
+        }else{
+
+            FISHBOX_Cart.css('display','block');
+
+        }
+    
+    
+    }
+    
+    
+    filter(cookieArr)
+
+ 
     
 
 

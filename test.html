@@ -200,25 +200,69 @@ let cookieStr = $.cookie('Cart')
 let cookieArr = JSON.parse(cookieStr);
 
 
-for(let j = 0 ; j <  cookieArr.length; j++){ 
+
+// console.log(cookieArr);
+
+function filter(arr){
+
+    let fishbox =  arr.filter ((p) => p.fishbox == true)
+    let seafood =  arr.filter ((p) => p.food == true)
+    let item=  arr.filter ((p) => p.food == false)
+
+
+    if(fishbox.length == 0 ){
+
+        console.log('魚箱空');
+    }
+
+    if(seafood.length == 0 ){
+
+        console.log('海鮮空');
+    }
+
+    if(item.length == 0 ){
+
+        console.log('釣具空');
+    }
+
+}
+
+filter(cookieArr)
+
+
+// // console.log(fishbox.length);
+// console.log(seafood.length);
+// console.log(item.length);
+
+
+
+
+// fillter ;
+
+// for(let j = 0 ; j <  cookieArr.length; j++){ 
 
     
 
-   if(cookieArr[j].fishbox){
-       console.log(cookieArr[j].fishbox);
+//    if(cookieArr[j].fishbox){
+
+//        console.log(cookieArr[j]);
 
 
-   }else if(!cookieArr[j].food ){
+//    }else if(!cookieArr[j].food ){
 
-    console.log(typeof cookieArr[j].Product_type.length);
+//     console.log();
 
 
 
-   }
+//    }else if(cookieArr[j].food){
+
+//     console.log('item');
+
+//    }
   
     
 
-}
+// }
 
 
 
