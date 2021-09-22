@@ -300,6 +300,7 @@
 
 .Cart_items_empty{
     display: none;
+    /* display: flex; */
     justify-items: center;
     align-items: center;
     height:300px;
@@ -381,7 +382,6 @@
 .Items_list_detail{
     display: flex;
     width: 80%;
-
 }
 
 .Items_name{
@@ -397,17 +397,42 @@
 .Items_list_detail_tool{
     display: flex;
     width: 54%;
+  
    
 
 }
 
+.count_warp{
+    width: 100%;
+    position: relative;
+   
+}
 .Items_list_count{
+   
     width: 33.3%;
     height: 100%;
+    align-items: center;
    
+}
 
+.Item_left{
+    
+    position: absolute;
+    bottom: -30px;
+  
   
 }
+
+.Item_left h4{
+    color: #a42021;
+}
+
+.Item_left h4::before{
+    content: "庫存: ";
+}
+
+
+
 .Items_list_price{
     width: 33.3%;
     height: 100%;
@@ -432,6 +457,7 @@
 
 .Items_pic img{
     height: 100%;
+    object-fit: cover;
     
 }
 
@@ -649,9 +675,7 @@
     .Items_list_count{
         width: 45%;
         height: 100%;
-
-    
-    
+      
       
     }
     .Items_list_price{
@@ -700,9 +724,9 @@
 
 
 /* 客製鮮魚箱 */
-.fishbox_items_list{
+/* .fishbox_items_list{
     border-bottom:  solid 1px transparent;
-}
+} */
 
 /* 第一階段購物車總金額 */
 .Cart_total_content{

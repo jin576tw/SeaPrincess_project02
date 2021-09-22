@@ -109,51 +109,8 @@ if($.cookie("Cart") == null){
     ListCount.text(sum)//購物車數量
     ListCount_RWD.text(sum)//RWD購物車數量
 
-    
 
-    // 判斷商品欄位是否出現
-    function filter(arr){
-
-
-        let fishbox =  arr.filter ((p) => p.fishbox == true)
-        let seafood =  arr.filter ((p) => p.food == true)
-        let item=  arr.filter ((p) => p.food == false)
-    
-
-        // 若生鮮食品為空
-        if(seafood.length == 0 ){
-    
-            $('.seafood_list').css('display','none');
-        }else{
-
-            $('.seafood_list').css('display','block');
-
-        }
-
-        // 若釣具用品為空
-        if(item.length == 0  ){
-    
-            $('.item_list').css('display','none');
-        }else{
-
-            $('.item_list').css('display','block');
-
-        }
-
-
-        //若海鮮魚箱為空
-        if(fishbox.length == 0 ){
-    
-            $('.fishbox_list').css('display','none');
-        }else{
-
-            $('.fishbox_list').css('display','block');
-
-        }
-    
-    
-    }
-    
+   
     // 顯示購物車狀態
     cookiefilter(cookieArr)
 
@@ -169,7 +126,7 @@ if($.cookie("Cart") == null){
         click: function(){
 
         
-            location.href = "./checkout.html?step1"
+            location.href = "./checkout.html"
 
         }
     
@@ -213,57 +170,105 @@ if(cookieStr){
 //商品加入navbar購物車
 PROPUCTSWARP.on("click",".add_btn",function(){
 
-    ListEmptyStatus.css('display','none');
-    
-    SEAFOOD_LIST.empty();//清空新加入商品
-    ITEM_LIST.empty();//清空新加入商品
-    FISHBOX_LIST.empty()//清空新加入新魚箱
 
-    // 啟動結帳按鈕
-    CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
-    CheckBtn.on({
+    // let Cart_Page = location.href.substr(-9,9) == 'cart.html'
 
-        click: function(){
-    
-            location.href = "./checkout.html"
-    
-        }
-    
-    })
+    // if(Cart_Page){
 
-    ListCount.css('display','flex').addClass('Bounce');
-    ListCount_RWD.css('display','flex').addClass('Bounce');
+    //     $('.Cart_items_empty').css('display','none')
 
-    let cookieStr = $.cookie('Cart');
-    let cookieArr = JSON.parse(cookieStr);
+    //     $('.Seafood_items_warp').empty()
+    //     $('.fishbox_items_warp').empty()
+    //     $('.tool_items_warp').empty()
 
-    if(cookieStr){
+    //     ListCount.css('display','flex').addClass('Bounce');
+    //     ListCount_RWD.css('display','flex').addClass('Bounce');
 
-        let total_price = 0
+    //     let cookieStr = $.cookie('Cart');
+    //     let cookieArr = JSON.parse(cookieStr);
 
-        for(let i = 0 ; i < cookieArr.length ;i++){ 
+    //     if(cookieStr){
 
-    
-            // 計算當前商品金額
-            let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-            total_price += nowprice;
+    //         let total_price = 0
 
-            
-
-            // 載入購物車商品
-            CartProduct(cookieArr[i],total_price)
-                
-            
-
-        }
-
-            // 購物車總金額
-            CartTotalPrice.text(total_price)
+    //         for(let i = 0 ; i < cookieArr.length ;i++){ 
 
         
+    //             // 計算當前商品金額
+    //             let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+    //             total_price += nowprice;
 
-    }
+                
 
+    //             // 載入購物車商品
+    //             CheckProduct(cookieArr[i])
+                    
+                
+
+    //         }
+
+    //             // 購物車總金額
+    //             CartTotalPrice.text(total_price)
+
+    //             $('.total_sum p:nth-of-type(2)').text(total_price)
+
+    //     }
+
+
+
+    // }else{
+
+        ListEmptyStatus.css('display','none');
+        
+        SEAFOOD_LIST.empty();//清空新加入商品
+        ITEM_LIST.empty();//清空新加入商品
+        FISHBOX_LIST.empty()//清空新加入新魚箱
+
+        // 啟動結帳按鈕
+        CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
+        CheckBtn.on({
+
+            click: function(){
+        
+                location.href = "./checkout.html"
+        
+            }
+        
+        })
+
+        ListCount.css('display','flex').addClass('Bounce');
+        ListCount_RWD.css('display','flex').addClass('Bounce');
+
+        let cookieStr = $.cookie('Cart');
+        let cookieArr = JSON.parse(cookieStr);
+
+        if(cookieStr){
+
+            let total_price = 0
+
+            for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+        
+                // 計算當前商品金額
+                let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+                total_price += nowprice;
+
+                
+
+                // 載入購物車商品
+                CartProduct(cookieArr[i],total_price)
+                    
+                
+
+            }
+
+                // 購物車總金額
+                CartTotalPrice.text(total_price)
+
+            
+
+        }
+    // }   
 
 })
 
