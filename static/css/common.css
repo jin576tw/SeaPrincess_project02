@@ -117,7 +117,11 @@ select {
     
 }
 
-.RWD_listopen{
+.RWD_listopen01{
+    transition: 0.5s;
+    height: 150px !important;
+}
+.RWD_listopen02{
     transition: 0.5s;
     height: 110px !important;
 }

@@ -1210,7 +1210,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
                 click: function () {
     
-                 $(this).toggleClass('RWD_listopen');
+                 $(this).toggleClass('RWD_listopen01');
 
                  $(this).children('.fa-angle-down').toggleClass('RWD_navUp');
                 
@@ -1224,7 +1224,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
                 click: function () {
     
-                 $(this).toggleClass('RWD_listopen');
+                 $(this).toggleClass('RWD_listopen02');
                  $(this).children('.fa-angle-down').toggleClass('RWD_navUp');
                 
                  

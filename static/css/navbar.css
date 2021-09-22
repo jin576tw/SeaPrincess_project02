@@ -436,7 +436,15 @@
     }
 
 
-    .nav_listwarp_RWD{
+    .nav_listwarp_RWD01{
+        width: 200px;
+        height: 120px;
+        background-color: #eeeeee;
+        box-shadow:0px 1px 2px 0px rgba(0,0,0,0.4) inset;
+
+    } 
+
+    .nav_listwarp_RWD02{
         width: 200px;
         height: 80px;
         background-color: #eeeeee;
@@ -600,7 +608,15 @@
     }
 
 
-    .nav_listwarp_RWD{
+    .nav_listwarp_RWD01{
+        width: 200px;
+        height: 120px;
+        background-color: #eeeeee;
+        box-shadow:0px 1px 2px 0px rgba(0,0,0,0.4) inset;
+
+    } 
+    
+    .nav_listwarp_RWD02{
         width: 200px;
         height: 80px;
         background-color: #eeeeee;
