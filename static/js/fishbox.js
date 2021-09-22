@@ -81,8 +81,10 @@ $('.fishbox_addCart').on({
 
             $('.fishbox_list').css('display','block')//海鮮魚箱欄位
 
-            // 魚箱選擇、組合預算、魚箱圖片、食用人數、其他留言、商品數量初始值、判斷是否是鮮魚箱
-            let arr= [{Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,pid:999}]
+            // 魚箱選擇、組合預算、魚箱圖片、食用人數、料理習慣、其他留言、商品數量初始值、判斷是否是鮮魚箱
+            let arr= [{Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_cook: Box_cook,Product_message:Box_message,count:1,fishbox:true,pid:1}]
+
+
 
 
             let CheckBtn = $('.checkout_btn')//結帳按鈕
@@ -120,6 +122,8 @@ $('.fishbox_addCart').on({
 
 
                  for(let i = 0 ; i < arr.length ;i++){ 
+
+                    console.log(arr[i]);
  
                      CartProduct(arr[i])
  
@@ -137,8 +141,14 @@ $('.fishbox_addCart').on({
 
                 let old_count_rwd = parseInt(ListCount_RWD.text()) 
                 ListCount_RWD.text(old_count_rwd+1)
- 
 
+
+
+                //購物車總金額
+                let CartTotalPrice = $('.Cart_list_total').children('p')
+                CartTotalPrice.text(Box_price)
+ 
+                
               
 
 
@@ -152,27 +162,43 @@ $('.fishbox_addCart').on({
 
                 let same = false ;//假設沒有添加過商品 
 
+                // 找相同商品未完成
                 for(let j = 0 ; j <  cookieArr.length; j++){ 
 
+                    // 在魚箱商品中
                     if(cookieArr[j].fishbox){
 
-                        same = true;
 
-                        // 修改魚箱內容
-                        cookieArr[j] = arr[0];
+                  
+                        // if(arr[0].pid == cookieArr[j].pid){
+                        //     same = true;
 
+                         
 
-                        let FISHBOX_LIST =  $('.fishbox_list_warp');
+                        //     arr[0].pid =  arr[0].pid +1
 
+                        //     console.log(arr[0]);
+                        //     break;
 
-                        FISHBOX_LIST.empty();
+                        // }
 
-
-                        CartProduct(arr[0])
+                    
                         
-                        alert('海鮮魚箱已修改！')
+                        // // 修改魚箱內容
+                        // cookieArr[j] = arr[0];
 
-                        break;
+
+                        // let FISHBOX_LIST =  $('.fishbox_list_warp');
+
+
+                        // FISHBOX_LIST.empty();
+
+
+                        // CartProduct(arr[0])
+                        
+                        // alert('海鮮魚箱已修改！')
+
+                       
 
 
                     }
@@ -182,22 +208,33 @@ $('.fishbox_addCart').on({
 
                 if(!same){
 
-                    //購物車已有商品時
-
-                    cookieArr.push({Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_message:Box_message,count:1,fishbox:true,pid:999})
-
-                   
-
-                    for(let i = 0 ; i < arr.length ;i++){ 
+                    let box_ID = 0
 
 
-                        CartProduct(arr[i])
-    
-    
+                    for(let j = 0 ; j <  cookieArr.length; j++){
+
+                        if(cookieArr[j].fishbox){
+
+
+                            // 最新魚箱商品ID+1
+                            box_ID = cookieArr[j].pid+1
+
+                        }
+
+
                     }
 
-                   
+                    let newbox = {Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_cook:Box_cook,Product_message:Box_message,count:1,fishbox:true,pid:box_ID}
+                    
 
+
+                    //購物車已有商品時
+                    cookieArr.push(newbox)
+
+                   
+                    CartProduct(newbox)
+
+                   
                     // 購物車數量
                     let old_count = parseInt( ListCount.text()) 
                     ListCount.text(old_count+1)
@@ -207,30 +244,31 @@ $('.fishbox_addCart').on({
                     ListCount_RWD.text(old_count_rwd+1)
 
 
+                    $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+
+                    let total_price = 0 
+
+                    for(let j = 0 ; j <  cookieArr.length; j++){
+
+                        // 計算當前商品金額
+                        let nowprice = parseInt(cookieArr[j].count) * parseInt(cookieArr[j].Product_Price);
+
+                        total_price+= nowprice
+
+                    }
+                
+                    //購物車總金額
+                    let CartTotalPrice = $('.Cart_list_total').children('p')
+                    CartTotalPrice.text(total_price)
             
                     alert('海鮮魚箱已加入購物車')
 
                 }
 
-                $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-
-                let total_price = 0 
-
-                for(let j = 0 ; j <  cookieArr.length; j++){
-
-                    // 計算當前商品金額
-                    let nowprice = parseInt(cookieArr[j].count) * parseInt(cookieArr[j].Product_Price);
-
-                    total_price+= nowprice
-
-                }
-
-               
-                //購物車總金額
-                let CartTotalPrice = $('.Cart_list_total').children('p')
-                CartTotalPrice.text(total_price)
-
-
+            
+            
+                
             }
 
              //navbar購物車

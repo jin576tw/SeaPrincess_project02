@@ -625,7 +625,16 @@ function CartProduct(arr){
         
     }else if(arr.fishbox){//若為鮮魚箱
 
-        let Fishbox_product =`<div class="Cart_list_item" Product-ID="999">
+
+        // 料理習慣
+        let cooktype = arr.Product_cook.join('、')
+
+        // 魚箱資訊
+        let box_detail =`${arr.Product_Price}元 / ${arr.Product_qty} / ${cooktype}`
+        
+
+    
+        let Fishbox_product =`<div class="Cart_list_item" Product-ID="${arr.pid}">
 
             <div class="list_item_pic">
                 <a href="./fishbox.html">
@@ -639,6 +648,10 @@ function CartProduct(arr){
                     <a href="./fishbox.html">
                         <h1>${arr.Product_Name}</h1>
                     </a>
+                </div>
+
+                <div class="list_fishbox_detail">
+                    <p>${box_detail}</p>
                 </div>
 
 

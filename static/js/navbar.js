@@ -670,13 +670,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
                 if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
 
-                    if(cookieArr[i].fishbox){
-
-                        alert('海鮮魚箱限購一組')
-                        continue;
-
-                    }
-
+                
                     let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
 
                     let old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
