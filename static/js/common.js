@@ -771,8 +771,8 @@ $.get("./static/JSON/Seafood.json", function (data) {
 
     PROPUCTSWARP.on("click","#add_seafood",function(){
 
-        let SEAFOOD_Cart = $('.seafood_list')//生鮮食品欄位
-        SEAFOOD_Cart.css('display','block');
+        $('.seafood_list').css('display','block');
+      
 
         // 商品ID
         let PID = $(this).parent().parent().attr('Product-id')
@@ -872,6 +872,7 @@ $.get("./static/JSON/Seafood.json", function (data) {
 
                             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
+
                         }
             
 
@@ -928,8 +929,7 @@ $.get("./static/JSON/Item.json", function (data) {
 
     PROPUCTSWARP.on("click","#add_item",function(){
 
-        let ITEM_Cart = $('.item_list')//釣具欄位
-        ITEM_Cart.css('display','block');
+        $('.item_list').css('display','block');
 
         // 商品ID
         let PID = $(this).parent().parent().attr('Product-id')

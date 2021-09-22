@@ -15,12 +15,57 @@ let ITEM_LIST =  $('.item_list_warp')//釣具購物車
 let FISHBOX_LIST = $('.fishbox_list_warp')//海鮮魚箱
 
 
-let SEAFOOD_Cart = $('.seafood_list')//生鮮食品欄位
-let ITEM_Cart = $('.item_list')//釣具欄位
-let FISHBOX_Cart = $('.fishbox_list')//海鮮魚箱欄位
+// let SEAFOOD_Cart = $('.seafood_list')//生鮮食品欄位
+// let ITEM_Cart = $('.item_list')//釣具欄位
+// let FISHBOX_Cart = $('.fishbox_list')//海鮮魚箱欄位
 
 
 let CheckBtn = $('.checkout_btn')//結帳按鈕
+
+
+// 判斷商品欄位是否出現
+function cookiefilter(arr){
+
+
+    let fishbox =  arr.filter ((p) => p.fishbox == true)
+    let seafood =  arr.filter ((p) => p.food == true)
+    let item=  arr.filter ((p) => p.food == false)
+
+
+    // 若生鮮食品為空
+    if(seafood.length == 0 ){
+
+        $('.seafood_list').css('display','none');
+    }else{
+
+        $('.seafood_list').css('display','block');
+
+    }
+
+    // 若釣具用品為空
+    if(item.length == 0  ){
+
+        $('.item_list').css('display','none');
+    }else{
+
+        $('.item_list').css('display','block');
+
+    }
+
+
+    //若海鮮魚箱為空
+    if(fishbox.length == 0 ){
+
+        $('.fishbox_list').css('display','none');
+    }else{
+
+        $('.fishbox_list').css('display','block');
+
+    }
+
+
+
+}
 
 
 //////navbar購物車功能////
@@ -38,9 +83,10 @@ if($.cookie("Cart") == null){
 
 
     // 商品欄位狀態
-    SEAFOOD_LIST .css('display','none');
-    ITEM_Cart.css('display','none');
-    FISHBOX_LIST.css('display','none');
+    $('.seafood_list').css('display','none');
+    $('.fishbox_list').css('display','none');
+    $('.item_list').css('display','none');
+   
 
 
 }else{
@@ -77,20 +123,20 @@ if($.cookie("Cart") == null){
         // 若生鮮食品為空
         if(seafood.length == 0 ){
     
-            SEAFOOD_Cart.css('display','none');
+            $('.seafood_list').css('display','none');
         }else{
 
-            SEAFOOD_Cart.css('display','block');
+            $('.seafood_list').css('display','block');
 
         }
 
         // 若釣具用品為空
         if(item.length == 0  ){
     
-            ITEM_Cart.css('display','none');
+            $('.item_list').css('display','none');
         }else{
 
-            ITEM_Cart.css('display','block');
+            $('.item_list').css('display','block');
 
         }
 
@@ -98,18 +144,18 @@ if($.cookie("Cart") == null){
         //若海鮮魚箱為空
         if(fishbox.length == 0 ){
     
-            FISHBOX_Cart.css('display','none');
+            $('.fishbox_list').css('display','none');
         }else{
 
-            FISHBOX_Cart.css('display','block');
+            $('.fishbox_list').css('display','block');
 
         }
     
     
     }
     
-    
-    filter(cookieArr)
+    // 顯示購物車狀態
+    cookiefilter(cookieArr)
 
  
     
@@ -547,50 +593,55 @@ PROPUCTSWARP.on("click",".add_btn",function(){
                     let sum_RWD = parseInt($('.shoplist_count_RWD').text())//抓購物車RWD現在數量
                 
 
-                    let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())
+                    let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())
 
 
-                    $nowsum = sum - parseInt(cookieArr[i].count) //購物車現在數量減去刪除數量
-                    $('.navbar_shoplist_count').text($nowsum)//刪除後數量
+                    let nowsum = sum - parseInt(cookieArr[i].count) //購物車現在數量減去刪除數量
+                    $('.navbar_shoplist_count').text(nowsum)//刪除後數量
 
-                    $nowsumRWD = sum_RWD - parseInt(cookieArr[i].count) //RWD購物車現在數量減去刪除數量
-                    $('.navbar_shoplist_count').text(sum_RWD)//RWD刪除後數量
+                    let nowsumRWD = sum_RWD - parseInt(cookieArr[i].count) //RWD購物車現在數量減去刪除數量
+                    $('.navbar_shoplist_count').text(nowsumRWD)//RWD刪除後數量
                     
 
-                    $delete_price = parseInt(cookieArr[i].count) *  parseInt(cookieArr[i].Product_Price)
+                    let delete_price = parseInt(cookieArr[i].count) *  parseInt(cookieArr[i].Product_Price)
 
-                    $newtototal_price = $oldtotal_price - $delete_price;
+                    let newtototal_price = oldtotal_price - delete_price;
 
 
-                    $('.Cart_list_total').children('p').text($newtototal_price)//刪除後總金額
+                    $('.Cart_list_total').children('p').text(newtototal_price)//刪除後總金額
                     
 
                     cookieArr.splice(i,1);//刪除
 
-                    if( $nowsum <= 0 ||  $nowsumRWD <= 0){ //刪除後數量小於0，計數器消失
+                  
+
+                    if( nowsum <= 0 ||  nowsumRWD <= 0){ //刪除後數量小於0，計數器消失
                         $('.navbar_shoplist_count').css('display','none');
                         $('.shoplist_count_RWD').css('display','none');
 
                     }else{
 
-                        $('.navbar_shoplist_count').text($nowsum)
-                        $('.shoplist_count_RWD').text($nowsumRWD)
+                        $('.navbar_shoplist_count').text(nowsum)
+                        $('.shoplist_count_RWD').text(nowsumRWD)
 
                     }
+
+                    // 顯示購物車內狀態
+                    cookiefilter(cookieArr)
+                   
                     
-                    break;
                 }
 
             }
 
+            
     
             //判斷數組為空
             if( cookieArr.length == 0){
 
                 $.removeCookie('Cart');
 
-                let empty = `<p class="list_item_empty">目前購物車為空</p>`
-                $(".list_item_warps").append(empty)//顯示目前沒有商品提示
+                $(".list_item_empty").css('display','flex')//顯示目前沒有商品提示
                 
                 $('.Cart_list_total').css('display','none')
                 $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
@@ -617,74 +668,74 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
             for(let i = 0 ; i <  cookieArr.length ;i++){
 
-                if(cookieArr[i].fishbox){
+                if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
 
-                    alert('海鮮魚箱限購一組')
-                    break;
+                    if(cookieArr[i].fishbox){
 
-                }else{
+                        alert('海鮮魚箱限購一組')
+                        continue;
 
-                    if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
-
-                        $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
-
-                        $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
-
-                        $raw_price = $oldtotal_price - $old_price // 除了變化的商品金額以外的總金額
-
-                        let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Product_Left)
-                        //判斷商品是否超過庫存
-
-
-                        if(Item_over){
-                            alert('數量超過庫存')
-                            $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
-                            break;
-
-                        }else{
-
-                            cookieArr[i].count++;//計算器數量++
-
-                            let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
-
-                            let sum_RWD = parseInt($('.shoplist_count_RWD').text()) //抓navbar RWD現在數量
-
-                        
-                            sum++ ; //navbar數量＋＋
-
-                            sum_RWD++ //navbarRWD數量＋＋
-
-                            $(this).prev().text(cookieArr[i].count)//更新計算器數量
-                        
-                            $('.navbar_shoplist_count').text(sum)//更新navbar數量
-                            $('.shoplist_count_RWD').text(sum_RWD++)//更新navbar數量
-
-                            
-                        
-
-                            $newprice = cookieArr[i].Product_Price
-                            * cookieArr[i].count; //新商品金額
-
-
-                            $newtototal_price = $raw_price + $newprice; //新商品總金額
-                        
-                            $(this).parent().next().children('h4').text($newprice);
-
-                            $('.Cart_list_total').children('p').text($newtototal_price);
-                        
-
-                            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-        
-
-                        }
-
-                        
-                        break;
-
-            
                     }
 
+                    let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
+
+                    let old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
+
+                    let raw_price = oldtotal_price - old_price // 除了變化的商品金額以外的總金額
+
+                    let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Product_Left)
+                    //判斷商品是否超過庫存
+
+
+                    if(Item_over){
+                        alert('數量超過庫存')
+                        $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+                        break;
+
+                    }else{
+
+                        cookieArr[i].count++;//計算器數量++
+
+                        let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
+
+                        let sum_RWD = parseInt($('.shoplist_count_RWD').text()) //抓navbar RWD現在數量
+
+                    
+                        sum++ ; //navbar數量＋＋
+
+                        sum_RWD++ //navbarRWD數量＋＋
+
+                        $(this).prev().text(cookieArr[i].count)//更新計算器數量
+                    
+                        $('.navbar_shoplist_count').text(sum)//更新navbar數量
+                        $('.shoplist_count_RWD').text(sum_RWD++)//更新navbar數量
+
+                        
+                    
+
+                        let newprice = cookieArr[i].Product_Price
+                        * cookieArr[i].count; //新商品金額
+
+
+                        let newtototal_price = raw_price + newprice; //新商品總金額
+                    
+                        $(this).parent().next().children('h4').text(newprice);
+
+                        $('.Cart_list_total').children('p').text(newtototal_price);
+                    
+
+                        $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+    
+
+                    }
+
+                    
+                    break;
+
+        
                 }
+
+   
 
 
             }
@@ -759,11 +810,13 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
                         cookieArr.splice(i,1);//刪除指定資料
 
+                        // 顯示購物車內狀態
+                        cookiefilter(cookieArr)
+
                         if(sum == 0 || sum_RWD == 0){
 
                             $.removeCookie('Cart');
-                            let empty = `<p class="list_item_empty">目前購物車為空</p>`
-                            $(".list_item_warps").append(empty)//顯示目前沒有商品提示
+                            $(".list_item_empty").css('display','flex')//顯示目前沒有商品提示
 
                             $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
 
