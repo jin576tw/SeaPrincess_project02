@@ -226,7 +226,7 @@ $('.fishbox_addCart').on({
 
                     }
 
-                    console.log(box_ID);
+           
                     let newbox = {Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_cook:Box_cook,Product_message:Box_message,count:1,fishbox:true,pid:box_ID};
 
 

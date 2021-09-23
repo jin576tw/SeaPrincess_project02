@@ -263,7 +263,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
             
 
             // 載入購物車商品
-            CartProduct(cookieArr[i],total_price)
+            CartProduct(cookieArr[i])
                 
             
 
@@ -280,303 +280,337 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 })
 
 
-        //刪除項目
-        ///append架構無法使用功能，須根據append父層下指令
-        $(".product_list").on("click",".item_delete",function(){
+//刪除項目
+///append架構無法使用功能，須根據append父層下指令
+$(".product_list").on("click",".item_delete",function(){
 
-            // 節點刪除
-            let navProuduct = $(this).parent().parent().parent()
-            let navProuductID = navProuduct.attr('Product-ID')
+// 節點刪除
+let navProuduct = $(this).parent().parent().parent()
+let navProuductID = parseInt(navProuduct.attr('Product-ID'))
 
+
+let isfood = navProuduct.attr('food')
+
+let isfishbox = navProuduct.attr('fishbox')
+
+
+navProuduct.remove()//視覺刪除
+alert('商品已刪除')
+
+
+
+let cookieStr = $.cookie('Cart');
+let cookieArr = JSON.parse(cookieStr);
+
+
+
+    for(let i = 0 ; i <  cookieArr.length ;i++){
+
+        function deleteCart(arr){
+
+            let sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
+
+            let sum_RWD = parseInt($('.shoplist_count_RWD').text())//抓購物車RWD現在數量
+
+
+            let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())
+
+
+            let nowsum = sum - parseInt(arr[i].count) //購物車現在數量減去刪除數量
+            $('.navbar_shoplist_count').text(nowsum)//刪除後數量
+
+            let nowsumRWD = sum_RWD - parseInt(arr[i].count) //RWD購物車現在數量減去刪除數量
+            $('.navbar_shoplist_count').text(nowsumRWD)//RWD刪除後數量
             
 
-            navProuduct.remove()//視覺刪除
-            alert('商品已刪除')
+            let delete_price = parseInt(arr[i].count) *  parseInt(arr[i].Product_Price)
+
+            let newtototal_price = oldtotal_price - delete_price;
 
 
-            let cookieStr = $.cookie('Cart');
-            let cookieArr = JSON.parse(cookieStr);
+            $('.Cart_list_total').children('p').text(newtototal_price)//刪除後總金額
+            
 
-            for(let i = 0 ; i <  cookieArr.length ;i++){
+            arr.splice(i,1);//刪除
 
-                // 找到相同ID
-                if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
+        
 
-                   
-                    let sum = parseInt($('.navbar_shoplist_count').text())//抓購物車現在數量
+            if( nowsum <= 0 ||  nowsumRWD <= 0){ //刪除後數量小於0，計數器消失
+                $('.navbar_shoplist_count').css('display','none');
+                $('.shoplist_count_RWD').css('display','none');
 
-                    let sum_RWD = parseInt($('.shoplist_count_RWD').text())//抓購物車RWD現在數量
-                
+            }else{
 
-                    let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())
-
-
-                    let nowsum = sum - parseInt(cookieArr[i].count) //購物車現在數量減去刪除數量
-                    $('.navbar_shoplist_count').text(nowsum)//刪除後數量
-
-                    let nowsumRWD = sum_RWD - parseInt(cookieArr[i].count) //RWD購物車現在數量減去刪除數量
-                    $('.navbar_shoplist_count').text(nowsumRWD)//RWD刪除後數量
-                    
-
-                    let delete_price = parseInt(cookieArr[i].count) *  parseInt(cookieArr[i].Product_Price)
-
-                    let newtototal_price = oldtotal_price - delete_price;
-
-
-                    $('.Cart_list_total').children('p').text(newtototal_price)//刪除後總金額
-                    
-
-                    cookieArr.splice(i,1);//刪除
-
-                  
-
-                    if( nowsum <= 0 ||  nowsumRWD <= 0){ //刪除後數量小於0，計數器消失
-                        $('.navbar_shoplist_count').css('display','none');
-                        $('.shoplist_count_RWD').css('display','none');
-
-                    }else{
-
-                        $('.navbar_shoplist_count').text(nowsum)
-                        $('.shoplist_count_RWD').text(nowsumRWD)
-
-                    }
-
-                    // 顯示購物車內狀態
-                    cookiefilter(cookieArr)
-                   
-                    
-                }
+                $('.navbar_shoplist_count').text(nowsum)
+                $('.shoplist_count_RWD').text(nowsumRWD)
 
             }
 
-            
+        }
+
+    if(isfood == 'true'){
+
+        if( navProuductID == cookieArr[i].pid && cookieArr[i].food){
+
+        
+            deleteCart(cookieArr)
+
+        }
     
-            //判斷數組為空
-            if( cookieArr.length == 0){
+    
+    }else if(isfood == 'false'){
+
+
+        if( navProuductID == cookieArr[i].pid && cookieArr[i].food == false){
+
+            
+            deleteCart(cookieArr)
+
+        }
+
+
+    }else if(isfishbox == 'true'){
+
+        if( navProuductID == cookieArr[i].pid && cookieArr[i].fishbox){
+            
+            deleteCart(cookieArr)
+
+        }
+
+
+
+    }
+
+
+}
+
+
+//判斷數組為空
+if( cookieArr.length == 0){
+
+    $.removeCookie('Cart');
+
+    $(".list_item_empty").css('display','flex')//顯示目前沒有商品提示
+    
+    $('.Cart_list_total').css('display','none')
+    $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
+
+}else{
+    $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+    
+    cookiefilter(cookieArr)
+}
+
+});
+
+//計算器
+//加＋＋
+$(".product_list").on("click",".countBtn_plus ",function(){
+
+//當前所在的ID
+let navProuduct = $(this).parent().parent().parent().parent();
+let navProuductID = parseInt(navProuduct.attr('Product-ID'))
+
+
+let cookieStr = $.cookie('Cart');
+let cookieArr = JSON.parse(cookieStr);
+
+
+for(let i = 0 ; i <  cookieArr.length ;i++){
+    
+
+    if(cookieArr[i].pid == navProuductID){
+
+        let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
+
+        let old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
+
+        let raw_price = oldtotal_price - old_price // 除了變化的商品金額以外的總金額
+
+        let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Product_Left)
+        //判斷商品是否超過庫存
+
+
+        if(Item_over){
+            alert('數量超過庫存')
+            $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+            break;
+
+        }else{
+
+            cookieArr[i].count++;//計算器數量++
+
+            let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
+
+            let sum_RWD = parseInt($('.shoplist_count_RWD').text()) //抓navbar RWD現在數量
+
+        
+            sum++ ; //navbar數量＋＋
+
+            sum_RWD++ //navbarRWD數量＋＋
+
+            $(this).prev().text(cookieArr[i].count)//更新計算器數量
+        
+            $('.navbar_shoplist_count').text(sum)//更新navbar數量
+            $('.shoplist_count_RWD').text(sum_RWD++)//更新navbar數量
+
+            
+        
+
+            let newprice = cookieArr[i].Product_Price
+            * cookieArr[i].count; //新商品金額
+
+
+            let newtototal_price = raw_price + newprice; //新商品總金額
+        
+            $(this).parent().next().children('h4').text(newprice);
+
+            $('.Cart_list_total').children('p').text(newtototal_price);
+        
+
+            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+
+        }
+
+        
+        break;
+
+
+    }
+
+
+
+
+}
+
+
+})
+
+
+
+//減--
+$(".product_list").on("click",".countBtn_minus ",function(){
+
+//當前所在的ID
+let navProuduct = $(this).parent().parent().parent().parent()
+let navProuductID = navProuduct.attr('Product-ID')
+
+
+
+let cookieStr = $.cookie('Cart');
+let cookieArr = JSON.parse(cookieStr);
+
+
+for(let i = 0 ; i <  cookieArr.length ;i++){
+
+    
+    if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
+
+
+        let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
+
+        $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
+
+        $raw_price = $oldtotal_price - $old_price// 除了變化的商品金額以外的總金額
+
+        cookieArr[i].count--;
+
+        let sum = parseInt($('.navbar_shoplist_count').text())
+        sum-- ;
+
+        let sum_RWD = parseInt($('.shoplist_count_RWD').text())
+        sum_RWD-- ;
+
+        $(this).next().text(cookieArr[i].count)//現在商品數量
+
+        $('.navbar_shoplist_count').text(sum)
+        $('.shoplist_count_RWD').text(sum_RWD)
+
+
+        //計算器數量效果變化
+        let still_left = parseInt(cookieArr[i].Product_Left) >  parseInt(cookieArr[i].count)
+
+        if(still_left){
+
+            let countBtn_plus = $(this).next().next()
+            $(countBtn_plus).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
+
+        }
+        else{
+
+            let countBtn_plus = $(this).next().next()
+            $(countBtn_plus).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
+
+        }
+
+        if(cookieArr[i].count <= 0){
+            navProuduct.remove()
+            alert('已刪除商品')
+            let delete_price = $oldtotal_price - cookieArr[i].Product_Price
+            
+            $('.Cart_list_total').children('p').text(delete_price)
+
+            cookieArr.splice(i,1);//刪除指定資料
+
+            // 顯示購物車內狀態
+            cookiefilter(cookieArr)
+
+            if(sum == 0 || sum_RWD == 0){
 
                 $.removeCookie('Cart');
-
                 $(".list_item_empty").css('display','flex')//顯示目前沒有商品提示
-                
-                $('.Cart_list_total').css('display','none')
+
                 $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
+
+                $('.shoplist_count_RWD').css('display','none')
+                $('.navbar_shoplist_count').css('display','none')
+                $('.Cart_list_total').css('display','none')
+                break;
 
             }else{
                 $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-                
-                
+
+                break;
             }
             
-         });
-
-         //計算器
-         //加＋＋
-         $(".product_list").on("click",".countBtn_plus ",function(){
-
-            //當前所在的ID
-            let navProuduct = $(this).parent().parent().parent().parent();
-            let navProuductID = navProuduct.attr('Product-ID')
-
-            let cookieStr = $.cookie('Cart');
-            let cookieArr = JSON.parse(cookieStr);
+            
+            
             
 
-            for(let i = 0 ; i <  cookieArr.length ;i++){
+        }else{
+            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
-                if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
-
-                
-                    let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
-
-                    let old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
-
-                    let raw_price = oldtotal_price - old_price // 除了變化的商品金額以外的總金額
-
-                    let Item_over = parseInt(cookieArr[i].count) >= parseInt(cookieArr[i].Product_Left)
-                    //判斷商品是否超過庫存
+        }
 
 
-                    if(Item_over){
-                        alert('數量超過庫存')
-                        $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
-                        break;
+        $newprice = cookieArr[i].Product_Price * cookieArr[i].count//新商品金額
 
-                    }else{
-
-                        cookieArr[i].count++;//計算器數量++
-
-                        let sum = parseInt($('.navbar_shoplist_count').text()) //抓navbar現在數量
-
-                        let sum_RWD = parseInt($('.shoplist_count_RWD').text()) //抓navbar RWD現在數量
-
-                    
-                        sum++ ; //navbar數量＋＋
-
-                        sum_RWD++ //navbarRWD數量＋＋
-
-                        $(this).prev().text(cookieArr[i].count)//更新計算器數量
-                    
-                        $('.navbar_shoplist_count').text(sum)//更新navbar數量
-                        $('.shoplist_count_RWD').text(sum_RWD++)//更新navbar數量
-
-                        
-                    
-
-                        let newprice = cookieArr[i].Product_Price
-                        * cookieArr[i].count; //新商品金額
+        $newtototal_price = $raw_price + $newprice;//新商品總金額
 
 
-                        let newtototal_price = raw_price + newprice; //新商品總金額
-                    
-                        $(this).parent().next().children('h4').text(newprice);
-
-                        $('.Cart_list_total').children('p').text(newtototal_price);
-                    
-
-                        $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-    
-
-                    }
-
-                    
-                    break;
-
+        $(this).parent().next().children('h4').text($newprice)
         
-                }
-
-   
-
-
-            }
-
-
-
-         })
-
-
-
-        //減--
-         $(".product_list").on("click",".countBtn_minus ",function(){
-
-            //當前所在的ID
-            let navProuduct = $(this).parent().parent().parent().parent()
-            let navProuductID = navProuduct.attr('Product-ID')
-
-     
-
-            let cookieStr = $.cookie('Cart');
-            let cookieArr = JSON.parse(cookieStr);
-            
-
-            for(let i = 0 ; i <  cookieArr.length ;i++){
-            
-                
-                if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
-
-
-                    let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
-
-                    $old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
-
-                    $raw_price = $oldtotal_price - $old_price// 除了變化的商品金額以外的總金額
-
-                    cookieArr[i].count--;
-
-                    let sum = parseInt($('.navbar_shoplist_count').text())
-                    sum-- ;
-
-                    let sum_RWD = parseInt($('.shoplist_count_RWD').text())
-                    sum_RWD-- ;
-
-                    $(this).next().text(cookieArr[i].count)//現在商品數量
-
-                    $('.navbar_shoplist_count').text(sum)
-                    $('.shoplist_count_RWD').text(sum_RWD)
-
-
-                    //計算器數量效果變化
-                    let still_left = parseInt(cookieArr[i].Product_Left) >  parseInt(cookieArr[i].count)
-
-                    if(still_left){
-
-                        let countBtn_plus = $(this).next().next()
-                        $(countBtn_plus).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
-
-                    }
-                    else{
-
-                        let countBtn_plus = $(this).next().next()
-                        $(countBtn_plus).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
-
-                    }
-
-                    if(cookieArr[i].count <= 0){
-                        navProuduct.remove()
-                        alert('已刪除商品')
-                        let delete_price = $oldtotal_price - cookieArr[i].Product_Price
-                        
-                        $('.Cart_list_total').children('p').text(delete_price)
-
-                        cookieArr.splice(i,1);//刪除指定資料
-
-                        // 顯示購物車內狀態
-                        cookiefilter(cookieArr)
-
-                        if(sum == 0 || sum_RWD == 0){
-
-                            $.removeCookie('Cart');
-                            $(".list_item_empty").css('display','flex')//顯示目前沒有商品提示
-
-                            $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
-
-                            $('.shoplist_count_RWD').css('display','none')
-                            $('.navbar_shoplist_count').css('display','none')
-                            $('.Cart_list_total').css('display','none')
-                            break;
-
-                        }else{
-                            $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-
-                            break;
-                        }
-                        
-                        
-                       
-                        
-
-                    }else{
-                        $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
-
-                    }
-
-
-                    $newprice = cookieArr[i].Product_Price * cookieArr[i].count//新商品金額
-
-                    $newtototal_price = $raw_price + $newprice;//新商品總金額
-
-
-                    $(this).parent().next().children('h4').text($newprice)
-                   
-                    $('.Cart_list_total').children('p').text($newtototal_price);
-                    
-                    break;
+        $('.Cart_list_total').children('p').text($newtototal_price);
         
-                }
+        break;
 
-            }
+    }
 
-         })
+}
+
+})
 
 
 
 
 
-         //計算器效果
-         $(".product_list").on("mousedown mouseup",".countBtn_plus , .countBtn_minus",function(){
+//計算器效果
+$(".product_list").on("mousedown mouseup",".countBtn_plus , .countBtn_minus",function(){
 
-            $(this).toggleClass('countBtn_color').css('transition','0.3s')
-    
-         })
+$(this).toggleClass('countBtn_color').css('transition','0.3s')
+
+})
 
          
 

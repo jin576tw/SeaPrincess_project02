@@ -576,7 +576,7 @@ function CartProduct(arr){
     // 是否為食物
     if(isFood){
 
-        let Seafood_product =`<div class="Cart_list_item" Product-ID="${arr.pid}">
+        let Seafood_product =`<div class="Cart_list_item" Product-ID="${arr.pid}" food="${arr.food}">
 
             <div class="list_item_pic">
                 <a href="./each-product.html?S&&pid=${PID}">
@@ -634,7 +634,7 @@ function CartProduct(arr){
         
 
     
-        let Fishbox_product =`<div class="Cart_list_item" Product-ID="${arr.pid}">
+        let Fishbox_product =`<div class="Cart_list_item" Product-ID="${arr.pid}" fishbox="${arr.fishbox}">
 
             <div class="list_item_pic">
                 <a href="./fishbox.html">
@@ -700,7 +700,7 @@ function CartProduct(arr){
         }
         
        
-        let Item_product =`<div class="Cart_list_item" Product-ID="${arr.pid}">
+        let Item_product =`<div class="Cart_list_item" Product-ID="${arr.pid}" food="${arr.food}">
 
             <div class="list_item_pic">
                 <a href="./each-product.html?I&&pid=${PID}">
@@ -786,7 +786,7 @@ if(arr.Product_Left <= 100){
 
 let seafood_items_list = `
 
-    <div class="Items_list seafood_items_list" Product_ID="${arr.pid}">
+    <div class="Items_list seafood_items_list" Product-ID="${arr.pid}" food="${arr.food}">
 
         <div class="Items_list_content Items_list_head">
             <input type="checkbox" name="Item_check" id="" class="Item_check">
@@ -821,7 +821,9 @@ let seafood_items_list = `
                     <p>${nowprice}</p>
                 </div>
                 <div class="Items_list_content Items_list_delete">
-                    <i class="far fa-trash-alt"></i>
+                    <div class="list_delete">
+                        <i class="far fa-trash-alt"></i>
+                    </div>
                     
                 </div>
             </div>
@@ -860,7 +862,7 @@ let seafood_items_list = `
         
     let fishbox_items_list =`
 
-        <div class="Items_list fishbox_items_list" Product_ID="${arr.pid}">
+        <div class="Items_list fishbox_items_list" Product-ID="${arr.pid}" fishbox="${arr.fishbox}">
 
         <div class="Items_list_content Items_list_head">
             <input type="checkbox" name="Item_check" id="" class="Item_check">
@@ -898,7 +900,9 @@ let seafood_items_list = `
                     <p>${nowprice}</p>
                 </div>
                 <div class="Items_list_content Items_list_delete">
-                    <i class="far fa-trash-alt"></i>
+                    <div class="list_delete">
+                        <i class="far fa-trash-alt"></i>
+                    </div>
                     
                 </div>
             </div>
@@ -928,7 +932,7 @@ let seafood_items_list = `
 
     let tool_items_list=`
 
-        <div class="Items_list tool_items_list"  Product_ID="${arr.pid}" >
+        <div class="Items_list tool_items_list"  Product-ID="${arr.pid}" food="${arr.food}">
 
             <div class="Items_list_content Items_list_head">
                 <input type="checkbox" name="Item_check" id="" class="Item_check">
@@ -946,23 +950,26 @@ let seafood_items_list = `
                 <div class="Items_list_detail_tool">
                     <div class="Items_list_content Items_list_count">
 
-                        <div class="Counter">
-                            <div class="countBtn countBtn_minus">
-                                <i class="fas fa-minus"></i>
-                            </div>
-                            <div class="countNum">${arr.count}</div>
-                            <div class="countBtn countBtn_plus">
-                                <i class="fas fa-plus"></i>
+                        <div class="count_warp">
+                            <div class="Counter">
+                                <div class="countBtn countBtn_minus">
+                                    <i class="fas fa-minus"></i>
+                                </div>
+                                <div class="countNum">${arr.count}</div>
+                                <div class="countBtn countBtn_plus">
+                                    <i class="fas fa-plus"></i>
+                                </div>
                             </div>
                         </div>
-
+                        
                     </div>
                     <div class="Items_list_content Items_list_price">
                         <p>${nowprice}</p>
                     </div>
                     <div class="Items_list_content Items_list_delete">
-                        <i class="far fa-trash-alt"></i>
-                        
+                        <div class="list_delete">
+                         <i class="far fa-trash-alt"></i>
+                        </div>
                     </div>
                 </div>
 
@@ -1073,33 +1080,36 @@ $.get("./static/JSON/Seafood.json", function (data) {
                             // 若有，增加數量
                             for(let j =0 ; j < cookieArr.length; j++){
 
-                                if(d[i].pid == cookieArr[j].pid){
+                                if(cookieArr[j].food){
 
-                                    same = true;
-                                    
-                                    let Item_over = parseInt(cookieArr[j].count) >= parseInt(cookieArr[j].Product_Left)
+                                    if(d[i].pid == cookieArr[j].pid){
 
-                                    let Zero_Item = parseInt(cookieArr[j].Product_Left) == 0 
-
-
-                                    if(Item_over){
-                                        alert('數量超過庫存')
-                                        break;
-
-                                    }
-                                    else if(Zero_Item){
-                                        alert('商品缺貨中')
-                                        break;
-
-                                    }else{
-                                        cookieArr[j].count++
-                                        // 數量沒超過庫存
-                                    }
-
-                            
-                                    break;
+                                        same = true;
                                         
+                                        let Item_over = parseInt(cookieArr[j].count) >= parseInt(cookieArr[j].Product_Left)
+
+                                        let Zero_Item = parseInt(cookieArr[j].Product_Left) == 0 
+
+
+                                        if(Item_over){
+                                            alert('數量超過庫存')
+                                            break;
+
+                                        }
+                                        else if(Zero_Item){
+                                            alert('商品缺貨中')
+                                            break;
+
+                                        }else{
+                                            cookieArr[j].count++
+                                            // 數量沒超過庫存
+                                        }
+
                                 
+                                        break;
+                                            
+                                    
+                                    }
                                 }
 
                             }
@@ -1237,33 +1247,35 @@ $.get("./static/JSON/Item.json", function (data) {
                             // 若有，增加數量
                             for(let j =0 ; j < cookieArr.length; j++){
 
-                                if(d[i].pid == cookieArr[j].pid){
+                                if(!cookieArr[j].food){
+                                    if(d[i].pid == cookieArr[j].pid){
 
-                                    same = true;
-                                    
-                                    let Item_over = parseInt(cookieArr[j].count) >= parseInt(cookieArr[j].Product_Left)
-
-                                    let Zero_Item = parseInt(cookieArr[j].Product_Left) == 0 
-
-
-                                    if(Item_over){
-                                        alert('數量超過庫存')
-                                        break;
-
-                                    }
-                                    else if(Zero_Item){
-                                        alert('商品缺貨中')
-                                        break;
-
-                                    }else{
-                                        cookieArr[j].count++
-                                        // 數量沒超過庫存
-                                    }
-
-                            
-                                    break;
+                                        same = true;
                                         
+                                        let Item_over = parseInt(cookieArr[j].count) >= parseInt(cookieArr[j].Product_Left)
+
+                                        let Zero_Item = parseInt(cookieArr[j].Product_Left) == 0 
+
+
+                                        if(Item_over){
+                                            alert('數量超過庫存')
+                                            break;
+
+                                        }
+                                        else if(Zero_Item){
+                                            alert('商品缺貨中')
+                                            break;
+
+                                        }else{
+                                            cookieArr[j].count++
+                                            // 數量沒超過庫存
+                                        }
+
                                 
+                                        break;
+                                            
+                                    
+                                    }
                                 }
 
                             }
