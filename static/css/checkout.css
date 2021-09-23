@@ -809,7 +809,7 @@
 }
 
 .total_point p:nth-of-type(2){
-    color:#ff2d2d;
+    color:var(--orange)
 }
 
  
