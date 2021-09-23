@@ -180,6 +180,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
             scrollTop: 0
         }, 1 ,'swing');
 
+        $('.cart_checkout_btn').attr('disabled', false).css('background-color','#5aa700')
        
         $('.Cart_items_empty').css('display','none')
 
@@ -216,9 +217,14 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
             $('.total_sum p:nth-of-type(2)').text(total_price)
         
+            // 點數計算
+            let getpoint = total_price * 0.1
+
+            //優惠點數
+            $('.total_point p:nth-of-type(2)').text(getpoint)
+           
             // 合計金額
-            let final_price = parseInt($('.total_sum p:nth-of-type(2)').text()) - 150
-            $('.total_money p:nth-of-type(2)').text(final_price)
+            $('.total_money p:nth-of-type(2)').text(total_price)
         }
     }
 
@@ -398,8 +404,10 @@ if( cookieArr.length == 0){
 }else{
     $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
     
-    cookiefilter(cookieArr)
+   
 }
+
+cookiefilter(cookieArr)
 
 });
 

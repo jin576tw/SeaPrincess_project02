@@ -122,6 +122,7 @@ $(document).ready(function () {
     
 
     let CHECKTOTAL = $('.total_sum p:nth-of-type(2)')
+    let GETPOINT = $('.total_point p:nth-of-type(2)')
     let FINALTOTAL = $('.total_money p:nth-of-type(2)')
 
 
@@ -136,9 +137,14 @@ $(document).ready(function () {
         $('.fishbox_items').css('display','none');
         $('.tool_items').css('display','none');
 
+        $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
+
 
     }else{
 
+
+         // 啟動結帳按鈕
+         $('.cart_checkout_btn').attr('disabled', false).css('background-color','#5aa700')
 
         let cookieStr = $.cookie('Cart');
         let cookieArr = JSON.parse(cookieStr);
@@ -165,16 +171,28 @@ $(document).ready(function () {
                 CheckProduct(cookieArr[i])
     
             }
-    
-    
+
+
+           
+
+
+            
             // 小計金額
             CHECKTOTAL.text(total_price)
+
+            // 點數計算
+            let getpoint = total_price * 0.1
+
+            //優惠點數
+            GETPOINT.text(getpoint)
     
-            let final_price = parseInt(CHECKTOTAL.text()) - 150
-    
-    
+
             // 合計金額
-            FINALTOTAL.text(final_price)
+            FINALTOTAL.text(total_price)
+           
+            
+    
+    
            
         
     
@@ -194,7 +212,7 @@ $(document).ready(function () {
 
         let isfood = checkProuduct.attr('food')
 
-        let isfishbox = checkProuduct.attr('fisbox')
+        let isfishbox = checkProuduct.attr('fishbox')
         
 
 
@@ -232,11 +250,14 @@ $(document).ready(function () {
 
                 CHECKTOTAL.text(newtototal_price)//刪除後總金額
 
-                let final_price = parseInt(CHECKTOTAL.text()) - 150
+                // 點數計算
+                let getpoint = newtototal_price * 0.1
     
+                //優惠點數
+                GETPOINT.text(getpoint)
     
                 // 合計金額
-                FINALTOTAL.text(final_price)
+                FINALTOTAL.text(newtototal_price)
                     
 
                 arr.splice(i,1);//刪除
@@ -246,6 +267,8 @@ $(document).ready(function () {
                 if( nowsum <= 0 ||  nowsumRWD <= 0){ //刪除後數量小於0，計數器消失
                     $('.navbar_shoplist_count').css('display','none');
                     $('.shoplist_count_RWD').css('display','none');
+
+                    $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
 
                 }else{
 
@@ -308,9 +331,11 @@ $(document).ready(function () {
         }else{
             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
             
-            checkfilter(cookieArr)
+            
             
         }
+
+        checkfilter(cookieArr)
 
 
     })
@@ -327,7 +352,7 @@ $(document).ready(function () {
  
          let isfood = checkProuduct.attr('food')
  
-         let isfishbox = checkProuduct.attr('fisbox')
+         let isfishbox = checkProuduct.attr('fishbox')
          
 
          let cookieStr = $.cookie('Cart');
@@ -387,12 +412,14 @@ $(document).ready(function () {
             
                         CHECKTOTAL.text(newtototal_price);
 
+                        // 點數計算
+                        let getpoint = newtototal_price * 0.1
+
+                        //優惠點數
+                        GETPOINT.text(getpoint)
                         
-    
-    
-                        // 合計金額
-                        let final_price = parseInt(CHECKTOTAL.text()) - 150
-                        FINALTOTAL.text(final_price)
+                       
+                        FINALTOTAL.text(newtototal_price)
                         
                     
             
@@ -460,9 +487,13 @@ $(document).ready(function () {
             
                         CHECKTOTAL.text(newtototal_price);
 
-                        // 合計金額
-                        let final_price = parseInt(CHECKTOTAL.text()) - 150
-                        FINALTOTAL.text(final_price)
+                        // 點數計算
+                        let getpoint = newtototal_price * 0.1
+
+                        //優惠點數
+                        GETPOINT.text(getpoint)
+                        
+                        FINALTOTAL.text(newtototal_price)
                         
                     
             
@@ -484,6 +515,8 @@ $(document).ready(function () {
 
                 if( checkProuductID == cookieArr[i].pid && cookieArr[i].fishbox){
 
+
+                    console.log();
                     let oldtotal_price = parseInt( CHECKTOTAL.text())//未變化前總金額
 
                     let old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
@@ -529,9 +562,13 @@ $(document).ready(function () {
             
                         CHECKTOTAL.text(newtototal_price);
 
-                        // 合計金額
-                        let final_price = parseInt(CHECKTOTAL.text()) - 150
-                        FINALTOTAL.text(final_price)
+                        // 點數計算
+                        let getpoint = newtototal_price * 0.1
+
+                        //優惠點數
+                        GETPOINT.text(getpoint)
+
+                        FINALTOTAL.text(newtototal_price)
                         
                     
             
@@ -563,7 +600,7 @@ $(document).ready(function () {
  
          let isfood = checkProuduct.attr('food')
  
-         let isfishbox = checkProuduct.attr('fisbox')
+         let isfishbox = checkProuduct.attr('fishbox')
         
          
          let cookieStr = $.cookie('Cart');
@@ -628,7 +665,7 @@ $(document).ready(function () {
                             $.removeCookie('Cart');
                             $('.Cart_items_empty').css('display','flex')//顯示目前沒有商品提示
             
-                           
+                            $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
             
                             $('.shoplist_count_RWD').css('display','none')
                             $('.navbar_shoplist_count').css('display','none')
@@ -637,6 +674,7 @@ $(document).ready(function () {
             
                         }else{
                             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+                            checkfilter(cookieArr)
             
                             break;
                         }
@@ -660,9 +698,15 @@ $(document).ready(function () {
                     
                     CHECKTOTAL.text(newtototal_price);
 
+                    
+                    // 點數計算
+                    let getpoint = newtototal_price * 0.1
+
+                    //優惠點數
+                    GETPOINT.text(getpoint)
+
                     // 合計金額
-                    let final_price = parseInt(CHECKTOTAL.text()) - 150
-                    FINALTOTAL.text(final_price)
+                    FINALTOTAL.text(newtototal_price)
                    
                     
                     break;
@@ -731,6 +775,7 @@ $(document).ready(function () {
                             $.removeCookie('Cart');
                             $('.Cart_items_empty').css('display','flex')//顯示目前沒有商品提示
             
+                            $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
                            
             
                             $('.shoplist_count_RWD').css('display','none')
@@ -763,10 +808,14 @@ $(document).ready(function () {
                     
                     CHECKTOTAL.text(newtototal_price);
 
-                    // 合計金額
-                    let final_price = parseInt(CHECKTOTAL.text()) - 150
-                    FINALTOTAL.text(final_price)
-                   
+                   // 點數計算
+                   let getpoint = newtototal_price * 0.1
+
+                   //優惠點數
+                   GETPOINT.text(getpoint)
+
+                   // 合計金額
+                   FINALTOTAL.text(newtototal_price)
                     
                     break;
         
@@ -833,7 +882,7 @@ $(document).ready(function () {
                             $.removeCookie('Cart');
                             $('.Cart_items_empty').css('display','flex')//顯示目前沒有商品提示
             
-                           
+                            $('.cart_checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
             
                             $('.shoplist_count_RWD').css('display','none')
                             $('.navbar_shoplist_count').css('display','none')
@@ -865,11 +914,15 @@ $(document).ready(function () {
                     
                     CHECKTOTAL.text(newtototal_price);
                     
+                    // 點數計算
+                    let getpoint = newtototal_price * 0.1
+
+                    //優惠點數
+                    GETPOINT.text(getpoint)
 
                     // 合計金額
-                    let final_price = parseInt(CHECKTOTAL.text()) - 150
-                    FINALTOTAL.text(final_price)
-                    
+                    FINALTOTAL.text(newtototal_price)
+                                
 
                     break;
                     
@@ -895,7 +948,12 @@ $(document).ready(function () {
     })
     
     
+    //計算器效果
+    $('.Items_warps').on("mousedown mouseup",".countBtn_plus , .countBtn_minus",function(){
+
+        $(this).toggleClass('countBtn_color').css('transition','0.3s')
     
+    })
 
 
 

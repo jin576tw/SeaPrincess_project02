@@ -763,6 +763,32 @@ let isFood = arr.food;
 // 計算當前商品金額
 let nowprice = parseInt(arr.count) * parseInt(arr.Product_Price);
 
+//商品ID三位數
+function productID(p) {
+
+    if(p.pid < 10){ 
+
+        let num ='00'+p.pid;
+
+        return num
+
+    }
+    else if(p.pid < 100){
+
+        let num ='0'+p.pid;
+
+        return num
+
+    }else{
+        let num = p.id
+        return num
+
+    }
+
+}
+
+let PID = productID(arr)
+
 
 if(isFood){
 
@@ -791,13 +817,17 @@ let seafood_items_list = `
         <div class="Items_list_content Items_list_head">
             <input type="checkbox" name="Item_check" id="" class="Item_check">
             <div class="Items_pic">
-                <img src="${arr.Product_Pic}" alt="">
+                <a href="./each-product.html?S&&pid=${PID}">
+                    <img src="${arr.Product_Pic}" alt="">
+                </a>
             </div>
         </div>
 
         <div class="Items_list_detail">
             <div class="Items_list_content Items_name">
-                <h3>${arr.Product_Name}</h3>
+                <a href="./each-product.html?S&&pid=${PID}">
+                    <h3>${arr.Product_Name}</h3>
+                </a>
             </div>
 
             <div class="Items_list_detail_tool">
@@ -867,15 +897,19 @@ let seafood_items_list = `
         <div class="Items_list_content Items_list_head">
             <input type="checkbox" name="Item_check" id="" class="Item_check">
             <div class="Items_pic">
-                <img src="${arr.Product_Pic}" alt="">
+                <a href="./fishbox.html">
+                    <img src="${arr.Product_Pic}" alt="">
+                </a>
             </div>
         </div>
 
         <div class="Items_list_detail">
             <div class="Items_list_content Items_name">
-                <h3>${arr.Product_Name}</h3>
-                <div class="checkFishboxDetail">
-                    <p>${box_detail}</p>`+fisboxMessage+`</div>
+                <a href="./fishbox.html">
+                    <h3>${arr.Product_Name}</h3>
+                    <div class="checkFishboxDetail">
+                        <p>${box_detail}</p>`+fisboxMessage+`</div>
+                </a>
             </div>
 
             <div class="Items_list_detail_tool">
@@ -937,13 +971,17 @@ let seafood_items_list = `
             <div class="Items_list_content Items_list_head">
                 <input type="checkbox" name="Item_check" id="" class="Item_check">
                 <div class="Items_pic">
-                    <img src="${arr.Product_Pic}" alt="">
+                    <a href="./each-product.html?I&&pid=${PID}">
+                        <img src="${arr.Product_Pic}" alt="">
+                    </a>
                 </div>
             </div>
 
             <div class="Items_list_detail">
                 <div class="Items_list_content Items_name">
-                    <h3>${arr.Product_Name}</h3>
+                    <a href="./each-product.html?I&&pid=${PID}">
+                        <h3>${arr.Product_Name}</h3>
+                    </a>
                     <select class="Items_type">`+Item_type+`</select>
                 </div>
 

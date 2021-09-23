@@ -794,13 +794,13 @@
      content: 'NT ';
 }
 
-.total_fee{
+.total_point{
     display: flex;
     justify-content: space-between;
 }
 
 
-.total_fee .fa-exclamation-circle{
+.total_point .fa-exclamation-circle{
     font-size: 20px;
     margin-left: 10px;
     color:rgba(0, 0, 0, 0.31);
@@ -808,14 +808,12 @@
     
 }
 
-.total_fee p:nth-of-type(2){
+.total_point p:nth-of-type(2){
     color:#ff2d2d;
 }
 
-.total_fee p:nth-of-type(2)::before {
-    content: '- NT ';
-    
-}
+ 
+
 .total_coupon_text{
     margin-top: 30px;
 }
