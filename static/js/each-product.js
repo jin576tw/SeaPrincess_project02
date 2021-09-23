@@ -264,7 +264,7 @@ $(document).ready(function () {
 
                     // 商品價格
                     let ProductPrice = `<div class="product_intro_price">
-                                    <h2>${d[i].price} / 公斤</h2>
+                                    <h2>${d[i].price} / g</h2>
                                 </div>`
 
                     ProductPriceWarp.append(ProductPrice)
@@ -503,9 +503,11 @@ $(document).ready(function () {
                         click:function(){
 
 
+                            $('.item_list').css('display','block');
+
                             let ITEM_LIST =  $('.item_list_warp')
                             let CartTotalPrice = $('.Cart_list_total').children('p')//購物車總金額數字
-                            let SEAFOOD_LIST =  $('.seafood_list_warp')
+                           
 
 
                            
@@ -785,7 +787,8 @@ $(document).ready(function () {
 
                         click:function(){
 
-                            let ITEM_LIST =  $('.item_list_warp')
+                            $('.seafood_list').css('display','block');
+                            
                             let CartTotalPrice = $('.Cart_list_total').children('p')//購物車總金額數字
                             let SEAFOOD_LIST =  $('.seafood_list_warp')
 

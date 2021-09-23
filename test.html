@@ -100,6 +100,16 @@
             color: var(--grey);
         }
         
+        select{
+
+            width: 300px;
+            height: 80px;
+            
+        }
+
+        option{
+            font-size: 18px;
+        }
 
     </style>
 
@@ -124,7 +134,16 @@
 
 
      
-    <div class="pagination" id="pagination"></div>
+    <!-- <div class="pagination" id="pagination"></div> -->
+
+
+    <select name="region" id="region">
+        <option value="">選擇地區</option>
+        <option value="taipei" >taipei</option>
+        <option value="tainan">tainan</option>
+        <option value="koashung">koashung</option>
+        <option value="keelong">keelong</option>
+    </select>
 
 
 
@@ -163,6 +182,19 @@
 <script>
 
 
+console.log($('#region').val());
+
+
+// $('#region').attr("value","normal");
+// console.log($('#region').find('option:selected').val());
+
+$('#region option[value="koashung"]').attr("selected",true);
+
+
+
+
+
+
 //     $.get("./static/JSON/Seafood.json", function (data) {
 
 
@@ -195,46 +227,46 @@
 
 
 
-let cookieStr = $.cookie('Cart')
+// let cookieStr = $.cookie('Cart')
 
-let cookieArr = JSON.parse(cookieStr);
-
-
-
-// console.log(cookieArr);
-
-function filter(arr){
-
-    let fishbox =  arr.filter ((p) => p.fishbox == true)
-    let seafood =  arr.filter ((p) => p.food == true)
-    let item=  arr.filter ((p) => p.food == false)
+// let cookieArr = JSON.parse(cookieStr);
 
 
 
+// // console.log(cookieArr);
 
-    if(seafood.length == 0 ){
+// function filter(arr){
 
-    console.log('海鮮空');
-    }
-
-    if(item.length == 0 ){
-
-    console.log('釣具空');
-    }
-
-    if(fishbox.length == 0 ){
-
-    console.log('魚箱空');
-    }
+//     let fishbox =  arr.filter ((p) => p.fishbox == true)
+//     let seafood =  arr.filter ((p) => p.food == true)
+//     let item=  arr.filter ((p) => p.food == false)
 
 
-   
-   
+
+
+//     if(seafood.length == 0 ){
+
+//     console.log('海鮮空');
+//     }
+
+//     if(item.length == 0 ){
+
+//     console.log('釣具空');
+//     }
+
+//     if(fishbox.length == 0 ){
+
+//     console.log('魚箱空');
+//     }
+
 
    
-}
+   
 
-filter(cookieArr)
+   
+// }
+
+// filter(cookieArr)
 
 
 // // console.log(fishbox.length);

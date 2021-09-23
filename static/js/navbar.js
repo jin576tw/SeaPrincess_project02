@@ -171,70 +171,21 @@ if(cookieStr){
 PROPUCTSWARP.on("click",".add_btn",function(){
 
 
-    // let Cart_Page = location.href.substr(-9,9) == 'cart.html'
+    // 結帳加入購物車
+    let CheckOut_Page = location.href.substr(-13,13) == 'checkout.html'
 
-    // if(Cart_Page){
+    if(CheckOut_Page){
 
-    //     $('.Cart_items_empty').css('display','none')
+        $('body,html').animate({
+            scrollTop: 0
+        }, 1 ,'swing');
 
-    //     $('.Seafood_items_warp').empty()
-    //     $('.fishbox_items_warp').empty()
-    //     $('.tool_items_warp').empty()
+       
+        $('.Cart_items_empty').css('display','none')
 
-    //     ListCount.css('display','flex').addClass('Bounce');
-    //     ListCount_RWD.css('display','flex').addClass('Bounce');
-
-    //     let cookieStr = $.cookie('Cart');
-    //     let cookieArr = JSON.parse(cookieStr);
-
-    //     if(cookieStr){
-
-    //         let total_price = 0
-
-    //         for(let i = 0 ; i < cookieArr.length ;i++){ 
-
-        
-    //             // 計算當前商品金額
-    //             let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-    //             total_price += nowprice;
-
-                
-
-    //             // 載入購物車商品
-    //             CheckProduct(cookieArr[i])
-                    
-                
-
-    //         }
-
-    //             // 購物車總金額
-    //             CartTotalPrice.text(total_price)
-
-    //             $('.total_sum p:nth-of-type(2)').text(total_price)
-
-    //     }
-
-
-
-    // }else{
-
-        ListEmptyStatus.css('display','none');
-        
-        SEAFOOD_LIST.empty();//清空新加入商品
-        ITEM_LIST.empty();//清空新加入商品
-        FISHBOX_LIST.empty()//清空新加入新魚箱
-
-        // 啟動結帳按鈕
-        CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
-        CheckBtn.on({
-
-            click: function(){
-        
-                location.href = "./checkout.html"
-        
-            }
-        
-        })
+        $('.Seafood_items_warp').empty()
+        $('.fishbox_items_warp').empty()
+        $('.tool_items_warp').empty()
 
         ListCount.css('display','flex').addClass('Bounce');
         ListCount_RWD.css('display','flex').addClass('Bounce');
@@ -248,326 +199,85 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
             for(let i = 0 ; i < cookieArr.length ;i++){ 
 
-        
+
                 // 計算當前商品金額
                 let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
                 total_price += nowprice;
 
-                
-
                 // 載入購物車商品
-                CartProduct(cookieArr[i],total_price)
-                    
-                
+                CheckProduct(cookieArr[i])
+
+
 
             }
 
-                // 購物車總金額
-                CartTotalPrice.text(total_price)
+            // 購物車總金額
+            CartTotalPrice.text(total_price)
 
+            $('.total_sum p:nth-of-type(2)').text(total_price)
+        
+            // 合計金額
+            let final_price = parseInt($('.total_sum p:nth-of-type(2)').text()) - 150
+            $('.total_money p:nth-of-type(2)').text(final_price)
+        }
+    }
+
+    
+    
+    // navbar加入購物車
+    ListEmptyStatus.css('display','none');
+    
+    SEAFOOD_LIST.empty();//清空新加入商品
+    ITEM_LIST.empty();//清空新加入商品
+    FISHBOX_LIST.empty()//清空新加入新魚箱
+
+    // 啟動結帳按鈕
+    CheckBtn.attr('disabled', false).css('background-color','var(--dark_blue)')
+    CheckBtn.on({
+
+        click: function(){
+    
+            location.href = "./checkout.html"
+    
+        }
+    
+    })
+
+    ListCount.css('display','flex').addClass('Bounce');
+    ListCount_RWD.css('display','flex').addClass('Bounce');
+
+    let cookieStr = $.cookie('Cart');
+    let cookieArr = JSON.parse(cookieStr);
+
+    if(cookieStr){
+
+        let total_price = 0
+
+        for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+    
+            // 計算當前商品金額
+            let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+            total_price += nowprice;
+
+            
+
+            // 載入購物車商品
+            CartProduct(cookieArr[i],total_price)
+                
             
 
         }
-    // }   
+
+            // 購物車總金額
+            CartTotalPrice.text(total_price)
+
+        
+
+    }
+ 
 
 })
-
-
-    
-
-        
-    
-        // PROPUCTSWARP.on("click",".add_btn",function(){
-
-        
-        //         let Location =  location.href
-
-        //         let Cart_Page = location.href.substr(-9,9) == 'cart.html'
-            
-
-        //         // 結帳購物車頁面時
-        //         if(Cart_Page){
-
-        //             $('.cart_items_warps').empty();
-
-        //             let cookieStr = $.cookie('Cart');
-        //             let cookieArr = JSON.parse(cookieStr);
-
-        //             $total_price = 0
-
-        //             for(let i = 0 ; i < cookieArr.length;i++){
-
-                       
-
-        //                 let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-            
-            
-        //                 let cart_item = `
-            
-        //                 <div class="cart_items" Product-ID= "${cookieArr[i].pid}" Item-left="${cookieArr[i].Product_Left}">
-            
-        //                     <div class="cart_item_title">
-            
-        //                         <div class="cart_item_pic">
-        //                             <img src="${cookieArr[i].Item_pic}" alt="">
-        //                         </div>
-        //                         <div class="cart_item_name">
-        //                             <h1>${cookieArr[i].Item_title}</h1>
-        //                         </div>
-            
-        //                     </div>
-        //                     <div class="cart_item_detail">
-        //                         <div class="count_Product_Price">
-        //                             <p>${cookieArr[i].Product_Price}</p>
-        //                         </div>
-        //                         <div class="cart_item_count">
-        //                             <div class="list_countBtn_warp d-flex">
-
-        //                                 <div class="countBtn countBtn_minus">
-        //                                     <i class="fas fa-minus"></i>
-        //                                 </div>
-        //                                 <div class="list_count">${cookieArr[i].count}</div>
-        //                                 <div class="countBtn countBtn_plus">
-        //                                     <i class="fas fa-plus"></i>
-        //                                 </div>
-                                        
-        //                             </div>
-        //                             <div class="count_left">${cookieArr[i].Product_Left}</div>
-        //                         </div>
-        //                         <div class="cart_item_total">
-        //                             <p>${nowprice}</p>
-        //                         </div>
-        //                         <div class="cart_item_delete">
-        //                             <i class="far fa-trash-alt"></i>
-        //                         </div>
-        //                     </div>
-            
-        //                 </div>`
-            
-            
-            
-        //              $('.cart_items_warps').append(cart_item);
-        //              $total_price += nowprice
-            
-        //             }
-
-        //             $('.total_sum p:nth-of-type(2)').text($total_price)
-
-        //             let fee =parseInt($('.total_fee p:nth-of-type(2)').text());
-        //             let checkout_price = parseInt($total_price) + fee;
-                    
-        //             $('.total_money p:nth-of-type(2)').text(checkout_price)
-
-        //              //結帳頁去結帳按鈕
-        //             $('.cart_checkout_btn').attr('disabled', false).css('background-color','#5aa700')
-        //             $('.cart_checkout_btn').on({
-            
-        //                 click: function(){
-                    
-        //                     location.href = "./checkout.html?step1"
-                    
-        //                 }
-                    
-        //             })
-
-
-
-
-        //         }else{
-
-        //             //navbar購物車
-
-
-        //             //商品庫存
-        //             let itemLeft = $(this).parent().parent().attr('Item-left')
-
-        //             // 若商品缺貨
-        //             if(itemLeft == 0){
-
-                    
-        //             }else{
-
-        //                 $('.list_item_warps').empty();//清空新加入商品
-
-        //                 // 去結帳按鈕
-        //                 $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
-        //                 $('.checkout_btn').on({
-    
-        //                     click: function(){
-                        
-        //                         console.log('hi')
-        //                         location.href = "./checkout.html?step1"
-                        
-        //                     }
-                        
-        //                 })
-
-        //                 let cookieStr = $.cookie('Cart');
-        //                 let cookieArr = JSON.parse(cookieStr);
-    
-        //                 $total_price = 0
-                        
-                        
-        //                 for(let i = 0 ; i < cookieArr.length ; i++){
-    
-        //                     let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-    
-        //                     let Cart_list_item = `
-        //                         <div class="Cart_list_item " Product-ID= "${cookieArr[i].pid}" Item-left="${cookieArr[i].Product_Left}">
-        //                             <div class="list_item_pic">
-        //                                 <img src="${cookieArr[i].Item_pic}" alt="">
-        //                             </div>
-                        
-        //                             <div class="list_item_intro">
-        //                                 <div class="list_item_title">
-        //                                     <h1>${cookieArr[i].Item_title}</h1>
-        //                                 </div>
-                        
-                        
-        //                                 <div class="list_intro_count d-flex">
-                            
-        //                                     <div class="list_countBtn_warp d-flex">
-        //                                          <div class="countBtn countBtn_minus">
-        //                                             <i class="fas fa-minus"></i>
-        //                                         </div>
-        //                                         <div class="list_count">${cookieArr[i].count}</div>
-        //                                         <div class="countBtn countBtn_plus">
-        //                                             <i class="fas fa-plus"></i>
-        //                                         </div>
-        //                                     </div>
-    
-        //                                     <div class="list_intro_price">
-        //                                         <p>${nowprice}</p>
-        //                                     </div>
-    
-        //                                     <div class="item_delete">
-        //                                         <i class="far fa-trash-alt "></i>
-        //                                     </div>
-        //                                 </div>
-    
-        //                             </div>
-        //                         </div> `;
-    
-        //                         $('.list_item_warps').append(Cart_list_item);
-    
-                            
-        //                         $total_price += nowprice
-                                
-                                
-        //                 }
-                            
-    
-        //                 $('.Cart_list_total').children('p').text($total_price)
-
-        //             }
-                    
-        //          } 
-            
-            
-        // });
-
-
-        // //單一商品頁加入購物車
-        // $(".add_btn_lg").on({
-
-        //     click: function(){
-
-        //     //navbar購物車
-        //     //商品庫存
-        //     let itemLeft = $(this).parent().parent().attr('Item-left')
-
-        //     // 商品數量 //計數器數量
-        //     let itemCount = parseInt($(this).prev().children().children('.product_count').text())
-
-        //     // 若商品缺貨
-        //     if(itemLeft == 0){
-
-            
-        //     }else if(itemCount == 0){
-
-               
-        //     }
-        //     else{
-
-        //         $('.list_item_warps').empty();//清空新加入商品
-
-        //         // 去結帳按鈕
-        //         $('.checkout_btn').attr('disabled', false).css('background-color','var(--dark_blue)')
-        //         $('.checkout_btn').on({
-
-        //             click: function(){
-                
-
-        //                 location.href = "./checkout.html?step1"
-                
-        //             }
-                
-        //         })
-
-        //         let cookieStr = $.cookie('Cart');
-        //         let cookieArr = JSON.parse(cookieStr);
-
-        //         $total_price = 0
-                
-                
-        //         for(let i = 0 ; i < cookieArr.length ; i++){
-
-        //             let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-
-        //             let Cart_list_item = `
-        //                 <div class="Cart_list_item " Product-ID= "${cookieArr[i].pid}" Item-left="${cookieArr[i].Product_Left}">
-        //                     <div class="list_item_pic">
-        //                         <img src="${cookieArr[i].Item_pic}" alt="">
-        //                     </div>
-                
-        //                     <div class="list_item_intro">
-        //                         <div class="list_item_title">
-        //                             <h1>${cookieArr[i].Item_title}</h1>
-        //                         </div>
-                
-                
-        //                         <div class="list_intro_count d-flex">
-                    
-        //                             <div class="list_countBtn_warp d-flex">
-        //                                 <div class="countBtn countBtn_minus">
-        //                                     <i class="fas fa-minus"></i>
-        //                                 </div>
-        //                                 <div class="list_count">${cookieArr[i].count}</div>
-        //                                 <div class="countBtn countBtn_plus">
-        //                                     <i class="fas fa-plus"></i>
-        //                                 </div>
-        //                             </div>
-
-        //                             <div class="list_intro_price">
-        //                                 <p>${nowprice}</p>
-        //                             </div>
-
-        //                             <div class="item_delete">
-        //                                 <i class="far fa-trash-alt "></i>
-        //                             </div>
-        //                         </div>
-
-        //                     </div>
-        //                 </div> `;
-
-        //                 $('.list_item_warps').append(Cart_list_item);
-
-                    
-        //                 $total_price += nowprice
-                        
-                        
-        //         }
-                    
-
-        //         $('.Cart_list_total').children('p').text($total_price)
-
-        //     }
-                    
-                
-            
-        //     }
-        // });
-
 
 
         //刪除項目

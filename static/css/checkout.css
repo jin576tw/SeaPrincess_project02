@@ -484,7 +484,9 @@
 
 }
 
-.Items_name p{
+.checkFishboxDetail p{
+    display: flex;
+    flex-wrap: wrap;
     cursor: pointer;
     font-size: 1.6rem;
     font-weight: normal;
@@ -492,7 +494,12 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #a42021;
+    color: var(--grey)
+
+}
+
+.checkFishboxDetail p:nth-of-type(2)::before{
+    content: '選填: ';
 
 }
 

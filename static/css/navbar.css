@@ -750,6 +750,23 @@
     overflow: auto;
     height: 70%;
     width: 100%;
+  
+}
+
+
+/* 滾動條隱藏 */
+.list_item_warps::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
+.list_item_warps{ 
+
+    -ms-overflow-style: none; 
+}
+
+.list_item_warps{ 
+
+    overflow: -moz-scrollbars-none; 
 }
 
 .product_list{

@@ -208,7 +208,7 @@ $('.fishbox_addCart').on({
 
                 if(!same){
 
-                    let box_ID = 0
+                    let box_ID = 1
 
 
                     for(let j = 0 ; j <  cookieArr.length; j++){
@@ -218,16 +218,21 @@ $('.fishbox_addCart').on({
 
                             // 最新魚箱商品ID+1
                             box_ID = cookieArr[j].pid+1
+                            
+                          
 
                         }
 
 
                     }
 
-                    let newbox = {Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_cook:Box_cook,Product_message:Box_message,count:1,fishbox:true,pid:box_ID}
+                    console.log(box_ID);
+                    let newbox = {Product_Name:Box_Selected,Product_Price:Box_price,Product_Pic:Box_pic,Product_qty:Box_qty,Product_cook:Box_cook,Product_message:Box_message,count:1,fishbox:true,pid:box_ID};
+
+
                     
 
-
+                
                     //購物車已有商品時
                     cookieArr.push(newbox)
 

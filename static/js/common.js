@@ -754,208 +754,228 @@ function CartProduct(arr){
 
 }
 
- // 載入結帳頁商品
- function CheckProduct(arr){
+// 結帳頁商品架構
+function CheckProduct(arr){
 
-    let isFood = arr.food;
-
-
-    // 計算當前商品金額
-    let nowprice = parseInt(arr.count) * parseInt(arr.Product_Price);
+let isFood = arr.food;
 
 
-    if(isFood){
-
-        Item_left= ``
-
-    // 商品庫存小於100顯示商品庫存
-    if(arr.Product_Left <= 100){
-
-        Item_left= `<div class="Item_left">
-                        <h4>${arr.Product_Left}</h4>
-                    </div>`
-
-        
-    }else{
+// 計算當前商品金額
+let nowprice = parseInt(arr.count) * parseInt(arr.Product_Price);
 
 
-        Item_left= ``
-        
+if(isFood){
 
-    }
+    let Item_left= ``
+
+// 商品庫存小於100顯示商品庫存
+if(arr.Product_Left <= 100){
+
+    Item_left= `<div class="Item_left">
+                    <h4>${arr.Product_Left}</h4>
+                </div>`
+
     
-    let seafood_items_list = `
+}else{
 
-        <div class="Items_list seafood_items_list">
 
-            <div class="Items_list_content Items_list_head">
-                <input type="checkbox" name="Item_check" id="" class="Item_check">
-                <div class="Items_pic">
-                    <img src="${arr.Product_Pic}" alt="">
+    Item_left= ``
+    
+
+}
+
+let seafood_items_list = `
+
+    <div class="Items_list seafood_items_list" Product_ID="${arr.pid}">
+
+        <div class="Items_list_content Items_list_head">
+            <input type="checkbox" name="Item_check" id="" class="Item_check">
+            <div class="Items_pic">
+                <img src="${arr.Product_Pic}" alt="">
+            </div>
+        </div>
+
+        <div class="Items_list_detail">
+            <div class="Items_list_content Items_name">
+                <h3>${arr.Product_Name}</h3>
+            </div>
+
+            <div class="Items_list_detail_tool">
+                <div class="Items_list_content Items_list_count">
+                    
+                    <div class="count_warp">
+
+                        <div class="Counter">
+                            <div class="countBtn countBtn_minus">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div class="countNum">${arr.count}</div>
+                            <div class="countBtn countBtn_plus">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            
+                        </div>`+Item_left+`</div>
+
+                </div>
+                <div class="Items_list_content Items_list_price">
+                    <p>${nowprice}</p>
+                </div>
+                <div class="Items_list_content Items_list_delete">
+                    <i class="far fa-trash-alt"></i>
+                    
                 </div>
             </div>
 
-            <div class="Items_list_detail">
-                <div class="Items_list_content Items_name">
-                    <h3>${arr.Product_Name}</h3>
-                </div>
-
-                <div class="Items_list_detail_tool">
-                    <div class="Items_list_content Items_list_count">
-                        
-                        <div class="count_warp">
-
-                            <div class="Counter">
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
-                                <div class="countNum">${arr.count}</div>
-                                <div class="countBtn countBtn_plus">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                                
-                            </div>`+Item_left+`</div>
-
-                    </div>
-                    <div class="Items_list_content Items_list_price">
-                        <p>${nowprice}</p>
-                    </div>
-                    <div class="Items_list_content Items_list_delete">
-                        <i class="far fa-trash-alt"></i>
-                        
-                    </div>
-                </div>
-
-
-            </div>
-            
 
         </div>
         
-        `
 
-        $('.Seafood_items_warp').append(seafood_items_list)
+    </div>
+    
+    `
 
-    }else if(arr.fishbox){
+    $('.Seafood_items_warp').append(seafood_items_list)
 
-
-        let fishbox_items_list =`
-
-            <div class="Items_list fishbox_items_list">
-
-            <div class="Items_list_content Items_list_head">
-                <input type="checkbox" name="Item_check" id="" class="Item_check">
-                <div class="Items_pic">
-                    <img src="${arr.Product_Pic}" alt="">
-                </div>
-            </div>
-
-            <div class="Items_list_detail">
-                <div class="Items_list_content Items_name">
-                    <h3>${arr.Product_Name}</h3>
-                    <p>(下一頁可修改客製資料)</p>
-                </div>
-
-                <div class="Items_list_detail_tool">
-                    <div class="Items_list_content Items_list_count">
-
-                        <div class="count_warp">
-
-                            <div class="Counter">
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
-                                <div class="countNum">${arr.count}</div>
-                                <div class="countBtn countBtn_plus">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                                
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="Items_list_content Items_list_price">
-                        <p>${nowprice}</p>
-                    </div>
-                    <div class="Items_list_content Items_list_delete">
-                        <i class="far fa-trash-alt"></i>
-                        
-                    </div>
-                </div>
+}else if(arr.fishbox){
 
 
-            </div>
-            
+        // 料理習慣
+        let cooktype = arr.Product_cook.join('、')
 
-        </div>
-        `
+        // 魚箱資訊
+        let box_detail =`${arr.Product_Price}元 / ${arr.Product_qty} / ${cooktype}`
 
-        $('.fishbox_items_warp').append(fishbox_items_list)
 
-    }else if(!isFood){
+        let fisboxMessage = ``
 
-          // 釣具型號選擇
-        let Item_type = `<option>請選擇商品種類</option>`;
+    //  魚箱選填項目
+        if(arr.Product_message == ''){
 
-        for(let j = 0 ; j < arr.Product_type.length ;j++){ 
+        fisboxMessage = ``
 
-            let optiStr = `<option>${arr.Product_type[j]}</option>`
-
-            Item_type+=optiStr
-
+        }else{
+        fisboxMessage = ` <p>${arr.Product_message}</p>`
         }
+    
+        
+    let fishbox_items_list =`
 
+        <div class="Items_list fishbox_items_list" Product_ID="${arr.pid}">
 
-        let tool_items_list=`
+        <div class="Items_list_content Items_list_head">
+            <input type="checkbox" name="Item_check" id="" class="Item_check">
+            <div class="Items_pic">
+                <img src="${arr.Product_Pic}" alt="">
+            </div>
+        </div>
 
-            <div class="Items_list tool_items_list">
+        <div class="Items_list_detail">
+            <div class="Items_list_content Items_name">
+                <h3>${arr.Product_Name}</h3>
+                <div class="checkFishboxDetail">
+                    <p>${box_detail}</p>`+fisboxMessage+`</div>
+            </div>
 
-                <div class="Items_list_content Items_list_head">
-                    <input type="checkbox" name="Item_check" id="" class="Item_check">
-                    <div class="Items_pic">
-                        <img src="${arr.Product_Pic}" alt="">
-                    </div>
-                </div>
+            <div class="Items_list_detail_tool">
+                <div class="Items_list_content Items_list_count">
 
-                <div class="Items_list_detail">
-                    <div class="Items_list_content Items_name">
-                        <h3>${arr.Product_Name}</h3>
-                        <select class="Items_type">`+Item_type+`</select>
-                    </div>
+                    <div class="count_warp">
 
-                    <div class="Items_list_detail_tool">
-                        <div class="Items_list_content Items_list_count">
-
-                            <div class="Counter">
-                                <div class="countBtn countBtn_minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
-                                <div class="countNum">${arr.count}</div>
-                                <div class="countBtn countBtn_plus">
-                                    <i class="fas fa-plus"></i>
-                                </div>
+                        <div class="Counter">
+                            <div class="countBtn countBtn_minus">
+                                <i class="fas fa-minus"></i>
                             </div>
-
-                        </div>
-                        <div class="Items_list_content Items_list_price">
-                            <p>${nowprice}</p>
-                        </div>
-                        <div class="Items_list_content Items_list_delete">
-                            <i class="far fa-trash-alt"></i>
+                            <div class="countNum">${arr.count}</div>
+                            <div class="countBtn countBtn_plus">
+                                <i class="fas fa-plus"></i>
+                            </div>
                             
                         </div>
                     </div>
 
-
                 </div>
-                
+                <div class="Items_list_content Items_list_price">
+                    <p>${nowprice}</p>
+                </div>
+                <div class="Items_list_content Items_list_delete">
+                    <i class="far fa-trash-alt"></i>
+                    
+                </div>
+            </div>
 
-            </div> `
 
+        </div>
+        
 
-        $('.tool_items_warp').append(tool_items_list)
+    </div>
+    `
+
+    $('.fishbox_items_warp').append(fishbox_items_list)
+
+}else if(!isFood){
+
+        // 釣具型號選擇
+    let Item_type = `<option>請選擇商品種類</option>`;
+
+    for(let j = 0 ; j < arr.Product_type.length ;j++){ 
+
+        let optiStr = `<option>${arr.Product_type[j]}</option>`
+
+        Item_type+=optiStr
 
     }
+
+
+    let tool_items_list=`
+
+        <div class="Items_list tool_items_list"  Product_ID="${arr.pid}" >
+
+            <div class="Items_list_content Items_list_head">
+                <input type="checkbox" name="Item_check" id="" class="Item_check">
+                <div class="Items_pic">
+                    <img src="${arr.Product_Pic}" alt="">
+                </div>
+            </div>
+
+            <div class="Items_list_detail">
+                <div class="Items_list_content Items_name">
+                    <h3>${arr.Product_Name}</h3>
+                    <select class="Items_type">`+Item_type+`</select>
+                </div>
+
+                <div class="Items_list_detail_tool">
+                    <div class="Items_list_content Items_list_count">
+
+                        <div class="Counter">
+                            <div class="countBtn countBtn_minus">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div class="countNum">${arr.count}</div>
+                            <div class="countBtn countBtn_plus">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="Items_list_content Items_list_price">
+                        <p>${nowprice}</p>
+                    </div>
+                    <div class="Items_list_content Items_list_delete">
+                        <i class="far fa-trash-alt"></i>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+            
+
+        </div> `
+
+
+    $('.tool_items_warp').append(tool_items_list)
+
+}
 
 
 
@@ -992,7 +1012,13 @@ $.get("./static/JSON/Seafood.json", function (data) {
     PROPUCTSWARP.on("click","#add_seafood",function(){
 
         $('.seafood_list').css('display','block');
+
+        let CheckOut_Page = location.href.substr(-13,13) == 'checkout.html'
       
+        if(CheckOut_Page){
+
+            $('.fish_items').css('display','block');
+        }
 
         // 商品ID
         let PID = $(this).parent().parent().attr('Product-id')
@@ -1149,7 +1175,15 @@ $.get("./static/JSON/Item.json", function (data) {
 
     PROPUCTSWARP.on("click","#add_item",function(){
 
+        // 還原欄位
         $('.item_list').css('display','block');
+
+        let CheckOut_Page = location.href.substr(-13,13) == 'checkout.html'
+      
+        if(CheckOut_Page){
+
+            $('.tool_items').css('display','block');
+        }
 
         // 商品ID
         let PID = $(this).parent().parent().attr('Product-id')
