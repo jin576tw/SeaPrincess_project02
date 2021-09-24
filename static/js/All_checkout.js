@@ -129,13 +129,15 @@ $(document).ready(function () {
                
                isFood == 'false' ? isFood=false : isFood = true;
 
+         
                let CheckToolObj = {pid:checkID,food:isFood}
             
                CheckProductArr.push(CheckToolObj)
             })
             
-            
-    
+
+           
+
             let cookieStr = $.cookie('Cart');
             let cookieArr = JSON.parse(cookieStr);
             
@@ -282,7 +284,7 @@ $(document).ready(function () {
 
 
 
-            // 判斷最後結帳欄位
+            // 判斷最後結帳欄位狀態
             function finalfilter(arr){
 
                 let fishbox =  arr.filter ((p) => p.fishbox == true)
@@ -322,7 +324,6 @@ $(document).ready(function () {
 
 
             }
-
 
             finalfilter(CheckProductArr)
 

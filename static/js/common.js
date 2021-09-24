@@ -689,11 +689,11 @@ function CartProduct(arr){
 
 
         // 釣具型號選擇
-        let Item_type = `<option>請選擇商品種類</option>`;
+        let Item_type = `<option value=" ">請選擇商品種類</option>`;
 
         for(let j = 0 ; j < arr.Product_type.length ;j++){ 
 
-            let optiStr = `<option>${arr.Product_type[j]}</option>`
+            let optiStr = `<option value="${j+1}">${arr.Product_type[j]}</option>`
 
             Item_type+=optiStr
 
@@ -953,11 +953,11 @@ let seafood_items_list = `
 }else if(!isFood){
 
         // 釣具型號選擇
-    let Item_type = `<option>請選擇商品種類</option>`;
+    let Item_type = `<option value=" ">請選擇商品種類</option>`;
 
     for(let j = 0 ; j < arr.Product_type.length ;j++){ 
 
-        let optiStr = `<option>${arr.Product_type[j]}</option>`
+        let optiStr = `<option value="${j+1}">${arr.Product_type[j]}</option>`
 
         Item_type+=optiStr
 
@@ -982,7 +982,7 @@ let seafood_items_list = `
                     <a href="./each-product.html?I&&pid=${PID}">
                         <h3>${arr.Product_Name}</h3>
                     </a>
-                    <select class="Items_type">`+Item_type+`</select>
+                    <select class="Items_type" id="Items_type">`+Item_type+`</select>
                 </div>
 
                 <div class="Items_list_detail_tool">
