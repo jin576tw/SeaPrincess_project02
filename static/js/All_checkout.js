@@ -277,10 +277,54 @@ $(document).ready(function () {
          
             // 總金額小計
             let CheckFinalTotal = CheckSeafoodtotal+CheckFishboxtotal+CheckTooltotal
-
-
-
             $('.total_detail p:nth-of-type(2)').text(CheckFinalTotal)
+
+
+
+
+            // 判斷最後結帳欄位
+            function finalfilter(arr){
+
+                let fishbox =  arr.filter ((p) => p.fishbox == true)
+                let seafood =  arr.filter ((p) => p.food == true)
+                let item=  arr.filter ((p) => p.food == false)
+
+                // 若生鮮食品為空
+                if(seafood.length == 0 ){
+
+                    $('.fish_checkout').hide()
+                }else{
+
+                    $('.fish_checkout').show()
+
+                }
+
+                // 若釣具用品為空
+                if(item.length == 0  ){
+
+                    $('.tool_checkout').hide()
+                }else{
+
+                    $('.tool_checkout').show()
+
+                }
+
+
+                //若海鮮魚箱為空
+                if(fishbox.length == 0 ){
+
+                    $('.fishbox_checkout').hide()
+                }else{
+
+                    $('.fishbox_checkout').show()
+
+                }
+
+
+            }
+
+
+            finalfilter(CheckProductArr)
 
 
             Step01.fadeOut(1000)
@@ -316,6 +360,43 @@ $(document).ready(function () {
     })
 
 
+    $('.cargo_info_edit').on({
+
+        click: function(){
+
+            $(this).parent().parent().parent().next('.checkout_info').fadeIn(100)
+
+        }
+
+
+
+    })
+
+    $('.fishbox_edit').on({
+
+        click: function(){
+
+            $(this).parent().parent().parent().next().next('.fishbox_detail').fadeIn(100)
+
+        }
+
+
+
+    })
+
+
+
+    $('.info_cancel , .checkout_info_bg ').on({
+
+        click: function(){
+
+            $('.checkout_info').fadeOut(100)
+
+        }
+
+
+
+    })
 
 
 
@@ -385,43 +466,7 @@ $(document).ready(function () {
 
     })
 
-    $('.cargo_info_edit').on({
-
-        click: function(){
-
-            $(this).parent().parent().parent().next('.checkout_info').fadeIn(100)
-
-        }
-
-
-
-    })
-
-    $('.fishbox_edit').on({
-
-        click: function(){
-
-            $(this).parent().parent().parent().next().next('.fishbox_detail').fadeIn(100)
-
-        }
-
-
-
-    })
-
-
-
-    $('.info_cancel , .checkout_info_bg ').on({
-
-        click: function(){
-
-            $('.checkout_info').fadeOut(100)
-
-        }
-
-
-
-    })
+  
   
 
 
