@@ -815,7 +815,7 @@ let seafood_items_list = `
     <div class="Items_list seafood_items_list" Product-ID="${arr.pid}" food="${arr.food}">
 
         <div class="Items_list_content Items_list_head">
-            <input type="checkbox" name="Item_check" id="" class="Item_check">
+            <input type="checkbox" name="Seafood_check[]" id="Seafood_check" class="Item_check">
             <div class="Items_pic">
                 <a href="./each-product.html?S&&pid=${PID}">
                     <img src="${arr.Product_Pic}" alt="">
@@ -895,7 +895,7 @@ let seafood_items_list = `
         <div class="Items_list fishbox_items_list" Product-ID="${arr.pid}" fishbox="${arr.fishbox}">
 
         <div class="Items_list_content Items_list_head">
-            <input type="checkbox" name="Item_check" id="" class="Item_check">
+            <input type="checkbox" name="Fishbox_check[]" id="Fishbox_check" class="Item_check">
             <div class="Items_pic">
                 <a href="./fishbox.html">
                     <img src="${arr.Product_Pic}" alt="">
@@ -969,7 +969,7 @@ let seafood_items_list = `
         <div class="Items_list tool_items_list"  Product-ID="${arr.pid}" food="${arr.food}">
 
             <div class="Items_list_content Items_list_head">
-                <input type="checkbox" name="Item_check" id="" class="Item_check">
+                <input type="checkbox" name="Tool_check[]" id="Tool_check" class="Item_check">
                 <div class="Items_pic">
                     <a href="./each-product.html?I&&pid=${PID}">
                         <img src="${arr.Product_Pic}" alt="">

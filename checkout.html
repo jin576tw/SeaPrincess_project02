@@ -117,7 +117,7 @@
                  <div class="Items_warps fish_items">
                     <div class="Items_title fish_items_title">
                         <div class="Items_title_name fish_title_name">
-                            <input type="checkbox" name="" id="" class="Item_check">
+                            <input type="checkbox" name="Seafood_CheckAll" id="Seafood_CheckAll" class="Item_check">
                             <h2>生鮮食材</h2>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                  <div class="Items_warps fishbox_items">
                     <div class="Items_title fishbox_items_title">
                         <div class="Items_title_name fish_title_name">
-                            <input type="checkbox" name="" id="" class="Item_check">
+                            <input type="checkbox" name="Fishbox_checkAll" id="Fishbox_checkAll" class="Item_check">
                             <h2>客製鮮魚箱</h2>
                         </div>
                     </div>
@@ -156,8 +156,8 @@
                 <div class="Items_warps tool_items">
                     <div class="Items_title fishing_items_title">
                         <div class="Items_title_name fish_title_name">
-                            <input type="checkbox" name="" id="" class="Item_check">
-                            <h2>生鮮食材</h2>
+                            <input type="checkbox" name="Tool_CheckAll" id="Tool_CheckAll" class="Item_check">
+                            <h2>釣具用品</h2>
                         </div>
                     </div>
 
@@ -264,14 +264,14 @@
 
                     <div class="checkout_content p-0 ">
 
-                        <!-- 結帳金額 -->
+                        <!-- 結帳項目 -->
                         <div class="checkout_items col-lg-5 col-md-5 col-12 p-0">
-                            <div class="checkout_item_list_warp"> 
+                            <div class="checkout_item_list_warp CheckSeafoodWarp"> 
 
-                                <div class="checkout_item_list fish_item_list">
+                                <!-- <div class="checkout_item_list fish_item_list">
                                     <div class="checkout_item_pic">
                                         <div class="checkout_item_pic_img">
-                                            <img src="./static/images/item01.jpg" alt="">
+                                            <img src="" alt="">
                                         </div>
                                         <div class="checkout_item_count">1</div>
 
@@ -287,7 +287,7 @@
                                 <div class="checkout_item_list fish_item_list">
                                     <div class="checkout_item_pic">
                                         <div class="checkout_item_pic_img">
-                                            <img src="./static/images/item02.jpg" alt="">
+                                            <img src="" alt="">
                                         </div>
                                         <div class="checkout_item_count">1</div>
 
@@ -303,7 +303,7 @@
                                 <div class="checkout_item_list fish_item_list">
                                     <div class="checkout_item_pic">
                                         <div class="checkout_item_pic_img">
-                                            <img src="./static/images/item03.jpg" alt="">
+                                            <img src="" alt="">
                                         </div>
                                         <div class="checkout_item_count">1</div>
 
@@ -315,7 +315,7 @@
                                         <p>1200</p>
                                     </div>
 
-                                </div>
+                                </div> -->
                                 
                             </div>
 
@@ -483,12 +483,12 @@
 
                         <!-- 結帳金額 -->
                         <div class="checkout_items col-lg-5 col-md-5 col-12 p-0">
-                            <div class="checkout_item_list_warp"> 
-
+                            <div class="checkout_item_list_warp CheckFishboxWarp"> 
+<!-- 
                                 <div class="checkout_item_list fishbox_item_list">
                                     <div class="checkout_item_pic">
                                         <div class="checkout_item_pic_img">
-                                            <img src="./static/images/item04.jpg" alt="">
+                                            <img src="" alt="">
                                         </div>
                                         <div class="checkout_item_count">1</div>
 
@@ -501,7 +501,7 @@
                                     </div>
 
                                 </div>
-                            
+                             -->
                                 
                             </div>
 
@@ -805,9 +805,9 @@
 
                         <!-- 結帳金額 -->
                         <div class="checkout_items col-lg-5 col-md-5 col-12 p-0">
-                            <div class="checkout_item_list_warp"> 
+                            <div class="checkout_item_list_warp CheckToolWarp"> 
 
-                                <div class="checkout_item_list fishing_item_list">
+                                <!-- <div class="checkout_item_list fishing_item_list">
                                     <div class="checkout_item_pic">
                                         <div class="checkout_item_pic_img">
                                             <img src="./static/images/item05.jpg" alt="">
@@ -840,7 +840,7 @@
                                         <p>1200</p>
                                     </div>
 
-                                </div>
+                                </div> -->
                             
                             
                                 
@@ -1140,6 +1140,8 @@
 <!-- js -->
 <script src="./static/js/common.js"></script>
 <script src="./static/js/All_checkout.js"></script>
+<script src="./static/js/Checkout_Step01.js"></script>
+
 
 <script>
     $('#navbar').load('navbar.html')
