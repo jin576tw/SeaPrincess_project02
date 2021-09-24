@@ -181,14 +181,30 @@
 
 <script>
 
+let type = ['a','b','c']
 
-console.log($('#region').val());
 
 
-// $('#region').attr("value","normal");
-// console.log($('#region').find('option:selected').val());
 
-$('#region option[value="koashung"]').attr("selected",true);
+$('#region option[value="taipei"]').prop("selected",true);
+
+$('#region').change(function(){
+
+
+    let seleted = $('#region option:selected').text()
+
+
+    if(seleted == 'taipei'){
+
+        alert(seleted)
+
+    
+    }
+
+    // console.log(seleted);
+
+
+})
 
 
 
