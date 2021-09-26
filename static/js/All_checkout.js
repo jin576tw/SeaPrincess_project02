@@ -611,11 +611,162 @@ $(document).ready(function () {
     })
     
 
+    //生鮮物流方式
+    let Seafood_deliver = $('#All_Seafood_deliver')
+
+    Seafood_deliver.change(function(){
 
 
+        let deliver_method =  $(this).children('option:selected')
 
+
+        let deliver= $('#seafood_deliver')//填入收件地址
+        let store =$('#seafood_store')//填入超商地址
+
+        // 物流方式選擇
+        if(deliver_method.val() == '0'){
+
+            $('#Seafood_fee').hide()
+            $('#Seafood_arrive').hide()
+
+            deliver.hide()
+            store.hide()
+            
+
+        }else if(deliver_method.val() == '120'){
+
+            $('#Seafood_fee').show()
+            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Seafood_arrive').show()
+
+
+            deliver.show()
+            store.hide()
+            
+
+        }else if(deliver_method.val() == '60'){
+
+            $('#Seafood_fee').show()
+            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Seafood_arrive').hide()
+
+            deliver.hide()
+            store.show()
+        
+
+
+        }
+        
+
+    })
+
+
+    //海鮮魚箱物流方式
+    let Fishbox_deliver = $('#All_Fishbox_deliver')
+
+    Fishbox_deliver.change(function(){
+
+
+        let deliver_method =  $(this).children('option:selected')
+
+
+        let deliver= $('#fishbox_deliver')//填入收件地址
+        let store =$('#fishbox_store')//填入超商地址
+
+        // 物流方式選擇
+        if(deliver_method.val() == '0'){
+
+            $('#Fishbox_fee').hide()
+            $('#Fishbox_arrive').hide()
+
+           
+            deliver.hide()
+            store.hide()
+            
+
+        }else if(deliver_method.val() == '120'){
+
+            $('#Fishbox_fee').show()
+            $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Fishbox_arrive').show()
+
+
+            deliver.show()
+            store.hide()
+            
+
+        }else if(deliver_method.val() == '60'){
+
+            $('#Fishbox_fee').show()
+            $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Fishbox_arrive').hide()
+
+            deliver.hide()
+            store.show()
+        
+
+
+        }
+        
+
+    })
 
     
+    // 釣具用品物流方式
+    let Tool_deliver = $('#All_Tool_deliver')
+
+    Tool_deliver.change(function(){
+
+
+        let deliver_method =  $(this).children('option:selected')
+
+
+        let deliver= $('#tool_deliver')//填入收件地址
+        let store =$('#tool_store')//填入超商地址
+
+        // 物流方式選擇
+        if(deliver_method.val() == '0'){
+
+            $('#Tool_fee').hide()
+          
+
+           
+            deliver.hide()
+            store.hide()
+            
+
+        }else if(deliver_method.val() == '120'){
+
+            $('#Tool_fee').show()
+            $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
+
+           
+
+
+            deliver.show()
+            store.hide()
+            
+
+        }else if(deliver_method.val() == '60'){
+
+            $('#Tool_fee').show()
+            $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            
+
+            deliver.hide()
+            store.show()
+        
+
+
+        }
+        
+
+    })
 
 
 

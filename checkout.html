@@ -325,7 +325,7 @@
                                     <p>小計</p>
                                     <p>2,800,00</p>
                                 </div>
-                                <div class="item_price_fee fish_item_price_fee">
+                                <div class="item_price_fee" id="Seafood_fee">
                                     <p>運費</p>
                                     <p>120</p>
                                 </div>
@@ -336,15 +336,15 @@
                         <div class="checkout_method col-lg-6 col-md-6 col-12 ">
 
                             <div class="cargo_list cargo_method">
-                            <h3>物流方式</h3>
-                            <select>
-                                <option value="冷凍宅配  NT 120">冷凍宅配  NT 120</option>
-                                <option value="7-11 取貨  NT 0">7-11 取貨  NT 0</option>
-                                <option value="7-11 取貨  NT 0">7-11 取貨  NT 0</option>
-                                <option value="自取">自取</option>
-                            </select>
+                                <h3>物流方式</h3>
+                                <select id="All_Seafood_deliver">
+                                    <option name="Seafood_deliver[]" value="120">冷凍宅配  NT 120</option>
+                                    <option name="Seafood_deliver[]" value="60">7-11 取貨  NT 60</option>
+                                    <option name="Seafood_deliver[]" value="0">自取</option>
+                                </select>
                             </div>
-                            <div class="cargo_list cargo_date">
+
+                            <div class="cargo_list" id="Seafood_arrive">
                                 <h3>(冷凍) 希望到貨日期</h3>
                                 <div class="cargo_date_input">
                                     <input id="arrive_date" type="date" value="2021-07-22">
@@ -357,9 +357,6 @@
                                     <input type="checkbox">
                                     <p>不指定時段</p>
                                 </div>
-                                
-                        
-
                             </div>
 
                             
@@ -387,7 +384,7 @@
                                     </div>
 
                                     
-                                    <div class="checkout_info_content">
+                                    <div class="checkout_info_content" id="Seafood_info_check">
 
                                         <div class="checkout_info_list checkout_info_name">
                                             <h3>收貨人資料</h3>
@@ -395,7 +392,7 @@
                                             <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
                                         </div>
 
-                                        <div class="checkout_info_list " id="select_deliver">
+                                        <div class="checkout_info_list .select_deliver" id="seafood_deliver">
                                             <h3>送貨地址</h3>
 
                                             <div class="info_address_warp">
@@ -418,7 +415,7 @@
                                             <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
                                         </div>
 
-                                        <div class="checkout_info_list " id="select_store">
+                                        <div class="checkout_info_list .select_store" id="seafood_store">
                                             <h3>選擇超商門市</h3>
 
                                             <div class="info_address_warp">
@@ -501,7 +498,7 @@
                                     <p>小計</p>
                                     <p>2,800,00</p>
                                 </div>
-                                <div class="item_price_fee fishbox_item_price_fee">
+                                <div class="item_price_fee" id="Fishbox_fee">
                                     <p>運費</p>
                                     <p>120</p>
                                 </div>
@@ -512,14 +509,15 @@
                         <div class="checkout_method col-lg-6 col-md-6 col-12 ">
 
                             <div class="cargo_list cargo_method">
-                            <h3>物流方式</h3>
-                            <select>
-                                <option value="冷凍宅配  NT 120">冷凍宅配  NT 120</option>
-                                <option value="7-11 取貨  NT 0">7-11 取貨  NT 0</option>
-                                <option value="自取">自取</option>
-                            </select>
+                                <h3>物流方式</h3>
+                                <select id="All_Fishbox_deliver">
+                                    <option name="Fishbox_deliver[]" value="120">冷凍宅配  NT 120</option>
+                                    <option name="Fishbox_deliver[]" value="60">7-11 取貨  NT 60</option>
+                                    <option name="Fishbox_deliver[]" value="0">自取</option>
+                                </select>
                             </div>
-                            <div class="cargo_list cargo_date">
+
+                            <div class="cargo_list" id="Fishbox_arrive">
                                 <h3>(冷凍) 希望到貨日期</h3>
                                 <div class="cargo_date_input">
                                     <input id="arrive_date" type="date" value="2021-07-22">
@@ -532,8 +530,6 @@
                                     <input type="checkbox">
                                     <p>不指定時段</p>
                                 </div>
-                        
-
                             </div>
 
                             <!-- 魚箱選項 -->
@@ -560,7 +556,7 @@
                                 </div>
                             </div>
 
-                             <!-- 填寫資料 -->
+                            <!-- 填寫資料 -->
                             <div class="checkout_info">
                                 <div class="checkout_info_bg"></div>
                                 <div class="checkout_info_warp">
@@ -569,7 +565,7 @@
                                     </div>
 
                                     
-                                    <div class="checkout_info_content">
+                                    <div class="checkout_info_content" id="Fishbox_info_check">
 
                                         <div class="checkout_info_list checkout_info_name">
                                             <h3>收貨人資料</h3>
@@ -577,7 +573,7 @@
                                             <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
                                         </div>
 
-                                        <div class="checkout_info_list " id="select_deliver">
+                                        <div class="checkout_info_list .select_deliver" id="fishbox_deliver">
                                             <h3>送貨地址</h3>
 
                                             <div class="info_address_warp">
@@ -600,7 +596,7 @@
                                             <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
                                         </div>
 
-                                        <div class="checkout_info_list " id="select_store">
+                                        <div class="checkout_info_list .select_store" id="fishbox_store">
                                             <h3>選擇超商門市</h3>
 
                                             <div class="info_address_warp">
@@ -718,9 +714,9 @@
 
                                 <div class="item_price_total  fishing_item_price_total">
                                     <p>小計</p>
-                                    <p>2,800,00</p>
+                                    <p>0</p>
                                 </div>
-                                <div class="item_price_fee fishing_item_price_fee">
+                                <div class="item_price_fee " id="Tool_fee">
                                     <p>運費</p>
                                     <p>120</p>
                                 </div>
@@ -731,12 +727,12 @@
                         <div class="checkout_method col-lg-6 col-md-6 col-12 ">
 
                             <div class="cargo_list cargo_method">
-                            <h3>物流方式</h3>
-                            <select>
-                                <option value="冷凍宅配  NT 120">冷凍宅配  NT 120</option>
-                                <option value="7-11 取貨  NT 0">7-11 取貨  NT 0</option>
-                                <option value="自取">自取</option>
-                            </select>
+                                <h3>物流方式</h3>
+                                <select id="All_Tool_deliver">
+                                    <option name="Tool_deliver[]" value="120">宅配  NT 120</option>
+                                    <option name="Tool_deliver[]" value="60">7-11 取貨  NT 60</option>
+                                    <option name="Tool_deliver[]" value="0">自取</option>
+                                </select>
                             </div>
                             
                             <div class="cargo_list cargo_info">
@@ -765,7 +761,7 @@
                                     </div>
 
                                     
-                                    <div class="checkout_info_content">
+                                    <div class="checkout_info_content" id="Tool_info_check">
 
                                         <div class="checkout_info_list checkout_info_name">
                                             <h3>收貨人資料</h3>
@@ -773,7 +769,7 @@
                                             <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
                                         </div>
 
-                                        <div class="checkout_info_list " id="select_deliver">
+                                        <div class="checkout_info_list .select_deliver" id="tool_deliver">
                                             <h3>送貨地址</h3>
 
                                             <div class="info_address_warp">
@@ -796,7 +792,7 @@
                                             <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
                                         </div>
 
-                                        <div class="checkout_info_list " id="select_store">
+                                        <div class="checkout_info_list .select_store" id="tool_store">
                                             <h3>選擇超商門市</h3>
 
                                             <div class="info_address_warp">
