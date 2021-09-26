@@ -1008,4 +1008,21 @@
     })
 
 
+
+    // let ItemType = $('select[name="Items_Alltype"]')
     
+
+    // ItemType.each(function(){
+
+    //     $(this).change(function(){
+
+    //         let selected = ItemType.children('option:selected')
+
+    //             console.log( selected.text());
+
+                
+
+            
+    //     })
+
+    // })  

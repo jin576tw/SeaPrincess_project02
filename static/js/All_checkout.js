@@ -78,6 +78,8 @@ $(document).ready(function () {
     // 勾選的商品
    let CheckProductArr = []
 
+   let isPass = true
+
     // 第一步驟成功，載入商品到第二步
     $('.cart_checkout_btn').on({
 
@@ -95,7 +97,7 @@ $(document).ready(function () {
                 
                 isFood == 'false' ? isFood=false : isFood = true;
 
-                let CheckSeafoodObj = {pid:checkID,food:isFood}
+                CheckSeafoodObj = {pid:checkID,food:isFood}
              
                 CheckProductArr.push(CheckSeafoodObj)
              })
@@ -111,7 +113,7 @@ $(document).ready(function () {
 
                 isfishbox == 'false' ? isfishbox=false : isfishbox = true;
 
-                let CheckFishboxObj = {pid:checkID,fishbox:isfishbox}
+                CheckFishboxObj = {pid:checkID,fishbox:isfishbox}
              
                 CheckProductArr.push(CheckFishboxObj)
              })
@@ -130,231 +132,447 @@ $(document).ready(function () {
                isFood == 'false' ? isFood=false : isFood = true;
 
          
-               let CheckToolObj = {pid:checkID,food:isFood}
-            
-               CheckProductArr.push(CheckToolObj)
+                //抓取選擇商品種類
+                let Alltype = $(this).parent().next().children('.Items_name').children('select[name="Items_Alltype"]')
+
+                let selected = Alltype.children('option:selected').text()
+
+                
+                let CheckToolObj = {pid:checkID,food:isFood,type:selected}
+
+                
+
+                CheckProductArr.push(CheckToolObj)
+
+                
+              
             })
+
             
+            // 檢查是否選擇釣具種類
+            let isCheckPass  = function(arr){
 
-           
+                let checkPass = arr.filter ((p) => p.type )
 
-            let cookieStr = $.cookie('Cart');
-            let cookieArr = JSON.parse(cookieStr);
-            
+                for(let i = 0 ; i < checkPass.length ;i++){ 
 
-            //個別總金額
-            let CheckSeafoodtotal = 0
-            let CheckTooltotal = 0
-            let CheckFishboxtotal = 0
-
-            // 載入勾選商品...
-            for(let i = 0 ; i < cookieArr.length  ;i++){ 
-
-                for(let j = 0 ; j < CheckProductArr.length ;j++){ 
-
-                    // 計算當前商品金額
-                    let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+                    let  isCheckType = checkPass[i].type
 
 
-                    //若為生鮮商品
-                    if(CheckProductArr[j].food){
+                    if(isCheckType == "請選擇商品種類"){
 
-                        if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].food){
+                            alert('尚未選擇商品種類')
 
-                            let CheckSeafood =`
-
-                            <div class="checkout_item_list fish_item_list" Product-ID="${cookieArr[i].pid}">
-                                    <div class="checkout_item_pic">
-                                        <div class="checkout_item_pic_img">
-                                            <img src="${cookieArr[i].Product_Pic}" alt="">
-                                        </div>
-                                        <div class="checkout_item_count">${cookieArr[i].count}</div>
-
-                                    </div>
-                                    <div class="checkout_item_name">
-                                        <p>${cookieArr[i].Product_Name}</p>
-                                    </div>
-                                    <div class="checkout_item_price">
-                                        <p>${nowprice}</p>
-                                    </div>
-
-                            </div>`
-
-
-                            CheckSeafoodtotal+=nowprice
-
-
-                            $('.CheckSeafoodWarp').append(CheckSeafood)
-
-
-                        }
-
-                       
-
-                    //若為釣具用品
-                    }else if(CheckProductArr[j].food == false){
-
-                        if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].food == false){
-
-                            let CheckTool =`<div class="checkout_item_list tool_item_list" Product-ID="${cookieArr[i].pid}">
-                                <div class="checkout_item_pic">
-                                    <div class="checkout_item_pic_img">
-                                        <img src="${cookieArr[i].Product_Pic}" alt="">
-                                    </div>
-                                    <div class="checkout_item_count">${cookieArr[i].count}</div>
-
-                                </div>
-                                <div class="checkout_item_name">
-                                    <p>${cookieArr[i].Product_Name}</p>
-                                    <p>AK - 5000</p>
-                                </div>
-                                <div class="checkout_item_price">
-                                    <p>${nowprice}</p>
-                                </div>
-
-                            </div>`
-
-
-                            CheckTooltotal+=nowprice
-
-                            $('.CheckToolWarp').append(CheckTool)
-
-                        }
-
-                       
-
-                    //若為海鮮魚箱
-                    }else if(CheckProductArr[j].fishbox){
-
-                        if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].fishbox){
-
-
-                            let CheckFishbox =`
-
-
-                                <div class="checkout_item_list fishbox_item_list">
-                                    <div class="checkout_item_pic">
-                                        <div class="checkout_item_pic_img">
-                                            <img src="${cookieArr[i].Product_Pic}" alt="">
-                                        </div>
-                                        <div class="checkout_item_count">${cookieArr[i].count}</div>
-
-                                    </div>
-                                    <div class="checkout_item_name">
-                                        <p>${cookieArr[i].Product_Name}</p>
-                                    </div>
-                                    <div class="checkout_item_price">
-                                        <p>${nowprice}</p>
-                                    </div>
-
-                                </div>
-                        
+                            isPass = false
                             
-                            `
-
-                            CheckFishboxtotal+=nowprice
-                            $('.CheckFishboxWarp').append( CheckFishbox)
-                          
-
-                        }
-
+                            break;
 
                     }
                     
+                    if(isCheckType != "請選擇商品種類"){
+
+                            isPass= true;
+
+                    }
 
                 }
+            }
+
+            isCheckPass(CheckProductArr)
+
+
+            // 若勾選商品為空
+            if(CheckProductArr.length == 0){
+
+                isPass = false
+                alert('請勾選商品')
 
             }
 
            
-            // 生鮮漁獲金額
-            $('.fish_item_price_total p:nth-of-type(2)').text( CheckSeafoodtotal)
+            // 是否通過結帳第一步驟
+            if(!isPass){
 
-            // 海鮮魚箱金額
-            $('.fishbox_item_price_total p:nth-of-type(2)').text( CheckFishboxtotal)
-
-            // 釣具用品金額
-            $('.fishing_item_price_total p:nth-of-type(2)').text( CheckTooltotal)
-
-         
-            // 總金額小計
-            let CheckFinalTotal = CheckSeafoodtotal+CheckFishboxtotal+CheckTooltotal
-            $('.total_detail p:nth-of-type(2)').text(CheckFinalTotal)
+                // 若未通空清空陣列
+                CheckProductArr = []
 
 
 
+            }else{
 
-            // 判斷最後結帳欄位狀態
-            function finalfilter(arr){
+            
+                let cookieStr = $.cookie('Cart');
+                let cookieArr = JSON.parse(cookieStr);
+                    
 
-                let fishbox =  arr.filter ((p) => p.fishbox == true)
-                let seafood =  arr.filter ((p) => p.food == true)
-                let item=  arr.filter ((p) => p.food == false)
+                //個別總金額
+                let CheckSeafoodtotal = 0
+                let CheckTooltotal = 0
+                let CheckFishboxtotal = 0
 
-                // 若生鮮食品為空
-                if(seafood.length == 0 ){
+                // 載入勾選商品...
+                for(let i = 0 ; i < cookieArr.length  ;i++){ 
 
-                    $('.fish_checkout').hide()
-                }else{
+                    for(let j = 0 ; j < CheckProductArr.length ;j++){ 
 
-                    $('.fish_checkout').show()
+                        // 計算當前商品金額
+                        let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+
+
+                        //若為生鮮商品
+                        if(CheckProductArr[j].food){
+
+                            if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].food){
+
+                                let CheckSeafood =`
+
+                                <div class="checkout_item_list fish_item_list" Product-ID="${cookieArr[i].pid}">
+                                        <div class="checkout_item_pic">
+                                            <div class="checkout_item_pic_img">
+                                                <img src="${cookieArr[i].Product_Pic}" alt="">
+                                            </div>
+                                            <div class="checkout_item_count">${cookieArr[i].count}</div>
+
+                                        </div>
+                                        <div class="checkout_item_name">
+                                            <p>${cookieArr[i].Product_Name}</p>
+                                        </div>
+                                        <div class="checkout_item_price">
+                                            <p>${nowprice}</p>
+                                        </div>
+
+                                </div>`
+
+
+                                CheckSeafoodtotal+=nowprice
+
+
+                                $('.CheckSeafoodWarp').append(CheckSeafood)
+
+
+                            }
+
+                        
+
+                        //若為釣具用品
+                        }else if(CheckProductArr[j].food == false){
+
+                            if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].food == false){
+
+
+
+                                let CheckTool =`<div class="checkout_item_list tool_item_list" Product-ID="${cookieArr[i].pid}">
+                                    <div class="checkout_item_pic">
+                                        <div class="checkout_item_pic_img">
+                                            <img src="${cookieArr[i].Product_Pic}" alt="">
+                                        </div>
+                                        <div class="checkout_item_count">${cookieArr[i].count}</div>
+
+                                    </div>
+                                    <div class="checkout_item_name">
+                                        <p>${cookieArr[i].Product_Name}</p>
+                                        <p>${CheckProductArr[j].type}</p>
+                                        
+                                    </div>
+                                    <div class="checkout_item_price">
+                                        <p>${nowprice}</p>
+                                    </div>
+
+                                </div>`
+
+
+                                CheckTooltotal+=nowprice
+
+                                $('.CheckToolWarp').append(CheckTool)
+
+                            }
+
+                        
+
+                        //若為海鮮魚箱
+                        }else if(CheckProductArr[j].fishbox){
+
+                            if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].fishbox){
+
+
+                                let CheckFishbox =`
+
+
+                                    <div class="checkout_item_list fishbox_item_list">
+                                        <div class="checkout_item_pic">
+                                            <div class="checkout_item_pic_img">
+                                                <img src="${cookieArr[i].Product_Pic}" alt="">
+                                            </div>
+                                            <div class="checkout_item_count">${cookieArr[i].count}</div>
+
+                                        </div>
+                                        <div class="checkout_item_name">
+                                            <p>${cookieArr[i].Product_Name}</p>
+                                        </div>
+                                        <div class="checkout_item_price">
+                                            <p>${nowprice}</p>
+                                        </div>
+
+                                    </div>
+                            
+                                
+                                `
+
+                                CheckFishboxtotal+=nowprice
+                                $('.CheckFishboxWarp').append( CheckFishbox)
+                            
+
+
+                                /////載入修改魚箱資訊///////
+
+                                 // 料理習慣
+                                let cooktype = cookieArr[i].Product_cook.join('、')
+                                
+                                //魚箱選填項目
+                                let fisboxMessage = ``
+
+                                if( cookieArr[i].Product_message == ''){
+
+                                    fisboxMessage = ``
+                            
+                                }else{
+                                    fisboxMessage = `<p>選填：${cookieArr[i].Product_message}</p>`
+                                }
+
+
+                                
+                                //魚箱資訊內容
+                                let FishboxInfo = `<div class="cagro_fishbox_info"  fishbox_pid="${cookieArr[i].pid}">
+                              
+                                <div class="cargo_list cargo_custom_info">
+                                    <h3>客製訊息</h3>
+                                    <div class="cargo_info_text">
+                                        <div class="fishbox_Infotext">
+                                            <p>客製組合預算：${cookieArr[i].Product_Price}元</p>
+                                            <p>食用人數：${cookieArr[i].Product_qty}</p>
+                                            <p>料理習慣：${cooktype}</p>`
+                                            +fisboxMessage+`</div>
+
+                                        <div class="fishbox_edit">
+                                            <i class="fas fa-pen-alt"></i>
+                                        </div>  
+                                        
+                                    </div>
+                                </div>`
+
+                                // 修改魚箱選項
+                                let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
+                                    <div class="checkout_info_bg"></div>
+                                    <div class="checkout_info_warp">
+                                        <div class="checkout_info_top">
+                                            <i class="fas fa-times info_cancel"></i>
+                                        </div>
+
+                                        <!-- 修改魚箱選項 -->
+                                        <div class="checkout_info_content">
+                                            <div class="checkout_info_list">
+                                                <h3>客製組合預算<span>*</span></h3>
+                                                <div class="fishbox_select_wrap fishbox_pice_select">
+                                
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_pice" value="2000" required>2000</label>
+                                                    </div>
+                                
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_pice" value="3000" required>3000</label>
+                                                    </div>
+                                
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_pice" value="4000" required>4000</label>
+                                                    </div>
+                                
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_pice" value="5000" required>5000</label>
+                                                    </div>
+                                                </div>
+                                
+                                            </div>
+                                
+                                            <div class="checkout_info_list">
+                                                <h3>食用人數<span>*</span></h3>
+                                                <div class="fishbox_select_wrap fishbox_qty_select">
+                                
+                                        
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_qty" value="1-2人" required>1-2人</label>
+                                                    </div>
+                                
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_qty" value="3-4人" required>3-4人</label>
+                                                    </div>
+                                
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_qty" value="5-6人" required>5-6人</label>
+                                                    </div>
+                                
+                                                    <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_qty" value="6人以上" >6人以上</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                
+                                            <div class="checkout_info_list">
+                                                <h3>料理習慣 (可複選)</h3>
+                                                <div class="fishbox_select_wrap fishbox_cook_select">
+                                
+                                                    <div class="fishbox_btn">
+                                                        <label><input type="checkbox" name="fishbox_cook[]" value="清蒸">清蒸</label> 
+                                                       
+                                
+                                                    </div>
+                                                    <div class="fishbox_btn">
+                                                        
+                                                        <label><input type="checkbox" name="fishbox_cook[]" value="煮湯">煮湯</label> 
+                                
+                                                    </div>
+                                                    <div class="fishbox_btn">
+                                                        <label><input type="checkbox" name="fishbox_cook[]" value="乾煎(紅燒)">乾煎(紅燒)</label> 
+                                                    </div>
+                                
+                                                    <div class="fishbox_btn">
+                                                        <label><input type="checkbox" name="fishbox_cook[]" value="鹽烤">鹽烤</label> 
+                                                    </div>
+                                
+                                                    
+                                                </div>
+                                            </div>
+                                
+                                            <div class="checkout_info_list">
+                                                <h3>可選填想配入的品項，若無現貨會再通知您。</h3>
+                                                <textarea name="fishbox_message"rows="6"cols="40" id="fishbox_message"></textarea>
+                                
+                                               
+                                            </div>
+
+                                        </div>
+            
+                                    
+
+                                        <div class="check_info_bottom">
+                                            <button class="info_confirm">確認</button>
+            
+                                        </div>
+
+                                    </div>
+                                
+
+                                    
+
+                                </div>
+                                </div>`
+                                
+                               
+
+                                $('.cagro_fishboxes_warp').append(FishboxInfo+Editfishbox)
+                              
+                            }
+
+
+                        }
+                        
+
+                    }
 
                 }
 
-                // 若釣具用品為空
-                if(item.length == 0  ){
+                // 生鮮漁獲金額
+                $('.fish_item_price_total p:nth-of-type(2)').text( CheckSeafoodtotal)
 
-                    $('.tool_checkout').hide()
-                }else{
+                // 海鮮魚箱金額
+                $('.fishbox_item_price_total p:nth-of-type(2)').text( CheckFishboxtotal)
 
-                    $('.tool_checkout').show()
+                // 釣具用品金額
+                $('.fishing_item_price_total p:nth-of-type(2)').text( CheckTooltotal)
+
+            
+                // 總金額小計
+                let CheckFinalTotal = CheckSeafoodtotal+CheckFishboxtotal+CheckTooltotal
+                $('.total_detail p:nth-of-type(2)').text(CheckFinalTotal)
+
+
+
+
+                // 判斷最後結帳欄位狀態
+                function finalfilter(arr){
+
+                    let fishbox =  arr.filter ((p) => p.fishbox == true)
+                    let seafood =  arr.filter ((p) => p.food == true)
+                    let item=  arr.filter ((p) => p.food == false)
+
+                    // 若生鮮食品為空
+                    if(seafood.length == 0 ){
+
+                        $('.fish_checkout').hide()
+                    }else{
+
+                        $('.fish_checkout').show()
+
+                    }
+
+                    // 若釣具用品為空
+                    if(item.length == 0  ){
+
+                        $('.tool_checkout').hide()
+                    }else{
+
+                        $('.tool_checkout').show()
+
+                    }
+
+
+                    //若海鮮魚箱為空
+                    if(fishbox.length == 0 ){
+
+                        $('.fishbox_checkout').hide()
+                    }else{
+
+                        $('.fishbox_checkout').show()
+
+                    }
+
 
                 }
 
+                finalfilter(CheckProductArr)
 
-                //若海鮮魚箱為空
-                if(fishbox.length == 0 ){
+///////////////////////////////////////////跳轉畫面//////////////////////////////////////////////
+                Step01.fadeOut(1000)
+                Step02.fadeIn(500)
 
-                    $('.fishbox_checkout').hide()
-                }else{
+                StepLine.css('width','50%')
 
-                    $('.fishbox_checkout').show()
+                $('.step_number01').html(check)
 
-                }
+                $('.step_number02').css('background-color','var(--dark_blue)').css('transition','2.5s')
+
+                $('.step_name02 p').css('color','var(--dark_blue)').css('transition','2.5s')
+
+                setTimeout(() => {
+                    $('.check01').addClass(bounce)
+
+                }, 700);
+            
+
+                // let url = location.pathname + '?step2'
+                // history.pushState({
+                //     url: url,
+                //     title: document.title
+                // }, document.title, url)
+
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 1 ,'swing');
 
 
             }
-
-            finalfilter(CheckProductArr)
-
-
-            Step01.fadeOut(1000)
-            Step02.fadeIn(500)
-
-            StepLine.css('width','50%')
-
-            $('.step_number01').html(check)
-
-            $('.step_number02').css('background-color','var(--dark_blue)').css('transition','2.5s')
-
-            $('.step_name02 p').css('color','var(--dark_blue)').css('transition','2.5s')
-
-            setTimeout(() => {
-                $('.check01').addClass(bounce)
-
-            }, 700);
-        
-
-            // let url = location.pathname + '?step2'
-            // history.pushState({
-            //     url: url,
-            //     title: document.title
-            // }, document.title, url)
-
-            $('body,html').animate({
-                scrollTop: 0
-            }, 1 ,'swing');
-           
+            
+            
             
         }
 
@@ -373,27 +591,26 @@ $(document).ready(function () {
 
     })
 
-    $('.fishbox_edit').on({
+    //修改魚箱選項
+    let CagroFishboxes = $(".cagro_fishboxes_warp")
 
-        click: function(){
+    CagroFishboxes.on("click",".fishbox_edit ",function(){
 
-            $(this).parent().parent().parent().next().next('.fishbox_detail').fadeIn(100)
-
-        }
+   
+        $(this).parent().parent().next('.fishbox_detail').fadeIn(100)
 
 
 
     })
 
 
+    // 選單功能畫面
+    let CheckoutWarp = $('.Checkout_warp')
 
-    $('.info_cancel , .checkout_info_bg ').on({
+    CheckoutWarp.on("click",".info_cancel , .checkout_info_bg ",function(){
 
-        click: function(){
-
-            $('.checkout_info').fadeOut(100)
-
-        }
+        $('.checkout_info').fadeOut(100);
+    
 
 
 

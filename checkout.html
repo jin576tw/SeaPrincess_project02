@@ -484,24 +484,7 @@
                         <!-- 結帳金額 -->
                         <div class="checkout_items col-lg-5 col-md-5 col-12 p-0">
                             <div class="checkout_item_list_warp CheckFishboxWarp"> 
-<!-- 
-                                <div class="checkout_item_list fishbox_item_list">
-                                    <div class="checkout_item_pic">
-                                        <div class="checkout_item_pic_img">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="checkout_item_count">1</div>
-
-                                    </div>
-                                    <div class="checkout_item_name">
-                                        <p>全鮮魚魚箱</p>
-                                    </div>
-                                    <div class="checkout_item_price">
-                                        <p>1200</p>
-                                    </div>
-
-                                </div>
-                             -->
+                            <!-- 結帳魚箱載入...-->
                                 
                             </div>
 
@@ -545,20 +528,15 @@
                         
 
                             </div>
-                            <div class="cargo_list cargo_custom_info">
-                                <h3>客製訊息</h3>
-                                <div class="cargo_info_text">
-                                    <p>客製組合預算：2000 元<br>
-                                        食用人數：5-6人<br>
-                                        料理習慣：清蒸、乾煎(紅燒)<br>
-                                        選填：軟絲、小卷、海/紫菜</p>
 
-                                    <div class="fishbox_edit">
-                                        <i class="fas fa-pen-alt"></i>
-                                    </div>  
-                                    
-                                </div>
+                            <!-- 魚箱選項 -->
+                            <div class="cagro_fishboxes_warp">
+                                <!-- 魚箱資訊載入... -->
+                                
+                             
+                                
                             </div>
+                  
                             <div class="cargo_list cargo_info">
                                 <h3>收件資訊</h3>
                                 <div class="cargo_info_text">
@@ -666,130 +644,7 @@
 
                         </div> 
 
-                         <!-- 修改魚箱 -->
-                         <div class="checkout_info fishbox_detail">
-                            <div class="checkout_info_bg"></div>
-                            <div class="checkout_info_warp">
-                                <div class="checkout_info_top">
-                                    <i class="fas fa-times info_cancel"></i>
-                                </div>
-
-                                
-                                <div class="checkout_info_content">
-
-                                    <div class="checkout_info_list">
-                                        <h3>客製組合預算<span>*</span></h3>
-                                        <div class="fishbox_select_wrap fishbox_pice_select">
-
-                                            <div class="fishbox_btn fishbox_pice_btn">
-                                                <input type="radio" name="fishbox_pice" required>
-                                                <p>2000</p>
-
-                                            </div>
-                                            <div class="fishbox_btn fishbox_pice_btn">
-                                                <input type="radio" name="fishbox_pice" required>
-                                                <p>3000</p>
-
-                                            </div>
-                                            <div class="fishbox_btn fishbox_pice_btn">
-                                                <input type="radio"
-                                                name="fishbox_pice" required>
-                                                <p>4000</p>
-
-                                            </div>
-                                            <div class="fishbox_btn fishbox_pice_btn">
-                                                <input type="radio"
-                                                name="fishbox_pice" required>
-                                                <p>5000</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="checkout_info_list">
-                                        <h3>食用人數<span>*</span></h3>
-                                        <div class="fishbox_select_wrap fishbox_people_select">
-
-                                            <div class="fishbox_btn">
-                                                <input type="radio" name="fishbox_people" required>
-                                                <p>1-2人</p>
-
-                                            </div>
-                                            <div class="fishbox_btn">
-                                                <input type="radio" name="fishbox_people" required>
-                                                <p>3-4人</p>
-
-                                            </div>
-                                            <div class="fishbox_btn">
-                                                <input type="radio"
-                                                name="fishbox_people" required>
-                                                <p>5-6人</p>
-
-                                            </div>
-                                            <div class="fishbox_btn">
-                                                <input type="radio"
-                                                name="fishbox_people" required>
-                                                <p>6人以上</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="checkout_info_list">
-                                        <h3>料理習慣 (可複選)</h3>
-                                        <div class="fishbox_select_wrap fishbox_cook_select">
-
-                                            <div class="fishbox_btn">
-                                                <input type="checkbox" name="fishbox_cook">
-                                                <p>清蒸</p>
-
-                                            </div>
-                                            <div class="fishbox_btn">
-                                                <input type="checkbox" name="fishbox_cook">
-                                                <p>煮湯</p>
-
-                                            </div>
-                                            <div class="fishbox_btn">
-                                                <input type="checkbox"
-                                                name="fishbox_cook">
-                                                <p>乾煎(紅燒)</p>
-
-                                            </div>
-                                            <div class="fishbox_btn">
-                                                <input type="checkbox"
-                                                name="fishbox_cook">
-                                                <p>鹽烤</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="checkout_info_list">
-                                        <h3>可選填想配入的品項，若無現貨會再通知您。</h3>
-                                        <textarea name="mytext"rows="6"cols="40"></textarea>
-
-                                       
-                                    </div>
-                                    
-
-                                    
-
-                                </div>
-    
-                               
-
-                                <div class="check_info_bottom">
-                                    <button class="info_confirm">確認</button>
-    
-                                </div>
-
-                            </div>
-                        
-
-                            
-
-                        </div>
-                  
+                         
 
                     </div>
 
@@ -1000,16 +855,32 @@
                                     <p>小計</p>
                                     <p>2800</p>
                                 </div>
-                                <div class="payment_detail fee_detail">
-                                    <p>運費</p>
+                                <div class="payment_detail">
+                                    <p>生鮮食材運費</p>
                                     <p>120</p>
                                 </div>
-                                <div class="payment_detail fee_discount">
-                                    <p>運費折抵</p>
+                                <div class="payment_detail payment_discount">
+                                    <p>生鮮食材運費折抵</p>
                                     <p>120</p>
                                 </div>
-                                <div class="payment_detail point_discount">
-                                    <p>魚點數折抵</p>
+                                <div class="payment_detail">
+                                    <p>海鮮魚箱食材運費</p>
+                                    <p>120</p>
+                                </div>
+                                <div class="payment_detail payment_discount">
+                                    <p>海鮮魚箱運費折抵</p>
+                                    <p>120</p>
+                                </div>
+                                <div class="payment_detail">
+                                    <p>釣具運費</p>
+                                    <p>120</p>
+                                </div>
+                                <div class="payment_detail payment_discount">
+                                    <p>釣具運費折抵</p>
+                                    <p>120</p>
+                                </div>
+                                <div class="payment_detail payment_discount">
+                                    <p>公主幣折抵</p>
                                     <p>62</p>
                                 </div>
 
