@@ -362,10 +362,14 @@
 
                             </div>
 
+                            
+                            
                             <div class="cargo_list cargo_info">
                                 <h3>收件資訊</h3>
                                 <div class="cargo_info_text">
-                                    <p>請填寫收件人資料</p>
+                                    <div class="address_Infotext">
+                                        <p>請填寫收件人資料</p>
+                                    </div>
 
                                     <div class="cargo_info_edit">
                                         <i class="fas fa-pen-alt"></i>
@@ -373,6 +377,89 @@
                                     
                                 </div>
                             </div>
+
+                            <!-- 填寫資料 -->
+                            <div class="checkout_info">
+                                <div class="checkout_info_bg"></div>
+                                <div class="checkout_info_warp">
+                                    <div class="checkout_info_top">
+                                        <i class="fas fa-times info_cancel"></i>
+                                    </div>
+
+                                    
+                                    <div class="checkout_info_content">
+
+                                        <div class="checkout_info_list checkout_info_name">
+                                            <h3>收貨人資料</h3>
+                                            <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
+                                            <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
+                                        </div>
+
+                                        <div class="checkout_info_list " id="select_deliver">
+                                            <h3>送貨地址</h3>
+
+                                            <div class="info_address_warp">
+                                                <select>
+                                                    <option>台灣本島</option>
+                                                    <option>海外</option>
+                                                </select>
+                                                <select>
+                                                    <option>台北市</option>
+                                                    <option>高雄市</option>
+                                                </select>
+                                                <select>
+                                                    <option>大安區</option>
+                                                    <option>內湖區</option>
+                                                </select>
+
+                                            </div>
+                                            
+
+                                            <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
+                                        </div>
+
+                                        <div class="checkout_info_list " id="select_store">
+                                            <h3>選擇超商門市</h3>
+
+                                            <div class="info_address_warp">
+                                                <select>
+                                                    <option>縣市</option>
+                                                
+                                                </select>
+                                                <select>
+                                                    <option>鄉鎮市區</option>
+                                                
+                                            </select>
+                                                <select>
+                                                    <option>街道</option>
+                                                
+                                            </select>
+
+                                            </div>
+                                            
+
+                                            <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
+                                        </div>
+                                        
+
+                                        
+
+                                    </div>
+        
+                                
+
+                                    <div class="check_info_bottom">
+                                        <button class="info_confirm">確認</button>
+        
+                                    </div>
+
+                                </div>
+                        
+
+                                
+
+                            </div> 
+
 
                             <div class="cargo_list cargo_other">
                                 <h3>其他備註</h3>
@@ -386,87 +473,7 @@
 
                         </div> 
 
-                        <!-- 填寫資料 -->
-                        <div class="checkout_info">
-                            <div class="checkout_info_bg"></div>
-                            <div class="checkout_info_warp">
-                                <div class="checkout_info_top">
-                                    <i class="fas fa-times info_cancel"></i>
-                                </div>
-
-                                
-                                <div class="checkout_info_content">
-
-                                    <div class="checkout_info_list checkout_info_name">
-                                        <h3>收貨人資料</h3>
-                                        <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
-                                        <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
-                                    </div>
-
-                                    <div class="checkout_info_list checkout_info_address">
-                                        <h3>送貨地址</h3>
-
-                                        <div class="info_address_warp">
-                                            <select>
-                                                <option>台灣本島</option>
-                                                <option>海外</option>
-                                            </select>
-                                            <select>
-                                                <option>台北市</option>
-                                                <option>高雄市</option>
-                                            </select>
-                                            <select>
-                                                <option>大安區</option>
-                                                <option>內湖區</option>
-                                            </select>
-
-                                        </div>
-                                        
-
-                                        <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
-                                    </div>
-
-                                    <div class="checkout_info_list checkout_store_address">
-                                        <h3>選擇超商門市</h3>
-
-                                        <div class="info_address_warp">
-                                            <select>
-                                                <option>縣市</option>
-                                            
-                                            </select>
-                                            <select>
-                                                <option>鄉鎮市區</option>
-                                            
-                                        </select>
-                                            <select>
-                                                <option>街道</option>
-                                            
-                                        </select>
-
-                                        </div>
-                                        
-
-                                        <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
-                                    </div>
-                                    
-
-                                    
-
-                                </div>
-    
-                               
-
-                                <div class="check_info_bottom">
-                                    <button class="info_confirm">確認</button>
-    
-                                </div>
-
-                            </div>
-                       
-
-                            
-
-                        </div> 
+                        
                   
 
                     </div>
@@ -540,9 +547,11 @@
                             <div class="cargo_list cargo_info">
                                 <h3>收件資訊</h3>
                                 <div class="cargo_info_text">
-                                    <p>王大明<br>
-                                        0987123456<br>
-                                        台北市大安區復興南路一段237號</p>
+                                    <div class="address_Infotext">
+                                        <p>王大明</p>
+                                        <p>0987123456</p>
+                                        <p>台北市大安區復興南路一段237號</p>
+                                    </div>
 
                                     <div class="cargo_info_edit">
                                         <i class="fas fa-pen-alt"></i>
@@ -550,6 +559,91 @@
                                     
                                 </div>
                             </div>
+
+                             <!-- 填寫資料 -->
+                            <div class="checkout_info">
+                                <div class="checkout_info_bg"></div>
+                                <div class="checkout_info_warp">
+                                    <div class="checkout_info_top">
+                                        <i class="fas fa-times info_cancel"></i>
+                                    </div>
+
+                                    
+                                    <div class="checkout_info_content">
+
+                                        <div class="checkout_info_list checkout_info_name">
+                                            <h3>收貨人資料</h3>
+                                            <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
+                                            <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
+                                        </div>
+
+                                        <div class="checkout_info_list " id="select_deliver">
+                                            <h3>送貨地址</h3>
+
+                                            <div class="info_address_warp">
+                                                <select>
+                                                    <option>台灣本島</option>
+                                                    <option>海外</option>
+                                                </select>
+                                                <select>
+                                                    <option>台北市</option>
+                                                    <option>高雄市</option>
+                                                </select>
+                                                <select>
+                                                    <option>大安區</option>
+                                                    <option>內湖區</option>
+                                                </select>
+
+                                            </div>
+                                            
+
+                                            <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
+                                        </div>
+
+                                        <div class="checkout_info_list " id="select_store">
+                                            <h3>選擇超商門市</h3>
+
+                                            <div class="info_address_warp">
+                                                <select>
+                                                    <option>縣市</option>
+                                                
+                                                </select>
+                                                <select>
+                                                    <option>鄉鎮市區</option>
+                                                
+                                            </select>
+                                                <select>
+                                                    <option>街道</option>
+                                                
+                                            </select>
+
+                                            </div>
+                                            
+
+                                            <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
+                                        </div>
+                                        
+
+                                        
+
+                                    </div>
+        
+                                
+
+                                    <div class="check_info_bottom">
+                                        <button class="info_confirm">確認</button>
+        
+                                    </div>
+
+                                </div>
+                        
+
+                                
+
+                            </div> 
+
+
+
                             <div class="cargo_list cargo_other">
                                 <h3>其他備註</h3>
                                 <textarea id="checkout_other_text" name="other_text" rows="4" cols="50">
@@ -562,87 +656,7 @@
 
                         </div> 
 
-                         <!-- 填寫資料 -->
-                         <div class="checkout_info">
-                            <div class="checkout_info_bg"></div>
-                            <div class="checkout_info_warp">
-                                <div class="checkout_info_top">
-                                    <i class="fas fa-times info_cancel"></i>
-                                </div>
-
-                                
-                                <div class="checkout_info_content">
-
-                                    <div class="checkout_info_list checkout_info_name">
-                                        <h3>收貨人資料</h3>
-                                        <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
-                                        <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
-                                    </div>
-
-                                    <div class="checkout_info_list checkout_info_address">
-                                        <h3>送貨地址</h3>
-
-                                        <div class="info_address_warp">
-                                            <select>
-                                                <option>台灣本島</option>
-                                                <option>海外</option>
-                                            </select>
-                                            <select>
-                                                <option>台北市</option>
-                                                <option>高雄市</option>
-                                            </select>
-                                            <select>
-                                                <option>大安區</option>
-                                                <option>內湖區</option>
-                                            </select>
-
-                                        </div>
-                                        
-
-                                        <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
-                                    </div>
-
-                                    <div class="checkout_info_list checkout_store_address">
-                                        <h3>選擇超商門市</h3>
-
-                                        <div class="info_address_warp">
-                                            <select>
-                                                <option>縣市</option>
-                                            
-                                            </select>
-                                            <select>
-                                                <option>鄉鎮市區</option>
-                                            
-                                        </select>
-                                            <select>
-                                                <option>街道</option>
-                                            
-                                        </select>
-
-                                        </div>
-                                        
-
-                                        <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
-                                    </div>
-                                    
-
-                                    
-
-                                </div>
-    
-                               
-
-                                <div class="check_info_bottom">
-                                    <button class="info_confirm">確認</button>
-    
-                                </div>
-
-                            </div>
-                        
-
-                            
-
-                        </div> 
+                         
 
                          
 
@@ -728,19 +742,104 @@
                             <div class="cargo_list cargo_info">
                                 <h3>收件資訊</h3>
                                 <div class="cargo_info_text">
-                                    <p>王大明<br>
-                                        0987123456<br>
-                                        台北市大安區復興南路一段237號</p>
+                                    <div class="address_Infotext">
+                                        <p>王大明</p>
+                                        <p>0987123456</p>
+                                        <p>台北市大安區復興南路一段237號</p>
+                                    </div>
 
                                     <div class="cargo_info_edit">
                                         <i class="fas fa-pen-alt"></i>
                                     </div>  
                                     
                                 </div>
-                                
-                                
                             
                             </div>
+
+                            <!-- 填寫資料 -->
+                            <div class="checkout_info">
+                                <div class="checkout_info_bg"></div>
+                                <div class="checkout_info_warp">
+                                    <div class="checkout_info_top">
+                                        <i class="fas fa-times info_cancel"></i>
+                                    </div>
+
+                                    
+                                    <div class="checkout_info_content">
+
+                                        <div class="checkout_info_list checkout_info_name">
+                                            <h3>收貨人資料</h3>
+                                            <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
+                                            <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
+                                        </div>
+
+                                        <div class="checkout_info_list " id="select_deliver">
+                                            <h3>送貨地址</h3>
+
+                                            <div class="info_address_warp">
+                                                <select>
+                                                    <option>台灣本島</option>
+                                                    <option>海外</option>
+                                                </select>
+                                                <select>
+                                                    <option>台北市</option>
+                                                    <option>高雄市</option>
+                                                </select>
+                                                <select>
+                                                    <option>大安區</option>
+                                                    <option>內湖區</option>
+                                                </select>
+
+                                            </div>
+                                            
+
+                                            <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
+                                        </div>
+
+                                        <div class="checkout_info_list " id="select_store">
+                                            <h3>選擇超商門市</h3>
+
+                                            <div class="info_address_warp">
+                                                <select>
+                                                    <option>縣市</option>
+                                                
+                                                </select>
+                                                <select>
+                                                    <option>鄉鎮市區</option>
+                                                
+                                            </select>
+                                                <select>
+                                                    <option>街道</option>
+                                                
+                                            </select>
+
+                                            </div>
+                                            
+
+                                            <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
+                                        </div>
+                                        
+
+                                        
+
+                                    </div>
+        
+                                
+
+                                    <div class="check_info_bottom">
+                                        <button class="info_confirm">確認</button>
+        
+                                    </div>
+
+                                </div>
+                        
+
+                                
+
+                            </div> 
+
+
+                            
                             <div class="cargo_list cargo_other">
                                 <h3>其他備註</h3>
                                 <textarea id="checkout_other_text" name="other_text" rows="4" cols="50">
@@ -753,87 +852,7 @@
 
                         </div> 
 
-                        <!-- 填寫資料 -->
-                        <div class="checkout_info">
-                            <div class="checkout_info_bg"></div>
-                            <div class="checkout_info_warp">
-                                <div class="checkout_info_top">
-                                    <i class="fas fa-times info_cancel"></i>
-                                </div>
-
-                                
-                                <div class="checkout_info_content">
-
-                                    <div class="checkout_info_list checkout_info_name">
-                                        <h3>收貨人資料</h3>
-                                        <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
-                                        <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
-                                    </div>
-
-                                    <div class="checkout_info_list checkout_info_address">
-                                        <h3>送貨地址</h3>
-
-                                        <div class="info_address_warp">
-                                            <select>
-                                                <option>台灣本島</option>
-                                                <option>海外</option>
-                                            </select>
-                                            <select>
-                                                <option>台北市</option>
-                                                <option>高雄市</option>
-                                            </select>
-                                            <select>
-                                                <option>大安區</option>
-                                                <option>內湖區</option>
-                                            </select>
-
-                                        </div>
-                                        
-
-                                        <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
-                                    </div>
-
-                                    <div class="checkout_info_list checkout_store_address">
-                                        <h3>選擇超商門市</h3>
-
-                                        <div class="info_address_warp">
-                                            <select>
-                                                <option>縣市</option>
-                                            
-                                            </select>
-                                            <select>
-                                                <option>鄉鎮市區</option>
-                                            
-                                        </select>
-                                            <select>
-                                                <option>街道</option>
-                                            
-                                        </select>
-
-                                        </div>
-                                        
-
-                                        <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
-                                    </div>
-                                    
-
-                                    
-
-                                </div>
-    
-                               
-
-                                <div class="check_info_bottom">
-                                    <button class="info_confirm">確認</button>
-    
-                                </div>
-
-                            </div>
-                        
-
-                            
-
-                        </div> 
+                       
                   
 
 

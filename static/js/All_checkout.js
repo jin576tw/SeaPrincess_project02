@@ -579,18 +579,7 @@ $(document).ready(function () {
     })
 
 
-    $('.cargo_info_edit').on({
-
-        click: function(){
-
-            $(this).parent().parent().parent().next('.checkout_info').fadeIn(100)
-
-        }
-
-
-
-    })
-
+  
     //修改魚箱選項
     let CagroFishboxes = $(".cagro_fishboxes_warp")
 
@@ -612,9 +601,16 @@ $(document).ready(function () {
         $('.checkout_info').fadeOut(100);
     
 
+    })
 
+
+    CheckoutWarp.on("click",'.cargo_info_edit',function(){
+
+        $(this).parent().parent().next('.checkout_info').fadeIn(100)
 
     })
+    
+
 
 
 
