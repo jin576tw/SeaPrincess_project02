@@ -579,6 +579,8 @@ $(document).ready(function () {
     })
 
 
+
+  
   
     //修改魚箱選項
     let CagroFishboxes = $(".cagro_fishboxes_warp")
@@ -593,6 +595,8 @@ $(document).ready(function () {
     })
 
 
+    
+
     // 選單功能畫面
     let CheckoutWarp = $('.Checkout_warp')
 
@@ -603,18 +607,22 @@ $(document).ready(function () {
 
     })
 
-
     CheckoutWarp.on("click",'.cargo_info_edit',function(){
 
         $(this).parent().parent().next('.checkout_info').fadeIn(100)
 
     })
+
+
+        
+
+        
     
 
     //生鮮物流方式
     let Seafood_deliver = $('#All_Seafood_deliver')
 
-    Seafood_deliver.change(function(){
+        Seafood_deliver.change(function(){
 
 
         let deliver_method =  $(this).children('option:selected')
@@ -663,8 +671,103 @@ $(document).ready(function () {
     })
 
 
+    // 填入/修改資料
+    CheckoutWarp.on("click",'.info_confirm',function(){
+
+        // 收件人姓名
+        let InfoName =$(this).parent().prev().children('.checkout_info_name').children('input[name="info_name"]').val()
+
+        // 收件人聯絡電話
+        let InfoPhone =$(this).parent().prev().children('.checkout_info_name').children('input[name="info_phone"]').val()
+
+
+        // 送貨地址
+        let Deliver_address = $(this).parent().prev().children().next().children('.info_address_warp')
+
+        //送貨國家
+        let Deliver_country = Deliver_address.children('select[name="ALL_country"]').children('option:selected').val()
+
+         //送貨城市
+        let Deliver_city = Deliver_address.children('select[name="All_city"]').children('option:selected').val()
+
+         //送貨區域
+        let Deliver_location = Deliver_address.children('select[name="All_location"]').children('option:selected').val()
+
+        // 送貨詳細地址
+        let Deliver_detail = $(this).parent().prev().children().next().children('input[name="info_address"]').val()
+
+
+
+        // 選擇超商門市
+        let Store_address = $(this).parent().prev().children().next().next().children('.info_address_warp')
+  
+
+        // 選擇超商門市城市
+        let Store_city = Store_address.children('select[name="All_StoreCity"]').children('option:selected').val()
+
+        // 選擇超商門市區域
+        let Store_region = Store_address.children('select[name="All_StoreRegion"]').children('option:selected').val()
+
+        // 選擇超商門市街道
+        let Store_Street = Store_address.children('select[name="All_StoreStreet"]').children('option:selected').val()
+
+
+        // 選擇超商門市名稱
+        let Store_name = $(this).parent().prev().children().next().children('input[name="info_store_address"]').val()
+     
+
+        function InfoInput(val){
+
+            if(val == ''){
+
+                val = ``
+
+                return val
+            }else{
+
+                val = `<p>${val}</p>`
+
+                return val
+            }
+        }
+
+        // 收件人資料
+        let CheckInfo = $(this).parent().parent().parent().prev().children('.cargo_info_text').children('.address_Infotext')
+
+
+        // console.log(Deliver_city);
+
+        let CheckInfoName =  InfoInput(InfoName);
+
+        let CheckInfoPhone = InfoInput(InfoPhone);
+
+        let CheckInfoDeliver=  InfoInput(Deliver_country+Deliver_city+Deliver_location+Deliver_detail)
+       
+        let CheckInfoStoreInfo = InfoInput(Store_name+Store_city+Store_region+Store_Street)
+        
+        
+
+        //收件人資料內容
+        let CheckInfo_content = CheckInfoName+CheckInfoPhone+CheckInfoDeliver+CheckInfoStoreInfo;
+
+
+
+        console.log(CheckInfo_content);
+
+        CheckInfo.html(CheckInfo_content)
+
+        // $('.checkout_info').fadeOut(100);
+        
+        
+
+    })
+
+
+
+
     //海鮮魚箱物流方式
     let Fishbox_deliver = $('#All_Fishbox_deliver')
+
 
     Fishbox_deliver.change(function(){
 
@@ -767,6 +870,9 @@ $(document).ready(function () {
         
 
     })
+
+
+
 
 
 

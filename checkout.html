@@ -386,51 +386,60 @@
                                     
                                     <div class="checkout_info_content" id="Seafood_info_check">
 
+                                        <!-- 收件人姓名、電話 -->
                                         <div class="checkout_info_list checkout_info_name">
                                             <h3>收貨人資料</h3>
-                                            <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
-                                            <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
+                                            <input type="text" name="info_name" id="Seafoodinfo_name" placeholder="取貨人姓名">
+                                            <input type="text" name="info_phone" id="Seafoodinfo_phone" placeholder="取貨人電話">
                                         </div>
 
+                                        <!-- 送貨地址 -->
                                         <div class="checkout_info_list .select_deliver" id="seafood_deliver">
                                             <h3>送貨地址</h3>
 
                                             <div class="info_address_warp">
-                                                <select>
-                                                    <option>台灣本島</option>
-                                                    <option>海外</option>
+                                                <select name="ALL_country" id="seafoodlocation">
+                                                    <option value="" name="country[]">地區</option>
+                                                    <option value="台灣本島" name="country[]">台灣本島</option>
+                                                    <option value="海外"  name="country[]">海外</option>
                                                 </select>
-                                                <select>
-                                                    <option>台北市</option>
-                                                    <option>高雄市</option>
+                                                <select name="All_city">
+                                                    <option value="" name="city[]">縣市</option>
+                                                    <option value="台北市" name="city[]">台北市</option>
+                                                    <option value="高雄市"  name="city[]">高雄市</option>
                                                 </select>
-                                                <select>
-                                                    <option>大安區</option>
-                                                    <option>內湖區</option>
+                                                <select name="All_location">
+                                                    <option value="" name="location[]">鄉鎮市區</option>
+                                                    <option value="大安區" name="location[]">大安區</option>
+                                                    <option value="內湖區" name="location[]">內湖區</option>
                                                 </select>
 
                                             </div>
                                             
 
-                                            <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
+                                            <input type="text" name="info_address" id="Seafoodinfo_address" placeholder="詳細地址">
                                         </div>
 
+                                        <!-- 選擇超商門市 -->
                                         <div class="checkout_info_list .select_store" id="seafood_store">
                                             <h3>選擇超商門市</h3>
 
                                             <div class="info_address_warp">
-                                                <select>
-                                                    <option>縣市</option>
+                                                <select name="All_StoreCity">
+                                                    <option value="" name="StoreCity[]">縣市</option>
+                                                    <option value="台北市"  name="StoreCity[]">台北市</option>
                                                 
                                                 </select>
-                                                <select>
-                                                    <option>鄉鎮市區</option>
+                                                <select name="All_StoreRegion">
+                                                    <option value=""  name="StoreRegion[]">鄉鎮市區</option>
+                                                    <option value="大安區"   name="StoreRegion[]">大安區</option>
                                                 
-                                            </select>
-                                                <select>
-                                                    <option>街道</option>
+                                                </select>
+                                                <select name="All_StoreStreet">
+                                                    <option value="" name="StoreLocation[]">街道</option>
+                                                    <option value="忠孝東路"name="StoreLocation[]">忠孝東路</option>
                                                 
-                                            </select>
+                                                </select>
 
                                             </div>
                                             
@@ -446,7 +455,7 @@
                                 
 
                                     <div class="check_info_bottom">
-                                        <button class="info_confirm">確認</button>
+                                        <button class="info_confirm" id="checkSeafoodInfo">確認</button>
         
                                     </div>
 
@@ -554,87 +563,96 @@
                                 </div>
                             </div>
 
-                            <!-- 填寫資料 -->
-                            <div class="checkout_info">
-                                <div class="checkout_info_bg"></div>
-                                <div class="checkout_info_warp">
-                                    <div class="checkout_info_top">
-                                        <i class="fas fa-times info_cancel"></i>
+                           <!-- 填寫資料 -->
+                           <div class="checkout_info">
+                            <div class="checkout_info_bg"></div>
+                            <div class="checkout_info_warp">
+                                <div class="checkout_info_top">
+                                    <i class="fas fa-times info_cancel"></i>
+                                </div>
+
+                                
+                                <div class="checkout_info_content" id="Seafood_info_check">
+
+                                    <!-- 收件人姓名、電話 -->
+                                    <div class="checkout_info_list checkout_info_name">
+                                        <h3>收貨人資料</h3>
+                                        <input type="text" name="info_name" id="Seafoodinfo_name" placeholder="取貨人姓名">
+                                        <input type="text" name="info_phone" id="Seafoodinfo_phone" placeholder="取貨人電話">
                                     </div>
+
+                                    <!-- 送貨地址 -->
+                                    <div class="checkout_info_list .select_deliver" id="seafood_deliver">
+                                        <h3>送貨地址</h3>
+
+                                        <div class="info_address_warp">
+                                            <select name="ALL_country" id="seafoodlocation">
+                                                <option value="" name="country[]">地區</option>
+                                                <option value="台灣本島" name="country[]">台灣本島</option>
+                                                <option value="海外"  name="country[]">海外</option>
+                                            </select>
+                                            <select name="All_city">
+                                                <option value="" name="city[]">縣市</option>
+                                                <option value="台北市" name="city[]">台北市</option>
+                                                <option value="高雄市"  name="city[]">高雄市</option>
+                                            </select>
+                                            <select name="All_location">
+                                                <option value=" " name="location[]">鄉鎮市區</option>
+                                                <option value="大安區" name="location[]">大安區</option>
+                                                <option value="內湖區" name="location[]">內湖區</option>
+                                            </select>
+
+                                        </div>
+                                        
+
+                                        <input type="text" name="info_address" id="Seafoodinfo_address" placeholder="詳細地址">
+                                    </div>
+
+                                    <!-- 選擇超商門市 -->
+                                    <div class="checkout_info_list .select_store" id="seafood_store">
+                                        <h3>選擇超商門市</h3>
+
+                                        <div class="info_address_warp">
+                                            <select name="All_StoreCity">
+                                                <option value="" name="StoreCity[]">縣市</option>
+                                                <option value="台北市"  name="StoreCity[]">台北市</option>
+                                            
+                                            </select>
+                                            <select name="All_StoreRegion">
+                                                <option value=" "  name="StoreRegion[]">鄉鎮市區</option>
+                                                <option value="大安區"   name="StoreRegion[]">大安區</option>
+                                            
+                                            </select>
+                                            <select name="All_StoreStreet">
+                                                <option value="" name="StoreLocation[]">街道</option>
+                                                <option value="忠孝東路"name="StoreLocation[]">忠孝東路</option>
+                                            
+                                            </select>
+
+                                        </div>
+                                        
+
+                                        <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
+                                    </div>
+                                    
 
                                     
-                                    <div class="checkout_info_content" id="Fishbox_info_check">
-
-                                        <div class="checkout_info_list checkout_info_name">
-                                            <h3>收貨人資料</h3>
-                                            <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
-                                            <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
-                                        </div>
-
-                                        <div class="checkout_info_list .select_deliver" id="fishbox_deliver">
-                                            <h3>送貨地址</h3>
-
-                                            <div class="info_address_warp">
-                                                <select>
-                                                    <option>台灣本島</option>
-                                                    <option>海外</option>
-                                                </select>
-                                                <select>
-                                                    <option>台北市</option>
-                                                    <option>高雄市</option>
-                                                </select>
-                                                <select>
-                                                    <option>大安區</option>
-                                                    <option>內湖區</option>
-                                                </select>
-
-                                            </div>
-                                            
-
-                                            <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
-                                        </div>
-
-                                        <div class="checkout_info_list .select_store" id="fishbox_store">
-                                            <h3>選擇超商門市</h3>
-
-                                            <div class="info_address_warp">
-                                                <select>
-                                                    <option>縣市</option>
-                                                
-                                                </select>
-                                                <select>
-                                                    <option>鄉鎮市區</option>
-                                                
-                                            </select>
-                                                <select>
-                                                    <option>街道</option>
-                                                
-                                            </select>
-
-                                            </div>
-                                            
-
-                                            <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
-                                        </div>
-                                        
-
-                                        
-
-                                    </div>
-        
-                                
-
-                                    <div class="check_info_bottom">
-                                        <button class="info_confirm">確認</button>
-        
-                                    </div>
 
                                 </div>
-                        
+    
+                            
 
-                                
+                                <div class="check_info_bottom">
+                                    <button class="info_confirm" id="checkSeafoodInfo">確認</button>
+    
+                                </div>
 
-                            </div> 
+                            </div>
+                    
+
+                            
+
+                           </div> 
 
 
 
@@ -749,86 +767,95 @@
                             </div>
 
                             <!-- 填寫資料 -->
-                            <div class="checkout_info">
-                                <div class="checkout_info_bg"></div>
-                                <div class="checkout_info_warp">
-                                    <div class="checkout_info_top">
-                                        <i class="fas fa-times info_cancel"></i>
+                           <div class="checkout_info">
+                            <div class="checkout_info_bg"></div>
+                            <div class="checkout_info_warp">
+                                <div class="checkout_info_top">
+                                    <i class="fas fa-times info_cancel"></i>
+                                </div>
+
+                                
+                                <div class="checkout_info_content" id="Seafood_info_check">
+
+                                    <!-- 收件人姓名、電話 -->
+                                    <div class="checkout_info_list checkout_info_name">
+                                        <h3>收貨人資料</h3>
+                                        <input type="text" name="info_name" id="Seafoodinfo_name" placeholder="取貨人姓名">
+                                        <input type="text" name="info_phone" id="Seafoodinfo_phone" placeholder="取貨人電話">
                                     </div>
+
+                                    <!-- 送貨地址 -->
+                                    <div class="checkout_info_list .select_deliver" id="seafood_deliver">
+                                        <h3>送貨地址</h3>
+
+                                        <div class="info_address_warp">
+                                            <select name="ALL_country" id="seafoodlocation">
+                                                <option value="" name="country[]">地區</option>
+                                                <option value="台灣本島" name="country[]">台灣本島</option>
+                                                <option value="海外"  name="country[]">海外</option>
+                                            </select>
+                                            <select name="All_city">
+                                                <option value="" name="city[]">縣市</option>
+                                                <option value="台北市" name="city[]">台北市</option>
+                                                <option value="高雄市"  name="city[]">高雄市</option>
+                                            </select>
+                                            <select name="All_location">
+                                                <option value="" name="location[]">鄉鎮市區</option>
+                                                <option value="大安區" name="location[]">大安區</option>
+                                                <option value="內湖區" name="location[]">內湖區</option>
+                                            </select>
+
+                                        </div>
+                                        
+
+                                        <input type="text" name="info_address" id="Seafoodinfo_address" placeholder="詳細地址">
+                                    </div>
+
+                                    <!-- 選擇超商門市 -->
+                                    <div class="checkout_info_list .select_store" id="seafood_store">
+                                        <h3>選擇超商門市</h3>
+
+                                        <div class="info_address_warp">
+                                            <select name="All_StoreCity">
+                                                <option value=" " name="StoreCity[]">縣市</option>
+                                                <option value="台北市"  name="StoreCity[]">台北市</option>
+                                            
+                                            </select>
+                                            <select name="All_StoreRegion">
+                                                <option value=" "  name="StoreRegion[]">鄉鎮市區</option>
+                                                <option value="大安區"   name="StoreRegion[]">大安區</option>
+                                            
+                                            </select>
+                                            <select name="All_StoreStreet">
+                                                <option value=" " name="StoreLocation[]">街道</option>
+                                                <option value="忠孝東路"name="StoreLocation[]">忠孝東路</option>
+                                            
+                                            </select>
+
+                                        </div>
+                                        
+
+                                        <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
+                                    </div>
+                                    
 
                                     
-                                    <div class="checkout_info_content" id="Tool_info_check">
-
-                                        <div class="checkout_info_list checkout_info_name">
-                                            <h3>收貨人資料</h3>
-                                            <input type="text" name="info_name" id="info_name" placeholder="取貨人姓名">
-                                            <input type="text" name="info_phone" id="info_phone" placeholder="取貨人電話">
-                                        </div>
-
-                                        <div class="checkout_info_list .select_deliver" id="tool_deliver">
-                                            <h3>送貨地址</h3>
-
-                                            <div class="info_address_warp">
-                                                <select>
-                                                    <option>台灣本島</option>
-                                                    <option>海外</option>
-                                                </select>
-                                                <select>
-                                                    <option>台北市</option>
-                                                    <option>高雄市</option>
-                                                </select>
-                                                <select>
-                                                    <option>大安區</option>
-                                                    <option>內湖區</option>
-                                                </select>
-
-                                            </div>
-                                            
-
-                                            <input type="text" name="info_address" id="info_address" placeholder="詳細地址">
-                                        </div>
-
-                                        <div class="checkout_info_list .select_store" id="tool_store">
-                                            <h3>選擇超商門市</h3>
-
-                                            <div class="info_address_warp">
-                                                <select>
-                                                    <option>縣市</option>
-                                                
-                                                </select>
-                                                <select>
-                                                    <option>鄉鎮市區</option>
-                                                
-                                            </select>
-                                                <select>
-                                                    <option>街道</option>
-                                                
-                                            </select>
-
-                                            </div>
-                                            
-
-                                            <input type="text" name="info_store_address" id="info_store_address" placeholder="選擇超商門市">
-                                        </div>
-                                        
-
-                                        
-
-                                    </div>
-        
-                                
-
-                                    <div class="check_info_bottom">
-                                        <button class="info_confirm">確認</button>
-        
-                                    </div>
 
                                 </div>
-                        
+    
+                            
 
-                                
+                                <div class="check_info_bottom">
+                                    <button class="info_confirm" id="checkSeafoodInfo">確認</button>
+    
+                                </div>
 
-                            </div> 
+                            </div>
+                    
+
+                            
+
+                           </div> 
 
 
                             
