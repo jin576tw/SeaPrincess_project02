@@ -1528,7 +1528,7 @@
 
 }
 
-/* #seafood_store{
+#seafood_store{
     display: none;
 }
 #fishbox_store{
@@ -1536,7 +1536,7 @@
 }
 #tool_store{
     display: none;
-} */
+}
 
 
 @media (max-width: 1025px) {
