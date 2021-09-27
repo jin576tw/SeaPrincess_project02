@@ -425,33 +425,10 @@ $(document).ready(function () {
 
                                let fishboxCooktype =["清蒸","煮湯","乾煎(紅燒)","鹽烤"] 
 
-                               let boxCookBtn = ``
-
-                               
-
-                               for(let k = 0 ; k < fishboxCooktype.length  ;k++){
-
-                                for(let q = 0 ; q < cookieArr[i].Product_cook.length  ;k++){
-
-
-                                    if(fishboxCooktype[k]==cookieArr[i].Product_cook[q]){
-
-                                        console.log(fishboxCooktype[k]);
-
-                                    }
-
-                                }
-
-
-
-                               }
-
                                
                         
                               
                               
-                               
-                             
                             
                                 // 魚選修改選單
                                 let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
