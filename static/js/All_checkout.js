@@ -361,11 +361,99 @@ $(document).ready(function () {
                                 </div>`
 
 
-                                
-                                
-                                
 
                                 // 修改魚箱選項
+
+                                // 判斷當前選擇按紐
+                                // 魚箱價錢
+                                let fishboxPrice = [2000,3000,4000,5000]
+                                
+                                boxPriceBtn = ``
+
+                                
+                                for(let k = 0 ; k < fishboxPrice.length  ;k++){ 
+
+                                    let boxPriceStr =``;
+
+                                    if(cookieArr[i].Product_Price == fishboxPrice[k]){
+                             
+                                        boxPriceStr =`<div class="fishbox_btn">
+                                        <label><input type="radio" name="fishbox_pice" value="${fishboxPrice[k]}" required checked>${fishboxPrice[k]}</label>
+                                        </div>`
+
+                                    }else{
+
+                                        boxPriceStr =`<div class="fishbox_btn">
+                                        <label><input type="radio" name="fishbox_pice" value="${fishboxPrice[k]}" required >${fishboxPrice[k]}</label>
+                                        </div>`
+
+
+                                    }
+
+                                    boxPriceBtn+=  boxPriceStr;
+
+
+                                }
+
+                                // 魚箱食用人數
+                                let fishboxQty = ["1-2人","3-4人","5-6人","6人以上"]
+
+                                let boxQtyBtn = ``
+
+                                for(let k = 0 ; k < fishboxQty.length  ;k++){
+
+                                    let boxQtyStr =``
+
+                                    if(cookieArr[i].Product_qty == fishboxQty[k]){
+
+
+                                        boxQtyStr = ` <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_qty" value="${fishboxQty[k]}" required checked>${fishboxQty[k]}</label>
+                                                    </div>`
+
+                                    }else{
+
+                                        boxQtyStr = ` <div class="fishbox_btn ">
+                                                        <label><input type="radio" name="fishbox_qty" value="${fishboxQty[k]}" required>${fishboxQty[k]}</label>
+                                                    </div>`
+
+                                    }
+
+                                    boxQtyBtn+=boxQtyStr;
+
+                                }
+
+                               let fishboxCooktype =["清蒸","煮湯","乾煎(紅燒)","鹽烤"] 
+
+                               let boxCookBtn = ``
+
+                               
+
+                               for(let k = 0 ; k < fishboxCooktype.length  ;k++){
+
+                                for(let q = 0 ; q < cookieArr[i].Product_cook.length  ;k++){
+
+
+                                    if(fishboxCooktype[k]==cookieArr[i].Product_cook[q]){
+
+                                        console.log(fishboxCooktype[k]);
+
+                                    }
+
+                                }
+
+
+
+                               }
+
+                               
+                        
+                              
+                              
+                               
+                             
+                            
+                                // 魚選修改選單
                                 let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
                                     <div class="checkout_info_bg"></div>
                                     <div class="checkout_info_warp">
@@ -373,53 +461,17 @@ $(document).ready(function () {
                                             <i class="fas fa-times info_cancel"></i>
                                         </div>
 
-                                        <!-- 修改魚箱選項 -->
+                            
                                         <div class="checkout_info_content">
                                             <div class="checkout_info_list">
                                                 <h3>客製組合預算<span>*</span></h3>
-                                                <div class="fishbox_select_wrap fishbox_pice_select">
-                                
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_pice" value="2000" required >2000</label>
-                                                    </div>
-                                
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_pice" value="3000" required>3000</label>
-                                                    </div>
-                                
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_pice" value="4000" required>4000</label>
-                                                    </div>
-                                
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_pice" value="5000" required>5000</label>
-                                                    </div>
-                                                </div>
+                                                <div class="fishbox_select_wrap fishbox_pice_select">`+ boxPriceBtn+`</div>
                                 
                                             </div>
                                 
                                             <div class="checkout_info_list">
                                                 <h3>食用人數<span>*</span></h3>
-                                                <div class="fishbox_select_wrap fishbox_qty_select">
-                                
-                                        
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="1-2人" required>1-2人</label>
-                                                    </div>
-                                
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="3-4人" required>3-4人</label>
-                                                    </div>
-                                
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="5-6人" required>5-6人</label>
-                                                    </div>
-                                
-                                                    <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="6人以上" >6人以上</label>
-                                                    </div>
-                                                    
-                                                </div>
+                                                <div class="fishbox_select_wrap fishbox_qty_select">`+boxQtyBtn+`</div>
                                             </div>
                                 
                                             <div class="checkout_info_list">
@@ -433,11 +485,11 @@ $(document).ready(function () {
                                                     </div>
                                                     <div class="fishbox_btn">
                                                         
-                                                        <label><input type="checkbox" name="fishbox_cook[]" value="煮湯">煮湯</label> 
+                                                        <label><input type="checkbox" name="fishbox_cook[]" value="煮湯" >煮湯</label> 
                                 
                                                     </div>
                                                     <div class="fishbox_btn">
-                                                        <label><input type="checkbox" name="fishbox_cook[]" value="乾煎(紅燒)">乾煎(紅燒)</label> 
+                                                        <label><input type="checkbox" name="fishbox_cook[]" value="乾煎(紅燒)" >乾煎(紅燒)</label> 
                                                     </div>
                                 
                                                     <div class="fishbox_btn">
