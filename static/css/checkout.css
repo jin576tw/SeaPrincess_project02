@@ -1528,15 +1528,10 @@
 
 }
 
-#seafood_store{
-    display: none;
+.select_store{
+   display: none;
 }
-#fishbox_store{
-    display: none;
-}
-#tool_store{
-    display: none;
-}
+
 
 
 @media (max-width: 1025px) {

@@ -614,109 +614,92 @@ $(document).ready(function () {
     })
 
 
-        
-
-        
-    
-
-    //生鮮物流方式
-    let Seafood_deliver = $('#All_Seafood_deliver')
-
-        Seafood_deliver.change(function(){
+     // 填入/修改資料
+     CheckoutWarp.on("click",'.info_confirm',function(){
 
 
-        let deliver_method =  $(this).children('option:selected')
-
-
-        let deliver= $('#seafood_deliver')//填入收件地址
-        let store =$('#seafood_store')//填入超商地址
-
-        // 物流方式選擇
-        if(deliver_method.val() == '0'){
-
-            $('#Seafood_fee').hide()
-            $('#Seafood_arrive').hide()
-
-            deliver.hide()
-            store.hide()
-            
-
-        }else if(deliver_method.val() == '120'){
-
-            $('#Seafood_fee').show()
-            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
-
-            $('#Seafood_arrive').show()
-
-
-            deliver.show()
-            store.hide()
-            
-
-        }else if(deliver_method.val() == '60'){
-
-            $('#Seafood_fee').show()
-            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
-
-            $('#Seafood_arrive').hide()
-
-            deliver.hide()
-            store.show()
-        
-
-
-        }
-        
-
-    })
-
-
-    // 填入/修改資料
-    CheckoutWarp.on("click",'.info_confirm',function(){
+        let isPass = true;
 
         // 收件人姓名
         let InfoName =$(this).parent().prev().children('.checkout_info_name').children('input[name="info_name"]').val()
+
+        if(InfoName == ''){
+            alert('請填入收件姓名')
+            isPass = false
+        }else{
+            isPass = true
+
+        }
 
         // 收件人聯絡電話
         let InfoPhone =$(this).parent().prev().children('.checkout_info_name').children('input[name="info_phone"]').val()
 
 
+        if(InfoPhone == ''){
+            alert('請填入聯絡號碼')
+            isPass = false
+        }else{
+            isPass = true
+
+        }
+
         // 送貨地址
-        let Deliver_address = $(this).parent().prev().children().next().children('.info_address_warp')
+        let Deliver_address = $(this).parent().prev().children('.select_deliver').children('.info_address_warp')
 
         //送貨國家
         let Deliver_country = Deliver_address.children('select[name="ALL_country"]').children('option:selected').val()
 
+       
+        if(Deliver_country == ''){
+            alert('請填入完整資料')
+            isPass = false
+        }else{
+            isPass = true
+
+        }
+
          //送貨城市
         let Deliver_city = Deliver_address.children('select[name="All_city"]').children('option:selected').val()
 
+        if(Deliver_city == ''){
+            alert('請填入完整資料')
+            isPass = false
+        }else{
+            isPass = true
+
+        }
+        
+
          //送貨區域
         let Deliver_location = Deliver_address.children('select[name="All_location"]').children('option:selected').val()
+
+        
+        if(Deliver_location == ''){
+            alert('請填入完整資料')
+            isPass = false
+        }else{
+            isPass = true
+
+        }
 
         // 送貨詳細地址
         let Deliver_detail = $(this).parent().prev().children().next().children('input[name="info_address"]').val()
 
 
+        if(Deliver_detail == ''){
+            alert('請填入完整資料')
+            isPass = false
+        }else{
+            isPass = true
 
-        // 選擇超商門市
-        let Store_address = $(this).parent().prev().children().next().next().children('.info_address_warp')
-  
+        }
+       
+         // 收件人資料
+         let CheckInfo = $(this).parent().parent().parent().prev().children('.cargo_info_text').children('.address_Infotext')
+        
+        
 
-        // 選擇超商門市城市
-        let Store_city = Store_address.children('select[name="All_StoreCity"]').children('option:selected').val()
-
-        // 選擇超商門市區域
-        let Store_region = Store_address.children('select[name="All_StoreRegion"]').children('option:selected').val()
-
-        // 選擇超商門市街道
-        let Store_Street = Store_address.children('select[name="All_StoreStreet"]').children('option:selected').val()
-
-
-        // 選擇超商門市名稱
-        let Store_name = $(this).parent().prev().children().next().children('input[name="info_store_address"]').val()
-     
-
-        function InfoInput(val){
+        function InfoOutput(val){
 
             if(val == ''){
 
@@ -731,36 +714,107 @@ $(document).ready(function () {
             }
         }
 
-        // 收件人資料
-        let CheckInfo = $(this).parent().parent().parent().prev().children('.cargo_info_text').children('.address_Infotext')
+        if(isPass){
+
+            // 載入修改資料
+            let CheckInfoName =  InfoOutput(InfoName);
+
+            let CheckInfoPhone = InfoOutput(InfoPhone);
+
+           
+            let CheckAddress = InfoOutput(Deliver_city+Deliver_location+Deliver_detail)
 
 
-        // console.log(Deliver_city);
+            let CheckInfo_content = CheckInfoName +CheckInfoPhone+InfoOutput(Deliver_country)+CheckAddress 
 
-        let CheckInfoName =  InfoInput(InfoName);
+            CheckInfo.html(CheckInfo_content)
 
-        let CheckInfoPhone = InfoInput(InfoPhone);
 
-        let CheckInfoDeliver=  InfoInput(Deliver_country+Deliver_city+Deliver_location+Deliver_detail)
-       
-        let CheckInfoStoreInfo = InfoInput(Store_name+Store_city+Store_region+Store_Street)
+            $('.checkout_info').fadeOut(100);
+
+
+        }
+
+        // // 選擇超商門市
+        // let Store_address = $(this).parent().prev().children().next().next().children('.info_address_warp')
+  
+
+        // // 選擇超商門市城市
+        // let Store_city = Store_address.children('select[name="All_StoreCity"]').children('option:selected').val()
+
+        // // 選擇超商門市區域
+        // let Store_region = Store_address.children('select[name="All_StoreRegion"]').children('option:selected').val()
+
+        // // 選擇超商門市街道
+        // let Store_Street = Store_address.children('select[name="All_StoreStreet"]').children('option:selected').val()
+
+
+        // // 選擇超商門市名稱
+        // let Store_name = $(this).parent().prev().children().next().children('input[name="info_store_address"]').val()
+  
         
         
+    })
 
-        //收件人資料內容
-        let CheckInfo_content = CheckInfoName+CheckInfoPhone+CheckInfoDeliver+CheckInfoStoreInfo;
-
-
-
-        console.log(CheckInfo_content);
-
-        CheckInfo.html(CheckInfo_content)
-
-        // $('.checkout_info').fadeOut(100);
         
+    
+
+    //生鮮物流方式
+    let Seafood_deliver = $('#All_Seafood_deliver')
+
+        Seafood_deliver.change(function(){
+
+
+        let deliver_method =  $(this).children('option:selected')
+
+
+        // let deliver= $('#seafood_deliver')//填入收件地址
+        // let store =$('#seafood_store')//填入超商地址
+
+        // 物流方式選擇
+        // 自取
+        // if(deliver_method.val() == '0'){
+
+        //     $('#Seafood_fee').hide()
+        //     $('#Seafood_arrive').hide()
+
+        //     deliver.hide()
+        //     store.hide()
+            
+
+        // }
+         
+        if(deliver_method.val() == '120'){
+
+            // $('#Seafood_fee').show()
+            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Seafood_arrive').show()
+
+
+            // deliver.show()
+            // store.hide()
+            
+
+        }else if(deliver_method.val() == '60'){
+
+            // $('#Seafood_fee').show()
+            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Seafood_arrive').hide()
+
+            // deliver.hide()
+            // store.show()
+        
+
+
+        }
         
 
     })
+
+
+   
 
 
 
@@ -775,41 +829,45 @@ $(document).ready(function () {
         let deliver_method =  $(this).children('option:selected')
 
 
-        let deliver= $('#fishbox_deliver')//填入收件地址
-        let store =$('#fishbox_store')//填入超商地址
+        // let deliver= $('#fishbox_deliver')//填入收件地址
+        // let store =$('#fishbox_store')//填入超商地址
 
         // 物流方式選擇
-        if(deliver_method.val() == '0'){
+        // 自取
+        // if(deliver_method.val() == '0'){
 
-            $('#Fishbox_fee').hide()
-            $('#Fishbox_arrive').hide()
+        //     $('#Fishbox_fee').hide()
+        //     $('#Fishbox_arrive').hide()
 
            
-            deliver.hide()
-            store.hide()
+        //     deliver.hide()
+        //     store.hide()
             
 
-        }else if(deliver_method.val() == '120'){
+        // }
+        //冷凍宅配
+        if(deliver_method.val() == '120'){
 
-            $('#Fishbox_fee').show()
+            // $('#Fishbox_fee').show()
             $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
 
             $('#Fishbox_arrive').show()
 
 
-            deliver.show()
-            store.hide()
+            // deliver.show()
+            // store.hide()
             
 
+        //超商宅配
         }else if(deliver_method.val() == '60'){
 
-            $('#Fishbox_fee').show()
+            // $('#Fishbox_fee').show()
             $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
 
             $('#Fishbox_arrive').hide()
 
-            deliver.hide()
-            store.show()
+            // deliver.hide()
+            // store.show()
         
 
 
@@ -827,42 +885,44 @@ $(document).ready(function () {
 
         let deliver_method =  $(this).children('option:selected')
 
-
-        let deliver= $('#tool_deliver')//填入收件地址
-        let store =$('#tool_store')//填入超商地址
+        // let deliver= $('#tool_deliver')//填入收件地址
+        // let store =$('#tool_store')//填入超商地址
 
         // 物流方式選擇
-        if(deliver_method.val() == '0'){
+        //自取
+        // if(deliver_method.val() == '0'){
 
-            $('#Tool_fee').hide()
+        //     $('#Tool_fee').hide()
           
 
            
-            deliver.hide()
-            store.hide()
+        //     deliver.hide()
+        //     store.hide()
             
 
-        }else if(deliver_method.val() == '120'){
+        // } 
 
-            $('#Tool_fee').show()
+        //冷凍宅配
+        if(deliver_method.val() == '120'){
+
+            // $('#Tool_fee').show()
             $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
 
-           
-
-
-            deliver.show()
-            store.hide()
+        
+            // deliver.show()
+            // store.hide()
             
 
+        //超商宅配
         }else if(deliver_method.val() == '60'){
 
-            $('#Tool_fee').show()
+            // $('#Tool_fee').show()
             $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
 
-            
+        
 
-            deliver.hide()
-            store.show()
+            // deliver.hide()
+            // store.show()
         
 
 
