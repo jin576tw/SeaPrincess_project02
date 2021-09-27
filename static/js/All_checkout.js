@@ -425,10 +425,8 @@ $(document).ready(function () {
 
                                let fishboxCooktype =["清蒸","煮湯","乾煎(紅燒)","鹽烤"] 
 
-                               
-                        
-                              
-                              
+                                console.log(fishboxCooktype);
+                    
                             
                                 // 魚選修改選單
                                 let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
