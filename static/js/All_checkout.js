@@ -360,6 +360,11 @@ $(document).ready(function () {
                                     </div>
                                 </div>`
 
+
+                                
+                                
+                                
+
                                 // 修改魚箱選項
                                 let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
                                     <div class="checkout_info_bg"></div>
@@ -375,7 +380,7 @@ $(document).ready(function () {
                                                 <div class="fishbox_select_wrap fishbox_pice_select">
                                 
                                                     <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_pice" value="2000" required>2000</label>
+                                                        <label><input type="radio" name="fishbox_pice" value="2000" required >2000</label>
                                                     </div>
                                 
                                                     <div class="fishbox_btn ">
@@ -468,7 +473,6 @@ $(document).ready(function () {
                                 </div>`
                                 
                                
-
                                 $('.cagro_fishboxes_warp').append(FishboxInfo+Editfishbox)
                               
                             }
@@ -626,9 +630,6 @@ $(document).ready(function () {
         if(InfoName == ''){
             alert('請填入收件姓名')
             isPass = false
-        }else{
-            isPass = true
-
         }
 
         // 收件人聯絡電話
@@ -638,25 +639,11 @@ $(document).ready(function () {
         if(InfoPhone == ''){
             alert('請填入聯絡號碼')
             isPass = false
-        }else{
-            isPass = true
-
         }
 
         // 送貨地址
         let Deliver_address = $(this).parent().prev().children('.select_deliver').children('.info_address_warp')
 
-        //送貨國家
-        let Deliver_country = Deliver_address.children('select[name="ALL_country"]').children('option:selected').val()
-
-       
-        if(Deliver_country == ''){
-            alert('請填入完整資料')
-            isPass = false
-        }else{
-            isPass = true
-
-        }
 
          //送貨城市
         let Deliver_city = Deliver_address.children('select[name="All_city"]').children('option:selected').val()
@@ -664,9 +651,6 @@ $(document).ready(function () {
         if(Deliver_city == ''){
             alert('請填入完整資料')
             isPass = false
-        }else{
-            isPass = true
-
         }
         
 
@@ -677,9 +661,6 @@ $(document).ready(function () {
         if(Deliver_location == ''){
             alert('請填入完整資料')
             isPass = false
-        }else{
-            isPass = true
-
         }
 
         // 送貨詳細地址
@@ -689,16 +670,14 @@ $(document).ready(function () {
         if(Deliver_detail == ''){
             alert('請填入完整資料')
             isPass = false
-        }else{
-            isPass = true
-
+            
         }
        
          // 收件人資料
          let CheckInfo = $(this).parent().parent().parent().prev().children('.cargo_info_text').children('.address_Infotext')
         
-        
 
+        //輸出成標籤
         function InfoOutput(val){
 
             if(val == ''){
@@ -714,6 +693,8 @@ $(document).ready(function () {
             }
         }
 
+
+        
         if(isPass){
 
             // 載入修改資料
@@ -725,7 +706,7 @@ $(document).ready(function () {
             let CheckAddress = InfoOutput(Deliver_city+Deliver_location+Deliver_detail)
 
 
-            let CheckInfo_content = CheckInfoName +CheckInfoPhone+InfoOutput(Deliver_country)+CheckAddress 
+            let CheckInfo_content = CheckInfoName +CheckInfoPhone+CheckAddress 
 
             CheckInfo.html(CheckInfo_content)
 
@@ -734,6 +715,19 @@ $(document).ready(function () {
 
 
         }
+
+
+        // //送貨國家
+        // let Deliver_country = Deliver_address.children('select[name="ALL_country"]').children('option:selected').val()
+
+       
+        // if(Deliver_country == ''){
+        //     alert('請填入完整資料')
+        //     isPass = false
+        // }else{
+        //     isPass = true
+
+        // }
 
         // // 選擇超商門市
         // let Store_address = $(this).parent().prev().children().next().next().children('.info_address_warp')
@@ -768,6 +762,21 @@ $(document).ready(function () {
         let deliver_method =  $(this).children('option:selected')
 
 
+         // 宅配
+         if(deliver_method.val() == '120'){
+
+            // $('#Seafood_fee').show()
+            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Seafood_arrive').show()
+
+
+            // deliver.show()
+            // store.hide()
+            
+
+        }
+
         // let deliver= $('#seafood_deliver')//填入收件地址
         // let store =$('#seafood_store')//填入超商地址
 
@@ -784,40 +793,26 @@ $(document).ready(function () {
 
         // }
          
-        if(deliver_method.val() == '120'){
+       
+        // if(deliver_method.val() == '60'){
 
-            // $('#Seafood_fee').show()
-            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
+        //     // $('#Seafood_fee').show()
+        //     $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
 
-            $('#Seafood_arrive').show()
+        //     $('#Seafood_arrive').hide()
 
-
-            // deliver.show()
-            // store.hide()
-            
-
-        }else if(deliver_method.val() == '60'){
-
-            // $('#Seafood_fee').show()
-            $('#Seafood_fee p:nth-of-type(2)').text(deliver_method.val())
-
-            $('#Seafood_arrive').hide()
-
-            // deliver.hide()
-            // store.show()
+        //     // deliver.hide()
+        //     // store.show()
         
 
 
-        }
+        // }
         
 
     })
 
 
    
-
-
-
 
     //海鮮魚箱物流方式
     let Fishbox_deliver = $('#All_Fishbox_deliver')
@@ -827,6 +822,23 @@ $(document).ready(function () {
 
 
         let deliver_method =  $(this).children('option:selected')
+
+
+        //冷凍宅配
+        if(deliver_method.val() == '120'){
+
+            // $('#Fishbox_fee').show()
+            $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            $('#Fishbox_arrive').show()
+
+
+            // deliver.show()
+            // store.hide()
+            
+
+       
+        }
 
 
         // let deliver= $('#fishbox_deliver')//填入收件地址
@@ -845,33 +857,21 @@ $(document).ready(function () {
             
 
         // }
-        //冷凍宅配
-        if(deliver_method.val() == '120'){
+        
+        //  //超商宅配
+        // if(deliver_method.val() == '60'){
 
-            // $('#Fishbox_fee').show()
-            $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
+        //     // $('#Fishbox_fee').show()
+        //     $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
 
-            $('#Fishbox_arrive').show()
+        //     $('#Fishbox_arrive').hide()
 
-
-            // deliver.show()
-            // store.hide()
-            
-
-        //超商宅配
-        }else if(deliver_method.val() == '60'){
-
-            // $('#Fishbox_fee').show()
-            $('#Fishbox_fee p:nth-of-type(2)').text(deliver_method.val())
-
-            $('#Fishbox_arrive').hide()
-
-            // deliver.hide()
-            // store.show()
+        //     // deliver.hide()
+        //     // store.show()
         
 
 
-        }
+        // }
         
 
     })
@@ -885,6 +885,17 @@ $(document).ready(function () {
 
         let deliver_method =  $(this).children('option:selected')
 
+        //冷凍宅配
+        if(deliver_method.val() == '120'){
+
+            // $('#Tool_fee').show()
+            $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
+
+            // deliver.show()
+            // store.hide()
+            
+        } 
+
         // let deliver= $('#tool_deliver')//填入收件地址
         // let store =$('#tool_store')//填入超商地址
 
@@ -893,8 +904,6 @@ $(document).ready(function () {
         // if(deliver_method.val() == '0'){
 
         //     $('#Tool_fee').hide()
-          
-
            
         //     deliver.hide()
         //     store.hide()
@@ -902,31 +911,21 @@ $(document).ready(function () {
 
         // } 
 
-        //冷凍宅配
-        if(deliver_method.val() == '120'){
-
-            // $('#Tool_fee').show()
-            $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
-
         
-            // deliver.show()
-            // store.hide()
-            
-
         //超商宅配
-        }else if(deliver_method.val() == '60'){
+        // if(deliver_method.val() == '60'){
 
-            // $('#Tool_fee').show()
-            $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
+        //     // $('#Tool_fee').show()
+        //     $('#Tool_fee p:nth-of-type(2)').text(deliver_method.val())
 
         
 
-            // deliver.hide()
-            // store.show()
+        //     // deliver.hide()
+        //     // store.show()
         
 
 
-        }
+        // }
         
 
     })
