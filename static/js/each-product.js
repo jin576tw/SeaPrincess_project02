@@ -1,4 +1,5 @@
 'use strict'
+
 $(document).ready(function () {
 
     let ItemURL = location.href.substr(-10,1) == "I";
@@ -279,12 +280,24 @@ $(document).ready(function () {
                     
 
                     // 商品庫存
+                    let Productleft = ``
 
-                    let Productleft = `<div class="product_left">
+                    //小於10顯示
+                    if(d[i].left <= 10){
+
+                        Productleft = `<div class="product_left">
                                             <p>${d[i].left}</p>
                                         </div>`
+
+
+                    }else{
+
+                        Productleft =``
+
+                    }
                    
-                    $('.product_countBtn_warp').append(Productleft)
+                   
+                    $('.product_counter').append(Productleft)
 
                     if(d[i].left==0){
 
@@ -996,16 +1009,78 @@ $(document).ready(function () {
 
 
 
+    // 圖片輪播
+    let EachProductPic = $('.Each_product_pic_warp')
+    let ProductPicWarp = $('.other_product_pic_warp')
+
+    let num = 0;
+
+     //按鈕效果
+     EachProductPic.on("mousedown mouseup",".forward_btn",function(){
+
+        $(this).toggleClass('forward_btn_click').css('transition','0.3s')
+
+    })
      
 
-     
+    EachProductPic.on("click",".forward_btn",function(){
+       
+        num += 1
+
+        let pic_length =  ProductPicWarp.children().length
+       
+        if(num > pic_length -1 ){
+
+            num = 0 
+        }
+
+
+       $('.other_product_pic').eq(num).css('opacity','1').siblings('.other_product_pic').css('opacity','0.5')
+       
+       let nowPic = $('.other_product_pic').eq(num).children().attr('src')
+
+      
+       $('.main_product_pic img').attr('src',nowPic)
+
+       if ($(window).width() > 1024) {
+
+        ProductPicWarp.css('transform','translateX(-'+num*140+'px)')
+
+        
+       }
+
+       if ($(window).width() <= 1024) {
+
+        ProductPicWarp.css('transform','translateX(-'+num*105+'px)')
+
+
+       }
+        
+        
+        
+    })
+
+
+    EachProductPic.on("click",".other_product_pic",function(){
+
+        num = $(this).index();
+
+        $(this).css('opacity','1').siblings('.other_product_pic').css('opacity','0.5')
+
+        let nowPic = $(this).children('img').attr('src')
+    
+        $('.main_product_pic img').attr('src',nowPic)
+    
+    })
+
+
 
     
 
 
 
 
-
+    // 介紹選擇
     $('.label01').on({
 
         click:function(){

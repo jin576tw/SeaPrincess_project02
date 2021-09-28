@@ -2,7 +2,7 @@
 {
    "name": "真空三去深海石老魚 ( 藍豬齒魚 )",
    "price": 300,
-   "pic" : ["./static/images/seafood/s01-1.jpg","./static/images/seafood/s01-1.jpg","./static/images/seafood/s01-1.jpg","./static/images/seafood/s01-1.jpg"],
+   "pic" : ["./static/images/seafood/s01-1.jpg","./static/images/seafood/s02-1.jpg","./static/images/seafood/s03-1.jpg","./static/images/seafood/s04-1.jpg"],
    "pid" : 1,
    "type_sid": 1,
    "left":300,
