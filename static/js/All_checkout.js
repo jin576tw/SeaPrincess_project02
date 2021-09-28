@@ -1103,7 +1103,7 @@ $(document).ready(function () {
 
 
         let isPass = true
-        let discount = parseInt(Point)* 0.1
+        let discount = Math.floor(parseInt(Point)* 0.1)
         
         let number_check = 	/^[0-9]*$/;
 
@@ -1180,23 +1180,7 @@ $(document).ready(function () {
 
        
        
-            
-        
-
-
-
-
-
-        
-
-
-
-    
-
-
-
-    
-
+           
 
     // 第二步驟成功
     $('.final_checkout_btn').on({

@@ -895,7 +895,7 @@ let seafood_items_list = `
         <div class="Items_list fishbox_items_list" Product-ID="${arr.pid}" fishbox="${arr.fishbox}">
 
         <div class="Items_list_content Items_list_head">
-            <input type="checkbox" name="Fishbox_check[]" id="Fishbox_check" class="Item_check">
+            <input type="checkbox" name="Fishbox_check[]" id="Fishbox_check" class="Item_check" checked>
             <div class="Items_pic">
                 <a href="./fishbox.html">
                     <img src="${arr.Product_Pic}" alt="">

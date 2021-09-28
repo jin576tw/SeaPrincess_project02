@@ -841,7 +841,7 @@
                     CHECKTOTAL.text(newtototal_price);
                     
                     // 點數計算
-                    let getpoint = newtototal_price * 0.1
+                    let getpoint = Math.floor(newtototal_price * 0.1)
 
                     //優惠點數
                     GETPOINT.text(getpoint)
