@@ -815,7 +815,7 @@ let seafood_items_list = `
     <div class="Items_list seafood_items_list" Product-ID="${arr.pid}" food="${arr.food}">
 
         <div class="Items_list_content Items_list_head">
-            <input type="checkbox" name="Seafood_check[]" id="Seafood_check" class="Item_check">
+            <input type="checkbox" name="Seafood_check[]" id="Seafood_check" class="Item_check" checked>
             <div class="Items_pic">
                 <a href="./each-product.html?S&&pid=${PID}">
                     <img src="${arr.Product_Pic}" alt="">
@@ -969,7 +969,7 @@ let seafood_items_list = `
         <div class="Items_list tool_items_list"  Product-ID="${arr.pid}" food="${arr.food}">
 
             <div class="Items_list_content Items_list_head">
-                <input type="checkbox" name="Tool_check[]" id="Tool_check" class="Item_check">
+                <input type="checkbox" name="Tool_check[]" id="Tool_check" class="Item_check" checked>
                 <div class="Items_pic">
                     <a href="./each-product.html?I&&pid=${PID}">
                         <img src="${arr.Product_Pic}" alt="">
@@ -1059,8 +1059,11 @@ $.get("./static/JSON/Seafood.json", function (data) {
         $('.seafood_list').css('display','block');
 
         let CheckOut_Page = location.href.substr(-13,13) == 'checkout.html'
+
+     
       
         if(CheckOut_Page){
+
 
             $('.fish_items').css('display','block');
         }
