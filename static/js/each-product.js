@@ -10,6 +10,8 @@ $(document).ready(function () {
 
         $.get("./static/JSON/Item.json", function (data) {
 
+            $('.label02').hide()
+
             let d = data; 
             let ProductID = parseInt(location.href.substr(-3,3));
             let ProrductTitle = $('.product_intro_title h1');
@@ -221,6 +223,9 @@ $(document).ready(function () {
     
         // 商品資料載入
         $.get("./static/JSON/Seafood.json", function (data) {
+
+
+            $('.label03').hide()
             let d = data;
             let ProductID = parseInt(location.href.substr(-3,3));
             let ProrductTitle = $('.product_intro_title h1');
@@ -1006,6 +1011,7 @@ $(document).ready(function () {
 
             $('.IntroProduct_content_warp').fadeIn(500)
             $('.Product_intro_team').fadeOut(1)
+            $('.Brand_Story').fadeOut(1)
             
         }
 
@@ -1024,6 +1030,7 @@ $(document).ready(function () {
             $(this).siblings().css('border','solid 1px transparent')
             $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent');
 
+            $('.Brand_Story').fadeOut(1)
             $('.IntroProduct_content_warp').fadeOut(1)
             $('.Product_intro_team').fadeIn(500)
 
@@ -1032,6 +1039,29 @@ $(document).ready(function () {
     })
 
     $('.label03').on({
+
+        click:function(){
+
+          
+            $(this).css('border','solid 1px rgba(23, 34, 61, 0.3)').css('border-bottom','1px solid white')
+            $(this).children('h1').css('border-bottom',' 2px solid #abd5e3').css('color','rgba(23, 34, 61, 0.8)')
+
+            $(this).siblings().css('border','solid 1px transparent')
+            $(this).siblings().children('h1').css('color','#aaaaaa').css('border-bottom','transparent')
+
+
+
+            $('.Brand_Story').fadeIn(500)
+            $('.IntroProduct_content_warp').fadeOut(1)
+            $('.Product_intro_team').fadeOut(1)
+
+        }
+
+
+
+    })
+
+    $('.label04').on({
 
         click:function(){
 
