@@ -425,8 +425,9 @@ $(document).ready(function () {
 
                                let fishboxCooktype =["清蒸","煮湯","乾煎(紅燒)","鹽烤"] 
 
-                                console.log(fishboxCooktype);
+                     
                     
+                             
                             
                                 // 魚選修改選單
                                 let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
@@ -512,6 +513,9 @@ $(document).ready(function () {
 
                 }
 
+
+                
+
                 // 生鮮漁獲金額
                 $('.fish_item_price_total p:nth-of-type(2)').text( CheckSeafoodtotal)
 
@@ -527,7 +531,115 @@ $(document).ready(function () {
                 $('.total_detail p:nth-of-type(2)').text(CheckFinalTotal)
 
 
+               
 
+                // 計算運費
+                // 生鮮漁獲運費
+                let SeafoodFee = parseInt($('#Seafood_fee p:nth-of-type(2)').text())
+
+                if(CheckSeafoodtotal == 0){
+
+                    SeafoodFee = 0
+                }
+
+                // 海鮮魚箱運費
+                let FishboxFee =  parseInt($('#Fishbox_fee p:nth-of-type(2)').text())
+
+                if(CheckFishboxtotal == 0){
+
+                    FishboxFee = 0
+                }
+
+                // 釣具用品運費
+                let ToolFee =  parseInt($('#Tool_fee p:nth-of-type(2)').text())
+
+                if(CheckTooltotal == 0){
+
+                    ToolFee = 0
+                }
+
+
+                //冷凍運費
+                let FreezeFee =  SeafoodFee+FishboxFee
+                            
+                if( FreezeFee == 240){
+
+                    FreezeFee = 120//海鮮和魚箱算在一起
+                }
+
+                
+                // 折扣計算
+                // 運費欄位
+                let TotalFee = 0
+                let CheckFee = $('.fee_detail p:nth-of-type(2)')
+
+                // 冷凍貨物金額
+                let CheckFreezeTotal = CheckSeafoodtotal+ CheckFishboxtotal
+
+                //達成冷凍、釣具優惠
+                if(CheckFreezeTotal >= 2000 && CheckTooltotal>=1500){
+
+                    $('.fee_detail_info li').css('color','var(--orange)')
+
+                    CheckFee.text(0).css('color','var(--grey)').css('text-decoration','line-through')
+
+                    
+                //達成冷凍優惠
+                }else if(CheckFreezeTotal >= 2000){
+
+                    
+                    FreezeFee = 0 
+
+                    TotalFee = FreezeFee+ ToolFee
+
+
+                    if(TotalFee == 0){
+
+                        CheckFee.text(0).css('color','var(--grey)').css('text-decoration','line-through')
+                    }
+                    CheckFee.text(TotalFee)
+
+                    $('.fee_detail_info li:nth-of-type(1)').css('color','var(--orange)')
+
+                   
+                //達成釣具優惠        
+                }else if(CheckTooltotal>=1500){
+
+                    ToolFee = 0
+
+                    TotalFee = FreezeFee+ ToolFee
+
+                    if(TotalFee == 0){
+
+                        CheckFee.text(0).css('color','var(--grey)').css('text-decoration','line-through')
+                    }
+
+                    CheckFee.text(TotalFee)
+
+                    $('.fee_detail_info li:nth-of-type(2)').css('color','var(--orange)')
+
+                }else{
+
+
+                    TotalFee = FreezeFee+ ToolFee
+
+                    CheckFee.text(TotalFee)
+
+
+                }
+              
+
+
+                let OrderPrice = CheckFinalTotal + TotalFee;
+
+
+                let FinalOrderPrice =  $('.final_total_price p:nth-of-type(2)')
+               
+
+                FinalOrderPrice.text( OrderPrice)
+
+                
+                
 
                 // 判斷最後結帳欄位狀態
                 function finalfilter(arr){
@@ -643,6 +755,7 @@ $(document).ready(function () {
         $(this).parent().parent().next('.checkout_info').fadeIn(100)
 
     })
+
 
 
      // 填入/修改資料
@@ -959,7 +1072,130 @@ $(document).ready(function () {
 
 
 
+    // 運費優惠顯示
+    $('.fee_detail .fa-exclamation-circle').on({
 
+        mouseenter: function () {
+
+            $('.fee_detail_info').fadeIn(100)
+
+            
+        },
+        mouseleave: function () {
+
+            $('.fee_detail_info').fadeOut(100)
+
+    
+            
+        }
+
+    
+
+    })
+
+    // 使用點數
+    $('#select_coupon').change(function(){
+
+
+        let CouponSelected = $('input[name="fishPoint_select"]')
+
+        let Point =$('input[name="fishPoint_input"]').val()
+
+
+        let isPass = true
+        let discount = parseInt(Point)* 0.1
+        
+        let number_check = 	/^[0-9]*$/;
+
+
+        let FinalOrderPrice =  $('.final_total_price p:nth-of-type(2)')
+        
+
+        if(CouponSelected.prop("checked")){
+
+            if(Point == ''){
+
+                isPass = false
+                alert('請輸入數字')
+
+                CouponSelected.prop("checked",false)
+
+
+            
+            }
+
+        
+            if(!number_check.test(Point)){
+
+                isPass = false
+                alert('請輸入數字')
+
+                CouponSelected.prop("checked",false)
+
+
+            }
+
+
+            if(isPass){
+
+
+                let PointDiscount = `<div class="payment_detail payment_discount">
+                                    <p>公主幣折抵</p>
+                                    <p>${discount}</p>
+                                </div>`
+
+
+                $('.payment_detail_warp').append(PointDiscount)
+
+
+
+                FinalOrderPrice.text( parseInt(FinalOrderPrice.text()) - discount)
+
+            }
+
+
+        }else{
+
+            $('.payment_discount').remove()
+
+
+            CheckFinalTotal = parseInt($('.total_detail p:nth-of-type(2)').text())
+
+            TotalFee = parseInt($('.fee_detail p:nth-of-type(2)').text())
+
+            let OrderPrice = CheckFinalTotal + TotalFee;
+
+            FinalOrderPrice.text(OrderPrice)
+
+        }
+
+        
+    })
+
+
+      
+
+
+        
+
+       
+       
+            
+        
+
+
+
+
+
+        
+
+
+
+    
+
+
+
+    
 
 
     // 第二步驟成功

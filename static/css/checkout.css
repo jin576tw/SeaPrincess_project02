@@ -809,10 +809,22 @@
 }
 
 .total_point p:nth-of-type(2){
+    display: flex;
+    align-items: center;
     color:var(--orange)
 }
 
- 
+.total_point p:nth-of-type(2)::before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/money.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+
+}
 
 .total_coupon_text{
     margin-top: 30px;
@@ -1717,9 +1729,55 @@
     color: #000;
 }
 
+
 .payment_detail p:nth-of-type(2)::before{
     content: 'NT ';
-    
+}
+
+.fee_detail{
+    position: relative;
+}
+
+.fee_detail_info{
+   
+    display: none;
+    padding: 6px 10px 0 10px ;
+
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    border: 1px solid var(--grey);
+   
+
+}
+
+
+.fee_detail_info li{
+    color: var(--grey);
+    font-size: 1.4rem;
+    list-style-type: square;
+    margin-bottom: 3px;
+
+
+}
+.fee_detail .fa-exclamation-circle{
+    cursor: pointer;
+    color: var(--grey);
+    margin-left: 10px;
+
+
+}
+
+/* .fee_detail p:nth-of-type(2){
+    color: var(--grey);
+    text-decoration: line-through;
+} */
+
+.fee_detail p:nth-of-type(2)::before{
+    content: 'NT ';
 }
 
 .payment_discount p:nth-of-type(2){
@@ -1790,6 +1848,8 @@
 
 
 .payment_method{
+   
+    max-height: 720px;
     border: solid 1px rgba(23, 34, 61, 0.5);
 }
 
@@ -1815,32 +1875,12 @@
 }
 
 .coupon_point{
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    border-radius: 8px;
-    border: solid 1px rgba(0, 0, 0, 0.31);
-    padding: 0 10px;
-    margin-bottom: 10px;
+    
 
-}
-.coupon_point_name{
-    display: flex;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000;
-}
-
-.coupon_point_name input{
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
 }
 
 .coupon_point p{
@@ -1856,9 +1896,105 @@
 
 }
 
-.coupon_point p::before{
-    content: '總計: ';
+#select_coupon{
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+    background-color: white;
+    height: 50px;
+    border: solid 1px rgba(0, 0, 0, 0.31);
+    border-radius: 8px;
 }
+
+.fishPoint_select{
+    width: 15px;
+    height: 15px;
+    margin:0 10px;
+}
+
+.fishPoint_input{
+    text-align: right;
+    font-size: 1.4rem;
+   margin-right: 10px;
+    height: 100%;
+    width: 100px;
+    border: transparent;
+}
+
+
+.coupon_point_info p{
+  
+    font-size: 1.4rem;
+}
+
+.coupon_point_info p:nth-of-type(1)::before{
+
+    content: "最大可使用 ";
+}
+.coupon_point_info p:nth-of-type(2){
+
+    display: none;
+} 
+
+@media (max-width: 767px) {
+
+    .coupon_point{
+    
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: column;
+        
+    
+    }
+
+    .coupon_point p{
+        margin-top: 3px;
+        font-size: 1.4rem;
+       
+    
+    }
+
+    .coupon_point label{
+        width: 100%;
+        
+    }
+
+
+    .fishPoint_input{
+        /* background-color: red; */
+       
+        font-size: 1.4rem;
+   
+        height: 100%;
+        width: 55%;
+        border: transparent;
+    }
+
+
+}
+
+
+@media (max-width: 767px) {
+
+    .coupun_select{
+        margin-top: 10px;
+        height: 50px;
+        width: 100%;
+
+    }
+
+
+}
+
+ 
 
 .payment_type{
     width: 100%;

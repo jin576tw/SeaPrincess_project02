@@ -197,11 +197,11 @@
                             <p>0</p>
                         </div>
                         <div class="total_point">
-                            <p>能獲得優惠點數<i class="fas fa-exclamation-circle"></i></p>
+                            <p>能獲得公主幣<i class="fas fa-exclamation-circle"></i></p>
                             <p>0</p>
                         </div>
                         <div class="total_coupon_text">
-                            <p>請至下一頁使用優惠券/魚點數</p>
+                            <p>請至下一頁使用優惠券/公主幣</p>
                         </div>
                     </div>
                     <div class="cart_fee_checkout">
@@ -844,42 +844,32 @@
                             <div class="payment_detail_warp">
                                 <div class="payment_detail total_detail">
                                     <p>小計</p>
-                                    <p>2800</p>
+                                    <p>0</p>
                                 </div>
-                                <div class="payment_detail">
-                                    <p>生鮮食材運費</p>
+                                <div class="payment_detail fee_detail">
+                                    <p>運費<i class="fas fa-exclamation-circle"></i></p>
                                     <p>120</p>
+
+                                    <div class="fee_detail_info ">
+                                        <ul>
+                                            <li>生鮮魚貨/海鮮魚箱消費滿2000可享免運折抵優惠</li>
+                                            <li>釣具用品消費滿1500可享免運折抵優惠</li>
+                                        </ul>
+
+                                    </div>
+
                                 </div>
-                                <div class="payment_detail payment_discount">
-                                    <p>生鮮食材運費折抵</p>
-                                    <p>120</p>
-                                </div>
-                                <div class="payment_detail">
-                                    <p>海鮮魚箱食材運費</p>
-                                    <p>120</p>
-                                </div>
-                                <div class="payment_detail payment_discount">
-                                    <p>海鮮魚箱運費折抵</p>
-                                    <p>120</p>
-                                </div>
-                                <div class="payment_detail">
-                                    <p>釣具運費</p>
-                                    <p>120</p>
-                                </div>
-                                <div class="payment_detail payment_discount">
-                                    <p>釣具運費折抵</p>
-                                    <p>120</p>
-                                </div>
-                                <div class="payment_detail payment_discount">
+                                
+                                <!-- <div class="payment_detail payment_discount">
                                     <p>公主幣折抵</p>
                                     <p>62</p>
-                                </div>
+                                </div> -->
 
                             </div>
                             <div class="final_total_price_warp">
                                 <div class="final_total_price">
                                     <p>合計</p>
-                                    <p>280000</p>
+                                    <p>0</p>
                                 </div>
                             </div>
                         </div>
@@ -901,14 +891,21 @@
                                     <h3>使用優惠</h3>
                                 </div>
                                 <div class="coupon_point">
-                                    <div class="coupon_point_name">
-                                        <input type="radio" name="fishPoint">
-                                        使用魚點數
+                                    <label id="select_coupon" >
+                                        <input type="checkbox" name="fishPoint_select" class="fishPoint_select">
+                                        使用公主幣
+                                        <input type="text" name="fishPoint_input" class="fishPoint_input" placeholder="輸入公主幣">
+                                    </label>
+
+
+                                    <div class="coupon_point_info">
+                                        <p><span>220</span> 公主幣 <i class="fas fa-exclamation-circle"></i></p>
+                                        <p>欲使用公主幣/優惠券，請先登入會員 <i class="fas fa-exclamation-circle"></i></p>
                                     </div>
-                                    <p>220</p>
+                                    
 
                                 </div>
-                                <select class="Items_type">
+                                <select class="Items_type coupun_select">
                                     <option>請選擇優惠卷</option>
                                     <option></option>
                                 </select>
@@ -919,7 +916,6 @@
                                     <h3>付款方式</h3>
                                     <select class="Items_type payment_type">
                                         <option>信用卡</option>
-                                        <option>取貨付款</option>
                                     </select>
                                     <div class="creditcard_warp">
                                         <input type="text" name="creditCardNumber" placeholder="信用卡號碼" class="payment_type">
