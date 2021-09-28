@@ -12,14 +12,7 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["CJ-4000H","CJ-5000H","CJ-6000H","CJ-8000","CJ-10000","CJ-14000"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i01-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
+       "intro":"<img src=./static/images/items/i01-A.jpeg alt=>"
           
        
     
@@ -38,14 +31,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["AZORES-5000P","AZORES-6000P","AZORES-7000P","AZORES-8000P","AZORES-9000P","AZORES-1000P"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i02-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
+       "intro":"<img src=./static/images/items/i02-A.jpeg alt=>"
+       
           
        
     
@@ -64,18 +51,11 @@
        "create_at": "2021-09-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["CJ-4000H","CJ-5000H","CJ-6000H","CJ-8000","CJ-10000","CJ-14000"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i03-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
-          
+       "intro":"<img src=./static/images/items/i03-A.jpeg alt=>"
        
-    
-    
+      
+          
+      
     },
     {
        "name": "OKUMA Nemesis 那美西斯 紡車捲線器 磯釣 岸拋 船釣小搞 入門首選",
@@ -90,14 +70,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["CJ-4000H","CJ-5000H","CJ-6000H","CJ-8000","CJ-10000","CJ-14000"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i04-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
+       "intro":"<img src=./static/images/items/i04-A.jpeg alt=>"
+      
           
        
     
@@ -116,14 +90,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["100號330"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i05-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
+       "intro":"<img src=./static/images/items/i05-A.jpeg alt=>"
+   
           
        
     
@@ -142,14 +110,8 @@
        "create_at": "2021-09-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["1.5-530","1.5-530","1.5-530"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i06-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
+       "intro":"<img src=./static/images/items/i06-A.jpeg alt=>"
+     
           
        
     
@@ -168,14 +130,8 @@
        "create_at": "2021-09-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["1.5-530","1.5-530","1.5-530"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i07-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
+       "intro":"<img src=./static/images/items/i07-A.jpeg alt=>"
+     
           
        
     
@@ -194,14 +150,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["1.5-3號不鏽鋼導環+耐磨內環","4號搭載高腳導環組"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i08-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-       }
+       "intro":"<img src=./static/images/items/i08-A.jpeg alt=>"
+     
           
        
     
@@ -220,14 +170,9 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i09-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i09-A.jpeg alt=>"
+    
+      
           
        
     },
@@ -244,14 +189,8 @@
        "create_at": "2021-09-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i10-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i10-A.jpeg alt=>"
+      
           
        
     },
@@ -268,14 +207,8 @@
        "create_at": "2021-09-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i11-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i11-A.jpeg alt=>"
+     
           
        
     },
@@ -292,14 +225,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i12-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i12-A.jpeg alt=>"
+   
           
        
     },
@@ -316,14 +243,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":[],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i13-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i13-A.jpeg alt=>"
+   
           
        
     },
@@ -340,14 +261,8 @@
        "create_at": "2021-09-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":[],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i14-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i14-A.jpeg alt=>"
+    
           
        
     },
@@ -364,14 +279,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":[],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i15-A.png","./static/images/items/i15-B.jpeg","./static/images/items/i15-C.jpg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i15-A.png alt=><img src=./static/images/items/i15-B.jpeg alt=><img src=./static/images/items/i15-C.jpg alt=>"
+      
           
        
     },
@@ -388,14 +297,8 @@
        "create_at": "2021-01-11",
        "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
        "type":[],
-       "intro" :{
-          
-          "p01":[],
-          "img01":["./static/images/items/i16-A.jpeg"],
-          "p02":[],
-          "img02":[]
-          
-      }
+       "intro":"<img src=./static/images/items/i16-A.jpeg alt=>"
+     
           
        
     },
@@ -412,14 +315,8 @@
       "create_at": "2021-09-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["AZORES-5000P","AZORES-6000P","AZORES-7000P","AZORES-8000P","AZORES-9000P","AZORES-1000P"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i02-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i02-A.jpeg alt=>"
+  
          
       
    
@@ -438,14 +335,8 @@
       "create_at": "2021-01-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["AZORES-5000P","AZORES-6000P","AZORES-7000P","AZORES-8000P","AZORES-9000P","AZORES-1000P"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i02-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i02-A.jpeg alt=>"
+    
          
       
    
@@ -464,14 +355,8 @@
       "create_at": "2021-09-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["CJ-4000H","CJ-5000H","CJ-6000H","CJ-8000","CJ-10000","CJ-14000"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i03-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i03-A.jpeg alt=>"
+ 
          
       
    
@@ -490,14 +375,8 @@
       "create_at": "2021-01-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["CJ-4000H","CJ-5000H","CJ-6000H","CJ-8000","CJ-10000","CJ-14000"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i04-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i04-A.jpeg alt=>"
+    
          
       
    
@@ -516,14 +395,8 @@
       "create_at": "2021-01-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["100號330"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i05-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i05-A.jpeg alt=>"
+   
          
       
    
@@ -542,14 +415,8 @@
       "create_at": "2021-09-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["1.5-530","1.5-530","1.5-530"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i06-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i06-A.jpeg alt=>"
+     
          
       
    
@@ -568,14 +435,8 @@
       "create_at": "2021-09-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["1.5-530","1.5-530","1.5-530"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i07-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i07-A.jpeg alt=>"
+    
          
       
    
@@ -594,14 +455,8 @@
       "create_at": "2021-01-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["1.5-3號不鏽鋼導環+耐磨內環","4號搭載高腳導環組"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i08-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-      }
+      "intro":"<img src=./static/images/items/i08-A.jpeg alt=>"
+     
          
       
    
@@ -620,14 +475,8 @@
       "create_at": "2021-01-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i09-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-     }
+      "intro":"<img src=./static/images/items/i09-A.jpeg alt=>"
+    
          
       
    },
@@ -644,14 +493,9 @@
       "create_at": "2021-09-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i10-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-     }
+      "intro":"<img src=./static/images/items/i10-A.jpeg alt=>"
+      
+     
          
       
    },
@@ -668,14 +512,8 @@
       "create_at": "2021-09-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i11-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-     }
+      "intro":"<img src=./static/images/items/i11-A.jpeg alt=>"
+    
          
       
    },
@@ -692,14 +530,8 @@
       "create_at": "2021-01-11",
       "detail":"4000/5000兩種規格<br>適用野猿以及海釣場的沉底或放流使用<br>餵線閥的快速開/關功能<br>附贈纖維備用線輪",
       "type":["0.5號120M","0.6號120M","0.8號120M","1.0號120M"],
-      "intro" :{
-         
-         "p01":[],
-         "img01":["./static/images/items/i12-A.jpeg"],
-         "p02":[],
-         "img02":[]
-         
-     }
+      "intro":"<img src=./static/images/items/i12-A.jpeg alt=>"
+    
          
       
    }

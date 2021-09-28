@@ -87,104 +87,107 @@ $(document).ready(function () {
 
                       // 商品描述
 
-                    // 第一段文字
-                    let P01_CONTENT =``
+                    let ARTICLE = d[i].intro
+                    ProductInfo.html(ARTICLE)
 
-                    //若沒內容，就不顯示
-                    if(d[i].intro.p01 == ''){
+                    // // 第一段文字
+                    // let P01_CONTENT =``
 
-                        P01_CONTENT = ``
+                    // //若沒內容，就不顯示
+                    // if(d[i].intro.p01 == ''){
 
-                    }else{
+                    //     P01_CONTENT = ``
+
+                    // }else{
                 
-                        for(let j = 0 ; j<d[i].intro.p01.length;j++){
+                    //     for(let j = 0 ; j<d[i].intro.p01.length;j++){
 
 
-                            let p01_str = `<p>${d[i].intro.p01[j]}</p>`
+                    //         let p01_str = `<p>${d[i].intro.p01[j]}</p>`
 
-                            P01_CONTENT +=p01_str
+                    //         P01_CONTENT +=p01_str
 
-                        }
-                    }
+                    //     }
+                    // }
 
 
-                    //第一段圖片
-                    let INTRO_IMG01 = ``
+                    // //第一段圖片
+                    // let INTRO_IMG01 = ``
 
-                    if(d[i].intro.img01 == ''){
+                    // if(d[i].intro.img01 == ''){
 
-                        INTRO_IMG01 = ``
+                    //     INTRO_IMG01 = ``
 
-                    }else{
+                    // }else{
 
-                        for(let j = 0 ; j<d[i].intro.img01.length;j++){
+                    //     for(let j = 0 ; j<d[i].intro.img01.length;j++){
 
-                            let img01_data = `<div class="IntroProduct_Item_pic">
-                                                <img src="${d[i].intro.img01[j]}" alt="">
-                                            </div>`
+                    //         let img01_data = `<div class="IntroProduct_Item_pic">
+                    //                             <img src="${d[i].intro.img01[j]}" alt="">
+                    //                         </div>`
                             
 
-                            INTRO_IMG01+=img01_data
+                    //         INTRO_IMG01+=img01_data
                             
 
-                        }
-                    }
+                    //     }
+                    // }
 
 
-                    // 第二段文字
-                    let P02_CONTENT =``
+                    // // 第二段文字
+                    // let P02_CONTENT =``
 
-                    if(d[i].intro.p02 == ''){
+                    // if(d[i].intro.p02 == ''){
 
-                        P02_CONTENT = ``
+                    //     P02_CONTENT = ``
 
-                    }else{
+                    // }else{
 
-                        for(let j = 0 ; j<d[i].intro.p02.length;j++){
-
-
-                            let p02_str = `<p>${d[i].intro.p02[j]}</p>`
-
-                            P02_CONTENT +=p02_str
-
-                        }
-                    }
-
-                    //第二段圖片
-                    let INTRO_IMG02 = ``
-                    if(d[i].intro.img02 == ''){
-
-                        INTRO_IMG02 = ``
-
-                    }else{
+                    //     for(let j = 0 ; j<d[i].intro.p02.length;j++){
 
 
-                        for(let j = 0 ; j<d[i].intro.img02.length;j++){
+                    //         let p02_str = `<p>${d[i].intro.p02[j]}</p>`
+
+                    //         P02_CONTENT +=p02_str
+
+                    //     }
+                    // }
+
+                    // //第二段圖片
+                    // let INTRO_IMG02 = ``
+                    // if(d[i].intro.img02 == ''){
+
+                    //     INTRO_IMG02 = ``
+
+                    // }else{
 
 
-                            let img02_data = `<div class="IntroProduct_Item_pic">
-                                                <img src="${d[i].intro.img02[j]}" alt="">
-                                                </div>`
+                    //     for(let j = 0 ; j<d[i].intro.img02.length;j++){
+
+
+                    //         let img02_data = `<div class="IntroProduct_Item_pic">
+                    //                             <img src="${d[i].intro.img02[j]}" alt="">
+                    //                             </div>`
                             
         
-                            INTRO_IMG02+=img02_data
+                    //         INTRO_IMG02+=img02_data
         
-                        }
-                    }
+                    //     }
+                    // }
         
                 
-                    let ARTICLE =  
-                    P01_CONTENT+
-                    `<div class="IntroProduct_pic_warp">`+
-                        INTRO_IMG01+
-                    `</div>`+
-                    P02_CONTENT+
-                    `<div class="IntroProduct_pic_warp">`+
-                        INTRO_IMG02+
-                    `</div>`
+                    // let ARTICLE =  
+                    // P01_CONTENT+
+                    // `<div class="IntroProduct_pic_warp">`+
+                    //     INTRO_IMG01+
+                    // `</div>`+
+                    // P02_CONTENT+
+                    // `<div class="IntroProduct_pic_warp">`+
+                    //     INTRO_IMG02+
+                    // `</div>`
                         
 
-                    ProductInfo.html(ARTICLE)
+                    // ProductInfo.html(ARTICLE)
                     
                 
 
@@ -300,106 +303,110 @@ $(document).ready(function () {
 
 
                     // 商品描述
+                    let ARTICLE = d[i].intro
 
-                    // 第一段文字
-                    let P01_CONTENT =``
+                    ProductInfo.html(ARTICLE)
 
-                    //若沒內容，就不顯示
-                    if(d[i].intro.p01 == ''){
 
-                        P01_CONTENT = ``
+                    // // 第一段文字
+                    // let P01_CONTENT =``
 
-                    }else{
+                    // //若沒內容，就不顯示
+                    // if(d[i].intro.p01 == ''){
+
+                    //     P01_CONTENT = ``
+
+                    // }else{
                 
-                        for(let j = 0 ; j<d[i].intro.p01.length;j++){
+                    //     for(let j = 0 ; j<d[i].intro.p01.length;j++){
 
 
-                            let p01_str = `<p>${d[i].intro.p01[j]}</p>`
+                    //         let p01_str = `<p>${d[i].intro.p01[j]}</p>`
 
-                            P01_CONTENT +=p01_str
+                    //         P01_CONTENT +=p01_str
 
-                        }
-                    }
+                    //     }
+                    // }
 
 
-                    //第一段圖片
-                    let INTRO_IMG01 = ``
+                    // //第一段圖片
+                    // let INTRO_IMG01 = ``
 
-                    if(d[i].intro.img01 == ''){
+                    // if(d[i].intro.img01 == ''){
 
-                        INTRO_IMG01 = ``
+                    //     INTRO_IMG01 = ``
 
-                    }else{
+                    // }else{
 
-                        for(let j = 0 ; j<d[i].intro.img01.length;j++){
+                    //     for(let j = 0 ; j<d[i].intro.img01.length;j++){
 
-                            let img01_data = `<div class="IntroProduct_pic">
-                                                <img src="${d[i].intro.img01[j]}" alt="">
-                                            </div>`
+                    //         let img01_data = `<div class="IntroProduct_pic">
+                    //                             <img src="${d[i].intro.img01[j]}" alt="">
+                    //                         </div>`
                             
 
-                            INTRO_IMG01+=img01_data
+                    //         INTRO_IMG01+=img01_data
                             
 
-                        }
-                    }
+                    //     }
+                    // }
 
 
-                    // 第二段文字
-                    let P02_CONTENT =``
+                    // // 第二段文字
+                    // let P02_CONTENT =``
 
-                    if(d[i].intro.p02 == ''){
+                    // if(d[i].intro.p02 == ''){
 
-                        P02_CONTENT = ``
+                    //     P02_CONTENT = ``
 
-                    }else{
+                    // }else{
 
-                        for(let j = 0 ; j<d[i].intro.p02.length;j++){
-
-
-                            let p02_str = `<p>${d[i].intro.p02[j]}</p>`
-
-                            P02_CONTENT +=p02_str
-
-                        }
-                    }
-
-                    //第二段圖片
-                    let INTRO_IMG02 = ``
-                    if(d[i].intro.img02 == ''){
-
-                        INTRO_IMG02 = ``
-
-                    }else{
+                    //     for(let j = 0 ; j<d[i].intro.p02.length;j++){
 
 
-                        for(let j = 0 ; j<d[i].intro.img02.length;j++){
+                    //         let p02_str = `<p>${d[i].intro.p02[j]}</p>`
+
+                    //         P02_CONTENT +=p02_str
+
+                    //     }
+                    // }
+
+                    // //第二段圖片
+                    // let INTRO_IMG02 = ``
+                    // if(d[i].intro.img02 == ''){
+
+                    //     INTRO_IMG02 = ``
+
+                    // }else{
 
 
-                            let img02_data = `<div class="IntroProduct_pic">
-                                                <img src="${d[i].intro.img02[j]}" alt="">
-                                                </div>`
+                    //     for(let j = 0 ; j<d[i].intro.img02.length;j++){
+
+
+                    //         let img02_data = `<div class="IntroProduct_pic">
+                    //                             <img src="${d[i].intro.img02[j]}" alt="">
+                    //                             </div>`
                             
         
-                            INTRO_IMG02+=img02_data
+                    //         INTRO_IMG02+=img02_data
         
-                        }
-                    }
+                    //     }
+                    // }
         
                 
-                    let ARTICLE =  
-                    `<h2>${d[i].name}</h2>`+
-                    P01_CONTENT+
-                    `<div class="IntroProduct_pic_warp">`+
-                        INTRO_IMG01+
-                    `</div>`+
-                    P02_CONTENT+
-                    `<div class="IntroProduct_pic_warp">`+
-                        INTRO_IMG02+
-                    `</div>`
+                    // let ARTICLE =  
+                    // `<h2>${d[i].name}</h2>`+
+                    // P01_CONTENT+
+                    // `<div class="IntroProduct_pic_warp">`+
+                    //     INTRO_IMG01+
+                    // `</div>`+
+                    // P02_CONTENT+
+                    // `<div class="IntroProduct_pic_warp">`+
+                    //     INTRO_IMG02+
+                    // `</div>`
                         
                     
-                    ProductInfo.html(ARTICLE)
+                    // ProductInfo.html(ARTICLE)
                     
 
             
