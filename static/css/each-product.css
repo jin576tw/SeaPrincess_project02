@@ -181,6 +181,22 @@
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.7);
 }
+
+.product_discount {
+    margin-top: 20px;
+}
+.product_discount p{
+   
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    padding-left: 15px;
+    border-left: 3px solid var(--sea_blue);
+    color: var(--orange)
+}
 .product_intro_option_warp{
     margin-top: 40px;
     display: flex;

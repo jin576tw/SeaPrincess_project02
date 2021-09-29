@@ -14,6 +14,8 @@ $(document).ready(function () {
             $('.label02').hide()
             $('.recipe_recommand').hide()
 
+            $('.product_discount p').text("釣具用品滿1500享免運折扣")
+
             let d = data; 
             let ProductID = parseInt(location.href.substr(-3,3));
             let ProrductTitle = $('.product_intro_title h1');
@@ -231,6 +233,9 @@ $(document).ready(function () {
 
 
             $('.label03').hide()
+
+            $('.product_discount p').text("生鮮魚貨/海鮮魚箱滿2000享免運折扣")
+
             let d = data;
             let ProductID = parseInt(location.href.substr(-3,3));
             let ProrductTitle = $('.product_intro_title h1');
