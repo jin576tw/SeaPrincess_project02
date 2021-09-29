@@ -2,7 +2,7 @@
     {
        "name": "OKUMA Nemesis 那美西斯 紡車捲線器 磯釣 岸拋 船釣小搞 入門首選",
        "price": 2600,
-       "pic" : ["./static/images/items/i01-1.jpg"],
+       "pic" : ["./static/images/items/i01-1.jpg","./static/images/items/i02-1.jpg","./static/images/items/i03-1.jpg"],
        "pid" : 1,
        "type_sid": 1,
        "sub_type_sid": 1,
