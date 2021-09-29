@@ -171,6 +171,7 @@ if(cookieStr){
 PROPUCTSWARP.on("click",".add_btn",function(){
 
 
+    alert('商品已加入購物車！')
     // 結帳加入購物車
     let CheckOut_Page = location.href.substr(-13,13) == 'checkout.html'
 
