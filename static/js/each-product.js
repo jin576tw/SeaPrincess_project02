@@ -12,6 +12,7 @@ $(document).ready(function () {
         $.get("./static/JSON/Item.json", function (data) {
 
             $('.label02').hide()
+            $('.recipe_recommand').hide()
 
             let d = data; 
             let ProductID = parseInt(location.href.substr(-3,3));
