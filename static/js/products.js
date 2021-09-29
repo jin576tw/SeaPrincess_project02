@@ -1149,7 +1149,7 @@ $(document).ready(function () {
 
             $(".item_type_warp").on("click",".i_type01_01,.i_type02_01,.i_type03_01,.i_type04_01",function(){
 
-                console.log('hi');
+             
                 ItemWarp.empty()
 
                 originSort(d)
