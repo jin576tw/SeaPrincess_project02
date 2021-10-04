@@ -1160,6 +1160,20 @@ $(document).ready(function () {
 
                         $('#intro_text02').addClass(fadeIn)
 
+                    }else{
+
+                        $('.team_intro02').css('opacity','0.2').css('transition','0.8s')
+
+                        $('.title_line02').css('height','0%')
+
+
+                        $('.teamtitle02 p').removeClass(titleIn)
+
+                        $('.pic_warp02').removeClass(PicMove)
+
+                        $('#intro_text02').removeClass(fadeIn)
+
+
                     }
 
                     if(scrollNow >= 1405){
@@ -1175,6 +1189,20 @@ $(document).ready(function () {
                         $('#intro_text03').addClass(fadeIn)
 
                 
+                    }else{
+
+
+                        $('.team_intro03').css('opacity','0.2').css('transition','0.8s')
+
+                        $('.title_line03').css('width','0%')
+
+
+                        $('.teamtitle03 p').removeClass(titleIn)
+
+                        $('.pic_warp03').removeClass(PicMove)
+
+                        $('#intro_text03').removeClass(fadeIn)
+
 
                     }
                     //魚貨流程
