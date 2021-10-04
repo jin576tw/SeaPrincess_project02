@@ -1213,6 +1213,9 @@ $(document).ready(function () {
         
         
         
+                    }else{
+                        $('.About_Items').css('opacity','0.2').css('transition','0.8s')
+
                     }
 
                     let Arrow = $('.dot_arrow')
@@ -1231,6 +1234,20 @@ $(document).ready(function () {
 
                         $('.start_dot').css('transform','scale(1)')
 
+                    }else{
+
+                        Arrow.css('transform','translateY(0px)')
+
+                        Line.css('height','0%')
+
+
+                        $('.start_dot').css('transform','scale(1.8)')
+
+
+                        $('.steps01').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+
+                        $('.step_dot01').css('transition','0.4s').css('transform','scale(1)')
+
                     }
 
                     if(scrollNow >= 2594){
@@ -1238,7 +1255,7 @@ $(document).ready(function () {
 
                         $('.steps02').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
 
-                        $('.step_dot02').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+                        $('.step_dot02').css('transition','0.4s').css('transform','scale(1.8)').parent().siblings('.food_steps').children('.step_dot').css('transition','0.4s').css('transform','scale(1)')
 
 
                         Arrow.css('transform','translateY(600px)')
@@ -1255,7 +1272,7 @@ $(document).ready(function () {
 
                         $('.steps03').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
 
-                        $('.step_dot03').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+                        $('.step_dot03').css('transition','0.4s').css('transform','scale(1.8)').parent().siblings('.food_steps').children('.step_dot').css('transition','0.4s').css('transform','scale(1)')
 
                         Arrow.css('transform','translateY(980px)')
 
@@ -1274,7 +1291,7 @@ $(document).ready(function () {
 
                         $('.steps04').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
 
-                        $('.step_dot04').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+                        $('.step_dot04').css('transition','0.4s').css('transform','scale(1.8)').parent().siblings('.food_steps').children('.step_dot').css('transition','0.4s').css('transform','scale(1)')
 
                         Arrow.css('transform','translateY(1360px)')
 
@@ -1291,7 +1308,7 @@ $(document).ready(function () {
                       
                         $('.steps05').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
 
-                        $('.step_dot05').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+                        $('.step_dot05').css('transition','0.4s').css('transform','scale(1.8)').parent().siblings('.food_steps').children('.step_dot').css('transition','0.4s').css('transform','scale(1)')
 
                         Arrow.css('transform','translateY(1740px)')
 
