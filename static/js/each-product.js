@@ -1083,7 +1083,7 @@ $(document).ready(function () {
 
     
 
-
+  
 
 
     // 介紹選擇
@@ -1100,6 +1100,8 @@ $(document).ready(function () {
             $('.IntroProduct_content_warp').fadeIn(500)
             $('.Product_intro_team').fadeOut(1)
             $('.Brand_Story').fadeOut(1)
+
+            $('.title_line01').css('height','0%')
             
         }
 
@@ -1121,6 +1123,66 @@ $(document).ready(function () {
             $('.Brand_Story').fadeOut(1)
             $('.IntroProduct_content_warp').fadeOut(1)
             $('.Product_intro_team').fadeIn(500)
+
+
+            $('.title_line01').css('height','100%')
+
+
+            let titleIn = `animate__animated animate__fadeInRight`
+
+            let PicMove = `animate__animated animate__pulse`
+
+            let fadeIn = `animate__animated animate__fadeIn`
+
+            $(window).scroll(function () {
+
+                let scrollNow = $(window).scrollTop();
+            
+            
+               
+        
+                console.log(scrollNow);
+        
+        
+                if(scrollNow >= 970){
+        
+        
+                    $('.team_intro02').css('opacity','1').css('transition','0.8s')
+
+                    $('.title_line02').css('height','70%')
+        
+
+                    $('.teamtitle02 p').addClass(titleIn)
+
+                    $('.pic_warp02').addClass(PicMove)
+
+                    $('#intro_text02').addClass(fadeIn)
+                }
+
+                if(scrollNow >= 1405){
+
+                    $('.team_intro03').css('opacity','1').css('transition','0.8s')
+
+                    $('.title_line03').css('width','100%')
+
+                    $('.teamtitle03 p').addClass(titleIn)
+
+                    $('.pic_warp03').addClass(PicMove)
+
+                    $('#intro_text03').addClass(fadeIn)
+
+                    
+
+
+
+
+
+
+                }
+        
+            
+            
+            })
 
         }
 
@@ -1166,6 +1228,11 @@ $(document).ready(function () {
 
 
     })
+
+
+
+   
+
 
 
 
