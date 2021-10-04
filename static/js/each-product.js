@@ -1134,53 +1134,172 @@ $(document).ready(function () {
 
             let fadeIn = `animate__animated animate__fadeIn`
 
+            let Finsish = `animate__animated animate__heartBeat`
+
             $(window).scroll(function () {
 
                 let scrollNow = $(window).scrollTop();
             
-            
-               
-        
                 console.log(scrollNow);
         
+
+                if ($(window).width() > 1024) {
         
-                if(scrollNow >= 970){
-        
-        
-                    $('.team_intro02').css('opacity','1').css('transition','0.8s')
-
-                    $('.title_line02').css('height','70%')
-        
-
-                    $('.teamtitle02 p').addClass(titleIn)
-
-                    $('.pic_warp02').addClass(PicMove)
-
-                    $('#intro_text02').addClass(fadeIn)
-                }
-
-                if(scrollNow >= 1405){
-
-                    $('.team_intro03').css('opacity','1').css('transition','0.8s')
-
-                    $('.title_line03').css('width','100%')
-
-                    $('.teamtitle03 p').addClass(titleIn)
-
-                    $('.pic_warp03').addClass(PicMove)
-
-                    $('#intro_text03').addClass(fadeIn)
-
-                    
-
-
-
-
-
-
-                }
-        
+                    // 海釣團隊介紹
+                    if(scrollNow >= 970){
             
+            
+                        $('.team_intro02').css('opacity','1').css('transition','0.8s')
+
+                        $('.title_line02').css('height','70%')
+            
+
+                        $('.teamtitle02 p').addClass(titleIn)
+
+                        $('.pic_warp02').addClass(PicMove)
+
+                        $('#intro_text02').addClass(fadeIn)
+
+                    }
+
+                    if(scrollNow >= 1405){
+
+                        $('.team_intro03').css('opacity','1').css('transition','0.8s')
+
+                        $('.title_line03').css('width','100%')
+
+                        $('.teamtitle03 p').addClass(titleIn)
+
+                        $('.pic_warp03').addClass(PicMove)
+
+                        $('#intro_text03').addClass(fadeIn)
+
+                
+
+                    }
+                    //魚貨流程
+                    if(scrollNow >= 1780){
+
+
+                        $('.About_Items').css('opacity','1').css('transition','0.8s')
+        
+        
+        
+                    }
+
+                    let Arrow = $('.dot_arrow')
+                    let Line = $('.step_line_success')
+
+                    if(scrollNow >= 2040){
+
+
+                        $('.steps01').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+
+                        $('.step_dot01').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+
+                        Arrow.css('transform','translateY(210px)')
+
+                        Line.css('height','11.5%')
+
+                        $('.start_dot').css('transform','scale(1)')
+
+                    }
+
+                    if(scrollNow >= 2594){
+
+
+                        $('.steps02').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+
+                        $('.step_dot02').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+
+
+                        Arrow.css('transform','translateY(600px)')
+
+                        Line.css('height','31%')
+
+
+                    }
+
+                    if(scrollNow >= 2928){
+
+                        
+
+
+                        $('.steps03').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+
+                        $('.step_dot03').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+
+                        Arrow.css('transform','translateY(980px)')
+
+                        Line.css('height','50.5%')
+
+
+
+
+
+                    }
+
+                    if(scrollNow >= 3284){
+
+                   
+
+
+                        $('.steps04').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+
+                        $('.step_dot04').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+
+                        Arrow.css('transform','translateY(1360px)')
+
+                        Line.css('height','69.5%')
+
+
+
+
+
+                    }
+
+                    if(scrollNow >= 3600){
+
+                      
+                        $('.steps05').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.4s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+
+                        $('.step_dot05').css('transition','0.4s').css('transform','scale(1.8)').siblings('.step_dot').css('transition','0.4s').css('transform','scale(1)')
+
+                        Arrow.css('transform','translateY(1740px)')
+
+                        Line.css('height','89%')
+
+
+
+
+
+                    }
+
+
+                    if(scrollNow >= 3900){
+
+                        $('.steps04').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+                        $('.step_dot04').css('transition','0.4s').css('transform','scale(1)')
+
+
+                        $('.final_dot').css('transition','0.2s').css('transform','scale(2)').css('filter','grayscale(0%)').css('background-color','rgb(90, 167, 0)')
+
+
+                       $('.finish_arrow').addClass(Finsish)
+                      
+
+                        Line.css('height','100%')
+
+                    }else{
+
+                        $('.final_dot').css('transition','0.2s').css('transform','scale(1)').css('filter','grayscale(80%)')
+
+                        $('.finish_arrow').removeClass(Finsish)
+
+                    }
+                    
+        
+                }
             
             })
 
@@ -1230,7 +1349,23 @@ $(document).ready(function () {
     })
 
 
+    // if ($(window).width() > 1024) {
+        
+    //     $(window).scroll(function () {
 
+    //         let scrollNow = $(window).scrollTop();
+        
+    //         console.log(scrollNow);
+
+
+           
+        
+        
+        
+    //     })
+
+
+    // }
    
 
 

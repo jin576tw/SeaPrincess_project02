@@ -1500,6 +1500,7 @@
 /* ///////專業的魚貨流程/////// */
 
 .About_Items{
+    opacity: 0.2;
     margin-top: 100px;
     margin-bottom: 20px;
 }
@@ -1550,11 +1551,13 @@
     /* background-color: var(--dark_blue); */
 
 }
-.step_line_green{
+.step_line_success{
     width: 2px;
-    height: 12%;
+    /* height: 12%; */
+    height: 0%;
     transform: translateX(-2px);
     background-color:  var(--dark_blue);
+    transition: 2s;
 
 }
 
@@ -1563,7 +1566,8 @@
     position: absolute;
     z-index: 62;
     color: white;
-    transform: translateY(210px);
+    transform: translateY(0px);
+    transition: 2s;
  }
 
  .dot_arrow .fa-caret-down{
@@ -1572,7 +1576,7 @@
 
 .start_dot{
     position: absolute;
-    margin-left: 1px;
+    margin-left: -1px;
     width: 24px;
     height: 24px;
     border-radius: 100%;
@@ -1581,8 +1585,9 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    transform: scale(1);
-    /* transform: scale(1.8); */
+    /* transform: scale(1); */
+    transform: scale(1.8);
+    transition: 0.8s;
 } 
 
 .final_dot{
@@ -1614,6 +1619,7 @@
 }
 
 .food_steps{
+   
     position: relative;
     width: 100%;
     min-height: 320px;
@@ -1626,13 +1632,13 @@
 }
 
 .steps01{
-    transform: scale(1);
-    filter:grayscale(0%); 
+    /* transform: scale(1); */
+    /* filter:grayscale(0%);  */
 
 }
 
 .step_dot01{
-    transform: scale(1.8);
+    /* transform: scale(1.8); */
 
 }
 
