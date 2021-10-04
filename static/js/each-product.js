@@ -1141,9 +1141,168 @@ $(document).ready(function () {
                 let scrollNow = $(window).scrollTop();
             
                 console.log(scrollNow);
-        
 
-                if ($(window).width() > 1024) {
+                
+                // 手機版
+                if($(window).width() <= 767){
+
+                     // 海釣團隊介紹
+                     if(scrollNow >= 1535){
+
+                        $('.team_intro02').css('opacity','1').css('transition','0.8s')
+
+
+                        $('.title_line02').css('height','100%')
+
+                        $('.teamtitle02 p').addClass(titleIn)
+
+                        $('.pic_warp02').addClass(PicMove)
+
+                        $('#intro_text02').addClass(fadeIn)
+
+
+                     }else{
+
+                        $('.team_intro02').css('opacity','0.2').css('transition','0.8s')
+
+                        $('.title_line02').css('height','0%')
+
+
+                        $('.teamtitle02 p').removeClass(titleIn)
+
+                        $('.pic_warp02').removeClass(PicMove)
+
+                        $('#intro_text02').removeClass(fadeIn)
+
+
+                    }
+
+                    if(scrollNow >= 2005){
+
+
+                        $('.team_intro03').css('opacity','1').css('transition','0.8s')
+
+                        $('.title_line03').css('height','100%')
+
+                        $('.teamtitle03 p').addClass(titleIn)
+
+                        $('.pic_warp03').addClass(PicMove)
+
+                        $('#intro_text03').addClass(fadeIn)
+
+
+
+
+                    }else{
+
+
+                        $('.team_intro03').css('opacity','0.2').css('transition','0.8s')
+
+                        $('.title_line03').css('height','0%')
+
+
+                        $('.teamtitle03 p').removeClass(titleIn)
+
+                        $('.pic_warp03').removeClass(PicMove)
+
+                        $('#intro_text03').removeClass(fadeIn)
+
+
+                    }
+
+                    //魚貨流程
+                    if(scrollNow >= 2452){
+
+                        $('.About_Items').css('opacity','1').css('transition','0.8s')
+
+                    }else{
+                        $('.About_Items').css('opacity','0.2').css('transition','0.8s')
+
+                    }
+
+
+                    let Line = $('.step_line_success')
+
+                    if(scrollNow >= 2950){
+
+                        $('.steps01').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.6s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.6s')
+
+
+                        Line.css('height','20%')
+
+
+                    }else{
+                        $('.steps01').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.4s')
+
+                        Line.css('height','0%')
+                    }
+
+
+
+                    if(scrollNow >= 3545){
+
+
+                        $('.steps02').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.6s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.6s')
+
+
+                        Line.css('height','40%')
+
+
+
+                    }
+
+                    if(scrollNow >= 4120){
+                        $('.steps03').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.6s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.6s')
+
+
+                        Line.css('height','60%')
+
+                    }
+
+                    if(scrollNow >= 4755){
+                        $('.steps04').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.6s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.6s')
+
+
+                        Line.css('height','80%')
+
+                    }
+                    if(scrollNow >= 5396){
+                        $('.steps05').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.6s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.6s')
+
+
+                        Line.css('height','98%')
+
+                    }
+
+                    if(scrollNow >= 5695){
+
+                        Line.css('height','100%')
+
+                        $('.final_dot').css('transition','0.2s').css('transform','scale(2)').css('filter','grayscale(0%)').css('background-color','rgb(90, 167, 0)')
+
+
+                        $('.finish_arrow').addClass(Finsish)
+
+
+                    }else{
+
+
+                        $('.final_dot').css('transition','0.2s').css('transform','scale(1)').css('filter','grayscale(80%)')
+
+                        $('.finish_arrow').removeClass(Finsish)
+
+                    }
+
+
+
+
+
+
+                }
+
+
+
+                if ($(window).width() > 767) {
         
                     // 海釣團隊介紹
                     if(scrollNow >= 970){
