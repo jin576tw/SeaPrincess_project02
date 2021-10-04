@@ -101,6 +101,15 @@ select {
 }
 
 
+.FishJump{
+
+    animation: jump 2.6s linear ;
+}
+.WaterOut{
+
+    animation: waterOut 1.5s linear ;
+}
+
 
 
 
@@ -109,13 +118,72 @@ select {
 
     from { transform: translate(0,  0px) ;}
  
-    50%  { transform: translate(0, -10px) ;}
+    50%  { transform: translate(0, -60px) ;}
 
     to   { transform: translate(0, 0px)  ;}  
 
 
 
 }
+
+@keyframes jump{
+
+
+    0%{
+
+        transform: translate(0px,0px) rotate(0deg);
+        opacity: 1;
+
+    }
+
+    25%{
+
+        transform: translate(-300px,-320px) rotate(-20deg);
+    }
+
+    50%{
+
+        transform: translate(-600px,-400px) rotate(-50deg);
+
+        opacity: 0.9;
+
+
+    }
+    75%{
+
+        transform: translate(-900px,-380px) rotate(-80deg);
+
+        opacity: 0.9;
+
+    }
+ 
+   
+    100%{
+
+        transform: translate(-1160px,-250px) rotate(-90deg);
+
+        opacity: 0;
+    } 
+
+  
+
+}
+
+
+@keyframes waterOut{
+
+
+    from, to { transform: scale(1, 1); opacity: 1;}
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05);}
+  100% {opacity: 0;}
+
+
+
+
+}
+
 
 .RWD_open{
     transition: 0.8s;

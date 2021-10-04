@@ -93,9 +93,11 @@
 
 /* 關於我們引言 */
 .About_intro{
+    cursor: pointer;
     width: 100%;
     height: 650px;
     position: relative;
+    /* overflow: hidden; */
 }
 
 
@@ -110,6 +112,8 @@
     top: 0;
     left: 0;
     width: 30%;
+    transform:  translate(-60px,-60px);
+    opacity: 0.3;
 
 }
 
@@ -117,7 +121,11 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 30%
+    width: 30%;
+
+    transform:  translate(60px,60px);
+    opacity: 0.3;
+
    
     
 }
@@ -125,13 +133,33 @@
 
 .introIcon{
     position: absolute;
-    width: 150px;
-    height: 160px;
-    bottom: 100px;
-    right: 250px;
-    background-image: url('../images/Page\ 1.svg');
+    width: 120px;
+    bottom: 80px;
+    right: 400px;
     background-repeat: no-repeat;
+
+
+
+    
 }
+
+
+.fishIcon{
+    opacity: 0;
+    /* animation: jump 2.8s linear ; */
+
+}
+
+.waterIcon{
+
+    opacity: 0;
+
+}
+
+
+
+
+
 
 .About_intro_text{
     color: black;
@@ -140,6 +168,8 @@
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
+    opacity: 0;
+   
    
 }
 
@@ -185,12 +215,10 @@
     .introIcon{
         position: absolute;
         width: 90px;
-        height: 100px;
-        bottom: 40px;
-        right: 160px;
-        background-image: url('../images/Page\ 1.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
+        height: 200px;
+        bottom: 120px;
+        right:20px;
+      
     }
 
 
@@ -212,6 +240,7 @@
         width: 100%;
         height: 550px;
         position: relative;
+        overflow: hidden;
     }
 
 
@@ -237,14 +266,15 @@
 
     .introIcon{
         position: absolute;
-        width: 90px;
-        height: 100px;
+        width: 80px;
+     
         bottom: 40px;
-        right: 160px;
-        background-image: url('../images/Page\ 1.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
+        right: 10px;
+       
+       
     }
+
+   
 
     
     .About_intro_text{

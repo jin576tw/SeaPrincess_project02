@@ -452,6 +452,34 @@ $(document).ready(function () {
         })
 
 
+        // 食譜推薦    
+        $.get("./static/JSON/recipe.json", function (data) {
+
+            let RecipeList = $('.Blog_cate_content_warp')
+
+            let d = data;
+        
+            let rd = []
+        
+            randomProuducts(4,d,rd)
+        
+            // 依照先後排序
+            timeSort(rd)
+        
+            for(let i = 0 ; i < rd.length ;i++){ 
+        
+                // 食譜載入
+                RecipeList.append(Blog_artical_B(rd[i]))
+        
+        
+                
+        
+            }
+        
+        
+        })
+
+
 
     }
 
@@ -1223,9 +1251,13 @@ $(document).ready(function () {
 
                     let Line = $('.step_line_success')
 
+                   
+
                     if(scrollNow >= 2950){
 
                         $('.steps01').css('transform','scale(1)').css('filter','grayscale(0%)').css('transition','0.6s').siblings('.food_steps').css('transform','scale(0.8)').css('filter','grayscale(80%)').css('transition','0.6s')
+
+
 
 
                         Line.css('height','20%')
