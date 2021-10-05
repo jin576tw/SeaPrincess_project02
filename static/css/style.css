@@ -774,15 +774,16 @@
 /* /////最新漁貨////// */
 
 .Products_page{
+    
     background-color: white;
     padding: 80px 0 60px 0;
    
 }
 
 .product_tittle{
-    opacity: 0;
     text-align: center;
     margin: 0px auto 50px auto;
+    opacity: 0.2;
 
   
  
@@ -791,6 +792,8 @@
 .ItemProduct_tittle{
     margin-top: 60px;
 }
+
+
 
 @media (max-width: 1025px) {
     .product_tittle{
@@ -827,10 +830,6 @@
     letter-spacing: 2px;
 
 }
-/* 
-.homeProducts_warp{
-    margin-top: 50px;
-} */
 
 
 .view_more_btn{

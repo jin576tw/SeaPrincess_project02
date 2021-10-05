@@ -1,10 +1,14 @@
 $(document).ready(function () {
 
-    $(window).scroll(function () {
 
-            let scrollNow = $(window).scrollTop();
-        // console.log('scrollTop', scrollNow);
+    
+    $(window).scroll(function () {  
 
+        let scrollNow = $(window).scrollTop();
+        console.log('scrollTop', scrollNow);
+
+        let fadeIn = `animate__animated animate__fadeIn`
+       
 
 /* ///////////第一頁//////////// */
 
@@ -13,6 +17,7 @@ $(document).ready(function () {
 
             if (scrollNow >= 63){
                 
+               
                 $('.home_intro').css('opacity','1').css('transition','0.5s')
     
             }else{
@@ -20,6 +25,19 @@ $(document).ready(function () {
     
             }
     
+            let pulse = `animate__animated animate__pulse`
+
+            if (scrollNow >= 352){
+
+                
+
+                $('.intro_btn_icon').addClass(pulse )
+
+            }else{
+
+                $('.intro_btn_icon').removeClass(pulse )
+
+            }
     
             if (scrollNow >= 526){
     
@@ -40,6 +58,19 @@ $(document).ready(function () {
                 $('.home_intro').css('opacity','0').css('transition','0.5s')
     
             }
+
+
+            if (scrollNow >= 383){
+
+                
+
+                $('.intro_btn_icon').addClass(pulse )
+
+            }else{
+
+                $('.intro_btn_icon').removeClass(pulse )
+
+            }
     
     
             if (scrollNow >= 575){
@@ -48,6 +79,8 @@ $(document).ready(function () {
             }else{
                 $('.First_page').css('transition','0.8s').css('box-shadow','0px 0px 0px transparent')
             }
+
+            
 
 
         }
@@ -66,6 +99,23 @@ $(document).ready(function () {
     
             }
     
+
+
+            let pulse = `animate__animated animate__pulse`
+
+            if (scrollNow >= 526){
+
+                
+
+                $('.intro_btn_icon').addClass(pulse )
+
+                
+
+            }else{
+
+                $('.intro_btn_icon').removeClass(pulse )
+
+            }
     
             if (scrollNow >= 774){
     
@@ -79,6 +129,33 @@ $(document).ready(function () {
 
 
 /* //////////最新漁貨////////// */
+
+        
+        // 手機版
+        if ($(window).width() < 768) {
+
+
+            
+            if(scrollNow >= 664){
+
+
+                $('.product_tittle').css('opacity','1').css('transition','0.5s')
+
+            }else{
+
+                $('.product_tittle').css('opacity','0.2').css('transition','0.5s')
+            }
+
+           
+
+            
+    
+
+
+        
+        }
+
+        
      
 
         // 平板版
@@ -86,68 +163,41 @@ $(document).ready(function () {
 
             if (scrollNow >= 588){
                 $('.product_tittle').css('opacity','1').css('transition','0.5s')
+
+
+                $('.SeafoodProduct_tittle').css('opacity','1')
     
             }else{
-                $('.product_tittle').css('opacity','0').css('transition','0.5s')
+                $('.product_tittle').css('opacity','0.2').css('transition','0.5s')
     
             }
     
-            if (scrollNow >= 641){
-                $('.items_warp').css('opacity','1').css('transition','0.8s').css('transform','translateY(-20px)')
-    
-            }else{
-                $('.items_warp').css('opacity','0').css('transition','0.8s').css('transform','translateY(20px)')
-    
-            }
+           
 
 
            
         }
 
-           //手機版
-           if ($(window).width() <= 768) {
-
-            if (scrollNow >= 638){
-                $('.product_tittle').css('opacity','1').css('transition','0.5s')
-    
-            }else{
-                $('.product_tittle').css('opacity','0').css('transition','0.5s')
-    
-            }
-    
-            if (scrollNow >= 713){
-                $('.items_warp').css('opacity','1').css('transition','0.8s').css('transform','translateY(-20px)')
-    
-            }else{
-                $('.items_warp').css('opacity','0').css('transition','0.8s').css('transform','translateY(20px)')
-    
-            }
-
-
-        }
+        
 
 
         // 網頁版
         if ($(window).width() > 1024) {
 
 
-            if (scrollNow >= 825){
+            if (scrollNow >= 882){
                 $('.product_tittle').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.product_tittle').css('opacity','0').css('transition','0.5s')
+                $('.product_tittle').css('opacity','0.2').css('transition','0.5s')
     
             }
     
-            if (scrollNow >= 923){
-                $('.items_warp').css('opacity','1').css('transition','0.8s').css('transform','translateY(-20px)')
-    
-            }else{
-                $('.items_warp').css('opacity','0').css('transition','0.8s').css('transform','translateY(20px)')
-    
-            }
+            
     
         }
+
+
     
     })
  
