@@ -45,7 +45,7 @@ $(document).ready(function () {
             $('.Sign_tag').css('border-top','solid 1px transparent').css('border-right','solid 1px transparent').css('border-left','solid 1px transparent').css('border-bottom','solid 1px rgba(23, 34, 61, 0.5)')
 
             $(".Sign_content").fadeOut(1)
-            $(".Login_content").fadeIn(100)
+            $(".Login_content").fadeIn(1000)
 
 
             let url = location.pathname + '?Login'
@@ -76,7 +76,7 @@ $(document).ready(function () {
 
             
             $(".Login_content").fadeOut(1)
-            $(".Sign_content").fadeIn(100)
+            $(".Sign_content").fadeIn(1000)
 
             let url = location.pathname + '?Sign'
             history.pushState({

@@ -41,7 +41,7 @@
 </section>
 
 <!-- 常見ＱＡ介紹 -->
-<section class="QA_intro">
+<section class="QA_intro animate__animated animate__fadeIn">
     <div class="container">
         <div class="row QA_intro_warp">
             <p>“非常感謝您訂購出港海鮮商品，希望您喜歡我們的商品與服務”<br>
@@ -52,7 +52,7 @@
 
 
 <!-- 訂購問題 -->
-<section class="QA_shipment">
+<section class="QA_shipment animate__animated animate__fadeIn">
     <div class="container">
         <div class="row">
 
@@ -248,5 +248,93 @@
 <script>
     $('#navbar').load('navbar.html')
     $('#footer').load('footer.html')
+    
+
+    setTimeout(function(){
+
+
+        
+
+        // 平板版
+        if ($(window).width() < 1024) {
+
+            $('.shipment_title_line').css('width',' 20%')
+
+        }
+
+         // 手機版
+         if ($(window).width() < 768) {
+
+            $('.shipment_title_line').css('width',' 40%')
+
+            }
+
+        // 網頁版
+        if ($(window).width() > 1024) {
+
+
+            $('.shipment_title_line').css('width',' 40%')
+
+
+        }   
+        
+
+
+    },10)
+
+
+    $(window).scroll(function () { 
+
+
+        let scrollNow = $(window).scrollTop();
+        console.log('scrollTop', scrollNow);
+
+       
+
+        // 平板版
+        if ($(window).width() < 1024) {
+
+            if (scrollNow >= 444){
+
+                $('.refund_title_line').css('width',' 20%')
+
+            }
+
+       
+
+        
+
+        }
+
+        // 手機版
+        if ($(window).width() < 768) {
+
+            if (scrollNow >= 514){
+
+                $('.refund_title_line').css('width',' 60%')
+
+                
+            }
+
+            
+
+        }
+
+        // 網頁版
+        if ($(window).width() > 1024) {
+
+            if (scrollNow >= 649){
+
+                $('.refund_title_line').css('width',' 70%')
+            }
+
+        }   
+        
+
+
+
+
+     })
+
 </script>
 </html>
