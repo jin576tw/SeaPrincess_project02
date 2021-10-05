@@ -110,6 +110,11 @@ select {
     animation: waterOut 1.5s linear ;
 }
 
+.FishJumpRWD{
+
+    animation: jumpRWD 1.5s linear;
+
+}
 
 
 
@@ -166,6 +171,32 @@ select {
     } 
 
   
+
+}
+
+@keyframes jumpRWD{
+
+    0%{
+        transform: translate(-25px,-180px) rotate(-10deg);
+        opacity: 1;
+
+    }
+
+    50%{
+
+        transform: translate(-120px,-280px) rotate(-50deg);
+        opacity: 0.9;
+
+    }
+
+    100%{
+
+        transform: translate(-240px,-180px) rotate(-70deg);
+        opacity: 0;
+
+    }
+
+
 
 }
 

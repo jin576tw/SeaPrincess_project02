@@ -146,7 +146,7 @@
 
 .fishIcon{
     opacity: 0;
-    /* animation: jump 2.8s linear ; */
+   
 
 }
 
@@ -274,7 +274,9 @@
        
     }
 
-   
+
+    
+
 
     
     .About_intro_text{
@@ -335,6 +337,7 @@
 
 
 .About_Story_text p{
+    opacity: 0.2;
     font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
@@ -345,6 +348,36 @@
     color: #fff;
     text-align: center;
 }
+
+
+.About_Story_pic{
+    opacity: 0.2;
+    animation: shipWave 3s  linear infinite;
+   
+
+}
+
+@keyframes shipWave{
+
+    0%{
+        transform: rotate(0deg);
+
+    }
+
+    50%{
+
+        transform: rotate(-5deg);
+
+    }
+
+    100%{
+
+        transform: rotate(0deg);
+        
+    }
+
+}
+
 
 
 
@@ -424,11 +457,13 @@
     width: 100%;
     min-height: 800px;
     padding-top: 80px;
+    overflow: hidden;
 }
 
 
 
 .About_text_title{
+    opacity: 0;
     position: relative;
     font-family: 'Noto Serif TC', serif;
     width: 40%;
@@ -461,6 +496,8 @@
 }
 
 .About_text_intro{
+    transition: 0.8s;
+    opacity: 0;
     position: relative;
     width: 40%;
     text-align: center;
@@ -486,12 +523,13 @@
 .About_text_pic_warp{
    
     width: 100%;
-
+   
     display: flex;
     justify-content: space-around;
 }
 
 .About_text_pic{
+    opacity: 0;
     margin-bottom: 120px;
 }
 
@@ -608,14 +646,29 @@
     padding-top: 150px;
 }
 
-.About_text_slogan p{ 
+
+
+.slogan_title{
+    width: 85px;
+    height: 48px;
+    margin-bottom: 60px;
+    overflow: hidden;
+   
+   
+    
+}
+
+.slogan_title p{
     font-size: 1.6rem;
     font-family: Helvetica;
     font-weight:  330;
-    margin-bottom: 60px;
-}
+    transition: 0.8s;
+    transform:translateY(50px)
 
+}
 .slogan_box{
+    transition: 0.8s;
+    opacity: 0;
     width: 40%;
     height: 180px;
     border: 1px solid white;
