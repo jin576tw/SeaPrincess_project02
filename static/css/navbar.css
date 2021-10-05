@@ -901,8 +901,8 @@
    
     .list_item_pic{
         overflow: hidden;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     .list_item_title h1{
