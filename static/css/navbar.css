@@ -917,9 +917,11 @@
     }
     .list_item_intro{
         overflow: hidden;
-        width: 200px;
+        width: 170px;
         min-height: 80px;
-        margin-left: 10px
+        margin-left: 20px;
+        /* background-color: red; */
+        
     }
 
     .list_item_option{ 
