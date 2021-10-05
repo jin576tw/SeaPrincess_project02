@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .Checkout_Step_line{
@@ -111,13 +112,40 @@
 
     .Checkout_Step_warp{
         position: relative;
-        margin: 70px auto 50px auto;
+        margin: 70px auto 30px auto;
         width: 250px;
         min-height: 60px;
  
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
+    }
+
+
+    .checkout_step_number{
+        width: 30px;
+        height: 30px;
+        
+    }
+
+    .Checkout_Step_line{
+       
+        top: 15px;
+        
+    
+    }
+    .Checkout_Step_line_grey{
+        
+        top: 15px;
+       
+    }
+
+    .step01{
+        transform: translate(-10px);
+    }
+    .step03{
+        transform: translate(10px);
     }
 
 }
@@ -187,7 +215,7 @@
         align-items: center;
         width: 95%;
         min-height: 50px;
-        margin:0 auto 60px auto;
+        margin:0 auto 20px auto;
 
        
     }
