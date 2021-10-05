@@ -3,8 +3,6 @@
 $(document).ready(function () {
 
     
-
-
     // 引言視覺
     setInterval(function () {
 
@@ -110,7 +108,7 @@ $(document).ready(function () {
 
 
         
-    }, 1000);
+    }, 500);
 
 
   

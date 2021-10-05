@@ -7,7 +7,16 @@ $(document).ready(function () {
         let scrollNow = $(window).scrollTop();
         console.log('scrollTop', scrollNow);
 
+        let pulse = `animate__animated animate__pulse`
+
         let fadeIn = `animate__animated animate__fadeIn`
+
+        let titleIn = `animate__animated animate__fadeInDown`
+
+        let flip = `animate__animated animate__flipInX`
+
+
+        let RightIn = `animate__animated animate__fadeInRight`
        
 
 /* ///////////第一頁//////////// */
@@ -21,21 +30,21 @@ $(document).ready(function () {
                 $('.home_intro').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.home_intro').css('opacity','0').css('transition','0.5s')
+                $('.home_intro').css('opacity','0.2').css('transition','0.5s')
     
             }
     
             let pulse = `animate__animated animate__pulse`
 
-            if (scrollNow >= 352){
+            if (scrollNow >= 296){
 
                 
 
-                $('.intro_btn_icon').addClass(pulse )
+                $('.intro_btn_icon').addClass(pulse ).css('opacity','1').css('transition','0.8s')
 
             }else{
 
-                $('.intro_btn_icon').removeClass(pulse )
+                $('.intro_btn_icon').removeClass(pulse ).css('opacity','0.2').css('transition','0.8s')
 
             }
     
@@ -55,20 +64,20 @@ $(document).ready(function () {
                 $('.home_intro').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.home_intro').css('opacity','0').css('transition','0.5s')
+                $('.home_intro').css('opacity','0.2').css('transition','0.5s')
     
             }
 
 
-            if (scrollNow >= 383){
+            if (scrollNow >= 335){
 
                 
 
-                $('.intro_btn_icon').addClass(pulse )
+                $('.intro_btn_icon').addClass(pulse ).css('opacity','1').css('transition','0.8s')
 
             }else{
 
-                $('.intro_btn_icon').removeClass(pulse )
+                $('.intro_btn_icon').removeClass(pulse ).css('opacity','0.2').css('transition','0.8s')
 
             }
     
@@ -95,26 +104,27 @@ $(document).ready(function () {
                 $('.home_intro').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.home_intro').css('opacity','0').css('transition','0.5s')
+                $('.home_intro').css('opacity','0.2').css('transition','0.5s')
     
             }
     
 
 
-            let pulse = `animate__animated animate__pulse`
+           
 
-            if (scrollNow >= 526){
+            if (scrollNow >= 385){
 
-                
+               
+                $('.intro_btn_icon').addClass(pulse).css('opacity','1').css('transition','0.8s')
 
-                $('.intro_btn_icon').addClass(pulse )
 
                 
 
             }else{
 
-                $('.intro_btn_icon').removeClass(pulse )
+       
 
+                $('.intro_btn_icon').removeClass(pulse ).css('opacity','0.2').css('transition','0.8s')
             }
     
             if (scrollNow >= 774){
@@ -130,46 +140,54 @@ $(document).ready(function () {
 
 /* //////////最新漁貨////////// */
 
-        
-        // 手機版
-        if ($(window).width() < 768) {
-
-
-            
-            if(scrollNow >= 664){
-
-
-                $('.product_tittle').css('opacity','1').css('transition','0.5s')
-
-            }else{
-
-                $('.product_tittle').css('opacity','0.2').css('transition','0.5s')
-            }
-
-           
-
-            
     
-
-
-        
-        }
-
-        
-     
 
         // 平板版
         if ($(window).width() <= 1024) {
 
             if (scrollNow >= 588){
-                $('.product_tittle').css('opacity','1').css('transition','0.5s')
+                $('.SeafoodProduct_tittle').css('opacity','1').css('transition','0.5s')
 
 
                 $('.SeafoodProduct_tittle').css('opacity','1')
     
             }else{
-                $('.product_tittle').css('opacity','0.2').css('transition','0.5s')
+                $('.SeafoodProduct_tittle').css('opacity','0.2').css('transition','0.5s')
     
+            }
+
+
+            if(scrollNow >= 1825){
+
+
+                $('.ItemProduct_tittle').css('opacity','1').css('transition','0.5s')
+
+            }else{
+
+                $('.ItemProduct_tittle').css('opacity','0.2').css('transition','0.5s')
+            }
+
+
+            if(scrollNow >= 650){
+
+                $('.homeSeafood_warp').css('transform','translateY(0px)').css('opacity','1')
+
+            }else{
+
+                $('.homeSeafood_warp').css('transform','translateY(50px)').css('opacity','0.2')
+
+
+            }
+            if(scrollNow >= 1850){
+
+                $('.homeItem_warp').css('transform','translateY(0px)').css('opacity','1')
+
+
+            }else{
+
+                $('.homeItem_warp').css('transform','translateY(50px)').css('opacity','0.2')
+
+
             }
     
            
@@ -178,24 +196,335 @@ $(document).ready(function () {
            
         }
 
-        
+         // 手機版
+         if ($(window).width() < 768) {
 
+
+            
+            if(scrollNow >= 665){
+
+
+                $('.SeafoodProduct_tittle').css('opacity','1').css('transition','0.5s')
+
+            }else{
+
+                $('.SeafoodProduct_tittle').css('opacity','0.2').css('transition','0.5s')
+            }
+
+            if(scrollNow >= 668){
+
+                $('.homeSeafood_warp').css('transform','translateY(0px)').css('opacity','1')
+
+            }else{
+
+                $('.homeSeafood_warp').css('transform','translateY(50px)').css('opacity','0.2')
+
+
+            }
+            
+            if(scrollNow >= 2070){
+
+
+                $('.ItemProduct_tittle').css('opacity','1').css('transition','0.5s')
+
+            }else{
+
+                $('.ItemProduct_tittle').css('opacity','0.2').css('transition','0.5s')
+            }
+
+
+            if(scrollNow >= 2130){
+
+                $('.homeItem_warp').css('transform','translateY(0px)').css('opacity','1')
+
+
+            }else{
+
+                $('.homeItem_warp').css('transform','translateY(50px)').css('opacity','0.2')
+
+
+            }
+
+
+            
+
+           
+
+        }
+
+        
 
         // 網頁版
         if ($(window).width() > 1024) {
 
 
             if (scrollNow >= 882){
-                $('.product_tittle').css('opacity','1').css('transition','0.5s')
+                $('.SeafoodProduct_tittle').css('opacity','1').css('transition','0.5s')
     
             }else{
-                $('.product_tittle').css('opacity','0.2').css('transition','0.5s')
+                $('.SeafoodProduct_tittle').css('opacity','0.2').css('transition','0.5s')
     
+            }
+
+
+            if(scrollNow >= 1864){
+
+
+                $('.ItemProduct_tittle').css('opacity','1').css('transition','0.5s')
+
+            }else{
+
+                $('.ItemProduct_tittle').css('opacity','0.2').css('transition','0.5s')
+            }
+
+            if(scrollNow >= 923){
+
+                $('.homeSeafood_warp').css('transform','translateY(0px)').css('opacity','1')
+
+            }else{
+
+                $('.homeSeafood_warp').css('transform','translateY(50px)').css('opacity','0.2')
+
+
+            }
+            if(scrollNow >= 1900){
+
+                $('.homeItem_warp').css('transform','translateY(0px)').css('opacity','1')
+
+
+            }else{
+
+                $('.homeItem_warp').css('transform','translateY(50px)').css('opacity','0.2')
+
+
             }
     
             
     
         }
+
+    ////海釣包船資訊
+
+   
+     // 平板版
+     if($(window).width() <= 1024) {
+        if(scrollNow >= 2529){
+
+            $('.Tourist_page_title').addClass(titleIn)
+
+
+        }else{
+
+            $('.Tourist_page_title').removeClass(titleIn)
+
+        }
+
+        if(scrollNow >= 2559){
+
+            $('.Tourist_page_intro').css('opacity','1').css('transition','0.8s')
+
+
+
+
+        }else{
+
+            $('.Tourist_page_intro').css('opacity','0.2').css('transition','0.8s')
+
+
+        }
+
+        if(scrollNow >= 3590){
+
+            $('.Tourist_page_pic').addClass(flip).css('opacity','1')
+
+
+        }else{
+            $('.Tourist_page_pic').removeClass(flip).css('opacity','0.2')
+            
+        }
+
+        if(scrollNow >= 4201){
+
+            $('.Blog_Page').addClass(RightIn).css('opacity','1')
+            
+            setTimeout(function(){
+
+                $('.intro_text_content').addClass(fadeIn).css('opacity','1')
+
+            },500)
+           
+
+        }else{
+            $('.Blog_Page').removeClass(RightIn).css('opacity','0.2')
+            $('.intro_text_content').removeClass(fadeIn).css('opacity','0')
+            
+
+        }
+
+        // 加入line社團
+        if(scrollNow >= 5203){
+
+            $('.LineGroup_page_content').addClass(pulse)
+
+
+
+        }else{
+
+            $('.LineGroup_page_content').removeClass(pulse)
+
+        }
+
+     }
+
+       // 手機版
+       if($(window).width() < 768) {
+        if(scrollNow >= 3666){
+
+            $('.Tourist_page_title').addClass(titleIn)
+
+
+        }else{
+
+            $('.Tourist_page_title').removeClass(titleIn)
+
+        }
+
+        if(scrollNow >= 3800){
+
+            $('.Tourist_page_intro').css('opacity','1').css('transition','0.8s')
+
+
+
+
+        }else{
+
+            $('.Tourist_page_intro').css('opacity','0.2').css('transition','0.8s')
+
+
+        }
+
+        if(scrollNow >= 4015){
+
+            $('.Tourist_page_pic').addClass(flip).css('opacity','1')
+
+
+        }else{
+            $('.Tourist_page_pic').removeClass(flip).css('opacity','0.2')
+            
+        }
+
+        if(scrollNow >= 4477){
+
+            $('.Blog_Page').addClass(RightIn).css('opacity','1')
+            
+            setTimeout(function(){
+
+                $('.intro_text_content').addClass(fadeIn).css('opacity','1')
+
+            },500)
+           
+
+        }else{
+            $('.Blog_Page').removeClass(RightIn).css('opacity','0.2')
+            $('.intro_text_content').removeClass(fadeIn).css('opacity','0')
+            
+
+        }
+
+        // 加入line社團
+        if(scrollNow >= 5684){
+
+            $('.LineGroup_page_content').addClass(pulse)
+
+
+
+        }else{
+
+            $('.LineGroup_page_content').removeClass(pulse)
+
+        }
+
+    }
+
+
+     // 網頁版
+     if ($(window).width() > 1024) {
+
+        if(scrollNow >= 3027){
+
+            $('.Tourist_page_title').addClass(titleIn)
+
+
+        }else{
+
+            $('.Tourist_page_title').removeClass(titleIn)
+
+        }
+
+
+        if(scrollNow >= 3182){
+
+            $('.Tourist_page_intro').css('opacity','1').css('transition','0.8s')
+
+
+
+
+        }else{
+
+            $('.Tourist_page_intro').css('opacity','0.2').css('transition','0.8s')
+
+
+        }
+
+
+        if(scrollNow >= 3328){
+
+            $('.Tourist_page_pic').addClass(flip).css('opacity','1')
+
+
+        }else{
+            $('.Tourist_page_pic').removeClass(flip).css('opacity','0.2')
+            
+        }
+
+        if(scrollNow >= 3962){
+
+            $('.Blog_Page').addClass(RightIn).css('opacity','1')
+            
+
+            setTimeout(function(){
+
+                $('.intro_text_content').addClass(fadeIn).css('opacity','1')
+
+            },500)
+           
+
+        }else{
+
+           
+            $('.Blog_Page').removeClass(RightIn).css('opacity','0.2')
+            $('.intro_text_content').removeClass(fadeIn).css('opacity','0')
+            
+
+        }
+
+
+        // 加入line社團
+        if(scrollNow >= 5090){
+
+            $('.LineGroup_page_content').addClass(pulse)
+
+
+
+        }else{
+
+            $('.LineGroup_page_content').removeClass(pulse)
+
+        }
+
+     }
+
+
 
 
     

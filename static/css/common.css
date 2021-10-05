@@ -112,7 +112,7 @@ select {
 
 .FishJumpRWD{
 
-    animation: jumpRWD 1.5s linear;
+    animation: jumpRWD 1.1s linear;
 
 }
 
@@ -191,7 +191,7 @@ select {
 
     100%{
 
-        transform: translate(-240px,-180px) rotate(-70deg);
+        transform: translate(-240px,-180px) rotate(-90deg);
         opacity: 0;
 
     }

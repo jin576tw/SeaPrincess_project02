@@ -388,7 +388,7 @@
 }
 
 .home_intro{
-    opacity: 0;
+    opacity: 0.2;
     margin-top: 50px;
     text-align: center;
 }
@@ -576,6 +576,7 @@
 
 
 .intro_btn_icon{
+    opacity: 0.2;
     cursor: pointer;
     width: 250px;
     height: 250px;
@@ -831,6 +832,20 @@
 
 }
 
+.homeSeafood_warp{
+    transition: 0.8s;
+    opacity: 0.2;
+    transform: translateY(50px);
+
+}
+
+.homeItem_warp{
+    transition: 0.8s;
+    opacity: 0.2;
+    transform: translateY(50px);
+
+}
+
 
 .view_more_btn{
     cursor: pointer;
@@ -893,7 +908,9 @@
 }
 
 .Tourist_page_title{
+    opacity: 0.2;
     margin-top: 80px;
+   
     display: flex;
     justify-content: center;
 }
@@ -925,6 +942,8 @@
 }
 
 .Tourist_page_intro{
+    
+    opacity: 0.2;
     margin: 20px auto 0 auto;
     text-align: center;
 }
@@ -944,6 +963,7 @@
 
 
 .Tourist_page_pic{
+    opacity: 0.2;
     margin-top: 40px;
     background-image: url('../images/tourad.png');
     background-size: contain;
@@ -1029,6 +1049,13 @@
         padding-bottom: 80px;
         background-position: center 450px;
     
+    }
+
+
+    .Tourist_page_title{
+
+        margin-left: 15px;
+
     }
 
     .Tourist_page_title h1{
@@ -1125,6 +1152,7 @@
 /* ////海上日記////// */
 
 .Blog_Page{
+
     margin: 200px auto 0 auto;
     height: 700px;
     background-color: #fff;
