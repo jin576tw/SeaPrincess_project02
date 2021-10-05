@@ -861,7 +861,7 @@
 }
 
 .list_fishbox_detail{ 
-    margin: 10px 0;
+    margin: 5px 0px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -918,7 +918,7 @@
     .list_item_intro{
         overflow: hidden;
         width: 200px;
-        min-height: 100px;
+        min-height: 80px;
         margin-left: 10px
     }
 
