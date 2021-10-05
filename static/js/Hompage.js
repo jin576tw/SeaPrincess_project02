@@ -308,7 +308,7 @@ $(document).ready(function () {
    
      // 平板版
      if($(window).width() <= 1024) {
-        if(scrollNow >= 2529){
+        if(scrollNow >= 3223){
 
             $('.Tourist_page_title').addClass(titleIn)
 
@@ -319,7 +319,7 @@ $(document).ready(function () {
 
         }
 
-        if(scrollNow >= 2559){
+        if(scrollNow >= 3354){
 
             $('.Tourist_page_intro').css('opacity','1').css('transition','0.8s')
 
@@ -328,12 +328,12 @@ $(document).ready(function () {
 
         }else{
 
-            $('.Tourist_page_intro').css('opacity','0.2').css('transition','0.8s')
+            $('.Tourist_page_intro').css('opacity','0').css('transition','0.8s')
 
 
         }
 
-        if(scrollNow >= 3590){
+        if(scrollNow >= 3523){
 
             $('.Tourist_page_pic').addClass(flip).css('opacity','1')
 
@@ -343,7 +343,7 @@ $(document).ready(function () {
             
         }
 
-        if(scrollNow >= 4201){
+        if(scrollNow >= 3877){
 
             $('.Blog_Page').addClass(RightIn).css('opacity','1')
             
@@ -355,7 +355,7 @@ $(document).ready(function () {
            
 
         }else{
-            $('.Blog_Page').removeClass(RightIn).css('opacity','0.2')
+            $('.Blog_Page').removeClass(RightIn).css('opacity','0')
             $('.intro_text_content').removeClass(fadeIn).css('opacity','0')
             
 
@@ -378,7 +378,7 @@ $(document).ready(function () {
 
        // 手機版
        if($(window).width() < 768) {
-        if(scrollNow >= 3666){
+        if(scrollNow >= 3587){
 
             $('.Tourist_page_title').addClass(titleIn)
 
@@ -398,12 +398,12 @@ $(document).ready(function () {
 
         }else{
 
-            $('.Tourist_page_intro').css('opacity','0.2').css('transition','0.8s')
+            $('.Tourist_page_intro').css('opacity','0').css('transition','0.8s')
 
 
         }
 
-        if(scrollNow >= 4015){
+        if(scrollNow >= 3915){
 
             $('.Tourist_page_pic').addClass(flip).css('opacity','1')
 
@@ -413,7 +413,7 @@ $(document).ready(function () {
             
         }
 
-        if(scrollNow >= 4477){
+        if(scrollNow >= 4303){
 
             $('.Blog_Page').addClass(RightIn).css('opacity','1')
             
@@ -425,7 +425,7 @@ $(document).ready(function () {
            
 
         }else{
-            $('.Blog_Page').removeClass(RightIn).css('opacity','0.2')
+            $('.Blog_Page').removeClass(RightIn).css('opacity','0')
             $('.intro_text_content').removeClass(fadeIn).css('opacity','0')
             
 
@@ -450,7 +450,7 @@ $(document).ready(function () {
      // 網頁版
      if ($(window).width() > 1024) {
 
-        if(scrollNow >= 3027){
+        if(scrollNow >= 2933){
 
             $('.Tourist_page_title').addClass(titleIn)
 
@@ -462,7 +462,7 @@ $(document).ready(function () {
         }
 
 
-        if(scrollNow >= 3182){
+        if(scrollNow >= 3071){
 
             $('.Tourist_page_intro').css('opacity','1').css('transition','0.8s')
 
@@ -471,13 +471,13 @@ $(document).ready(function () {
 
         }else{
 
-            $('.Tourist_page_intro').css('opacity','0.2').css('transition','0.8s')
+            $('.Tourist_page_intro').css('opacity','0').css('transition','0.8s')
 
 
         }
 
 
-        if(scrollNow >= 3328){
+        if(scrollNow >= 3198){
 
             $('.Tourist_page_pic').addClass(flip).css('opacity','1')
 
@@ -487,7 +487,7 @@ $(document).ready(function () {
             
         }
 
-        if(scrollNow >= 3962){
+        if(scrollNow >= 3746){
 
             $('.Blog_Page').addClass(RightIn).css('opacity','1')
             
@@ -502,7 +502,7 @@ $(document).ready(function () {
         }else{
 
            
-            $('.Blog_Page').removeClass(RightIn).css('opacity','0.2')
+            $('.Blog_Page').removeClass(RightIn).css('opacity','0')
             $('.intro_text_content').removeClass(fadeIn).css('opacity','0')
             
 
