@@ -139,7 +139,7 @@ $(document).ready(function () {
             }
 
 
-            if(scrollNow >= 853){
+            if(scrollNow >= 779){
 
                 $('.About_text_title').addClass(titleIN)
 
@@ -151,7 +151,7 @@ $(document).ready(function () {
             }
 
 
-            if(scrollNow >= 1145){
+            if(scrollNow >= 929){
 
                 $('.About_text_intro').addClass(fadeIn)
 
@@ -163,7 +163,7 @@ $(document).ready(function () {
             }
             
 
-            if(scrollNow >= 1450){
+            if(scrollNow >= 1227){
 
                 $('.About_text_pic').addClass(fadeInUp )
 
@@ -220,7 +220,7 @@ $(document).ready(function () {
            
           
 
-            if(scrollNow >= 953){
+            if(scrollNow >= 824){
 
                 $('.About_text_title').addClass(titleIN)
 
@@ -231,7 +231,7 @@ $(document).ready(function () {
 
             }
 
-            if(scrollNow >= 1201){
+            if(scrollNow >= 1022){
 
                 $('.About_text_intro').addClass(fadeIn)
 
@@ -242,7 +242,7 @@ $(document).ready(function () {
 
             }
 
-            if(scrollNow >= 1440){
+            if(scrollNow >= 1289){
 
                 $('.About_text_pic').addClass(fadeInUp )
 
