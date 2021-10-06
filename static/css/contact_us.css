@@ -503,7 +503,7 @@
     
     .map_content_time{
        
-        height: 100%;
+        height: 100%; 
         width: 40%;
     }
     .map_content_time p{
@@ -521,6 +521,44 @@
     
        
     }
+
+    .contact_map{
+        height: 500px;
+        margin-bottom: 30px;
+    
+    }
+    .contact_map_pic{
+        margin: 0 auto;
+        width: 90%;
+        height: 50%;
+       
+        
+    }
+
+    .contact_map_content{
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: 90%;
+        height: 25%;
+        
+    
+    }
+
+    .map_content_title{
+    
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .map_content_time{
+   
+        height: 100%;
+        width: 100%;
+    }
+    
+    
     
 
 

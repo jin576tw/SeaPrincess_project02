@@ -345,6 +345,7 @@
         margin-top: 10px;
         justify-content: space-around;
         width: 70%;
+        max-height: 27px;
         
     }
     .Landing_page_content .bt-text p{
@@ -1104,7 +1105,7 @@
         background-image: url('../images/tourad-m.png');
         background-size: contain;
         background-repeat: no-repeat;
-        height: 200px;
+        height: 300px;
         background-position: center center;
         
     }
@@ -1484,6 +1485,7 @@
 
 @media (max-width: 767px) {
 
+
     .line_btn_lg p{
         position: relative;
         font-size: 2rem;
@@ -1505,6 +1507,18 @@
         height: 30px;
         background-image: url('../images/line.svg');
         background-size: contain;
+    }
+
+
+    .LineGroup_page_content h1{
+
+        font-size: 3rem;
+    }
+
+    .LineGroup_page_content p{
+        width: 80%;
+        font-size: 1.4rem;
+
     }
 
 }

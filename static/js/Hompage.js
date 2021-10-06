@@ -378,7 +378,9 @@ $(document).ready(function () {
 
        // 手機版
        if($(window).width() < 768) {
-        if(scrollNow >= 3587){
+
+
+        if(scrollNow >= 3417){
 
             $('.Tourist_page_title').addClass(titleIn)
 
@@ -389,7 +391,7 @@ $(document).ready(function () {
 
         }
 
-        if(scrollNow >= 3800){
+        if(scrollNow >= 3521){
 
             $('.Tourist_page_intro').css('opacity','1').css('transition','0.8s')
 
@@ -403,7 +405,7 @@ $(document).ready(function () {
 
         }
 
-        if(scrollNow >= 3915){
+        if(scrollNow >= 3756){
 
             $('.Tourist_page_pic').addClass(flip).css('opacity','1')
 
@@ -413,7 +415,7 @@ $(document).ready(function () {
             
         }
 
-        if(scrollNow >= 4303){
+        if(scrollNow >= 4114){
 
             $('.Blog_Page').addClass(RightIn).css('opacity','1')
             

@@ -1435,4 +1435,10 @@
     }
 
 
+    .tour_icon01 img{
+        width: 60%;
+        transform: translate(42% ,32%);
+    }
+
+
 }
