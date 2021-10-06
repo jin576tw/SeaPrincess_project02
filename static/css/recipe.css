@@ -145,6 +145,7 @@
     width: 40%;
     height: 300px;
     transition: 0.8s;
+    overflow: hidden;
     
 
 }
