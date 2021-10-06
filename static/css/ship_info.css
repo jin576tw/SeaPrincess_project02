@@ -94,6 +94,11 @@
     align-items:flex-start;
     border-left:  solid 3px var(--sea_blue);
     padding-left: 25px;
+
+    max-width: 507px;
+    max-width: 107px;
+    overflow: hidden;
+
 }
 
 .Ship_info_intro_text p{
@@ -170,6 +175,7 @@
 .Ship_info_content_text{
     width: 80%;
     margin: 0 auto 80px auto;
+    overflow: hidden;
 }
 
 .Ship_info_content_text p{
@@ -578,6 +584,8 @@
     min-height: 2200px;
     display: flex;
     align-items: center;
+    transform: translateY(80px);
+    transition: 0.8s;
 }
 
 .Ship_info_team_content::before{
@@ -613,6 +621,7 @@
 } 
 
 .Ship_info_team_pic{
+   
     position: relative;
     display: flex;
     width: 100%;
@@ -622,6 +631,8 @@
 }
 
 .mask{
+    position: relative;
+    transition: 0.8s;
     min-height: 400px;
     display: flex;
     flex-direction: column;
@@ -661,21 +672,41 @@
 }
 
 .mask01{
-    transform: translate(0px,-95px);
+    /* transform: translate(0px,-95px); */
+    bottom:95px;
 }
+
 .mask04{
-    transform: translate(0px,-90px);
+    /* transform: translate(0px,-90px); */
+
+    bottom:90px;
 }
+
 .mask06{
-    transform: translate(0px,80px);
+    /* transform: translate(0px,80px); */
+
+    bottom:80px;
 }
+
 .mask07{
-    transform: translate(0px,-60px);
+    /* transform: translate(0px,-60px); */
+
+    bottom:60px;
 }
 
 .mask08{
+    /* transform: translate(0px,80px); */
+
+    bottom:80px;
+} 
+
+/* 
+
+
+
+.mask08{
     transform: translate(0px,80px);
-}
+} */
 
 
 
@@ -728,20 +759,25 @@
     }
 
     .mask01{
-        transform: translate(0px,0px);
+        /* transform: translate(0px,0px); */
+        bottom:0px;
     }
     .mask04{
-        transform: translate(0px,0px);
+        /* transform: translate(0px,0px); */
+        bottom:0px;
     }
     .mask06{
-        transform: translate(0px,0px);
+        /* transform: translate(0px,0px); */
+        bottom:0px;
     }
     .mask07{
-        transform: translate(0px,0px);
+       /* transform: translate(0px,0px); */
+       bottom:0px;
     }
     
     .mask08{
-        transform: translate(0px,0px);
+       /* transform: translate(0px,0px); */
+       bottom:0px;
     }
     
 }
@@ -838,20 +874,25 @@
 
 
     .mask01{
-        transform: translate(0px,0px);
+        
+        bottom:0px;
     }
     .mask04{
-        transform: translate(0px,0px);
+      
+        bottom:0px;
     }
     .mask06{
-        transform: translate(0px,0px);
+     
+       bottom:0px;
     }
     .mask07{
-        transform: translate(0px,0px);
+       
+        bottom:0px;
     }
     
     .mask08{
-        transform: translate(0px,0px);
+       
+       bottom:0px;
     }
     
 
@@ -963,15 +1004,21 @@
 
 
  .m_video01{
-    transform: translate(200px,-30px);
+    /* transform: translate(200px,-30px); */
+    left: 200px;
+    bottom: 30px;
 
  }
  .m_video02{
-    transform: translate(50px,0px);
+    /* transform: translate(50px,0px); */
+    left: 50px;
+    bottom: 0px;
 
  }
  .m_video03{
-    transform: translate(400px,0px);
+    /* transform: translate(400px,0px); */
+    left: 400px;
+    bottom: 0px;
 
  }
  
@@ -1036,16 +1083,26 @@
         align-items: center;
      }
 
+     .m_video{
+         margin-bottom: 30px;
+     }
+
     .m_video01{
-        transform: translate(0px,0px);
+        /* transform: translate(0px,0px); */
+        left: -100px;
+        bottom: 0;
     
      }
      .m_video02{
-        transform: translate(0px,0px);
+         /* transform: translate(0px,0px); */
+         left: 120px;
+         bottom: 0;
     
      }
      .m_video03{
-        transform: translate(0px,0px);
+         /* transform: translate(0px,0px); */
+         left: -150px;
+         bottom: 0;
     
      }
 
@@ -1109,16 +1166,27 @@
        align-items: center;
     }
 
+
+    .m_video{
+        margin-bottom: 30px;
+    }
+
     .m_video01{
-        transform: translate(0px,0px);
+         /* transform: translate(0px,0px); */
+         left: 0;
+         bottom: 0;
     
      }
      .m_video02{
-        transform: translate(0px,0px);
+         /* transform: translate(0px,0px); */
+         left: 0;
+         bottom: 0;
     
      }
      .m_video03{
-        transform: translate(0px,0px);
+         /* transform: translate(0px,0px); */
+         left: 0;
+         bottom: 0;
     
      }
 }
@@ -1142,13 +1210,17 @@
     max-width: 345px;
     height: 100%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
 }
 
 .Tourist_pic{
     overflow: hidden;
-    position: absolute;
+    /* position: absolute;
     top: 15px;
-    left: 16px;
+    left: 18px; */
     background-color: white;
     width: 90%;
     height: 80%;
@@ -1174,7 +1246,8 @@
     background-color: var(--dark_blue);
     border-radius: 100%;
     border:20px solid white;
-    bottom: -2%;
+    left: 0;
+    bottom: 0;
 }
 
 .tour_icon01 img{
@@ -1240,9 +1313,6 @@
     
     .Tourist_pic{
         overflow: hidden;
-        position: absolute;
-        top: 15px;
-        left: 11px;
         background-color: white;
         width: 90%;
         height: 80%;
@@ -1268,7 +1338,7 @@
         background-color: var(--dark_blue);
         border-radius: 100%;
         border:20px solid white;
-        bottom: -2%;
+        bottom: 10px;
     }
     
     .tour_icon01 img{
@@ -1329,7 +1399,7 @@
         background-color: var(--dark_blue);
         border-radius: 100%;
         border:25px solid white;
-        bottom: -2%;
+        
     }
 
     
