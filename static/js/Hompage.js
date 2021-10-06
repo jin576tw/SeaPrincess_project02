@@ -5,7 +5,7 @@ $(document).ready(function () {
     $(window).scroll(function () {  
 
         let scrollNow = $(window).scrollTop();
-        console.log('scrollTop', scrollNow);
+        
 
         let pulse = `animate__animated animate__pulse`
 
