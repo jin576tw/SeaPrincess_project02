@@ -5,7 +5,7 @@ $(window).scroll(function () {
 
     let scrollNow = $(window).scrollTop();
 
-    console.log(scrollNow);
+   
 
     let fadeDown = `animate__animated animate__fadeInDown`
 

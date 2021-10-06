@@ -115,7 +115,7 @@ $(document).ready(function () {
     $(window).scroll(function () {
 
         let scrollNow = $(window).scrollTop();
-        console.log(scrollNow);
+     
 
         let titleIN = `animate__animated animate__fadeInDown`
 

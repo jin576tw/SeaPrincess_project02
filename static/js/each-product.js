@@ -1591,7 +1591,7 @@ $(document).ready(function () {
 
     //         let scrollNow = $(window).scrollTop();
         
-    //         console.log(scrollNow);
+    //      
 
 
            
