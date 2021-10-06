@@ -170,6 +170,9 @@ if(cookieStr){
 //商品加入navbar購物車
 PROPUCTSWARP.on("click",".add_btn",function(){
 
+    ListCount.css('display','flex').removeClass('Bounce');
+    ListCount_RWD.css('display','flex').removeClass('Bounce');
+
 
     alert('商品已加入購物車！')
     // 結帳加入購物車
