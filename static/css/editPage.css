@@ -1,0 +1,122 @@
+.EditPage{
+
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--dark_grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.EditPage_content{
+    width: 80%;
+    margin: 60px;
+    padding: 40px;
+    background-color: white;
+}
+
+
+/* ////////////////////圖片上傳////////////////*/
+.EditPage_pictitle{
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid var(--dark_grey)
+}
+
+.EditPage_pic_warp{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.EditPage_pic{
+    display: flex;
+    flex-direction: column;
+   
+    margin-bottom: 50px;
+
+}
+
+@media (max-width: 768px){
+
+    .EditPage_pic_warp{
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.pic_view{
+    width: 200px;
+    height: 200px;
+    background-color: var(--light_grey);
+}
+
+.pic_view img{
+    height: 100%;
+    object-fit: contain
+
+}
+
+.EditPage_pic input{
+    margin-top: 10px;
+}
+
+
+/* //////////////////文字編輯/////////////////// */
+.EditPage_textitle{
+    margin: 40px 0;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid var(--dark_grey)
+}
+
+.EditPage_text_warp{
+    width: 100%;
+    min-height: 500px;
+    
+}
+
+
+
+/* ////////////////輸出編輯//////////////////// */
+
+.EditPage_InputEdit{
+    margin: 40px 0;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid var(--dark_grey)
+
+}
+
+
+.EditPage_input{
+   margin: 40px 0;
+   width: 100%;
+}
+
+.EditPage_input input{
+    width: 120px;
+    height: 50px;
+    font-size: 1.8rem;
+    margin: 10px;
+    border: 1px solid var(--dark_grey)
+
+}
+
+
+.save{
+    text-align: center;
+    margin: 60px 0;
+    width: 150px;
+    height: 60px;
+}

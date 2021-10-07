@@ -146,6 +146,7 @@
     height: 300px;
     transition: 0.8s;
     overflow: hidden;
+    border: 1px solid #DD7A10 
     
 
 }
@@ -177,8 +178,7 @@
         width: 45%;
         margin-top: 30px;
         height: 200px;
-        background-color: #d8d8d8;
-    
+        
     }
 
 
@@ -198,7 +198,7 @@
         width: 95%;
         margin-top: 30px;
         height: 200px;
-        background-color: #d8d8d8;
+       
     
     }
 

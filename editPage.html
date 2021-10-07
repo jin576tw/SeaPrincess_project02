@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        后台编辑</title>
+
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="./static/css/common.css" />
+  <link rel="stylesheet" href="./static/css/editPage.css" />
+
+
+  <style>
+
+   
+  </style>
+</head>
+<body>
+
+
+    <section class="EditPage">
+        
+        <form class="EditPage_content" name="EditContent" onsubmit="save();return false" novalidate> 
+
+            
+
+            <!-- 圖片上傳-->
+            <div class="EditPage_pictitle">
+                <h2>二维码上传</h2>
+            </div>
+
+            <div class="EditPage_pic_warp">
+
+                <div class="EditPage_pic">
+                    <div class="pic_view">
+                        <img id="imgshow01" src="" alt="" >
+                       
+                    </div>  
+    
+                    <input type="file" accept="image/*" multiple="multiple" id="filed01" name="file1" >
+                </div>
+
+                
+               
+            </div>
+
+            
+
+
+
+            <!-- 支付編輯 -->
+            <div class="EditPage_textitle">
+                <h2>支付編輯</h2>
+            </div>
+
+            <div class="EditPage_text_warp">
+                <textarea name="content" id="content" rows="10" cols="80"></textarea>
+
+                
+            </div>
+
+
+            <!-- 支付时间 -->
+            <div class="EditPage_InputEdit">
+                <h2>支付时间</h2>
+            </div>
+
+            <div class="EditPage_input">
+                <input type="text" id="Min_Edit" name="Min_Edit" placeholder="分">
+                <input type="text" id="Sec_Edit" name="Sec_Edit" placeholder="秒">
+            </div>
+
+
+           
+           
+
+            <!-- 送出儲存按鈕 -->
+            <button class="save" type="submit">送出编辑</button>
+           
+        </form>
+        
+
+    </section>
+    
+
+ 
+
+</body>
+
+<link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+  />
+<script src="./static/jq/jquery-3.6.0.js"></script>
+
+<script src="./static/ckeditor/ckeditor.js"></script>
+<script src="./static/js/editPage.js"></script>
+<script>
+  
+  CKEDITOR.replace( 'content', {
+      height: 500
+  });
+  CKEDITOR.replace( 'check_content', {
+      height: 500
+  });
+
+  
+  
+
+ 
+
+
+</script>
+</html>

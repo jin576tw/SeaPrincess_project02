@@ -93,6 +93,10 @@ select {
     padding-left: 10px;
 }
 
+label{
+    margin: 0;
+}
+
 
 
 /* ///////////動畫////////// */
@@ -276,17 +280,6 @@ select {
     transition: transform ease 400ms;
 }
 
-.answer_open{
-    transition: 0.8s;
-    height: 480px; 
-    
-}
-
-
-.answer_open_RWD{
-    transition: 0.8s;
-    height: 450px; 
-}
 
 
 /* ///////更多按鈕///////// */
