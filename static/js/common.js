@@ -1497,34 +1497,5 @@ if ($(window).width() > 1024) {
 
 }
 
-// Q&A
-if ($(window).width() <=  1024){
 
-    $('.question_icon').click(function(){
-        
-        $( this ).toggleClass( 'minus' );
-        $( this ).parent().parent('.question').toggleClass( 'answer_open_RWD' );
-    })
-
-    $('.question_title h3').click(function(){
-        
-        $( this ).parent().parent('.question').toggleClass( 'answer_open' )
-    })
-
-}
-
-
-if ($(window).width() > 1024){
-
-    $('.question_icon').click(function(){
-        
-        $( this ).toggleClass( 'minus' );
-        $( this ).parent().parent('.question').toggleClass( 'answer_open' )
-    })
-
-    $('.question_title h3').click(function(){
-        
-        $( this ).parent().parent('.question').toggleClass( 'answer_open' )
-    })
-}
 

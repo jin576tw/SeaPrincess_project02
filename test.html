@@ -111,6 +111,18 @@
             font-size: 18px;
         }
 
+
+        .question{
+            width: 500px;
+            height: 60px;
+            background-color: blue;
+        }
+        .answer{
+            width: 500px;
+            height: 60px;
+            background-color: red;
+        }
+
     </style>
 
 </head>
@@ -127,26 +139,28 @@
       <!-- 送出儲存按鈕 -->
       <!-- <button class="save" type="submit" onclick="save()">编辑</button> -->
            
-
+<!-- 
     <div class="warp row">
 
-    </div>
+    </div> -->
 
 
      
     <!-- <div class="pagination" id="pagination"></div> -->
 
 
-    <select name="region" id="region">
+    <!-- <select name="region" id="region">
         <option value="">選擇地區</option>
         <option value="taipei" >taipei</option>
         <option value="tainan">tainan</option>
         <option value="koashung">koashung</option>
         <option value="keelong">keelong</option>
-    </select>
+    </select> -->
 
 
 
+    <div class="question"></div>
+    <div class="answer"></div>
 
 
 
@@ -181,30 +195,42 @@
 
 <script>
 
-let type = ['a','b','c']
+
+$(".answer").slideUp()
 
 
+$('.question').click(function(){
 
+    $(".answer").slideToggle()
 
-$('#region option[value="taipei"]').prop("selected",true);
-
-$('#region').change(function(){
-
-
-    let seleted = $('#region option:selected').text()
-
-
-    if(seleted == 'taipei'){
-
-        alert(seleted)
-
-    
-    }
-
-    // console.log(seleted);
 
 
 })
+
+// let type = ['a','b','c']
+
+
+
+
+// $('#region option[value="taipei"]').prop("selected",true);
+
+// $('#region').change(function(){
+
+
+//     let seleted = $('#region option:selected').text()
+
+
+//     if(seleted == 'taipei'){
+
+//         alert(seleted)
+
+    
+//     }
+
+//     // console.log(seleted);
+
+
+// })
 
 
 
