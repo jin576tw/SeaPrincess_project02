@@ -314,6 +314,7 @@
 }
 
 .Member_content_title h2{
+    margin-top: 8px;
     font-size: 2rem;
     font-weight: normal;
     font-stretch: normal;
@@ -353,7 +354,7 @@
 .Member_status{
     display:flex;
     justify-content: center;
-    /* display: none; */
+    display: none;
 
 }
 
@@ -1586,7 +1587,195 @@
         padding: 0 20px;
     }
 }
+/* ///////////////我的優惠券/////////////// */
+.Coupon_point{
 
+    display: none;
+
+}
+
+.Coupon_point_intro{
+    margin-bottom: 60px;
+}
+.Coupon_point_intro p{
+    font-size: 1.6rem;
+
+}
+
+.coupon_item_warp{
+
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 0px ;
+}
+
+.coupon_item{
+    cursor: pointer;
+    width: 48%;
+    height: 140px;
+    border:solid 1px var(--sea_blue);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+
+}
+
+.coupon_number{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.coupon_number small{
+    color: var(--orange);
+}
+
+.coupon_number h2{
+    font-size: 2rem;
+    color: var(--sea_blue);
+}
+
+.coupon_number h2::before{
+    content: '-';
+}
+
+.coupon_item h2:nth-of-type(2){
+    font-size: 2rem;
+}
+
+
+
+.coupon_item_detail{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--grey);
+}
+.coupon_item_detail h5:nth-of-type(2){
+    text-decoration: underline;
+    
+}
+
+
+.coupon_notice{
+    border: solid 1px transparent !important;
+    background-color: rgba(124, 175, 191, 0.1);
+
+}
+
+.coupon_notice h2{
+    opacity: 0.3;
+}
+
+
+@media (max-width: 1025px) { 
+
+    .coupon_item{
+        cursor: pointer;
+        width: 48%;
+        height: 200px;
+        border:solid 1px var(--sea_blue);
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+    
+    }
+
+    .coupon_item_detail{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        color: var(--grey);
+    }
+
+
+
+}
+
+@media (max-width: 767px) {
+
+    .Coupon_point_intro{
+        padding: 0 30px;
+        margin-bottom: 60px;
+    }
+
+
+    .coupon_item{
+        cursor: pointer;
+        width: 100%;
+        height: 140px;
+        border:solid 1px var(--sea_blue);
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+
+    }
+
+
+
+}
+/* ///////////////我的集點卡/////////////// */
+
+.Point_Collection_intro p{
+    font-size: 1.6rem;
+}
+
+.Point_Card{
+    margin: 40px auto 0 auto;
+    width: 80%;
+    height: 250px;
+    border: 1px solid var(--sea_blue);
+   
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Point_number{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    border: dashed 1px var(--sea_blue);
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--sea_blue);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.Point_Card_notice{
+    width: 100%;
+    text-align: center;
+    color:#8c8c8c;
+    margin: 30px 0 80px 0;
+}
+.Point_get{
+    color: transparent;
+    border: transparent;
+    background-color: var(--sea_blue);
+    background-image: url('../images/point.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
 
 /*.///////////////會員修改資料///////////// */
 .Member_edit{

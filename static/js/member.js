@@ -88,7 +88,7 @@ $(document).ready(function () {
             
             $('.Member_content_title h2:nth-of-type(1)').text('我的優惠券')
 
-            // $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+            $('.Coupon_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
             $('.Member_Cargo_BOX').hide()
 
@@ -124,7 +124,7 @@ $(document).ready(function () {
             
             $('.Member_content_title h2:nth-of-type(1)').text('我的集點卡')
 
-            // $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+            $('.Point_Collection').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
             $('.Member_Cargo_BOX').hide()
 
@@ -149,7 +149,7 @@ $(document).ready(function () {
 
     })
 
-
+    // 會員修改資料 
     MemberEdit_btn.on({
         
         click:function(){
@@ -183,6 +183,7 @@ $(document).ready(function () {
 
     })
 
+    // 會員修改密碼 
     PasswordEdit_btn.on({
         
         click:function(){
