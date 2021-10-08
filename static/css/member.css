@@ -307,10 +307,15 @@
     background-color: white;
     border-bottom: solid 1px #dedede;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 0 30px;
 
+}
+.notice_text{
+    margin-top: 8px;
+    color: var(--grey);
+    text-decoration: underline;
 }
 
 .Member_content_title h2{
@@ -354,7 +359,7 @@
 .Member_status{
     display:flex;
     justify-content: center;
-    display: none;
+    /* display: none; */
 
 }
 
@@ -1594,6 +1599,7 @@
 
 }
 
+
 .Coupon_point_intro{
     margin-bottom: 60px;
 }
@@ -1730,6 +1736,11 @@
 }
 /* ///////////////我的集點卡/////////////// */
 
+.Point_Collection{
+    display: none;
+
+}
+
 .Point_Collection_intro p{
     font-size: 1.6rem;
 }
@@ -1766,6 +1777,7 @@
     color:#8c8c8c;
     margin: 30px 0 80px 0;
 }
+
 .Point_get{
     color: transparent;
     border: transparent;
@@ -1774,6 +1786,109 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+}
+
+@media (max-width: 1025px) { 
+
+    .Point_Card{
+        margin: 40px auto 0 auto;
+        width: 100%;
+        height: 150px;
+        border: 1px solid var(--sea_blue);
+      
+    }
+
+    .Point_number{
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        border: dashed 1px var(--sea_blue);
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--sea_blue);
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+
+    .Point_get{
+        color: transparent;
+        border: transparent;
+        background-color: var(--sea_blue);
+        background-image: url('../images/point.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    
+    }
+
+    .Point_Card_notice{
+        width: 100%;
+        text-align: center;
+        color:#8c8c8c;
+        margin:30px 0px ;
+    }
+
+   
+
+
+}
+
+@media (max-width: 767px) {
+
+    .Point_Collection_intro{
+        padding: 0 30px;
+      
+    }
+
+
+    .Point_Card{
+        margin: 40px auto 0 auto;
+        width: 90%;
+        height: 150px;
+        border: 1px solid var(--sea_blue);
+      
+    }
+
+    .Point_number{
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        border: dashed 1px var(--sea_blue);
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--sea_blue);
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+
+    .Point_get{
+        color: transparent;
+        border: transparent;
+        background-color: var(--sea_blue);
+        background-image: url('../images/point.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    
+    }
+
+    .Point_Card_notice{
+        width: 100%;
+        text-align: center;
+        color:#8c8c8c;
+        margin:40px 0px ;
+    }
+    
+
+
+
 
 }
 

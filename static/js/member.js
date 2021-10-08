@@ -17,6 +17,7 @@ $(document).ready(function () {
             $(this).parents().siblings().children('h3').css('color','#8c8c8c')
 
             $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
+            $('.notice_text').text('')
 
             $('.Order_detail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
@@ -51,6 +52,7 @@ $(document).ready(function () {
             $(this).parents().siblings().children('h3').css('color','#8c8c8c')
             
             $('.Member_content_title h2:nth-of-type(1)').text('我的公主幣')
+            $('.notice_text').text('')
 
             $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
@@ -87,6 +89,8 @@ $(document).ready(function () {
             $(this).parents().siblings().children('h3').css('color','#8c8c8c')
             
             $('.Member_content_title h2:nth-of-type(1)').text('我的優惠券')
+           
+            $('.notice_text').text('公主幣獎勵制度')
 
             $('.Coupon_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
@@ -124,6 +128,8 @@ $(document).ready(function () {
             
             $('.Member_content_title h2:nth-of-type(1)').text('我的集點卡')
 
+            $('.notice_text').text('關於集點規則')
+
             $('.Point_Collection').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
             $('.Member_Cargo_BOX').hide()
@@ -160,6 +166,8 @@ $(document).ready(function () {
         $(this).parents().siblings().children('h3').css('color','#8c8c8c')
         $('.Member_content_title h2:nth-of-type(1)').text('會員資料修改')
 
+        $('.notice_text').text('')
+
 
         $('.Member_edit').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
@@ -194,6 +202,8 @@ $(document).ready(function () {
         $(this).parents().siblings().children('h3').css('color','#8c8c8c')
         $('.Member_content_title h2:nth-of-type(1)').text('密碼修改')
 
+        $('.notice_text').text('')
+
 
         $('.Password_edit').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
@@ -226,6 +236,8 @@ $(document).ready(function () {
         
         $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
 
+        $('.notice_text').text('')
+
         $('.Each_orderDetail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
         $('body,html').animate({
@@ -252,20 +264,5 @@ $(document).ready(function () {
 
         
         
-
-
-
-  
-   
-
-
-
-
-    // }
-
-
-
-
-
 
 })
