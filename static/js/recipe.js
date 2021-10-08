@@ -28,7 +28,7 @@ $(document).ready(function () {
                     for(let i = 0 ; i < d.length ;i++){ 
     
     
-                        RecipeContent.append(Blog_artical(d[i]))
+                        RecipeContent.append(Blog_artical_B(d[i]))
     
                     }
     
@@ -53,7 +53,7 @@ $(document).ready(function () {
                     for(let i = 0 ; i < d.length ;i++){ 
     
     
-                        RecipeContent.append(Blog_artical(d[i]))
+                        RecipeContent.append(Blog_artical_B(d[i]))
     
                     }
     
