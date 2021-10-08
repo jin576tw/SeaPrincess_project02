@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>membericon-04</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="member-m" transform="translate(-461.000000, -466.000000)" fill-rule="nonzero" fill="#7CAFBF">
+            <g id="membericon-04" transform="translate(461.000000, 466.000000)">
+                <polygon id="Shape" points="23.75 6.79615385 23.75 6.78641026 30.86075 10.0529487 38 7.30769231 19 0 0 7.30769231 19 14.6153846 26.11075 11.8798718 19 8.87397436 19 8.86666667"></polygon>
+                <path d="M0,8.76923077 L0,31.0393504 L18.5128205,38 L18.5128205,15.7298804 L0,8.76923077 Z M9.87350427,31.1210075 L4.93675214,29.2651642 L4.93675214,26.6249178 L9.87350427,28.4807611 L9.87350427,31.1210075 Z" id="Shape"></path>
+                <polygon id="Shape" points="30.5948718 11.5529957 30.5948718 17.7515123 25.6581197 19.6073557 25.6581197 13.408839 19.4871795 15.7298804 19.4871795 38 38 31.0393504 38 8.76923077"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

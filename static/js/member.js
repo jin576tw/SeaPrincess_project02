@@ -1,200 +1,145 @@
 $(document).ready(function () {
 
-    if($(window).width() <= 768){
 
-        // 手機版起始版面
-        $(".Member_RWD_content").siblings('.Mcontent').css('display','none')
-        $('.Member_content_title h2:nth-of-type(1)').css('display','none')
-        $('.Member_tool_list h3').css('color','#8c8c8c')
-
-
-        $('.cargo_box').on({
-        
-            click:function(){
-    
-                $('.cargo_list h3').css('color','#7cafbf')
-                $('.cargo_list h3').parents().siblings().children('h3').css('color','#8c8c8c')
-                $('.Member_content_title h2:nth-of-type(1)').css('display','block')
-                $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
-        
-                $('.Order_detail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
-
-                $('.Member_RWD_content').fadeOut(1)
-                $('.userName').fadeOut(1)
-
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 10 ,'swing');
-    
-            }
-            
-    
-         })
-
-        $('.point_box').on({
-        
-            click:function(){
-    
-                $('.point_list h3').css('color','#7cafbf')
-                $('.point_list h3').parents().siblings().children('h3').css('color','#8c8c8c')
-                $('.Member_content_title h2:nth-of-type(1)').css('display','block')
-                $('.Member_content_title h2:nth-of-type(1)').text('我的公主幣')
-        
-                $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
-
-                $('.Member_RWD_content').fadeOut(1)
-                $('.userName').fadeOut(1)
-
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 10 ,'swing');
-        
-    
-        
-            }
-            
-    
-         })
-
-        $('.member_box').on({
-        
-            click:function(){
-    
-                $('.user_list h3:nth-of-type(1)').css('color','#7cafbf')
-                $('.user_list h3:nth-of-type(1)').parents().siblings().children('h3').css('color','#8c8c8c')
-                $('.Member_content_title h2:nth-of-type(1)').css('display','block')
-                $('.Member_content_title h2:nth-of-type(1)').text('會員資料修改')
-        
-                $('.Member_edit').fadeIn(100).siblings('.Mcontent').fadeOut(1)
-
-                $('.Member_RWD_content').fadeOut(1)
-                $('.userName').fadeOut(1)
-
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 10 ,'swing');
-        
-    
-        
-            }
-            
-    
-         })
-
-    }
-
-
+    let Oder_btn = $('.cargo_list h3')
+    let Coin_btn = $('.point_list h3:nth-of-type(1)')
+    let Coupon_btn = $('.point_list h3:nth-of-type(2)')
+    let Point_btn = $('.point_list h3:nth-of-type(3)')
+    let MemberEdit_btn = $('.user_list h3:nth-of-type(1)')
+    let PasswordEdit_btn = $('.user_list h3:nth-of-type(2)')
   
-
-    $(".cargo_list h3 ").on({
+    //訂單明細
+    Oder_btn.on({
         
         click:function(){
 
-        $(this).css('color','#7cafbf')
-        $(this).parents().siblings().children('h3').css('color','#8c8c8c')
-        $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
+            $(this).css('color','#7cafbf')
+            $(this).parents().siblings().children('h3').css('color','#8c8c8c')
 
-        $('.Order_detail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+            $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
 
-        $('body,html').animate({
-            scrollTop: 0
-        }, 10 ,'swing');
+            $('.Order_detail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+
+            $('.Member_Cargo_BOX').hide()
+
+            $('body,html').animate({
+                scrollTop: 0
+            }, 10 ,'swing');
 
 
-        if($(window).width() <= 768){
+            // let url = location.pathname + '?Cargo'
+            // history.pushState({
+            //     url: url,
+            //     title: document.title
+            // }, document.title, url)
+    
 
-            $('.Member_RWD_content').fadeOut(1)
-            $('.userName').fadeOut(1)
-            $('.Member_content_title h2:nth-of-type(1)').css('display','block')
+
+        }
+        
+
+    })
+
+    
+    //我的公主幣
+    Coin_btn.on({
+        
+        click:function(){
+
+            $(this).css('color','#7cafbf')
+            $(this).siblings('h3').css('color','#8c8c8c')
+            $(this).parents().siblings().children('h3').css('color','#8c8c8c')
             
-           
+            $('.Member_content_title h2:nth-of-type(1)').text('我的公主幣')
 
-        }
+            $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
-        let url = location.pathname + '?Cargo'
-        history.pushState({
-            url: url,
-            title: document.title
-        }, document.title, url)
+            $('.Member_Cargo_BOX').hide()
+
+            $('body,html').animate({
+                scrollTop: 0
+            }, 10 ,'swing');
+
+
+        
+
+            // let url = location.pathname + '?Point'
+            // history.pushState({
+            //     url: url,
+            //     title: document.title
+            // }, document.title, url)
+
+
     
-
-
+    
         }
         
 
-     })
+    })
 
-    $(".more_order , .order_detail_name , .order_detail_pic").on({
+    //我的優惠券
+    Coupon_btn.on({
         
         click:function(){
 
-        
-        $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
-
-        $('.Each_orderDetail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
-
-        $('body,html').animate({
-            scrollTop: 0
-        }, 10 ,'swing');
-
-
-        if($(window).width() <= 768){
-
-            $('.Member_RWD_content').fadeOut(1)
-            $('.userName').fadeOut(1)
-            $('.Member_content_title h2:nth-of-type(1)').css('display','block')
+            $(this).css('color','#7cafbf')
+            $(this).siblings('h3').css('color','#8c8c8c')
+            $(this).parents().siblings().children('h3').css('color','#8c8c8c')
             
-           
+            $('.Member_content_title h2:nth-of-type(1)').text('我的優惠券')
 
+            // $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+
+            $('.Member_Cargo_BOX').hide()
+
+            $('body,html').animate({
+                scrollTop: 0
+            }, 10 ,'swing');
+
+
+
+
+            // let url = location.pathname + '?Point'
+            // history.pushState({
+            //     url: url,
+            //     title: document.title
+            // }, document.title, url)
+
+
+    
+    
         }
-       
-
-        let url = location.pathname + '?Detail'
-        history.pushState({
-            url: url,
-            title: document.title
-        }, document.title, url)
-    
-
-        
-    
-    
-        }
         
 
-     })
+    })
 
-    $(".point_list h3").on({
+    // 我的集點卡
+    Point_btn.on({
         
         click:function(){
 
-        $(this).css('color','#7cafbf')
-        $(this).parents().siblings().children('h3').css('color','#8c8c8c')
-        
-        $('.Member_content_title h2:nth-of-type(1)').text('我的公主幣')
+            $(this).css('color','#7cafbf')
+            $(this).siblings('h3').css('color','#8c8c8c')
+            $(this).parents().siblings().children('h3').css('color','#8c8c8c')
+            
+            $('.Member_content_title h2:nth-of-type(1)').text('我的集點卡')
 
-        $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+            // $('.Fish_point').fadeIn(100).siblings('.Mcontent').fadeOut(1)
 
-        $('body,html').animate({
-            scrollTop: 0
-        }, 10 ,'swing');
+            $('.Member_Cargo_BOX').hide()
 
-
-        if($(window).width() <= 768){
-
-            $('.Member_RWD_content').fadeOut(1)
-            $('.userName').fadeOut(1)
-            $('.Member_content_title h2:nth-of-type(1)').css('display','block')
+            $('body,html').animate({
+                scrollTop: 0
+            }, 10 ,'swing');
 
 
-        }
+    
 
-
-        let url = location.pathname + '?Point'
-        history.pushState({
-            url: url,
-            title: document.title
-        }, document.title, url)
+            // let url = location.pathname + '?Point'
+            // history.pushState({
+            //     url: url,
+            //     title: document.title
+            // }, document.title, url)
 
 
     
@@ -202,8 +147,10 @@ $(document).ready(function () {
         }
         
 
-     })
-    $(".user_list h3:nth-of-type(1)").on({
+    })
+
+
+    MemberEdit_btn.on({
         
         click:function(){
 
@@ -221,20 +168,11 @@ $(document).ready(function () {
         }, 10 ,'swing');
 
 
-        if($(window).width() <= 768){
-
-            $('.Member_RWD_content').fadeOut(1)
-            $('.userName').fadeOut(1)
-            $('.Member_content_title h2:nth-of-type(1)').css('display','block')
-
-
-        }
-
-        let url = location.pathname + '?User'
-        history.pushState({
-            url: url,
-            title: document.title
-        }, document.title, url)
+        // let url = location.pathname + '?User'
+        // history.pushState({
+        //     url: url,
+        //     title: document.title
+        // }, document.title, url)
 
 
 
@@ -243,9 +181,9 @@ $(document).ready(function () {
         }
         
 
-     })
+    })
 
-    $(".user_list h3:nth-of-type(2)").on({
+    PasswordEdit_btn.on({
         
         click:function(){
 
@@ -263,20 +201,12 @@ $(document).ready(function () {
         }, 10 ,'swing');
 
 
-        if($(window).width() <= 768){
 
-            $('.Member_RWD_content').fadeOut(1)
-            $('.userName').fadeOut(1)
-            $('.Member_content_title h2:nth-of-type(1)').css('display','block')
-
-
-        }
-
-        let url = location.pathname + '?Password'
-        history.pushState({
-            url: url,
-            title: document.title
-        }, document.title, url)
+        // let url = location.pathname + '?Password'
+        // history.pushState({
+        //     url: url,
+        //     title: document.title
+        // }, document.title, url)
 
 
     
@@ -284,8 +214,43 @@ $(document).ready(function () {
         }
         
 
-     })
+    })
 
+
+    // 單一訂單明細
+    $(".more_order , .order_detail_name , .order_detail_pic").on({
+        
+        click:function(){
+
+        
+        $('.Member_content_title h2:nth-of-type(1)').text('訂單明細')
+
+        $('.Each_orderDetail').fadeIn(100).siblings('.Mcontent').fadeOut(1)
+
+        $('body,html').animate({
+            scrollTop: 0
+        }, 10 ,'swing');
+
+
+    
+
+        // let url = location.pathname + '?Detail'
+        // history.pushState({
+        //     url: url,
+        //     title: document.title
+        // }, document.title, url)
+    
+
+        
+    
+    
+        }
+        
+
+    })
+
+        
+        
 
 
 
@@ -295,10 +260,7 @@ $(document).ready(function () {
 
 
 
-
-
-
-
+    // }
 
 
 

@@ -35,6 +35,19 @@
 }
 
 
+@media (max-width: 767px) {
+
+
+    .Member_warp{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+
+}
+
+
+/* //////////////會員導覽列表////////// */
 .Member_tool{
     
     
@@ -88,26 +101,209 @@
     color: var(--dark_red)
 }
 
-.cargo_list h3{
+/* .cargo_list h3{
     color: #7cafbf;
+
+} */
+
+
+
+@media (max-width: 767px) {
+
+    .Member_tool{
+        margin: 40px 0 0 0;
+
+    }
 
 }
 
+/* //////訂單查看選擇///////// */
+.Member_Cargo_BOX{
+    margin-top: 40px;
+    /* display: none; */
+}
 
-/* 會員中心內容 */
-.Member_content{
-    position: relative;
-    min-height: 600px;
+.Member_cargo_title{
+    width: 100%;
+    height: 10%;
+    min-height: 60px;
+    background-color: white;
+    border-bottom: solid 1px #dedede;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.Member_cargo_title h2{
+    font-size: 2rem;
+    margin-top: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.11px;
+    color: #000;
+}
+.Member_cargo_title h5{
+   cursor: pointer;
+    margin-top: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.11px;
+    color: #000;
+}
+
+.Member_cargo_title .fa-chevron-right{
+    margin-left: 5px;
+}
+
+.Member_cargo_wrap{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    min-height: 120px;
+    background-color: white;
+}
+
+.Member_cargo_box{
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    /* background-color: cyan; */
+    position: relative;
+    
+}
 
+.Member_cargo_box_count{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f5a623;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 100%;
+    top: 12px;
+    right:12px;
+    
+
+}
+
+.Member_cargo_box h3{
+    font-weight: 400;
+    color: #7cafbf;
+    margin-top: 8px;
+}
+
+.Member_cargo_box_icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1025px) { 
+
+    
+    .Member_cargo_box{
+        cursor: pointer;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        
+        
+    }
+
+    .Member_cargo_box_icon{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Member_cargo_box_count{
+   
+        top: 0px;
+        right: 3px;
+        
+    
+    }
+
+
+
+}
+
+@media (max-width: 767px) { 
+
+    .Member_cargo_wrap{
+        
+        padding: 40px 0px;
+        
+    }
+
+
+    .Member_cargo_box{
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        
+        
+    }
+
+    .Member_cargo_box_icon{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Member_cargo_box_count{
+   
+        top: 0px;
+        right:12px;
+        
+    
+    }
+    
+}
+
+
+/* ///////////////會員中心內容顯示//////////// */
+.Member_Content_BOX{
+    background-color: white;
+}
+
+.Member_content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .Member_content_title{
     width: 100%;
-    height: 10%;
-    min-height: 60px;
+    height: 60px;
     background-color: white;
     border-bottom: solid 1px #dedede;
     display: flex;
@@ -119,7 +315,6 @@
 
 .Member_content_title h2{
     font-size: 2rem;
-    margin-top: 12px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -131,36 +326,15 @@
 .Member_content_wrap{
     position: relative;
     padding: 40px;
-    /* min-height: 624px; */
-
 
 }
 
-.Member_RWD_content{
-    display: none;
-}
 
-.userName{
-    display: none;
-
-}
 
 
 
 @media (max-width: 767px) {
 
-
-    .Member_warp{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column-reverse;
-    }
-
-    .Member_tool{
-        margin: 40px 0 0 0;
-
-    }
-    
 
     .Member_content{
         min-height: 260px;
@@ -168,93 +342,138 @@
 
     .Member_content_wrap{
         padding: 40px 0;
-        min-height: 200px;
       
     }
 
-    .userName{
-        display: block;
     
-    }
-    .userName::before{
-        content: 'Hi, ';
+
+}
+
+/* ///////////會員狀態顯示////////////// */
+.Member_status{
+    display:flex;
+    justify-content: center;
+    /* display: none; */
+
+}
+
+.Member_type_box{
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    border: solid 1px #7cafbf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    margin: 0 10px ;
+   
     
-    }
+}
 
-    .Member_RWD_content{
-        display:flex;
-        justify-content: space-around;
 
-    }
+.box_status{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 40px;
+   
+}
+
+
+.Member_type_box h3{
+    font-family: Helvetica;
+    font-size: 3.6rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #7cafbf;
+
+
+}
+
+.Member_type_box p{
+    margin-top: 3px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.89px;
+    text-align: center;
+    color: #7cafbf;
+}
+
+
+@media (max-width: 1025px) { 
+
 
     .Member_type_box{
-        width: 120px;
-        height: 120px;
-        border: solid 1px #7cafbf;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        
-    }
-
     
-
-    .Member_type_box .fa-truck{
-        font-size: 25px;
-        color: #7cafbf;
-
-    }
-    .Member_type_box .fa-address-card{
-        font-size: 26px;
-        color: #7cafbf;
-
+        width: 90px;
+        height: 90px;
+    
     }
 
     .Member_type_box h3{
-        font-family: Helvetica;
-        font-size: 3.6rem;
-        font-weight: 300;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #7cafbf;
-
-
-    }
-
-    .Member_type_box p{
-        /* margin-top: 8px; */
-        font-size: 1.6rem;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: 0.89px;
-        text-align: center;
-        color: #7cafbf;
+       
+        font-size: 3rem;
+        
     }
 
 
-    .cargo_box p{
+    .box_status{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        
+     }
+    
 
-        margin-top: 10px;
+
+}
+
+
+@media (max-width: 767px) { 
+
+
+    .Member_type_box{
+    
+        width: 100px;
+        height: 100px;
+    
     }
 
-    .member_box p{
-
-        margin-top: 9px;
-    }
-
-    .point_box p{
-
-        transform: translateY(-5px);
+    .Member_type_box h3{
+       
+        font-size: 3rem;
+        
     }
 
 
+    .box_status{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
+        
+     }
+    
+}
+
+
+
+
+
+
+/* ///////訂單明細//////////// */
+.Order_detail{
+    display: none;
 }
 
 .detail_bar{
@@ -330,14 +549,6 @@
     color: white;
     font-size: 1.6rem;
 }
-
-
-/* 訂單明細 */
-.Order_detail{
-    /* display: none; */
-}
-
-
 
 .order_detail_list{
     display: flex;
@@ -652,7 +863,7 @@
 
 }
 
-/* 單一訂單明細 */
+/* ////////////////////單一訂單明細////////////////// */
 .Each_orderDetail{
     display: none;
     margin-bottom: 30px;
@@ -661,7 +872,7 @@
 .E_orderDetail_warp{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
 }
 .OD_detial{
     /* height: 300px; */
@@ -940,7 +1151,7 @@
 
 }
 
-/* 出貨明細 */
+/* //單一訂單明細/// */
 .Cargo_detail {
     margin-bottom: 40px;
 }
@@ -1077,6 +1288,7 @@
 @media (max-width: 767px) {
 
     .Cargo_detail{
+        margin-top: 40px;
         padding: 0 15px;
     }
 
@@ -1151,7 +1363,7 @@
 }
 
 
-/* 我的公主幣  */
+/* //////////////我的公主幣/////////////////  */
 .Fish_point{
     display: none;
 }
@@ -1376,8 +1588,7 @@
 }
 
 
-/* 會員修改資料 */
-
+/*.///////////////會員修改資料///////////// */
 .Member_edit{
     display: none;
 }
@@ -1495,7 +1706,7 @@
 
     
 }
-
+/* /////////會員修改密碼///////////*/
 .Password_edit{
     display: none;
 }
