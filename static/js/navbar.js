@@ -290,6 +290,20 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 })
 
 
+// 選擇釣具型號
+$('select[name="All_Item_type"]').change(function(){
+
+    let selected =$(this).children('option:selected').val()
+
+    let cookieStr = $.cookie('Cart');
+    let cookieArr = JSON.parse(cookieStr);
+    
+
+    console.log(selected);
+
+})
+
+
 //刪除項目
 ///append架構無法使用功能，須根據append父層下指令
 $(".product_list").on("click",".item_delete",function(){
@@ -771,7 +785,7 @@ $(this).toggleClass('countBtn_color').css('transition','0.3s')
 
     
     
-        
+
          
         
 

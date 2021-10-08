@@ -718,7 +718,7 @@ function CartProduct(arr){
 
 
                 <div class="list_item_option">
-                    <select>`+Item_type+`</select>
+                    <select name="All_Item_type">`+Item_type+`</select>
 
                 </div>
 
@@ -1249,8 +1249,8 @@ $.get("./static/JSON/Item.json", function (data) {
                 // 資料庫抓到相同商品
                 if( PID  == d[i].pid){
                     
-                    // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品母種類、商品子種類、商品型號、商品數量初始值、判斷是否是食物
-                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_tid:d[i].type_sid,Product_sub_tid:d[i].sub_type_sid,Product_type:d[i].type,count:1,food:false,fishbox:false}]
+                    // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品全部型號、商品選擇型號、商品數量初始值、判斷是否是食物
+                    let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:"",count:1,food:false,fishbox:false}]
                 
                 
                      // 判斷商品是否缺貨
@@ -1267,6 +1267,8 @@ $.get("./static/JSON/Item.json", function (data) {
 
                         //寫入cookie
                         if($.cookie('Cart') == null ){
+
+                            console.log(arr);
 
                             // 第一次加入
                             $.cookie('Cart',JSON.stringify(arr),{expire : 1})
@@ -1326,13 +1328,14 @@ $.get("./static/JSON/Item.json", function (data) {
                                 if(d[i].left == 0){
                                     alert('商品缺貨中')
                                 }else{
-                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,count:1,food:false,fishbox:false})
+                                    cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:"",count:1,food:false,fishbox:false})
 
                                 }
 
                                 
                             }
 
+                            console.log(cookieArr);
                             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
                         }
