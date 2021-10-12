@@ -59,18 +59,18 @@ $(document).ready(function () {
                     let productOption = (p) =>{
 
                         let OptionSelect = ``;
-                        let FirstOPTION =` <option>產品規格</option>`
+                        let FirstOPTION =` <option name="productType[]" value="">產品規格</option>`
                        
                         for(let j = 0 ; j <p.type.length ;j++){ 
                            
-                            let OPTION = `<option>${p.type[j]}</option>`
+                            let OPTION = `<option name="productType[]" value="${j}">${p.type[j]}</option>`
     
                             OptionSelect = OptionSelect + OPTION
                             
                         }
     
                         let AllOption = ` <div class="product_intro_option">
-                        <select class="option_select">`+FirstOPTION+OptionSelect+`</select>
+                        <select name="All_productType" class="option_select">`+FirstOPTION+OptionSelect+`</select>
                         </div>`
 
                         return AllOption;
@@ -507,6 +507,26 @@ $(document).ready(function () {
 
 
                 if(ProductID == d[i].pid){
+
+
+                    let tid = ""
+
+                    // 選擇釣具型號
+                    $('select[name="All_productType"]').change(function(){
+
+                    
+                        // 型號ID
+                        let selectedID =$(this).children('option:selected').val()
+
+
+                        tid = selectedID
+
+                        console.log(tid);
+
+                    })
+
+
+
                 
                     //計算器
                     //加＋＋
@@ -555,7 +575,7 @@ $(document).ready(function () {
 
                     })
 
-                    //單一商品頁加入購物車
+                    ////////單一商品頁加入購物車////////////////
                     $('.add_btn_lg').on({
 
 
@@ -582,8 +602,8 @@ $(document).ready(function () {
                             }else{
 
                                  
-                                // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品母種類、商品子種類、商品型號、商品數量初始值、判斷是否是食物
-                                let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_tid:d[i].type_sid,Product_sub_tid:d[i].sub_type_sid,Product_type:d[i].type,count:CountNum,food:false}]
+                                 // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品全部型號、商品選擇型號、商品數量初始值、判斷是否是食物
+                                let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:tid,count:1,food:false,fishbox:false}]
 
                             
                                 let CheckBtn = $('.checkout_btn')//結帳按鈕
@@ -634,6 +654,7 @@ $(document).ready(function () {
                                         // 計算當前商品金額
                                         let nowprice = parseInt(arr[i].count) * parseInt(arr[i].Product_Price);
                                       
+                                        console.log(arr[i]);
 
                                         CartProduct(arr[i])
 
@@ -689,7 +710,7 @@ $(document).ready(function () {
 
                                     if(!same){
 
-                                        cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_tid:d[i].type_sid,Product_sub_tid:d[i].sub_type_sid,Product_type:d[i].type,count:CountNum,food:false})
+                                        cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:tid,count:1,food:false,fishbox:false})
 
 
                                         
@@ -716,6 +737,7 @@ $(document).ready(function () {
                                     }
 
 
+                                    console.log(cookieArr);
 
                                     $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 

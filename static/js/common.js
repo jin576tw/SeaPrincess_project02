@@ -689,7 +689,7 @@ function CartProduct(arr){
 
 
         // 釣具型號選擇
-        let Item_type = `<option name="Items_Alltype" value="">請選擇商品種類</option>`;
+        let Item_type = `<option name="Items_type[]" value="">請選擇商品種類</option>`;
 
         let tid = arr.Selected_type
 
@@ -987,7 +987,7 @@ let seafood_items_list = `
 }else if(!isFood){
 
     // 釣具型號選擇
-    let Item_type = `<option name="checkItems_Alltype" value="">請選擇商品種類</option>`;
+    let Item_type = `<option name="checkItems_type[]" value="">請選擇商品種類</option>`;
 
     
     let tid = arr.Selected_type
