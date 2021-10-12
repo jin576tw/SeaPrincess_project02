@@ -293,13 +293,34 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 // 選擇釣具型號
 $('select[name="All_Item_type"]').change(function(){
 
-    let selected =$(this).children('option:selected').val()
+    // 商品ID
+    let navProuduct = $(this).parent().parent().parent()
+    let navProuductID = parseInt(navProuduct.attr('Product-ID'))
+
+    // 型號ID
+    let selectedID =$(this).children('option:selected').val()
 
     let cookieStr = $.cookie('Cart');
     let cookieArr = JSON.parse(cookieStr);
     
 
-    console.log(selected);
+    for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+        if(cookieArr[i].pid == navProuductID){
+
+
+            cookieArr[i].Selected_type = selectedID
+
+            break;
+        }
+
+
+
+    }
+
+    $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+
 
 })
 

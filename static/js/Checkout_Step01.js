@@ -267,6 +267,43 @@
     })
 
 
+    // 選擇釣具型號
+    $('select[name="checkItems_Alltype"]').change(function(){
+
+        //當前所在的ID
+        let checkProuduct = $(this).parent().parent().parent()
+        let checkProuductID = parseInt(checkProuduct.attr('Product-ID'))
+
+
+       
+        // 型號ID
+        let selectedID =$(this).children('option:selected').val()
+
+        let cookieStr = $.cookie('Cart');
+        let cookieArr = JSON.parse(cookieStr);
+        
+
+        for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+            if(cookieArr[i].pid == checkProuductID){
+
+
+                cookieArr[i].Selected_type = selectedID
+
+               
+                break;
+            }
+
+
+
+        }
+
+        $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+
+
+
+    })
+    
     //計算器
     //加＋＋
     $('.Items_warps').on("click",".countBtn_plus ",function(){

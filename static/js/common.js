@@ -689,17 +689,51 @@ function CartProduct(arr){
 
 
         // 釣具型號選擇
-        let Item_type = `<option name="Items_Alltype" value=" ">請選擇商品種類</option>`;
+        let Item_type = `<option name="Items_Alltype" value="">請選擇商品種類</option>`;
 
-        for(let j = 0 ; j < arr.Product_type.length ;j++){ 
+        let tid = arr.Selected_type
 
-            let optiStr = `<option name="Items_type[]" value="${j+1}">${arr.Product_type[j]}</option>`
 
-            Item_type+=optiStr
+        if(tid == ''){
+
+
+            for(let j = 0 ; j < arr.Product_type.length ;j++){ 
+
+
+                let optiStr = `<option name="Items_type[]" value="${j}">${arr.Product_type[j]}</option>`
+
+               
+            
+                Item_type+=optiStr
+
+            }
+
+        }else{
+
+            let optiStr =``
+
+            for(let j = 0 ; j < arr.Product_type.length ;j++){ 
+
+                if(tid == j){
+
+
+                    optiStr = `<option name="Items_type[]" value="${j}" selected>${arr.Product_type[j]}</option>`
+
+                }else{
+
+                    optiStr = `<option name="Items_type[]" value="${j}">${arr.Product_type[j]}</option>`
+                }
+                
+
+               
+                Item_type+=optiStr
+
+            }
 
         }
+
         
-       
+
         let Item_product =`<div class="Cart_list_item" Product-ID="${arr.pid}" food="${arr.food}">
 
             <div class="list_item_pic">
@@ -952,17 +986,51 @@ let seafood_items_list = `
 
 }else if(!isFood){
 
-        // 釣具型號選擇
-    let Item_type = `<option name="Items_type[]" value=" ">請選擇商品種類</option>`;
+    // 釣具型號選擇
+    let Item_type = `<option name="checkItems_Alltype" value="">請選擇商品種類</option>`;
 
-    for(let j = 0 ; j < arr.Product_type.length ;j++){ 
+    
+    let tid = arr.Selected_type
 
-        let optiStr = `<option name="Items_type[]" value="${j+1}">${arr.Product_type[j]}</option>`
 
-        Item_type+=optiStr
+    if(tid == ''){
+
+        for(let j = 0 ; j < arr.Product_type.length ;j++){
+
+            let optiStr = `<option name="checkItems_type[]" value="${j}">${arr.Product_type[j]}</option>`
+
+
+            Item_type+=optiStr
+
+        }
+
+
+    }else{
+
+
+        let optiStr =``
+
+        for(let j = 0 ; j < arr.Product_type.length ;j++){
+
+            if(tid == j){
+
+                optiStr = `<option name="checkItems_type[]" value="${j}" selected>${arr.Product_type[j]}</option>`
+
+            }else{
+
+                optiStr = `<option name="checkItems_type[]" value="${j}">${arr.Product_type[j]}</option>`
+
+            }
+
+            Item_type += optiStr
+
+
+
+        }
 
     }
-
+    
+    
 
     let tool_items_list=`
 
@@ -982,7 +1050,7 @@ let seafood_items_list = `
                     <a href="./each-product.html?I&&pid=${PID}">
                         <h3>${arr.Product_Name}</h3>
                     </a>
-                    <select class="Items_type" name="Items_Alltype">`+Item_type+`</select>
+                    <select class="Items_type" name="checkItems_Alltype">`+Item_type+`</select>
                 </div>
 
                 <div class="Items_list_detail_tool">
@@ -1268,7 +1336,7 @@ $.get("./static/JSON/Item.json", function (data) {
                         //寫入cookie
                         if($.cookie('Cart') == null ){
 
-                            console.log(arr);
+                       
 
                             // 第一次加入
                             $.cookie('Cart',JSON.stringify(arr),{expire : 1})
@@ -1335,7 +1403,7 @@ $.get("./static/JSON/Item.json", function (data) {
                                 
                             }
 
-                            console.log(cookieArr);
+                            
                             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
                         }

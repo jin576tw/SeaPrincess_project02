@@ -133,7 +133,7 @@ $(document).ready(function () {
 
          
                 //抓取選擇商品種類
-                let Alltype = $(this).parent().next().children('.Items_name').children('select[name="Items_Alltype"]')
+                let Alltype = $(this).parent().next().children('.Items_name').children('select[name="checkItems_Alltype"]')
 
                 let selected = Alltype.children('option:selected').text()
 
