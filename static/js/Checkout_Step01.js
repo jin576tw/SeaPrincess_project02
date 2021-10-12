@@ -268,7 +268,7 @@
 
 
     // 選擇釣具型號
-    $('select[name="checkItems_Alltype"]').change(function(){
+    $('.Items_warps').on("change",'select[name="checkItems_Alltype"]',function(){
 
         //當前所在的ID
         let checkProuduct = $(this).parent().parent().parent()
