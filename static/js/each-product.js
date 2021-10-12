@@ -512,20 +512,18 @@ $(document).ready(function () {
                     let tid = ""
 
                     // 選擇釣具型號
-                    $('select[name="All_productType"]').change(function(){
+                    $('.Each_product_intro_warp').on("change",'select[name="All_productType"]',function(){
 
+            
                     
                         // 型號ID
                         let selectedID =$(this).children('option:selected').val()
 
-
                         tid = selectedID
 
-                        console.log(tid);
+                        
 
                     })
-
-
 
                 
                     //計算器
@@ -654,7 +652,6 @@ $(document).ready(function () {
                                         // 計算當前商品金額
                                         let nowprice = parseInt(arr[i].count) * parseInt(arr[i].Product_Price);
                                       
-                                        console.log(arr[i]);
 
                                         CartProduct(arr[i])
 
@@ -737,7 +734,7 @@ $(document).ready(function () {
                                     }
 
 
-                                    console.log(cookieArr);
+                                    
 
                                     $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
