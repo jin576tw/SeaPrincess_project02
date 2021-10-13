@@ -307,7 +307,7 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
  
      for(let i = 0 ; i < cookieArr.length ;i++){ 
  
-         if(cookieArr[i].pid == navProuductID){
+         if(cookieArr[i].pid == navProuductID ){
  
  
              cookieArr[i].Selected_type = selectedID

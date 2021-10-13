@@ -1359,9 +1359,11 @@ $.get("./static/JSON/Item.json", function (data) {
                             for(let j =0 ; j < cookieArr.length; j++){
 
                                 if(!cookieArr[j].food){
-                                    if(d[i].pid == cookieArr[j].pid){
+                                    if(d[i].pid == cookieArr[j].pid && arr[0].Selected_type == cookieArr[j].Selected_type){
 
                                         same = true;
+
+                                        
                                         
                                         let Item_over = parseInt(cookieArr[j].count) >= parseInt(cookieArr[j].Product_Left)
 
