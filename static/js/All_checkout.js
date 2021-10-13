@@ -95,12 +95,12 @@ $(document).ready(function () {
                 let checkID = $(this).parent().parent().attr('Product-ID')
                 let isFood = $(this).parent().parent().attr('food')
                 
-                isFood == 'false' ? isFood=false : isFood = true;
+                isFood == 'false' ? isFood = false : isFood = true;
 
                 CheckSeafoodObj = {pid:checkID,food:isFood}
              
                 CheckProductArr.push(CheckSeafoodObj)
-             })
+            })
 
 
             // 海鮮魚箱 
@@ -135,7 +135,7 @@ $(document).ready(function () {
                 //抓取選擇商品種類
                 let Alltype = $(this).parent().next().children('.Items_name').children('select[name="checkItems_Alltype"]')
 
-                let selected = Alltype.children('option:selected').text()
+                let selected = Alltype.children('option:selected').val()
 
                 
                 let CheckToolObj = {pid:checkID,food:isFood,type:selected}
@@ -190,16 +190,20 @@ $(document).ready(function () {
             }
 
            
+           
             // 是否通過結帳第一步驟
             if(!isPass){
 
                 // 若未通空清空陣列
                 CheckProductArr = []
 
+                console.log(CheckProductArr);
+
 
 
             }else{
 
+                console.log(CheckProductArr);
             
                 let cookieStr = $.cookie('Cart');
                 let cookieArr = JSON.parse(cookieStr);
@@ -210,6 +214,8 @@ $(document).ready(function () {
                 let CheckTooltotal = 0
                 let CheckFishboxtotal = 0
 
+                
+            
                 // 載入勾選商品...
                 for(let i = 0 ; i < cookieArr.length  ;i++){ 
 
@@ -243,10 +249,10 @@ $(document).ready(function () {
 
                                 </div>`
 
-
+                                
                                 CheckSeafoodtotal+=nowprice
 
-
+                                console.log(cookieArr[i]);
                                 $('.CheckSeafoodWarp').append(CheckSeafood)
 
 
@@ -257,10 +263,14 @@ $(document).ready(function () {
                         //若為釣具用品
                         }else if(CheckProductArr[j].food == false){
 
-                            if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].food == false){
+                         
+
+                            if(CheckProductArr[j].pid == cookieArr[i].pid && cookieArr[i].Selected_type == CheckProductArr[j].type){
 
 
+                                let tid = CheckProductArr[j].type
 
+                                
                                 let CheckTool =`<div class="checkout_item_list tool_item_list" Product-ID="${cookieArr[i].pid}">
                                     <div class="checkout_item_pic">
                                         <div class="checkout_item_pic_img">
@@ -271,7 +281,7 @@ $(document).ready(function () {
                                     </div>
                                     <div class="checkout_item_name">
                                         <p>${cookieArr[i].Product_Name}</p>
-                                        <p>${CheckProductArr[j].type}</p>
+                                        <p>${cookieArr[i].Product_type[tid]}</p>
                                         
                                     </div>
                                     <div class="checkout_item_price">
@@ -280,7 +290,7 @@ $(document).ready(function () {
 
                                 </div>`
 
-
+                                
                                 CheckTooltotal+=nowprice
 
                                 $('.CheckToolWarp').append(CheckTool)
