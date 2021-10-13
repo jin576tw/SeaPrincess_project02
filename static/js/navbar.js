@@ -462,6 +462,9 @@ $(".product_list").on("click",".countBtn_plus ",function(){
 let navProuduct = $(this).parent().parent().parent().parent();
 let navProuductID = parseInt(navProuduct.attr('Product-ID'))
 
+// 商品型號
+let tid = $(this).parent().parent().prev().children('select').children('option:selected').val()
+
 
 let cookieStr = $.cookie('Cart');
 let cookieArr = JSON.parse(cookieStr);
@@ -470,7 +473,7 @@ let cookieArr = JSON.parse(cookieStr);
 for(let i = 0 ; i <  cookieArr.length ;i++){
     
 
-    if(cookieArr[i].pid == navProuductID){
+    if(cookieArr[i].pid == navProuductID && cookieArr[i].Selected_type == tid){
 
         let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
 
@@ -548,6 +551,10 @@ let navProuduct = $(this).parent().parent().parent().parent()
 let navProuductID = navProuduct.attr('Product-ID')
 
 
+// 商品型號
+let tid = $(this).parent().parent().prev().children('select').children('option:selected').val()
+
+
 
 let cookieStr = $.cookie('Cart');
 let cookieArr = JSON.parse(cookieStr);
@@ -556,7 +563,7 @@ let cookieArr = JSON.parse(cookieStr);
 for(let i = 0 ; i <  cookieArr.length ;i++){
 
     
-    if(parseInt(cookieArr[i].pid) == parseInt(navProuductID)){
+    if(parseInt(cookieArr[i].pid) == parseInt(navProuductID) && cookieArr[i].Selected_type == tid){
 
 
         let $oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額

@@ -502,9 +502,8 @@ $(document).ready(function () {
             let d = data
             let ProductID = parseInt(location.href.substr(-3,3))
 
-        
+            
             for(let i = 0 ; i < d.length ;i++){ 
-
 
                 if(ProductID == d[i].pid){
 
@@ -513,16 +512,14 @@ $(document).ready(function () {
 
                     // 選擇釣具型號
                     $('.Each_product_intro_warp').on("change",'select[name="All_productType"]',function(){
-
-            
-                    
+        
                         // 型號ID
                         let selectedID =$(this).children('option:selected').val()
 
                         tid = selectedID
 
-                        
 
+            
                     })
 
                 
@@ -530,15 +527,12 @@ $(document).ready(function () {
                     //加＋＋
                     $(".product_counter").on("click",".product_countBtn_plus",function(){
 
-
                         let countNum = parseInt($(this).prev().text());
 
                        
                         countNum++
-                        $(this).css('border','solid 1px rgba(0, 0, 0, 0.3)').css('color','rgba(0, 0, 0, 0.3);')
-                            
                         
-
+            
                         $(this).prev().text(countNum);
 
                         
@@ -555,11 +549,9 @@ $(document).ready(function () {
                     $(".product_counter").on("click",".product_countBtn_minus",function(){
 
 
-                        
                         let countNum = parseInt($(this).next().text());
 
                     
-
                         if(countNum <=0 ){
 
                             $(this).css('border','solid 1px rgba(0, 0, 0, 0.1)').css('color','rgba(0, 0, 0, 0.1);')
@@ -579,18 +571,8 @@ $(document).ready(function () {
 
                         click:function(){
 
-
-                            $('.item_list').css('display','block');
-
-                            let ITEM_LIST =  $('.item_list_warp')
-                            let CartTotalPrice = $('.Cart_list_total').children('p')//購物車總金額數字
-                           
-
-
-                           
-                            ITEM_LIST.empty()
-
                             let CountNum = parseInt($('.product_countNum').text())
+
 
                             if(CountNum  == 0 ){
 
@@ -599,9 +581,18 @@ $(document).ready(function () {
 
                             }else{
 
-                                 
+                                
+                                $('.item_list').css('display','block');
+
+                                let ITEM_LIST =  $('.item_list_warp')
+                                let CartTotalPrice = $('.Cart_list_total').children('p')//購物車總金額數字
+                            
+                            
+                                ITEM_LIST.empty()
+
+                               
                                  // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品全部型號、商品選擇型號、商品數量初始值、判斷是否是食物
-                                let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:tid,count:1,food:false,fishbox:false}]
+                                let arr =[{Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:tid,count:CountNum,food:false,fishbox:false}]
 
                             
                                 let CheckBtn = $('.checkout_btn')//結帳按鈕
@@ -652,15 +643,12 @@ $(document).ready(function () {
                                         // 計算當前商品金額
                                         let nowprice = parseInt(arr[i].count) * parseInt(arr[i].Product_Price);
                                       
-
                                         CartProduct(arr[i])
 
                                         CartTotalPrice.text(nowprice)
 
                                        
-                                    
                                     }
-
                                   
 
                                     alert('商品已加入購物車！')
@@ -680,15 +668,16 @@ $(document).ready(function () {
 
                                         ///若有相同商品
                                         if(!cookieArr[j].food){
-                                            if(ProductID == cookieArr[j].pid){
+                                            if(ProductID == cookieArr[j].pid && tid == cookieArr[j].Selected_type){
 
 
                                                 same = true;
 
-                                                cookieArr[j].count+=CountNum 
+                                                cookieArr[j].count+=CountNum;
 
-                                                CartProduct(cookieArr[j])
+                                                CartProduct(cookieArr[j]);
 
+                                                console.log(cookieArr[j]);
 
                                                 alert('商品已加入購物車！')
 
@@ -707,12 +696,9 @@ $(document).ready(function () {
 
                                     if(!same){
 
-                                        cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:tid,count:1,food:false,fishbox:false})
+                                        cookieArr.push({Product_Name:d[i].name,Product_Price:d[i].price,Product_Pic:d[i].pic[0],pid:d[i].pid,Product_Left:d[i].left,Product_type:d[i].type,Selected_type:tid,count:CountNum,food:false,fishbox:false})
 
 
-                                        
-                                       
-                                        
                                         for(let j = 0 ; j <  cookieArr.length; j++){
 
 
@@ -734,8 +720,7 @@ $(document).ready(function () {
                                     }
 
 
-                                    
-
+                                
                                     $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
 
