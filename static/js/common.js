@@ -734,7 +734,7 @@ function CartProduct(arr){
 
         
 
-        let Item_product =`<div class="Cart_list_item" Product-ID="${arr.pid}" food="${arr.food}">
+        let Item_product =`<div class="Cart_list_item" Product-ID="${arr.pid}" food="${arr.food}" Selected-ID="${arr.Selected_type}">
 
             <div class="list_item_pic">
                 <a href="./each-product.html?I&&pid=${PID}">

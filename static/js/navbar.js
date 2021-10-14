@@ -290,6 +290,9 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 })
 
 
+
+
+
 // 選擇釣具型號
 $(".product_list").on("change",'select[name="All_Item_type"]',function(){
 
@@ -297,17 +300,25 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
      // 商品ID
      let navProuduct = $(this).parent().parent().parent()
      let navProuductID = parseInt(navProuduct.attr('Product-ID'))
+
+    // 型號ID
+     let tid = parseInt(navProuduct.attr('Selected-ID'))
  
-     // 型號ID
-     let selectedID =$(this).children('option:selected').val()
+     // 選擇型號ID
+     let selectedID = $(this).children('option:selected').val()
  
      let cookieStr = $.cookie('Cart');
      let cookieArr = JSON.parse(cookieStr);
      
- 
+
+
+    
+
+
+        
      for(let i = 0 ; i < cookieArr.length ;i++){ 
  
-         if(cookieArr[i].pid == navProuductID ){
+         if(cookieArr[i].pid == navProuductID && cookieArr[i].Selected_type == tid){
  
  
              cookieArr[i].Selected_type = selectedID
