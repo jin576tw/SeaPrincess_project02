@@ -140,7 +140,7 @@ $(document).ready(function () {
                 
                 let CheckToolObj = {pid:checkID,food:isFood,type:selected}
 
-                
+               
 
                 CheckProductArr.push(CheckToolObj)
 
@@ -148,34 +148,27 @@ $(document).ready(function () {
               
             })
 
+           
             
             // 檢查是否選擇釣具種類
             let isCheckPass  = function(arr){
 
-                let checkPass = arr.filter ((p) => p.type )
+                let checkPass = arr.filter((p) => p.type == '' )
 
-                for(let i = 0 ; i < checkPass.length ;i++){ 
+               if(checkPass.length >0){
 
-                    let  isCheckType = checkPass[i].type
+                    alert('尚未選擇商品種類')
+
+                    isPass = false
 
 
-                    if(isCheckType == "請選擇商品種類"){
+               }else{
 
-                            alert('尚未選擇商品種類')
+                    isPass= true;
 
-                            isPass = false
-                            
-                            break;
+               }
 
-                    }
-                    
-                    if(isCheckType != "請選擇商品種類"){
-
-                            isPass= true;
-
-                    }
-
-                }
+              
             }
 
             isCheckPass(CheckProductArr)
@@ -197,13 +190,10 @@ $(document).ready(function () {
                 // 若未通空清空陣列
                 CheckProductArr = []
 
-                console.log(CheckProductArr);
-
 
 
             }else{
 
-                console.log(CheckProductArr);
             
                 let cookieStr = $.cookie('Cart');
                 let cookieArr = JSON.parse(cookieStr);
@@ -252,7 +242,6 @@ $(document).ready(function () {
                                 
                                 CheckSeafoodtotal+=nowprice
 
-                                console.log(cookieArr[i]);
                                 $('.CheckSeafoodWarp').append(CheckSeafood)
 
 
