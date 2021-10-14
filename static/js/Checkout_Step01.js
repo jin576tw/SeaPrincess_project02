@@ -321,15 +321,22 @@
     
                     // 重新導入新合併商品
                     let Tool_LIST =  $('.tool_items_warp')
-    
+
+             
                     Tool_LIST.empty()
+                  
     
     
                     for(let j = 0 ; j <cookieArr.length  ;j++){ 
+
+                        if(!cookieArr[j].food && !cookieArr[j].fishbox){
+
+                            CheckProduct(cookieArr[j]);
+                        }
     
-                        CheckProduct(cookieArr[j]);
+                       
     
-                     }
+                    }
     
                         
     

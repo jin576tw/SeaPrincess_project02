@@ -677,20 +677,19 @@ $(document).ready(function () {
 
                                                 cookieArr[j].count+=CountNum;
 
-                                                // 將重複商品清除
-                                                let SEAFOOD_LIST =  $('.seafood_list_warp')
-                                                SEAFOOD_LIST.empty()
-
-                                                let FISHBOX_LIST =  $('.fishbox_list_warp');
-                                                FISHBOX_LIST.empty()
-
-
+                                        
                                                 for(let i = 0 ; i < cookieArr.length ;i++){ 
 
-                                                    CartProduct(cookieArr[i]);
+
+                                                    if(!cookieArr[i].food && !cookieArr[i].fishbox){
+
+                                                        CartProduct(cookieArr[i]);
 
 
-                                                 }
+                                                    }
+
+
+                                                }
 
                                             
 
@@ -978,18 +977,16 @@ $(document).ready(function () {
     
                                                 cookieArr[j].count+=CountNum 
 
-                                                let ITEM_LIST =  $('.item_list_warp')
-
-                                                ITEM_LIST.empty()
-
-                                                let FISHBOX_LIST =  $('.fishbox_list_warp');
-
-                                                FISHBOX_LIST.empty()
 
 
                                                 for(let i = 0 ; i < cookieArr.length ;i++){ 
 
-                                                    CartProduct(cookieArr[i]);
+                                                    if(cookieArr[i].food){
+
+                                                        CartProduct(cookieArr[i]);
+                                                    }
+
+                                                   
 
                                                 }
     

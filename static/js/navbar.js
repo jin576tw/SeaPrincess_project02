@@ -175,7 +175,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
 
     alert('商品已加入購物車！')
-    
+
     // 結帳加入購物車
     let CheckOut_Page = location.href.substr(-13,13) == 'checkout.html'
 
@@ -348,9 +348,15 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
                 ITEM_LIST.empty()
 
 
-                for(let j = 0 ; j <cookieArr.length  ;j++){ 
+                for(let j = 0 ; j <cookieArr.length  ;j++){
+                    
+                    if(!cookieArr[j].food && !cookieArr[j].fishbox){
 
-                    CartProduct(cookieArr[j]);
+                        CartProduct(cookieArr[j]);
+
+                    }
+
+                    
 
                  }
 
