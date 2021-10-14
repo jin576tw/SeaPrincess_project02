@@ -302,7 +302,7 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
      let navProuductID = parseInt(navProuduct.attr('Product-ID'))
 
     // 型號ID
-     let tid = parseInt(navProuduct.attr('Selected-ID'))
+     let tid = navProuduct.attr('Selected-ID')
  
      // 選擇型號ID
      let selectedID = $(this).children('option:selected').val()
@@ -310,7 +310,6 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
      let cookieStr = $.cookie('Cart');
      let cookieArr = JSON.parse(cookieStr);
      
-
 
     
 
