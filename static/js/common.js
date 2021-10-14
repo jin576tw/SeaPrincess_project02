@@ -1034,7 +1034,7 @@ let seafood_items_list = `
 
     let tool_items_list=`
 
-        <div class="Items_list tool_items_list"  Product-ID="${arr.pid}" food="${arr.food}">
+        <div class="Items_list tool_items_list"  Product-ID="${arr.pid}" food="${arr.food}" Selected-ID="${arr.Selected_type}">
 
             <div class="Items_list_content Items_list_head">
                 <input type="checkbox" name="Tool_check[]" id="Tool_check" class="Item_check" checked>

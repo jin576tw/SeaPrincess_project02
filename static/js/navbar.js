@@ -175,6 +175,7 @@ PROPUCTSWARP.on("click",".add_btn",function(){
 
 
     alert('商品已加入購物車！')
+    
     // 結帳加入購物車
     let CheckOut_Page = location.href.substr(-13,13) == 'checkout.html'
 
@@ -311,24 +312,74 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
      let cookieArr = JSON.parse(cookieStr);
      
 
-    
+    //  找尋相同型號、合併在一起
+     let same = false;
 
+     for(let i = 0 ; i < cookieArr.length ;i++){
 
+        // 若相同id、相同型號
+        if(selectedID == cookieArr[i].Selected_type && cookieArr[i].pid == navProuductID){
+
+            same = true
         
-     for(let i = 0 ; i < cookieArr.length ;i++){ 
- 
-         if(cookieArr[i].pid == navProuductID && cookieArr[i].Selected_type == tid){
- 
- 
-             cookieArr[i].Selected_type = selectedID
-            
- 
-             break;
-         }
- 
- 
- 
-     }
+            let SameItemCount = parseInt($(this).parent().next().children('.Counter').children('.countNum').text())
+
+            // 合併數量
+            cookieArr[i].count+=SameItemCount;
+    
+        }
+
+    }
+
+    // 當有相同
+    if(same){
+
+        for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+            if(cookieArr[i].pid == navProuductID && cookieArr[i].Selected_type == tid){
+
+
+                // 刪除此商品
+                cookieArr.splice(i,1)
+
+                // 重新導入新合併商品
+                let ITEM_LIST =  $('.item_list_warp')
+
+                ITEM_LIST.empty()
+
+
+                for(let j = 0 ; j <cookieArr.length  ;j++){ 
+
+                    CartProduct(cookieArr[j]);
+
+                 }
+
+                    
+
+            }
+        }
+
+
+    }else{
+
+        // 若無相同、更新選擇商品型號
+        for(let i = 0 ; i < cookieArr.length ;i++){ 
+    
+            if(cookieArr[i].pid == navProuductID && cookieArr[i].Selected_type == tid){
+    
+    
+                cookieArr[i].Selected_type = selectedID
+                
+
+                break;
+            }
+        }
+
+    }
+    
+   
+
+    
  
      $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
  

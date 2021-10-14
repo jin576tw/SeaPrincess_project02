@@ -275,29 +275,88 @@
         let checkProuductID = parseInt(checkProuduct.attr('Product-ID'))
 
 
-       
         // 型號ID
+        let tid = checkProuduct.attr('Selected-ID')
+
+       
+        //選擇型號ID
         let selectedID =$(this).children('option:selected').val()
 
         let cookieStr = $.cookie('Cart');
         let cookieArr = JSON.parse(cookieStr);
+
+        //  找尋相同型號、合併在一起
+        let same = false;
+
+        for(let i = 0 ; i < cookieArr.length ;i++){
+
+            // 若相同id、相同型號
+            if(selectedID == cookieArr[i].Selected_type && cookieArr[i].pid == checkProuductID){
+    
+                same = true
+            
+                let SameItemCount =parseInt($(this).parent().next().children('.Items_list_count').children('.count_warp').children('.Counter').children('.countNum').text())
+
+                console.log(SameItemCount);
+    
+                // 合併數量
+                cookieArr[i].count+=SameItemCount;
+        
+            }
+    
+        }
         
 
-        for(let i = 0 ; i < cookieArr.length ;i++){ 
+         // 當有相同
+        if(same){
 
-            if(cookieArr[i].pid == checkProuductID){
 
+            for(let i = 0 ; i < cookieArr.length ;i++){ 
 
-                cookieArr[i].Selected_type = selectedID
-
-               
-                break;
+                if(cookieArr[i].pid == checkProuductID && cookieArr[i].Selected_type == tid){
+    
+    
+                    // 刪除此商品
+                    cookieArr.splice(i,1)
+    
+                    // 重新導入新合併商品
+                    let Tool_LIST =  $('.tool_items_warp')
+    
+                    Tool_LIST.empty()
+    
+    
+                    for(let j = 0 ; j <cookieArr.length  ;j++){ 
+    
+                        CheckProduct(cookieArr[j]);
+    
+                     }
+    
+                        
+    
+                }
             }
 
+        }else{
 
+            for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+                if(cookieArr[i].pid == checkProuductID && cookieArr[i].Selected_type == tid){
+    
+    
+                    cookieArr[i].Selected_type = selectedID
+    
+                   
+                    break;
+                }
+    
+    
+    
+            }
+    
 
         }
 
+        
         $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
 
 
