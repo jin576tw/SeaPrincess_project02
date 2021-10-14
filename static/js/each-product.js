@@ -585,10 +585,12 @@ $(document).ready(function () {
                                 $('.item_list').css('display','block');
 
                                 let ITEM_LIST =  $('.item_list_warp')
+                                
                                 let CartTotalPrice = $('.Cart_list_total').children('p')//購物車總金額數字
                             
                             
                                 ITEM_LIST.empty()
+                               
 
                                
                                  // 商品名稱、商品價格、商品圖片、商品ID、商品庫存、商品全部型號、商品選擇型號、商品數量初始值、判斷是否是食物
@@ -675,9 +677,24 @@ $(document).ready(function () {
 
                                                 cookieArr[j].count+=CountNum;
 
-                                                CartProduct(cookieArr[j]);
+                                                // 將重複商品清除
+                                                let SEAFOOD_LIST =  $('.seafood_list_warp')
+                                                SEAFOOD_LIST.empty()
 
-                                                console.log(cookieArr[j]);
+                                                let FISHBOX_LIST =  $('.fishbox_list_warp');
+                                                FISHBOX_LIST.empty()
+
+
+                                                for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+                                                    CartProduct(cookieArr[i]);
+
+
+                                                 }
+
+                                            
+
+                                                
 
                                                 alert('商品已加入購物車！')
 
@@ -703,8 +720,9 @@ $(document).ready(function () {
 
 
                                             // 加入釣具商品
-                                            if(!cookieArr[j].food){
+                                            if(!cookieArr[j].food && !cookieArr[j].fishbox){
 
+                                               
                                                 CartProduct(cookieArr[j])
 
                                             }
@@ -854,8 +872,10 @@ $(document).ready(function () {
                             
                             let CartTotalPrice = $('.Cart_list_total').children('p')//購物車總金額數字
                             let SEAFOOD_LIST =  $('.seafood_list_warp')
+                           
 
                             SEAFOOD_LIST.empty()
+                            
                            
 
                             let CountNum = parseInt($('.product_countNum').text())
@@ -957,9 +977,23 @@ $(document).ready(function () {
                                         
     
                                                 cookieArr[j].count+=CountNum 
+
+                                                let ITEM_LIST =  $('.item_list_warp')
+
+                                                ITEM_LIST.empty()
+
+                                                let FISHBOX_LIST =  $('.fishbox_list_warp');
+
+                                                FISHBOX_LIST.empty()
+
+
+                                                for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+                                                    CartProduct(cookieArr[i]);
+
+                                                }
     
-                                                CartProduct(cookieArr[j])
-    
+                                               
     
                                                 alert('商品已加入購物車！')
     
