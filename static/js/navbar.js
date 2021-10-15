@@ -310,6 +310,9 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
  
      let cookieStr = $.cookie('Cart');
      let cookieArr = JSON.parse(cookieStr);
+
+
+    console.log(selectedID );
      
 
     //  找尋相同型號、合併在一起
@@ -370,12 +373,16 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
 
         // 若無相同、更新選擇商品型號
         for(let i = 0 ; i < cookieArr.length ;i++){ 
+
     
             if(cookieArr[i].pid == navProuductID && cookieArr[i].Selected_type == tid){
-    
+                
+
+                
     
                 cookieArr[i].Selected_type = selectedID
-                
+
+                navProuduct.attr('Selected-ID',selectedID)
 
                 break;
             }
@@ -383,6 +390,7 @@ $(".product_list").on("change",'select[name="All_Item_type"]',function(){
 
     }
     
+   
    
 
     
@@ -541,6 +549,8 @@ for(let i = 0 ; i <  cookieArr.length ;i++){
     
 
     if(cookieArr[i].pid == navProuductID && cookieArr[i].Selected_type == tid){
+
+        console.log(cookieArr[i].Selected_type);
 
         let oldtotal_price = parseInt( $('.Cart_list_total').children('p').text())//未變化前總金額
 

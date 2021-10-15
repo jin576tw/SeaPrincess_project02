@@ -351,6 +351,8 @@
     
     
                     cookieArr[i].Selected_type = selectedID
+
+                    checkProuduct.attr('Selected-ID',selectedID)
     
                    
                     break;
