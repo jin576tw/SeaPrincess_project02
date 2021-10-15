@@ -1,5 +1,4 @@
 'use strict'
-
  // 判斷商品欄位是否出現
  function checkfilter(arr){
 
@@ -989,205 +988,422 @@
 
 
     ////////////////// 結帳頁初始勾選狀態//////////////////////
-    // 海鮮商品
-    $('#Seafood_CheckAll').prop("checked",true);
-    if($("#Seafood_CheckAll").prop("checked")){
-
-        $("input[name='Seafood_check[]']").each(function(){
-
-            $(this).prop("checked",true);
-
-        })
 
 
-    }
-
-    // 海鮮魚箱
-    $('#Fishbox_checkAll').prop("checked",true);
-    if($("#Fishbox_checkAll").prop("checked")){
-
-        $("input[name='Fishbox_check[]']").each(function(){
-
-            $(this).prop("checked",true);
-
-        })
+    let checkAll = true
 
 
-    }
+    ToolCheckAll()
 
-    // 釣具用品
-    $('#Tool_CheckAll').prop("checked",true);
-    if($("#Tool_CheckAll").prop("checked")){
+    function ToolCheckAll(){
 
-        $("input[name='Tool_check[]']").each(function(){
+        if(checkAll){
 
-            $(this).prop("checked",true);
 
-        })
+            // 釣具用品
+            $('#Tool_CheckAll').prop("checked",true);
+    
+        }else{
+    
+            // 釣具用品
+            $('#Tool_CheckAll').prop("checked",false);
+    
+    
+        }
 
 
     }
+    
+    $('#Tool_CheckAll').change(function(){
+
+        let isCheck = $(this).prop('checked')
+
+        if(isCheck){
+
+
+            checkAll = true
+
+
+            $("input[name='Tool_check[]']").each(function(){
+
+                $(this).prop("checked",true);
+            
+            })
+
+
+
+        }else{
+
+
+            checkAll = false
+
+            $("input[name='Tool_check[]']").each(function(){
+
+                $(this).prop("checked",false);
+            
+            })
+
+
+          
+
+        }
+        
+
+    })
+
+
+    $("input[name='Tool_check[]']").change(function(){
+
+
+
+        let isCheck = $(this).prop('checked')
+
+
+        if(!isCheck){
+
+
+            checkAll = false
+
+            ToolCheckAll()
+
+        }
+
+
+        $("input:checked[name='Tool_check[]']").each(function(){
+
+
+            let isCheck = $(this).prop('checked')
+    
+    
+    
+            console.log(isCheck);
+        
+    
+    
+        })
+
+    
+
+    })
+
+
+    
+
+
+
+  
+   
+
+
+    
+    // // 海鮮商品
+    // $('#Seafood_CheckAll').prop("checked",true);
+
+    // if($("#Seafood_CheckAll").prop("checked")){
+
+    //     $("input[name='Seafood_check[]']").each(function(){
+
+    //         $(this).prop("checked",true);
+
+    //     })
+
+
+    // }
+
+
+    // // 海鮮魚箱
+    // $('#Fishbox_checkAll').prop("checked",true);
+    // if($("#Fishbox_checkAll").prop("checked")){
+
+    //     $("input[name='Fishbox_check[]']").each(function(){
+
+    //         $(this).prop("checked",true);
+
+    //     })
+
+
+    // }
+
+    // // 釣具用品
+    // $('#Tool_CheckAll').prop("checked",true);
+    // if($("#Tool_CheckAll").prop("checked")){
+
+    //     $("input[name='Tool_check[]']").each(function(){
+
+    //         $(this).prop("checked",true);
+
+    //     })
+
+
+    // }
 
 
    
     
 
-    //////////////////////// 勾選按鈕/////////////////////
-    // 生鮮食品全選按鈕
-    $('.Items_warps').on("click","#Seafood_CheckAll",function(){
+    // //////////////////////// 勾選按鈕/////////////////////
 
 
-      if($("#Seafood_CheckAll").prop("checked")){
+    // let Seafood_check = $("input[name='Seafood_check[]']")
+    // let Tool_check = $("input[name='Tool_check[]']")
+    // let Fishbox_check = $("input[name='Fishbox_check[]']")
 
 
-        $("input[name='Seafood_check[]']").each(function(){
-
-            $(this).prop("checked",true);
-
-        })
-
-      }else{
-
-        $("input[name='Seafood_check[]']").each(function(){
-
-            $(this).prop("checked",false);
-
-        })
-
-      }
-
-    })
-
-    // 海鮮魚箱全選按鈕
-    $('.Items_warps').on("click","#Fishbox_checkAll",function(){
+    // let total_price = 0 
 
 
-      if($("#Fishbox_checkAll").prop("checked")){
+
+    // // 生鮮食品全選按鈕
+    // $('.Items_warps').on("click","#Seafood_CheckAll",function(){
 
 
-        $("input[name='Fishbox_check[]']").each(function(){
+    //   if($("#Seafood_CheckAll").prop("checked")){
 
-            $(this).prop("checked",true);
+       
 
-        })
+    //     Seafood_check.each(function(){
 
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
 
-      }else{
-
-        $("input[name='Fishbox_check[]']").each(function(){
-
-            $(this).prop("checked",false);
-
-        })
+    //         $(this).prop("checked",true);
 
 
-      }
+    //         total_price+=ProductPrice
 
-    })
+    //         CHECKTOTAL.text(total_price)
+       
 
-    // 釣具全選按鈕
-    $('.Items_warps').on("click","#Tool_CheckAll",function(){
+    //     })
 
+    //   }else{
 
-      if($("#Tool_CheckAll").prop("checked")){
+    //     Seafood_check.each(function(){
 
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
 
-        $("input[name='Tool_check[]']").each(function(){
+    //         $(this).prop("checked",false);
 
-            $(this).prop("checked",true);
+    //         total_price-=ProductPrice
 
-        })
+    //         CHECKTOTAL.text(total_price)
 
+    //     })
 
-      }else{
+    //   }
 
-        $("input[name='Tool_check[]']").each(function(){
+    // })
 
-            $(this).prop("checked",false);
-
-        })
-
-
-      }
-
-    })
-
-    // let CHECKTOTAL = $('.total_sum p:nth-of-type(2)')
-    // let GETPOINT = $('.total_point p:nth-of-type(2)')
-    // let FINALTOTAL = $('.total_money p:nth-of-type(2)')
+    // // 海鮮魚箱全選按鈕
+    // $('.Items_warps').on("click","#Fishbox_checkAll",function(){
 
 
-    let Seafood_check = $("input[name='Seafood_check[]']")
-    let Tool_check = $("input[name='Tool_check[]']")
-    let Fishbox_check = $("input[name='Fishbox_check[]']")
+    //   if($("#Fishbox_checkAll").prop("checked")){
 
 
-    let total_price = 0 
+    //     Fishbox_check.each(function(){
+
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
+
+    //         $(this).prop("checked",true);
 
 
-    // 總金額計算
-    function Price_Calc(check){
+    //         total_price+=ProductPrice
+
+    //         CHECKTOTAL.text(total_price)
+
+    //     })
+
+
+    //   }else{
+
+    //     Fishbox_check.each(function(){
+
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
+
+    //         $(this).prop("checked",false);
+
+    //         total_price-=ProductPrice
+
+    //         CHECKTOTAL.text(total_price)
+
+    //     })
+
+
+    //   }
+
+    // })
+
+    // // 釣具全選按鈕
+    // $('.Items_warps').on("click","#Tool_CheckAll",function(){
+
+
+    //   if($("#Tool_CheckAll").prop("checked")){
+
+
+    //     Tool_check.each(function(){
+
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
+
+    //         $(this).prop("checked",true);
+
+
+    //         total_price+=ProductPrice
+
+    //         CHECKTOTAL.text(total_price)
+
+    //     })
+
+
+    //   }else{
+
+    //     Tool_check.each(function(){
+
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
+
+    //         $(this).prop("checked",false);
+
+    //         total_price-=ProductPrice
+
+    //         CHECKTOTAL.text(total_price)
+
+    //     })
+
+
+    //   }
+
+    // })
+
+
+
+    // // 總金額計算
+    // function Price_Calc(check){
 
         
-        check.each(function(){
+    //     check.each(function(){
 
-            let isCheck = $(this).prop("checked")
+    //         let isCheck = $(this).prop("checked")
     
-            let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
-    
-    
-    
-            if(isCheck){
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
     
     
-                total_price+=ProductPrice 
+    
+    //         if(isCheck){
+    
+    
+    //             total_price+=ProductPrice 
             
-            }
+    //         }
     
     
-        })
+    //     })
 
 
-        // 取消/加入勾選
-        check.change(function(){
+    //     // 取消/加入勾選
+    //     check.change(function(){
 
-            let isCheck = $(this).prop("checked")
+    //         let isCheck = $(this).prop("checked")
     
-            let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
+    //         let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
 
 
-            if(!isCheck){
+    //         if(!isCheck){
 
-                total_price -= ProductPrice
+    //             total_price -= ProductPrice
 
-                CHECKTOTAL.text(total_price)
+    //             CHECKTOTAL.text(total_price)
                 
-            }else{
+    //         }else{
 
-                total_price += ProductPrice
+    //             total_price += ProductPrice
                
-                CHECKTOTAL.text(total_price)
+    //             CHECKTOTAL.text(total_price)
 
-            }
+    //         }
 
 
 
-        })
+    //     })
     
 
-    }
+    // }
 
    
-    Price_Calc(Seafood_check)
-    Price_Calc(Tool_check)
-    Price_Calc(Fishbox_check)
+    // Price_Calc(Seafood_check)
+    // Price_Calc(Tool_check)
+    // Price_Calc(Fishbox_check)
  
 
 
-    CHECKTOTAL.text(total_price)
-    console.log( total_price );
+
+    // CHECKTOTAL.text(total_price)
+    // console.log( total_price );
 
 
+    
+
+    // let checkAll = true
+
+    // Tool_check.change(function(){
+
+    //     if(Tool_check.prop("checked") == false){
+
+    //         checkAll = false
+
+    //         console.log( checkAll);
+
+            
+
+
+    //     }else{
+
+    //         checkAll = true
+
+    //         console.log( checkAll);
+
+    //     }
+
+
+    //     Tool_check.each(function(){
+
+
+
+    //         if(Tool_check.prop("checked")){
+
+    //             checkAll = true
+
+    //             console.log( checkAll);
+
+               
+
+    //         }
+
+
+    //     })
+
+        
+
+
+    // })
+
+
+    // if(checkAll){
+
+
+
+    //     $('#Tool_CheckAll').prop("checked",true)
+       
+
+
+        
+    // }else{
+
+        
+
+
+    // }
+
+    // console.log( checkAll);
+    
 
     // Tool_check.change(function(){
 
