@@ -1037,7 +1037,7 @@ let seafood_items_list = `
         <div class="Items_list tool_items_list"  Product-ID="${arr.pid}" food="${arr.food}" Selected-ID="${arr.Selected_type}">
 
             <div class="Items_list_content Items_list_head">
-                <input type="checkbox" name="Tool_check[]" id="Tool_check" class="Item_check" checked>
+                <input type="checkbox" name="Tool_check[]" id="Tool_check" class="Item_check Tool_check" checked>
                 <div class="Items_pic">
                     <a href="./each-product.html?I&&pid=${PID}">
                         <img src="${arr.Product_Pic}" alt="">

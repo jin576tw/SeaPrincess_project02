@@ -83,14 +83,14 @@
 
         if(cookieStr){
 
-            let total_price = 0
+            // let total_price = 0
 
             // 第一步商品載入
             for(let i = 0 ; i < cookieArr.length ;i++){ 
     
-                 // 計算當前商品金額
-                let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
-                total_price += nowprice;
+                //  // 計算當前商品金額
+                // let nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+                // total_price += nowprice;
     
     
                 // 商品載入....
@@ -103,18 +103,18 @@
 
 
             
-            // 小計金額
-            CHECKTOTAL.text(total_price)
+            // // 小計金額
+            // CHECKTOTAL.text(total_price)
 
-            // 點數計算
-            let getpoint = total_price * 0.1
+            // // 點數計算
+            // let getpoint = total_price * 0.1
 
-            //優惠點數
-            GETPOINT.text(getpoint)
+            // //優惠點數
+            // GETPOINT.text(getpoint)
     
 
-            // 合計金額
-            FINALTOTAL.text(total_price)
+            // // 合計金額
+            // FINALTOTAL.text(total_price)
            
             
     
@@ -297,7 +297,7 @@
             
                 let SameItemCount =parseInt($(this).parent().next().children('.Items_list_count').children('.count_warp').children('.Counter').children('.countNum').text())
 
-                console.log(SameItemCount);
+               
     
                 // 合併數量
                 cookieArr[i].count+=SameItemCount;
@@ -1112,6 +1112,109 @@
 
     })
 
+    // let CHECKTOTAL = $('.total_sum p:nth-of-type(2)')
+    // let GETPOINT = $('.total_point p:nth-of-type(2)')
+    // let FINALTOTAL = $('.total_money p:nth-of-type(2)')
+
+
+    let Seafood_check = $("input[name='Seafood_check[]']")
+    let Tool_check = $("input[name='Tool_check[]']")
+    let Fishbox_check = $("input[name='Fishbox_check[]']")
+
+
+    let total_price = 0 
+
+
+    // 總金額計算
+    function Price_Calc(check){
+
+        
+        check.each(function(){
+
+            let isCheck = $(this).prop("checked")
+    
+            let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
+    
+    
+    
+            if(isCheck){
+    
+    
+                total_price+=ProductPrice 
+            
+            }
+    
+    
+        })
+
+
+        // 取消/加入勾選
+        check.change(function(){
+
+            let isCheck = $(this).prop("checked")
+    
+            let ProductPrice  = parseInt($(this).parent().next().children('.Items_list_detail_tool').children('.Items_list_price').children('p').text())
+
+
+            if(!isCheck){
+
+                total_price -= ProductPrice
+
+                CHECKTOTAL.text(total_price)
+                
+            }else{
+
+                total_price += ProductPrice
+               
+                CHECKTOTAL.text(total_price)
+
+            }
+
+
+
+        })
+    
+
+    }
+
+   
+    Price_Calc(Seafood_check)
+    Price_Calc(Tool_check)
+    Price_Calc(Fishbox_check)
+ 
+
+
+    CHECKTOTAL.text(total_price)
+    console.log( total_price );
+
+
+
+    // Tool_check.change(function(){
+
+
+
+    //     let isCheck = $(this).prop("checked")
+       
+
+    //     if(!isCheck){
+
+
+    //         $('#Tool_CheckAll').prop("checked",false)
+
+
+    //     }else{
+
+
+    //         $('#Tool_CheckAll').prop("checked",true)
+
+    //     }
+        
+        
+
+        
+    // })
+
+   
 
 
     // let ItemType = $('select[name="Items_Alltype"]')
