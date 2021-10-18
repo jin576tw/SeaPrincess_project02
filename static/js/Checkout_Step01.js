@@ -210,7 +210,7 @@ function ProductChecked(check, checkAll) {
   });
 }
 
-// 輸出商品功能
+// 輸出商品
 ProductChecked(Seafood_check, Seafood_checkAll);
 ProductChecked(Tool_check, Tool_checkAll);
 ProductChecked(Fishbox_check, Fishbox_checkAll);
