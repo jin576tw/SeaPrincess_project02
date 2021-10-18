@@ -307,8 +307,7 @@ $(".Items_warps").on("click", ".list_delete", function () {
 
     $(".Cart_items_empty").css("display", "flex"); //顯示目前沒有商品提示
 
-    // $('.Cart_list_total').css('display','none')
-    // $('.checkout_btn').attr('disabled', true).css('background-color','var(--grey)')
+
   } else {
     $.cookie("Cart", JSON.stringify(cookieArr), { expire: 1 });
   }
