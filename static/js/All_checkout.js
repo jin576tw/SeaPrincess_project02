@@ -362,6 +362,7 @@ $(document).ready(function () {
                                 // 修改魚箱選項
 
                      
+                                console.log(cookieArr[i]);
                             
                                 // 魚選修改選單
                                 let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
@@ -446,7 +447,7 @@ $(document).ready(function () {
                                 
                                             <div class="checkout_info_list">
                                                 <h3>可選填想配入的品項，若無現貨會再通知您。</h3>
-                                                <textarea name="fishbox_message"rows="6"cols="40" id="fishbox_message"></textarea>
+                                                <textarea name="fishbox_message"rows="6"cols="40" id="fishbox_message">${cookieArr[i].Product_message}</textarea>
                                 
                                                
                                             </div>
