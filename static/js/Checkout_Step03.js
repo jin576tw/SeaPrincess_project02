@@ -6,7 +6,7 @@ $(document).ready(function () {
     let StepLine = $('.Checkout_Step_line')
     let bounce = `animate__bounceIn animate__animated`;
 
-    // 第二步驟成功
+    // 第二步驟成功、送出訂單資料
     $('.final_checkout_btn').on({
 
         click: function(){

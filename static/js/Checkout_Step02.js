@@ -7,8 +7,6 @@ $(document).ready(function () {
     let check =`<i class="fas fa-check check01"></i>`;
     let bounce = `animate__bounceIn animate__animated`;
 
-
-
     /////////////////////// 第二步驟結帳頁///////////////////
 
     // 勾選的商品
