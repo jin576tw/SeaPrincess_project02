@@ -792,7 +792,7 @@ $(document).ready(function () {
 
           cookieArr[i].Product_message = editMessage 
 
-          console.log(cookieArr[i]);
+
 
         }
 
