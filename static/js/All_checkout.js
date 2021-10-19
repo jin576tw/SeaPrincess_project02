@@ -294,7 +294,6 @@ $(document).ready(function () {
 
                                 let CheckFishbox =`
 
-
                                     <div class="checkout_item_list fishbox_item_list">
                                         <div class="checkout_item_pic">
                                             <div class="checkout_item_pic_img">
@@ -360,11 +359,6 @@ $(document).ready(function () {
 
 
                                 // 修改魚箱選項
-
-                     
-                                console.log(cookieArr[i]);
-                            
-                                // 魚選修改選單
                                 let Editfishbox =`<div class="checkout_info fishbox_detail" fishbox_pid="${cookieArr[i].pid}">
                                     <div class="checkout_info_bg"></div>
                                     <div class="checkout_info_warp">
@@ -390,6 +384,7 @@ $(document).ready(function () {
                                                     <div class="fishbox_btn">
                                                         <label><input type="radio" name="fishbox_pice" value="5000" required >5000</label>
                                                     </div>
+                                                    
                                                 
                                                 
                                                 </div>
@@ -402,16 +397,16 @@ $(document).ready(function () {
                                                 
 
                                                 <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="" required>1-2人</label>
+                                                        <label><input type="radio" name="fishbox_qty" value="1-2人" required>1-2人</label>
                                                  </div>
                                                 <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="" required>3-4人</label>
+                                                        <label><input type="radio" name="fishbox_qty" value="3-4人" required>3-4人</label>
                                                  </div>
                                                 <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="" required >5-6人</label>
+                                                        <label><input type="radio" name="fishbox_qty" value="5-6人" required >5-6人</label>
                                                  </div>
                                                 <div class="fishbox_btn ">
-                                                        <label><input type="radio" name="fishbox_qty" value="" required>6人以上</label>
+                                                        <label><input type="radio" name="fishbox_qty" value="6人以上" required>6人以上</label>
                                                  </div>
                                                 
 
@@ -468,9 +463,10 @@ $(document).ready(function () {
 
                                 </div>
                                 </div>`
-                                
-                               
+
+                                                               
                                 $('.cagro_fishboxes_warp').append(FishboxInfo+Editfishbox)
+
                               
                             }
 
@@ -482,8 +478,6 @@ $(document).ready(function () {
 
                 }
 
-
-                
 
                 // 生鮮漁獲金額
                 $('.fish_item_price_total p:nth-of-type(2)').text( CheckSeafoodtotal)
@@ -694,15 +688,102 @@ $(document).ready(function () {
 
   
   
-    //修改魚箱選項
+    //修改魚箱選項載入
     let CagroFishboxes = $(".cagro_fishboxes_warp")
 
     CagroFishboxes.on("click",".fishbox_edit ",function(){
 
-   
+      
+        // 魚箱跳出
         $(this).parent().parent().next('.fishbox_detail').fadeIn(100)
 
+        // 魚箱id
+        let fid = parseInt($(this).parent().parent().parent().attr('fishbox_pid'))
 
+    
+        // 魚箱價格
+        let boxPrice = $(this).parent().parent().next('.fishbox_detail').children('.checkout_info_warp').children('.checkout_info_content').children('.checkout_info_list').children('.fishbox_pice_select').children().children().children()
+
+        // 魚箱人數
+        let boxQty = $(this).parent().parent().next('.fishbox_detail').children('.checkout_info_warp').children('.checkout_info_content').children().children('.fishbox_qty_select').children().children().children()
+
+        // 魚箱烹煮方式
+        let boxCook =$(this).parent().parent().next('.fishbox_detail').children('.checkout_info_warp').children('.checkout_info_content').children().children('.fishbox_cook_select').children().children().children()
+
+        // 載入勾選項目
+        let cookieStr = $.cookie('Cart');
+        let cookieArr = JSON.parse(cookieStr);
+                                
+      
+        for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+
+          if(cookieArr[i].fishbox && cookieArr[i].pid == fid){
+
+            // 魚箱價格載入
+            boxPrice.each(function(){
+
+
+                if($(this).val() == cookieArr[i].Product_Price){
+
+
+                  $(this).prop("checked",true)
+                };
+
+          
+            })
+
+
+            // 魚箱人數載入
+            boxQty.each(function(){
+
+              if($(this).val() == cookieArr[i].Product_qty){
+
+
+                $(this).prop("checked",true)
+                
+              };
+
+        
+            })
+
+
+             // 魚箱烹煮方式載入
+            boxCook.each(function(){
+
+             
+
+              for(let j = 0 ; j < cookieArr[i].Product_cook.length ;j++){ 
+
+
+                if($(this).val() == cookieArr[i].Product_cook[j]){
+
+                  $(this).prop("checked",true)
+                
+                };
+
+
+
+
+              }
+             
+            })
+
+
+
+           
+            break
+
+          }
+
+
+        }
+      
+       
+                            
+                              
+
+        
 
     })
 
