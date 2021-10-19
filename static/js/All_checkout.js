@@ -452,7 +452,7 @@ $(document).ready(function () {
                                     
 
                                         <div class="check_info_bottom">
-                                            <button class="info_confirm">確認</button>
+                                            <button class="info_confirm" id="box_edited">確認</button>
             
                                         </div>
 
@@ -690,7 +690,6 @@ $(document).ready(function () {
   
     //修改魚箱選項載入
     let CagroFishboxes = $(".cagro_fishboxes_warp")
-
     CagroFishboxes.on("click",".fishbox_edit ",function(){
 
       
@@ -700,7 +699,6 @@ $(document).ready(function () {
         // 魚箱id
         let fid = parseInt($(this).parent().parent().parent().attr('fishbox_pid'))
 
-    
         // 魚箱價格
         let boxPrice = $(this).parent().parent().next('.fishbox_detail').children('.checkout_info_warp').children('.checkout_info_content').children('.checkout_info_list').children('.fishbox_pice_select').children().children().children()
 
@@ -714,7 +712,6 @@ $(document).ready(function () {
         let cookieStr = $.cookie('Cart');
         let cookieArr = JSON.parse(cookieStr);
                                 
-      
         for(let i = 0 ; i < cookieArr.length ;i++){ 
 
 
@@ -763,31 +760,120 @@ $(document).ready(function () {
                 };
 
 
-
-
               }
              
             })
 
-
-
-           
             break
 
           }
 
-
         }
       
        
-                            
-                              
-
-        
+                      
 
     })
 
 
+    // 修改魚箱內容
+    CagroFishboxes.on("click","#box_edited",function(){
+
+      // 編輯魚箱價錢
+      let editPrice = $(this).parent().prev().children().children('.fishbox_pice_select').children().children().children('input:checked').val()
+
+
+      // 編輯魚箱人數
+      let editQty = $(this).parent().prev().children().children('.fishbox_qty_select').children().children().children('input:checked').val()
+
+
+      // 編輯魚箱料理方式
+      let editCook = $(this).parent().prev().children().children('.fishbox_cook_select').children().children().children('input:checked')
+
+      // 魚箱料理方式array
+      let editCookArr = []
+      editCook.each(function(){
+
+        editCookArr.push($(this).val())
+        
+      })
+
+      // 編輯魚箱訊息
+      let editMessage =$(this).parent().prev().children().children('textarea').val()
+
+
+      // 魚箱ｉｄ
+      let fid =$(this).parent().parent().parent().attr('fishbox_pid')
+
+      
+
+      let fisboxMessage =  ``
+
+      if(editMessage == ''){
+
+
+        fisboxMessage = ``
+
+
+      }else{
+
+        fisboxMessage =`<p>選填：${editMessage}</p>`
+
+
+      }
+      
+
+      // 視覺更新內容
+      let editContent =  `
+
+      <p>客製組合預算：${editPrice}元</p>
+      <p>食用人數：${editQty}</p>
+      <p>料理習慣：${editCookArr.join('、')}</p>`
+      +fisboxMessage+`</div>
+      `
+
+      let fishbox_Infotext = $(this).parent().parent().parent().prev().children('.cargo_info_text').children('.fishbox_Infotext')
+
+      fishbox_Infotext.html(editContent)
+     
+
+      let cookieStr = $.cookie('Cart');
+      let cookieArr = JSON.parse(cookieStr);
+
+
+      for(let i = 0 ; i < cookieArr.length ;i++){ 
+
+
+        if(cookieArr[i].fishbox && cookieArr[i].pid == fid){
+
+          
+
+          cookieArr[i].Product_Price = editPrice
+
+          cookieArr[i].Product_qty =  editQty
+
+          cookieArr[i].Product_cook = editCookArr
+
+          cookieArr[i].Product_message = editMessage 
+
+          console.log(cookieArr[i]);
+
+        }
+
+
+
+      }
+    
+
+      $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
+      
+      $('.checkout_info').fadeOut(100);
+
+      alert('魚箱修改完成')
+
+         
+
+    })
     
 
     // 選單功能畫面
@@ -809,7 +895,7 @@ $(document).ready(function () {
 
 
      // 填入/修改資料
-     CheckoutWarp.on("click",'.info_confirm',function(){
+     CheckoutWarp.on("click",'#checkSeafoodInfo,#checkfishboxInfo,#checkToolInfo',function(){
 
 
         let isPass = true;
