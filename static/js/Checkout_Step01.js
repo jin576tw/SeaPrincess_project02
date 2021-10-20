@@ -568,30 +568,12 @@
                 let sum_RWD = parseInt($('.shoplist_count_RWD').text())//抓結帳頁RWD現在數量
 
 
-                let oldtotal_price = parseInt( CHECKTOTAL.text())
-
-
                 let nowsum = sum - parseInt(arr[i].count) //結帳頁現在數量減去刪除數量
                 $('.navbar_shoplist_count').text(nowsum)//刪除後數量
 
                 let nowsumRWD = sum_RWD - parseInt(arr[i].count) //RWD結帳頁現在數量減去刪除數量
                 $('.navbar_shoplist_count').text(nowsumRWD)//RWD刪除後數量
                 
-
-                let delete_price = parseInt(arr[i].count) *  parseInt(arr[i].Product_Price)
-
-                let newtototal_price = oldtotal_price - delete_price;
-
-
-                CHECKTOTAL.text(newtototal_price)//刪除後總金額
-
-            
-                //優惠點數
-                GETPOINT.text(PointCalc(newtototal_price))
-    
-                // 合計金額
-                FINALTOTAL.text(newtototal_price)
-                    
 
                 arr.splice(i,1);//刪除
 
@@ -612,12 +594,48 @@
 
             }
 
+
+            
+
+            let oldtotal_price = parseInt( CHECKTOTAL.text()) 
+
             // 判斷為海鮮
             if(isfood == 'true'){
 
                 if( checkProuductID == cookieArr[i].pid && cookieArr[i].food){
 
                 
+
+                    let delete_price = parseInt(cookieArr[i].count) *  parseInt( cookieArr[i].Product_Price)
+                 
+            
+
+                    let newtototal_price = oldtotal_price - delete_price;
+
+
+                    const isCheck = $(this).parent().parent().parent().prev().children('input').prop('checked')
+
+                    
+
+                    if( isCheck){
+
+
+                        CHECKTOTAL.text(newtototal_price)//刪除後總金額
+
+                
+                        //優惠點數
+                        GETPOINT.text(PointCalc(newtototal_price))
+            
+                        // 合計金額
+                        FINALTOTAL.text(newtototal_price)
+
+                
+
+
+                    }
+
+
+
                     deleteCheck(cookieArr)
 
                 }
@@ -629,7 +647,38 @@
 
                 if( checkProuductID == cookieArr[i].pid && cookieArr[i].food == false){
                   
+                    let delete_price = parseInt(cookieArr[i].count) *  parseInt( cookieArr[i].Product_Price)
+                 
+            
+
+                    let newtototal_price = oldtotal_price - delete_price;
+
+
+                    const isCheck = $(this).parent().parent().parent().prev().children('input').prop('checked')
+
+                    
+
+                    if( isCheck){
+
+
+                        CHECKTOTAL.text(newtototal_price)//刪除後總金額
+
+                
+                        //優惠點數
+                        GETPOINT.text(PointCalc(newtototal_price))
+            
+                        // 合計金額
+                        FINALTOTAL.text(newtototal_price)
+
+                
+
+
+                    }
+
+
+
                     deleteCheck(cookieArr)
+                    
                  
 
                 }
@@ -639,7 +688,38 @@
 
                 if( checkProuductID == cookieArr[i].pid && cookieArr[i].fishbox){
                     
+                    let delete_price = parseInt(cookieArr[i].count) *  parseInt( cookieArr[i].Product_Price)
+                 
+            
+
+                    let newtototal_price = oldtotal_price - delete_price;
+
+
+                    const isCheck = $(this).parent().parent().parent().prev().children('input').prop('checked')
+
+                    
+
+                    if( isCheck){
+
+
+                        CHECKTOTAL.text(newtototal_price)//刪除後總金額
+
+                
+                        //優惠點數
+                        GETPOINT.text(PointCalc(newtototal_price))
+            
+                        // 合計金額
+                        FINALTOTAL.text(newtototal_price)
+
+                
+
+
+                    }
+
+
+
                     deleteCheck(cookieArr)
+                    
                 }
 
 
@@ -847,15 +927,26 @@
                         let newtototal_price = raw_price + newprice; //新商品總金額
                     
                         $(this).parent().parent().parent().next().children('p').text(newprice);
-            
-                        CHECKTOTAL.text(newtototal_price);
 
 
-                        //優惠點數
-                        GETPOINT.text(PointCalc(newtototal_price))
-                        
+                        // 勾選才能加入小計
+                        const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
+
+                    
+                        if(isCheck){
+
+                            CHECKTOTAL.text(newtototal_price);
+
+
+                            //優惠點數
+                            GETPOINT.text(PointCalc(newtototal_price))
+                            
+                           
+                            FINALTOTAL.text(newtototal_price)
+
+
+                        }
                        
-                        FINALTOTAL.text(newtototal_price)
                         
                     
             
@@ -921,12 +1012,23 @@
                     
                         $(this).parent().parent().parent().next().children('p').text(newprice);
             
-                        CHECKTOTAL.text(newtototal_price);
+                        // 勾選才能加入小計
+                        const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
 
-                        //優惠點數
-                        GETPOINT.text(PointCalc(newtototal_price))
-                        
-                        FINALTOTAL.text(newtototal_price)
+                    
+                        if(isCheck){
+
+                            CHECKTOTAL.text(newtototal_price);
+
+
+                            //優惠點數
+                            GETPOINT.text(PointCalc(newtototal_price))
+                            
+                           
+                            FINALTOTAL.text(newtototal_price)
+
+
+                        }
                         
                     
             
@@ -993,12 +1095,23 @@
                     
                         $(this).parent().parent().parent().next().children('p').text(newprice);
             
-                        CHECKTOTAL.text(newtototal_price);
+                        // 勾選才能加入小計
+                        const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
 
-                        //優惠點數
-                        GETPOINT.text(PointCalc(newtototal_price))
+                    
+                        if(isCheck){
 
-                        FINALTOTAL.text(newtototal_price)
+                            CHECKTOTAL.text(newtototal_price);
+
+
+                            //優惠點數
+                            GETPOINT.text(PointCalc(newtototal_price))
+                            
+                           
+                            FINALTOTAL.text(newtototal_price)
+
+
+                        }
                         
                     
             
@@ -1044,6 +1157,7 @@
 
                     let oldtotal_price = parseInt( CHECKTOTAL.text())//未變化前總金額
 
+
                     let old_price = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price)////未變化前商品金額
             
                     let raw_price = oldtotal_price - old_price// 除了變化的商品金額以外的總金額
@@ -1079,11 +1193,31 @@
                     }
             
                     if(cookieArr[i].count <= 0){
+
                         checkProuduct.remove()
                         alert('已刪除商品')
                         let delete_price = oldtotal_price - cookieArr[i].Product_Price
+
+
+                        // 勾選才能加入小計
+                        const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
+
+                    
+                        if(isCheck){
+
+                            CHECKTOTAL.text(delete_price)
+
+                            //優惠點數
+                            GETPOINT.text(PointCalc(delete_price))
+                
+                            // 合計金額
+                            FINALTOTAL.text(delete_price)
+
+
+                        }
+
                         
-                        $('.Cart_list_total').children('p').text(delete_price)
+                       
             
                         cookieArr.splice(i,1);//刪除指定資料
             
@@ -1103,6 +1237,7 @@
                             break;
             
                         }else{
+
                             $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
                             checkfilter(cookieArr)
             
@@ -1125,15 +1260,27 @@
             
             
                     $(this).parent().parent().parent().next().children('p').text(newprice)
-                    
-                    CHECKTOTAL.text(newtototal_price);
+
+
+                     // 勾選才能加入小計
+                     const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
 
                     
-                    //優惠點數
-                    GETPOINT.text(PointCalc(newtototal_price))
+                     if(isCheck){
+                         
+                        CHECKTOTAL.text(newtototal_price);
 
-                    // 合計金額
-                    FINALTOTAL.text(newtototal_price)
+                    
+                        //優惠點數
+                        GETPOINT.text(PointCalc(newtototal_price))
+
+                        // 合計金額
+                        FINALTOTAL.text(newtototal_price)
+
+
+                     }
+                    
+                    
                    
                     
                     break;
@@ -1190,7 +1337,22 @@
                         alert('已刪除商品')
                         let delete_price = oldtotal_price - cookieArr[i].Product_Price
                         
-                        $('.Cart_list_total').children('p').text(delete_price)
+                        // 勾選才能加入小計
+                        const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
+
+                
+                        if(isCheck){
+
+                            CHECKTOTAL.text(delete_price)
+
+                            //優惠點數
+                            GETPOINT.text(PointCalc(delete_price))
+                
+                            // 合計金額
+                            FINALTOTAL.text(delete_price)
+
+
+                        }
             
                         cookieArr.splice(i,1);//刪除指定資料
             
@@ -1233,13 +1395,22 @@
             
                     $(this).parent().parent().parent().next().children('p').text(newprice)
                     
-                    CHECKTOTAL.text(newtototal_price);
+                    // 勾選才能加入小計
+                    const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
 
-                   //優惠點數
-                   GETPOINT.text(PointCalc(newtototal_price))
+                    
+                    if(isCheck){
 
-                   // 合計金額
-                   FINALTOTAL.text(newtototal_price)
+                        CHECKTOTAL.text(newtototal_price)
+
+                        //優惠點數
+                        GETPOINT.text(PointCalc(newtototal_price))
+            
+                        // 合計金額
+                        FINALTOTAL.text(newtototal_price)
+
+
+                    }
                     
                     break;
         
@@ -1293,8 +1464,24 @@
                         checkProuduct.remove()
                         alert('已刪除商品')
                         let delete_price = oldtotal_price - cookieArr[i].Product_Price
+
+                        // 勾選才能加入小計
+                        const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
+
                         
-                        $('.Cart_list_total').children('p').text(delete_price)
+                        if(isCheck){
+
+                            CHECKTOTAL.text(delete_price)
+
+                            //優惠點數
+                            GETPOINT.text(PointCalc(delete_price))
+                
+                            // 合計金額
+                            FINALTOTAL.text(delete_price)
+
+                        }
+                        
+                        
             
                         cookieArr.splice(i,1);//刪除指定資料
             
@@ -1336,14 +1523,23 @@
             
                     $(this).parent().parent().parent().next().children('p').text(newprice)
                     
-                    CHECKTOTAL.text(newtototal_price);
-                    
-                    //優惠點數
-                    GETPOINT.text(PointCalc(newtototal_price))
 
-                    // 合計金額
-                    FINALTOTAL.text(newtototal_price)
-                                
+                    // 勾選才能加入小計
+                    const isCheck  = $(this).parent().parent().parent().parent().parent().prev().children('input').prop('checked')
+
+                    
+                    if(isCheck){
+
+                        CHECKTOTAL.text(newtototal_price)
+
+                        //優惠點數
+                        GETPOINT.text(PointCalc(newtototal_price))
+            
+                        // 合計金額
+                        FINALTOTAL.text(newtototal_price)
+
+w
+                    }
 
                     break;
                     
