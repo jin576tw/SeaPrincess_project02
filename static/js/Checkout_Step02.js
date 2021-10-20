@@ -230,7 +230,7 @@ $(document).ready(function () {
 
                                 let CheckFishbox =`
 
-                                    <div class="checkout_item_list fishbox_item_list">
+                                    <div class="checkout_item_list fishbox_item_list" Product-ID="${cookieArr[i].pid}">
                                         <div class="checkout_item_pic">
                                             <div class="checkout_item_pic_img">
                                                 <img src="${cookieArr[i].Product_Pic}" alt="">
@@ -413,6 +413,7 @@ $(document).ready(function () {
                     }
 
                 }
+
 
 
                 // 生鮮漁獲金額
@@ -777,6 +778,8 @@ $(document).ready(function () {
       let cookieArr = JSON.parse(cookieStr);
 
 
+      let newFishboxToal = 0 
+
       for(let i = 0 ; i < cookieArr.length ;i++){ 
 
 
@@ -798,8 +801,44 @@ $(document).ready(function () {
 
 
 
+        if(cookieArr[i].fishbox){
+
+
+            
+            const nowprice = parseInt(cookieArr[i].count) * parseInt(cookieArr[i].Product_Price);
+
+
+            newFishboxToal+=nowprice
+
+            
+        }
+
+
+
       }
+
+    //   更新項目金額
+      $('.fishbox_item_list').each(function(){
+
+
+        if($(this).attr('product-id') == fid ){
+
+
+           $(this).children('.checkout_item_price').children('p').text(editPrice)
+
+        
+
+        }
+
+       
+
+      })
+
     
+
+      // 海鮮魚箱金額
+      $('.fishbox_item_price_total p:nth-of-type(2)').text(newFishboxToal);
+     
 
       $.cookie('Cart',JSON.stringify(cookieArr),{expire : 1})
       
