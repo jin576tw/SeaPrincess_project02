@@ -23,7 +23,7 @@ $('.cart_checkout_btn').on({
             
             isFood == 'false' ? isFood = false : isFood = true;
 
-            CheckSeafoodObj = {pid:checkID,food:isFood}
+            let CheckSeafoodObj = {pid:checkID,food:isFood}
             
             CheckProductArr.push(CheckSeafoodObj)
         })
@@ -39,7 +39,7 @@ $('.cart_checkout_btn').on({
 
             isfishbox == 'false' ? isfishbox=false : isfishbox = true;
 
-            CheckFishboxObj = {pid:checkID,fishbox:isfishbox}
+            let CheckFishboxObj = {pid:checkID,fishbox:isfishbox}
             
             CheckProductArr.push(CheckFishboxObj)
             })
