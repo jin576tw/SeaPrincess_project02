@@ -834,7 +834,26 @@ $(document).ready(function () {
 
       })
 
-    
+
+
+      //計算總金額
+      const oldFishbox = parseInt($('.fishbox_item_price_total p:nth-of-type(2)').text())
+
+      const oldtotalPrice = parseInt($('.total_detail p:nth-of-type(2)').text())
+     
+      const newToalPrice = oldtotalPrice - oldFishbox + newFishboxToal;
+
+
+      //小計
+      $('.total_detail p:nth-of-type(2)').text(newToalPrice)
+
+      const fee = parseInt($('.fee_detail p:nth-of-type(2)').text())
+      
+      const NewOrderPrice = newToalPrice + fee
+
+      //訂單總金額
+      $('.final_total_price p:nth-of-type(2)').text(NewOrderPrice)
+
 
       // 海鮮魚箱金額
       $('.fishbox_item_price_total p:nth-of-type(2)').text(newFishboxToal);
