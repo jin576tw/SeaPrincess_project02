@@ -1,4 +1,6 @@
 .Backstage{
+    overflow: hidden;
+    position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -16,17 +18,49 @@
 
 .Backstage_content{
 
-    width: 75%;
+    width: 85%;
+    
     min-height: 100vh;
-    display: flex;
+    padding: 60px ;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 
 
 
 }
 
+.RWD_Backstage_barOpnen{
+    transition: 0.8s;
+    transform: translateX(-205px);
+}
+
 @media (max-width: 767px) { 
+
+    .Backstage_bar{
+        position: absolute;
+        z-index: 999;
+        right: 0;
+        width: 55%;
+        max-width: 205px;
+        transition: 0.8s;
+        right: -55%;
+        min-height: 100vh;
+    
+    
+    }
+    
+    
+    .Backstage_content{
+    
+        width: 100%;
+        min-height: 100vh;
+        padding: 30px 10px 0 10px;
+  
+    
+    
+    
+    }
 
 }
 
@@ -35,6 +69,8 @@
     
 }
 
+
+/* //////////////////////後台選單//////////////////// */
 
 .Backstage_bar_title{
     width: 100%;
@@ -73,7 +109,7 @@
 }
 
 .Backstage_bar_list li{
-
+    min-width: 80px;
     margin: 20px;
     font-size: 1.8rem;
     cursor: pointer;
@@ -83,5 +119,475 @@
 .list_up{
 
     opacity:1 !important;
+
+}
+
+@media (max-width: 767px) { 
+
+
+
+
+}
+
+/* //////////////////////後台內容//////////////////// */
+
+.RWD_btn{
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/icon-menu-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+
+}
+
+
+@media (max-width: 767px) { 
+
+
+    .RWD_btn{
+
+        display: block;
+    }
+    
+}
+
+
+/*訂單管理*/
+.Order_Manage{
+
+
+}
+
+/* 訂單工具 */
+.Order_tool{
+    display: flex;
+    justify-content: space-between
+
+}
+
+
+.search_bar{
+    display: flex;
+    width: 30%;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #797979;
+    overflow: hidden;
+}
+
+.search_bar input{
+
+    min-width: 200px;
+    width: 90%;
+    height: 100%;
+    border: transparent;
+    border-radius: 0%;
+    font-size: 1.6rem;
+
+}
+.search_bar button{
+    min-width: 40px;
+    width: 10%;
+    height: 100%;
+    color: white;
+    background-color: #797979;
+
+    
+}
+
+
+/* 狀態分類 */
+.Order_Status_warp{
+
+    display: flex;
+
+}
+
+
+.Order_Status{
+    width: 140px;
+    height: 40px;
+    font-size: 1.6rem;  
+    border: solid 1px rgba(0, 0, 0, 0.31);
+
+}
+
+
+.Oder_Clear{
+    width: 80px;
+    height: 40px;
+    font-size: 1.6rem;  
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px rgba(0, 0, 0, 0.31);
+    margin-left: 20px;
+
+}
+
+@media (max-width: 767px) { 
+
+
+    .Order_tool{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .search_bar{
+        display: flex;
+        width:100%;
+        height: 40px;
+        border-radius: 6px;
+        border: 1px solid #797979;
+        overflow: hidden;
+        margin-top: 30px;
+    }
+
+
+    .Order_Status_warp{
+
+
+        margin-top: 10px;
+        justify-content: space-between
+    }
+
+
+    .Order_Status{
+        width: 240px;
+        height: 40px;
+        font-size: 1.6rem;  
+        border: solid 1px rgba(0, 0, 0, 0.31);
+    
+    }
+
+
+    .Oder_Clear{
+        
+        margin-left: 10px;
+    
+    }
+
+
+
+}
+
+
+.Manage_cate_warp{
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    height: 60px;
+    border-bottom: solid 1px #dedede;
+    padding: 0px 10px;
+}
+
+
+.cate_head{
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+.cate_md{
+    display: flex;
+    width: 40%;
+    height: 100%;
+   
+
+
+}
+.cate_bottom{
+
+    width: 10%;
+    height: 100%;
+
+}
+
+.cate_item{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+#cate_code{
+
+    width: 40%;
+
+}
+
+#cate_name{
+    width: 60%;
+
+
+}
+
+#cate_price{
+    width: 25%;
+
+}
+
+#cate_orderStatus{
+    width: 25%;
+
+}
+
+#cate_paymentStatus{
+    width: 25%;
+
+}
+
+#cate_cargoStatus{
+    width: 25%;
+
+}
+
+
+
+@media (max-width: 767px) { 
+
+    .Manage_cate_warp{
+
+        display: none;
+    }
+
+
+}
+
+.Manage_list_warp{
+    width: 100%;
+    min-height: 600px;
+}
+
+.Manage_list{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px #dedede;
+    padding: 0px 10px;
+}
+
+.list_head{
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+.list_md{
+    display: flex;
+    width: 40%;
+    height: 100%;
+}
+
+.list_bottom{
+    display: flex;
+    width: 10%;
+    height: 100%;
+}
+
+.list_item{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1.8rem;
+    color:black;
+}
+
+.list_item h4{
+    font-weight: 400;
+}
+
+#list_code{
+    width: 40%;
+}
+
+#list_code h4:nth-of-type(2){
+    color: #9b9b9b;
+}
+
+#list_name{
+    width: 60%;
+    /* max-width: 300px; */
+}
+
+#list_price{
+    width: 25%;
+}
+#list_orderStatus{
+    width: 25%;
+}
+#list_paymentStatus{
+    width: 25%;
+}
+#list_cargoStatus{
+    width: 25%;
+}
+
+
+
+#list_detail{
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.first_ship{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.first_ship:hover{
+    transition: 0.8s;
+    opacity: 1;
+
+}
+
+.order_detail{
+    height: 25px;
+    width: 50px;
+    background-color: #9b9b9b;
+    margin-left: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.4rem;
+}
+
+
+
+@media (max-width: 767px) { 
+
+    .Manage_list_warp{
+        border-top:  solid 1px #dedede;
+        padding-top: 20px;
+        margin-top: 30px;
+    }
+
+
+    .Manage_list{
+        display: flex;
+      justify-content: space-between;
+        width: 100%;
+        height: 200px;
+        border-bottom: solid 1px #dedede;
+        padding: 0px 5px;
+    }
+
+
+
+    .list_head{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+      
+        /* max-width: 200px; */
+    }
+
+    .list_md{
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        height: 100%;
+
+        
+    }
+
+    
+
+
+    .list_bottom{
+        display: flex;
+        width: 8%;
+        height: 100%;
+       
+    }
+
+
+    .list_md h4{
+        font-size: 1.4rem;
+    }
+
+    #list_code{
+        width: 100%;
+        height: 30%;
+
+    }
+    
+    #list_name{
+        width: 100%;
+        height: 70%;
+        
+    }
+
+
+    #list_price{
+        width: 100%;
+        height: 25%;
+    }
+
+    #list_orderStatus{
+        width: 100%;
+        height: 25%;
+    }
+
+    #list_orderStatus h4::before{
+        
+        content: '訂單狀態：';
+    }
+
+    #list_paymentStatus{
+        width: 100%;
+        height: 25%;
+    }
+
+    #list_paymentStatus h4::before{
+        
+        content: '付款狀態：';
+    }
+
+    #list_cargoStatus{
+        width: 100%;
+        height: 25%;
+    }
+
+    #list_cargoStatus h4::before{
+        
+        content: '送貨狀態：';
+    }
+    
+    #list_detail{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+       
+    }
+
+    .order_detail{
+        height:50px;
+        width: 100%;
+        background-color: #9b9b9b;
+        margin-top: 10px;
+        margin-left: 0px;
+        border-radius: 10px;
+        color: white;
+        font-size: 1.4rem;
+    }
 
 }
