@@ -433,9 +433,13 @@
 #list_orderStatus{
     width: 25%;
 }
+
+
 #list_paymentStatus{
     width: 25%;
 }
+
+
 #list_cargoStatus{
     width: 25%;
 }
@@ -477,6 +481,23 @@
 }
 
 
+.orderNotice{
+    color: #00d5a5
+}
+
+.paymentNotice{
+    color: #dc7e00
+}
+
+.cargoNotice{
+    
+    color: #0077ff;
+}
+
+.finishNotice{
+    opacity: 0.4;
+    color: #aaaaaa;
+}
 /* 
 @media (max-width: 767px) { 
 
