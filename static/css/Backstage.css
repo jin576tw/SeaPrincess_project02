@@ -161,7 +161,7 @@
 /*////////////////////訂單管理////////////////*/
 .Order_Manage{
 
-    display: none;
+    /* display: none; */
 }
 
 /* 訂單工具 */
@@ -1247,7 +1247,7 @@
 /* ////////////4.單一客戶管理///////// */
 
 .Each_clientManage{
-    /* display: none; */
+    display: none;
 }
 
 
