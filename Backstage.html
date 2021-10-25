@@ -47,12 +47,12 @@
         <!-- 後台內容 -->
         <div class="Backstage_content">
 
+            <!-- 手機版按鈕 -->
             <button class="RWD_btn" id="RWD_btn"></button>
 
 
-            <!-- 訂單管理 -->
-            <div class="Order_Manage">
-
+            <!-- 1.訂單管理 -->
+            <div class="B_content Order_Manage">
 
                 <!-- 訂單工具 -->
                 <div class="Order_tool">
@@ -86,9 +86,9 @@
 
 
                 <!-- 訂單列表 -->
-                <div class="B_content Order_Manage_content">
+                <div class="Order_Manage_content">
 
-                    <div class="Manage_content_wrap">
+                    <div class="Manage_content_wrap" >
 
                     
 
@@ -115,7 +115,7 @@
 
 
 
-                        <div class="Manage_list_warp">
+                        <div class="Manage_list_warp" id="Order_list_warp">
 
                             <div class="Manage_list">
 
@@ -544,6 +544,900 @@
                 </div>
 
             </div>
+
+
+            <!-- 2.單一訂單明細 -->
+            <div class="B_content Each_orderDetail">
+
+                <div class="OD_title">
+
+                    <div class="OD_title_name">
+
+                        <h1>訂單編號：<span>GHJFDWOFLU40392</span></h1>
+                    </div>  
+
+
+                    <button class="cancleBtn">取消訂單</button>
+
+                    
+
+                </div>
+
+
+                <div class="E_orderDetail_warp">
+                    <!-- 訂單狀態 -->
+                    <div class="OD_detial OD_status col-lg-4 col-md-12 col-11 p-0">
+                        <h3>訂單狀態</h3>
+                        <div class="OD_content">
+
+                            <div class="order_staus_warp">
+                                <div class="staus_Line"></div>
+
+                                <div class="order_staus OD_staus01">
+                                    <div class="staus_dot"></div>
+                                    <div class="staus_text">
+                                        <h5>2021-05-25 01:23</h5>
+                                        <h3>完成取貨</h3>
+                                    </div>
+
+                                </div>
+                                <div class="order_staus OD_staus02">
+                                    <div class="staus_dot"></div>
+                                    <div class="staus_text">
+                                        <h5>2021-05-25 01:23</h5>
+                                        <h3>商品抵達</h3>
+                                    </div>
+
+                                </div>
+                                <div class="order_staus OD_staus03">
+                                    <div class="staus_dot"></div>
+                                    <div class="staus_text">
+                                        <h5>2021-03-25 14:35</h5>
+                                        <h3>已出貨</h3>
+                                    </div>
+
+                                </div>
+                                <div class="order_staus OD_staus04">
+                                    <div class="staus_dot"></div>
+                                    <div class="staus_text">
+                                        <h5>2021-03-25 11:52</h5>
+                                        <h3>完成付款，出貨準備中</h3>
+                                    </div>
+
+                                </div>
+                                <div class="order_staus OD_staus05">
+                                    <div class="staus_dot"></div>
+                                    <div class="staus_text">
+                                        <h5>2021-03-25 11:52</h5>
+                                        <h3>訂單成立</h3>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 訂單資訊 -->
+                    <div class="OD_detial OD_info col-lg-7 col-md-12 col-11 p-0">
+                        <h3>訂單資訊</h3>
+                        <div class="OD_content">
+                            <div class="OD_info_item OD_info_total">
+                                <h3>訂單金額</h3>
+                                <div class="info_total_listwarp">
+                                    <div class="info_total_list od_price">
+                                        <h4>商品小計</h4>
+                                        <h4>2,800</h4>
+                                    </div>
+                                    <div class="info_total_list od_point">
+                                        <h4>公主幣折抵</h4>
+                                        <h4>120</h4>
+                                    </div>
+                                    <div class="info_total_list od_fee">
+                                        <h4>運費</h4>
+                                        <h4>0</h4>
+                                    </div>
+                                    <div class="info_total_list od_total">
+                                        <h4>總金額</h4>
+                                        <h4>2,798</h4>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="OD_info_item OD_info_user">
+                                <h3>收件資訊</h3>
+                                <h4>王大明</h4>
+                                <h4>0987123456</h4>
+                                <h4>台北市大安區復興南路一段237號</h4>
+                                <button class="editInfo_btn">修改</button>
+                            </div>
+
+                            <div class="OD_info_item OD_info_payment">
+                                <h3>付款資訊</h3>
+                                <h4>信用卡安全加密付款</h4>
+                            </div>
+
+                            <div class="OD_info_item OD_info_moretext">
+                                <h3>購買人備註</h3>
+                                <h4>警衛室代收</h4>
+                            </div>
+                            <div class="OD_info_item OD_info_deilver">
+                                <h3>配送資訊</h3>
+                                <h4>冷凍宅配</h4>
+                                <h4>2021/07/22 12:00-16:00</h4>
+
+                                <div class="cargoID">
+                                    <h4>01701941069</h4> 
+                                    <p>查詢<i class="fas fa-share-square"></i></p>
+                                
+                                </div>
+                                
+                            </div>
+                        
+
+                            
+                        </div>
+                    </div>
+
+                    <!-- 填寫資料 -->
+                    <div class="checkout_info">
+                    <div class="checkout_info_bg"></div>
+                    <div class="checkout_info_warp">
+                        <div class="checkout_info_top">
+                            <i class="fas fa-times info_cancel"></i>
+                        </div>
+
+                        
+                        <div class="checkout_info_content" id="member_info">
+
+                            <!-- 收件人姓名、電話 -->
+                            <div class="checkout_info_list checkout_info_name">
+                                <h3>收貨人資料</h3>
+                                <input type="text" name="info_name" id="Seafoodinfo_name" placeholder="取貨人姓名">
+                                <input type="text" name="info_phone" id="Seafoodinfo_phone" placeholder="取貨人電話">
+                            </div>
+
+                            <!-- 送貨地址 -->
+                            <div class="checkout_info_list select_deliver" id="seafood_deliver">
+                                <h3>送貨地址</h3>
+
+                                <div class="info_address_warp">
+                                    
+                                    <select name="All_city">
+                                        <option value="" name="city[]">縣市</option>
+                                        <option value="台北市" name="city[]">台北市</option>
+                                        <option value="高雄市"  name="city[]">高雄市</option>
+                                    </select>
+                                    <select name="All_location">
+                                        <option value=" " name="location[]">鄉鎮市區</option>
+                                        <option value="大安區" name="location[]">大安區</option>
+                                        <option value="內湖區" name="location[]">內湖區</option>
+                                    </select>
+
+                                </div>
+                                
+
+                                <input type="text" name="info_address" id="Seafoodinfo_address" placeholder="詳細地址">
+                            </div>
+
+
+
+                        </div>
+
+                    
+
+                        <div class="check_info_bottom">
+                            <button class="info_confirm" id="checkfishboxInfo">確認</button>
+
+                        </div>
+
+                    </div>
+            
+
+                    
+
+                    </div> 
+
+
+                </div>
+
+                <!-- 出貨明細 -->
+                <div class="Cargo_detail ">
+                    <h3>出貨明細</h3>
+                    <div class="cargo_detail_content">
+                        <div class="cargo_detail_list">
+                            <div class="cargo_detail_head">
+                                <div class="cargo_detail_pic">
+                                    <img src="./static/images/item05.jpg" alt="">
+                                </div>
+                                <div class="cargo_detail_name">
+                                    <h3>OKUMA-魔徑 F8 Deep Hunter 底層獵手-編織線#1.7~#8</h3>
+                                    <h4>1.7號 - 600M 連盤</h4>
+                                </div>
+
+                            </div>
+                            <div class="cargo_detail_bottom">
+                                <div class="cargo_detail_count">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="cargo_detail_price">
+                                    <h3>1200</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="cargo_detail_list">
+                            <div class="cargo_detail_head">
+                                <div class="cargo_detail_pic">
+                                    <img src="./static/images/item06.jpg" alt="">
+                                </div>
+                                <div class="cargo_detail_name">
+                                    <h3>AK-自動餵餌捲線器</h3>
+                                    <h4>1.7號 - 600M 連盤</h4>
+                                </div>
+
+                            </div>
+                            <div class="cargo_detail_bottom">
+                                <div class="cargo_detail_count">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="cargo_detail_price">
+                                    <h3>2400</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="cargo_detail_list">
+                            <div class="cargo_detail_head">
+                                <div class="cargo_detail_pic">
+                                    <img src="./static/images/item06.jpg" alt="">
+                                </div>
+                                <div class="cargo_detail_name">
+                                    <h3>AK-自動餵餌捲線器</h3>
+                                    <h4>1.7號 - 600M 連盤</h4>
+                                </div>
+
+                            </div>
+                            <div class="cargo_detail_bottom">
+                                <div class="cargo_detail_count">
+                                    <h3>1</h3>
+                                </div>
+                                <div class="cargo_detail_price">
+                                    <h3>2400</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+                </div> 
+
+                <!-- 客製訊息 -->
+                <div class="Custom_message">
+                    <h3>客製訊息</h3>
+                    <div class="Custom_message_content">
+                        <p>客製組合預算：2000 元  /  食用人數：5-6人  / 料理習慣：清蒸、乾煎(紅燒)  /  選填：軟絲、小卷、海/紫菜</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 出貨人員備註 -->
+                <div class="Cargo_caution">
+                    <h3>出貨人員備註</h3>
+
+                    <div class="Cargo_caution_content">
+                        <p>優先出貨</p>
+
+                        <button class="editCargo_update">更新</button>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <!-- 3.客戶管理 -->
+            <div class="B_content Client_Manage">
+
+                <!-- 客戶工具 -->
+                <div class="Client_tool">
+
+                    <!-- 搜尋匡 -->
+                    <label class="search_bar">
+                        <input type="text" name="search_seafood" placeholder="搜尋：顧客姓名 / Email / 電話">
+                        <button><i class="fas fa-search"></i></button>
+                    </label>
+                    
+                </div>
+
+                <!-- 訂單列表 -->
+                <div class="Client_Manage_content">
+
+                    <div class="Manage_content_wrap">
+
+                        <div class="Manage_cate_warp">
+                     
+
+                                <div class="cate_item" id="clientName_top" >姓名</div>
+
+                                <div class="cate_item" id="clientEmail_top">電子郵件</div>
+
+                            
+                                <div class="cate_item" id="clientLevel_top">會員等級</div>
+
+                                <div class="cate_item" id="clientODcount_top">訂單數</div>
+
+                                <div class="cate_item" id="clientPcount_top">累積金額</div>
+
+                                <div class="cate_item" id="clientCoin_top">公主幣</div>
+
+                                <div class="cate_item" id="clientPoint_top">集點</div>
+
+                                <div class="cate_item" id="clientMore_top"></div>
+
+                            
+                        </div>
+
+
+
+                        <div class="Manage_list_warp" id="Client_list_warp">
+
+                            <div class="Client_list">
+
+                                <div class="list_item" id="clientName">
+                                    <h4>王大明</h4>
+                                    
+                                </div>
+
+                                <div class="list_item" id="clientEmail">
+
+                                    <h4>ohuiv@tuhrablep.edu</h4>
+
+                                </div>
+                            
+
+                                <div class="list_item" id="clientLevel">
+
+                                    <h4>非會員</h4>
+                                </div>
+
+                                <div class="list_item" id="clientODcount">
+
+                                    <h4>3</h4>
+                            
+
+                                </div>
+
+                                <div class="list_item" id="clientPcount">
+
+
+                                    <h4>3,500</h4>
+                                    
+                                    
+
+                                </div>
+                                <div class="list_item" id="clientCoin">
+
+                                    
+                                    <h4>0</h4>
+
+
+                                </div>
+
+                            
+                            
+
+                                <div class="list_item" id="clientPoint">
+
+                                    <h4>0</h4>
+
+                                </div>
+
+                                <div class="list_item" id="#clientMore">
+
+                                    <button class="client_detail">詳情</button>
+
+
+                                </div>
+
+                               
+
+
+                            </div>
+                            <div class="Client_list">
+
+                                <div class="list_item" id="clientName">
+                                    <h4>王大明</h4>
+                                    
+                                </div>
+
+                                <div class="list_item" id="clientEmail">
+
+                                    <h4>ohuiv@tuhrablep.edu</h4>
+
+                                </div>
+                            
+
+                                <div class="list_item" id="clientLevel">
+
+                                    <h4>非會員</h4>
+                                </div>
+
+                                <div class="list_item" id="clientODcount">
+
+                                    <h4>3</h4>
+                            
+
+                                </div>
+
+                                <div class="list_item" id="clientPcount">
+
+
+                                    <h4>3,500</h4>
+                                    
+                                    
+
+                                </div>
+                                <div class="list_item" id="clientCoin">
+
+                                    
+                                    <h4>0</h4>
+
+
+                                </div>
+
+                            
+                            
+
+                                <div class="list_item" id="clientPoint">
+
+                                    <h4>0</h4>
+
+                                </div>
+
+                                <div class="list_item" id="#clientMore">
+
+                                    <button class="client_detail">詳情</button>
+
+
+                                </div>
+
+                               
+
+
+                            </div>
+                            <div class="Client_list">
+
+                                <div class="list_item" id="clientName">
+                                    <h4>王大明</h4>
+                                    
+                                </div>
+
+                                <div class="list_item" id="clientEmail">
+
+                                    <h4>ohuiv@tuhrablep.edu</h4>
+
+                                </div>
+                            
+
+                                <div class="list_item" id="clientLevel">
+
+                                    <h4>非會員</h4>
+                                </div>
+
+                                <div class="list_item" id="clientODcount">
+
+                                    <h4>3</h4>
+                            
+
+                                </div>
+
+                                <div class="list_item" id="clientPcount">
+
+
+                                    <h4>3,500</h4>
+                                    
+                                    
+
+                                </div>
+                                <div class="list_item" id="clientCoin">
+
+                                    
+                                    <h4>0</h4>
+
+
+                                </div>
+
+                            
+                            
+
+                                <div class="list_item" id="clientPoint">
+
+                                    <h4>0</h4>
+
+                                </div>
+
+                                <div class="list_item" id="#clientMore">
+
+                                    <button class="client_detail">詳情</button>
+
+
+                                </div>
+
+                               
+
+
+                            </div>
+                            <div class="Client_list">
+
+                                <div class="list_item" id="clientName">
+                                    <h4>王大明</h4>
+                                    
+                                </div>
+
+                                <div class="list_item" id="clientEmail">
+
+                                    <h4>ohuiv@tuhrablep.edu</h4>
+
+                                </div>
+                            
+
+                                <div class="list_item" id="clientLevel">
+
+                                    <h4>非會員</h4>
+                                </div>
+
+                                <div class="list_item" id="clientODcount">
+
+                                    <h4>3</h4>
+                            
+
+                                </div>
+
+                                <div class="list_item" id="clientPcount">
+
+
+                                    <h4>3,500</h4>
+                                    
+                                    
+
+                                </div>
+                                <div class="list_item" id="clientCoin">
+
+                                    
+                                    <h4>0</h4>
+
+
+                                </div>
+
+                            
+                            
+
+                                <div class="list_item" id="clientPoint">
+
+                                    <h4>0</h4>
+
+                                </div>
+
+                                <div class="list_item" id="#clientMore">
+
+                                    <button class="client_detail">詳情</button>
+
+
+                                </div>
+
+                               
+
+
+                            </div>
+                            <div class="Client_list">
+
+                                <div class="list_item" id="clientName">
+                                    <h4>王大明</h4>
+                                    
+                                </div>
+
+                                <div class="list_item" id="clientEmail">
+
+                                    <h4>ohuiv@tuhrablep.edu</h4>
+
+                                </div>
+                            
+
+                                <div class="list_item" id="clientLevel">
+
+                                    <h4>非會員</h4>
+                                </div>
+
+                                <div class="list_item" id="clientODcount">
+
+                                    <h4>3</h4>
+                            
+
+                                </div>
+
+                                <div class="list_item" id="clientPcount">
+
+
+                                    <h4>3,500</h4>
+                                    
+                                    
+
+                                </div>
+                                <div class="list_item" id="clientCoin">
+
+                                    
+                                    <h4>0</h4>
+
+
+                                </div>
+
+                            
+                            
+
+                                <div class="list_item" id="clientPoint">
+
+                                    <h4>0</h4>
+
+                                </div>
+
+                                <div class="list_item" id="#clientMore">
+
+                                    <button class="client_detail">詳情</button>
+
+
+                                </div>
+
+                               
+
+
+                            </div>
+                            <div class="Client_list">
+
+                                <div class="list_item" id="clientName">
+                                    <h4>王大明</h4>
+                                    
+                                </div>
+
+                                <div class="list_item" id="clientEmail">
+
+                                    <h4>ohuiv@tuhrablep.edu</h4>
+
+                                </div>
+                            
+
+                                <div class="list_item" id="clientLevel">
+
+                                    <h4>非會員</h4>
+                                </div>
+
+                                <div class="list_item" id="clientODcount">
+
+                                    <h4>3</h4>
+                            
+
+                                </div>
+
+                                <div class="list_item" id="clientPcount">
+
+
+                                    <h4>3,500</h4>
+                                    
+                                    
+
+                                </div>
+                                <div class="list_item" id="clientCoin">
+
+                                    
+                                    <h4>0</h4>
+
+
+                                </div>
+
+                            
+                            
+
+                                <div class="list_item" id="clientPoint">
+
+                                    <h4>0</h4>
+
+                                </div>
+
+                                <div class="list_item" id="#clientMore">
+
+                                    <button class="client_detail">詳情</button>
+
+
+                                </div>
+
+                               
+
+
+                            </div>
+                            <div class="Client_list">
+
+                                <div class="list_item" id="clientName">
+                                    <h4>王大明</h4>
+                                    
+                                </div>
+
+                                <div class="list_item" id="clientEmail">
+
+                                    <h4>ohuiv@tuhrablep.edu</h4>
+
+                                </div>
+                            
+
+                                <div class="list_item" id="clientLevel">
+
+                                    <h4>非會員</h4>
+                                </div>
+
+                                <div class="list_item" id="clientODcount">
+
+                                    <h4>3</h4>
+                            
+
+                                </div>
+
+                                <div class="list_item" id="clientPcount">
+
+
+                                    <h4>3,500</h4>
+                                    
+                                    
+
+                                </div>
+                                <div class="list_item" id="clientCoin">
+
+                                    
+                                    <h4>0</h4>
+
+
+                                </div>
+
+                            
+                            
+
+                                <div class="list_item" id="clientPoint">
+
+                                    <h4>0</h4>
+
+                                </div>
+
+                                <div class="list_item" id="#clientMore">
+
+                                    <button class="client_detail">詳情</button>
+
+
+                                </div>
+
+                               
+
+
+                            </div>
+                          
+
+                        </div>
+
+
+                    </div>
+
+                    
+
+
+
+                </div>
+
+
+            
+
+
+
+            </div>
+
+
+            <!-- 4.單一客戶管理 -->
+            <div class="B_content Each_clientManage">
+
+                <div class="CM_title">  
+                    <h1>顧客資料</h1>
+                    <button class="Delete_client">刪除會員</button>
+                </div>
+
+                <div class="Client_info_warp">
+
+                    <div class="Client_info_detail">
+
+                        <div class="Client_data">
+                            <div class="Client_row" id="Client_name">
+
+                                <h4>姓名</h4>
+                                <h4>王大明</h4>
+
+                            </div>
+
+                            <div class="Client_row" id="Client_email">
+
+                                <h4>電子郵件</h4>
+                                <h4>ohuiv@tuhrablep.edu</h4>
+
+                            </div>
+                            <div class="Client_row" id="Client_phone">
+
+                                <h4>電話</h4>
+                                <h4>0987654321</h4>
+
+                            </div>
+                            <div class="Client_row" id="Client_level">
+
+                                <h4>會員等級</h4>
+                                <h4>3</h4>
+
+                            </div>
+                            <div class="Client_row" id="Client_sex">
+
+                                <h4>性別</h4>
+                                <h4>男</h4>
+
+                            </div>
+                            <div class="Client_row" id="Client_birthday">
+
+                                <h4>生日</h4>
+                                <h4>1980-4-20</h4>
+
+                            </div>
+                      
+                        </div>
+                       
+
+                        <button class="editClientName">修改</button>
+                    </div>
+
+                    <div class="Client_info_record">
+
+                        
+                        <div class="Client_row">
+                            <h4>訂單數</h4>
+                            <h4>2</h4>
+                        </div>
+                        
+                        <div class="Client_row">
+                            <h4>累積金額</h4>
+                            <h4>NT$ 2,600</h4>
+                        </div>
+                        
+                        <div class="Client_row">
+                            <h4>公主幣</h4>
+                            <h4>30000 (3週內到期8000)</h4>
+                        </div>
+
+                        <div class="Client_row">
+                            <h4>集點</h4>
+                            <h4>8</h4>
+                        </div>
+                        
+
+                    </div>
+
+
+                   
+
+
+
+                </div>
+
+            </div> 
+            
 
 
 
