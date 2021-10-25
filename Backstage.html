@@ -655,6 +655,65 @@
                                 <button class="editInfo_btn">修改</button>
                             </div>
 
+                            <!-- 填寫資料/收件資訊 -->
+                            <div class="checkout_info">
+                                <div class="checkout_info_bg"></div>
+                                <div class="checkout_info_warp">
+                                    <div class="checkout_info_top">
+                                        <i class="fas fa-times info_cancel"></i>
+                                    </div>
+            
+                                    
+                                    <div class="checkout_info_content" id="member_info">
+            
+                                        <!-- 收件人姓名、電話 -->
+                                        <div class="checkout_info_list checkout_info_name">
+                                            <h3>收貨人資料</h3>
+                                            <input type="text" name="info_name" id="Seafoodinfo_name" placeholder="取貨人姓名">
+                                            <input type="text" name="info_phone" id="Seafoodinfo_phone" placeholder="取貨人電話">
+                                        </div>
+            
+                                        <!-- 送貨地址 -->
+                                        <div class="checkout_info_list select_deliver" id="seafood_deliver">
+                                            <h3>送貨地址</h3>
+            
+                                            <div class="info_address_warp">
+                                                
+                                                <select name="All_city">
+                                                    <option value="" name="city[]">縣市</option>
+                                                    <option value="台北市" name="city[]">台北市</option>
+                                                    <option value="高雄市"  name="city[]">高雄市</option>
+                                                </select>
+                                                <select name="All_location">
+                                                    <option value=" " name="location[]">鄉鎮市區</option>
+                                                    <option value="大安區" name="location[]">大安區</option>
+                                                    <option value="內湖區" name="location[]">內湖區</option>
+                                                </select>
+            
+                                            </div>
+                                            
+            
+                                            <input type="text" name="info_address" id="Seafoodinfo_address" placeholder="詳細地址">
+                                        </div>
+            
+            
+            
+                                    </div>
+            
+                                
+            
+                                    <div class="check_info_bottom">
+                                        <button class="info_confirm" id="checkfishboxInfo">確認</button>
+            
+                                    </div>
+            
+                                </div>
+                        
+            
+                                
+            
+                            </div> 
+
                             <div class="OD_info_item OD_info_payment">
                                 <h3>付款資訊</h3>
                                 <h4>信用卡安全加密付款</h4>
@@ -682,64 +741,7 @@
                         </div>
                     </div>
 
-                    <!-- 填寫資料 -->
-                    <div class="checkout_info">
-                    <div class="checkout_info_bg"></div>
-                    <div class="checkout_info_warp">
-                        <div class="checkout_info_top">
-                            <i class="fas fa-times info_cancel"></i>
-                        </div>
-
-                        
-                        <div class="checkout_info_content" id="member_info">
-
-                            <!-- 收件人姓名、電話 -->
-                            <div class="checkout_info_list checkout_info_name">
-                                <h3>收貨人資料</h3>
-                                <input type="text" name="info_name" id="Seafoodinfo_name" placeholder="取貨人姓名">
-                                <input type="text" name="info_phone" id="Seafoodinfo_phone" placeholder="取貨人電話">
-                            </div>
-
-                            <!-- 送貨地址 -->
-                            <div class="checkout_info_list select_deliver" id="seafood_deliver">
-                                <h3>送貨地址</h3>
-
-                                <div class="info_address_warp">
-                                    
-                                    <select name="All_city">
-                                        <option value="" name="city[]">縣市</option>
-                                        <option value="台北市" name="city[]">台北市</option>
-                                        <option value="高雄市"  name="city[]">高雄市</option>
-                                    </select>
-                                    <select name="All_location">
-                                        <option value=" " name="location[]">鄉鎮市區</option>
-                                        <option value="大安區" name="location[]">大安區</option>
-                                        <option value="內湖區" name="location[]">內湖區</option>
-                                    </select>
-
-                                </div>
-                                
-
-                                <input type="text" name="info_address" id="Seafoodinfo_address" placeholder="詳細地址">
-                            </div>
-
-
-
-                        </div>
-
                     
-
-                        <div class="check_info_bottom">
-                            <button class="info_confirm" id="checkfishboxInfo">確認</button>
-
-                        </div>
-
-                    </div>
-            
-
-                    
-
-                    </div> 
 
 
                 </div>
@@ -1401,27 +1403,97 @@
                        
 
                         <button class="editClientName">修改</button>
+
+                        <!-- 填寫資料/客戶資料 -->
+                        <div class="checkout_info">
+                            <div class="checkout_info_bg"></div>
+                            <div class="checkout_info_warp">
+                                <div class="checkout_info_top">
+                                    <i class="fas fa-times info_cancel"></i>
+                                </div>
+        
+                                
+                                <div class="checkout_info_content" id="member_info">
+        
+                                    <!--客戶姓名 -->
+                                    <div class="checkout_info_list">
+                                        <h3>姓名</h3>
+                                        <input type="text" name="ClientName" id="ClientName" placeholder="修改姓名">
+                                       
+                                    </div>
+
+                                    <!--電子郵件 -->
+                                    <div class="checkout_info_list">
+                                        <h3>電子郵件</h3>
+                                        <input type="text" name="ClientEmail" id="ClientEmail" placeholder="修改電子郵件">
+                                       
+                                    </div>
+        
+                                    <!--電話 -->
+                                    <div class="checkout_info_list">
+                                        <h3>電話 </h3>
+                                        <input type="text" name="ClientEmail" id="ClientEmail" placeholder="修改電話">
+                                       
+                                    </div>
+        
+                                   <div class="checkout_more_warp">
+
+                                        <div class="checkout_info_list checkout_sex">
+                                            <h3>性別</h3>
+
+                                            <select name="clientSex" >
+                                                <option value="男">男</option>
+                                                <option value="女">女</option>
+                                                <option value="不顯示">不顯示</option>
+                                            </select>
+                                        
+                                        </div>
+                                        <div class="checkout_info_list check_birthday">
+                                            <h3>生日</h3>
+                                            <input type="date" name="ClientBirthday" id="ClientBirthday" >
+                                        </div>
+
+
+                                   </div>
+        
+        
+        
+                                </div>
+        
+                            
+        
+                                <div class="check_info_bottom">
+                                    <button class="info_confirm" id="checkfishboxInfo">確認</button>
+        
+                                </div>
+        
+                            </div>
+                    
+        
+                            
+        
+                        </div> 
                     </div>
 
                     <div class="Client_info_record">
 
                         
-                        <div class="Client_row">
+                        <div class="Client_row record_row" id="Clinet_ODcount">
                             <h4>訂單數</h4>
                             <h4>2</h4>
                         </div>
                         
-                        <div class="Client_row">
+                        <div class="Client_row record_row" id="Clinet_Pcount">
                             <h4>累積金額</h4>
                             <h4>NT$ 2,600</h4>
                         </div>
                         
-                        <div class="Client_row">
+                        <div class="Client_row record_row" id="Clinet_CoinCount">
                             <h4>公主幣</h4>
                             <h4>30000 (3週內到期8000)</h4>
                         </div>
 
-                        <div class="Client_row">
+                        <div class="Client_row record_row" id="Clinet_PointCount">
                             <h4>集點</h4>
                             <h4>8</h4>
                         </div>
@@ -1433,6 +1505,592 @@
                    
 
 
+
+                </div>
+
+
+                <div class="Client_Content_Warp">
+
+                    <div class="Client_Content_title">
+                        <h4 class="title_up">訂單詳情</h4>
+                        <h4>公主幣</h4>
+                        <h4>集點</h4>
+
+                    </div>
+
+
+                    <div class="Client_Content_Record">
+
+                        <!-- 訂單記錄  -->
+                        <div class="CR_content order_detail_content">
+
+                            <div class="order_detail_list">
+
+                                <div class="order_detail_head">
+                                    <div class="order_detail_pic">
+                                        <img src="./static/images/items/i01-1.jpg" alt="">
+                                    </div>
+                                    <div class=" order_detail_name">
+                                        <h3>GHJFDWOFLU40392</h3>
+                                        <h5>2021/08/07 00:27</h5>
+                                        <h5>2,808</h5>
+
+                                    </div>
+                                </div>     
+
+                                <div class=" order_detail_warp">
+                                    
+                                    
+                                        <div class="order_detail_status">
+                                            <div class="status_tag S_tag01" orderStatus="1">待付款</div>
+                                        </div>
+
+                                        <div class="more_order">
+                                            <h5>檢視訂單</h5>
+                                        </div> 
+                            
+
+                                </div> 
+
+                        
+                            </div>
+                            <div class="order_detail_list">
+
+                                <div class="order_detail_head">
+                                    <div class="order_detail_pic">
+                                        <img src="./static/images/items/i01-1.jpg" alt="">
+                                    </div>
+                                    <div class=" order_detail_name">
+                                        <h3>GHJFDWOFLU40392</h3>
+                                        <h5>2021/08/07 00:27</h5>
+                                        <h5>2,808</h5>
+
+                                    </div>
+                                </div>     
+
+                                <div class=" order_detail_warp">
+                                    
+                                    
+                                        <div class="order_detail_status">
+                                            <div class="status_tag S_tag02" orderStatus="2">待領取</div>
+                                        </div>
+
+                                        <div class="more_order">
+                                            <h5>檢視訂單</h5>
+                                        </div> 
+                            
+
+                                </div> 
+
+                        
+                            </div>
+                            <div class="order_detail_list">
+
+                                <div class="order_detail_head">
+                                    <div class="order_detail_pic">
+                                        <img src="./static/images/items/i01-1.jpg" alt="">
+                                    </div>
+                                    <div class=" order_detail_name">
+                                        <h3>GHJFDWOFLU40392</h3>
+                                        <h5>2021/08/07 00:27</h5>
+                                        <h5>2,808</h5>
+
+                                    </div>
+                                </div>     
+
+                                <div class=" order_detail_warp">
+                                    
+                                    
+                                        <div class="order_detail_status">
+                                            <div class="status_tag S_tag03" orderStatus="3">已出貨</div>
+                                        </div>
+
+                                        <div class="more_order">
+                                            <h5>檢視訂單</h5>
+                                        </div> 
+                            
+
+                                </div> 
+
+                        
+                            </div>
+                            <div class="order_detail_list">
+
+                                <div class="order_detail_head">
+                                    <div class="order_detail_pic">
+                                        <img src="./static/images/items/i01-1.jpg" alt="">
+                                    </div>
+                                    <div class=" order_detail_name">
+                                        <h3>GHJFDWOFLU40392</h3>
+                                        <h5>2021/08/07 00:27</h5>
+                                        <h5>2,808</h5>
+
+                                    </div>
+                                </div>     
+
+                                <div class=" order_detail_warp">
+                                    
+                                    
+                                        <div class="order_detail_status">
+                                            <div class="status_tag S_tag04" orderStatus="4">準備中</div>
+                                        </div>
+
+                                        <div class="more_order">
+                                            <h5>檢視訂單</h5>
+                                        </div> 
+                            
+
+                                </div> 
+
+                        
+                            </div>
+                            <div class="order_detail_list">
+
+                                <div class="order_detail_head">
+                                    <div class="order_detail_pic">
+                                        <img src="./static/images/items/i01-1.jpg" alt="">
+                                    </div>
+                                    <div class=" order_detail_name">
+                                        <h3>GHJFDWOFLU40392</h3>
+                                        <h5>2021/08/07 00:27</h5>
+                                        <h5>2,808</h5>
+
+                                    </div>
+                                </div>     
+
+                                <div class=" order_detail_warp">
+                                    
+                                    
+                                        <div class="order_detail_status">
+                                            <div class="status_tag S_tag05" orderStatus="5">完成</div>
+                                        </div>
+
+                                        <div class="more_order">
+                                            <h5>檢視訂單</h5>
+                                        </div> 
+                            
+
+                                </div> 
+
+                        
+                            </div>
+                            <div class="order_detail_list">
+
+                                <div class="order_detail_head">
+                                    <div class="order_detail_pic">
+                                        <img src="./static/images/items/i01-1.jpg" alt="">
+                                    </div>
+                                    <div class=" order_detail_name">
+                                        <h3>GHJFDWOFLU40392</h3>
+                                        <h5>2021/08/07 00:27</h5>
+                                        <h5>2,808</h5>
+
+                                    </div>
+                                </div>     
+
+                                <div class=" order_detail_warp">
+                                    
+                                    
+                                        <div class="order_detail_status">
+                                            <div class="status_tag S_tag06" orderStatus="6">已取消</div>
+                                        </div>
+
+                                        <div class="more_order">
+                                            <h5>檢視訂單</h5>
+                                        </div> 
+                            
+
+                                </div> 
+
+                        
+                            </div>
+
+                       
+
+                            <div class="pagewarp">
+                                <div class="order_page">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="order_page">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+
+                            </div>
+                        
+                        
+                            
+                        </div>
+
+                        <!-- 公主幣紀錄 -->
+                        <div class="CR_content coin_detail_content">
+
+                            <div class="editPoint_warp">
+                                <button class="editPoint_btn" id="editAddCoin">人工加公主幣<i class="fas fa-edit"></i></button>
+
+                                <!-- 填寫資料/人工加公主幣 -->
+                                <div class="checkout_info">
+                                    <div class="checkout_info_bg"></div>
+                                    <div class="checkout_info_warp">
+                                        <div class="checkout_info_top">
+                                            <i class="fas fa-times info_cancel"></i>
+                                        </div>
+                
+                                        
+                                        <div class="checkout_info_content" id="member_info">
+                
+                                            <!--原由 -->
+                                            <div class="checkout_info_list">
+                                                <h3>原由</h3>
+                                                <input type="text" name="CoinAddName" id="CoinAddName" placeholder="請輸入加值公主幣原由">
+                                            
+                                            </div>
+
+                                            <!--公主幣 (請輸入+/-) -->
+                                            <div class="checkout_info_list">
+                                                <h3>公主幣 (請輸入+/-)</h3>
+                                                <input type="text" name="CoinAddNum" id="CoinAddNum" placeholder="例如 +1000 / -1000">
+                                            
+                                            </div>
+                
+                                        
+                
+                                        </div>
+                
+                                    
+                
+                                        <div class="check_info_bottom">
+                                            <button class="info_confirm" id="checkfishboxInfo">確認</button>
+                
+                                        </div>
+                
+                                    </div>
+                            
+                
+                                    
+                
+                                </div> 
+                            </div>
+
+                            <div class="Coinlist_warp">
+                                
+                                <div class="coin_detail_list">
+                                    <div class="coin_list_head">
+
+                                        <div class="coin_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="coin_name_warp">
+                                            <h4 class="list_notice">工作人員點數調整：補差額</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="coin_list_addCoin">
+
+                                        <h4 class="addPoint">+3000</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="coin_detail_list">
+                                    <div class="coin_list_head">
+
+                                        <div class="coin_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="coin_name_warp">
+                                            <h4 >投稿-日誌</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="coin_list_addCoin">
+
+                                        <h4 class="addPoint">+500</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="coin_detail_list">
+                                    <div class="coin_list_head">
+
+                                        <div class="coin_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="coin_name_warp">
+                                            <h4>消費折抵</h4>
+                                            <h5>訂單號：<span>GHJFDWOFLU40392</span></h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="coin_list_addCoin">
+
+                                        <h4 class="minusPoint">-1000</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="coin_detail_list">
+                                    <div class="coin_list_head">
+
+                                        <div class="coin_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="coin_name_warp">
+                                            <h4>滿千就送</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="coin_list_addCoin">
+
+                                        <h4 class="addPoint">+1000</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="coin_detail_list">
+                                    <div class="coin_list_head">
+
+                                        <div class="coin_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="coin_name_warp">
+                                            <h4>投稿-日誌</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="coin_list_addCoin">
+
+                                        <h4 class="addPoint">+1000</h4>
+
+                                    </div>
+
+                                </div>   
+
+
+                            </div>
+
+                            <div class="pagewarp">
+                                <h5>僅顯示過去１年的紀錄</h5>
+                                <div class="order_page">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="order_page">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+
+                            </div>
+
+                            
+                        </div>
+
+                        <!-- 集點紀錄 -->
+                        <div class="CR_content point_detail_content">
+
+                            <div class="editPoint_warp">
+                                <button class="editPoint_btn" id="editAddPoint">人工集點<i class="fas fa-edit"></i></button>
+
+                                <!-- 填寫資料/人工加公主幣 -->
+                                <div class="checkout_info">
+                                    <div class="checkout_info_bg"></div>
+                                    <div class="checkout_info_warp">
+                                        <div class="checkout_info_top">
+                                            <i class="fas fa-times info_cancel"></i>
+                                        </div>
+                
+                                        
+                                        <div class="checkout_info_content" id="member_info">
+                
+                                            <!--原由 -->
+                                            <div class="checkout_info_list">
+                                                <h3>原由</h3>
+                                                <input type="text" name="PointAddName" id="PointAddName" placeholder="請輸入加值點數原由">
+                                            
+                                            </div>
+
+                                            <!--集點 -->
+                                            <div class="checkout_info_list">
+                                                <h3>集點</h3>
+                                                <input type="text" name="PointAddNum" id="PointAddNum" placeholder="集點數量">
+                                            
+                                            </div>
+                
+                                        
+                
+                                        </div>
+                
+                                    
+                
+                                        <div class="check_info_bottom">
+                                            <button class="info_confirm" id="checkfishboxInfo">確認</button>
+                
+                                        </div>
+                
+                                    </div>
+                            
+                
+                                    
+                
+                                </div> 
+                            </div>
+
+                            <div class="Poinlist_warp">
+                                
+                                <div class="point_detail_list">
+                                    <div class="point_list_head">
+
+                                        <div class="point_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="point_name_warp">
+                                            <h4 class="list_notice">工作人員點數調整：補坐船</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="point_list_addCoin">
+
+                                        <h4 >+1</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="point_detail_list">
+                                    <div class="point_list_head">
+
+                                        <div class="point_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="point_name_warp">
+                                            <h4 >投稿-日誌</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="point_list_addCoin">
+
+                                        <h4>+1</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="point_detail_list">
+                                    <div class="point_list_head">
+
+                                        <div class="point_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="point_name_warp">
+                                            <h4>消費折抵</h4>
+                                            <h5>到期日：2021/08/03 11:02</span></h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="point_list_addCoin">
+
+                                        <h4>+1</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="point_detail_list">
+                                    <div class="point_list_head">
+
+                                        <div class="point_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="point_name_warp">
+                                            <h4>滿千就送</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="point_list_addCoin">
+
+                                        <h4>+1</h4>
+
+                                    </div>
+
+                                </div>   
+                                <div class="point_detail_list">
+                                    <div class="point_list_head">
+
+                                        <div class="point_time_warp">
+
+                                            <h4>2021/08/03</h4>
+                                            <h4>11:02</h4>
+                                        </div>
+
+                                        <div class="point_name_warp">
+                                            <h4>投稿-日誌</h4>
+                                            <h5>到期日：2021/08/03 11:02</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="point_list_addCoin">
+
+                                        <h4>+1</h4>
+
+                                    </div>
+
+                                </div>   
+
+
+                            </div>
+
+                            <div class="pagewarp">
+                                <h5>僅顯示過去１年的紀錄</h5>
+                                <div class="order_page">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="order_page">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
 
                 </div>
 
