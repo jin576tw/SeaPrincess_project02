@@ -1,0 +1,26 @@
+[
+    
+    
+    {
+
+        "pid":1,
+        "name": "王大明",
+        "member_level":"1",
+        "member_acPrice":3000,
+        "member_coin":500,
+        "member_point":60,
+        "member_order":[{"OD_id":1},{"OD_id":5}]
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+]
