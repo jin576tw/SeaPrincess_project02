@@ -1,0 +1,95 @@
+[
+
+    {
+
+        "OD_name": "GHJFDWOFLU40392",
+        "OD_id":1,
+        "pid":1,
+        "creadit_paid": true,
+        "arrive_paid":false,
+        "OD_status":"已出貨",
+        "OD_payStatus":"已付款",
+        "OD_cargoStatus":"運送中",
+        "deliver_first":false,
+        "OD_price":2800,
+        "OD_discount":120,
+        "OD_fee": 0,
+        "OD_totalPrice":2780,
+        "OD_customerInfo":[
+
+            {
+                "name":"王大明",
+                "phone":"0987123456",
+                "address":"台北市大安區復興南路一段237號",
+                "food":true
+
+            },
+            {
+                "name":"王大明",
+                "phone":"0987123456",
+                "address":"台北市大安區復興南路一段237號",
+                "food":false
+
+            },
+            {
+                "name":"王大明",
+                "phone":"0987123456",
+                "address":"台北市大安區復興南路一段237號",
+                "fishbox":true
+
+            }
+
+        ],
+        "OD_message":"警衛室代收",
+        "OD_Shipment":[{
+
+           "shipment_type":"冷凍宅配",
+           "shipment_time":["2021/07/22","12:00-16:00"],
+           "shipment_number":"01701941069"
+
+
+        }],
+        "OD_Item":[
+
+            {
+                "tid":1,
+                "count":1,
+                "food":true
+            },
+            {
+                "tid":2,
+                "count":5,
+                "type":"AZORES-5000P",
+                "food":false
+
+
+            },
+            {
+
+                "fisbox":true,
+                "tid":1,
+                "name":"全鮮魚魚箱",
+                "price":"3000",
+                "pic":"./static/images/fishbox02.jpeg",
+                "qty":"6人以上",
+                "cook":["清蒸","煮湯"],
+                "message":"鯊魚"
+
+
+            }
+
+
+
+        ]
+
+        
+
+
+
+
+
+
+    }
+
+
+]
