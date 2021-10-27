@@ -167,6 +167,7 @@ $(document).ready(function () {
         $('.Member_content_title h2:nth-of-type(1)').text('會員資料修改')
 
         $('.notice_text').text('')
+        $('.Member_Cargo_BOX').hide()
 
 
         $('.Member_edit').fadeIn(100).siblings('.Mcontent').fadeOut(1)
@@ -203,6 +204,7 @@ $(document).ready(function () {
         $('.Member_content_title h2:nth-of-type(1)').text('密碼修改')
 
         $('.notice_text').text('')
+        $('.Member_Cargo_BOX').hide()
 
 
         $('.Password_edit').fadeIn(100).siblings('.Mcontent').fadeOut(1)
