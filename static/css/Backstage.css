@@ -167,7 +167,7 @@
 /* 訂單工具 */
 .Order_tool{
     display: flex;
-    justify-content: space-between
+    justify-content: flex-start
 
 }
 
@@ -205,6 +205,7 @@
 /* 狀態分類 */
 .Order_Status_warp{
 
+    margin-left: 60px;
     display: flex;
 
 }
@@ -254,6 +255,7 @@
 
 
         margin-top: 10px;
+        margin-left: 0;
         justify-content: space-between
     }
 
@@ -282,11 +284,73 @@
     overflow-y: auto;
     margin-top: 40px;
     margin-bottom: 80px;
+    border-top: solid 1px #dedede;
+    border-left: solid 1px #dedede;
+    border-right: solid 1px #dedede;
 }
 
 .Manage_content_wrap{
    
-    min-width: 1104px;
+    min-width: 2000px;
+}
+
+
+
+#list_info{
+    width: 30%;
+}
+#list_seafood{
+    width: 20%;
+    border-left: solid 1px #dedede;
+}
+#list_fishbox{
+    width: 20%;
+    border-left: solid 1px #dedede;
+}
+#list_item{
+    width: 20%;
+    border-left: solid 1px #dedede;
+}
+#list_note{
+    width: 10%;
+    border-left: solid 1px #dedede;
+}
+
+#list_num{
+    width: 36%;
+    justify-content: flex-start;
+    padding-left: 10px;
+   
+}
+#list_name{
+    width: 32%;
+    justify-content: flex-start;
+    padding-left: 10px;
+    
+}
+#list_price{
+    width: 32%;
+    justify-content: flex-start;
+    padding-left: 10px;
+   
+}
+
+#list_status{
+    width: 33.33%;
+   
+
+}
+
+#list_payStatus{
+    width: 33.33%;
+   
+
+}
+
+#list_cargoStatus{
+    width: 33.33%;
+    
+
 }
 
 .Manage_cate_warp{
@@ -294,82 +358,33 @@
     width: 100%;
     height: 60px;
     border-bottom: solid 1px #dedede;
-    padding: 0px 10px;
+    
 }
 
-
-.cate_head{
+.Manage_subcate_warp{
     display: flex;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 1px #dedede;
+    
 }
 
-.cate_md{
-    display: flex;
-    width: 40%;
-    height: 100%;
-   
-
-
-}
-.cate_bottom{
-
-    width: 10%;
-    height: 100%;
-
-}
-
-.cate_item{
+.list_top{
     height: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     font-size: 1.8rem;
 }
 
-#cate_code{
-
-    width: 40%;
-
+.ListItem{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
 }
 
-#cate_name{
-    width: 60%;
-
-
-}
-
-#cate_price{
-    width: 25%;
-
-}
-
-#cate_orderStatus{
-    width: 25%;
-
-}
-
-#cate_paymentStatus{
-    width: 25%;
-
-}
-
-#cate_cargoStatus{
-    width: 25%;
-
-}
-
-
-/* 
-@media (max-width: 767px) { 
-
-    .Manage_cate_warp{
-
-        display: none;
-    }
-
-
-} */
 
 .Manage_list_warp{
     width: 100%;
@@ -381,78 +396,45 @@
     width: 100%;
     height: 100px;
     border-bottom: solid 1px #dedede;
-    padding: 0px 10px;
+   
 }
 
-.list_head{
-    display: flex;
-    width: 50%;
-    height: 100%;
-}
-.list_md{
-    display: flex;
-    width: 40%;
-    height: 100%;
-}
-
-.list_bottom{
-    display: flex;
-    width: 10%;
-    height: 100%;
-}
-
-.list_item{
+.ListInfo{
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    font-size: 1.8rem;
-    color:black;
+    justify-content: center;
+    padding-left: 10px;
+
 }
 
-.list_item h4{
-    font-weight: 400;
+.ListInfo h4{
+    font-size: 1.6rem;
 }
 
-#list_code{
-    width: 40%;
+
+#list_infoNum{
+    width: 36%;
+
+   
+}
+#list_infoName{
+    width: 32%;
+  
+    
+}
+#list_infoPrice{
+    width: 32%;
+    
+   
+
 }
 
-#list_code h4:nth-of-type(2){
+#list_infoNum h5{
     color: #9b9b9b;
 }
 
-#list_name{
-    width: 60%;
-    /* max-width: 300px; */
-}
-
-#list_price{
-    width: 25%;
-}
-#list_orderStatus{
-    width: 25%;
-}
-
-
-#list_paymentStatus{
-    width: 25%;
-}
-
-
-#list_cargoStatus{
-    width: 25%;
-}
-
-
-
-#list_detail{
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
 .first_ship{
     width: 25px;
