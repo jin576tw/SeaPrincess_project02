@@ -6,14 +6,16 @@
         "pid":1,
         "name": "王大明",
         "member_level":"1",
-        "member_acPrice":3000,
-        "member_coin":500,
-        "member_point":60,
-        "member_order":[{"OD_id":1},{"OD_id":5}]
-
-
-
-
+        "member_ac_Price":3000,
+        "member_ac_coin":500,
+        "member_ac_point":8,
+        "member_email":"ohuiv@tuhrablep.edu",
+        "member_phone":"0987654321",
+        "member_sex":"男",
+        "member_birthday":"1980-4-20",
+        "member_order":[{"OD_id":1},{"OD_id":5}],
+        "member_coin":[{"coin_id":1},{"coin_id":5}],
+        "member_point":[{"point_id":1},{"point_id":5}]
 
 
 
