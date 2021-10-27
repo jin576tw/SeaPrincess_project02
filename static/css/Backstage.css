@@ -1136,6 +1136,16 @@
     min-width: 1140px;
 }
 
+.Client_cate_warp{
+
+   
+    display: flex;
+    width: 100%;
+    height: 60px;
+    border-bottom: solid 1px #dedede;
+    padding: 0 10px;
+}
+
 .cateName{
     display: flex;
     justify-content: flex-start;
@@ -1144,12 +1154,6 @@
     /* padding-left: 10px; */
 }
 
-.Clist{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* padding-left: 10px; */
-}
 
 #clientName_top{
     width: 15%;
@@ -1192,7 +1196,14 @@
     width: 100%;
     height: 80px;
     border-bottom: solid 1px #dedede;
-    /* padding: 0px 10px; */
+    padding: 0px 10px;
+}
+
+
+.C_Item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #clientName{
