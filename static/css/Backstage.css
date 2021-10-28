@@ -432,6 +432,12 @@
 
 }
 
+#list_infoPrice h4:nth-of-type(2)::before{
+
+    content: 'NT$ ';
+   
+}
+
 #list_infoNum h5{
     color: #9b9b9b;
 }
@@ -448,11 +454,18 @@
     cursor: pointer;
 }
 
-.first_ship:hover{
+/* .first_ship:hover{
     transition: 0.8s;
     opacity: 1;
 
+} */
+
+.ShipFirst{
+
+    opacity: 1;
+
 }
+
 
 .order_detail{
     height: 25px;

@@ -1,7 +1,6 @@
 'use strict'
 
 
-
 if($(window).width() < 768){
 
 
@@ -16,7 +15,424 @@ if($(window).width() < 768){
        })
 }
 
-// 後台項目選擇
+
+/////////////////////////// 後台訂單載入///////////////////////
+$.get("./static/JSON/Order.json", function (data) {
+
+    let d = data
+
+    for(let i = 0 ; i < d.length ;i++){ 
+
+        const OD_seafood = d[i].OD_Seafood
+
+        const OD_fishbox = d[i].OD_Fishbox
+
+        const OD_Item = d[i].OD_Item
+
+
+        // 付款方式
+        let payMenetWay =``
+
+        if(d[i].creadit_paid == true){
+
+            payMenetWay = `信用卡付款`
+       
+        }else{
+
+            payMenetWay = `貨到付款`
+
+        }
+        
+
+        // 出貨狀態
+        function OD_status(s){
+
+
+            if(s == '取消'){
+
+
+                return`<h4 class="finishNotice">${s}</h4>`
+
+
+            }else if(s == '待出貨'){
+
+
+
+                return`<h4 class="orderNotice">${s}</h4>`
+
+
+            }else{
+                
+                return`<h4>${s}</h4>`
+            }
+
+
+
+        }
+
+
+        // 付款狀態
+        function OD_payStatus(s){
+
+            if(s == '未付款' || s == '貨到付款'){
+
+                return`<h4 class="paymentNotice">${s}</h4>`
+
+            }else if(s == '取消'){
+
+                return`<h4 class="finishNotice">${s}</h4>`
+
+            }else{
+
+                return`<h4>${s}</h4>`
+
+            }
+
+
+
+        }
+
+
+        // 送貨壯態
+        function OD_cargoStatus(s){
+
+
+            if(s == '運送中'){
+
+                return`<h4 class="cargoNotice">${s}</h4>`
+
+            }else if(s == '取消' || s== '已完成'){
+
+                return`<h4 class="finishNotice">${s}</h4>`
+
+            }else{
+
+                return`<h4>${s}</h4>`
+
+            }
+
+
+        }
+
+
+        // 優先出貨
+        function ShipFirst(s){
+
+            if(s){
+
+                return `<div class="first_ship ShipFirst">
+                            <i class="fas fa-clipboard"></i>
+                        </div>`
+
+            }else{
+
+                return `<div class="first_ship">
+                            <i class="fas fa-clipboard"></i>
+                        </div>`
+
+
+            }
+
+        }
+       
+    
+        let  OrederList =`<div class="Manage_list" OD_id="${d[i].OD_id}">
+
+            <div class="list_top" id="list_info">
+                <div class="ListInfo" id="list_infoNum">
+                <h4>${d[i].OD_name}</h4>
+                <h5>${d[i].OD_time}</h5>
+                </div>
+                <div class="ListInfo" id="list_infoName">
+                    <h4>${d[i].OD_customerInfo[0].name}</h4>
+                    <h4>${d[i].OD_customerInfo[0].phone}</h4>
+                </div>
+                <div class="ListInfo" id="list_infoPrice">
+                    <h4>${payMenetWay}</h4>
+                    <h4>${number_format(d[i].OD_totalPrice)}</h4>
+                </div>
+
+            </div>
+            <div class="list_top" id="list_seafood">
+                <div class="ListItem" id="list_status">`
+                +OD_status(OD_seafood.status)+
+                `</div>
+                <div class="ListItem" id="list_payStatus">`
+                +OD_payStatus(OD_seafood.payStatus)+
+                `</div>
+                <div class="ListItem" id="list_cargoStatus">`
+                + OD_cargoStatus(OD_seafood.cargoStatus)+
+                `</div>
+            </div>
+            <div class="list_top" id="list_fishbox">
+                <div class="ListItem" id="list_status">`
+                +OD_status(OD_fishbox.status)+
+                `</div>
+                <div class="ListItem" id="list_payStatus">`
+                +OD_payStatus(OD_fishbox.payStatus)+
+                `</div>
+                <div class="ListItem" id="list_cargoStatus">`
+                +OD_cargoStatus(OD_fishbox.cargoStatus)+
+                `</div>
+            </div>
+            <div class="list_top" id="list_item">
+                <div class="ListItem" id="list_status">`
+                +OD_status(OD_Item.status)+
+                `</div>
+                <div class="ListItem" id="list_payStatus">`
+                +OD_payStatus(OD_Item.payStatus)+
+                `</div>
+                <div class="ListItem" id="list_cargoStatus">`
+                +OD_cargoStatus(OD_Item.cargoStatus)+
+                `</div>
+            </div>
+            <div class="list_top" id="list_note">`+
+
+
+                ShipFirst(d[i].deliver_first)
+            
+                +`<button class="order_detail">詳情</button>
+
+
+            </div>
+
+            
+        </div>`
+
+
+        $('#Order_list_warp').append(OrederList)
+   
+
+    }
+    
+
+   
+
+
+
+})
+
+/////////////////////////// 客戶資料載入///////////////////////////
+$.get("./static/JSON/Member.json", function (data) {
+
+
+    let d = data
+
+    for(let i = 0 ; i <d.length  ;i++){
+
+
+        function levelCheck(level){
+
+            if(level == ''){
+
+
+                return '非會員'
+            }else{
+
+
+                return level
+            }
+
+
+        }
+
+
+        let ClientList = 
+        `<div class="Client_list" pid="${d[i].pid}">
+
+            <div class="C_Item" id="clientName">
+                <h4>${d[i].name}</h4>
+                
+            </div>
+
+            <div class="C_Item" id="clientEmail">
+
+                <h4>${d[i].member_email}</h4>
+
+            </div>
+        
+
+            <div class="C_Item" id="clientLevel">
+
+                <h4>${levelCheck(d[i].member_level)}</h4>
+            </div>
+
+            <div class="C_Item" id="clientODcount">
+
+                <h4>0</h4>
+        
+
+            </div>
+
+            <div class="C_Item" id="clientPcount">
+
+
+                <h4>0</h4>
+                
+
+            </div>
+            <div class="C_Item" id="clientCoin">
+
+                
+                <h4>0</h4>
+
+
+            </div>
+
+        
+        
+
+            <div class="C_Item" id="clientPoint">
+
+                <h4>0</h4>
+
+            </div>
+
+
+            <div class="C_Item" id="#clientMore">
+
+                <button class="client_detail">詳情</button>
+
+
+            </div>
+
+            
+
+
+        </div>`
+
+
+        $('#Client_list_warp').append(ClientList)
+
+       
+    
+    }
+
+
+})
+
+ //客戶累積金額
+ // 抓取訂單相同會員id的訂單資料
+ $.get("./static/JSON/Order.json", function (order) {
+
+     $('.Client_list').each(function(){
+
+
+    
+         let pid = parseInt($(this).attr('pid'))
+
+
+         let AC_Pirce = 0 
+
+         let OrderArr = []
+
+         for(let j = 0 ; j < order.length ;j++){
+
+            if(pid == order[j].pid){
+
+                
+                OrderArr.push(order[j])
+               
+                AC_Pirce+=order[j].OD_totalPrice
+
+                $(this).children('#clientPcount').children('h4').text(number_format(AC_Pirce))
+
+                // 抓取訂單數量
+                $(this).children('#clientODcount').children('h4').text(OrderArr.length)
+
+
+
+            }
+         
+        }
+
+        
+     })
+
+
+
+ })
+
+
+  //客戶累積公主幣
+ // 抓取訂單相同會員id的訂單資料
+ $.get("./static/JSON/Coin.json", function (coin) {
+
+
+     $('.Client_list').each(function(){
+
+
+        let pid = parseInt($(this).attr('pid'))
+
+         let AC_Coin = 0 
+
+         for(let j = 0 ; j < coin.length ;j++){
+
+
+             if(pid == coin[j].pid){
+
+
+                 AC_Coin += coin[j].coin_num
+
+                 
+                 $(this).children('#clientCoin').children('h4').text(AC_Coin)
+             
+                 
+             }
+
+          }
+
+
+        
+
+     })
+
+
+
+
+ })
+
+
+  //客戶累積點數
+  // 抓取訂單相同會員id的訂單資料
+ $.get("./static/JSON/Point.json", function (Point) {
+
+
+     $('.Client_list').each(function(){
+
+
+        let pid = parseInt($(this).attr('pid'))
+
+         let AC_Point = 0 
+         for(let j = 0 ; j < Point.length ;j++){
+
+
+             if(pid == Point[j].pid){
+
+
+                 AC_Point += Point[j].point_num
+
+                 
+                 $(this).children('#clientPoint').children('h4').text(AC_Point)
+             
+                 
+             }
+
+          }
+
+
+        
+
+     })
+
+
+
+
+ })
+
+
+
+//////////////////////////後台項目選擇/////////////////////////
 //訂單管理
 $('.Backstage_bar_list li:nth-of-type(1)').click(function(){
 
@@ -24,6 +440,7 @@ $('.Backstage_bar_list li:nth-of-type(1)').click(function(){
     $('.Order_Manage').fadeIn(100).siblings('.B_content').fadeOut(1)
 
     $(this).addClass('list_up').siblings('li').removeClass('list_up')
+
 
 })
 
@@ -35,6 +452,8 @@ $('#Order_list_warp').on('click','.order_detail',function(){
     $('.Each_orderDetail').fadeIn(100).siblings('.B_content').fadeOut(1)
     $('.Order_Manage').hide()
 
+
+    
 
 
 })
@@ -59,6 +478,11 @@ $('.Backstage_bar_list li:nth-of-type(2)').click(function(){
     $('.Client_Manage').fadeIn(100).siblings('.B_content').fadeOut(1)
 
     $(this).addClass('list_up').siblings('li').removeClass('list_up')
+
+
+    
+
+
 
 })
 
@@ -110,18 +534,22 @@ $('.Client_Content_title h4:nth-of-type(3)').click(function(){
 })
 
 
+// 修改客戶資料
 $('.editClientName').click(function(){
 
     $(this).next('.checkout_info').fadeIn(100)
 
 })
 
+//人工加公主幣
 $('#editAddCoin').click(function(){
 
     $(this).next('.checkout_info').fadeIn(100)
 
 })
 
+
+//人工加幣
 $('#editAddPoint').click(function(){
 
     $(this).next('.checkout_info').fadeIn(100)
@@ -148,6 +576,16 @@ $('.checkout_info_bg').click(function(){
 $('.info_cancel').click(function(){
 
     $('.checkout_info').fadeOut(100);
+
+
+})
+
+
+// 優先出貨
+$('#Order_list_warp').on('click','.first_ship',function(){
+
+
+    $(this).toggleClass('ShipFirst')
 
 
 })
