@@ -291,7 +291,7 @@
 
 .Manage_content_wrap{
    
-    min-width: 2000px;
+    min-width: 1140px;
 }
 
 
@@ -317,19 +317,20 @@
 }
 
 #list_num{
-    width: 36%;
+    width: 44%;
     justify-content: flex-start;
     padding-left: 10px;
+    
    
 }
 #list_name{
-    width: 32%;
+    width: 28%;
     justify-content: flex-start;
     padding-left: 10px;
     
 }
 #list_price{
-    width: 32%;
+    width: 28%;
     justify-content: flex-start;
     padding-left: 10px;
    
@@ -416,17 +417,17 @@
 
 
 #list_infoNum{
-    width: 36%;
+    width: 44%;
 
    
 }
 #list_infoName{
-    width: 32%;
+    width: 28%;
   
     
 }
 #list_infoPrice{
-    width: 32%;
+    width: 28%;
     
    
 
