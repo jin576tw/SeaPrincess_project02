@@ -444,6 +444,7 @@ $('.Backstage_bar_list li:nth-of-type(1)').click(function(){
 
 })
 
+
 // 訂單詳情
 $('#Order_list_warp').on('click','.order_detail',function(){
 
@@ -453,7 +454,212 @@ $('#Order_list_warp').on('click','.order_detail',function(){
     $('.Order_Manage').hide()
 
 
-    const OD_id = $(this).parent().parent().attr('od_id')
+    const OD_id = parseInt($(this).parent().parent().attr('od_id'))
+
+    $.get("./static/JSON/Order.json", function (data) {
+
+        let d = data
+
+        // function Orderfiler(){
+
+        // }
+
+        for(let i = 0 ; i < d.length ;i++){ 
+
+            if(OD_id == d[i].OD_id){
+
+                // 訂單資訊
+                // 商品小計
+                $('.od_price').children('h4:nth-of-type(2)').text( number_format(d[i].OD_price))
+
+                // 公主幣折抵
+                $('.od_point').children('h4:nth-of-type(2)').text( number_format(d[i].OD_discount))
+
+                //運費折抵
+                $('.od_fee').children('h4:nth-of-type(2)').text( number_format(d[i].OD_fee))
+
+                // 總金額
+                $('.od_total').children('h4:nth-of-type(2)').text( number_format(d[i].OD_totalPrice))
+
+
+                
+                // 判斷欄位出現
+                if(JSON.stringify(d[i].OD_Seafood)=== '{}'){
+
+
+                    $('#Seafood_ODbox').hide()
+                    $('#Seafood_infoUser').hide()
+                    $('#SendSeafood').hide()
+
+
+
+                }else{
+
+                    $('#Seafood_ODbox').show()
+                    $('#Seafood_infoUser').show()
+                    $('#SendSeafood').show()
+
+
+
+                }
+                if(JSON.stringify(d[i].OD_Item)=== '{}'){
+
+
+                    $('#Item_ODbox').hide()
+                    $('#Item_infoUser').hide()
+                    $('#SendItem').hide()
+
+
+                }else{
+
+                    $('#Item_ODbox').show()
+                    $('#Item_infoUser').show()
+                    $('#SendItem').show()
+
+
+
+                }
+                if(JSON.stringify(d[i].OD_Fishbox)=== '{}'){
+
+
+                    $('#Fishbox_ODbox').hide()
+                    $('#Fishbox_infoUser').hide()
+                    $('#Sendfishbox').hide()
+
+
+                }else{
+
+                    $('#Fishbox_ODbox').show()
+                    $('#Fishbox_infoUser').show()
+                    $('#Sendfishbox').show()
+
+
+
+                }
+
+
+
+                // 收件資訊
+                const CustomerInfo = d[i].OD_customerInfo
+                   
+                for(let j = 0 ; j < CustomerInfo.length ;j++){ 
+
+
+                    if(CustomerInfo[j].food){
+
+                        
+
+                        $('#Seafood_infoUser').children('.infoUser_detail').children('h4:nth-of-type(1)').text(CustomerInfo[j].name)
+
+                        $('#Seafood_infoUser').children('.infoUser_detail').children('h4:nth-of-type(2)').text(CustomerInfo[j].phone)
+
+                        $('#Seafood_infoUser').children('.infoUser_detail').children('h4:nth-of-type(3)').text(CustomerInfo[j].address)
+                        
+
+                    }else if(CustomerInfo[j].food == false){
+
+
+                    
+                        $('#Item_infoUser').children('.infoUser_detail').children('h4:nth-of-type(1)').text(CustomerInfo[j].name)
+
+                        $('#Item_infoUser').children('.infoUser_detail').children('h4:nth-of-type(2)').text(CustomerInfo[j].phone)
+
+                        $('#Item_infoUser').children('.infoUser_detail').children('h4:nth-of-type(3)').text(CustomerInfo[j].address)
+                        
+
+                        
+
+                    }else if(CustomerInfo[j].fishbox == true){
+
+
+
+                        $('#Fishbox_infoUser').children('.infoUser_detail').children('h4:nth-of-type(1)').text(CustomerInfo[j].name)
+
+                        $('#Fishbox_infoUser').children('.infoUser_detail').children('h4:nth-of-type(2)').text(CustomerInfo[j].phone)
+
+                        $('#Fishbox_infoUser').children('.infoUser_detail').children('h4:nth-of-type(3)').text(CustomerInfo[j].address)
+                        
+
+                        
+
+                    }
+
+                    
+
+
+
+                }
+
+
+                    
+
+
+                function paymentInfo(payment){
+
+                    if(payment){
+
+                        return '信用卡安全加密付款'
+                    }else{
+
+                        return '貨到付款'
+
+                    }
+
+
+
+                }
+                
+               
+                // 付款資訊
+                $('.OD_info_payment').children('h4').text(paymentInfo(d[i].creadit_paid))
+              
+                
+                let Message = ``
+      
+                for(let j = 0 ; j < d[i].OD_message.length ;j++){ 
+
+                
+                    let messStr = `<h4>${d[i].OD_message[j]}</h4>`
+
+
+                    Message += messStr
+                   
+
+                }
+               
+                $('.OD_message').html(Message)
+                
+                
+
+
+                
+               
+                // 配送資訊
+                $('#SendSeafood').children('h4:nth-of-type(3)').text(d[i].OD_Seafood.shipment_time)
+                $('#SendSeafood').children('.cargoID').children('h4').text(d[i].OD_Seafood.shipment_number)
+
+                $('#Sendfishbox').children('h4:nth-of-type(3)').text(d[i].OD_Fishbox.shipment_time)
+                $('#Sendfishbox').children('.cargoID').children('h4').text(d[i].OD_Fishbox.shipment_number)
+
+                $('#SendItem').children('h4:nth-of-type(3)').text(d[i].OD_Item.shipment_time)
+                $('#SendItem').children('.cargoID').children('h4').text(d[i].OD_Item.shipment_number)
+
+
+
+               
+               
+            
+            }
+
+
+
+        }
+
+
+
+    })
+
+
 
 
 

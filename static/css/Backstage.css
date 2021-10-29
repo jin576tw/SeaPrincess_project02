@@ -161,7 +161,7 @@
 /*////////////////////訂單管理////////////////*/
 .Order_Manage{
 
-    display: none;
+    /* display: none; */
 }
 
 /* 訂單工具 */
@@ -499,7 +499,7 @@
 
 /* ////////////////////單一訂單明細////////////////// */
 .Each_orderDetail{
-    /* display: none; */
+    display: none;
     margin-bottom: 30px;
 }
 
@@ -787,7 +787,12 @@
 }
 
 .info_user_box{
-   margin-bottom: 25px;
+   
+    margin-bottom: 25px;
+}
+.infoUser_detail{
+    
+
 }
 
 .info_user_box:last-of-type{
@@ -810,11 +815,15 @@
     content: '- NT ';
 }
 
-.OD_info_deilver h4:nth-of-type(2)::before{
-    content: '(冷凍) 希望到貨日：';
-}
+
 .freeze_deliver{
     margin-bottom: 20px;
+}
+.freeze_deliver h4:nth-of-type(3)::before{
+    content: '(冷凍) 希望到貨日：';
+}
+.home_deliver h4:nth-of-type(3)::before{
+    content: '希望到貨日：';
 }
 .cargoID{
     display: flex;
