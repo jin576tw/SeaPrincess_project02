@@ -453,6 +453,10 @@ $('#Order_list_warp').on('click','.order_detail',function(){
     $('.Order_Manage').hide()
 
 
+    const OD_id = $(this).parent().parent().attr('od_id')
+
+
+
     
 
 

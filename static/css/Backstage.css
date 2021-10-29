@@ -161,7 +161,7 @@
 /*////////////////////訂單管理////////////////*/
 .Order_Manage{
 
-    /* display: none; */
+    display: none;
 }
 
 /* 訂單工具 */
@@ -291,7 +291,7 @@
 
 .Manage_content_wrap{
    
-    min-width: 1140px;
+    min-width: 1500px;
 }
 
 
@@ -499,7 +499,7 @@
 
 /* ////////////////////單一訂單明細////////////////// */
 .Each_orderDetail{
-    display: none;
+    /* display: none; */
     margin-bottom: 30px;
 }
 
@@ -532,17 +532,179 @@
 
 }
 
+@media (max-width: 767px) {
+
+    .OD_title{
+        margin-top: 30px;
+        margin-bottom: 40px;
+        padding: 0px 10px ;
+        
+    }
+}
+
+
+/* ///////訂單狀態/訂單資訊//////////// */
 
 .E_orderDetail_warp{
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
+    /* background-color: cyan; */
 }
-.OD_detial{
-    /* height: 300px; */
-    /* background-color: red; */
+
+
+@media (max-width: 1025px) {
+    .E_orderDetail_warp{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
 }
-.OD_detial h3{
+
+@media (max-width: 767px) {
+
+    .E_orderDetail_warp{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+}
+
+/* /////////////訂單狀態//////////// */
+
+.OrderStatus_warp{
+    width: 30%;
+}
+
+.OrderStatus{
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.ODboxTitle{
+    margin-bottom: 12px;
+}
+
+.ODboxTitle h3{
+
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.89px;
+    color: #000;
+    
+
+}
+
+.ODboxContent{
+    position: relative;
+    width: 100%;
+    border: solid 1px #dedede;
+    padding: 20px;
+
+}
+
+.staus_Line_warp{
+    position: absolute;
+    left: 20;
+    width: 10px;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    
+
+
+}
+
+.status_line{
+    width: 1px;
+    height: 100%;
+    background-color: #c0c0c0;
+}
+
+.finished_line{
+
+    width: 1px;
+    height: 0%;
+    background-color: var(--dark_blue)
+}
+
+
+
+.order_staus_list{
+    
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.staus_dot{
+    width: 10px;
+    height: 10px;
+    background-color: #c0c0c0;
+    border-radius: 100%;
+    margin-right: 30px;
+}
+
+
+.staus_text h5{
+    font-size: 1.2rem;
+    color:#8c8c8c;
+}
+
+.staus_text h3{
+    font-size: 1.6rem;
+    color:#000000
+}
+
+@media (max-width: 1025px) {
+
+    .OrderStatus_warp{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .OrderStatus{
+        width: 30%;
+    }
+   
+}
+
+@media (max-width: 767px) {
+
+
+    .OrderStatus_warp{
+        flex-direction: column;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+
+    .OrderStatus{
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+
+}
+
+
+/* ///////////////訂單資訊///////////// */
+.Orderinfo{
+
+
+    width: 60%;
+
+}
+
+.Orderinfo h3{
     font-size: 1.6rem;
     font-weight: normal;
     font-stretch: normal;
@@ -552,6 +714,10 @@
     color: #000;
     margin-bottom: 12px;
 
+}
+
+.OD_status{
+    width: 30%;
 }
 
 .OD_content{
@@ -565,138 +731,9 @@
     position: relative;
     width: 100%;
     height: 420px;
-
-}
-
-.staus_Line{
-    position: absolute;
-    width: 1px;
-    height: 80%;
-    left: 36px;
-    background-color: #c0c0c0;
-
-}
-
-.order_staus{
-    height: 20%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-.staus_dot{
-    width: 10px;
-    height: 10px;
-    background-color: #c0c0c0;
-    border-radius: 100%;
-}
-
-.staus_text{
-    width: 70%; 
-}
-.staus_text h5{
-    font-size: 1.2rem;
-    color:#8c8c8c;
-}
-
-.staus_text h3{
-    font-size: 1.6rem;
-    color:#000000
-}
-
-
-
-@media (max-width: 1025px) {
-    .E_orderDetail_warp{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-    }
-
-    .OD_detial{
-        margin: 0 auto;
-
-    }
-
-    .OD_status{
-        margin-bottom: 40px;
-    }
-
-
-    .OD_content{
-        width: 100%;
-        border: solid 1px #dedede;
-        /* background-color: red; */
-        padding: 20px 10px 20px 10px;
-    }
-
-    .order_staus_warp{
-        position: relative;
-        width: 100%;
-        height: 450px;
-    }
-
-    .staus_Line{
-        position: absolute;
-        width: 1px;
-        height: 80%;
-        left: 26px;
-        background-color: #c0c0c0;
-       
-    }
+    background-color:cyan;
     
-
-}
-@media (max-width: 767px) {
-
-    .E_orderDetail_warp{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        margin-bottom: 0;
-    }
-
-
-    .OD_title{
-        margin-top: 30px;
-        margin-bottom: 40px;
-        padding: 0px 10px ;
-        
-    }
-
-
-
-    .OD_detial{
-        margin: 0 auto;
-
-    }
-
-    .OD_status{
-        margin-bottom: 40px;
-    }
-
-    .OD_content{
-        width: 100%;
-        border: solid 1px #dedede;
-        padding: 40px;
-    }
-
-    .order_staus_warp{
-        position: relative;
-        width: 100%;
-        height: 360px;
-        
-    }
-
-    .staus_Line{
-        position: absolute;
-        width: 1px;
-        height: 80%;
-        left: 20px;
-        background-color: #c0c0c0;
     
-    }
 
 }
 
@@ -749,6 +786,15 @@
     font-size: 1.4rem;
 }
 
+.info_user_box{
+   margin-bottom: 25px;
+}
+
+.info_user_box:last-of-type{
+    margin-bottom: 0px;
+
+}
+
 .info_total_list{
     display: flex;
     justify-content: space-between;
@@ -767,7 +813,9 @@
 .OD_info_deilver h4:nth-of-type(2)::before{
     content: '(冷凍) 希望到貨日：';
 }
-
+.freeze_deliver{
+    margin-bottom: 20px;
+}
 .cargoID{
     display: flex;
     align-items: center;
@@ -793,6 +841,27 @@
 
 
 @media (max-width: 1025px) {
+
+
+    .Orderinfo{
+        margin: 0 auto;
+        width: 100%;
+
+    }
+
+    .OD_status{
+        margin-bottom: 40px;
+    }
+
+
+    .OD_content{
+        width: 100%;
+        border: solid 1px #dedede;
+        /* background-color: red; */
+        padding: 20px 10px 20px 10px;
+    }
+
+    
 
     .info_total_list h4:nth-of-type(2){
         font-size: 1.2rem;
@@ -824,6 +893,23 @@
 }
 @media (max-width: 767px) {
 
+
+    .Orderinfo{
+
+        margin: 0 auto;
+        width: 90%;
+    
+    }
+
+   
+
+    .OD_content{
+        width: 100%;
+        border: solid 1px #dedede;
+        padding: 20px;
+    }
+
+
     .cargoID{
         display: flex;
         align-items: center;
@@ -849,7 +935,7 @@
 
 }
 
-/* //單一訂單明細/// */
+/* /////出貨明細///// */
 .Cargo_detail {
     margin-bottom: 40px;
 }
@@ -1988,6 +2074,16 @@
     height: 75%;
     overflow: auto;
     padding: 50px
+}
+
+.Info_EditBox{
+    border-bottom:  solid 1px rgba(23, 34, 61, 0.5);
+    margin-bottom: 40px;
+}
+.Info_EditBox h2{
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+
 }
 
 .checkout_info_list{
