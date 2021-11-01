@@ -136,7 +136,7 @@ $.get("./static/JSON/Order.json", function (data) {
         }
        
     
-        let  OrederList =`<div class="Manage_list" OD_id="${d[i].OD_id}">
+        let OrederList =`<div class="Manage_list" OD_id="${d[i].OD_id}">
 
             <div class="list_top" id="list_info">
                 <div class="ListInfo" id="list_infoNum">
@@ -490,6 +490,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                     $('#Seafood_ODbox').hide()
                     $('#Seafood_infoUser').hide()
                     $('#SendSeafood').hide()
+                    $('#Seafood_EachDetail').hide()
 
 
 
@@ -498,6 +499,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                     $('#Seafood_ODbox').show()
                     $('#Seafood_infoUser').show()
                     $('#SendSeafood').show()
+                    $('#Seafood_EachDetail').show()
 
 
 
@@ -508,6 +510,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                     $('#Item_ODbox').hide()
                     $('#Item_infoUser').hide()
                     $('#SendItem').hide()
+                    $('#Item_EachDetail').hide()
 
 
                 }else{
@@ -515,6 +518,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                     $('#Item_ODbox').show()
                     $('#Item_infoUser').show()
                     $('#SendItem').show()
+                    $('#Item_EachDetail').show()
 
 
 
@@ -525,6 +529,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                     $('#Fishbox_ODbox').hide()
                     $('#Fishbox_infoUser').hide()
                     $('#Sendfishbox').hide()
+                    $('#Fishbox_EachDetail').hide()
 
 
                 }else{
@@ -532,6 +537,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                     $('#Fishbox_ODbox').show()
                     $('#Fishbox_infoUser').show()
                     $('#Sendfishbox').show()
+                    $('#Fishbox_EachDetail').show()
 
 
 
@@ -584,6 +590,8 @@ $('#Order_list_warp').on('click','.order_detail',function(){
 
                     }
 
+
+
                     
 
 
@@ -592,7 +600,6 @@ $('#Order_list_warp').on('click','.order_detail',function(){
 
 
                     
-
 
                 function paymentInfo(payment){
 
@@ -613,40 +620,101 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                 // 付款資訊
                 $('.OD_info_payment').children('h4').text(paymentInfo(d[i].creadit_paid))
               
-                
-                let Message = ``
-      
-                for(let j = 0 ; j < d[i].OD_message.length ;j++){ 
 
                 
-                    let messStr = `<h4>${d[i].OD_message[j]}</h4>`
+                const OD_seafood = d[i].OD_Seafood
 
-
-                    Message += messStr
-                   
-
-                }
-               
-                $('.OD_message').html(Message)
+                const OD_fishbox = d[i].OD_Fishbox
+        
+                const OD_Item = d[i].OD_Item
                 
-                
-
-
-                
-               
+            
                 // 配送資訊
-                $('#SendSeafood').children('h4:nth-of-type(3)').text(d[i].OD_Seafood.shipment_time)
-                $('#SendSeafood').children('.cargoID').children('h4').text(d[i].OD_Seafood.shipment_number)
+                $('#SendSeafood').children('h4:nth-of-type(3)').text(OD_seafood.shipment_time)
+                $('#SendSeafood').children('.cargoID').children('h4').text(OD_seafood.shipment_number)
 
-                $('#Sendfishbox').children('h4:nth-of-type(3)').text(d[i].OD_Fishbox.shipment_time)
-                $('#Sendfishbox').children('.cargoID').children('h4').text(d[i].OD_Fishbox.shipment_number)
+                $('#Sendfishbox').children('h4:nth-of-type(3)').text(OD_fishbox.shipment_time)
+                $('#Sendfishbox').children('.cargoID').children('h4').text(OD_fishbox.shipment_number)
 
-                $('#SendItem').children('h4:nth-of-type(3)').text(d[i].OD_Item.shipment_time)
-                $('#SendItem').children('.cargoID').children('h4').text(d[i].OD_Item.shipment_number)
+                $('#SendItem').children('h4:nth-of-type(3)').text(OD_Item.shipment_time)
+                $('#SendItem').children('.cargoID').children('h4').text(OD_Item.shipment_number)
 
 
 
+                //訂單明細
+                // 生鮮魚貨
+                $.get("./static/JSON/Seafood.json", function (product) {
+
+                    let p = product 
+                
+
+                    for(let i = 0 ; i < OD_seafood.items.length  ;i++){ 
+                        for(let j = 0 ; j < p.length  ;j++){ 
+
+
+                            if(OD_seafood.items[i].tid == p[j].pid){
+                                
+                                let detail_list = `
+                                <div class="cargo_detail_list" tid="${OD_seafood.items[i].tid}">
+                                    <div class="cargo_detail_head">
+                                        <div class="cargo_detail_pic">
+                                            <img src="./static/images/seafood/s01-1.jpg" alt="">
+                                        </div>
+                                        <div class="cargo_detail_name">
+                                            <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
+                            
+                                        </div>
+
+                                    </div>
+                                    <div class="cargo_detail_bottom">
+                                        <div class="cargo_detail_count">
+                                            <h3>${OD_seafood.items[i].count}</h3>
+                                        </div>
+                                        <div class="cargo_detail_price">
+                                            <h3>1200</h3>
+                                        </div>
+
+                                    </div>
+                                </div>`
+
+
+
+                                console.log(detail_list);
+
+
+                            }
+
+
+
+                         }
+                    }
+                    
+
+                    
+
+
+
+
+                })
+
+                
+
+                    
+
+                  
+
+
+
+
+
+                    
+
+                
+
+                
                
+
+
                
             
             }
