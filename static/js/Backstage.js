@@ -914,7 +914,7 @@ $('#Client_list_warp').on('click','.client_detail',function(){
 
     $('.Each_clientManage').fadeIn(100).siblings('.B_content').fadeOut(1)
 
-    $('.Client_Manage').hide()
+    
 
 })
 

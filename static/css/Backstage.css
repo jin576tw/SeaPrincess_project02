@@ -1424,6 +1424,16 @@
 }
 
 
+.Delete_client:hover{
+
+    background-color: rgb(165, 0, 0);
+    border: 1px solid transparent;
+    color: white;
+    transition: 0.8s;
+
+}
+
+
 
 
 @media (max-width: 767px) {
