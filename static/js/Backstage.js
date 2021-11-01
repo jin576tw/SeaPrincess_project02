@@ -641,27 +641,71 @@ $('#Order_list_warp').on('click','.order_detail',function(){
 
 
 
-                //訂單明細
-                // 生鮮魚貨
+                
+                
+
+                // 訂單明細內容
+                const Seafood_EachDetail = $('#Seafood_EachDetail').children('.cargo_detail_warp')
+
+                const Item_EachDetail = $('#Item_EachDetail').children('.cargo_detail_warp')
+
+                const Fishbox_EachDetail = $('#Fishbox_EachDetail').children('.cargo_detail_warp')
+
+                // 初始化
+                Seafood_EachDetail.empty()
+                Item_EachDetail.empty()
+                Fishbox_EachDetail.empty()
+
+
+
+                function MessageCheck(message){
+
+                    if(message == ""){
+
+                        return ``
+
+                    }else{
+
+                        return `備註：${message}`
+
+                    }
+
+                }
+               
+
+                // 收件備註
+                $('#Seafood_EachDetail').children('.detail_title').children('h5').text(MessageCheck( OD_seafood.message))
+
+                $('#Item_EachDetail').children('.detail_title').children('h5').text(MessageCheck( OD_Item.message))
+
+                $('#Fishbox_EachDetail').children('.detail_title').children('h5').text(MessageCheck( OD_fishbox.message))
+                 
+
+
+    
+                // 生鮮魚貨明細載入
                 $.get("./static/JSON/Seafood.json", function (product) {
 
                     let p = product 
                 
-
                     for(let i = 0 ; i < OD_seafood.items.length  ;i++){ 
                         for(let j = 0 ; j < p.length  ;j++){ 
 
 
                             if(OD_seafood.items[i].tid == p[j].pid){
+
+                                const nowprice = OD_seafood.items[i].count * p[j].price
+
+                                // console.log(nowprice);
                                 
                                 let detail_list = `
                                 <div class="cargo_detail_list" tid="${OD_seafood.items[i].tid}">
                                     <div class="cargo_detail_head">
                                         <div class="cargo_detail_pic">
-                                            <img src="./static/images/seafood/s01-1.jpg" alt="">
+                                            <img src="${p[j].pic[0]}" alt="">
                                         </div>
                                         <div class="cargo_detail_name">
-                                            <h3>真空三去深海石老魚 ( 藍豬齒魚 )</h3>
+                                            <h3>${p[j].name}</h3>
                             
                                         </div>
 
@@ -671,7 +715,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                                             <h3>${OD_seafood.items[i].count}</h3>
                                         </div>
                                         <div class="cargo_detail_price">
-                                            <h3>1200</h3>
+                                            <h3>${nowprice}</h3>
                                         </div>
 
                                     </div>
@@ -679,7 +723,7 @@ $('#Order_list_warp').on('click','.order_detail',function(){
 
 
 
-                                console.log(detail_list);
+                                Seafood_EachDetail.append(detail_list);
 
 
                             }
@@ -691,16 +735,115 @@ $('#Order_list_warp').on('click','.order_detail',function(){
                     
 
                     
+                })
 
+
+
+                // 釣具用品明細載入
+                $.get("./static/JSON/Item.json", function (product) {
+
+                    let p =  product
+
+                    for(let i = 0 ; i < OD_Item.items.length  ;i++){ 
+                        for(let j = 0 ; j < p.length  ;j++){ 
+
+
+                            if( OD_Item.items[i].tid == p[j].pid){
+
+                                const nowprice =  OD_Item.items[i].count * p[j].price
+
+                                // console.log(nowprice);
+                                
+                                let detail_list = `
+                                <div class="cargo_detail_list" tid="${OD_Item.items[i].tid}">
+                                    <div class="cargo_detail_head">
+                                        <div class="cargo_detail_pic">
+                                            <img src="${p[j].pic[0]}" alt="">
+                                        </div>
+                                        <div class="cargo_detail_name">
+                                            <h3>${p[j].name}</h3>
+                                            <h4>${OD_Item.items[i].type}</h4>
+                                        </div>
+
+                                    </div>
+                                    <div class="cargo_detail_bottom">
+                                        <div class="cargo_detail_count">
+                                            <h3>${ OD_Item.items[i].count}</h3>
+                                        </div>
+                                        <div class="cargo_detail_price">
+                                            <h3>${nowprice}</h3>
+                                        </div>
+
+                                    </div>
+                                </div>`
+
+
+
+                                Item_EachDetail.append(detail_list);
+
+
+                            }
+
+
+
+                         }
+                    }
 
 
 
                 })
 
-                
-
                     
+                for(let i = 0 ; i < OD_fishbox.items.length  ;i++){ 
 
+                    // 料理習慣
+                    const cooktype = OD_fishbox.items[i].cook.join('、')
+
+          
+                    // 魚箱資訊
+                    const box_detail =`${OD_fishbox.items[i].price}元 / ${OD_fishbox.items[i].qty} / ${cooktype} / ${OD_fishbox.items[i].boxMessage}`
+
+
+
+                    const nowprice =  OD_fishbox.items[i].count * OD_fishbox.items[i].price
+
+                    // console.log(nowprice);
+                    
+                    let detail_list = `
+                    <div class="cargo_detail_list" tid="${OD_fishbox.items[i].tid}">
+                        <div class="cargo_detail_head">
+                            <div class="cargo_detail_pic">
+                                <img src="${OD_fishbox.items[i].pic}" alt="">
+                            </div>
+                            <div class="cargo_detail_name">
+                                <h3>${OD_fishbox.items[i].name}</h3>
+                                <h4>${box_detail}</h4>
+                            </div>
+
+                        </div>
+                        <div class="cargo_detail_bottom">
+                            <div class="cargo_detail_count">
+                                <h3>${ OD_fishbox.items[i].count}</h3>
+                            </div>
+                            <div class="cargo_detail_price">
+                                <h3>${nowprice}</h3>
+                            </div>
+
+                        </div>
+                    </div>`
+
+
+
+                    Fishbox_EachDetail.append(detail_list);
+
+
+
+
+
+
+                }
+
+                
                   
 
 

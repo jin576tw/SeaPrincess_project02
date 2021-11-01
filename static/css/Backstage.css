@@ -161,7 +161,7 @@
 /*////////////////////訂單管理////////////////*/
 .Order_Manage{
 
-    display: none;
+    /* display: none; */
 }
 
 /* 訂單工具 */
@@ -499,7 +499,7 @@
 
 /* ////////////////////單一訂單明細////////////////// */
 .Each_orderDetail{
-    /* display: none; */
+    display: none;
     margin-bottom: 30px;
 }
 
@@ -993,9 +993,9 @@
 
 
 }
-.detail_title h5::before{
+/* .detail_title h5::before{
     content: '備註：';
-}
+} */
 
 
 .cargo_detail_list{
