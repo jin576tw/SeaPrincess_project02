@@ -37,7 +37,7 @@
   },
   {
     "pid": 2,
-    "name": "王大明",
+    "name": "鳳飛妃",
     "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
@@ -73,7 +73,7 @@
   },
   {
     "pid": 3,
-    "name": "王大明",
+    "name": "王小明",
     "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
@@ -109,7 +109,7 @@
   },
   {
     "pid": 4,
-    "name": "王大明",
+    "name": "海森威",
     "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
@@ -145,7 +145,7 @@
   },
   {
     "pid": 5,
-    "name": "王大明",
+    "name": "魯道夫",
     "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,

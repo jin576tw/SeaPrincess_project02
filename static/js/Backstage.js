@@ -385,18 +385,13 @@ $.get("./static/JSON/Member.json", function (data) {
 
         let pid = parseInt($(this).attr('pid'))
 
-         let AC_Coin = 0 
-
          for(let j = 0 ; j < coin.length ;j++){
 
 
              if(pid == coin[j].pid){
 
-
-                 AC_Coin += coin[j].coin_num
-
                  
-                 $(this).children('#clientCoin').children('h4').text(AC_Coin)
+                 $(this).children('#clientCoin').children('h4').text(coin[j].coin_ac_num)
              
                  
              }
@@ -424,17 +419,13 @@ $.get("./static/JSON/Member.json", function (data) {
 
         let pid = parseInt($(this).attr('pid'))
 
-         let AC_Point = 0 
+        
          for(let j = 0 ; j < Point.length ;j++){
 
 
              if(pid == Point[j].pid){
 
-
-                 AC_Point += Point[j].point_num
-
-                 
-                 $(this).children('#clientPoint').children('h4').text(AC_Point)
+                 $(this).children('#clientPoint').children('h4').text(Point[j].point_ac_num)
              
                  
              }
@@ -938,6 +929,8 @@ $('.Backstage_bar_list li:nth-of-type(2)').click(function(){
 $('#Client_list_warp').on('click','.client_detail',function(){
 
 
+
+
     $('.Each_clientManage').fadeIn(100).siblings('.B_content').fadeOut(1)
 
     const pid = parseInt($(this).parent().parent().attr('pid'))
@@ -1225,8 +1218,208 @@ $('#Client_list_warp').on('click','.client_detail',function(){
 
                 
 
-               
+                // 累積公主幣、公主幣載入
+                $('#Coinlist_warp').empty()
+                $.get("./static/JSON/Coin.json", function (coin) {
 
+
+                    for(let j = 0 ; j < coin.length ;j++){ 
+
+
+                        if(pid ==  coin[j].pid){
+
+                            // 累積公主幣
+                            $('.Clinet_Coin_num').children('h4:nth-of-type(1)').text(number_format(coin[j].coin_ac_num))
+
+
+                            const Record = coin[j].record
+
+                            for(let i = 0 ; i < Record.length ;i++){ 
+
+
+                                // 名稱載入
+                                function Coin_name(c){
+
+                                    if( c.c_backstage){
+
+                                        return ` <h4 class="list_notice">${c.c_name}</h4>`
+                                    }else{
+
+
+                                        return `<h4>${c.c_name}</h4>`
+
+                                    }
+                                }
+
+                                // 點數載入
+                                function Coin_record(c){
+
+                                    if( c.c_used){
+
+                                        return `<h4>${c.c_num}</h4>`
+
+
+                                    }else{
+
+                                        return `<h4 class="addPoint">${c.c_num}</h4>`
+
+                                    }
+
+
+
+                                }
+
+                                // 到期日/訂單編號
+                                function Coin_detailCheck(c){
+
+
+                                    if( c.c_used){
+
+                                        return `<h5>訂單號：<span>${Record[i].c_OD_name}</span></h5>`
+
+                                    }else{
+
+
+                                        return `<h5>到期日：${Record[i].c_expire}</h5>`
+
+                                    }
+
+
+                                }
+
+                                let coin_list =`
+                                <div class="coin_detail_list">
+                                        <div class="coin_list_head">
+
+                                            <div class="coin_time_warp">
+
+                                                <h4>${Record[i].c_createAt}</h4>
+                                                
+                                            </div>
+
+                                            <div class="coin_name_warp">`
+                                                +Coin_name(Record[i])+
+                                                Coin_detailCheck(Record[i])+
+                                            `</div>
+
+                                        </div>
+                                        
+                                        <div class="coin_list_addCoin">`+
+                                        Coin_record(Record[i])+`</div>
+
+                                </div>`
+
+
+                                $('#Coinlist_warp').append(coin_list)
+
+                                
+
+
+
+                            }
+
+                            
+                            
+                        }
+                     }
+
+
+                })
+
+
+
+                // 累積點數、點數載入
+                $("#Poinlist_warp").empty()
+                $.get("./static/JSON/Point.json", function (point) { 
+
+                    for(let j = 0 ; j < point.length ;j++){ 
+
+
+                        if(pid ==  point[j].pid){
+
+                            // 累積點數
+                            $('#Clinet_PointCount').children('h4:nth-of-type(2)').text(point[j].point_ac_num)
+
+
+                            const Record = point[j].record
+
+
+                            for(let i = 0 ; i <  Record.length ;i++){ 
+
+
+
+                                    // 名稱載入
+                                    function Point_name(p){
+
+                                        if( p.p_backstage){
+
+                                            return ` <h4 class="list_notice">${p.p_name}</h4>`
+                                        }else{
+
+
+                                            return `<h4>${p.p_name}</h4>`
+
+                                        }
+                                    }
+
+                                    // 點數載入
+                                    function Point_record(p){
+
+                                        if( p.p_used){
+
+                                            return `<h4 class="list_notice">${p.p_num}</h4>`
+
+
+                                        }else{
+
+                                            return `<h4 ">${p.p_num}</h4>`
+
+                                        }
+
+
+
+                                    }
+
+
+
+                                    let coint_list =`<div class="point_detail_list">
+                                    <div class="point_list_head">
+
+                                        <div class="point_time_warp">
+
+                                            <h4>${Record[i].p_createAt}</h4>
+                                
+                                        </div>
+
+                                        <div class="point_name_warp">`
+                                            +Point_name(Record[i])+
+                                            `<h5>到期日：${Record[i].p_expire}</h5>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="point_list_addCoin">
+
+                                        `+Point_record(Record[i])+`
+                                    </div>
+
+                                </div>`
+
+
+
+                                $('#Poinlist_warp').append(coint_list)
+
+
+                            }
+
+
+                        }
+                     }
+
+
+                    
+
+                })
 
             }
 

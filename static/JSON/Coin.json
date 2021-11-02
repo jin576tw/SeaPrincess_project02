@@ -2,62 +2,322 @@
   {
     "coin_id": 1,
     "pid": 1,
-    "coin_name": "工作人員點數調整：補差額",
-    "coin_createAt": "2020-12-26 14:53",
-    "coin_expire": "2020-12-26 14:53",
-    "coin_num": 120,
-    "coin_order": "",
-    "coin_backstage": true
+    "coin_ac_num": 5000,
+    "record":[
+
+      {
+       "c_name": "工作人員點數調整：補差額",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+3000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": true
+
+      },
+      {
+       "c_name": "投稿-日誌",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage":false
+
+      },
+      {
+       "c_name": "投稿-食譜",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "消費折抵",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"-1000",
+       "c_used":true,
+       "c_OD_name":"GHJFDWOFLU40392",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "滿千就送",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "coin_id": 1,
+    "coin_id": 2,
     "pid": 2,
-    "coin_name": "工作人員點數調整：補差額",
-    "coin_createAt": "2020-12-26 14:53",
-    "coin_expire": "2020-12-26 14:53",
-    "coin_num": 120,
-    "coin_order": "",
-    "coin_backstage": true
+    "coin_ac_num": 4000,
+    "record":[
+
+      {
+       "c_name": "工作人員點數調整：補差額",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+3000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": true
+
+      },
+      {
+       "c_name": "投稿-日誌",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage":false
+
+      },
+      {
+       "c_name": "投稿-食譜",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "消費折抵",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"-1000",
+       "c_used":true,
+       "c_OD_name":"GHJFDWOFLU40392",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "滿千就送",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "coin_id": 1,
+    "coin_id": 3,
     "pid": 3,
-    "coin_name": "工作人員點數調整：補差額",
-    "coin_createAt": "2020-12-26 14:53",
-    "coin_expire": "2020-12-26 14:53",
-    "coin_num": 120,
-    "coin_order": "",
-    "coin_backstage": true
+    "coin_ac_num": 3000,
+    "record":[
+
+      {
+       "c_name": "工作人員點數調整：補差額",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+3000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": true
+
+      },
+      {
+       "c_name": "投稿-日誌",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage":false
+
+      },
+      {
+       "c_name": "投稿-食譜",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "消費折抵",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"-1000",
+       "c_used":true,
+       "c_OD_name":"GHJFDWOFLU40392",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "滿千就送",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "coin_id": 1,
+    "coin_id": 4,
     "pid": 4,
-    "coin_name": "工作人員點數調整：補差額",
-    "coin_createAt": "2020-12-26 14:53",
-    "coin_expire": "2020-12-26 14:53",
-    "coin_num": 120,
-    "coin_order": "",
-    "coin_backstage": true
+    "coin_ac_num": 4000,
+    "record":[
+
+      {
+       "c_name": "工作人員點數調整：補差額",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+3000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": true
+
+      },
+      {
+       "c_name": "投稿-日誌",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage":false
+
+      },
+      {
+       "c_name": "投稿-食譜",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "消費折抵",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"-1000",
+       "c_used":true,
+       "c_OD_name":"GHJFDWOFLU40392",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "滿千就送",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "coin_id": 1,
+    "coin_id": 5,
     "pid": 5,
-    "coin_name": "工作人員點數調整：補差額",
-    "coin_createAt": "2020-12-26 14:53",
-    "coin_expire": "2020-12-26 14:53",
-    "coin_num": 120,
-    "coin_order": "",
-    "coin_backstage": true
-  },
-  {
-    "coin_id": 1,
-    "pid": 2,
-    "coin_name": "工作人員點數調整：補差額",
-    "coin_createAt": "2020-12-26 14:53",
-    "coin_expire": "2020-12-26 14:53",
-    "coin_num": 120,
-    "coin_order": "",
-    "coin_backstage": true
+    "coin_ac_num": 2000,
+    "record":[
+
+      {
+       "c_name": "工作人員點數調整：補差額",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+3000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": true
+
+      },
+      {
+       "c_name": "投稿-日誌",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage":false
+
+      },
+      {
+       "c_name": "投稿-食譜",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "消費折抵",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"-1000",
+       "c_used":true,
+       "c_OD_name":"GHJFDWOFLU40392",
+       "c_backstage": false
+
+      },
+      {
+       "c_name": "滿千就送",
+       "c_createAt": "2020-12-26 14:53",
+       "c_expire": "2020-12-26 14:53",
+       "c_num":"+1000",
+       "c_used":false,
+       "c_OD_name":"",
+       "c_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   }
 ]
  

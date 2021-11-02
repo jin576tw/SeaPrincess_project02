@@ -161,7 +161,7 @@
 /*////////////////////訂單管理////////////////*/
 .Order_Manage{
 
-    display: none;
+    /* display: none; */
 }
 
 /* 訂單工具 */
@@ -1394,7 +1394,7 @@
 /* ////////////4.單一客戶管理///////// */
 
 .Each_clientManage{
-    /* display: none; */
+    display: none;
 }
 
 
@@ -1483,6 +1483,7 @@
     width: 100%;
     justify-content: flex-start;
     margin-bottom: 20px;
+   
 }
 
 .Client_row h4{
@@ -1496,6 +1497,27 @@
 
 
 }
+
+.Clinet_Coin_num{
+    display: flex;
+}
+
+.Clinet_Coin_num h4{
+
+    font-weight: 400;
+
+}
+.Clinet_Coin_num h4:nth-of-type(2){
+
+
+    width: 100%;
+}
+
+
+
+
+
+
 .editClientName{
 
     width: 70px;
@@ -1613,7 +1635,10 @@
     width: 100%;
     
 }
-
+.CR_content{
+    min-height:  800px;
+    
+}
 /* 訂單記錄 */
 .order_detail_content{
     width: 100%;
@@ -1623,7 +1648,8 @@
 }
 
 .order_detail_content_warp{
-    min-width: 1500px
+    min-width: 1500px;
+
 }
 
 .ClientOD_cate_warp{
@@ -1815,14 +1841,13 @@
 .coin_list_head{
     height: 100%;
     display: flex;
-
     justify-content: flex-start;
     align-items: center;
-    /* background-color: cyan; */
+   
 }
 
 .coin_time_warp{
-    margin-right: 60px;
+    margin-right: 30px;
 }
 
 .coin_time_warp h4{
@@ -1862,12 +1887,17 @@
 
     
     .coin_time_warp{
-
-        margin-right: 10px;
+        max-width: 90px;
+        
+        margin-right: 0px;
+    }
+    .coin_time_warp h4{
+        font-size: 1.2rem;
     }
 
     .coin_name_warp{
-        max-width: 190px;
+        max-width: 230px;
+        
     }
 
 }
@@ -1898,7 +1928,7 @@
 }
 
 .point_time_warp{
-    margin-right: 60px;
+    margin-right: 30px;
 }
 
 .point_time_warp h4{
@@ -1920,12 +1950,17 @@
 
     
     .point_time_warp{
-        margin-right: 15px;
+        max-width: 100px;
+        margin-right: 0px;
         
     }
 
+    .point_time_warp h4{
+        font-size: 1.2rem;
+    }
+
     .point_name_warp{
-        max-width: 190px;
+        max-width: 230px;
     }
 
 }

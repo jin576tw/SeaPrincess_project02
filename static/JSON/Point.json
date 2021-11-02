@@ -1,56 +1,298 @@
 [
+
   {
     "point_id": 1,
     "pid": 1,
-    "point_name": "工作人員點數調整：補差額",
-    "point_createAt":  "2020-12-26 14:53",
-    "point_expire":  "2020-12-26 14:53",
-    "point_num": 8,
-    "point_backstage": false
+    "point_ac_num": 6,
+    "record":[
+
+      {
+       "p_name": "工作人員點數調整：補差額",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": true
+
+      },
+      {
+       "p_name": "投稿-日誌",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage":false
+
+      },
+      {
+       "p_name": "投稿-食譜",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "消費",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "滿千就送",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "point_id": 1,
+    "point_id": 2,
     "pid": 2,
-    "point_name": "工作人員點數調整：補差額",
-    "point_createAt":  "2020-12-26 14:53",
-    "point_expire":  "2020-12-26 14:53",
-    "point_num": 8,
-    "point_backstage": false
+    "point_ac_num": 3,
+    "record":[
+
+      {
+       "p_name": "工作人員點數調整：補差額",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": true
+
+      },
+      {
+       "p_name": "投稿-日誌",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage":false
+
+      },
+      {
+       "p_name": "投稿-食譜",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "消費",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "滿千就送",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "point_id": 1,
+    "point_id": 3,
     "pid": 3,
-    "point_name": "工作人員點數調整：補差額",
-    "point_createAt":  "2020-12-26 14:53",
-    "point_expire":  "2020-12-26 14:53",
-    "point_num": 8,
-    "point_backstage": false
+    "point_ac_num": 2,
+    "record":[
+
+      {
+       "p_name": "工作人員點數調整：補差額",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": true
+
+      },
+      {
+       "p_name": "投稿-日誌",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage":false
+
+      },
+      {
+       "p_name": "投稿-食譜",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "消費",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "滿千就送",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "point_id": 1,
+    "point_id": 4,
     "pid": 4,
-    "point_name": "工作人員點數調整：補差額",
-    "point_createAt":  "2020-12-26 14:53",
-    "point_expire":  "2020-12-26 14:53",
-    "point_num": 8,
-    "point_backstage": false
+    "point_ac_num": 2,
+    "record":[
+
+      {
+       "p_name": "工作人員點數調整：補差額",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": true
+
+      },
+      {
+       "p_name": "投稿-日誌",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage":false
+
+      },
+      {
+       "p_name": "投稿-食譜",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "消費",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "滿千就送",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   },
   {
-    "point_id": 1,
+    "point_id": 5,
     "pid": 5,
-    "point_name": "工作人員點數調整：補差額",
-    "point_createAt":  "2020-12-26 14:53",
-    "point_expire":  "2020-12-26 14:53",
-    "point_num": 8,
-    "point_backstage": false
-  },
-  {
-    "point_id": 1,
-    "pid": 3,
-    "point_name": "工作人員點數調整：補差額",
-    "point_createAt":  "2020-12-26 14:53",
-    "point_expire":  "2020-12-26 14:53",
-    "point_num": 8,
-    "point_backstage": false
+    "point_ac_num": 1,
+    "record":[
+
+      {
+       "p_name": "工作人員點數調整：補差額",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": true
+
+      },
+      {
+       "p_name": "投稿-日誌",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage":false
+
+      },
+      {
+       "p_name": "投稿-食譜",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "消費",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      },
+      {
+       "p_name": "滿千就送",
+       "p_createAt": "2020-12-26 14:53",
+       "p_expire": "2020-12-26 14:53",
+       "p_num":"+1",
+       "p_used":false,
+       "p_backstage": false
+
+      }
+
+
+    ]
+    
+   
+   
+   
   }
 ]
