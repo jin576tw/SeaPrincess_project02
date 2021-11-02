@@ -2,7 +2,7 @@
   {
     "pid": 1,
     "name": "王大明",
-    "member_level": "1",
+    "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
     "member_ac_point": 8,
@@ -38,7 +38,7 @@
   {
     "pid": 2,
     "name": "王大明",
-    "member_level": "1",
+    "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
     "member_ac_point": 8,
@@ -74,7 +74,7 @@
   {
     "pid": 3,
     "name": "王大明",
-    "member_level": "1",
+    "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
     "member_ac_point": 8,
@@ -110,7 +110,7 @@
   {
     "pid": 4,
     "name": "王大明",
-    "member_level": "1",
+    "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
     "member_ac_point": 8,
@@ -146,7 +146,7 @@
   {
     "pid": 5,
     "name": "王大明",
-    "member_level": "1",
+    "member_level": 1,
     "member_ac_Price": 3000,
     "member_ac_coin": 500,
     "member_ac_point": 8,

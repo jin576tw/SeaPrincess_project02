@@ -107,7 +107,7 @@ $.get("./static/JSON/Order.json", function (data) {
         }
 
 
-        // 送貨壯態
+        // 送貨狀態
         function OD_cargoStatus(s){
 
 
@@ -332,7 +332,7 @@ $.get("./static/JSON/Member.json", function (data) {
 
 })
 
- //客戶累積金額
+ //客戶累積金額、訂單數
  // 抓取訂單相同會員id的訂單資料
  $.get("./static/JSON/Order.json", function (order) {
 
@@ -467,7 +467,7 @@ $('.Backstage_bar_list li:nth-of-type(1)').click(function(){
 
 
 // 訂單詳情
-$('#Order_list_warp').on('click','.order_detail',function(){
+$('#Order_list_warp,#ClientOD_list_warp').on('click','.order_detail',function(){
 
 
 
@@ -939,6 +939,304 @@ $('#Client_list_warp').on('click','.client_detail',function(){
 
 
     $('.Each_clientManage').fadeIn(100).siblings('.B_content').fadeOut(1)
+
+    const pid = parseInt($(this).parent().parent().attr('pid'))
+
+   
+    $('#ClientOD_list_warp').empty()
+
+    $.get("./static/JSON/Member.json", function (data) {
+
+        let d = data
+
+
+        for(let i = 0 ; i < d.length ;i++){ 
+
+            if(pid ==  d[i].pid ){
+
+
+                // 會員姓名
+                $('#Client_name').children('h4:nth-of-type(2)').text(d[i].name)
+
+                // 會員信箱
+                $('#Client_email').children('h4:nth-of-type(2)').text(d[i].member_email)
+
+                // 會員電話
+                $('#Client_phone').children('h4:nth-of-type(2)').text(d[i].member_phone)
+
+                // 會員等級
+                $('#Client_level').children('h4:nth-of-type(2)').text(d[i].member_level)
+
+                // 會員性別
+                $('#Client_sex').children('h4:nth-of-type(2)').text(d[i].member_sex)
+
+                // 會員生日
+                $('#Client_birthday').children('h4:nth-of-type(2)').text(d[i].member_birthday)
+
+
+                // 累積金額、訂單數、訂單載入
+                $.get("./static/JSON/Order.json", function (order) {
+
+
+
+                    let AC_Pirce = 0 ;
+                    let OrderArr = []
+
+                    for(let j = 0 ; j < order.length ;j++){ 
+
+
+                        if(order[j].pid == pid ){
+
+
+                            AC_Pirce += order[j].OD_totalPrice
+                            OrderArr.push(order[j])
+
+                             // 訂單數
+                            $('#Clinet_ODcount').children('h4:nth-of-type(2)').text(OrderArr.length)
+
+                             // 累積金額
+                            $('#Clinet_Pcount').children('h4:nth-of-type(2)').text(number_format(AC_Pirce))
+
+
+
+                            const OD_seafood = order[j].OD_Seafood
+
+                            const OD_fishbox = order[j].OD_Fishbox
+
+                            const OD_Item = order[j].OD_Item
+
+
+                            // 付款方式
+                            let payMenetWay =``
+
+                            if(order[j].creadit_paid == true){
+
+                                payMenetWay = `信用卡付款`
+                        
+                            }else{
+
+                                payMenetWay = `貨到付款`
+
+                            }
+                            
+
+                            
+
+                            // 出貨狀態
+                            function OD_status(s){
+
+
+                                if(s == '取消'){
+
+
+                                    return`<h4 class="finishNotice">${s}</h4>`
+
+
+                                }else if(s == '待出貨'){
+
+
+
+                                    return`<h4 class="orderNotice">${s}</h4>`
+
+
+                                }else if(s == null){
+
+
+                                    return`<h4 class="finishNotice">/</h4>`
+
+
+                                }else{
+                                    
+                                    return`<h4>${s}</h4>`
+                                
+                                
+                                }
+                                
+
+
+
+                            }
+
+                            
+
+                            // 付款狀態
+                            function OD_payStatus(s){
+
+                                if(s == '未付款' || s == '貨到付款'){
+
+                                    return`<h4 class="paymentNotice">${s}</h4>`
+
+                                }else if(s == '取消'){
+
+                                    return`<h4 class="finishNotice">${s}</h4>`
+
+                                }else if(s == null){
+
+
+                                    return`<h4 class="finishNotice">/</h4>`
+
+                                }else{
+
+                                    return`<h4>${s}</h4>`
+
+                                }
+
+
+
+                            }
+
+
+                            // 送貨狀態
+                            function OD_cargoStatus(s){
+
+
+                                if(s == '運送中'){
+
+                                    return`<h4 class="cargoNotice">${s}</h4>`
+
+                                }else if(s == null){
+
+
+                                    return`<h4 class="finishNotice">/</h4>`
+
+
+
+                                }else if(s == '取消' || s== '已完成'){
+
+                                    return`<h4 class="finishNotice">${s}</h4>`
+
+                                }else{
+
+                                    return`<h4>${s}</h4>`
+
+                                }
+
+
+                            }
+
+
+                            // 優先出貨
+                            function ShipFirst(s){
+
+                                if(s){
+
+                                    return `<div class="first_ship ShipFirst">
+                                                <i class="fas fa-clipboard"></i>
+                                            </div>`
+
+                                }else{
+
+                                    return `<div class="first_ship">
+                                                <i class="fas fa-clipboard"></i>
+                                            </div>`
+
+
+                                }
+
+                            }
+
+
+                            let ClientOD =`
+                            <div class="ClientOD_list" od_id="${order[j].OD_id}">
+    
+                                    <div class="ClientOD_top" id="ClientOD_info" ">
+
+                                        <div class="ClientOD_subTop" id="ClientOD_num">
+                                            <h4>${order[j].OD_name}</h4>
+                                            <h5>${order[j].OD_time}</h5>
+                                        </div>
+
+                                        <div class="ClientOD_subTop" id="ClientOD_price">
+                                            <h4>${payMenetWay}</h4>
+                                            <h4>NT$ ${number_format(order[j].OD_totalPrice)}</h4>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="ClientOD_top" id="ClientOD_seafood">
+
+                                        <div class="ClientOD_subTop" id="ClientOD_status">`+OD_status(OD_seafood.status)+`</div>
+
+
+                                        <div class="ClientOD_subTop" id="ClientOD_status">`+OD_payStatus(OD_seafood.payStatus)+`</div>
+
+
+                                        <div class="ClientOD_subTop" id="ClientOD_status">`
+                                        + OD_cargoStatus(OD_seafood.cargoStatus)+
+                                        `</div>
+                                    
+
+                                    </div>
+
+                                <div class="ClientOD_top" id="ClientOD_fishbox">
+                                    <div class="ClientOD_subTop" id="ClientOD_status">`
+                                    +OD_status(OD_fishbox.status)+
+                                    `</div>
+                                    <div class="ClientOD_subTop" id="ClientOD_status">`
+                                    +OD_payStatus(OD_fishbox.payStatus)+
+                                    `</div>
+                                    <div class="ClientOD_subTop" id="ClientOD_status">`
+                                    +OD_cargoStatus(OD_fishbox.cargoStatus)+
+                                    `</div>
+                                    
+                                </div>
+
+                                <div class="ClientOD_top" id="ClientOD_Item">
+                                    <div class="ClientOD_subTop" id="ClientOD_status">`
+                                    +OD_status(OD_Item.status)+
+                                    `</div>
+                                    <div class="ClientOD_subTop" id="ClientOD_status">`
+                                    +OD_payStatus(OD_Item.payStatus)+
+                                    `</div>
+                                    <div class="ClientOD_subTop" id="ClientOD_status">`
+                                    +OD_cargoStatus(OD_Item.cargoStatus)+
+                                    `</div>
+
+                                </div>
+
+                                <div class="ClientOD_top" id="ClientOD_more">`+
+
+
+                                ShipFirst(order[j].deliver_first)
+                            
+                                +`<button class="order_detail">詳情</button>
+
+                                </div>
+
+            
+                            </div>`
+
+
+
+
+                            $('#ClientOD_list_warp').append(ClientOD)
+
+
+
+                        }
+
+
+
+                    }
+
+
+
+                })
+
+                
+
+               
+
+
+            }
+
+
+
+        }
+
+    })
+
+    
 
     
 
