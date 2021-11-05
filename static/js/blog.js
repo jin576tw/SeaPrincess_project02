@@ -3,6 +3,8 @@
 let DairyList = $('#Diary_list');
 let RecipeList = $('#Recipe_list')
 
+
+
 $.get("./static/JSON/diary.json", function (data) {
 
     let d = data;

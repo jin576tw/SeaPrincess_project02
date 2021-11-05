@@ -322,6 +322,48 @@ function Blog_artical(a) {
    }
 
    let ArticleID = articleID(a)
+
+   //隱藏超過字數
+   const OverTitle = (title) =>{
+
+    if ($(window).width() > 1024) {
+
+        const len = 30
+   
+        if(title.length > len){
+
+            return title.substring(0,len-1)+"..."
+
+        }else{
+
+            return title
+        }
+
+    }else if ($(window).width() >= 768){
+
+       
+        const len = 22
+
+        if(title.length > len){
+
+            return title.substring(0,len-1)+"..."
+
+        }else{
+
+            return title
+        }
+
+
+
+
+
+    }else{
+        return title
+    }
+
+}
+
+
   
 
    let Blog_artical =`
@@ -338,7 +380,7 @@ function Blog_artical(a) {
           
            <div class="Blog_artical_title">
                <a href="./articale.html?D&&aid=`+ArticleID +`">
-               <p>${a.title}</p>
+               <p>${OverTitle(a.title)}</p>
                </a>
            </div>
            <div class="Blog_artical_author">
@@ -401,6 +443,51 @@ function Blog_artical_B(a) {
    }
 
    let ArticleID = articleID(a)
+
+
+
+    //隱藏超過字數
+    const OverTitle = (title) =>{
+
+        
+
+        if ($(window).width() > 1024) {
+
+            const len = 30
+       
+            if(title.length > len){
+
+                return title.substring(0,len-1)+"..."
+
+            }else{
+
+                return title
+            }
+
+        }else if ($(window).width() >= 768){
+
+           
+            const len = 22
+
+            if(title.length > len){
+
+                return title.substring(0,len-1)+"..."
+
+            }else{
+
+                return title
+            }
+
+
+
+
+
+        }else{
+            return title
+        }
+
+    }
+
   
 
    let Blog_artical =`
@@ -417,7 +504,7 @@ function Blog_artical_B(a) {
           
            <div class="Blog_artical_title">
                <a href="./articale.html?R&&aid=`+ArticleID +`">
-               <p>${a.title}</p>
+               <p>${ OverTitle(a.title)}</p>
                </a>
            </div>
            <div class="Blog_artical_author">
@@ -1102,6 +1189,16 @@ let seafood_items_list = `
 
 
 }
+
+
+
+$('.Blog_more_tags').click(function(){
+
+    $(this).prev().toggleClass('tags_down')
+
+    $(this).children().children('.fa-caret-down').toggleClass('arrow_down')
+    
+})
 
 
 
