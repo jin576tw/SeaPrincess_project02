@@ -1196,11 +1196,9 @@ let tagsOpen = false
 // 部落個工具列
 $('.Blog_more_tags').click(function(){
 
-    
 
     const tags_height = $(this).prev().children('.Blog_tags_content').get(0).offsetHeight+15
 
-    
 
     tagsOpen = !tagsOpen;
 
@@ -1221,26 +1219,9 @@ $('.Blog_more_tags').click(function(){
 
 
 
-    // console.log(tagsOpen);
-
    
     
 })
-
-
-
-// if(!tagsOpen){
-
-//     $('.Blog_tags_warp').css('height','35'+"px")
-
-// }else{
-
-//     $('.Blog_tags_warp').css('height',tags_height+"px")
-
-// }
-
-
-
 
 
 
