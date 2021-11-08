@@ -182,6 +182,7 @@
 }
 
 .articale_detail{
+   
    display: flex;
    align-items: center;
    color: #7cafbf;
@@ -222,7 +223,9 @@
 
 
 .articale_time{
+    margin-top: -3px;
    margin-left: 20px;
+   font-size: 1.4rem;
 
 }
 
@@ -317,6 +320,7 @@
     }
      .articale_time{
         margin-left: 8px;
+       
      
      }
 
