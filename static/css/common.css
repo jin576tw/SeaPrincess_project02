@@ -1132,7 +1132,7 @@ label{
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
-    padding-top: 3px;
+    /* padding-top: 3px; */
     transition: 0.5s;
     overflow: hidden;
 
