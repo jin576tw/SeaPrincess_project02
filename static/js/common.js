@@ -1198,8 +1198,9 @@ $('.Blog_more_tags').click(function(){
 
     
 
-    const tags_height = $(this).prev().children('.Blog_tags_content').get(0).offsetHeight+10
+    const tags_height = $(this).prev().children('.Blog_tags_content').get(0).offsetHeight+15
 
+    console.log(tags_height);
 
     tagsOpen = !tagsOpen;
 
