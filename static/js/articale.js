@@ -15,6 +15,26 @@ $(document).ready(function () {
     // let ArticleTag = $('.each_artical_tags')
 
 
+    // 收藏文章按鈕
+    let fav = false
+
+    $('.articale_fav').click(function(){
+
+        fav = !fav
+
+        if(fav){
+
+            $(this).children('img').attr('src','./static/images/bookmark-save.svg')
+        }else{
+
+            $(this).children('img').attr('src','./static/images/bookmark-solid.svg')
+
+        }
+
+
+
+    })
+
     // 海上日誌
     if(DairyURL){
 
@@ -97,7 +117,7 @@ $(document).ready(function () {
 
                    //文章建立時間
                    function changeTime(t) {
-                       
+
                     // 時間轉換格式
                     let time = t.create_at
 
