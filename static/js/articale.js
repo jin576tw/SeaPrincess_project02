@@ -7,9 +7,12 @@ $(document).ready(function () {
 
     let ArticleTITLE = $('.articale_title h1')
 
-    let ArticleTime = $('.main_article_time')
+    let ArticleTime = $('.articale_time')
 
-    let ArticleTag = $('.each_artical_tags')
+    let WriterPic = $('.writer_pic')
+    let WriterName = $('.writer_name h5')
+
+    // let ArticleTag = $('.each_artical_tags')
 
 
     // 海上日誌
@@ -28,36 +31,36 @@ $(document).ready(function () {
                     ArticleTITLE.text(d[i].title) 
 
                     //文章建立時間
-                    let Articletime =``
-
                     function changeTime(t) {
                         // 時間轉換格式
                         let time = t.create_at
 
                         let newtime = time.replace("-", "/").replace("-", "/");
 
-                        Articletime = `<i class="far fa-calendar-alt"></i>`+newtime
+                        return `<i class="far fa-calendar-alt"></i>`+newtime
 
                     
                     }
                     
-                    changeTime(d[i])
-
-                    ArticleTime.html(Articletime)    
-
-
-                    // 文章標籤
-                    for(let j =0 ;j < d[i].tag.length ; j++){
-
-                        let articleTag = 
-                        `<div class="artical_tag  p-0">
-                            <div class="artical_tag_outline"><p>${d[i].tag[j]}</p></div>
-                        </div>`
-
-                        ArticleTag.append(articleTag)
+        
+                    ArticleTime.html(changeTime(d[i]))  
+                    
+                    // 文章作者
+                    WriterName.text(d[i].user)
 
 
-                    }
+                    // // 文章標籤
+                    // for(let j =0 ;j < d[i].tag.length ; j++){
+
+                    //     let articleTag = 
+                    //     `<div class="artical_tag  p-0">
+                    //         <div class="artical_tag_outline"><p>${d[i].tag[j]}</p></div>
+                    //     </div>`
+
+                    //     ArticleTag.append(articleTag)
+
+
+                    // }
 
                 
                 ////////////文章段落////////////
@@ -92,38 +95,39 @@ $(document).ready(function () {
                     // 文章標題    
                     ArticleTITLE.text(d[i].title) 
 
-                    //文章建立時間
-                    let Articletime =``
+                   //文章建立時間
+                   function changeTime(t) {
+                       
+                    // 時間轉換格式
+                    let time = t.create_at
 
-                    function changeTime(t) {
-                        // 時間轉換格式
-                        let time = t.create_at
+                    let newtime = time.replace("-", "/").replace("-", "/");
 
-                        let newtime = time.replace("-", "/").replace("-", "/");
+                    return `<i class="far fa-calendar-alt"></i>`+newtime
 
-                        Articletime = `<i class="far fa-calendar-alt"></i>`+newtime
-
+                
+                    }
                     
-                    }
-
-                    changeTime(d[i])
-
-                    ArticleTime.html(Articletime)  
-
-
-
-                    // 文章標籤
-                    for(let j =0 ;j < d[i].tag.length ; j++){
-
-                        let articleTag = 
-                        `<div class="artical_tag  p-0">
-                            <div class="artical_tag_outline"><p>${d[i].tag[j]}</p></div>
-                        </div>`
-
-                        ArticleTag.append(articleTag)
+        
+                    ArticleTime.html(changeTime(d[i]))  
+                    
+                    // 文章作者
+                    WriterName.text(d[i].user)
 
 
-                    }
+
+                    // // 文章標籤
+                    // for(let j =0 ;j < d[i].tag.length ; j++){
+
+                    //     let articleTag = 
+                    //     `<div class="artical_tag  p-0">
+                    //         <div class="artical_tag_outline"><p>${d[i].tag[j]}</p></div>
+                    //     </div>`
+
+                    //     ArticleTag.append(articleTag)
+
+
+                    // }
 
                     ////////////食譜段落////////////
 
