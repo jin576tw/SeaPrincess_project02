@@ -99,10 +99,10 @@
 
 /*／／ 文章標題 */
 .articale_title{
-    overflow: hidden;
+
     padding-top: 10px;
     min-height: 60px;
-    /* background-color: #afa; */
+
     border-top: solid 1px var(--sea_blue);
     border-bottom: solid 1px var(--sea_blue);
 }
@@ -115,6 +115,7 @@
     line-height: 1.53;
     letter-spacing: normal;
     text-align: center;
+    word-wrap:break-word
 
 }
 
@@ -194,9 +195,10 @@
 }
 
 .each_artical_tags{
-
+    
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     max-width: 500px;
     margin-left: 10px;
     
@@ -337,7 +339,7 @@
     .each_artical_tags{
         display: flex;
         flex-wrap: wrap;
-        padding-left: 35px;
+
         width: 100%;
         max-width: 500px;
         
@@ -539,11 +541,12 @@
     height: 120px;
     border:solid 2px var(--sea_blue);
     margin: 50px 0;
+    padding: 10px;
 
 }
 
 .articale_contnet_warp li{
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -574,6 +577,22 @@
   
     
     }
+
+    .articale_contnet_warp small{
+        display: flex;
+        align-items:flex-start;
+      
+ 
+       
+    }
+    
+
+    .articale_contnet_warp small::before{
+        margin-top: 10px;
+       
+       
+    }
+    
 
 
 

@@ -1191,14 +1191,55 @@ let seafood_items_list = `
 }
 
 
+let tagsOpen = false
+
 // 部落個工具列
 $('.Blog_more_tags').click(function(){
 
-    $(this).prev().toggleClass('tags_down')
+    
 
-    $(this).children().children('.fa-caret-down').toggleClass('arrow_down')
+    const tags_height = $(this).prev().children('.Blog_tags_content').get(0).offsetHeight+3
+
+
+    tagsOpen = !tagsOpen;
+
+    if(!tagsOpen){
+
+        $('.Blog_tags_warp').css('height',"35px")
+        $(this).children().children('.fa-caret-down').css('transform','rotate(0deg)').css('transition','0.5s')
+
+    }else{
+
+        $('.Blog_tags_warp').css('height',tags_height+"px")
+
+        $(this).children().children('.fa-caret-down').css('transform','rotate(180deg)').css('transition','0.5s')
+
+
+
+    }
+
+
+
+    // console.log(tagsOpen);
+
+   
     
 })
+
+
+
+// if(!tagsOpen){
+
+//     $('.Blog_tags_warp').css('height','35'+"px")
+
+// }else{
+
+//     $('.Blog_tags_warp').css('height',tags_height+"px")
+
+// }
+
+
+
 
 
 
