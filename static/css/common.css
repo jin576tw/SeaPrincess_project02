@@ -1127,7 +1127,7 @@ label{
 
 .Blog_tags_warp{
     width: 500px;
-    height: 35px;
+    height: 40px;
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
@@ -1289,7 +1289,7 @@ label{
 
     .Blog_tags_content{
         padding-left: 20px;
-        background-color: red;
+        /* background-color: red; */
  
         
     }

@@ -1200,13 +1200,13 @@ $('.Blog_more_tags').click(function(){
 
     const tags_height = $(this).prev().children('.Blog_tags_content').get(0).offsetHeight+15
 
-    console.log(tags_height);
+    
 
     tagsOpen = !tagsOpen;
 
     if(!tagsOpen){
 
-        $('.Blog_tags_warp').css('height',"35px")
+        $('.Blog_tags_warp').css('height',"40px")
         $(this).children().children('.fa-caret-down').css('transform','rotate(0deg)').css('transition','0.5s')
 
     }else{
