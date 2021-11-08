@@ -1048,6 +1048,7 @@ label{
 .Blog_tool{
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     min-height: 60px;
     padding-bottom: 20px;
     border-bottom: solid 1px #7cafbf;
@@ -1131,7 +1132,7 @@ label{
     display: flex;
     flex-wrap: wrap;
     max-width: 500px;
-    
+    padding-top: 3px;
     transition: 0.5s;
     overflow: hidden;
 
@@ -1209,21 +1210,24 @@ label{
 
     .Blog_tags{
         display: flex;
+        align-items: flex-start;
         min-height: 25px;
         width: 400px;
-        justify-content: space-between;
+        justify-content: flex-end;
      
        
         
     }
     
     .Blog_tags_warp{
+        padding-top: 5px;
         width: 350px;
-        height: 30px;
+        height: 40px;
         display: flex;
         flex-wrap: wrap;
-        max-width: 350px;
+        max-width: 300px;
         overflow: hidden;
+        /* background-color: red; */
     
     }
     
