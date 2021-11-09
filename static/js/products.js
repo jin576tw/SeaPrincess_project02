@@ -844,21 +844,6 @@ $(document).ready(function () {
         // 選擇一頁幾筆資料
         const per = 3
 
-
-
-        for(let i= 0 ; i < d.length ;i++ ){
-
-            if(d[i].type_sid == itype){
-
-                
-                ItemWarp.append(PRODUCT_B(d[i]))
-
-            }
-
-        }
-
-
-
         
     ItemChecktype(d)
 
