@@ -1,386 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test_Page</title>
 
     <!-- CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./static/fontawesome/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./static/fontawesome/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- css -->
-    <link rel="stylesheet" href="./static/css/common.css">
-    <link rel="stylesheet" href="./static/css/test.css">
-    <link rel="stylesheet" href="./static/css/navbar.css">
-    <link rel="stylesheet" href="./static/css/footer.css">
-
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/test.css" />
+    <link rel="stylesheet" href="./static/css/navbar.css" />
+    <link rel="stylesheet" href="./static/css/footer.css" />
 
     <style>
+      #test {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-
-        /* .EditPage_text_warp{
-            width: 100%;
-            min-height: 500px;
-            
-        }
-
-
-        .save{
-            text-align: center;
-            margin: 60px 0;
-            width: 150px;
-            height: 60px;
-        } */
-
-
-        /* 插入分頁 */
-        .pagination{
-            display: flex;
-            justify-content: center;
-            
-           
-        }
-
-        /* 分頁條 */
-        .paginationjs-pages ul{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            
-        }
-
-        /* 分頁頁碼 */
-        .paginationjs-page{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 100%;
-            color: var(--dark_blue);
-            font-size: 1.4rem;
-            margin: 0 5px
-        }
-
-        /* 分頁頁碼往前  */
-        .paginationjs-prev{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-            
-        }
-
-         /* 分頁頁碼往後  */
-        .paginationjs-next{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-
-        }
-
-
-        /* 當前頁面 */
-        .paginationjs-pages ul .active{
-            background-color: var(--grey);
-            color:white
-        }
-
-        /* 第一頁/最後一頁 */
-        .paginationjs-pages ul .disabled{
-            color: var(--grey);
-        }
+      .item {
+        margin: 10px;
+        width: 200px;
+        height: 300px;
         
-        select{
+      }
+      .pic {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+      }
 
-            width: 300px;
-            height: 80px;
-            
-        }
+      .pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
 
-        option{
-            font-size: 18px;
-        }
+      }
 
 
-        .question{
-            width: 500px;
-            height: 60px;
-            background-color: blue;
-        }
-        .answer{
-            width: 500px;
-            height: 60px;
-            background-color: red;
-        }
+      #pagination{
 
+        /* width: 500px; */
+        height: 50px;
+        /* background-color: red; */
+        margin: 60px auto;
+        display: flex;
+        justify-content: center;
+        
+       
+      }
+      .ptn{
+          width: 50px;
+          height: 50px;
+          background-color: white;
+          border: 1px solid black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+      }
+      .ptn_warp{
+          display: flex;
+      }
+
+      .ptn_active{
+        background-color: red;
+      }
     </style>
+  </head>
+  <body>
 
-</head>
-<body>
 
 
-    <div class="EditPage_text_warp">
-        <textarea name="content" id="content" rows="10" cols="80"></textarea>
+    <section id="test"></section>
+
+
+    
+    <section id="pagination">
+        <div class="ptn prev">prev</div>
+        <div class="ptn_warp">
+
+            <!-- <div class="ptn">1</div>
+            <div class="ptn">2</div>
+            <div class="ptn">3</div>
+            <div class="ptn">4</div> -->
+
+
+        </div>
+        
+        <div class="ptn next">next</div>
+       
+
+    </section>
+
+
+
+  </body>
+  <!-- cdn -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+  />
+  <script src="./static/jq/jquery-3.6.0.js"></script>
+
+  <!-- cookie -->
+  <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- js -->
+  <script src="./static/js/common.js"></script>
+
+  <!-- 編輯器 -->
+  <script type="text/javascript" src="./static/ckeditor/ckeditor.js"></script>
+
+  <!-- 分頁 -->
+  <script
+    type="text/javascript"
+    src="./static/Pagination/pagination.js"
+  ></script>
+
+  <script>
+
+
+  
+
+
+    $.get("./static/JSON/Item.json", function (data) {
+
+        const d = data;
+
+        const per = 3
+
+        pagination(d, per,1)
+
+
+        $('.ptn_warp').on('click','.ptn',function(){
+
+          // $('#test').empty();
+
+          let nowPage = parseInt($(this).attr('value'))
+
+          pagination(d, per,nowPage)
+
+
+
+        })
+
+        $('.prev').click(function(){
+
+
+          let nowPage = parseInt($('.ptn_active').attr('value'))
+
+          if(nowPage == 1){
+
+
+            $(this).attr('disabled', true);
+
+          }else{
+
+            $(this).attr('disabled', false);
+
+            pagination(d, per,nowPage-1)
+
+          }
+         
+
+
+
+        })
+
+        $('.next').click(function(){
+
+          const maxPage =  Math.ceil(d.length / per);
+
+          console.log(maxPage);
+
+          let nowPage = parseInt($('.ptn_active').attr('value'))
+
+          if(nowPage == maxPage){
+
+
+            $(this).attr('disabled', true);
+
+          }else{
+
+            $(this).attr('disabled', false);
+
+            pagination(d, per, nowPage+1)
+
+          }
+
+
+        })
+      
+        //要顯示在畫面上的資料數量，預設每一頁只顯示幾筆資料。
+        //顯示當前頁數
+        function pagination(data ,perpage,nowPage) {
+
+            // 取得全部資料長度
+            const dataTotal = data.length;
 
         
-    </div>
+            // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
+            // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
+            const pageTotal = Math.ceil(dataTotal / perpage);
+
+            
 
 
-      <!-- 送出儲存按鈕 -->
-      <!-- <button class="save" type="submit" onclick="save()">编辑</button> -->
+
+            // 顯示頁碼
+            let ptnStr =``
+            for(let i = 1 ; i < pageTotal+1  ;i++){ 
+
+                let ptn = ``
+
+                if(i == nowPage){
+
+                  ptn = `<div class="ptn ptn_active" value="${i}">${i}</div>`
+
+
+                }else{
+
+
+                  ptn = `<div class="ptn" value="${i}">${i}</div>`
+
+
+                }
+
+                
+
+                ptnStr+=ptn
+
+                $('.ptn_warp').html(ptnStr)
+
+
+            }
+
+
            
-<!-- 
-    <div class="warp row">
 
-    </div> -->
+            // 當"當前頁數"比"總頁數"大的時候，"當前頁數"就等於"總頁數"
+            if (nowPage > pageTotal) {
 
+                nowPage = pageTotal;
 
-     
-    <!-- <div class="pagination" id="pagination"></div> -->
+            }
 
+            // 當前頁數最小index
+            const minData = (nowPage * perpage) - perpage + 1 ;
 
-    <!-- <select name="region" id="region">
-        <option value="">選擇地區</option>
-        <option value="taipei" >taipei</option>
-        <option value="tainan">tainan</option>
-        <option value="koashung">koashung</option>
-        <option value="keelong">keelong</option>
-    </select> -->
+            // 當前頁數最大index
+            const maxData = (nowPage * perpage) ;
 
 
+            // 先建立新陣列
+            const Newdata = [];
 
-    <div class="question"></div>
-    <div class="answer"></div>
+            // 使用 ES6 forEach 做資料處理
+            // 這邊必須使用索引來判斷資料位子，所以要使用 index
+            data.forEach((item, index) => {
 
+                // 獲取陣列索引，但因為索引是從 0 開始所以要 +1。
+                const num = index + 1;
 
+                // 這邊判斷式會稍微複雜一點
+                // 當 num 比 minData 大且又小於 maxData 就push進去新陣列。
+                if ( num >= minData && num <= maxData) {
+                    Newdata.push(item);
+                }
 
 
 
+            })
 
-</body>
-<!-- cdn -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<script src="./static/jq/jquery-3.6.0.js"></script>
 
-<!-- cookie -->
-<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<!-- js -->
-<script src="./static/js/common.js"></script>
+            // 從新陣列輸出物件
+            let itemStr =``
+            for (let i = 0; i < Newdata.length; i++) {
+                let item = `
+                <div class="item">
 
+                    <div class="pic">
+                        <img src="${Newdata[i].pic[0]}" alt="">
+                    </div>
 
-<!-- 編輯器 -->
-<script type="text/javascript" src="./static/ckeditor/ckeditor.js"></script>
+                    <h3>${Newdata[i].name}</h3>
+                
+                </div>`;
 
+                itemStr+=item
 
-<!-- 分頁 -->
-<script type="text/javascript" src="./static/Pagination/pagination.js"></script>
+           
 
 
+          }
 
+          $("#test").html(itemStr);
 
+          console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆 總頁數:${pageTotal} 當前頁數:${nowPage}`);
 
 
 
+          console.log("NewArr", Newdata);
 
 
-<script>
+        }
 
 
-$(".answer").slideUp()
 
+    });
 
-$('.question').click(function(){
 
-    $(".answer").slideToggle()
 
-
-
-})
-
-// let type = ['a','b','c']
-
-
-
-
-// $('#region option[value="taipei"]').prop("selected",true);
-
-// $('#region').change(function(){
-
-
-//     let seleted = $('#region option:selected').text()
-
-
-//     if(seleted == 'taipei'){
-
-//         alert(seleted)
-
-    
-//     }
-
-//     // console.log(seleted);
-
-
-// })
-
-
-
-
-
-
-//     $.get("./static/JSON/Seafood.json", function (data) {
-
-
-
-//         $('#pagination').pagination({
-//             dataSource: data,
-//             pageSize: 4,
-//             // autoHidePrevious: true,
-//             // autoHideNext: true,
-//             callback: function(data, pagination) {
-
-
-//                 $('.warp').empty()
-
-//                 let d = data
-
-//                 for(let i = 0 ; i < d.length ;i++){ 
-
-
-//                     $('.warp').append(PRODUCT(d[i]))
-
-//                 }
-
-//             }
-//         })
-
-
-// })
-
-
-
-
-// let cookieStr = $.cookie('Cart')
-
-// let cookieArr = JSON.parse(cookieStr);
-
-
-
-// // console.log(cookieArr);
-
-// function filter(arr){
-
-//     let fishbox =  arr.filter ((p) => p.fishbox == true)
-//     let seafood =  arr.filter ((p) => p.food == true)
-//     let item=  arr.filter ((p) => p.food == false)
-
-
-
-
-//     if(seafood.length == 0 ){
-
-//     console.log('海鮮空');
-//     }
-
-//     if(item.length == 0 ){
-
-//     console.log('釣具空');
-//     }
-
-//     if(fishbox.length == 0 ){
-
-//     console.log('魚箱空');
-//     }
-
-
-   
-   
-
-   
-// }
-
-// filter(cookieArr)
-
-
-// // console.log(fishbox.length);
-// console.log(seafood.length);
-// console.log(item.length);
-
-
-
-
-// fillter ;
-
-// for(let j = 0 ; j <  cookieArr.length; j++){ 
-
-    
-
-//    if(cookieArr[j].fishbox){
-
-//        console.log(cookieArr[j]);
-
-
-//    }else if(!cookieArr[j].food ){
-
-//     console.log();
-
-
-
-//    }else if(cookieArr[j].food){
-
-//     console.log('item');
-
-//    }
-  
-    
-
-// }
-
-
-
-
-
-
-
-
-CKEDITOR.replace( 'content', {
-      
-      height: 500
-});
-
-
-
-//   // 送出編輯
-// function save(){
-
-// // 內容編輯
-//     let contentEdit = CKEDITOR.instances.content.getData()
-
-//     alert(contentEdit)
-
-
-// }
-
-
-// let pic_detail = $('.img01').attr('alt') 
-
-
-// let detailtext = `<small>${pic_detail}</small>`
-// console.log(pic_detail);
-
-
-// $('body').html(detailtext )
-</script>
-
-
-
+  </script>
 </html>
