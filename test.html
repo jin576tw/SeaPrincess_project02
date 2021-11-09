@@ -150,16 +150,22 @@
 
         const d = data;
 
+        // 選擇一頁幾筆資料
         const per = 3
 
-        pagination(d, per,1)
+        // 分頁初始值第一頁
+        pagination(d, per, 9)
 
 
         $('.ptn_warp').on('click','.ptn',function(){
 
           // $('#test').empty();
 
+          
+
           let nowPage = parseInt($(this).attr('value'))
+
+          console.log(nowPage);
 
           pagination(d, per,nowPage)
 
@@ -231,35 +237,95 @@
 
 
             // 顯示頁碼
-            let ptnStr =``
-            for(let i = 1 ; i < pageTotal+1  ;i++){ 
+            // 頁碼狀態判斷
+            function pageNum(index){
 
-                let ptn = ``
+                if(index == nowPage){
 
-                if(i == nowPage){
-
-                  ptn = `<div class="ptn ptn_active" value="${i}">${i}</div>`
-
+                  ptn =  `<div class="ptn ptn_active" value="${index}">${index}</div>`
+                  return ptn
 
                 }else{
 
+          
+                  ptn = `<div class="ptn " value="${index}">${index}</div>`
 
-                  ptn = `<div class="ptn" value="${i}">${i}</div>`
-
+                  return ptn
 
                 }
-
-                
-
-                ptnStr+=ptn
-
-                $('.ptn_warp').html(ptnStr)
 
 
             }
 
 
-           
+            const firstPage = pageNum(1)
+            const EndPage = pageNum(pageTotal)
+
+
+            const morePage =`<div class="ptn" value="">...</div>`
+          
+      
+            let ptnStr =``
+
+            // 總頁數小於等7時正常顯示頁碼
+            if(pageTotal <= 7){
+
+              for(let i = 1 ; i < pageTotal+1  ;i++){ 
+
+                ptnStr += pageNum(i)
+
+               
+                $('.ptn_warp').html(ptnStr)
+
+                
+              }
+
+
+            // 總頁數大於等7時正常隱藏頁碼
+            }else{
+
+
+              for(let i = 1 ; i < pageTotal+1  ;i++){ 
+
+                // 前五頁頁碼狀態
+                if(nowPage <=4){
+
+
+                 ptnStr = pageNum(1)+pageNum(2)+pageNum(3)+pageNum(4)+pageNum(5)+morePage+EndPage
+
+                 $('.ptn_warp').html(ptnStr)
+
+
+                 // 後五頁頁碼狀態
+                }else if (nowPage >= pageTotal - 3 ){
+
+
+                  ptnStr = firstPage+morePage+pageNum(pageTotal - 4)+pageNum(pageTotal - 3)+pageNum(pageTotal - 2)+pageNum(pageTotal - 1)+EndPage
+
+
+                  $('.ptn_warp').html(ptnStr)
+
+                  
+                // 其他分頁頁碼狀態
+                }else if( nowPage === i){
+
+                  ptnStr = firstPage+morePage+pageNum(i-1)+pageNum(i)+pageNum(i+1)+morePage+EndPage
+
+
+                  $('.ptn_warp').html(ptnStr)
+
+
+
+                }
+
+
+              }
+
+
+            }
+            
+            
+          
 
             // 當"當前頁數"比"總頁數"大的時候，"當前頁數"就等於"總頁數"
             if (nowPage > pageTotal) {
