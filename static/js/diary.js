@@ -123,58 +123,127 @@ $.get("./static/JSON/diary.json", function (data) {
 
     $('.main_content p').text(fetchIntro(d[0].content)).append(more)
 
-    if ($(window).width() <= 1024){
 
-        $('#Diary_page').pagination({
-            dataSource: data,
-            pageSize: 4,
-            
-            callback: function(data, pagination) {
+    // 選擇一頁幾筆資料
+    const per = 12
 
 
-                DiaryContent.empty()
+    // 分頁初始值第一頁
+    let DiaryArticle = pagination(d, per, 1)
 
-        
-                for(let i = 0 ; i < d.length ;i++){ 
+   
+    for(let i = 0 ; i < DiaryArticle.length ;i++){ 
 
-
-                    DiaryContent.append(Blog_artical(d[i]))
-
-                }
-
-            }
-        })
-
-
-    }else{
-
-
-        
-       
-        $('#Diary_page').pagination({
-            dataSource: data,
-            pageSize: 16,
-            
-            callback: function(data, pagination) {
-
-
-                DiaryContent.empty()
-
-        
-                for(let i = 0 ; i < d.length ;i++){ 
-
-
-                   
-
-
-                    DiaryContent.append(Blog_artical(d[i]))
-
-                }
-
-            }
-        })
+        DiaryContent.append(Blog_artical(DiaryArticle[i]))
 
     }
+
+    // 選擇分頁
+    $('.ptn_warp').on('click','.ptn',function(){
+
+        DiaryContent.empty();
+
+
+        let nowPage = parseInt($(this).attr('value'))
+
+
+        let nowContent =  pagination(d, per,nowPage)
+
+        for(let i = 0 ; i < nowContent.length ;i++){ 
+
+            DiaryContent.append(Blog_artical(nowContent[i]))
+
+        }
+
+        $('body,html').animate({
+            scrollTop: $('#Diary_articale').offset().top 
+        }, 1 ,'swing');
+
+    
+
+    })
+
+    // 上一頁分頁
+    $('.prev').click(function(){
+
+
+        let nowPage = parseInt($('.ptnActive').attr('value'))
+
+        if(nowPage == 1){
+
+
+            $(this).attr('disabled', true);
+
+        }else{
+
+            DiaryContent.empty();
+
+            $(this).attr('disabled', false);
+
+            let nowContent =  pagination(d, per,nowPage-1)
+
+            for(let i = 0 ; i < nowContent.length ;i++){ 
+
+                DiaryContent.append(Blog_artical(nowContent[i]))
+    
+            }
+
+            
+
+        }
+
+        $('body,html').animate({
+            scrollTop: $('#Diary_articale').offset().top 
+        }, 1 ,'swing');
+
+
+
+
+    })
+
+    // 下一頁分頁
+    $('.next').click(function(){
+
+        const maxPage = Math.ceil(d.length / per);
+        
+        let nowPage = parseInt($('.ptnActive').attr('value'))
+
+
+
+        if(nowPage == maxPage){
+
+
+            $(this).attr('disabled', true);
+
+        }else{
+
+            
+            DiaryContent.empty();
+
+            $(this).attr('disabled', false);
+
+            let nowContent = pagination(d, per, nowPage+1)
+
+            for(let i = 0 ; i < nowContent.length ;i++){ 
+
+                
+                DiaryContent.append(Blog_artical(nowContent[i]))
+    
+            }
+
+
+        }
+
+        $('body,html').animate({
+            scrollTop: $('#Diary_articale').offset().top 
+        }, 1 ,'swing');
+
+
+    })
+
+ 
+
+    
 
  
     

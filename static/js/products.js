@@ -274,29 +274,122 @@ $(document).ready(function () {
 
         originSort(d)
 
-        // 載入分頁
-        $('#seafood_page').pagination({
-            dataSource: data,
-            pageSize: 16,
-            callback: function(data, pagination) {
 
-                // 商品載入
-                SeafoodWarp.empty()
+        // 選擇一頁幾筆資料
+        const per = 12
 
-                let d = data
 
-                for(let i = 0 ; i < d.length ;i++){ 
+        // 分頁初始值第一頁
+        let SeafoodProduct = pagination(d, per, 1)
 
-                    SeafoodWarp.append(PRODUCT(d[i]))
+       
+        for(let i = 0 ; i < SeafoodProduct.length ;i++){ 
 
+            SeafoodWarp.append(PRODUCT(SeafoodProduct[i]))
+
+        }
+
+        // 選擇分頁
+        $('.ptn_warp').on('click','.ptn',function(){
+
+            SeafoodWarp.empty();
+
+
+            let nowPage = parseInt($(this).attr('value'))
+
+
+            let nowContent =  pagination(d, per,nowPage)
+
+            for(let i = 0 ; i < nowContent.length ;i++){ 
+
+                SeafoodWarp.append(PRODUCT(nowContent[i]))
+    
+            }
+
+            $('body,html').animate({
+                scrollTop: $('#Seafood_Products').offset().top 
+            }, 1 ,'swing');
+
+        
+
+        })
+
+        // 上一頁分頁
+        $('.prev').click(function(){
+
+
+            let nowPage = parseInt($('.ptnActive').attr('value'))
+
+            if(nowPage == 1){
+
+
+                $(this).attr('disabled', true);
+
+            }else{
+
+                SeafoodWarp.empty();
+
+                $(this).attr('disabled', false);
+
+                let nowContent =  pagination(d, per,nowPage-1)
+
+                for(let i = 0 ; i < nowContent.length ;i++){ 
+
+                    SeafoodWarp.append(PRODUCT(nowContent[i]))
+        
                 }
 
+                
+
             }
+
+            $('body,html').animate({
+                scrollTop: $('#Seafood_Products').offset().top 
+            }, 1 ,'swing');
+
+
+
+
+        })
+
+        // 下一頁分頁
+        $('.next').click(function(){
+
+            const maxPage = Math.ceil(d.length / per);
+            
+            let nowPage = parseInt($('.ptnActive').attr('value'))
+
+
+
+            if(nowPage == maxPage){
+
+
+                $(this).attr('disabled', true);
+
+            }else{
+
+                
+                SeafoodWarp.empty();
+
+                $(this).attr('disabled', false);
+
+                let nowContent = pagination(d, per, nowPage+1)
+
+                for(let i = 0 ; i < nowContent.length ;i++){ 
+
+                    SeafoodWarp.append(PRODUCT(nowContent[i]))
+        
+                }
+
+
+            }
+
+
         })
 
         
 
-      
+
 //////////商品種類 
 
   //  // 判斷商品種類
@@ -308,8 +401,12 @@ $(document).ready(function () {
 
                     SeafoodWarp.append(PRODUCT(p[i]));
 
+                   
+
                 }else if(s_type == ''){
                     SeafoodWarp.append(PRODUCT(p[i]));
+
+              
 
                 }
                 
@@ -426,6 +523,7 @@ $(document).ready(function () {
                     originSort(d)
 
                     SeafoodTypeCheck(d)
+
 
                     // 傳送狀態URL
                     // S_sendURL(s_type,hot,newTime,p_high,p_low)
@@ -741,32 +839,26 @@ $(document).ready(function () {
         let newTime = false
         let p_high = false
         let p_low = false
-       
+
+        
+        // 選擇一頁幾筆資料
+        const per = 3
 
 
-        // 載入分頁
-        $('#Item_page').pagination({
-        dataSource: data,
-        pageSize: 16,
-        callback: function(data, pagination) {
 
-            // 商品載入
-            ItemWarp.empty()
+        for(let i= 0 ; i < d.length ;i++ ){
 
-            let d = data
+            if(d[i].type_sid == itype){
 
-            for(let i= 0 ; i < d.length ;i++ ){
+                
+                ItemWarp.append(PRODUCT_B(d[i]))
 
-                if(d[i].type_sid == itype){
-    
-                    ItemWarp.append(PRODUCT_B(d[i]))
-    
-                }
-    
             }
 
         }
-    })
+
+
+
         
     ItemChecktype(d)
 

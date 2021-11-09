@@ -619,40 +619,6 @@
 }
 
 
-/* /////////分頁條/////////// */
-.product_page{
-    height: 60px;
-    margin: 60px 0px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-@media (max-width: 1025px) {
-    .product_page{
-        height: 60px;
-        margin: 60px 0px;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    
-    }
-
-}
-@media (max-width: 767px) {
-
-    .product_page{
-        height: 60px;
-        margin: 30px 0px;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    
-    }
-
-}
-
 
 /*///////  生鮮食材總攬/////// */
 .Seafood_ALLProducts{

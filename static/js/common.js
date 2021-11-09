@@ -1224,6 +1224,171 @@ $('.Blog_more_tags').click(function(){
 })
 
 
+// 分頁function 
+//要顯示在畫面上的資料數量，預設每一頁只顯示幾筆資料。
+//顯示當前頁數
+function pagination(data ,perpage,nowPage) {
+
+    // 取得全部資料長度
+    const dataTotal = data.length;
+
+
+    // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
+    // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
+    const pageTotal = Math.ceil(dataTotal / perpage);
+
+
+    // 顯示頁碼
+    // 頁碼狀態判斷
+    function pageNum(index){
+
+        let ptn =``
+
+        if(index == nowPage){
+
+        ptn =  `<div class="ptn ptnActive" value="${index}">${index}</div>`
+        return ptn
+
+        }else{
+
+
+        ptn = `<div class="ptn" value="${index}">${index}</div>`
+
+        return ptn
+
+        }
+
+
+    }
+
+
+    const firstPage = pageNum(1)
+    const EndPage = pageNum(pageTotal)
+
+   
+
+    const morePage =`<div class="ptn" value="">...</div>`
+
+
+    let ptnStr =``
+
+    // 總頁數小於等7時正常顯示頁碼
+    if(pageTotal <= 7){
+
+    for(let i = 1 ; i < pageTotal+1  ;i++){ 
+
+        ptnStr += pageNum(i)
+
+    
+        $('.ptn_warp').html(ptnStr)
+
+        
+    }
+
+
+    // 總頁數大於等7時正常隱藏頁碼
+    }else{
+
+
+    for(let i = 1 ; i < pageTotal+1  ;i++){ 
+
+        // 前五頁頁碼狀態
+        if(nowPage <=4){
+
+
+        ptnStr = pageNum(1)+pageNum(2)+pageNum(3)+pageNum(4)+pageNum(5)+morePage+EndPage
+
+        $('.ptn_warp').html(ptnStr)
+
+
+        // 後五頁頁碼狀態
+        }else if (nowPage >= pageTotal - 3 ){
+
+
+        ptnStr = firstPage+morePage+pageNum(pageTotal - 4)+pageNum(pageTotal - 3)+pageNum(pageTotal - 2)+pageNum(pageTotal - 1)+EndPage
+
+
+        $('.ptn_warp').html(ptnStr)
+
+        
+        // 其他分頁頁碼狀態
+        }else if( nowPage === i){
+
+        ptnStr = firstPage+morePage+pageNum(i-1)+pageNum(i)+pageNum(i+1)+morePage+EndPage
+
+
+        $('.ptn_warp').html(ptnStr)
+
+
+
+        }
+
+
+    }
+
+
+    }
+    
+    
+
+
+    // 當"當前頁數"比"總頁數"大的時候，"當前頁數"就等於"總頁數"
+    if (nowPage > pageTotal) {
+
+        nowPage = pageTotal;
+
+    }
+
+    // 當前頁數最小index
+    const minData = (nowPage * perpage) - perpage + 1 ;
+
+    // 當前頁數最大index
+    const maxData = (nowPage * perpage) ;
+
+
+    // 先建立新陣列
+    const Newdata = [];
+
+    // 使用 ES6 forEach 做資料處理
+    // 這邊必須使用索引來判斷資料位子，所以要使用 index
+    data.forEach((item, index) => {
+
+        // 獲取陣列索引，但因為索引是從 0 開始所以要 +1。
+        const num = index + 1;
+
+        // 這邊判斷式會稍微複雜一點
+        // 當 num 比 minData 大且又小於 maxData 就push進去新陣列。
+        if ( num >= minData && num <= maxData) {
+            Newdata.push(item);
+        }
+
+
+
+    })
+
+
+
+
+    // console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆 總頁數:${pageTotal} 當前頁數:${nowPage}`);
+
+
+
+    // console.log("NewArr", Newdata);
+
+
+    return Newdata
+
+}
+
+
+
+
+
+
+
+
+
+
 
 // 商品加入購物車效果
 let PROPUCTSWARP = $('.products_warp')
