@@ -87,6 +87,19 @@
       .ptn_active{
         background-color: red;
       }
+
+      #twzipcode{
+        width: 500px;
+        height: 120px;
+        display: flex;
+      }
+
+      #twzipcode select{
+        height: 80px;
+        font-size: 1.6rem;
+        margin: 0 10px;
+      }
+
     </style>
   </head>
   <body>
@@ -115,6 +128,9 @@
     </section>
 
 
+    
+    <section id="twzipcode"></section>
+
 
   </body>
   <!-- cdn -->
@@ -140,9 +156,20 @@
     src="./static/Pagination/pagination.js"
   ></script>
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
+
   <script>
 
 
+$("#twzipcode").twzipcode({
+
+      zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
+      css: ["city", "town "], // 自訂 "城市"、"地別" class 名稱 
+      countyName: "city", // 自訂城市 select 標籤的 name 值
+      districtName: "town" // 自訂區別 select 標籤的 name 值
+});
   
 
 

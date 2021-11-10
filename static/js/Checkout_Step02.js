@@ -906,7 +906,7 @@ CheckoutWarp.on("click",'.cargo_info_edit',function(){
     let Deliver_address = $(this).parent().prev().children('.select_deliver').children('.info_address_warp')
 
 
-        //送貨城市
+    //送貨城市
     let Deliver_city = Deliver_address.children('select[name="All_city"]').children('option:selected').val()
 
     if(Deliver_city == ''){

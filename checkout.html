@@ -397,18 +397,9 @@
                                         <div class="checkout_info_list select_deliver" id="seafood_deliver">
                                             <h3>送貨地址</h3>
 
-                                            <div class="info_address_warp">
+                                            <div class="info_address_warp" id="infoAd01">
                                                 
-                                                <select name="All_city">
-                                                    <option value="" name="city[]">縣市</option>
-                                                    <option value="台北市" name="city[]">台北市</option>
-                                                    <option value="高雄市"  name="city[]">高雄市</option>
-                                                </select>
-                                                <select name="All_location">
-                                                    <option value="" name="location[]">鄉鎮市區</option>
-                                                    <option value="大安區" name="location[]">大安區</option>
-                                                    <option value="內湖區" name="location[]">內湖區</option>
-                                                </select>
+                                                <!-- 插入台灣選單 -->
 
                                             </div>
                                             
@@ -581,18 +572,9 @@
                                     <div class="checkout_info_list select_deliver" id="seafood_deliver">
                                         <h3>送貨地址</h3>
 
-                                        <div class="info_address_warp">
-                                            
-                                            <select name="All_city">
-                                                <option value="" name="city[]">縣市</option>
-                                                <option value="台北市" name="city[]">台北市</option>
-                                                <option value="高雄市"  name="city[]">高雄市</option>
-                                            </select>
-                                            <select name="All_location">
-                                                <option value=" " name="location[]">鄉鎮市區</option>
-                                                <option value="大安區" name="location[]">大安區</option>
-                                                <option value="內湖區" name="location[]">內湖區</option>
-                                            </select>
+                                        <div class="info_address_warp" id="infoAd02">
+                                           
+                                            <!-- 插入台灣選單 -->
 
                                         </div>
                                         
@@ -745,19 +727,11 @@
                                     <div class="checkout_info_list select_deliver" id="seafood_deliver">
                                         <h3>送貨地址</h3>
 
-                                        <div class="info_address_warp">
-                                            
-                                            <select name="All_city">
-                                                <option value="" name="city[]">縣市</option>
-                                                <option value="台北市" name="city[]">台北市</option>
-                                                <option value="高雄市"  name="city[]">高雄市</option>
-                                            </select>
-                                            <select name="All_location">
-                                                <option value="" name="location[]">鄉鎮市區</option>
-                                                <option value="大安區" name="location[]">大安區</option>
-                                                <option value="內湖區" name="location[]">內湖區</option>
-                                            </select>
+                                        <div class="info_address_warp" id="infoAd03">
 
+                                            <!-- 插入台灣選單 -->
+                                            
+                                           
                                         </div>
                                         
 
@@ -1001,10 +975,35 @@
 <script src="./static/js/Checkout_Step02.js"></script>
 <script src="./static/js/Checkout_Step03.js"></script>
 
+<!-- 台灣選單 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
 
 <script>
     $('#navbar').load('navbar.html')
     $('#footer').load('footer.html')
+
+
+    $('#infoAd01').twzipcode({
+
+        zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
+        countyName: "All_city", // 自訂城市 select 標籤的 name 值
+        districtName: "All_location" // 自訂區別 select 標籤的 name 值
+    });
+
+    $('#infoAd02').twzipcode({
+
+        zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
+        countyName: "All_city", // 自訂城市 select 標籤的 name 值
+        districtName: "All_location" // 自訂區別 select 標籤的 name 值
+    });
+
+    $('#infoAd03').twzipcode({
+
+        zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
+        countyName: "All_city", // 自訂城市 select 標籤的 name 值
+        districtName: "All_location" // 自訂區別 select 標籤的 name 值
+    });
 </script>
 
 </html>
